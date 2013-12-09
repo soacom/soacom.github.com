@@ -1,0 +1,7 @@
+			<div class="soa-ui-dc-topsearch-container">
+				<form class="soa-ui-dc-topsearch" action="action" method="post"><!-- search form, replace action -->
+					<label for="soa-control-dc-search" class="soa-ui-dc-label soa-ui-dc-label-hidden">Enter Search Text</label>
+					<input type="text" name="search" value="" id="soa-control-dc-search" placeholder="Search" class="soa-ui-dc-topsearch-input">
+					<button class="soa-ui-dc-topsearch-button soa-ui-dc-icon-imgtxt soa-ui-dc-icon-magnifying-glass" type="button">Search</button>
+				</form>
+			</div>

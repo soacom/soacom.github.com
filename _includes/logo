@@ -1,0 +1,3 @@
+			<h2 class="soa-ui-dc-logo-container">
+				<a href="{{ site.baseurl }}/index.html" class="soa-ui-dc-logo soa-ui-dc-icon-imgtxt">SOA Software &trade;, Powering the API Economy</a><!-- logo link, replace href -->
+			</h2>

@@ -1,0 +1,26 @@
+<!-- left nav -->
+			<div class="soa-ui-dc-container-main-left">
+				<h3 class="soa-ui-dc-container-main-left-header">
+					<a href="index.html" class="soa-ui-dc-container-main-left-header-link">Getting Started</a><!-- main title goes here, replace href -->
+				</h3>
+				<ul class="soa-ui-dc-container-main-left-nav">
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a href="index.html" class="soa-ui-dc-container-main-left-nav-item-link">Overview</a><!-- 1st level nav item goes here, replace href -->
+						<ul class="soa-ui-dc-container-main-left-nav soa-ui-dc-container-main-left-nav-inner"><!-- 2nd level nav starts here -->
+							<li class="soa-ui-dc-container-main-left-nav-item soa-ui-dc-container-main-left-nav-item-selected">
+								<a href="index.html" class="soa-ui-dc-container-main-left-nav-item-link">Get Started</a><!-- 2nd level nav item goes here, replace href -->
+							</li>
+							<li class="soa-ui-dc-container-main-left-nav-item">
+								<a href="index.html" class="soa-ui-dc-container-main-left-nav-item-link">Basics</a><!-- 2nd level nav item goes here, replace href -->
+							</li>
+							<li class="soa-ui-dc-container-main-left-nav-item">
+								<a href="index.html" class="soa-ui-dc-container-main-left-nav-item-link">Create App</a><!-- 2nd level nav item goes here, replace href -->
+							</li>
+						</ul><!-- 2nd level nav ends here -->
+					</li>
+					<li class="soa-ui-dc-container-main-left-nav-item">
+						<a href="index.html" class="soa-ui-dc-container-main-left-nav-item-link">Site Admin</a><!-- 1st level nav item goes here, replace href -->
+					</li>
+				</ul>
+			</div>
+<!-- end left nav -->
