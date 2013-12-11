@@ -1,10 +1,10 @@
     <head>
             <meta http-equiv="Content-type" content="text/html; charset=utf-8">
             <title>SOA Docs</title>
-            <link rel="stylesheet" href="{{ site.baseurl }}/style/reset.css" type="text/css">
-            <link rel="stylesheet" href="{{ site.baseurl }}/style/base.css" type="text/css">
-            <link rel="stylesheet" href="{{ site.baseurl }}/style/style.css" type="text/css">
-            <link rel="stylesheet" href="{{ site.baseurl }}/style/document.css" type="text/css">
+            <link rel="stylesheet" href="{{ site.baseurl }}style/reset.css" type="text/css">
+            <link rel="stylesheet" href="{{ site.baseurl }}style/base.css" type="text/css">
+            <link rel="stylesheet" href="{{ site.baseurl }}style/style.css" type="text/css">
+            <link rel="stylesheet" href="{{ site.baseurl }}style/document.css" type="text/css">
             <!--[if lt IE 10]><link rel="stylesheet" href="style/ie.css" type="text/css"><![endif]-->
             <!--[if lt IE 9]><link rel="stylesheet" href="style/ie8.css" type="text/css"><![endif]-->
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
