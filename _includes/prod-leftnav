@@ -12,12 +12,12 @@
 				</h3>
 				<ul class="soa-ui-dc-container-main-left-nav soa-ui-dc-container-main-left-nav-inner">{% for weight in (1..site.MAXWEIGHT) %}{% for p in site.pages %}{% if p.weight == weight and p.product == page.product and p.category == page.category and p.no-nav == null %}	
 					<li class="soa-ui-dc-container-main-left-nav-item">
-						<a {% if p.url == page.url %}class="soa-ui-dc-container-main-left-nav-item-selected soa-ui-dc-container-main-left-nav-item-link"{% else %}class="soa-ui-dc-container-main-left-nav-item-link"{% endif %} href="{{ site.baseurl }}{{ p.url }}">
+						<a {% if p.url == page.url %}class="soa-ui-dc-container-main-left-nav-item-selected soa-ui-dc-container-main-left-nav-item-link"{% else %}class="soa-ui-dc-container-main-left-nav-item-link"{% endif %} href="{{ site.baseurl }}/{{ p.url }}">
 						  {% if p.nav-title != null %}{{ p.nav-title }}{% else %}{{ p.title }}{% endif %}
 						</a>
 					</li>{% endif %}{% endfor %}{% endfor %}{% for p in site.pages %}{% if p.weight == null and p.product == page.product and p.category == page.category and p.no-nav == null %}
 						<li class="soa-ui-dc-container-main-left-nav-item">
-						<a {% if p.url == page.url %}class="active soa-ui-dc-container-main-left-nav-item-link"{% else %}class="soa-ui-dc-container-main-left-nav-item-link"{% endif %} href="{{ site.baseurl }}{{ p.url }}">
+						<a {% if p.url == page.url %}class="active soa-ui-dc-container-main-left-nav-item-link"{% else %}class="soa-ui-dc-container-main-left-nav-item-link"{% endif %} href="{{ site.baseurl }}/{{ p.url }}">
 						  {% if p.nav-title != null %}{{ p.nav-title }}{% else %}{{ p.title }}{% endif %}
 						</a>
 					</li>{% endif %}{% endfor %}
