@@ -17,8 +17,12 @@
 	color: #494e4e;
 	font-style: italic;
 }
+document {
+	height: 100%;
+}
 body {
 	background: url(images/background-sliver.png) repeat-x;
+	height: 100%;
 	&.soa-ui-dc-homepage {
 		background-image: url(images/header-BG-sliver-home.png);
 	}
@@ -71,6 +75,32 @@ body {
 		&:focus {
 			outline: none;
 		}
+		&-borderless {
+			border: none;
+			border-radius: 0;
+		}
+		&-close.soa-ui-dc-icon-imgtxt {
+			background: none;
+			border: 1px solid #b4b3b3;
+			cursor: pointer;
+			padding: 0;
+			text-indent: 0;
+			height: 13px;
+			width: 13px;
+			&:before {
+				color: #b4b3b3;
+				content: "X";
+				display: block;
+				font-size: 10px;
+				line-height: 12px;
+			}
+		}
+		&s {
+			list-style: none;
+			> li {
+				display: inline-block;
+			}
+		}
 	}
 	&icon {
 		position: relative;
@@ -107,7 +137,7 @@ body {
 	&icon-pdf:before, &icon-pdf.soa-ui-dc-icon-imgtxt {
 		background-position: center -145px;
 	}
-	&icon-document-20px:before, &icon-document-20px.soa-ui-dc-icon-imgtxt {
+	&icon-document-20px:before, &icon-document-20px.soa-ui-dc-icon-imgtxt, &icon-pdf-17px:before, &icon-pdf-17px.soa-ui-dc-icon-imgtxt {
 		background-position: center -101px;
 		height: 20px;
 		left: -10px;
@@ -127,6 +157,9 @@ body {
 		top: -3px;
 		width: 16px;
 	}
+	&icon-pdf-17px:before, &icon-pdf-17px.soa-ui-dc-icon-imgtxt {
+		background-position: center -750px;
+	}
 	/**** scaffolding *****/
 	&container {
 		&-top, &-main {
@@ -141,13 +174,15 @@ body {
 			}
 		}
 		&-main {
-			&-left {
+			&-left, &-content {
 				float: left;
+			}
+			&-left {
 				padding-right: 23px;
 				width: 175px;
 			}
 			&-content {
-				margin-left: 198px;
+				width: 571px;
 			}
 		}
 	}
@@ -255,7 +290,7 @@ body {
 	&topsearch {
 		background: #fff;
 		border-radius: 3px;
-		padding: 3px 4px;
+		padding: 2px;
 		&-input {
 			border: none;
 			height: 14px;
@@ -567,5 +602,64 @@ body {
 				}
 			}
 		}
+	}
+	&inline-search-div {
+		background: #fff;
+		border-radius: 3px;
+		padding: 20px 12px;
+		position: absolute;
+		right: 0;
+		top: 29px;
+		z-index: 99;
+		&:before {
+			background-image: url(images/pointer.png);
+			height: 10px;
+			left: auto;
+			right: 72px;
+			top: -9px;
+			width: 20px;
+		}
+		.soa-ui-dc-content-header {
+			color: #444949;
+			font-size: 14px;
+			padding: 0 0 0 33px;
+		}
+		.soa-ui-dc-section-paragraph {
+			padding-bottom: 8px;
+		}
+		.soa-ui-dc-content-catalog-item {
+			border: none;
+			&s {
+				width: 585px;
+			}
+		}
+		.soa-ui-dc-2col-with-avatar .soa-ui-dc-details-box {
+			padding-left: 6px;
+			width: 530px;
+		}
+		&-no-results {
+			padding: 16px 12px 6px;
+			width: 140px;
+			.soa-ui-dc-section-paragraph {
+				font-size: 13px;
+				text-align: center;
+			}
+		}
+		.soa-ui-dc-buttons {
+			position: absolute;
+			top: 5px;
+			right: 6px;
+		}
+	}
+	&overlay {
+		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+		background: #333;
+		bottom: 0;
+		left: 0;
+		opacity: .3;
+		position: fixed;
+		right: 0;
+		top: 0;
+		z-index: 98;
 	}
 }

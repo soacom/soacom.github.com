@@ -17,13 +17,13 @@
 				<!-- sub nav starts here -->
 				<ul class="soa-ui-dc-subnav soa-ui-dc-clearthis">
 					<li class="soa-ui-dc-subnav-item">
-						<a href="getting-started.html" class="soa-ui-dc-subnav-item-link soa-ui-dc-icon soa-ui-dc-icon-action-dark{% if page.category == 'gs'%} soa-ui-dc-subnav-item-link-active{% endif %}">Getting Started</a>
+						<a href="{{ site.baseurl }}/{{ page.product }}/getting-started.html" class="soa-ui-dc-subnav-item-link soa-ui-dc-icon soa-ui-dc-icon-action-dark{% if page.category == 'gs'%} soa-ui-dc-subnav-item-link-active{% endif %}">Getting Started</a>
 					</li>
 					<li class="soa-ui-dc-subnav-item">
-						<a href="reference.html" class="soa-ui-dc-subnav-item-link soa-ui-dc-icon soa-ui-dc-icon-action-dark{% if page.category == 'ref'%} soa-ui-dc-subnav-item-link-active{% endif %}">Reference</a><!-- replace href -->
+						<a href="{{ site.baseurl }}/{{ page.product }}/learning.html" class="soa-ui-dc-subnav-item-link soa-ui-dc-icon soa-ui-dc-icon-action-dark{% if page.category == 'learn'%} soa-ui-dc-subnav-item-link-active{% endif %}">Learning</a><!-- replace href -->
 					</li>
 					<li class="soa-ui-dc-subnav-item">
-						<a href="learning.html" class="soa-ui-dc-subnav-item-link soa-ui-dc-icon soa-ui-dc-icon-action-dark{% if page.category == 'learn'%} soa-ui-dc-subnav-item-link-active{% endif %}">Learning</a><!-- replace href -->
+						<a href="{{ site.baseurl }}/{{ page.product }}/reference.html" class="soa-ui-dc-subnav-item-link soa-ui-dc-icon soa-ui-dc-icon-action-dark{% if page.category == 'ref'%} soa-ui-dc-subnav-item-link-active{% endif %}">Reference</a><!-- replace href -->
 					</li>
 				</ul>
 				<!-- sub nav ends here -->

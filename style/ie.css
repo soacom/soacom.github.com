@@ -10,3 +10,6 @@
 .soa-ui-dc-detail-column-item-link.soa-ui-dc-icon:before {
 	top: -2px;
 }
+.soa-ui-dc-inline-search-div:before {
+	top: -9px;
+}
