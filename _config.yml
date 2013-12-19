@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 baseurl:
 MAXWEIGHT: 30
+=======
+baseurl: /soacom.github.com
+MAXWEIGHT: 30
+>>>>>>> origin/gh-pages
