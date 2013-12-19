@@ -8,11 +8,6 @@
             <!-- <link rel="stylesheet" href="{{ site.baseurl }}/style/site.min.css" type="text/css" media="screen" /> -->
             <!--[if lt IE 10]><link rel="stylesheet" href="style/ie.css" type="text/css"><![endif]-->
             <!--[if lt IE 9]><link rel="stylesheet" href="style/ie8.css" type="text/css"><![endif]-->
-<<<<<<< HEAD
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-            <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-    </head>
-=======
 <!--
             <script src="{{ site.baseurl }}/js/jquery.min.js"></script>
             <script src="{{ site.baseurl }}/js/lunr.min.js" type="text/javascript" charset="utf-8"></script>
@@ -25,4 +20,3 @@
 -->
             <script src="{{ site.baseurl }}/js/soadocs.min.js"></script>
     </head>
->>>>>>> origin/gh-pages
