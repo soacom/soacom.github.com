@@ -1,0 +1,156 @@
+---
+layout: page
+title: App Versioning
+description: Create, edit, and manage app versions.
+product: cm
+category: learn
+subcategory: Create App
+weight: 20
+type: page
+nav-title: 
+no-nav: true
+no-catalog: true
+---
+
+<h2 id="top">App Versioning</h2>
+
+<p>Create, edit, and manage app versions.</p>
+<div class = "divider1"></div>
+
+<h3 style="color: gray;">Table of Contents</h3>
+<ol class="table_of_contents">
+  <li><a href="#how_does_app_versioning_work">How does app versioning work?</a></li>
+  <li><a href="#how_do_i_create_a_new_version_of_my_app">How do I create a new version of my app?</a></li>
+  <li><a href="#how_do_i_change_the_version_id_of_an_existing_app">How do I change the version ID of an existing app?</a></li>
+  <li><a href="#how_do_i_delete_app_versions">How do I delete app versions?</a></li>
+  <li><a href="#how_do_i_edit_app_version_information">How do I edit app version information?</a></li>
+</ol>
+<div class = "divider1"></div>
+
+
+
+<a name="how_does_app_versioning_work"></a><h3>How does app versioning work?</h3>
+<p>During the app development process, the need may arise where  you require different app versions. For example:</p>
+<ul class="usingOrderedList">
+  <li>You may want to have one app  that is strictly a support/testing version, and another that is a production  version, or you may want to have variations of your app that utilize different  APIs.</li>
+  <li>You may want to transfer an app defined on another system to the platform. In this scenario you would use the <strong>+Version</strong> function on the <em>App Details</em> page to add the app as a version of an app that is already added to the platform and assign a custom App ID and/or Shared Secret.</li>
+<li>You may also want to separate usage monitoring, discussions, and ticket  management by app version.</li>
+</ul>
+
+<p>To facilitate this, the <em>My Apps</em> section includes app  versioning functionality that allows you to create a new instance (i.e., version) of an existing app.</p>
+<p><strong>App Version Composition</strong></p>
+<p>When you create your first app (i.e., Version 1.0):</p>
+<ul class="usingOrderedList">
+  <li>You define an App  Name and a system generated Version ID is assigned.</li>
+<li>A <em>Current Version</em> menu item is displayed on the <em>My Apps</em> title bar.</li>
+</ul>
+
+<p><em>Create New App Version</em></p>
+<p>After creating your Version 1.0 app, you can then create an  app version using the<strong> + Version </strong> function accessible via the <em>App Details </em> page.</p>
+
+<ul class="usingOrderedList">
+<li>An App Version name is composed of the Version ID (i.e., App Name).</li>
+<li>The Version ID is accessible via the <em>Current Version</em> menu. You can also  assign Version Notes and Tags to further identify the app version definition.</li>
+<li>You can assign a custom App Runtime ID and/or Shared Secret.</li>
+<li>The Version ID   can  be modified using the <strong>Edit </strong> function on the <em> App Details </em>page.</li>
+<li>After creating  your app version, you can then assign credentials, submit an API Access Request, and  perform app management activities.</li>
+</ul>
+
+<p><em>Note: When the app version is created, the platform also auto-generates an internal App ID. This App ID is what you  use in API calls. Refer to the API documentation in the API &gt; Documents section for more information. .</em></p>
+<p><strong>  Viewing App Versions</strong></p>
+<p>  You can navigate to an app version by selecting it on the  <em>Current Version</em> menu.</p>
+<p><strong>  Team Management</strong></p>
+<p>  In <em>My Apps</em>, Team Member assignments apply to ALL apps versions. A unique set of Team Members cannot be assigned to a specific app version.</p>
+<p><strong>  App Management</strong></p>
+<p>  App versions can be managed using a variety of different  tools available in the <em>App Details</em> page.</p>
+
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_create_a_new_version_of_my_app"></a><h3>How do I create a new version of my app?</h3>
+<p>To create a new app version:</p>
+<ol>
+	<li>Navigate to <em>My Apps &gt; App Details</em> for the app you would like to create a version for.</li>
+  <li>Select <strong>+ Version</strong>. The <em>Edit App Info </em> page displays. The following information displays:<br />
+    <br />
+    <table cellspacing="0px" class="doctable" style="width: 80%;">
+      <thead>
+      <tr>
+        <th width="20%">Name</th>
+        <th width="80%">Description</th>
+</tr>
+</thead>
+<tbody>
+          <tr class="t2row">
+              <td>App Name</td>
+              <td>A read-only field that displays the descriptive name for your app.</td>
+        </tr>
+      <tr class="t1row">
+        <td>Version ID</td>
+        <td>A text box that allows you to specify the app version name. This name will display on the <em>Overview </em> section of the <em>My Apps &gt; Details</em> page.</td>
+      </tr>
+      <tr class="t2row">
+        <td>Tags</td>
+        <td>A text box that allows you to enter tags or keywords that can be used to search for posts or tickets in the App or API <em>Boards</em>.</td>
+      </tr>
+      <tr class="t1row">
+        <td>App Runtime ID</td>
+        <td>A text box that allows you to enter a custom app identity for the current app definition. If left blank, the app will be randomly assigned an App ID (i.e., identity) in the format &lt;fedmember&gt; - &lt;random-hex&gt;. Note that an App ID cannot be changed after an App ID is assigned. You must create a new app version using the <strong>+Version</strong> function on the <em>App Details</em> page and issue a custom app identity.</td>
+      </tr>
+      <tr class="t2row">
+        <td>Shared Secret</td>
+        <td>A text box that allows you to enter a custom Shared Secret for the current app definition. If left blank, a shared secret is automatically generated and can be viewed using the <strong>Show Keys &gt; Click to View </strong> function on the <em>App Details</em> page. A Shared Secret can be regenerated for a specific app using the <strong>Regenerate Ke</strong>y function on the <strong>App Details</strong> page.</td>
+      </tr>
+      <tr class="t1row">
+        <td>Visibility</td>
+        <td>A radio button that allows you to configure whether you would like your app to be public or private.</td>
+      </tr>
+      <tr class="t2row">
+        <td>App Description</td>
+        <td>A read-only field that displays your app description.</td>
+      </tr>
+      <tr class="t1row">
+        <td>Version Description</td>
+        <td>A text box that allows you to specify a detailed description of your app version.</td>
+      </tr>
+        <tr class="t2row">
+        <td>App Website</td>
+        <td>A text box that allows you to specify a URL for the website associated with the app you are defining.</td>
+</tr>
+</tbody>
+</table>
+<br />
+</li>
+  <li>Specify the Version ID, Tags, App Runtime ID (auto-generated if not specified), Shared Secret (auto-generated if not specified), Visibility (Public/Private), Version Description, and App Website (optional). Click <strong>Confirm</strong> to commit your changes.</li>
+</ol>
+
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_change_the_version_id_of_an_existing_app"></a><h3>How do I change the version ID of an existing app?</h3>
+<p>The &quot;Version ID&quot; (i.e., name) of the app version can be changed using the <strong>Edit  </strong> function on the<em>  App Details </em> page. See <a href="#how_do_i_edit_app_version_information">How do I edit app version information?</a> for instructions.</p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_delete_app_versions"></a><h3>How do I delete app versions?</h3>
+<p>Deleting an app version is standard app management task. See <a href="access_apis_api_access.htm#how_do_i_delete_my_app">How do I delete my app</a>? for details.</p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_edit_app_version_information"></a><h3>How do I edit app version information?</h3>
+<p>App version information can be changed using the <strong>Edit  </strong> function in the <em> App Details  </em>page.</p>
+<h5>To modify app version information:</h5>
+<ol>
+  <li>Navigate to <em>My Apps </em> and select the app that includes information you  would like to update. The <em>App Details </em> page displays.</li>
+  <li>Select the app version from the <em>Current Version</em> drop-down menu.</li>
+  <li>Select  <strong>Edit</strong>. The <em>Edit App Info</em> popup displays.</li>
+  <li>Update the version information (App Name, Version ID, Tags, App Description, Version Description, and App Website). Click <strong>Confirm </strong>to commit changes.</li>
+</ol>
+<p><a href="#top">Back to top</a></p>
+
+<div class = "divider1"></div>
+
