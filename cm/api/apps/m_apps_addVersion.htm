@@ -1,0 +1,216 @@
+---
+layout: apipage
+title: POST&nbsp;/api/apps/{AppID}/versions Operation | Apps Service | Community Platform API
+description:  Adds a  version of an app&#8212;either the original version when the app is created, or a new version created later.
+product: cm
+category: ref
+nav-title: POST&nbsp;/api/apps/{AppID}/versions
+no-nav: true
+no-catalog: true
+---
+
+<h2><a name="top"></a>POST&nbsp;apps/{AppID}/versions Method</h2>
+<p><!-- #BeginLibraryItem "/Library/desc_addVersion.lbi" -->
+Adds a  version of an app&#8212;either the original version when the app is created, or a new version created later.<!-- #EndLibraryItem --></p>
+<p>When a new app is created, this method should be invoked immediately following successful completion of the <span class="apidoc_code"><a href="m_apps_addApp.htm">POST&nbsp;apps</a></span> method.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Administrator</a>. When a user invokes this method to create an app, successful completion of the operation gives the user a role as team member. When the current operation, <span class="apidoc_code">POST&nbsp;/api/apps/{AppID}/versions</span>, is invoked, which should immediately follow successful completion of <span class="apidoc_code"><a href="m_apps_addApp.htm">POST&nbsp;apps</a></span>, the user already has the required team membership as assigned by the <span class="apidoc_code"><a href="m_apps_addApp.htm">POST&nbsp;apps</a></span> operation.</p>
+<p><!-- #BeginLibraryItem "/Library/_authtokenrenewal.lbi" -->
+<strong>Authorization token renewal</strong>: This operation changes information that is reflected in the authorization token; therefore, when invoking this operation, you  must also renew the token.<!-- #EndLibraryItem --></p><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p>This topic includes the following sections:</p>
+<table width="600" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="200"><ul>
+  <li><a href="#httpmethod">HTTP Method</a></li>
+  <li><a href="#endpoint">URL</a></li>
+  <li><a href="#samplerequest">Sample Request</a></li>
+  <li><a href="#requestheaders">Request Headers</a></li>
+  <li><a href="#requestparameters">Request Parameters</a></li>
+</ul>
+</td>
+    <td width="400"><ul>
+  <li><a href="#response">Response</a></li>
+  <li><a href="#sampleresponse">Sample Response</a></li>
+  <li><a href="#responseheaders">Response Headers</a></li>
+  <li><a href="#responsebody">Response Body</a></li>
+  <li><a href="#errorcodes">Error Codes/Messages</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><h3 id="httpmethod">HTTP Method</h3>
+<p class="httpverb">POST</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="endpoint">URL</h3>
+<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/apps/{AppID}/versions</pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="samplerequest">Sample Request</h3>
+<p>The example below sends information about the initial version of a crossword puzzle app.</p>
+<p><strong>Sample request URL</strong></p>
+<pre>https://&lt;hostname&gt;/api/apps/app10037.open/versions</pre>
+<p><strong>Sample request headers</strong></p>
+<pre>POST&nbsp;/api/apps/app10037.open/versions HTTP/1.1
+Host: <!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!-- #EndLibraryItem -->
+Accept: */*
+Content-Type: application/json; charset=UTF-8</pre>
+<p><strong>Sample request body</strong></p>
+<pre><span id="s-1">{</span><br />Â Â <span id="s-2">&quot;Name&quot;</span><span id="s-3">:</span><span id="s-4">&quot;1.0&quot;</span><span id="s-5">,</span><br />Â Â <span id="s-6">&quot;Description&quot;</span><span id="s-7">:</span><span id="s-8">&quot;1.0&quot;</span><span id="s-9">,</span><br />Â Â <span id="s-10">&quot;Tag&quot;</span><span id="s-11">:</span><span id="s-12">[</span><br />Â Â Â Â <span id="s-13">&quot;Puzzle&quot;</span><span id="s-14">,</span><br />Â Â Â Â <span id="s-15">&quot;crossword&quot;</span><span id="s-16">,</span><br />Â Â Â Â <span id="s-17">&quot;game&quot;</span><span id="s-18">,</span><br />Â Â Â Â <span id="s-19">&quot;Android&quot;</span><br />Â Â <span id="s-20">]</span><span id="s-21">,</span><br />Â Â <span id="s-22">&quot;AppID&quot;</span><span id="s-23">:</span><span id="s-24">&quot;app10037.open&quot;,</span><span id="s-25"></span><br />Â Â <span id="s-26">&quot;InitialEnvironment&quot;</span><span id="s-27">:</span><span id="s-28">&quot;Sandbox&quot;</span><span id="s-29">,</span><br />Â Â <span id="s-30">&quot;Visibility&quot;</span><span id="s-31">:</span><span id="s-32">&quot;Public&quot;</span><span id="s-33">,</span><br />Â Â <span id="s-34">&quot;WebsiteAddress&quot;</span><span id="s-35">:</span><span id="s-36">&quot;&quot;</span><br /><span id="s-37">}</span></pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="requestheaders">Request Headers</h3>
+<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#httprequestheaders">HTTP Request Headers</a>.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr>
+      <th width="20%">Header</th>
+      <th width="80%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
+        <td><!-- #BeginLibraryItem "/Library/hdrval_accept_textplain.lbi" -->
+Any Accept header value that supports a response Content-Type of <strong>text/plain</strong> is valid; for example, <strong>*/*</strong>.<!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+        <td><a href="../Ref_apireference.htm#contenttype_request">Content-Type</a></td>
+        <td><!-- #BeginLibraryItem "/Library/hdrval_content_type_req_json.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+  </tr>
+    </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="requestparameters">Request Parameters</h3>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr>
+      <th width="11%">Parameter</th>
+      <th width="9%">Parm Type</th>
+      <th width="11%">Data Type</th>
+      <th width="11%">Required</th>
+      <th width="58%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../Ref_IDsOnThePlatform.htm#id_appid">AppID</a></td>
+      <td>Path</td>
+      <td>string</td>
+      <td>Required</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_AppID.lbi" -->
+The unique ID for the specified app.<!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+      <td>ApplicationVersion</td>
+      <td>Body</td>
+      <td><a href="../obj/o_apps_ApplicationVersion.htm">ApplicationVersion</a></td>
+      <td>Optional</td>
+      <td>Information about the app version, such as name, description, and tags.</td>
+  </tr>
+    </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="response">Response</h3>
+<p id="id_successstatement">If successful, this method returns HTTP status code 200, with the AppVersionID of the app version in plain text.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="sampleresponse">Sample Response</h3>
+<p id="id_sampleresponse">The sample response below shows the AppVersionID of the app version in plain text.</p>
+
+<p><strong>Sample response headers</strong></p>
+<pre>HTTP/1.1 200 OK
+Date: Wed, 19 Sep 2012 16:03:19 GMT
+Content-Type: text/plain
+Atmo-Renew-Token: renew</pre>
+
+<p><strong>Sample response body</strong></p>
+<pre>72zNE5InKlf2z00y8fWSp3AU.open</pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="responseheaders">Response Headers</h3>
+<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#httpresponseheaders">HTTP Response Headers</a>.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+<thead>
+  <tr bgcolor="#DDDDDD">
+    <th width="20%">Header</th>
+    <th width="80%">Description</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+      <td><a href="../Ref_apireference.htm#atmorenewtoken">Atmo-Renew-Token</a></td>
+<td><strong>renew</strong></td>
+  </tr>
+    <tr>
+      <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_content_type_rsp_textplain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem --></td>
+  </tr>
+</tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="responsebody">Response Body</h3>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+<thead>
+  <tr bgcolor="#DDDDDD">
+    <th width="20%">Name</th>
+    <th width="15%">Type</th>
+    <th width="65%">Description</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+      <td><a href="../Ref_IDsOnThePlatform.htm#id_appversionid">AppVersionID</a></td>
+      <td>string</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_AppVersionID.lbi" -->
+The unique ID for the specified app version.<!-- #EndLibraryItem --></td>
+  </tr>
+</tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="errorcodes">Error Codes/Messages</h3>
+<p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Item</th>
+      <th width="80%">Value</th>
+    </tr>
+  </thead>
+    <tr>
+      <td><a href="../Ref_apireference.htm#http500">500</a></td>
+      <td>An error occurred processing the call. </td>
+  </tr>
+</table>
+<p><a href="../Ref_apireference.htm#errormessages">Full list of Community Platform API error messages.</a></p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<table width="600" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="300"><ul>
+  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
+  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+</ul>
+</td>
+    <td width="300"><ul>
+  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
+  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><hr />

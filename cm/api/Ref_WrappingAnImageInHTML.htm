@@ -1,0 +1,41 @@
+---
+layout: apipage
+title: Ajax File Upload with document.domain Set Manually | Reference Material | Community Platform API
+description: Most browsers enforce the same origin security policy, which means that the parent window and an iframe can communicate only if they have the same domain name. It's a security measure to help prevent malicious activity.
+product: cm
+category: ref
+nav-title: Ajax File Upload with document.domain Set Manually 
+no-nav: true
+no-catalog: true
+---
+
+<h2><a name="top"></a>Ajax File Upload with document.domain Set Manually</h2>
+<p>Most browsers enforce the same origin security policy, which means that the parent window and an iframe can communicate only if they have the same domain name. It's a security measure to help prevent malicious activity.</p>
+<p>In order to work with this security policy when uploading files such as avatar images to the platform,whenever we create an iframe in the Community Platform user interface we pass the <span class="apidoc_code">wrapInHTML</span> request parameter. In response, the API returns a script tag, with the security domain set, wrapped in HTML.</p>
+<p>Below is an example of code you can use:</p>
+<pre>&lt;iframe id="ifFileManager" style="width:100%;height:100%;" 
+frameborder="0" src="/resources/global/upload.html?dynamic=true"&gt;&lt;/iframe&gt;</pre>
+<p>This is a way of integrating the file upload controls in the UI and getting the response into JavaScript without changing the browser context.</p>
+<p>For example, the user interface  runs the addPicture operation like this, with <span class="apidoc_code">wrapInHTML</span> set to <strong>true</strong> and the document.domain value specified:</p>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->dropbox/pictures?wrapInHTML=true&amp;document.domain=&lt;hostname&gt;</pre>
+<p class="apidoc_note"><strong>Note</strong>: for information about the <strong>wrapInHTML</strong> parameter, see <a href="Ref_WrapInHTMLParameter.htm">The &quot;Wrap In HTML&quot; Parameter</a>.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<table width="600" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="300"><ul>
+  <li><a href="index.htm">Community Platform API: Overview</a></li>
+  <li><a href="glossary_communityplatform.htm">Glossary of Terms</a></li>
+  <li><a href="docconventions.htm">Documentation Conventions</a></li>
+</ul>
+</td>
+    <td width="300"><ul>
+  <li><a href="authenticationandsecurity.htm">Authentication and Security</a></li>
+  <li><a href="troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="Ref_apireference.htm">Community Platform API Reference Material</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><hr />

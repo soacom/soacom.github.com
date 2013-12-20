@@ -1,0 +1,217 @@
+---
+layout: apipage
+title: PUT&nbsp;/api/apps/versions/{AppVersionID}/securitymechanisms Operation | Apps Service | Community Platform API
+description:  Changes the security mechanism selected for the specified app.
+product: cm
+category: ref
+nav-title: PUT&nbsp;/api/apps/versions/{AppVersionID}/securitymechanisms
+no-nav: true
+no-catalog: true
+---
+
+<h2><a name="top"></a>PUT&nbsp;apps/versions/{AppVersionID}/securitymechanisms Method</h2>
+<p><!-- #BeginLibraryItem "/Library/desc_ModifyAppSecurity.lbi" -->
+Changes the security mechanism selected for the specified app.<!-- #EndLibraryItem --></p>
+<p>There are two app security mechanisms available:</p>
+<ul>
+  <li>SharedSecret</li>
+  <li>KeyInfo</li>
+</ul>
+<p>For more information about security mechanisms on the platform, see <a href="../authenticationandsecurity.htm">API Authentication and Security on the Community Platform</a>.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Administrator</a></p>
+<!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p>This topic includes the following sections:</p>
+<table width="600" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="200"><ul>
+  <li><a href="#httpmethod">HTTP Method</a></li>
+  <li><a href="#endpoint">URL</a></li>
+  <li><a href="#samplerequest">Sample Request</a></li>
+  <li><a href="#requestheaders">Request Headers</a></li>
+  <li><a href="#requestparameters">Request Parameters</a></li>
+</ul>
+</td>
+    <td width="400"><ul>
+  <li><a href="#response">Response</a></li>
+  <li><a href="#sampleresponse">Sample Response</a></li>
+  <li><a href="#responseheaders">Response Headers</a></li>
+  <li><a href="#responsebody">Response Body</a></li>
+  <li><a href="#errorcodes">Error Codes/Messages</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><h3 id="httpmethod">HTTP Method</h3>
+<p class="httpverb">PUT</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="endpoint">URL</h3>
+<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/apps/versions/{AppVersionID}/securitymechanisms</pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="samplerequest">Sample Request</h3>
+<p id="id_samplerequest">The example below shows initiation of a change in security mechanism.</p>
+<p><strong>Sample request URL</strong></p>
+<pre>https://&lt;hostname&gt;/api/apps/versions/6qwiRCRmwN24jjUU7eEDwP2q.open/securitymechanisms</pre>
+<p><strong>Sample request headers</strong></p>
+<pre>
+Content-Type: application/json</pre>
+<p><strong>Sample request body</strong></p>
+<pre>To come</pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="requestheaders">Request Headers</h3>
+<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#httprequestheaders">HTTP Request Headers</a>.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr>
+      <th width="20%">Header</th>
+      <th width="80%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_accept_textplain.lbi" -->
+Any Accept header value that supports a response Content-Type of <strong>text/plain</strong> is valid; for example, <strong>*/*</strong>.<!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+      <td><a href="../Ref_apireference.htm#contenttype_request">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_content_type_req_json.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+  </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="requestparameters">Request Parameters</h3>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr>
+      <th width="11%">Parameter</th>
+      <th width="9%">Parm Type</th>
+      <th width="11%">Data Type</th>
+      <th width="11%">Required</th>
+      <th width="58%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../Ref_IDsOnThePlatform.htm#id_appversionid">AppVersionID</a></td>
+      <td>Path</td>
+      <td>string</td>
+      <td>Required</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_AppVersionID.lbi" --> The unique ID for the specified app version.<!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+      <td>ModifyAppSecurityRequest</td>
+      <td>Body</td>
+      <td><a href="../obj/o_apps_ModifyAppSecurityRequest.htm">ModifyAppSecurityRequest</a></td>
+      <td>Required</td>
+      <td><!-- #BeginLibraryItem "/Library/o_apps_ModifyAppSecurityRequest.lbi" -->Includes information about a request to modify the security information for an app.<!-- #EndLibraryItem -->All values are required.</td>
+    </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="response">Response</h3>
+<p id="id_successstatement">If successful, this method returns HTTP status code 200, with the AppVersionID for the relevant app.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="sampleresponse">Sample Response</h3>
+<p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
+
+<p><strong>Sample response headers</strong></p>
+<pre>HTTP/1.1 200 OK
+Date: Tue, 30 Oct 2012 18:20:19 GMT
+Content-Type: text/plain</pre>
+
+<p><strong>Sample response body</strong></p>
+<pre>6qwiRCRmwN24jjUU7eEDwP2q.open</pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="responseheaders">Response Headers</h3>
+<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#httpresponseheaders">HTTP Response Headers</a>.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+<thead>
+  <tr bgcolor="#DDDDDD">
+    <th width="20%">Header</th>
+    <th width="80%">Description</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+      <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_content_type_rsp_textplain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem --></td>
+  </tr>
+</tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="responsebody">Response Body</h3>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+<thead>
+  <tr bgcolor="#DDDDDD">
+    <th width="20%">Name</th>
+    <th width="15%">Type</th>
+    <th width="65%">Description</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+      <td><a href="../Ref_IDsOnThePlatform.htm#id_appversionid">AppVersionID</a></td>
+      <td>string</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_AppVersionID.lbi" --> The unique ID for the specified app version.<!-- #EndLibraryItem --></td>
+  </tr>
+</tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="errorcodes">Error Codes/Messages</h3>
+<p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Item</th>
+      <th width="80%">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../Ref_apireference.htm#http404">404</a></td>
+      <td>The resource could not be found.</td>
+  </tr>
+    <tr>
+      <td><a href="../Ref_apireference.htm#http500">500</a></td>
+      <td>An error occurred processing the call. </td>
+  </tr>
+  </tbody>
+</table>
+<p><a href="../Ref_apireference.htm#errormessages">Full list of Community Platform API error messages.</a></p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<table width="600" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="300"><ul>
+  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
+  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+</ul>
+</td>
+    <td width="300"><ul>
+  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
+  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><hr />

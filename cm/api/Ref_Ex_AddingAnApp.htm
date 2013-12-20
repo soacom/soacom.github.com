@@ -1,0 +1,79 @@
+---
+layout: apipage
+title: Example- Adding an App | Reference Material | Community Platform API
+description: This example walks you through adding an app to Community Platform by using the API rather than the user interface. One use of this sequence is to build code that will load multiple APIs via the platform. This could be useful if you are just getting started on Community Platform and have many APIs.
+product: cm
+category: ref
+nav-title: Example- Adding an App 
+no-nav: true
+no-catalog: true
+---
+
+<h2><a name="top"></a>Example: Adding an App</h2>
+<p>This example walks you through adding an app to Community Platform by using the API rather than the user interface. One use of this sequence is to build code that will load multiple APIs via the platform. This could be useful if you are just getting started on Community Platform and have many APIs.</p>
+<p>This exercise assumes that you already have a valid login for Community Platform. You can't add an app unless you're an authorized user. Before running the procedures below, go into the user interface to set up your user profile.</p>
+<p>Essentially, you'll need to complete three activities, in sequence:</p>
+<ol>
+  <li>Log in using your authorized user profile you've already set up. Operation: <span class="apidoc_code"><a href="login/m_login_login.htm">POST&nbsp;/api/login</a></span>.</li>
+  <li>Create an app. This sets up basic parameters, but you must immediately add a version. An app isn't valid without at least one version, but you need the AppID that's returned when you add an app, so that you can use it to add an app version. Operation: <span class="apidoc_code"><a href="apps/m_apps_addApp.htm">POST&nbsp;apps</a></span>.</li>
+  <li>Create a version. Operation: <span class="apidoc_code"><a href="apps/m_apps_addVersion.htm">POST&nbsp;/api/apps/{AppID}/versions</a></span>.</li>
+</ol>
+<p>Once you've completed the above steps, the app is ready for use.</p>
+<p>Follow the detailed instructions below.</p>
+<h4>To add an app in the Community Platform using the API</h4>
+<ol>
+  <li>Log in via the API, using your own email and password in the body of the operation instead of the placeholder values given below.
+    <ul>
+      <li>HTTP method: POST</li>
+      <li>URL: <strong><span class="apidoc_div_codeendpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem --></span>login</strong></li>
+      <li>Accept header: <strong>application/json</strong></li>
+      <li>Content-Type header: <strong>application/json</strong></li>
+      <li>Request Body: <strong>{&quot;email&quot;:&quot;MyEmailAddress&quot;,&quot;password&quot;:&quot;MyPassword&quot;}</strong></li>
+    </ul></li>
+  <li>Add the app. In your API call, use the values below, modifying the URL path if needed, and filling your own values for name and description in the Request Body (URL encoding not needed):
+    <ul>
+          <li>HTTP method: POST</li>
+      <li>URL: <strong><span class="apidoc_div_codeendpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem --></span>apps</strong></li>
+      <li>Accept header: <strong>text/plain</strong></li>
+      <li>Content-Type header: <strong>application/json</strong></li>
+      <li>Request Body: <strong>{&quot;Name&quot;:&quot;MyAppName&quot;,&quot;Description&quot;:&quot;My App Description.&quot;}</strong></li>
+    </ul></li>
+  <li>Take the AppID returned in the response; you will use it for the next operation.</li>
+  <li>Add the app version. In your API call, use the following, substituting the correct AppID in the URL and also in the request body:
+    <ul>
+      <li>HTTP method: POST</li>
+      <li>URL: <strong><span class="apidoc_div_codeendpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem --></span>apps/{AppID}/versions</strong></li>
+      <li>Accept header: <strong>text/plain</strong></li>
+      <li>Content-Type header: <strong>application/json</strong></li>
+      <li>Request Body: <strong>{&quot;Name&quot;:&quot;xxx&quot;,&quot;Description&quot;:&quot;xxx.&quot;,&quot;Tag&quot;:[&quot;xxx&quot;,&quot;xxx&quot;],&quot;AppID&quot;:&quot;appxxx.open&quot;,&quot;InitialEnvironment&quot;:&quot;Sandbox&quot;,&quot;Visibility&quot;:&quot;xxx&quot;}</strong></li>
+    </ul>
+  </li>
+  <li>Repeat steps 2-4 as needed to add subsequent apps.</li>
+  <li>When done, remember to log out. Use the following values:
+      <ul>
+        <li>URL: <strong>{xxx}</strong></li>
+        <li>Accept header: <strong>text/plain</strong></li>
+        <li>Content-Type header: <strong>application/json</strong></li>
+        <li>Request Body: <strong>{xxx}</strong></li>
+    </ul></li>
+</ol>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<table width="600" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="300"><ul>
+  <li><a href="index.htm">Community Platform API: Overview</a></li>
+  <li><a href="glossary_communityplatform.htm">Glossary of Terms</a></li>
+  <li><a href="docconventions.htm">Documentation Conventions</a></li>
+</ul>
+</td>
+    <td width="300"><ul>
+  <li><a href="authenticationandsecurity.htm">Authentication and Security</a></li>
+  <li><a href="troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="Ref_apireference.htm">Community Platform API Reference Material</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><hr />

@@ -1,0 +1,70 @@
+---
+layout: apipage
+title: Descriptor Object | APIs Service | Community Platform API
+description: Requirements vary depending on the way you are providing the WSDL information-
+product: cm
+category: ref
+nav-title: Descriptor Object 
+no-nav: true
+no-catalog: true
+---
+
+<h2><a name="top"></a>Descriptor Object</h2><!-- #BeginLibraryItem "/Library/parm_descriptor.lbi" -->
+SOAP APIs only: Includes information about the WSDL that contains the technical details about the API version. For SOAP APIs, this is required in the request message when adding or updating an API version.<!-- #EndLibraryItem --><p>Requirements vary depending on the way you are providing the WSDL information:</p>
+<ul>
+  <li>File upload: If you uploaded the WSDL file, using the Dropbox API, only the WsdlId is required. The WsdlId is the Dropbox ID for the file you uploaded.</li>
+  <li>URL: If you provided a URL for the WSDL, you must provide the same URL here as well as the WsdlId.</li>
+</ul>
+<p><strong>Note</strong>: For information about using the Dropbox to upload the WSDL file, see <span class="apidoc_code"><a href="../dropbox/m_dropbox_readWsdlZip.htm">POST&nbsp;/api/dropbox/wsdls</a></span> (for uploading a WSDL ZIP file).</p>
+
+<p class="usedby">This object is used by the following operations:</p>
+<ul>
+  <li>Operations that reference the <a href="o_apis_APIVersion.htm">APIVersion</a> object</li>
+  <li>Operations that reference the <a href="o_apis_TargetAPI.htm">TargetAPI</a> object</li>
+</ul>
+
+<p>The properties included in the <strong>Descriptor</strong> object are listed below.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr>
+      <th width="15%">Property</th>
+      <th width="15%">Type</th>
+      <th width="10%">Required</th>
+      <th width="60%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>WsdlURL</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td>The URL for the WSDL that contains the technical details about this API version.</td>
+  </tr>
+    <tr>
+      <td>WsdlId</td>
+      <td>long</td>
+      <td>Required</td>
+      <td>Dropbox ID for the WSDL that contains the technical details about this API version. This ID is returned by the Dropbox API when you upload the WSDL file.</td>
+  </tr>
+    </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<table width="600" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="300"><ul>
+  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
+  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+</ul>
+</td>
+    <td width="300"><ul>
+  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
+  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><hr />

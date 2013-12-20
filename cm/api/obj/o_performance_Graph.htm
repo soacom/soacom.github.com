@@ -1,0 +1,83 @@
+---
+layout: apipage
+title: Graph Object | Shared Service, Performance | Community Platform API
+description: Contains information about a graph showing metric test information.
+product: cm
+category: ref
+nav-title: Graph Object 
+no-nav: true
+no-catalog: true
+---
+
+<h2><a name="top"></a>Graph Object</h2>
+<p><!-- #BeginLibraryItem "/Library/o_performance_Graph.lbi" -->Contains information about a graph showing metric test information.<!-- #EndLibraryItem --></p>
+
+<p class="usedby">This object is used by the following operations:</p>
+<ul>
+  <li><span class="apidoc_code"><a href="../apps/b_apps_getMetrics.htm">GET&nbsp;/api/apps/versions/{AppVersionID}/metrics</a></span></li>
+</ul>
+
+<p>The properties included in the <strong>Graph</strong> object are listed below.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr>
+      <th width="15%">Property</th>
+      <th width="15%">Type</th>
+      <th width="70%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>StartTime</td>
+      <td>dateTime</td>
+      <td>Start time for the graph's data, in format YYYY-MM-DDTHH:MM:SSZ (all date/times are returned in Zulu time). </td>
+  </tr>
+    <tr>
+      <td>EndTime</td>
+      <td>dateTime</td>
+      <td>End time for the graph's data, in format YYYY-MM-DDTHH:MM:SSZ (all date/times are returned in Zulu time). </td>
+  </tr>
+    <tr>
+      <td>Summary</td>
+      <td><a href="o_performance_SummaryType.htm">SummaryType</a></td>
+      <td><p>Optional, if requested: An array of summary intervals. If the &quot;ShowSummary&quot; parameter was &quot;true&quot; in the request, four summary intervals are included in the graph, with durations of 0, 5, 15, and 60 minutes.</p>
+        <ul class="apidoctable_ul">
+          <li>@Duration: Duration of the summary interval in the format PxM where M is minutes and x is the number of minutes. </li>
+          <li>Metric: An array of metrics for the summary interval.<br />
+            - Type: Type of metric, such as, &quot;avgResponseTime&quot;. <br />
+            - Value: Integer value of the metric.
+            </li>
+        </ul></td>
+  </tr>
+    <tr>
+      <td>Interval</td>
+      <td><a href="o_performance_IntervalType.htm">IntervalType</a>[&nbsp;]</td>
+      <td>An array of detail intervals. @StartTime is the beginning of the interval, in Zulu time.</td>
+    </tr>
+    <tr>
+      <td>Test</td>
+      <td><a href="o_performance_TestType.htm">TestType</a>[&nbsp;]</td>
+      <td>Contains information about a type of metric test.</td>
+    </tr>
+    </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<table width="600" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="300"><ul>
+  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
+  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+</ul>
+</td>
+    <td width="300"><ul>
+  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
+  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><hr />

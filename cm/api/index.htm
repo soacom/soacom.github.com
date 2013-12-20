@@ -1,0 +1,162 @@
+---
+layout: apipage
+title: Overview | Enterprise API Platform API
+description: The Enterprise API Platform API is a REST-based API that supports activities relating to setting up, managing, and supporting app and API owners and all other platform users. It has many features and capabilities to support such activities as logging in and out, setting up apps and APIs, creating contracts between apps and APIs, creating discussions and reviews, commenting on discussions and reviews, creating and managing groups such as app teams and Private API groups, and many others.
+product: cm
+category: ref
+weight: 9
+nav-title: EAP API Overview 
+no-nav: 
+no-catalog:
+---
+
+<h2><a name="top"></a>Enterprise API Platform API Doc: Overview</h2>
+<p>The Enterprise API Platform API is a REST-based API that supports activities relating to setting up, managing, and supporting app and API owners and all other platform users. It has many features and capabilities to support such activities as logging in and out, setting up apps and APIs, creating contracts between apps and APIs, creating discussions and reviews, commenting on discussions and reviews, creating and managing groups such as app teams and Private API groups, and many others.</p>
+<p>This documentation includes information on each operation that's available including parameters, possible values, and in most cases examples of requests and responses in JSON, XML, or plain text as applicable.</p>
+<p>The documentation also includes various reference topics to help you with additional information on a range of subjects including <a href="Ref_ExecutingWorkflowActions.htm">workflows</a>, <a href="Ref_AuthorizationRolesOnThePlatform.htm">roles</a>, <a href="authenticationandsecurity.htm">security</a>, <a href="Ref_RSSChannelsOnThePlatform.htm">RSS channels</a>, <a href="Ref_MetricsOnThePlatform.htm">metrics</a>, and many others. For a full list, see <a href="Ref_apireference.htm">Enterprise API Platform API Reference Material</a>.</p>
+<p>This topic includes:</p>
+
+<ul>
+  <li><a href="#methods">Services and Operations (Methods)</a></li>
+  <li><a href="#gettingstarted">Getting Started</a></li>
+  <li><a href="#usingtheapitomodify">Using the API to Modify the Platform</a></li>
+</ul>
+
+<h3><a name="methods"></a>Services and Operations (Methods)</h3>
+<p>The Enterprise API Platform API services are summarized in the following sections, with a link to detailed information about the operations available in each service.</p>
+<p class="apidoc_note"><strong>Note</strong>: Where information is missing, it will be available in a later version of the documentation.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+<thead>
+    <tr>
+    <th width="33%">Service Name</th>
+    <th width="33%">Service Name</th>
+    <th width="34%">Service Name</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+      <td>Alerts</td>
+      <td><a href="index_dropbox.htm">Dropbox</a></td>
+      <td>Open ID</td>
+      </tr>
+    <tr>
+      <td><a href="index_apis.htm">APIs</a></td>
+      <td>Events</td>
+      <td><a href="index_passwordmanagement.htm">Password Management</a></td>
+      </tr>
+    <tr>
+      <td>App Identity</td>
+      <td>Federated Search</td>
+      <td><a href="index_policies.htm">Policies</a></td>
+      </tr>
+    <tr>
+      <td>App Submissions</td>
+      <td>Federation Members</td>
+      <td>Properties</td>
+      </tr>
+    <tr>
+      <td><a href="index_apps.htm">Apps</a></td>
+      <td>Followings</td>
+      <td><a href="index_reviews.htm">Reviews</a></td>
+      </tr>
+    <tr>
+      <td>Boards</td>
+      <td>Forward Proxies</td>
+      <td><a href="index_search.htm">Search</a></td>
+      </tr>
+    <tr>
+      <td>Businesses</td>
+      <td><a href="index_groups.htm">Groups</a></td>
+      <td>Security Domains</td>
+      </tr>
+    <tr>
+      <td>Console Resources</td>
+      <td><a href="index_legals.htm">Legals</a></td>
+      <td>Tags</td>
+      </tr>
+    <tr>
+      <td><a href="index_content.htm">Content</a></td>
+      <td><a href="index_login.htm">Login</a></td>
+      <td>Technology</td>
+      </tr>
+    <tr>
+      <td>Contracts</td>
+      <td>Notifications</td>
+      <td>Tenant Administration</td>
+      </tr>
+    <tr>
+      <td><a href="index_deploymentzones.htm">Deployment Zones</a></td>
+      <td>OAuth Clients</td>
+      <td><a href="index_tickets.htm">Tickets</a></td>
+      </tr>
+    <tr>
+      <td><a href="index_discussions.htm">Discussions</a></td>
+      <td>OAuth Client Providers</td>
+      <td><a href="index_users.htm">Users</a></td>
+      </tr>
+</tbody>
+</table>
+
+
+<h4 id="service_apis">Working with APIs</h4>
+<p><!-- #BeginLibraryItem "/Library/descsvc_apis.lbi" -->
+The APIs service provides a REST interface and a set of operations for managing APIs in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->. This API includes operations to support complete API lifecycle management, including creating and managing APIs and API versions, managing API OAuth details, managing legal agreements and the API Board, API monitoring and documentation, and relationships between APIs and apps.<!-- #EndLibraryItem --></p>
+<p><a href="index_apis.htm">Full list of operations, descriptions, and links for the APIs service.</a></p>
+
+
+<h4 id="service_apps">Working with Apps</h4>
+<p><!-- #BeginLibraryItem "/Library/descsvc_apps.lbi" -->
+The Apps service provides a REST interface and a set of operations for managing apps in the Enterprise API Platform. This service incluces operations to support complete app lifecycle management, including such activities as creating, modifying, and deleting apps and app versions, managing app teams, and creating, modifying, and deleting the app security mechanism.<!-- #EndLibraryItem --></p>
+<p><a href="index_apps.htm">Full list of operations, descriptions, and links for the Apps service.</a></p>
+
+
+<h4 id="service_login">Logging In</h4>
+<p><!-- #BeginLibraryItem "/Library/descsvc_login.lbi" -->
+The Login service provides a REST interface and a set of operations that deal with logging in and out, including getting an authentication token, renewing an authorization token, and deleting an authorization token cookie. This API also includes interfaces to perform SSOLogin.
+<!-- #EndLibraryItem --></p>
+<p><a href="index_login.htm">Full list of operations, descriptions, and links for the Login service.</a></p>
+
+
+<h4 id="service_users">Working with Users</h4>
+<p><!-- #BeginLibraryItem "/Library/descsvc_users.lbi" -->
+The Users service provides operations for managing users in the Enterprise API Platform, such as adding, modifying, and deleting users and retrieving user information.<!-- #EndLibraryItem --></p>
+<p><a href="index_users.htm">Full list of operations, descriptions, and links for the Users service.</a></p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3><a name="gettingstarted"></a>Getting Started</h3>
+<p>To get started with using the Enterprise API Platform API, follow the steps below.</p>
+<ol>
+  <li>Decide which services you need to use, and which methods (operations).</li>
+  <li>Make sure the platform that your app is on (for example, .NET, iOS, or Android) supports the following:
+    <ul>
+      <li>Cookies</li>
+      <li>HTTP 1.1 protocol</li>
+      <li>HTTP GET, POST, PUT, and DELETE&nbsp;operations</li>
+    </ul>
+  </li>
+  <li>Check whether any authentication is required. This will depend on the nature of your app. If needed, make sure you request one of the accepted types of authentication through the Enterprise API Platform user interface.<br />
+  <strong>Note</strong>: If you are invoking any Enterprise API Platform operation that requires authentication, you must first invoke the login API to get the authentication token. Once you have that, you can use it to invoke the other operations. The token is only valid for 30 minutes, so the application that's invoking the Enterprise API Platform operation must renew the token, or get a new token, periodically.</li>
+  <li>For each operation, refer to the documentation for detailed information about the request message format and expected response.</li>
+</ol>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3><a name="usingtheapitomodify"></a>Using the API to Modify the Platform</h3>
+<p>You can use the Enterprise API Platform API to help speed up tasks normally completed through the Enterprise API Platform user interface, such as setting up your apps or APIs.</p>
+<p>However, if you're running the API to make changes to the Enterprise API Platform user interface it's very important that you check for successful results along the way, and that if necessary you undo actions that haven't successfully completed. You must make sure you restore the user interface to a good stable condition with regard to your data.</p>
+<p>For example, when you create an app you must then also create at least one app version. Suppose you successfully create the app, but when creating the app version you forget some values in the request body and the operation fails. You now have an app without a version. If you can't successfully add the version, delete the app using the <span class="apidoc_code"><a href="apps/m_apps_deleteApp.htm">DELETE&nbsp;/api/apps/{AppID}</a></span><a href="apps/m_apps_deleteApp.htm"></a> operation. Then remedy the error and try again.</p>
+<p>When you're done, remember to invoke the <span class="apidoc_code"><a href="login/m_login_logout.htm">POST&nbsp;/api/login/logout</a></span><a href="login/m_login_logout.htm"></a> API to log out.</p>
+
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="authenticationandsecurity.htm">Authentication and Security</a></li>
+  <li><a href="troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="Ref_apireference.htm">Enterprise API Platform API Reference Material</a></li>
+  <li><a href="glossary_communityplatform.htm">Glossary of Terms</a></li>
+  <li><a href="docconventions.htm">Documentation Conventions</a></li>
+</ul>
+<hr />

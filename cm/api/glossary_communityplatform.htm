@@ -1,0 +1,426 @@
+---
+layout: apipage
+title: Glossary | Community Platform API
+description: 
+product: cm
+category: ref
+nav-title: Glossary 
+no-nav: true
+no-catalog: true
+---
+
+<h2><a name="top"></a>Glossary of Terms</h2>
+<dl class="apidoc_dl">
+
+
+<dt><a name="ajax"></a>Ajax</dt>
+<dd>An abbreviation for <strong>Advanced JavaScript and XML</strong>&#8212;A term for a set of related web development techniques that can be used together to update parts of a webpage without reloading the entire page. For an example of how the platform works with Ajax, see <a href="Ref_WrappingAnImageInHTML.htm">Wrapping an Image in HTML</a>.</dd>
+
+
+<dt><a name="alert"></a>alert</dt>
+<dd>A type of <a href="#dashboardentry">Dashboard item</a> designed to inform app or API administrators about an issue such as an SLA (Service Level Agreement) violation.</dd>
+
+
+<dt><a name="api"></a>API</dt>
+<dd>A key resource in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->. An API provides a business with a way of using the Internet to extend business capabilities to connect with new customers in new ways. In this context an API is a Web service exposed outside the enterprise, typically using RESTful design principles, and often with JSON content. </dd>
+
+
+<dt><a name="apiaccessrequest"></a>API access request</dt>
+<dd>A specific type of <a href="#connectionrequest">Connection Request</a>. An API access request governs the relationship between an app and an API for the life of the connection. When an app team member requests a connection to an API on behalf of the app, the API administrator is notified of the pending request and can respond accordingly. The administrator's action to either approve or deny the request changes the <a href="#state">state</a> of the connection.</dd>
+
+
+<dt><a name="apiadmin"></a>API Administrator</dt>
+<dd>One of the <a href="#role">roles</a> defined in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> is that of the API Admin. Each API must have at least one Admin, and can have more. The API Admin approves or rejects connection requests, moderates the API's <a href="#board">Board</a>, views and manages alerts and trouble tickets, and manages documents, policies, and other information associated with the API. The API Admin can also view performance and usage data for the entire API, and can invite others to be Admins for the same API. For more information, see <a href="Ref_ManagingGroupsOnThePlatform.htm#groups_apiadmin">Managing Groups on the Platform</a>.</dd>
+
+
+<dt><a name="app"></a>app</dt>
+<dd>An app (application) is a piece of software that delivers specific capabilities to its users. In the context of the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->, an app is a piece of software that consumes one or more APIs.</dd>
+
+
+<dt><a name="appteammember"></a>app team member</dt>
+<dd>One of the <a href="#role">roles</a> defined in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> is that of the app team member. Each app most have at least one team member and can have more. An app team member initiates contract requests, such as API access requests, moderates the app's <a href="#board">Board</a>, and views and manages trouble tickets relating to the app. The app team member can also view performance and usage data for the app's API usage, and can invite others to be team members for the same app. All app team members have the same rights. For more information, see <a href="Ref_ManagingGroupsOnThePlatform.htm#groups_appteam">Managing Groups on the Platform</a>.</dd>
+
+
+<dt><a name="appid"></a>AppID</dt>
+<dd>When a user registers an app in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> platform, the app is assigned an AppID. The AppID is the unique identifier for the app within the platform. All API calls include the AppID.</dd>
+
+
+<dt><a name="authorization"></a>Authorization header</dt>
+<dd>The Authorization request header contains the username and password. It's sent by the client, to authenticate the client with the server. A client includes this header in its request after receiving a 401 Authentication Required response from the server. The Authorization header includes the authorization scheme and the authorization value.</dd>
+
+
+<dt><a name="avatar"></a>avatar</dt>
+<dd>Within the platform, an avatar is an image that can be associated with a resource such as an app, API, user, or Private API Group.</dd>
+
+
+<dt><a name="board"></a>Board</dt>
+<dd>In the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->, every resource, such as an app or API, has a Board that displays all feed entries for the resource. Users with approved connections to the resource can post items to the resource's Board according to privileges. For example, a member of a specific app team can post items to the Board for that app. Users with approved connections also see relevant Board items in their personal home Feed.</dd>
+
+
+<dt><a name="boarditem"></a>Board item</dt>
+<dd>An individual entry on a resource's <a href="#board">Board</a>. A Board item can be an <a href="#alert">Alert</a>, <a href="#apiaccessrequest">API Access Request (Contract Request)</a>, <a href="#discussion">Discussion</a>, <a href="#membershiprequest">Group Membership Invitation</a>, or <a href="#ticket">Ticket</a>. It can also be an item on a <a href="#customboardid">custom board</a>.</dd>
+
+
+<dt><a name="business"></a>business</dt>
+<dd>In the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->, a business is an entity that owns and publishes one or more APIs.</dd>
+
+
+<dt><a name="businessadmin"></a>Business Administrator</dt>
+<dd>One of the roles defined in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> is that of the <a href="Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Administrator</a>. A business can own one or more APIs and apps, and must have at least one Administrator. The Business Administrator automatically has administrator rights over all the APIs and apps owned by the business as well as all the users who are part of the business. For more information, see <a href="Ref_ManagingGroupsOnThePlatform.htm#groups_bizadmin">Managing Groups on the Platform</a>.</dd>
+
+
+<dt><a name="cache"></a>cache</dt>
+<dd>When an HTTP message is sent and a response received, the client has the capability of caching the response. The response must therefore define whether the response content should be cached or not, via the Cache-Control response header. In the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->, responses should never be cached, so the value is <strong>no-cache</strong>.</dd>
+
+
+
+<dt><a name="captcha"></a>captcha</dt>
+<dd>A visual challenge/response test used to maintain login security and help protect against security breaches. The test is designed to ensure that there is in fact a human logging in, not an automated process trying to break the password security.</dd>
+
+
+<dt><a name="comment"></a>comment</dt>
+<dd>A short piece of text that a logged-in user can associate with a resource, such as an app or API, for which the user has access rights. For example, a member of an app team can comment on discussions and reviews associated with the app.</dd>
+
+
+<dt><a name="connection"></a>connection</dt>
+<dd>A relationship between resources in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->&#8212;such as the API access relationship between an app and an API that it's using.</dd>
+
+
+<dt><a name="connectionrequest"></a>connection request</dt>
+<dd>A workflow process that governs the relationship between two resources for the life of the connection. It is a request to establish a <a href="#connection">connection</a> between resources; for example, an <a href="#apiaccessrequest">API access request</a><!-- or a <a href="#followrequest">follow request</a>-->.</dd>
+
+
+<dt><a name="content"></a>content</dt>
+<dd>In the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->, the term <em>content</em> refers to unstructured content uploaded by the user and displayed in the user interface, such as API documentation. The content is indexed by the Search feature. Only APIs and the platform itself have content; there is no content associated with other resources such as apps and groups.</dd>
+
+
+<dt><a name="contract"></a>contract</dt>
+<dd>A specific type of <a href="#connection">Connection</a> that defines a consumption relationship between an app and an API. When an app admin (app team member) wants the app to be able to consume an API, he/she initiates a request for API access. The API access relationship is a contract, and is subject to an approval workflow. The contract is requested by the app team member and is approved or rejected by the API admin; it can then be cancelled or suspended by the API admin or cancelled by an app team member.</dd>
+<dd> The contract governs access rights and QoS (Quality of Service) policies for all transactions between the app and the API. It also provides a convenient way of collecting and presenting metrics and usage data.</dd>
+
+
+<dt><a name="contractrequest"></a>contract request</dt>
+<dd>A request for a <a href="#contract">contract</a>.</dd>
+
+
+<dt><a name="coordinateduniversaltime"></a>Coordinated Universal Time (UTC)</dt>
+<dd>Coordinated Universal Time (UTC), also called &quot;Zulu time,&quot; is the primary time standard in general use. It essentially equates to Greenwich Mean Time (GMT), but is more scientifically precise. In the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> API, time values are represented in the standard UTC date/time format <strong>YYYY-MM-DDTHH:MM:SSZ</strong>. Example: <strong>2013-12-31T15:45:00-04:00</strong>.</dd>
+
+
+<dt><a name="csv"></a>CSV</dt>
+<dd>Comma-separated value format, a format commonly used for exporting tabular data. For example, in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->, the <span class="apidoc_code"><a href="apps/b_apps_exportMetrics.htm">GET&nbsp;/api/apps/versions/{AppVersionID}/metrics/export</a></span><a href="apps/b_apps_exportMetrics.htm"></a> operation exports the metric information in CSV format.</dd>
+
+
+<dt><a name="customboardid"></a>custom board ID</dt>
+<dd>The platform supports creation of a custom Board upon request. The custom Board has a unique BoardID.</dd>
+
+
+<dt><a name="dashboard"></a>Dashboard</dt>
+<dd>The user's Dashboard, also called home page or feed, is the first page the user sees after logging in. The Dashboard includes information relating to apps and APIs the user is associated with. It's an aggregation of all the Board items for all the resources the user is following. An individual user can modify the types of information that are displayed on his/her Dashboard. See also <a href="#dashboardentry">Dashboard entry</a>.</dd>
+
+
+<dt><a name="dashboardentry"></a>Dashboard entry/item</dt>
+<dd>An informational item that appears on a user's Dashboard. The entries on a specific user's Dashboard are Board items for resources the user is following. A Dashboard entry can be any of the following: <a href="#alert">Alert</a>, <a href="#apiaccessrequest">API Access Request (Contract Request)</a>, <a href="#discussion">Discussion</a>, <a href="#membershiprequest">Group Membership Invitation</a>, or <a href="#ticket">Ticket</a>.</dd>
+
+
+<dt><a name="developer"></a>developer</dt>
+<dd>A developer of an app that will consume an API.</dd>
+
+
+<dt><a name="deploymentzone"></a>deployment zone</dt>
+<dd>If an API is hosted on the platform and using the proxy capability, the API owner can specify the deployment zones, such as a geographical area or a specific data center, that the endpoint will be proxied in. The <span class="apidoc_code"><a href="deploymentzones/m_deploymentzones_getDeploymentZones.htm">GET&nbsp;/api/deploymentzones</a></span> operation returns a list of valid deployment zones.</dd>
+
+
+<dt><a name="discussion"></a>discussion</dt>
+<dd>In the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->, an authorized user can create a discussion topic about a resource (app or API) on the resource's Board. A discussion is typically, but not necessarily, created by someone other than the owner or administrator of the resource. Discussion entries are not threaded; users comment on the original item rather than on the comments/replies to the original item. Users can, however, <a href="#mark">mark</a> or <a href="#unmark">unmark</a> the discussion itself and/or one or more discussion comments.</dd>
+<dd>Each discussion has a title and one or more comments. The visibility of a discussion is controlled by the visibility of the resource it's associated with; for example, a discussion about a Limited (Private) API can only be seen by administrators and Private API Group members associated with that API.</dd>
+
+
+<dt><a name="discussiontype"></a>discussion type</dt>
+<dd>In an earlier version of the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->, discussions were categorized in separate discussion types, such as Comment or Question. Discussion types are no longer in use. In certain cases, a DiscussionType parameter might still be returned in a response message; if so, it can be ignored.</dd>
+
+
+<dt><a name="duration"></a>duration</dt>
+<dd>The duration of a request or response message is expressed with the Duration data type in the format <strong>PnYnMnDTnHnMnS</strong>. For example, a message response time of <strong>P0Y0M0DT0H0M0.022S</strong> indicates 22 milliseconds. For an expanded definition of Duration, refer to <a href="Ref_apireference.htm#datatypes_duration">Data Types</a>.</dd>
+
+
+<dt><a name="entityreferences"></a>entity references</dt>
+<dd><!-- #BeginLibraryItem "/Library/define_entityreferences.lbi" -->When an HTTP GET operation in the platform returns information in the form of an RSS channel, it very often includes entity references. Where an RSS item represents an object, the entity references include additional information about the object. For example, if the RSS channel returns information about an app version, the entity reference might include information about the app to which the app version belongs. All relevant relationships to the object returned in the RSS response are represented in the entity references.<!-- #EndLibraryItem --></dd>
+
+
+<dt><a name="environment"></a>environment</dt>
+<dd>Ap app/API contract can apply either to the Sandbox environment, which is a testing area, or the production environment. See also <a href="Ref_Values.htm#values_contractenvironment">App/API Contract Environment Values</a>.</dd>
+
+
+<dt><a name="fdn"></a>FDN</dt>
+<dd>The Fully Distinguished Name of a platform member. This applies to federated members. To uniquely identify an item across federation members, the Relative Distinguished Name (<a href="#rdn">RDN</a>) is joined with the hosting federation member's name to create a Fully Distinguished Name (FDN).</dd>
+
+
+<dt><a name="federation"></a>federation</dt>
+<dd>Two or more <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> <a href="#tenant">tenants</a> who have unified to create a community in which APIs can be shared by users of both tenants.</dd>
+<dd>The systems that participate in a federation (federation members, tenants) share information without requiring duplication of that information in each member and without relinquishing control of the information. Developers who sign up as users of one federation member can access information from a second federation member directly, without the need for signup or authentication by the second member. A federation setup requires the establishment of a trust relationship between federation members.</dd>
+
+
+<dt><a name="federationmember"></a>federation member</dt>
+<dd>An individual member of a <a href="#federation">federation</a>.</dd>
+
+
+<dt><a name="feedentry"></a>feed entry</dt>
+<dd>See <a href="#dashboardentry">Dashboard entry</a>.</dd>
+
+
+<dt><a name="followrequest"></a>follow request</dt>
+<dd>A specific type of <a href="#connectionrequest">Connection Request</a> used to establish a "follow" relationship between a user and a <a href="#resource">resource</a> that can be followed. Currently, only apps, APIs, and groups can be followed.</dd>
+
+
+<dt><a name="group"></a>group</dt>
+<dd>1) The term "group" is used in many instances to refer to any of the following types of groups in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->: app teams, Private API groups, API Administrator groups, Site Administrator groups, or independent groups.</dd>
+<dd>2) &quot;Group&quot; is sometimes used specifically to mean a <a href="#privateapigroup">Private API Group</a>.</dd>
+
+
+<dt><a name="groupadministrator"></a>group administrator</dt>
+<dd>For an independent group on the platform, the administrator has greater rights than a <a href="#leader">leader</a> or <a href="#member">member</a>. For more information, see <a href="Ref_ManagingGroupsOnThePlatform.htm#groups_independentgroup">Managing Groups on the Platform</a>. For a <a href="#privateapigroup">Private API Group</a>, the Administrator role is held by the API Adminstrator.</dd>
+
+
+<dt><a name="guid"></a>GUID</dt>
+<dd>Globally unique identifier for a resource (same as <a href="#fdn">FDN</a>). For more information about unique IDs used by the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->, see <a href="Ref_IDsOnThePlatform.htm">IDs on the Platform</a>.</dd>
+
+
+<dt><a name="gzip"></a>gzip</dt>
+<dd>A standard encoding method sometimes used to compress HTTP request or response messages.</dd>
+
+
+<dt><a name="homepage"></a>home page</dt>
+<dd>A user who signs up to the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> has a customized <a href="#dashboard">Dashboard</a> which is that user's home page&#8212;the first page the user sees when logging in. A user who hasn't signed up doesn't have a home page.</dd>
+
+
+<dt><a name="identity_app"></a>identity (app)</dt>
+<dd><!-- #BeginLibraryItem "/Library/parm_Identity_app.lbi" -->When adding an app version, you can specify a custom identity name for the app version. If no custom value is specified, in response messages this property defaults to the reverse of the RuntimeID, with a dash. For example, if the RuntimeID is <strong>123456.open</strong>, the value for the Identity property would be <strong>open-123456</strong>.<!-- #EndLibraryItem --></dd>
+
+
+<dt><a name="independentgroup"></a>independent group</dt>
+<dd>A group that exists independently of any single app or API. Any authorized user can create an independent group, and becomes the first administrator. The administrator can then invite other members and can remove members and change a member's role. There are three roles; admin, leader, and member. All members can see resources the group is linked to. Admins have full rights over the group. For more information, see <a href="Ref_ManagingGroupsOnThePlatform.htm#groups_independentgroup">Managing Groups on the Platform</a>.</dd>
+
+
+<dt><a name="json"></a>JSON</dt>
+<dd>An acronym for JavaScript Object Notation, JSON uses a subset of the JavaScript syntax to describe an object clearly and succinctly. One of the advantages of JSON over XML for API messages is that message content conveyed in the JSON format is much more concise than the same content conveyed in XML, consuming less bandwidth.</dd>
+
+
+<dt><a name="label_ticket"></a>label (for a ticket)</dt>
+<dd>A label assigned to a ticket to indicate the tickets's priority rating. For valid values, see <a href="Ref_Values.htm#values_ticketlabel">Ticket Label Values</a>.</dd>
+
+
+<dt><a name="leader"></a>leader</dt>
+<dd>In the context of a <a href="#privateapigroup">Private API Group</a>, a leader is a senior group member. A leader can invite additional members to the group and can change another member's status, from <a href="#member">member</a> to leader or vice versa.</dd>
+
+
+<dt><a name="app_limited"></a>limited-visibility app</dt>
+<dd><!-- #BeginLibraryItem "/Library/define_visibility.lbi" -->
+There are two visibility settings for an app: <strong>public</strong> and <strong>limited</strong>. Public means that anyone can see information about the app. Limited visibility means that the app is private; only app team members can see information about the app.<!-- #EndLibraryItem --> For more information, see <a href="Ref_apireference.htm#publicandprivateapps">Public and Limited (Private) Apps</a>.</dd>
+
+
+<dt><a name="logindomain"></a>login domain</dt>
+<dd>A domain that is the user's current or possible login domain. For more information, see <a href="Ref_ManagingDomainsOnThePlatform.htm">Managing Domains on the Platform</a>.</dd>
+
+
+<dt><a name="mark"></a>mark</dt>
+<dd>Users can give positive feedback to items such as discussion topics and associated comments, reviews, and other resources such as tickets, using the <strong>Mark</strong> function. Choosing Mark provides positive feedback, in the same way as &quot;Like&quot; in Facebook&reg;. The Mark value toggles on and off, so a user can mark or <a href="#unmark">unmark</a> a discussion comment. In the user interface, the <strong>mark</strong> icon is a thumbs-up, and the <strong>unmark</strong> icon is a closed fist. </dd>
+
+
+<dt><a name="member"></a>member</dt>
+<dd>In the context of a <a href="#privateapigroup">Private API Group</a>, a group member has access to all information relating to the Private API and the group, including tickets and discussions. Members cannot invite additional members or change the status of other members. A member can be promoted to <a href="#leader">leader</a> status by the API Admin or by another leader.</dd>
+
+
+<dt><a name="membershiprequest"></a>membership request (invitation)</dt>
+<dd>An invitation to another individual, whether a registered user or not, to join a <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> group or team such as an app team. API Administrators can invite others to be API Administrators; app team members can invite others to the app team. A Site Administrator, Private API Administrator, or Independent Group member can also issue a membership request in the same way.</dd>
+
+
+<dt><a name="notificationstate"></a>notification state</dt>
+<dd>When a user first receives a notification, the notification state is <strong>Unread</strong>. Other valid notification states are: <strong>Read</strong>, <strong>Archived</strong>.</dd>
+
+
+<dt><a name="oauth"></a>OAuth</dt>
+<dd>OAuth is a popular Web security protocol that enables a user to grant permission to a third-party application to access the user's Web resources without sharing passwords or personal information. The third-party application first facilitates a connection to the holder of the Web resources so that the user can log in and approve the access. For example, User A could allow Site B, a subscription-only online training site, to have access to Account C, the user's credit card account, by authorizing a monthly debit of $25. User A would first sign in and approve the monthly debit. Site B could complete subsequent monthly debits without further interaction with User A; however, User A could cancel the access at any time. OAuth has been likened to a valet key on a car which gives access to certain features of the car without giving full access.</dd>
+<dd>Essentially, OAuth allows a web-based or mobile application to use an API exposed by another web or mobile application without sharing passwords.</dd>
+
+
+<dt><a name="opensearch"></a>OpenSearch</dt>
+<dd>OpenSearch is a widely used set of technologies that sets standards for the publishing of search results. For more information, see <a href="Ref_RSSChannelsOnThePlatform.htm#pagingofreturnedrssitems">Paging of Returned RSS Items</a>.</dd>
+
+
+<dt><a name="privateapi"></a>Private API</dt>
+<dd>An <a href="#api">API</a> that is designated with a <a href="#visibility_api">visibility</a> of Limited. A Private API and all content associated with it including documentation, discussions, tickets, and reviews is invisible to all users who are not specifically authorized to view it. Only Administrators and Private API Group members who have specifically been granted access can see the Private API.</dd>
+
+
+<dt><a name="privateapigroup"></a>Private API Group</dt>
+<dd>A group associated with a Limited (Private) API and created by an API admin for that API. Each member has a group member role, either as <a href="#member">member</a> or <a href="#leader">leader</a>. Each group can have multiple leaders as well as members. For more information, see <a href="Ref_ManagingGroupsOnThePlatform.htm#groups_privateapi">Managing Groups on the Platform</a>.</dd>
+
+
+<dt><a name="private"></a>private resource</dt>
+<dd>A resource that is designated as Private can only be accessed by authorized users. A Private API can only be seen by an API Administrator, Private API Group Member, business administrator, or site administrator; a Private App can only be seen by app team members and the business or site administrators; a Private Group can only be seen by invited group members and the business or site administrators..</dd>
+
+
+<dt><a name="proxyapi"></a>proxy API</dt>
+<dd>When you set up your API on the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> and choose to use the Proxy feature, all traffic to your API endpoints is channeled via the platform. This offers significant benefits, including the ability to apply policies and monitor traffic at the proxy.</dd>
+
+
+<dt><a name="app_public"></a>public app</dt>
+<dd><!-- #BeginLibraryItem "/Library/define_visibility.lbi" -->
+There are two visibility settings for an app: <strong>public</strong> and <strong>limited</strong>. Public means that anyone can see information about the app. Limited visibility means that the app is private; only app team members can see information about the app.<!-- #EndLibraryItem --></dd>
+
+
+<dt><a name="pki"></a>public key integration (PKI)</dt>
+<dd>When a user registers an app in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->, the Shared Secret security option is the default. App owners who want to use Public Key Infrastructure (PKI) for secure message signing must specify Public Key Integration as the security option in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> user interface, on the App Details page.</dd>
+<dd>To implement PKI, the app owner must get a public/private key pair, upload the public key to <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->, and use the private key for signing the API requests. The <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> API verifies each incoming request using the public key.</dd>
+
+
+<dt><a name="publicprofile_app"></a>public profile (app)</dt>
+<dd>An app's Public Profile screen allows the app owner to brand the content of the OAuth Authorization screen. It is presented to external end-users of an app, and is used to grant an app rights to use an API. The OAuth Authorization screen applies to both Public and Private apps.</dd>
+
+
+<dt><a name="rdn"></a>RDN</dt>
+<dd>Acronym for Relative Distinguished Name&#8212;a unique identifier assigned to a platform member. In a non-federated scenario, the RDN is sufficient as a unique identifier for each member. <em>See also</em> <a href="#fdn">FDN</a>.</dd>
+
+
+<dt><a name="resource"></a>resource</dt>
+<dd>In the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->, a Resource is an item, such as an App or API, which has its own Board and set of activities. There are six resource types: <a href="#api">API</a>, <a href="#app">app</a>, <a href="#business">business</a>, <a href="#contract">contract</a>, <a href="#group">group</a>, and <a href="#user">user</a>. In some instances, an app or API <a href="#version">version</a> is treated as a separate resource, since there might be multiple versions for a single app or API.</dd>
+
+
+<dt><a name="review"></a>review</dt>
+<dd>A type of <a href="#boarditem">Board item</a>. Users can write reviews for any resources to which they have access, such as apps and APIs.</dd>
+
+
+<dt><a name="role"></a>role</dt>
+<dd>Within a <a href="#privateapigroup">Private API Group</a>, each group member has a role, either as <a href="#member">Member</a> or <a href="#leader">Leader</a>. The Private API Admin cam invite team members and designate roles.</dd>
+<dd>Within an <a href="#independentgroup">independent group</a>, each group member has a role, either as Member, Admin, or Leader. An Admin can invite or remove other team members and designate roles.</dd>
+<dd>Other roles on the platform include App Team Member, Site Administrator, API Administrator, and Site User.</dd>
+
+<dt><a name="rss"></a>RSS</dt>
+<dd>RSS is a widely used technology that allows users to subscribe to website content they're interested in. Once users subscribe to RSS feeds, updated content is automatically delivered to them in the form of an <a href="#rsschannel">RSS channel</a>, without the users having to check the individual websites for updates.</dd>
+<dd>In the context of the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->,  many GET&nbsp;operations return the results in the format of an RSS channel. For more information, see <a href="Ref_RSSChannelsOnThePlatform.htm">RSS Channels on the Platform</a>.</dd>
+
+
+<dt><a name="rsschannel"></a>RSS channel</dt>
+<dd>The format in which information is conveyed using the RSS technology is called an RSS feed, web feed, RSS channel, or RSS document. It includes full or summarized text plus metadata (information about the text).</dd>
+<dd>Many of the operations in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> API use RSS in the response. In general, GET&nbsp;methods that return any type of list return the information as an RSS channel, usually in either JSON or XML format as specified in the request message.</dd>
+<dd>For more information on how the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> uses RSS channels, see <a href="Ref_RSSChannelsOnThePlatform.htm">RSS Channels on the Platform</a>.</dd>
+
+
+<dt><a name="scope"></a>scope</dt>
+<dd>A scope value for an API version defines a subset of resources to which permission can be independently granted. In addition, the permission granted can be controlled by visibility (permission to view) or access (permission to send messages, to either the sandbox or production endpoint). </dd>
+<dd>In earlier versions of the platform, access could only be granted per resource; either full API access, or no access. Defining scopes for an API allows the API administrator to control the granularity of API access granted to an app. When scopes are defined, app owners can request access to specific resources they want to access, and API owners can grant access to specific resources they want to share. <!--A scope can also be defined and assigned to different APIs, so if you want a subset of two different APIs you can use the same scope for both, although you must still grant permission for each API version.--></dd>
+
+
+<dt><a name="searchvisibility"></a>search visibility</dt>
+<dd>See <a href="#visibility_api">visibility (API)</a> and <a href="#visibility_app">visibility (app)</a>.</dd>
+
+
+<dt><a name="sharedsecret"></a>shared secret</dt>
+<dd>When you register your app, the AppID and Shared Secret are automatically generated. The Shared Secret is a binary hashed value, generated within the secure environment of the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> and known only to you and to the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->. In the Security Credentials section of your app homepage you'll see that the Shared Secret option is the default security mechanism.</dd>
+<dd>The Shared Secret approach follows the WS-Security digest authentication mechanism.</dd>
+
+
+<dt><a name="siteadmin"></a>site administrator</dt>
+<dd>An individual who has responsibility for keeping the site running smoothly. Site administrators have greater access rights than normal users. There can be more than one site administrator. For more information, see <a href="Ref_ManagingGroupsOnThePlatform.htm#groups_siteadmin">Managing Groups on the Platform</a>.</dd>
+
+
+<dt><a name="state"></a>state</dt>
+<dd>1) App version state: The current state of the app. Possible values: <strong>Initial</strong>, <strong>Sandbox</strong>, <strong>Review</strong>, <strong>Approved</strong>, <strong>Live</strong>.</dd>
+<dd>2) API state. The current state of the API.</dd>
+<dd>3) Notification state: See <a href="#notificationstate">notification state</a>.</dd>
+<dd>3) Legal document state: See <a href="Ref_Values.htm#values_legaldocumentstate">legal document state</a>.</dd>
+
+
+<dt><a name="status"></a>status</dt>
+<dd>Individual resources have a status which might include such items as open connection requests, open trouble tickets, number of active consumers, number of active discussions, and number of unresolved alerts. Different resources have different status items.</dd>
+
+
+<dt><a name="swagger"></a>Swagger</dt>
+<dd>A third-party tool provided by the platform for automatic generation of API reference documentation. Swagger is a specification and complete framework implementation for describing, producing, consuming, and visualizing RESTful web services. It produces dynamically generated documentation from the information provided in the API definition. When a user defines an API, the structure is dynamically generated and added to a predefined Swagger template (<strong>resources.swg</strong>). The API Admin can then add title, description, implementation notes, and parameter information. The documentation displayed to the user is a blend of automatically generated content (<a href="#swagger_resource">Swagger resource file</a>) and user-generated content (<a href="#swagger_properties">Swagger properties file</a>).</dd>
+
+
+<dt><a name="swagger_properties"></a>Swagger properties file</dt>
+<dd>Once the Swagger documentation is generated, the user can add comments and additional information. This information is stored in a Swagger properties file named {APIVersionID}.properties; for example, <strong>apiversion17171.open.properties</strong>. When a user views the API documentation in the platform, the user sees a merged combination of the automatically-generated Swagger <a href="#swagger_resource">resource documentation</a> and the user-generated information stored in the Swagger properties file.</dd>
+
+
+<dt><a name="swagger_resource"></a>Swagger resource file</dt>
+<dd>The automatically-generated API documentation file generated by Swagger based on the API definition. See <a href="#swagger">Swagger</a>.</dd>
+
+
+<dt><a name="tag"></a>tag</dt>
+<dd>A tag is essentially a keyword or key phrase that's added to a piece of content, or information associated with a resource, to assist in search results. Several different types of resources can have tags assigned to them; for example, apps, APIs, groups, and tickets. Multiple tags are separated by commas.</dd>
+<dd>For example, if an app is a movie general knowledge game, the app owner might assign tags of movie, game, general knowledge.</dd>
+
+
+<dt><a name="targetapi"></a>target API</dt>
+<dd>If an API is using the platform as a proxy, the TargetAPI is used to define the destination ("next-hop") endpoint for the API.</dd>
+
+
+<dt><a name="tenant"></a>tenant</dt>
+<dd>An individual member of a <a href="#federation">federation</a>. Each tenant generally has its own look and feel. A tenant will typically be a customer that is hosted within a shared system but wants to have some separation from other customers or tenants, while still being able to share information.</dd>
+
+
+<dt><a name="ticket"></a>ticket</dt>
+<dd>A type of feed entry, representing a trouble ticket created to raise an issue with a resource (app or API) or a connection. Tickets are typically created by a consumer of an API. Any member of the community can comment on a ticket, but it can only be marked as Resolved by the original creator or by an administrator of the target resource. For example, if Joe writes a ticket about an issue with the SkyBlue API, only Joe or the SkyBlue API Admin can mark the ticket as Resolved.</dd>
+
+
+<dt><a name="transaction"></a>transaction</dt>
+<dd>In the context of the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> API, a transaction is one instance of an app making a call to an API.</dd>
+
+
+<dt><a name="unmark"></a>unmark</dt>
+<dd>To unmark a discussion, ticket, or other resource means to remove a <a href="#mark">mark</a> previously placed on the resource. In the user interface, the <strong>mark</strong> icon is a thumbs-up, and the <strong>unmark</strong> icon is a closed fist. </dd>
+
+
+<dt><a name="user"></a>user</dt>
+<dd>A person with a registered login ID to the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->. All users must complete the registration process so that the system can gather required information about them before granting access. Each user can choose to define a new username/password combination that will be managed within the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->, or can leverage <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->'s integration with external security providers such as Facebook&reg; for authentication. By completing the signup process, each individual is assigned the role of User; users can then assume other roles, such as API Administrator or App team member.</dd>
+<dd><strong>Note</strong>: To use the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> API, users must sign up with the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> rather than using a third-party authentication provider.</dd>
+
+
+<dt><a name="utc"></a>UTC</dt>
+<dd>See <a href="#coordinateduniversaltime">Coordinated Universal Time (UTC)</a>.</dd>
+
+
+<dt><a name="version"></a>version</dt>
+<dd>Each <a href="#app">app</a> or <a href="#api">API</a> on the platform much have at least one version, and can have multiple versions. When a user creates an app or API on the platform, the first version is created automatically; when using the API it's important to complete both actions. If there is only one app or API version, deleting that version also deletes the app or API.</dd>
+
+
+<dt><a name="viewer"></a>viewer</dt>
+<dd>A Group that has a connection to a Private API. Members of the group have access to the Private API as long as the connection between the group and the API exists, and can see information about the Private API such as documentation and discussions. In future versions of the platform, the definition of Viewer might extend to individual users or businesses.</dd>
+
+
+<dt><a name="visibility"></a>visibility</dt>
+<dd>A setting that controls the types of users who can see an object, such as an app, API, or group, and its associated items such as discussions and tickets. See below: <a href="#visibility_api">visibility (API)</a> and <a href="#visibility_app">visibility (app)</a>. For more information about visibility values, refer to <a href="Ref_Values.htm#values_visibilitysettings">Visibility Settings</a>.</dd>
+
+
+<dt><a name="visibility_api"></a>visibility (API)</dt>
+<dd>A setting that controls the types of users who can see an API and its associated items such as discussions and tickets. Possible values are <strong>Public</strong> or <strong>Limited</strong>. A discussion about a Limited (Private) API can only be seen by administrators and Private API Group members associated with that API. Members must be either invited to a Private API Group associated with the API or invited to be an Administrator for the API, and must then accept the invitation, before they even see the API in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->.</dd>
+
+
+<dt><a name="visibility_app"></a>visibility (app)</dt>
+<dd>A setting that controls the types of users who can see an app and its associated items such as discussions and tickets. Possible values are Public, meaning that anyone can see information about the app, or Limited, meaning that only app team members can see it.</dd>
+
+
+<dt><a name="workflowaction"></a>workflow action</dt>
+<dd>Certain types of activities on the platform must be done in a specific sequence. These are often managed by workflows. Each workflow action changes the state of the resource. Some examples of workflow actions are: requesting or approving an API contract, sending a group membership invitation, or changing the status of a ticket.</dd>
+
+
+<dt><a name="authenticate"></a>WWW-Authenticate response header</dt>
+<dd >A standard HTTP response header used as part of the authentication process used in <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> API calls. When the server receives the request message, it challenges the client for valid authentication via the WWW-Authenticate response header. The client returns the authentication information in an <a href="#authorization">Authorization header</a>. The server validates the client information and then acts on the request message.</dd>
+
+
+<dt><a name="zulutime"></a>zulu time</dt>
+<dd>See <a href="#coordinateduniversaltime">Coordinated Universal Time (UTC)</a>.</dd>
+
+
+</dl>
+<hr />
+<h3 id="relatedtopics">Related Topics</h3>
+<ul>
+  <li><a href="index.htm"><!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> API: Overview</a></li>
+  <li><a href="authenticationandsecurity.htm">Authentication and Security</a></li>
+  <li><a href="troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="Ref_apireference.htm"><!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> API Reference Material</a></li>
+  <li><a href="docconventions.htm">Documentation Conventions</a></li>
+</ul>
+<hr />

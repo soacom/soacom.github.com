@@ -1,0 +1,352 @@
+---
+layout: apipage
+title: PUT&nbsp;/api/apis/versions/{ApiVersionID} Operation | APIs Service | Community Platform API
+description: Updates information about an API version.
+product: cm
+category: ref
+nav-title: PUT&nbsp;/api/apis/versions/{ApiVersionID}
+no-nav: true
+no-catalog: true
+---
+
+<!-- InstanceBeginEditable name="Heading" -->
+<h2><a name="top" id="top"></a>PUT&nbsp;/api/apis/versions/{APIVersionID}</h2><!-- InstanceEndEditable -->
+
+<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
+<p><!-- #BeginLibraryItem "/Library/desc_updateAPIVersion.lbi" -->Updates information about an API version.<!-- #EndLibraryItem --></p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/Library/roles_user.lbi" --> To complete this operation successfully, a user must be logged in<!-- #EndLibraryItem --> and must be an Administrator for the API.</p>
+<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p>This topic includes the following sections:</p>
+<table width="600" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="200"><ul>
+  <li><a href="#httpmethod">HTTP Method</a></li>
+  <li><a href="#endpoint">URL</a></li>
+  <li><a href="#samplerequest">Sample Request</a></li>
+  <li><a href="#requestheaders">Request Headers</a></li>
+  <li><a href="#requestparameters">Request Parameters</a></li>
+</ul>
+</td>
+    <td width="400"><ul>
+  <li><a href="#response">Response</a></li>
+  <li><a href="#sampleresponse">Sample Response</a></li>
+  <li><a href="#responseheaders">Response Headers</a></li>
+  <li><a href="#responsebody">Response Body</a></li>
+  <li><a href="#errorcodes">Error Codes/Messages</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><h3 id="httpmethod">HTTP Method</h3>
+<!-- InstanceBeginEditable name="HTTP Method" -->
+<p class="httpverb">PUT</p>
+<!-- InstanceEndEditable -->
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+<h3 id="endpoint">URL</h3>
+<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/apis/versions/{APIVersionID}</pre><!-- InstanceEndEditable -->
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<!-- InstanceBeginEditable name="Sample Request" -->
+<h3 id="samplerequest">Sample Request</h3>
+<p id="id_samplerequest">The example below adds a third tag to the API version.</p>
+<p><strong>Request URL</strong></p>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion10022.open</pre>
+<p><strong>Sample request headers</strong></p>
+<pre>Content-Type: application/json
+Accept: application/json</pre>
+<p><strong>Sample request body: JSON</strong></p>
+<pre>{
+  "APIVersionID" : "apiversion10022.open",
+  "APIID" : "api10028.open",
+  "Name" : "Payments API Latest",
+  "Description" : "Version 1.3",
+  "Type" : "shttp",
+  "Tag" : [ "Payments version 1.3", "update", "Android" ],
+  "SandboxEndpoint" : "https://acme_payments_2013020804.open.soa.local:9902/",
+  "Endpoints" : {
+    "Endpoint" : [ {
+      "CName" : "acme_payments_2013020804.open.soa.local",
+      "Category" : "Sandbox",
+      "Uri" : "https://open.soa.local:9902/",
+      "ConnectionProperties" : [ ]
+    } ]
+  },
+  "Visibility" : "Public",
+  "Created" : "2013-02-08T16:15:36.894Z",
+  "Updated" : "2013-02-08T19:50:36.190Z",
+  "State" : "com.soa.api.state.open",
+  "ProductionEndpointAccessAutoApproved" : true,
+  "SandboxEndpointAccessAutoApproved" : true,
+  "RatingSummary" : {
+    "Five" : 0,
+    "Four" : 0,
+    "Three" : 0,
+    "Two" : 0,
+    "One" : 0
+  }
+}</pre>
+<p><strong>Sample request body: XML</strong></p>
+<pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;APIVersion xmlns="http://soa.com/xsd/api/1.0" xmlns:ns2="http://soa.com/xsd/resource/1.0"&gt;
+  &lt;APIVersionID&gt;apiversion10022.open&lt;/APIVersionID&gt;
+  &lt;APIID&gt;api10028.open&lt;/APIID&gt;
+  &lt;Name&gt;Payments API Latest&lt;/Name&gt;
+  &lt;Description&gt;Version 1.3&lt;/Description&gt;
+  &lt;Type&gt;shttp&lt;/Type&gt;
+  &lt;Tag&gt;Payments version 1.3&lt;/Tag&gt;
+  &lt;Tag&gt;update&lt;/Tag&gt;
+  &lt;Tag&gt;Android&lt;/Tag&gt;
+  &lt;SandboxEndpoint&gt;https://acme_payments_2013020804.open.soa.local:9902/&lt;/SandboxEndpoint&gt;
+  &lt;Endpoints&gt;
+    &lt;Endpoint&gt;
+      &lt;Category&gt;Sandbox&lt;/Category&gt;
+      &lt;Uri&gt;https://open.soa.local:9902/&lt;/Uri&gt;
+      &lt;CName&gt;acme_payments_2013020804.open.soa.local&lt;/CName&gt;
+    &lt;/Endpoint&gt;
+  &lt;/Endpoints&gt;
+  &lt;Visibility&gt;Public&lt;/Visibility&gt;
+  &lt;Created&gt;2013-02-08T16:15:36.894Z&lt;/Created&gt;
+  &lt;Updated&gt;2013-02-08T19:50:36.190Z&lt;/Updated&gt;
+  &lt;State&gt;com.soa.api.state.open&lt;/State&gt;
+  &lt;ProductionEndpointAccessAutoApproved&gt;true&lt;/ProductionEndpointAccessAutoApproved&gt;
+  &lt;SandboxEndpointAccessAutoApproved&gt;true&lt;/SandboxEndpointAccessAutoApproved&gt;
+  &lt;ns2:RatingSummary&gt;
+    &lt;ns2:Five&gt;0&lt;/ns2:Five&gt;
+    &lt;ns2:Four&gt;0&lt;/ns2:Four&gt;
+    &lt;ns2:Three&gt;0&lt;/ns2:Three&gt;
+    &lt;ns2:Two&gt;0&lt;/ns2:Two&gt;
+    &lt;ns2:One&gt;0&lt;/ns2:One&gt;
+  &lt;/ns2:RatingSummary&gt;
+&lt;/APIVersion&gt;
+</pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Request Headers" -->
+<h3 id="requestheaders">Request Headers</h3>
+<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#httprequestheaders">HTTP Request Headers</a>.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr>
+      <th width="20%">Header</th>
+      <th width="80%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_accept_json_or_appxml.lbi" --><strong>application/json</strong> or <strong>application/xml</strong><!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td><a href="../Ref_apireference.htm#contenttype_request">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_accept_json_or_appxml.lbi" --><strong>application/json</strong> or <strong>application/xml</strong><!-- #EndLibraryItem --></td>
+    </tr>
+    </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Request Parameters" -->
+<h3 id="requestparameters">Request Parameters</h3>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr>
+      <th width="11%">Parameter</th>
+      <th width="9%">Parm Type</th>
+      <th width="11%">Data Type</th>
+      <th width="11%">Required</th>
+      <th width="58%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../Ref_IDsOnThePlatform.htm#id_apiversionid">APIVersionID</a></td>
+      <td>Path</td>
+      <td>String</td>
+      <td>Required</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->
+The unique ID for the specified API version.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>APIVersion</td>
+      <td>Body</td>
+      <td><a href="../obj/o_apis_APIVersion.htm">APIVersion</a></td>
+      <td>Required</td>
+      <td><!-- #BeginLibraryItem "/Library/o_apis_APIVersion.lbi" -->Includes information about an API version.<!-- #EndLibraryItem --> The entire version, including the changed data.</td>
+    </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Response Description" -->
+<h3 id="response">Response</h3>
+<p id="id_successstatement">If successful, this method returns HTTP status code 200, with the updated API version object.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Sample Response" -->
+<h3 id="sampleresponse">Sample Response</h3>
+<p id="id_sampleresponse">The sample response below shows that the API version was successfully updated.</p>
+<p><strong>Sample response headers: JSON</strong></p>
+<pre>Status Code: 200 OK
+Content-Type: application/json
+Date: Fri, 08 Feb 2013 19:51:34 GMT</pre>
+<p><strong>Sample response body: JSON</strong></p>
+<pre>{
+  "APIVersionID" : "apiversion10022.open",
+  "APIID" : "api10028.open",
+  "Name" : "Payments API Latest",
+  "Description" : "Version 1.3",
+  "Type" : "shttp",
+  "Tag" : [ "Payments version 1.3", "update", "Android" ],
+  "SandboxEndpoint" : "https://acme_payments_2013020804.open.soa.local:9902/",
+  "Endpoints" : {
+    "Endpoint" : [ {
+      "CName" : "acme_payments_2013020804.open.soa.local",
+      "Category" : "Sandbox",
+      "Uri" : "https://open.soa.local:9902/",
+      "ConnectionProperties" : [ ]
+    } ]
+  },
+  "Visibility" : "Public",
+  "Created" : "2013-02-08T16:15:36.894Z",
+  "Updated" : "2013-02-08T19:50:36.190Z",
+  "State" : "com.soa.api.state.open",
+  "ProductionEndpointAccessAutoApproved" : true,
+  "SandboxEndpointAccessAutoApproved" : true,
+  "RatingSummary" : {
+    "Five" : 0,
+    "Four" : 0,
+    "Three" : 0,
+    "Two" : 0,
+    "One" : 0
+  }
+}</pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<p><strong>Sample response headers: XML</strong></p>
+<pre>Status Code: 200 OK
+Content-Type: application/xml</pre>
+<p><strong>Sample response body: XML</strong></p>
+<pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;APIVersion xmlns="http://soa.com/xsd/api/1.0" xmlns:ns2="http://soa.com/xsd/resource/1.0"&gt;
+  &lt;APIVersionID&gt;apiversion10022.open&lt;/APIVersionID&gt;
+  &lt;APIID&gt;aapi10028.open&lt;/APIID&gt;
+  &lt;Name&gt;Payments API Latest&lt;/Name&gt;
+  &lt;Description&gt;Version 1.3&lt;/Description&gt;
+  &lt;Type&gt;shttp&lt;/Type&gt;
+  &lt;Tag&gt;Payments version 1.3&lt;/Tag&gt;
+  &lt;Tag&gt;update&lt;/Tag&gt;
+  &lt;Tag&gt;Android&lt;/Tag&gt;
+  &lt;SandboxEndpoint&gt;https://acme_payments_2013020804.open.soa.local:9902/&lt;/SandboxEndpoint&gt;
+  &lt;Endpoints&gt;
+    &lt;Endpoint&gt;
+      &lt;Category&gt;Sandbox&lt;/Category&gt;
+      &lt;Uri&gt;https://open.soa.local:9902/&lt;/Uri&gt;
+      &lt;CName&gt;acme_payments_2013020804.open.soa.local&lt;/CName&gt;
+    &lt;/Endpoint&gt;
+  &lt;/Endpoints&gt;
+  &lt;Visibility&gt;Public&lt;/Visibility&gt;
+  &lt;Created&gt;2013-02-08T16:15:36.894Z&lt;/Created&gt;
+  &lt;Updated&gt;2013-02-08T19:50:36.190Z&lt;/Updated&gt;
+  &lt;State&gt;com.soa.api.state.open&lt;/State&gt;
+  &lt;ProductionEndpointAccessAutoApproved&gt;true&lt;/ProductionEndpointAccessAutoApproved&gt;
+  &lt;SandboxEndpointAccessAutoApproved&gt;true&lt;/SandboxEndpointAccessAutoApproved&gt;
+  &lt;ns2:RatingSummary&gt;
+    &lt;ns2:Five&gt;0&lt;/ns2:Five&gt;
+    &lt;ns2:Four&gt;0&lt;/ns2:Four&gt;
+    &lt;ns2:Three&gt;0&lt;/ns2:Three&gt;
+    &lt;ns2:Two&gt;0&lt;/ns2:Two&gt;
+    &lt;ns2:One&gt;0&lt;/ns2:One&gt;
+  &lt;/ns2:RatingSummary&gt;
+&lt;/APIVersion&gt;
+</pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Response Headers" -->
+<h3 id="responseheaders">Response Headers</h3>
+<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#httpresponseheaders">HTTP Response Headers</a>.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Header</th>
+      <th width="80%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_accept_json_or_appxml.lbi" --><strong>application/json</strong> or <strong>application/xml</strong><!-- #EndLibraryItem --></td>
+    </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Response Body" -->
+<h3 id="responsebody">Response Body</h3>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+<thead>
+  <tr bgcolor="#DDDDDD">
+    <th width="20%">Header</th>
+    <th width="80%">Description</th>
+    </tr>
+</thead>
+  <tbody>
+    <tr>
+      <td><a href="../obj/o_apis_APIVersion.htm">APIVersion</a></td>
+      <td><!-- #BeginLibraryItem "/Library/o_apis_APIVersion.lbi" -->Includes information about an API version.<!-- #EndLibraryItem --> The entire version, including the changed data, is returned.</td>
+    </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<h3 id="errorcodes">Error Codes/Messages</h3>
+<p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
+<!-- InstanceBeginEditable name="Error Messages" -->
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Item</th>
+      <th width="80%">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../Ref_apireference.htm#http500">500</a></td>
+      <td>An error occurred processing the call. </td>
+    </tr>
+  </tbody>
+</table>
+<!-- InstanceEndEditable -->
+<p><a href="../Ref_apireference.htm#errormessages">Full list of Community Platform API error messages.</a></p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<table width="600" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="300"><ul>
+  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
+  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+</ul>
+</td>
+    <td width="300"><ul>
+  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
+  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><hr />

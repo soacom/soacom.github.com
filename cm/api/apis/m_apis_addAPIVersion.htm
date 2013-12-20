@@ -1,0 +1,438 @@
+---
+layout: apipage
+title: POST&nbsp;/api/apis/versions Operation | APIs Service | Community Platform API
+description: Adds an additional API version to an existing API.
+product: cm
+category: ref
+nav-title: POST&nbsp;/api/apis/versions
+no-nav: true
+no-catalog: true
+---
+
+<h2><a name="top"></a>POST&nbsp;/api/apis/versions Method</h2>
+<p><!-- #BeginLibraryItem "/Library/desc_addAPIVersion.lbi" -->Adds an additional API version to an existing API.<!-- #EndLibraryItem --></p>
+<p class="apidoc_note"><strong>Note</strong>: The initial API version is added as part of the <span class="apidoc_code"><a href="m_apis_addAPI.htm">POST&nbsp;apis</a></span> operation when adding the API.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a>.</p>
+<p><!-- #BeginLibraryItem "/Library/_authtokenrenewal.lbi" -->
+<strong>Authorization token renewal</strong>: This operation changes information that is reflected in the authorization token; therefore, when invoking this operation, you  must also renew the token.<!-- #EndLibraryItem --></p><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p>This topic includes the following sections:</p>
+<table width="600" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="200"><ul>
+  <li><a href="#httpmethod">HTTP Method</a></li>
+  <li><a href="#endpoint">URL</a></li>
+  <li><a href="#samplerequest">Sample Request</a></li>
+  <li><a href="#requestheaders">Request Headers</a></li>
+  <li><a href="#requestparameters">Request Parameters</a></li>
+</ul>
+</td>
+    <td width="400"><ul>
+  <li><a href="#response">Response</a></li>
+  <li><a href="#sampleresponse">Sample Response</a></li>
+  <li><a href="#responseheaders">Response Headers</a></li>
+  <li><a href="#responsebody">Response Body</a></li>
+  <li><a href="#errorcodes">Error Codes/Messages</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><h3 id="httpmethod">HTTP Method</h3>
+<p class="httpverb">POST</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="endpoint">URL</h3>
+<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/apis/versions</pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="samplerequest">Sample Request</h3>
+<p id="id_samplerequest">The example below adds a version for the <strong>ACMEPayments</strong> API.</p>
+<p><strong>Request URL</strong></p>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions</pre>
+<p><strong>Sample request headers</strong></p>
+<pre>Content-Type: application/json
+Accept: application/json</pre>
+<p><strong>Sample request body</strong></p>
+<pre>{
+  "APIID":"api10017.open",
+  "Name":"2013020804",
+  "Description":"Version 2013020804",
+  "Type":"shttp",
+  "DefaultProfile":"Any in and out",
+  "Tag":[
+    "Payments version 2013020804"
+  ],
+  "SandboxEndpoint":"https://acme_payments_2013020804.&lt;hostname&gt;/",
+  "Operations":{
+    "Operation":[
+      {
+        "Method":"POST",
+        "Path":"/payments",
+        "Input":[
+
+        ],
+        "InputContentType":"*/*",
+        "OutputContentType":"*/*",
+        "FaultContentType":"*/*",
+        "Name":"addPayment"
+      },
+      {
+        "Method":"GET",
+        "Path":"/payments/{PaymentID}",
+        "Input":[
+          {
+            "Name":"PaymentID",
+            "Type":"path"
+          }
+        ],
+        "InputContentType":"*/*",
+        "OutputContentType":"*/*",
+        "FaultContentType":"*/*",
+        "Name":"getPayment"
+      }
+    ]
+  },
+  "Endpoints":{
+    "Endpoint":[
+      {
+        "Uri":"https://acme_payments_2013020804.&lt;hostname&gt;/",
+        "Category":"Sandbox",
+        "CName":"acme_payments_2013020804.&lt;hostname&gt;",
+        "DeploymentZoneRule":"dzone-rule-2"
+      }
+    ]
+  },
+  "Policies":{
+    "Policy":[
+      {
+        "PolicyKey":"10001-AtmosphereApplicationSecurityPolicy",
+        "PolicyType":"Operational Policy"
+      },
+      {
+        "PolicyKey":"10001-BasicAuditing",
+        "PolicyType":"Operational Policy"
+      },
+      {
+        "PolicyKey":"10001-DetailedAuditing",
+        "PolicyType":"Operational Policy"
+      },
+      {
+        "PolicyKey":"10001-OAuthSecurity",
+        "PolicyType":"Operational Policy"
+      }
+    ]
+  },
+  "TargetAPI":{
+    "Endpoints":{
+      "Endpoint":[
+        {
+          "Uri":"http://www.developer.acme.com/v2013020804",
+          "Category":"Sandbox"
+        }
+      ]
+    },
+    "Type":"shttp",
+    "Operations":{
+      "Operation":[
+        {
+          "Method":"POST",
+          "Path":"/payments",
+          "Input":[
+
+          ],
+          "InputContentType":"application/xml,text/xml,application/json",
+          "OutputContentType":"application/xml,text/xml,application/json",
+          "FaultContentType":"application/xml,text/xml,application/json",
+          "Name":"addPayment"
+        },
+        {
+          "Method":"GET",
+          "Path":"/payments/{PaymentID}",
+          "Input":[
+            {
+              "Name":"PaymentID",
+              "Type":"path"
+            }
+          ],
+          "InputContentType":"application/xml,text/xml,application/json",
+          "OutputContentType":"application/xml,text/xml,application/json",
+          "FaultContentType":"application/xml,text/xml,application/json",
+          "Name":"getPayment"
+        }
+      ]
+    },
+    "Policies":{
+      "Policy":[
+
+      ]
+    },
+    "DefaultProfile":"XML or JSON in/XML or JSON out"
+  },
+  "Visibility":"Public",
+  "Created":"2013-02-08T15:47:09.675Z",
+  "Updated":"2013-02-08T15:47:11.453Z",
+  "State":"com.soa.api.state.open",
+  "ProductionEndpointAccessAutoApproved":true,
+  "SandboxEndpointAccessAutoApproved":true,
+  "RatingSummary":{
+    "Five":0,
+    "Four":0,
+    "Three":0,
+    "Two":0,
+    "One":0
+  },
+  "ProductionEndpoint":null
+}</pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="requestheaders">Request Headers</h3>
+<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#httprequestheaders">HTTP Request Headers</a>.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr>
+      <th width="20%">Header</th>
+      <th width="80%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_accept_json_or_appxml.lbi" --><strong>application/json</strong> or <strong>application/xml</strong><!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td><a href="../Ref_apireference.htm#contenttype_request">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_accept_json_or_appxml.lbi" --><strong>application/json</strong> or <strong>application/xml</strong><!-- #EndLibraryItem --></td>
+    </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="requestparameters">Request Parameters</h3>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr>
+      <th width="11%">Parameter</th>
+      <th width="9%">Parm Type</th>
+      <th width="11%">Data Type</th>
+      <th width="11%">Required</th>
+      <th width="58%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ApiVersion</td>
+      <td>Body</td>
+      <td><a href="../obj/o_apis_APIVersion.htm">ApiVersion</a></td>
+      <td>Required</td>
+      <td><!-- #BeginLibraryItem "/Library/o_apis_APIVersion.lbi" -->Includes information about an API version.<!-- #EndLibraryItem --> The response includes the newly-assigned APIVersionID.</td>
+  </tr>
+</tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="response">Response</h3>
+<p id="id_successstatement">If successful, this method returns HTTP status code 200, with the complete API version object including APIVersionID.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="sampleresponse">Sample Response</h3>
+<p id="id_sampleresponse">The sample response below shows that the API version in the request example was added. The API version information is returned along with the APIVersionID.</p>
+
+<p><strong>Sample response headers</strong></p>
+<pre>Status Code: 200 OK
+Atmo-Renew-Token: renew
+Content-Type: application/json
+Date: Fri, 08 Feb 2013 16:15:35 GMT</pre>
+
+<p><strong>Sample response body</strong></p>
+<pre>{
+  "APIVersionID" : "apiversion10022.open",
+  "APIID" : "api10017.open",
+  "Name" : "2013020804",
+  "Description" : "Version 2013020804",
+  "Type" : "shttp",
+  "DefaultProfile" : "Any in and out",
+  "Tag" : [ "Payments version 2013020804" ],
+  "SandboxEndpoint" : "https://acme_payments_2013020804.&lt;hostname&gt;/",
+  "Operations" : {
+    "Operation" : [ {
+      "Name" : "addPayment",
+      "Method" : "POST",
+      "Path" : "/payments",
+      "InputContentType" : "*/*",
+      "OutputContentType" : "*/*",
+      "FaultContentType" : "*/*",
+      "Input" : [ ]
+    }, {
+      "Name" : "getPayment",
+      "Method" : "GET",
+      "Path" : "/payments/{PaymentID}",
+      "InputContentType" : "*/*",
+      "OutputContentType" : "*/*",
+      "FaultContentType" : "*/*",
+      "Input" : [ {
+        "Name" : "PaymentID",
+        "Type" : "path"
+      } ]
+    } ]
+  },
+  "Endpoints" : {
+    "Endpoint" : [ {
+      "CName" : "acme_payments_2013020804.open.soa.local",
+      "Category" : "Sandbox",
+      "Uri" : "https://acme_payments_2013020804.&lt;hostname&gt;/",
+      "DeploymentZoneRule" : "dzone-rule-2",
+      "ConnectionProperties" : [ ]
+    } ]
+  },
+  "Policies" : {
+    "Policy" : [ {
+      "PolicyKey" : "10001-AtmosphereApplicationSecurityPolicy",
+      "PolicyType" : "Operational Policy"
+    }, {
+      "PolicyKey" : "10001-BasicAuditing",
+      "PolicyType" : "Operational Policy"
+    }, {
+      "PolicyKey" : "10001-DetailedAuditing",
+      "PolicyType" : "Operational Policy"
+    }, {
+      "PolicyKey" : "10001-OAuthSecurity",
+      "PolicyType" : "Operational Policy"
+    } ]
+  },
+  "TargetAPI" : {
+    "Type" : "shttp",
+    "DefaultProfile" : "XML or JSON in/XML or JSON out",
+    "Endpoints" : {
+      "Endpoint" : [ {
+        "Category" : "Sandbox",
+        "Uri" : "http://www.developer.acme.com/v2013020804",
+        "ConnectionProperties" : [ ]
+      } ]
+    },
+    "Operations" : {
+      "Operation" : [ {
+        "Name" : "addPayment",
+        "Method" : "POST",
+        "Path" : "/payments",
+        "InputContentType" : "application/xml,text/xml,application/json",
+        "OutputContentType" : "application/xml,text/xml,application/json",
+        "FaultContentType" : "application/xml,text/xml,application/json",
+        "Input" : [ ]
+      }, {
+        "Name" : "getPayment",
+        "Method" : "GET",
+        "Path" : "/payments/{PaymentID}",
+        "InputContentType" : "application/xml,text/xml,application/json",
+        "OutputContentType" : "application/xml,text/xml,application/json",
+        "FaultContentType" : "application/xml,text/xml,application/json",
+        "Input" : [ {
+          "Name" : "PaymentID",
+          "Type" : "path"
+        } ]
+      } ]
+    },
+    "Policies" : {
+      "Policy" : [ ]
+    }
+  },
+  "Visibility" : "Public",
+  "Created" : "2013-02-08T15:47:09.675Z",
+  "Updated" : "2013-02-08T15:47:11.453Z",
+  "State" : "com.soa.api.state.open",
+  "ProductionEndpointAccessAutoApproved" : true,
+  "SandboxEndpointAccessAutoApproved" : true,
+  "RatingSummary" : {
+    "Five" : 0,
+    "Four" : 0,
+    "Three" : 0,
+    "Two" : 0,
+    "One" : 0
+  }
+}</pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="responseheaders">Response Headers</h3>
+<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#httpresponseheaders">HTTP Response Headers</a>.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+<thead>
+  <tr bgcolor="#DDDDDD">
+    <th width="20%">Header</th>
+    <th width="80%">Description</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+      <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_accept_json_or_appxml.lbi" --><strong>application/json</strong> or <strong>application/xml</strong><!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td><a href="../Ref_apireference.htm#atmorenewtoken">Atmo-Renew-Token</a></td>
+      <td><strong><a href="../Ref_apireference.htm#atmorenewtoken">renew</a></strong></td>
+    </tr>
+</tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="responsebody">Response Body</h3>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+<thead>
+  <tr bgcolor="#DDDDDD">
+    <th width="20%">Name</th>
+    <th width="15%">Type</th>
+    <th width="65%">Description</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+      <td>ApiVersion</td>
+      <td><a href="../obj/o_apis_APIVersion.htm">ApiVersion</a></td>
+      <td><!-- #BeginLibraryItem "/Library/o_apis_APIVersion.lbi" -->Includes information about an API version.<!-- #EndLibraryItem --> The response includes the unique <a href="../Ref_IDsOnThePlatform.htm#id_apiversionid">APIVersionID</a> assigned to the API version that was added.</td>
+  </tr>
+</tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="errorcodes">Error Codes/Messages</h3>
+<p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Item</th>
+      <th width="80%">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../Ref_apireference.htm#http500">500</a></td>
+      <td>An error occurred processing the call. </td>
+  </tr>
+  </tbody>
+</table>
+<p><a href="../Ref_apireference.htm#errormessages">Full list of Community Platform API error messages.</a></p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<table width="600" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="300"><ul>
+  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
+  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+</ul>
+</td>
+    <td width="300"><ul>
+  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
+  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><hr />

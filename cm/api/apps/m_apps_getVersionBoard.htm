@@ -1,0 +1,697 @@
+---
+layout: apipage
+title: GET&nbsp;/api/apps/versions/{RuntimeID}/board Operation | Apps Service | Community Platform API
+description:  Returns a list of Board items for the specified app version. Items are returned as an RSS channel.
+product: cm
+category: ref
+nav-title: GET&nbsp;/api/apps/versions/{RuntimeID}/board
+no-nav: true
+no-catalog: true
+---
+
+<h2><a name="top"></a>GET&nbsp;/api/apps/versions/{RuntimeID}/board Method</h2>
+<p><!-- #BeginLibraryItem "/Library/desc_getVersionBoard_apps.lbi" -->
+Returns a list of Board items for the specified app version.<!-- #EndLibraryItem --> Items are returned as an RSS channel.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Administrator</a><strong>, </strong>or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
+<!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p>This topic includes the following sections:</p>
+<table width="600" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="200"><ul>
+  <li><a href="#httpmethod">HTTP Method</a></li>
+  <li><a href="#endpoint">URL</a></li>
+  <li><a href="#samplerequest">Sample Request</a></li>
+  <li><a href="#requestheaders">Request Headers</a></li>
+  <li><a href="#requestparameters">Request Parameters</a></li>
+</ul>
+</td>
+    <td width="400"><ul>
+  <li><a href="#response">Response</a></li>
+  <li><a href="#sampleresponse">Sample Response</a></li>
+  <li><a href="#responseheaders">Response Headers</a></li>
+  <li><a href="#responsebody">Response Body</a></li>
+  <li><a href="#errorcodes">Error Codes/Messages</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><h3 id="httpmethod">HTTP Method</h3>
+<p class="httpverb">GET</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="endpoint">URL</h3>
+<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/apps/versions/{RuntimeID}/board[?ItemType={ItemType}][&amp;APIID={APIID}]
+[&amp;TicketLabel={TicketLabel}][&amp;TicketState={TicketState}][&amp;ItemID={ItemID}][&amp;Tag={Tag}][&amp;IncludeComments={IncludeComments}]
+[&amp;NumberOfComments={NumberOfComments}][&amp;IncludeActions={IncludeActions}][&amp;start={start}][&amp;count={count}][&amp;SortBy={SortBy}]
+[&amp;RetrievingUserID={RetrievingUserID}]</pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="samplerequest">Sample Request</h3>
+<p id="id_samplerequest">The example below shows a request for the Board for a specific app version.</p>
+<p><strong>Sample request URL</strong></p>
+<pre>https://&lt;hostname&gt;/api/apps/versions/4iXro2Uxs2h4LviCshR9pK9w.open/board</pre>
+<p><strong>Sample request headers</strong></p>
+<pre>GET&nbsp;/api/apps/versions/4iXro2Uxs2h4LviCshR9pK9w.open/board HTTP/1.1
+Host: <!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!-- #EndLibraryItem -->
+Accept: application/json</pre>
+<p><strong>Sample request body</strong></p>
+<p>Not applicable.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="requestheaders">Request Headers</h3>
+<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#httprequestheaders">HTTP Request Headers</a>.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr>
+      <th width="20%">Header</th>
+      <th width="80%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_accept_txtxml_or_json.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
+  </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="requestparameters">Request Parameters</h3>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr>
+      <th width="11%">Parameter</th>
+      <th width="9%">Parm Type</th>
+      <th width="11%">Data Type</th>
+      <th width="11%">Required</th>
+      <th width="58%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../Ref_IDsOnThePlatform.htm#id_runtimeid">RuntimeID</a></td>
+      <td>Path</td>
+      <td>string</td>
+      <td>Required</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_RuntimeID_short.lbi" -->
+Unique ID used at runtime by the app version.<!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+      <td>ItemType</td>
+      <td>Query</td>
+      <td>string[&nbsp;]</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/o_apps_ItemType.lbi" -->
+Indicates the type of <a href="../glossary_communityplatform.htm#boarditem">Board item</a>, such as an alert, discussion, or ticket.<!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+      <td><a href="../Ref_IDsOnThePlatform.htm#id_apiid">APIID</a><a href="../Ref_IDsOnThePlatform.htm"></a></td>
+      <td>Query</td>
+      <td>string</td>
+      <td>Required</td>
+      <td>If specified, only board items relating to that API are returned. If not specified, items relating to all APIs are returned.</td>
+    </tr>
+    <tr>
+      <td>TicketLabel</td>
+      <td>Query</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/parm_TicketLabel.lbi" -->
+A filtering parameter: if specified, only tickets with that label are returned. If not specified, no filter is applied. For valid values, refer to <a href="../Ref_Values.htm#values_ticketlabel">Ticket Label Values</a>.<!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+      <td>TicketState</td>
+      <td>Query</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/parm_TicketState.lbi" -->
+A filtering parameter: if specified, only tickets of that state are returned. For valid values, refer to <a href="../Ref_Values.htm#values_ticketstate">Ticket State Values</a>.<!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+      <td><a href="../Ref_IDsOnThePlatform.htm#id_itemid">ItemID</a></td>
+      <td>Query</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_ItemID.lbi" -->
+The unique ID for a specific <a href="../glossary_communityplatform.htm#boarditem">Board item</a>.<!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+      <td>Tag</td>
+      <td>Query</td>
+      <td>string[&nbsp;]</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/o_apis_Tag.lbi" -->
+One or more user-defined tags for the API version, separated by commas.<!-- #EndLibraryItem -->If specified, results are limited to board items relating to those tags. If not specified, no filter is applied.</td>
+  </tr>
+    <tr>
+      <td>IncludeComments</td>
+      <td>Query</td>
+      <td>boolean</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/o_apps_IncludeComments.lbi" -->
+Indicates whether comments should be included in the board information. Default: <strong>true</strong>. If set to <strong>false</strong>, comments are excluded.<!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+      <td>NumberOfComments</td>
+      <td>Query</td>
+      <td>int</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/o_apps_NumberOfComments.lbi" -->
+The number of comments to be returned (if IncludeComments is not set to <strong>false</strong>). Default value: <strong>2</strong>.<!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+      <td>IncludeActions</td>
+      <td>Query</td>
+      <td>boolean</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/o_apps_IncludeActions.lbi" -->
+Indicates whether actions relating to the board item should be included. Default value: <strong>true</strong>. If set to <strong>false</strong>, actions are not included.<!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+      <td>start</td>
+      <td>Query</td>
+      <td>int</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/parm_start.lbi" -->
+An index number indicating the starting point for the results to be returned. If not specified, results start at position 0, the first result.<!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+      <td>count</td>
+      <td>Query</td>
+      <td>int</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/parm_count.lbi" -->
+The number of results to be returned, from the specified starting point. If not specified, all matching results are returned.<!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+      <td>SortBy</td>
+      <td>Query</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/parm_SortBy.lbi" -->
+An optional parameter allowing users to sort results by a specific value; for example, <strong>com.soa.sort.order.updated</strong> sorts with the most updated entries first. For valid values, see <a href="../Ref_Values.htm#values_sortby">Sort By Values</a>. If not specified, items are returned in the sort order of <strong>DescendingDate</strong>, which means that the most recent items are first.<!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+      <td><a href="../Ref_IDsOnThePlatform.htm#id_retrievinguserid">RetrievingUserID</a></td>
+      <td>Query</td>
+      <td>string</td>
+      <td>Required</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_RetrievingUserID.lbi" -->
+The unique UserID of the user performing a specific action.<!-- #EndLibraryItem --></td>
+  </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="response">Response</h3>
+<p id="id_successstatement">If successful, this method returns HTTP status code 200, with the app version board items in the form of an RSS feed in JSON or XML format.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="sampleresponse">Sample Response</h3>
+<p id="id_sampleresponse">The sample response below shows the app version board returned as an RSS channel in JSON format.</p>
+
+<p><strong>Sample response headers: JSON</strong></p>
+<pre>HTTP/1.1 200 OK
+Date: Fri, 31 May 2013 18:31:15 GMT
+Content-Type: application/json</pre>
+
+<p><a name="rss_appversionboard_json"></a><strong>Sample response body: JSON</strong></p>
+<pre>{
+  "channel" : {
+    "title" : "App Version Board",
+    "startIndex" : 0,
+    "itemsPerPage" : 0,
+    "item" : [ {
+      "title" : "Feature requests",
+      "description" : "We are developing our feature list for the next release. Any feature requests?",
+      "category" : [ {
+        "value" : "DISCUSSION",
+        "domain" : "uddi:soa.com:resourcetype"
+      }, {
+        "value" : "version",
+        "domain" : "uddi:soa.com:tag"
+      }, {
+        "value" : "feature",
+        "domain" : "uddi:soa.com:tag"
+      }, {
+        "value" : "true",
+        "domain" : "uddi:soa.com:archivable"
+      }, {
+        "value" : "com.soa.board.item.open",
+        "domain" : "uddi:soa.com:state"
+      }, {
+        "value" : "com.soa.discussion.type.comment",
+        "domain" : "uddi:soa.com:discussiontype"
+      } ],
+      "guid" : {
+        "value" : "discussion23921.open"
+      },
+      "pubDate" : "2013-05-31T17:48:09.000Z",
+      "AuthoringUser" : {
+        "ID" : "user12262.open",
+        "Name" : "JaneMead",
+        "Image" : {
+          "Url" : "https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
+          "Title" : "JaneMead",
+          "Link" : "#/users/user12262.open/details"
+        }
+      },
+      "Image" : {
+        "Url" : "https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
+        "Link" : "#/user/user12262.open/details"
+      },
+      "CreatedDate" : "2013-05-31T17:48:09.000Z",
+      "Actions" : {
+        "Action" : [ {
+          "value" : "discussion.action.delete",
+          "label" : "discussion.action.delete"
+        } ]
+      },
+      "Marks" : {
+        "Count" : 0,
+        "IsMarkedByReader" : false
+      },
+      "CommentsPreview" : {
+        "Count" : 0,
+        "Comment" : [ ]
+      },
+      "EntityReference" : [ {
+        "Title" : "PaaStime",
+        "Guid" : "app16964.open",
+        "Category" : [ {
+          "value" : "app",
+          "domain" : "uddi:soa.com:resourcetype"
+        } ]
+      }, {
+        "Title" : "2.0",
+        "Guid" : "4iXro2Uxs2h4LviCshR9pK9w.open",
+        "Category" : [ {
+          "value" : "app-version",
+          "domain" : "uddi:soa.com:resourcetype"
+        } ]
+      } ]
+    }, {
+      "title" : "API Access request",
+      "description" : "Open member JaneMead has requested access to the Sandbox environment for the ACME Payments DeLuxe (Version 2.0) on behalf of the  PaaStime (2.0) application",
+      "category" : [ {
+        "value" : "CONTRACT_REQUEST",
+        "domain" : "uddi:soa.com:resourcetype"
+      }, {
+        "value" : "false",
+        "domain" : "uddi:soa.com:archivable"
+      }, {
+        "value" : "apicontract.status.activated",
+        "domain" : "uddi:soa.com:wfstate"
+      }, {
+        "value" : "Sandbox",
+        "domain" : "uddi:soa.com:environment"
+      } ],
+      "guid" : {
+        "value" : "contract_request23623.open"
+      },
+      "pubDate" : "2013-05-23T22:14:30.000Z",
+      "AuthoringUser" : {
+        "ID" : "user12262.open",
+        "Name" : "JaneMead",
+        "Image" : {
+          "Url" : "https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
+          "Title" : "JaneMead",
+          "Link" : "#/users/user12262.open/details"
+        }
+      },
+      "Image" : {
+        "Url" : "https://&lt;hostname&gt;/api/apps/app16964.open/avatars/f250a96e-2f81-4e3e-88fc-61431fd80e5c.png",
+        "Link" : "#/app/app16964.open"
+      },
+      "CreatedDate" : "2013-05-23T22:14:30.000Z",
+      "Actions" : {
+        "Action" : [ {
+          "value" : "apicontract.action.suspend",
+          "label" : "apicontract.action.suspend"
+        }, {
+          "value" : "apicontract.action.cancel",
+          "label" : "apicontract.action.cancel"
+        } ]
+      },
+      "Marks" : {
+        "Count" : 0,
+        "IsMarkedByReader" : false
+      },
+      "CommentsPreview" : {
+        "Count" : 1,
+        "Comment" : [ {
+          "CommentID" : "comment23624.open",
+          "CommentSubjectID" : "contract_request23623.open",
+          "Content" : "API access has been activated. ",
+          "Created" : "2013-05-23T22:14:30Z",
+          "Marks" : 0,
+          "IsMarked" : false,
+          "UserID" : "global.open",
+          "UserName" : "Atmosphere",
+          "AvatarURL" : "https://&lt;hostname&gt;/api/tenants/global.open/avatar"
+        } ]
+      },
+      "EntityReferences" : {
+        "EntityReference" : [ {
+          "Guid" : "contract23622.open",
+          "Category" : [ {
+            "value" : "contract",
+            "domain" : "uddi:soa.com:resourcetype"
+          } ]
+        } ]
+      },
+      "EntityReference" : [ {
+        "Title" : "PaaStime",
+        "Guid" : "app16964.open",
+        "Category" : [ {
+          "value" : "app",
+          "domain" : "uddi:soa.com:resourcetype"
+        } ]
+      }, {
+        "Title" : "PaaStime",
+        "Guid" : "app16964.open",
+        "Category" : [ {
+          "value" : "app",
+          "domain" : "uddi:soa.com:resourcetype"
+        } ]
+      }, {
+        "Title" : "2.0",
+        "Guid" : "4iXro2Uxs2h4LviCshR9pK9w.open",
+        "Category" : [ {
+          "value" : "app-version",
+          "domain" : "uddi:soa.com:resourcetype"
+        } ]
+      }, {
+        "Title" : "ACME Payments DeLuxe",
+        "Guid" : "api19427.open",
+        "Category" : [ {
+          "value" : "api",
+          "domain" : "uddi:soa.com:resourcetype"
+        } ]
+      }, {
+        "Title" : "ACME Payments DeLuxe",
+        "Guid" : "api19427.open",
+        "Category" : [ {
+          "value" : "api",
+          "domain" : "uddi:soa.com:resourcetype"
+        } ]
+      }, {
+        "Title" : "Version 2.0",
+        "Guid" : "apiversion19429.open",
+        "Category" : [ {
+          "value" : "apiversion",
+          "domain" : "uddi:soa.com:resourcetype"
+        } ]
+      } ]
+    } ]
+  },
+  "version" : "1.0"
+}</pre>
+<p><a name="rss_appversionboard_xml"></a><strong>Sample response body: XML</strong></p>
+<pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;rss xmlns:ns2="http://soa.com/xsd/business/1.0" xmlns:ns3="http://soa.com/xsd/user/1.0" 
+xmlns:ns4="http://soa.com/xsd/rss/1.0" xmlns:ns5="http://soa.com/xsd/comment/1.0" 
+xmlns:ns6="http://a9.com/-/spec/opensearch/1.1/" xmlns:ns7="http://soa.com/xsd/resource/1.0" 
+xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
+xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
+  &lt;channel&gt;
+    &lt;title&gt;App Version Board&lt;/title&gt;
+    &lt;ns6:startIndex&gt;0&lt;/ns6:startIndex&gt;
+    &lt;ns6:itemsPerPage&gt;0&lt;/ns6:itemsPerPage&gt;
+    &lt;item&gt;
+      &lt;title&gt;Feature requests&lt;/title&gt;
+      &lt;description&gt;We are developing our feature list for the next release. Any feature requests?&lt;/description&gt;
+      &lt;category domain="uddi:soa.com:resourcetype"&gt;DISCUSSION&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:tag"&gt;version&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:tag"&gt;feature&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:archivable"&gt;true&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:state"&gt;com.soa.board.item.open&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:discussiontype"&gt;com.soa.discussion.type.comment&lt;/category&gt;
+      &lt;guid&gt;discussion23921.open&lt;/guid&gt;
+      &lt;pubDate&gt;2013-05-31T17:48:09.000Z&lt;/pubDate&gt;
+      &lt;ns4:CreatedDate&gt;2013-05-31T17:48:09.000Z&lt;/ns4:CreatedDate&gt;
+      &lt;ns4:Marks&gt;
+        &lt;Count&gt;0&lt;/Count&gt;
+        &lt;IsMarkedByReader&gt;false&lt;/IsMarkedByReader&gt;
+      &lt;/ns4:Marks&gt;
+      &lt;ns5:CommentsPreview&gt;
+        &lt;ns5:Count&gt;0&lt;/ns5:Count&gt;
+      &lt;/ns5:CommentsPreview&gt;
+      &lt;ns4:AuthoringUser&gt;
+        &lt;ID&gt;user12262.open&lt;/ID&gt;
+        &lt;Name&gt;JaneMead&lt;/Name&gt;
+        &lt;ns4:Image&gt;
+          &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
+          &lt;Title&gt;JaneMead&lt;/Title&gt;
+          &lt;Link&gt;#/users/user12262.open/details&lt;/Link&gt;
+        &lt;/ns4:Image&gt;
+      &lt;/ns4:AuthoringUser&gt;
+      &lt;ns4:EntityReference&gt;
+        &lt;Title&gt;PaaStime&lt;/Title&gt;
+        &lt;Guid&gt;app16964.open&lt;/Guid&gt;
+        &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app&lt;/ns4:Category&gt;
+      &lt;/ns4:EntityReference&gt;
+      &lt;ns4:EntityReference&gt;
+        &lt;Title&gt;2.0&lt;/Title&gt;
+        &lt;Guid&gt;4iXro2Uxs2h4LviCshR9pK9w.open&lt;/Guid&gt;
+        &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app-version&lt;/ns4:Category&gt;
+      &lt;/ns4:EntityReference&gt;
+      &lt;ns4:Image&gt;
+        &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
+        &lt;Link&gt;#/user/user12262.open/details&lt;/Link&gt;
+      &lt;/ns4:Image&gt;
+      &lt;ns4:Actions&gt;
+        &lt;ns4:Action label="discussion.action.delete"&gt;discussion.action.delete&lt;/ns4:Action&gt;
+      &lt;/ns4:Actions&gt;
+    &lt;/item&gt;
+    &lt;item&gt;
+      &lt;title&gt;API Access request&lt;/title&gt;
+      &lt;description&gt;Open member JaneMead has requested access to the Sandbox environment for the ACME Payments DeLuxe (Version 2.0) on behalf of the  PaaStime (2.0) application&lt;/description&gt;
+      &lt;category domain="uddi:soa.com:resourcetype"&gt;CONTRACT_REQUEST&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:archivable"&gt;false&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:wfstate"&gt;apicontract.status.activated&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:environment"&gt;Sandbox&lt;/category&gt;
+      &lt;guid&gt;contract_request23623.open&lt;/guid&gt;
+      &lt;pubDate&gt;2013-05-23T22:14:30.000Z&lt;/pubDate&gt;
+      &lt;ns4:CreatedDate&gt;2013-05-23T22:14:30.000Z&lt;/ns4:CreatedDate&gt;
+      &lt;ns4:Marks&gt;
+        &lt;Count&gt;0&lt;/Count&gt;
+        &lt;IsMarkedByReader&gt;false&lt;/IsMarkedByReader&gt;
+      &lt;/ns4:Marks&gt;
+      &lt;ns5:CommentsPreview&gt;
+        &lt;ns5:Count&gt;1&lt;/ns5:Count&gt;
+        &lt;ns5:Comment&gt;
+          &lt;ns5:CommentID&gt;comment23624.open&lt;/ns5:CommentID&gt;
+          &lt;ns5:CommentSubjectID&gt;contract_request23623.open&lt;/ns5:CommentSubjectID&gt;
+          &lt;ns5:Content&gt;API access has been activated. &lt;/ns5:Content&gt;
+          &lt;ns5:Created&gt;2013-05-23T22:14:30Z&lt;/ns5:Created&gt;
+          &lt;ns5:Marks&gt;0&lt;/ns5:Marks&gt;
+          &lt;ns5:IsMarked&gt;false&lt;/ns5:IsMarked&gt;
+          &lt;ns3:UserID&gt;global.open&lt;/ns3:UserID&gt;
+          &lt;ns3:UserName&gt;Atmosphere&lt;/ns3:UserName&gt;
+          &lt;ns3:AvatarURL&gt;https://&lt;hostname&gt;/api/tenants/global.open/avatar&lt;/ns3:AvatarURL&gt;
+        &lt;/ns5:Comment&gt;
+      &lt;/ns5:CommentsPreview&gt;
+      &lt;ns4:AuthoringUser&gt;
+        &lt;ID&gt;user12262.open&lt;/ID&gt;
+        &lt;Name&gt;JaneMead&lt;/Name&gt;
+        &lt;ns4:Image&gt;
+          &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
+          &lt;Title&gt;JaneMead&lt;/Title&gt;
+          &lt;Link&gt;#/users/user12262.open/details&lt;/Link&gt;
+        &lt;/ns4:Image&gt;
+      &lt;/ns4:AuthoringUser&gt;
+      &lt;ns4:EntityReference&gt;
+        &lt;Title&gt;PaaStime&lt;/Title&gt;
+        &lt;Guid&gt;app16964.open&lt;/Guid&gt;
+        &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app&lt;/ns4:Category&gt;
+      &lt;/ns4:EntityReference&gt;
+      &lt;ns4:EntityReference&gt;
+        &lt;Title&gt;PaaStime&lt;/Title&gt;
+        &lt;Guid&gt;app16964.open&lt;/Guid&gt;
+        &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app&lt;/ns4:Category&gt;
+      &lt;/ns4:EntityReference&gt;
+      &lt;ns4:EntityReference&gt;
+        &lt;Title&gt;2.0&lt;/Title&gt;
+        &lt;Guid&gt;4iXro2Uxs2h4LviCshR9pK9w.open&lt;/Guid&gt;
+        &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app-version&lt;/ns4:Category&gt;
+      &lt;/ns4:EntityReference&gt;
+      &lt;ns4:EntityReference&gt;
+        &lt;Title&gt;ACME Payments DeLuxe&lt;/Title&gt;
+        &lt;Guid&gt;api19427.open&lt;/Guid&gt;
+        &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;api&lt;/ns4:Category&gt;
+      &lt;/ns4:EntityReference&gt;
+      &lt;ns4:EntityReference&gt;
+        &lt;Title&gt;ACME Payments DeLuxe&lt;/Title&gt;
+        &lt;Guid&gt;api19427.open&lt;/Guid&gt;
+        &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;api&lt;/ns4:Category&gt;
+      &lt;/ns4:EntityReference&gt;
+      &lt;ns4:EntityReference&gt;
+        &lt;Title&gt;Version 2.0&lt;/Title&gt;
+        &lt;Guid&gt;apiversion19429.open&lt;/Guid&gt;
+        &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;apiversion&lt;/ns4:Category&gt;
+      &lt;/ns4:EntityReference&gt;
+      &lt;ns4:Image&gt;
+        &lt;Url&gt;https://&lt;hostname&gt;/api/apps/app16964.open/avatars/f250a96e-2f81-4e3e-88fc-61431fd80e5c.png&lt;/Url&gt;
+        &lt;Link&gt;#/app/app16964.open&lt;/Link&gt;
+      &lt;/ns4:Image&gt;
+      &lt;ns4:EntityReferences&gt;
+        &lt;ns4:EntityReference&gt;
+          &lt;Guid&gt;contract23622.open&lt;/Guid&gt;
+          &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;contract&lt;/ns4:Category&gt;
+        &lt;/ns4:EntityReference&gt;
+      &lt;/ns4:EntityReferences&gt;
+      &lt;ns4:Actions&gt;
+        &lt;ns4:Action label="apicontract.action.suspend"&gt;apicontract.action.suspend&lt;/ns4:Action&gt;
+        &lt;ns4:Action label="apicontract.action.cancel"&gt;apicontract.action.cancel&lt;/ns4:Action&gt;
+      &lt;/ns4:Actions&gt;
+    &lt;/item&gt;
+  &lt;/channel&gt;
+&lt;/rss&gt;</pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="responseheaders">Response Headers</h3>
+<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#httpresponseheaders">HTTP Response Headers</a>.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+<thead>
+  <tr bgcolor="#DDDDDD">
+    <th width="20%">Header</th>
+    <th width="80%">Description</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+      <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_accept_txtxml_or_json.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
+  </tr>
+</tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="responsebody">Response Body</h3>
+<p id="responserss"><!-- #BeginLibraryItem "/Library/_rss_responsetable_intro.lbi" -->
+The response body is in the form of an RSS channel, and includes the items listed below. The RSS version is 1.0.<!-- #EndLibraryItem --> The title of the RSS channel is <strong>App Version Board</strong>, and the channel includes <a href="../Ref_RSSChannelsOnThePlatform.htm#pagingofreturnedrssitems">paging values</a>: StartIndex, TotalResults (if applicable), and ItemsPerPage. Each item in the channel represents a Board item for the app version, and includes the information listed below.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+<thead>
+  <tr bgcolor="#DDDDDD">
+    <th width="20%">Name</th>
+    <th width="80%">Description</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+      <td>title</td>
+      <td>The text title of the Board item.</td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td>Descriptive text for the Board item.</td>
+    </tr>
+    <tr>
+      <td>category[&nbsp;]</td>
+      <td><p>An array of sets of two name/value pairs, each including Value and Domain, with a value for each. For example:</p>
+        <pre>"value" : "DISCUSSION",
+"domain" : "uddi:soa.com:resourcetype"</pre>
+        <p>The example above indicates that the Board item is a discussion.</p>
+        <pre>&quot;value&quot; : &quot;true&quot;,
+&quot;domain&quot; : &quot;uddi:soa.com:archivable&quot;</pre>
+        <p>The example above indicates that the Board item is archivable.</p></td>
+    </tr>
+    <tr>
+      <td><a href="../Ref_RSSChannelsOnThePlatform.htm#rss_guid">GUID</a></td>
+      <td>GUID for the Board item.</td>
+    </tr>
+    <tr>
+      <td><a href="../Ref_RSSChannelsOnThePlatform.htm#rss_pubdate">pubdate</a></td>
+      <td>The date/timestamp when the information was generated.</td>
+    </tr>
+    <tr>
+      <td>AuthoringUser</td>
+      <td><p>Information about the user who authored the Board item, including:</p>
+        <ul class="apidoctable_ul">
+          <li>ID: the unique <a href="../Ref_IDsOnThePlatform.htm#id_userid">UserID</a></li>
+          <li>Name: The user's name as it appears in the platform</li>
+          <li>Image: Information about the user's image, including URL, Title, and Link</li>
+        </ul></td>
+    </tr>
+    <tr>
+      <td>Image</td>
+      <td>Information about the image for the resource that the Board item is associated with, including URL and link.</td>
+    </tr>
+    <tr>
+      <td>CreatedDate</td>
+      <td>The date/timestamp when the information was generated.</td>
+    </tr>
+    <tr>
+      <td>Actions</td>
+      <td><p>An array of name/value pair sets containing information about one or more <a href="../Ref_RSSChannelsOnThePlatform.htm#rss_action">action</a> events that are valid for the item. Each includes value and label, and both contain the name of the valid action. For example:</p>
+        <pre>&quot;value&quot; : &quot;discussion.action.delete&quot;,
+&quot;label&quot; : &quot;discussion.action.delete&quot;</pre>
+        <p>The example above indicates that Delete is a valid action for this Board item, which is a discussion.</p></td>
+    </tr>
+    <tr>
+      <td><a href="../Ref_RSSChannelsOnThePlatform.htm#rss_marks">Marks</a></td>
+      <td>Information about marks on the Board item, including a numeric count and a boolean value, IsMarkedByReader, indicating whether the current user (if a user is logged in) marked the Board item.</td>
+    </tr>
+    <tr>
+      <td>CommentsPreview</td>
+      <td>Information about comments on the Board item, including a numeric count and information about each comment, if applicable.</td>
+    </tr>
+    <tr>
+      <td><a href="../Ref_RSSChannelsOnThePlatform.htm#rss_entityreferences">EntityReference</a></td>
+      <td><p>An array of one or more entity references for the Board item. Each includes:</p>
+        <ul class="apidoctable_ul">
+          <li>Title</li>
+          <li><a href="../Ref_RSSChannelsOnThePlatform.htm#rss_guid">GUID</a>: the unique ID for the item.</li>
+          <li>Category: an array of name/value pairs with information about the category for the Board item.</li>
+        </ul></td>
+    </tr>
+</tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="errorcodes">Error Codes/Messages</h3>
+<p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Item</th>
+      <th width="80%">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../Ref_apireference.htm#http500">500</a></td>
+      <td>An error occurred processing the call. </td>
+  </tr>
+  </tbody>
+</table>
+<p><a href="../Ref_apireference.htm#errormessages">Full list of Community Platform API error messages.</a></p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<table width="600" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="300"><ul>
+  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
+  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+</ul>
+</td>
+    <td width="300"><ul>
+  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
+  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><hr />

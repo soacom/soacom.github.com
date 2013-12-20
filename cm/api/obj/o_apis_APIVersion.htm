@@ -1,0 +1,216 @@
+---
+layout: apipage
+title: APIVersion Object | APIs Service | Community Platform API
+description: Includes information about an API version.
+product: cm
+category: ref
+nav-title: APIVersion Object 
+no-nav: true
+no-catalog: true
+---
+
+<h2><a name="top"></a>APIVersion Object</h2>
+<p><!-- #BeginLibraryItem "/Library/o_apis_APIVersion.lbi" -->Includes information about an API version.<!-- #EndLibraryItem --></p>
+
+<p class="usedby">This object is used by the following operations:</p>
+<ul>
+  <li><span class="apidoc_code"><a href="../apis/m_apis_addAPI.htm">POST&nbsp;/api/apis/apis</a></span></li>
+  <li><span class="apidoc_code"><a href="../apis/m_apis_updateAPI.htm">PUT&nbsp;/api/apis/versions/{ApiVersionID}</a></span></li>
+  <li><span class="apidoc_code"><a href="../apis/m_apis_getAPIVersion.htm">GET&nbsp;/api/apis/versions/{APIVersionID}</a></span></li>
+</ul>
+
+<p>The properties included in the <strong>APIVersion</strong> object are listed below.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr>
+      <th width="15%">Property</th>
+      <th width="15%">Type</th>
+      <th width="10%">Required</th>
+      <th width="60%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../Ref_IDsOnThePlatform.htm#id_apiversionid">APIVersionID</a></td>
+      <td>string</td>
+      <td>Required</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->
+The unique ID for the specified API version.<!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+      <td><a href="../Ref_IDsOnThePlatform.htm#id_apiid">APIID</a></td>
+      <td>string</td>
+      <td>Required</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_APIID.lbi" -->
+The unique ID for the specified API.<!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+      <td>Name</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td>The name of the API.</td>
+  </tr>
+    <tr>
+      <td>Type</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td><p>The type for the API version. </p><!-- #BeginLibraryItem "/Library/values_APIType.lbi" --><p>Valid values:</p>
+        <ul class="apidoctable_ul">
+          <li>REST API: <strong>shttp</strong></li>
+          <li>SOAP 1.1 API: <strong>soap11</strong></li>
+          <li>SOAP 1.2 API: <strong>soap12</strong></li>
+        </ul><!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+      <td>DefaultProfile</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td><p>The <a href="../Ref_API_DefaultProfile.htm">default profile</a> for the API version, if specified.</p>
+        <p>Only applicable for adding operations via the user interface.</p></td>
+  </tr>
+    <tr>
+      <td>Description</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td>The description of the API version.</td>
+  </tr>
+    <tr>
+      <td>Tag</td>
+      <td>string[&nbsp;]</td>
+      <td>Optional</td>
+      <td>One or more user-defined tags assigned to the discussion.</td>
+  </tr>
+    <tr>
+      <td><a id="productionendpoint"></a>ProductionEndpoint</td>
+      <td>anyURI</td>
+      <td>Optional</td>
+      <td>The Production endpoint listed for the API version in the API Details page in the user interface.</td>
+    </tr>
+     <tr>
+      <td>ProductionEndpointOAuthDetails</td>
+      <td><a href="o_apis_EndpointOAuthDetails.htm">EndpointOAuthDetails</a></td>
+      <td>Optional</td>
+      <td><p>The OAuth configuration details for the Production endpoint, such as OAuth version and URLs.</p>
+        <p>Used only in response messages.</p></td>
+  </tr>
+   <tr>
+      <td><a id="sandboxendpoint"></a>SandboxEndpoint</td>
+      <td>anyURI</td>
+      <td>Optional</td>
+      <td>The Sandbox endpoint listed for the API version in the API Details page in the user interface.</td>
+  </tr>
+     <tr>
+      <td>SandboxEndpointOAuthDetails</td>
+      <td><a href="o_apis_EndpointOAuthDetails.htm">EndpointOAuthDetails</a></td>
+      <td>Optional</td>
+      <td><p>The OAuth configuration details for the Sandbox endpoint, such as OAuth version and URLs.</p>
+        <p>Used only in response messages.</p></td>
+  </tr>
+    <tr>
+      <td>Descriptor</td>
+      <td><a href="../obj/o_apis_Descriptor.htm">Descriptor</a></td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/parm_descriptor.lbi" -->
+SOAP APIs only: Includes information about the WSDL that contains the technical details about the API version. For SOAP APIs, this is required in the request message when adding or updating an API version.<!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+      <td>Operations</td>
+      <td><a href="../obj/o_apis_Operations.htm">Operations</a></td>
+      <td>Optional</td>
+      <td>Used for REST APIs only: Information about the operations that are valid for the API version.</td>
+  </tr>
+    <tr>
+      <td>Endpoints</td>
+      <td><a href="../obj/o_apis_Endpoints.htm">Endpoints</a></td>
+      <td>Optional</td>
+      <td>Information about the endpoints that are valid for the API version.</td>
+  </tr>
+    <tr>
+      <td>Policies</td>
+      <td><a href="../obj/o_apis_Policies.htm">Policies</a></td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/o_apis_Policies.lbi" --><p>
+An array of information about one or more policies that are enforced for the API version, if applicable.</p>
+        <p>For a list of valid policies, see <a href="../Ref_Values.htm#values_client_auth_policy_options">Client Authorization Policy Options</a>.</p>
+        <p>To retrieve a list of available policies, including PolicyKey and PolicyType, use the <span class="apidoc_code"><a href="../policies/m_policies_getPolicies.htm">GET&nbsp;/api/policies</a></span> operation.</p>
+<!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+      <td>TargetAPI</td>
+      <td><a href="../obj/o_apis_TargetAPI.htm">TargetAPI</a></td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/parm_TargetAPI.lbi" -->
+Includes information about the <a href="../glossary_communityplatform.htm#targetapi">target API</a>&#8212;the destination endpoint, or next hop, defined when an API is using the platform as a proxy.<!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+      <td>Visibility</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/parm_Visibility_apis.lbi" -->The <a href="../glossary_communityplatform.htm#visibility_api">visibility</a> setting for the API; either Public, which is visible to all users, or Limited, which is visible only to API Administrators and Private API Group members.<!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+      <td>Created</td>
+      <td>dateTime</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/o_Created.lbi" -->
+The date/time stamp when the resource was first created. Used only in response messages.<!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+      <td>Updated</td>
+      <td>dateTime</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/o_Updated.lbi" -->
+The date/time stamp when the resource was last updated. Used only in response messages.<!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+      <td>ProductionEndpointAccessAutoApproved</td>
+      <td>boolean</td>
+      <td>Optional</td>
+      <td>Indicates whether a request for production access for the API is automatically approved. Defaults to <strong>false</strong>; unless set to <strong>true</strong>, production access must be approved by an API Administrator.</td>
+  </tr>
+    <tr>
+      <td>SandboxEndpointAccessAutoApproved</td>
+      <td>boolean</td>
+      <td>Optional</td>
+      <td>Indicates whether a request for sandbox access for the API is automatically approved. Defaults to <strong>true</strong>; unless set to <strong>false</strong>, sandbox access is automatic and immediate upon request.</td>
+  </tr>
+    <tr>
+      <td>RatingSummary</td>
+      <td><a href="../obj/o_res_RatingSummary.htm">RatingSummary</a></td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/o_RatingSummary.lbi" --> An aggregated, averaged summary of individual user ratings for the resource, including the current ratings count for each possible value (1, 2, 3, 4, or 5). Used only in response messages.<!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+      <td>ProductionEndpointExists</td>
+      <td>boolean</td>
+      <td>Optional</td>
+      <td>Indicates whether a Production endpoint exists for this API. For internal use only.</td>
+  </tr>
+    <tr>
+      <td>SandboxEndpointExists</td>
+      <td>boolean</td>
+      <td>Optional</td>
+      <td>Indicates whether a Sandbox endpoint exists for this API. For internal use only.</td>
+  </tr>
+    </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<table width="600" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="300"><ul>
+  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
+  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+</ul>
+</td>
+    <td width="300"><ul>
+  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
+  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><hr />

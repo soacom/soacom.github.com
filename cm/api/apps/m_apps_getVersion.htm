@@ -1,0 +1,268 @@
+---
+layout: apipage
+title: GET&nbsp;/api/apps/versions/{RuntimeID} Operation | Apps Service | Community Platform API
+description: Returns a version of an app.
+product: cm
+category: ref
+nav-title: GET&nbsp;/api/apps/versions/{RuntimeID}
+no-nav: true
+no-catalog: true
+---
+
+<h2><a name="top"></a>GET&nbsp;/api/apps/versions/{RuntimeID} Method</h2>
+<p><!-- #BeginLibraryItem "/Library/desc_getVersion.lbi" -->Returns a version of an app.<!-- #EndLibraryItem --></p>
+<!--FM-->
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Administrator</a><strong>, </strong>or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
+<!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p>This topic includes the following sections:</p>
+<table width="600" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="200"><ul>
+  <li><a href="#httpmethod">HTTP Method</a></li>
+  <li><a href="#endpoint">URL</a></li>
+  <li><a href="#samplerequest">Sample Request</a></li>
+  <li><a href="#requestheaders">Request Headers</a></li>
+  <li><a href="#requestparameters">Request Parameters</a></li>
+</ul>
+</td>
+    <td width="400"><ul>
+  <li><a href="#response">Response</a></li>
+  <li><a href="#sampleresponse">Sample Response</a></li>
+  <li><a href="#responseheaders">Response Headers</a></li>
+  <li><a href="#responsebody">Response Body</a></li>
+  <li><a href="#errorcodes">Error Codes/Messages</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><h3 id="httpmethod">HTTP Method</h3>
+<p class="httpverb">GET</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="endpoint">URL</h3>
+<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/apps/versions/{RuntimeID}</pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="samplerequest">Sample Request</h3>
+<p>The example below requests the version information for the ID in the URL.</p>
+<p><strong>Sample request URL #1</strong></p>
+<pre>https://&lt;hostname&gt;/api/apps/versions/4iXro2Uxs2h4LviCshR9pK9w.open</pre>
+<p><strong>Sample request URL #2</strong></p>
+<pre>https://&lt;hostname&gt;/api/apps/versions/4iXro2Uxs2h4LviCshR9pK9w.open?IncludeSettings=true</pre>
+<p><strong>Sample request headers</strong></p>
+<pre>Accept: application/json, text/javascript, */*; q=0.01
+Host: <!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!-- #EndLibraryItem --></pre>
+<p><strong>Sample request body</strong></p>
+<p>Not applicable.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="requestheaders">Request Headers</h3>
+<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#httprequestheaders">HTTP Request Headers</a>.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+<thead>
+  <tr bgcolor="#DDDDDD">
+    <th>Name</th>
+    <th>Type</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+      <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_content_type_req_json.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+  </tr>
+</tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="requestparameters">Request Parameters</h3>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr>
+      <th width="11%">Parameter</th>
+      <th width="9%">Parm Type</th>
+      <th width="11%">Data Type</th>
+      <th width="11%">Required</th>
+      <th width="58%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../Ref_IDsOnThePlatform.htm#id_runtimeid">RuntimeID</a></td>
+      <td>Path</td>
+      <td>string</td>
+      <td>Required</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_RuntimeID_short.lbi" -->
+        Unique ID used at runtime by the app version.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>IncludeSettings</td>
+      <td>Query</td>
+      <td>boolean</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/parm_IncludeSettings.lbi" -->Indicates whether the settings for the resource should be included in the information returned. If not specified, defaults to <strong>false</strong>.<!-- #EndLibraryItem --></td>
+    </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="response">Response</h3>
+<p id="id_successstatement">If successful, this method returns HTTP status code 200, with the version information in a JSON or XML object.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="sampleresponse">Sample Response</h3>
+<p id="id_samplerequest">The example below shows the response for version 2.0 of an app.</p>
+
+<p><strong>Sample response headers</strong></p>
+<pre>
+Content-Type: application/json
+Date: Fri, 31 May 2013 18:24:07 GMT</pre>
+
+<p><strong>Sample response body #1</strong></p>
+<pre>
+{
+  &quot;RuntimeID&quot; : &quot;4iXro2Uxs2h4LviCshR9pK9w.open&quot;,
+  &quot;AppID&quot; : &quot;app16964.open&quot;,
+  &quot;Name&quot; : &quot;2.0&quot;,
+  &quot;Description&quot; : &quot;Created 2/4/13&quot;,
+  &quot;WebsiteAddress&quot; : &quot;&quot;,
+  &quot;Visibility&quot; : &quot;Limited&quot;,
+  &quot;InitialEnvironment&quot; : &quot;Sandbox&quot;,
+  &quot;CurrentEnvironment&quot; : &quot;Sandbox&quot;,
+  &quot;Tag&quot; : [ ],
+  &quot;HasKeyInfo&quot; : true,
+  &quot;Created&quot; : &quot;2013-02-04T19:22:50Z&quot;,
+  &quot;Updated&quot; : &quot;2013-05-23T22:14:30Z&quot;,
+  &quot;State&quot; : &quot;com.soa.app.state.sandbox&quot;,
+  &quot;SecurityMechanisms&quot; : [ &quot;com.soa.security.mechanism.pki&quot;, &quot;com.soa.security.mechanism.sharedsecret&quot; ],
+  &quot;RatingSummary&quot; : {
+    &quot;Five&quot; : 0,
+    &quot;Four&quot; : 0,
+    &quot;Three&quot; : 1,
+    &quot;Two&quot; : 0,
+    &quot;One&quot; : 0
+  },
+  &quot;Identity&quot; : &quot;open-4iXro2Uxs2h4LviCshR9pK9w&quot;
+}</pre>
+<p><strong>Sample response body #2</strong></p>
+<p><strong>IncludeSettings</strong> parameter was set to <strong>true</strong> in the request, so app version settings are included in the response.</p>
+<pre>{
+  "RuntimeID" : "4iXro2Uxs2h4LviCshR9pK9w.open",
+  "AppID" : "app16964.open",
+  "Name" : "2.0",
+  "Description" : "Created 2/4/13",
+  "WebsiteAddress" : "",
+  "Visibility" : "Limited",
+  "InitialEnvironment" : "Sandbox",
+  "CurrentEnvironment" : "Sandbox",
+  "Tag" : [ ],
+  "HasKeyInfo" : true,
+  "Created" : "2013-02-04T19:22:50Z",
+  "Updated" : "2013-06-04T19:38:55Z",
+  "State" : "com.soa.app.state.sandbox",
+  "SecurityMechanisms" : [ "com.soa.security.mechanism.pki", "com.soa.security.mechanism.sharedsecret" ],
+  "RatingSummary" : {
+    "Five" : 0,
+    "Four" : 0,
+    "Three" : 1,
+    "Two" : 0,
+    "One" : 0
+  },
+  "Identity" : "open-4iXro2Uxs2h4LviCshR9pK9w",
+  "AppVersionSettings" : {
+    "AppBoardSupport" : "com.soa.feature.enabled",
+    "AppRatingsSupport" : "com.soa.feature.enabled",
+    "AppReviewsSupport" : "com.soa.feature.enabled",
+    "UserDefinedIdentitySupport" : "com.soa.feature.enabled.for.siteadmins",
+    "SimultaneousSandboxProductAccessSupport" : "com.soa.feature.enabled"
+  }
+}</pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="responseheaders">Response Headers</h3>
+<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#httpresponseheaders">HTTP Response Headers</a>.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+<thead>
+  <tr bgcolor="#DDDDDD">
+    <th width="20%">Header</th>
+    <th width="80%">Description</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+      <td><a href="../Ref_apireference.htm#contenttype_request">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_content_type_rsp_json.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+  </tr>
+</tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="responsebody">Response Body</h3>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+<thead>
+  <tr bgcolor="#DDDDDD">
+    <th width="20%">Name</th>
+    <th width="15%">Type</th>
+    <th width="65%">Description</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+      <td>ApplicationVersion</td>
+      <td><a href="../obj/o_apps_ApplicationVersion.htm">ApplicationVersion</a></td>
+      <td>Information about the app version. The response includes settings if they were requested.</td>
+  </tr>
+</tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="errorcodes">Error Codes/Messages</h3>
+<p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Item</th>
+      <th width="80%">Value</th>
+      </tr>
+  </thead>
+    <tr>
+      <td><a href="../Ref_apireference.htm#http204">204</a></td>
+      <td>No content. The server successfully processed the request, but is not returning any content. For example, you might get this error if you specified an invalid RuntimeID.</td>
+    </tr>
+    <tr>
+      <td><a href="../Ref_apireference.htm#http404">404</a></td>
+      <td>The resource could not be found.</td>
+  </tr>
+    <tr>
+      <td><a href="../Ref_apireference.htm#http500">500</a></td>
+      <td>An error occurred processing the call. </td>
+  </tr>
+</table>
+<p><a href="../Ref_apireference.htm#errormessages">Full list of Community Platform API error messages.</a></p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<table width="600" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="300"><ul>
+  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
+  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+</ul>
+</td>
+    <td width="300"><ul>
+  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
+  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><hr />

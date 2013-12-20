@@ -1,0 +1,109 @@
+---
+layout: apipage
+title: Operation Object | APIs Service | Community Platform API
+description: Includes information about an operation supported by an API.
+product: cm
+category: ref
+nav-title: Operation Object 
+no-nav: true
+no-catalog: true
+---
+
+<h2><a name="top"></a>Operation Object</h2>
+<p>Includes information about an operation supported by an API.</p>
+
+<p class="usedby">This object is used by the following operations:</p>
+<ul>
+  <li>Operations that reference the <a href="o_apis_Operations.htm">Operations</a> object</li>
+</ul>
+
+<p>The properties included in the <strong>Operation</strong> object are listed below.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr>
+      <th width="15%">Property</th>
+      <th width="15%">Type</th>
+      <th width="10%">Required</th>
+      <th width="60%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Name</td>
+      <td>string</td>
+      <td>Required</td>
+      <td>The name of the operation.</td>
+  </tr>
+    <tr>
+      <td>Method</td>
+      <td>string</td>
+      <td>Required</td>
+      <td>The HTTP method for the operation: GET, PUT, POST, or DELETE.</td>
+  </tr>
+    <tr>
+      <td>Path</td>
+      <td>string</td>
+      <td>Required</td>
+      <td><p>The parameterized path for the operation. For example, if the resource is <strong>pet</strong> the path might be <strong>/pet/{id</strong>}, where <strong>id</strong> is the instance of the <strong>pet</strong> resource.</p>
+        <p>You can also further describe or constrain the parameter by using regular expressions in the following format:<br />
+          <strong>/pet/{id:[regex]}</strong></p></td>
+  </tr>
+    <tr>
+      <td>InputContentType</td>
+      <td>string</td>
+      <td>Required</td>
+      <td>The content type (MIME type) valid for a request message for this operation.</td>
+  </tr>
+    <tr>
+      <td>OutputContentType</td>
+      <td>string</td>
+      <td>Required</td>
+      <td>The content type (MIME type) valid for a response message for this operation.</td>
+  </tr>
+    <tr>
+      <td>FaultContentType</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td>The content type (MIME type) valid for a fault message for this operation.</td>
+  </tr>
+    <tr>
+      <td>Input</td>
+      <td><a href="../obj/o_apis_Input.htm">Input</a>[&nbsp;]</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/o_api_Input.lbi" -->Information about one or more valid input parameters for the operation, expressed as an array.<!-- #EndLibraryItem --></td>
+  </tr>
+    <tr>
+      <td>OperationKey</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td>For internal use only: the operation key.</td>
+    </tr>
+    <tr>
+      <td>OAuthDetails</td>
+      <td><a href="o_apis_OperationOAuthDetails.htm">OperationOAuthDetails</a></td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/o_apis_OperationOAuthDetails.lbi" --> Includes information about OAuth details applicable to a specific operation.<!-- #EndLibraryItem --></td>
+    </tr>
+    </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<table width="600" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="300"><ul>
+  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
+  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+</ul>
+</td>
+    <td width="300"><ul>
+  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
+  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem -->
+<hr />

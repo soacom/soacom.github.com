@@ -1,0 +1,49 @@
+---
+layout: apipage
+title: Metrics on the Platform | Reference Material | Community Platform API
+description: Most operations perform actions that create, modify, read, or delete platform resources such as apps, APIs, discussions, tickets, and so forth.
+product: cm
+category: ref
+nav-title: Metrics on the Platform 
+no-nav: true
+no-catalog: true
+---
+
+<h2><a name="top"></a>Metrics on the Platform</h2>
+<p>Most operations perform actions that create, modify, read, or delete platform resources such as apps, APIs, discussions, tickets, and so forth.</p>
+<p>However, there is also a set of operations that monitors and reports on app/API transaction activity. These operations are:</p>
+<ul>
+  <li><span class="apidoc_code">getMetrics</span> (for example, <span class="apidoc_code">GET&nbsp;/api/apps/versions/{AppVersionID}/metrics</span>)</li>
+  <li><span class="apidoc_code">getTransactionRecord</span> (for example, <span class="apidoc_code">GET&nbsp;/api/apps/versions/{AppVersionID}/txlogs/{TransactionID}</span>)</li>
+  <li><span class="apidoc_code">getTxLogs</span> (for example, <span class="apidoc_code">GET&nbsp;/api/apps/versions/{AppVersionID}/txlogs</span>)</li>
+  <li><span class="apidoc_code">exportMetrics</span> (for example, <span class="apidoc_code">GET&nbsp;/api/apps/versions/{AppVersionID}/metrics/export</span>)</li>
+</ul>
+<p>Some examples of how you can use these operations, depending on your app or API admin access rights, are:</p>
+<ul>
+  <li>Query how many times an app uses a specific API in a specified timeframe</li>
+  <li>Query the number of requests processed by a specific API in a specified timeframe</li>
+  <li>If an app is using multiple APIs, query how many times it used one API or all APIs</li>
+  <li>Query how much time each request took</li>
+</ul>
+<p>The first three operations report on the transaction information in different ways; <span class="apidoc_code">exportMetrics</span> exports the information in <a href="glossary_communityplatform.htm#csv">CSV</a> format.</p>
+<p>Use these operations to monitor your app/API activity.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<table width="600" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="300"><ul>
+  <li><a href="index.htm">Community Platform API: Overview</a></li>
+  <li><a href="glossary_communityplatform.htm">Glossary of Terms</a></li>
+  <li><a href="docconventions.htm">Documentation Conventions</a></li>
+</ul>
+</td>
+    <td width="300"><ul>
+  <li><a href="authenticationandsecurity.htm">Authentication and Security</a></li>
+  <li><a href="troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="Ref_apireference.htm">Community Platform API Reference Material</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><hr />

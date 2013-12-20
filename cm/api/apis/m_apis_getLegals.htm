@@ -1,0 +1,366 @@
+---
+layout: apipage
+title: GET&nbsp;/api/apis/versions/{ApiVersionID}/legals Operation | APIs Service | Community Platform API
+description:  Retrieves information about legal documents for the specified API version.
+product: cm
+category: ref
+nav-title: GET&nbsp;/api/apis/versions/{ApiVersionID}/legals
+no-nav: true
+no-catalog: true
+---
+
+<!-- InstanceBeginEditable name="Heading" -->
+<h2><a name="top" id="top"></a>GET&nbsp;/api/apis/versions/{APIVersionID}/legals</h2><!-- InstanceEndEditable -->
+
+<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
+<p><!-- #BeginLibraryItem "/Library/desc_getLegals.lbi" -->
+Retrieves information about legal documents for the specified API version.<!-- #EndLibraryItem --></p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/Library/roles_user.lbi" --> To complete this operation successfully, a user must be logged in<!-- #EndLibraryItem --> and must be an Administrator for the API.</p>
+<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p>This topic includes the following sections:</p>
+<table width="600" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="200"><ul>
+  <li><a href="#httpmethod">HTTP Method</a></li>
+  <li><a href="#endpoint">URL</a></li>
+  <li><a href="#samplerequest">Sample Request</a></li>
+  <li><a href="#requestheaders">Request Headers</a></li>
+  <li><a href="#requestparameters">Request Parameters</a></li>
+</ul>
+</td>
+    <td width="400"><ul>
+  <li><a href="#response">Response</a></li>
+  <li><a href="#sampleresponse">Sample Response</a></li>
+  <li><a href="#responseheaders">Response Headers</a></li>
+  <li><a href="#responsebody">Response Body</a></li>
+  <li><a href="#errorcodes">Error Codes/Messages</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><h3 id="httpmethod">HTTP Method</h3>
+<!-- InstanceBeginEditable name="HTTP Method" -->
+<p class="httpverb">GET</p>
+<!-- InstanceEndEditable -->
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+<h3 id="endpoint">URL</h3>
+<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/apis/versions/{APIVersionID}/legals</pre><!-- InstanceEndEditable -->
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<!-- InstanceBeginEditable name="Sample Request" -->
+<h3 id="samplerequest">Sample Request</h3>
+<p id="id_samplerequest">The example below shows a request for legal documents for an API.</p>
+<p><strong>Request URL</strong></p>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion500.open/legals?Drafts=true&amp;Inactive=true</pre>
+<p><strong>Sample request headers</strong></p>
+<pre>GET&nbsp;/api/apis/versions/apiversion500.open/legals?Drafts=true&amp;Inactive=true HTTP/1.1
+Host: &lt;hostname&gt;
+Accept: application/json, text/javascript, */*; q=0.01
+Content-Type: application/x-www-form-urlencoded</pre>
+<p><strong>Sample request body</strong></p>
+<p>None.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Request Headers" -->
+<h3 id="requestheaders">Request Headers</h3>
+<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#httprequestheaders">HTTP Request Headers</a>.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr>
+      <th width="20%">Header</th>
+      <th width="80%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_accept_txtxml_or_json.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
+    </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Request Parameters" -->
+<h3 id="requestparameters">Request Parameters</h3>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr>
+      <th width="11%">Parameter</th>
+      <th width="9%">Parm Type</th>
+      <th width="11%">Data Type</th>
+      <th width="11%">Required</th>
+      <th width="58%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../Ref_IDsOnThePlatform.htm#id_apiversionid">APIVersionID</a></td>
+      <td>Path</td>
+      <td>string</td>
+      <td>Required</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->
+The unique ID for the specified API version.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>Drafts</td>
+      <td>Query</td>
+      <td>boolean</td>
+      <td>Optional</td>
+      <td>Optional parameter indicating whether legal documents with a status of Draft should be included in the results returned. Defaults to <strong>false</strong>; if this parameter is not specified, drafts are not included.</td>
+    </tr>
+    <tr>
+      <td>Inactive</td>
+      <td>Query</td>
+      <td>boolean</td>
+      <td>Optional</td>
+      <td>Optional parameter indicating whether legal documents with a status of Inactive should be included in the results returned. Defaults to <strong>false</strong>; if not specified, inactive documents are not included.</td>
+    </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Response Description" -->
+<h3 id="response">Response</h3>
+<p id="id_successstatement">If successful, this method returns HTTP status code 200, with information about the legal agreements. The information is sent as an RSS channel in XML or JSON format.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Sample Response" -->
+<h3 id="sampleresponse">Sample Response</h3>
+<p id="id_sampleresponse">The sample response below shows the requested legal agreements returned.</p>
+<p><strong>Sample response headers: JSON</strong></p>
+<pre>HTTP/1.1 200 OK
+Date: Mon, 04 Feb 2013 19:46:05 GMT
+Content-Type: application/json</pre>
+<p><a id="rss_agreementdocuments_json"></a><strong>Sample response body: JSON</strong></p>
+<pre>{
+  "channel" : {
+    "title" : "Agreement Documents",
+    "item" : [ {
+      "title" : "Legal Agreement 2.0",
+      "link" : "api/api200.open/legal/dev_update_test_agreement.html?version=1",
+      "description" : "Updated Version of Legal Agreement for version 2.0",
+      "category" : [ {
+        "value" : "agreement",
+        "domain" : "uddi:soa.com:resourcetype"
+      }, {
+        "value" : "com.soa.open.legals.eula",
+        "domain" : "uddi:soa.com:documenttype"
+      }, {
+        "value" : "com.soa.status.active",
+        "domain" : "uddi:soa.com:state"
+      }, {
+        "value" : "dev_update_test_agreement.html",
+        "domain" : "uddi:soa.com:filename"
+      }, {
+        "value" : "1",
+        "domain" : "uddi:soa.com:version"
+      }, {
+        "value" : "api/api200.open/legal/dev_update_test_agreement.html",
+        "domain" : "uddi:soa.com:docpath"
+      } ],
+      "guid" : {
+        "value" : "agreement10015.open"
+      },
+      "EntityReferences" : {
+        "EntityReference" : [ {
+          "Guid" : "apiversion500.open"
+        } ]
+      }
+    }, {
+      "title" : "ACME Payments API SDK Agreement",
+      "link" : "/api/api200.open/legal/Sample_EULA.htm?version=1",
+      "description" : "SDK Agreement for applications to be able to access PaymentsAPI",
+      "category" : [ {
+        "value" : "agreement",
+        "domain" : "uddi:soa.com:resourcetype"
+      }, {
+        "value" : "com.soa.open.legals.eula",
+        "domain" : "uddi:soa.com:documenttype"
+      }, {
+        "value" : "com.soa.status.active",
+        "domain" : "uddi:soa.com:state"
+      }, {
+        "value" : "Sample_EULA.htm",
+        "domain" : "uddi:soa.com:filename"
+      }, {
+        "value" : "1",
+        "domain" : "uddi:soa.com:version"
+      }, {
+        "value" : "/api/api200.open/legal/Sample_EULA.htm",
+        "domain" : "uddi:soa.com:docpath"
+      } ],
+      "guid" : {
+        "value" : "api200eula2.open"
+      },
+      "EntityReferences" : {
+        "EntityReference" : [ {
+          "Guid" : "apiversion500.open"
+        } ]
+      }
+    }, {
+      "title" : "ACME Payments API SDK Agreement",
+      "link" : "/api/api200.open/legal/Sample_EULA.htm?version=1",
+      "description" : "SDK Agreement for applications to be able to access PaymentsAPI",
+      "category" : [ {
+        "value" : "agreement",
+        "domain" : "uddi:soa.com:resourcetype"
+      }, {
+        "value" : "com.soa.open.legals.eula",
+        "domain" : "uddi:soa.com:documenttype"
+      }, {
+        "value" : "com.soa.status.inactive",
+        "domain" : "uddi:soa.com:state"
+      }, {
+        "value" : "Sample_EULA.htm",
+        "domain" : "uddi:soa.com:filename"
+      }, {
+        "value" : "1",
+        "domain" : "uddi:soa.com:version"
+      }, {
+        "value" : "/api/api200.open/legal/Sample_EULA.htm",
+        "domain" : "uddi:soa.com:docpath"
+      } ],
+      "guid" : {
+        "value" : "api200eula1.open"
+      },
+      "EntityReferences" : {
+        "EntityReference" : [ {
+          "Guid" : "apiversion500.open"
+        } ]
+      }
+    } ]
+  },
+  "version" : "1.0"
+}</pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Response Headers" -->
+<h3 id="responseheaders">Response Headers</h3>
+<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#httpresponseheaders">HTTP Response Headers</a>.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Header</th>
+      <th width="80%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_resp_json_or_txtxml.lbi" -->
+application/json or text/xml<!-- #EndLibraryItem --></td>
+    </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Response Body" -->
+<h3 id="responsebody">Response Body</h3>
+<p><!-- #BeginLibraryItem "/Library/_rss_responsetable_intro.lbi" -->
+The response body is in the form of an RSS channel, and includes the items listed below. The RSS version is 1.0.<!-- #EndLibraryItem --> The title of the RSS channel is  <strong>List Agreement Documents</strong>. Each item in the channel represents an agreement document, and includes the information listed below.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Name</th>
+      <th width="80%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>title</td>
+      <td>The title of the legal agreement document.</td>
+    </tr>
+    <tr>
+      <td>link</td>
+      <td>URL for the agreement document on the server.</td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td>User-defined description of the agreement document.</td>
+    </tr>
+    <tr>
+      <td>category</td>
+      <td><p>One or more categories. Each category is a set of two name/value pairs. The second item defines the Domain, and the first defines the actual value for the property. For example, the set of values below shows that the document type is a legal eula (end-user licensing agreement) document:</p>
+        <pre>{
+  "value" : "com.soa.open.legals.eula",
+  "domain" : "uddi:soa.com:documenttype"
+}</pre>
+<p>The domains for which values are defined are:</p>
+<ul class="apidoctable_ul">
+  <li><strong>Resource type</strong>: uddi:soa.com:resourcetype</li>
+  <li><strong>Document type</strong>: uddi:soa.com:documenttype</li>
+  <li><strong>Document State</strong>: uddi:soa.com:state</li>
+  <li><strong>Filename</strong>: uddi:soa.com:filename</li>
+  <li><strong>Version</strong>: uddi:soa.com:version</li>
+  <li><strong>Document path</strong>: uddi:soa.com:docpath</li>
+</ul>      </td>
+    </tr>
+    <tr>
+      <td><a href="../Ref_RSSChannelsOnThePlatform.htm#rss_guid">guid</a></td>
+      <td>GUID for the legal agreement.</td>
+    </tr>
+    <tr>
+      <td><a href="../Ref_RSSChannelsOnThePlatform.htm#rss_entityreferences">EntityReferences</a></td>
+      <td><p>One or more entity references. Each includes:</p>
+        <ul class="apidoctable_ul">
+          <li><a href="../Ref_RSSChannelsOnThePlatform.htm#rss_guid">GUID</a>: GUID for the API version the legal agreement relates to.</li>
+        </ul></td>
+    </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<h3 id="errorcodes">Error Codes/Messages</h3>
+<p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
+<!-- InstanceBeginEditable name="Error Messages" -->
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Item</th>
+      <th width="80%">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../Ref_apireference.htm#http500">500</a></td>
+      <td>An error occurred processing the call. </td>
+    </tr>
+  </tbody>
+</table>
+<!-- InstanceEndEditable -->
+<p><a href="../Ref_apireference.htm#errormessages">Full list of Community Platform API error messages.</a></p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<table width="600" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="300"><ul>
+  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
+  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+</ul>
+</td>
+    <td width="300"><ul>
+  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
+  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><hr />

@@ -1,0 +1,51 @@
+---
+layout: apipage
+title: The "Wrap In HTML" Parameter | Reference Material | Community Platform API
+description: In some cases the platform uses a &quot;Wrap In HTML&quot; parameter in request messages. The sample request for the <span class="apidoc_code"><a href="apps/m_apps_addKeyInfo.htm">POST&nbsp;/api/apps/versions/{RuntimeID}/keyinfo</a></span> operation is an example of this, as shown below-
+product: cm
+category: ref
+nav-title: The "Wrap In HTML" Parameter 
+no-nav: true
+no-catalog: true
+---
+
+<h2><a name="top"></a>The &quot;Wrap In HTML&quot; Parameter</h2>
+<p>In some cases the platform uses a &quot;Wrap In HTML&quot; parameter in request messages. The sample request for the <span class="apidoc_code"><a href="apps/m_apps_addKeyInfo.htm">POST&nbsp;/api/apps/versions/{RuntimeID}/keyinfo</a></span> operation is an example of this, as shown below:</p>
+<pre>https://&lt;hostname&gt;/api/apps/versions/4iXro2Uxs2h4LviCshR9pK9w.open/keyinfo?<strong>wrapInHTML=true</strong></pre>
+<p>We use this parameter to work around the fact that if we return an error message that is less that 512K in size, and the user's browser is Internet Explorer, the IE &quot;Friendly Error Messages&quot; feature replaces the custom error page with a generic one. In order to make sure the custom error message is displayed, we add padding that increases the size to over 512K.</p>
+<p>For example, the response below is an HTTP status 200 success message. The padding in the meta tag is not displayed to the user, but ensures that the user does see the response message sent by the platform rather than an Internet Explorer default page.</p>
+<pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en" status="200" statusText="success"&gt;
+&lt;head&gt;
+&lt;meta content="text/html; charset=UTF-8" http-equiv="Content-Type"&gt;&lt;meta content="IE=edge" http-equiv="X-UA-Compatible"&gt;
+&lt;meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacus elit, ornare eget luctus vel, porta id 
+elit. Maecenas molestie, libero sit amet blandit faucibus, orci nisi aliquet nisi, id mollis mauris ipsum a enim. Morbi lacus velit, placerat 
+sit amet luctus eget, pulvinar a massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eleifend tincidunt pellentesque. Cras 
+eu sapien massa, vitae rutrum sapien. Aenean id condimentum sem. Suspendisse tempor luctus ipsum, vel metus."&gt;
+&lt;/head&gt;
+  &lt;body status="200" statusText="success"&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>When sending request messages using the Community Manager API, you can use this parameter to ensure response messages are correctly displayed.</p>
+<p>For more information, see  <a href="http://support.microsoft.com/kb/294807" target="_blank">the Microsoft knowledge base article on the subject</a>.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<table width="600" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="300"><ul>
+  <li><a href="index.htm">Community Platform API: Overview</a></li>
+  <li><a href="glossary_communityplatform.htm">Glossary of Terms</a></li>
+  <li><a href="docconventions.htm">Documentation Conventions</a></li>
+</ul>
+</td>
+    <td width="300"><ul>
+  <li><a href="authenticationandsecurity.htm">Authentication and Security</a></li>
+  <li><a href="troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="Ref_apireference.htm">Community Platform API Reference Material</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><hr />
