@@ -1,6 +1,7 @@
     <head>
             <meta http-equiv="Content-type" content="text/html; charset=utf-8">
             <title>{% if page.title != null %}{{ page.title }}{% else %}SOA Software Development Center{% endif %}</title>
+			<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
             <link rel="stylesheet" href="{{ site.baseurl }}/style/reset.css" type="text/css">
             <link rel="stylesheet" href="{{ site.baseurl }}/style/base.css" type="text/css">
             <link rel="stylesheet" href="{{ site.baseurl }}/style/style.css" type="text/css">
