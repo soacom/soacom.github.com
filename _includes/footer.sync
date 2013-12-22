@@ -9,7 +9,6 @@
 			<div id="soa-control-dc-overlay" class="soa-ui-dc-overlay"></div>
 			<script type="text/javascript">
 				$(function() {
-					console.log('Starting DOM Ready');
 					$(".soa-control-dc-tabs").tabs();
 					$('#soa-control-dc-search-query').lunrSearch({
 						indexUrl: '{{ site.baseurl }}/search.json',
@@ -17,12 +16,10 @@
 						entries:  '#soa-control-dc-search-result-entries',
 						template: '#soa-control-dc-search-results-template'
 					});
-					console.log('Finished processing Index');
 					$("#soa-control-dc-close-results").click(function(e){
 						e.preventDefault();
 						$('#soa-control-dc-search-results').hide();
 						$('#soa-control-dc-overlay').removeClass('soa-ui-dc-overlay-visible');
 					});
-					console.log('End of DOM Ready Block');
 				});
 			</script>

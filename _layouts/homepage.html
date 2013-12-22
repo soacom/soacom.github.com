@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-	{% include header %}
+	<head>
+		{% include header %}
+		{% include unsorted-pages-all %}
+	</head>
 	<body class="soa-ui-dc-homepage">
 		<div class="soa-ui-dc-container-main">
 		    <div class="soa-ui-dc-container-top soa-ui-dc-clearthis">
@@ -10,5 +13,6 @@
 			{{ content }}
 			{% include footer %}
 		</div>
+		{% include prod-cat-column %}
 	</body>
 </html>

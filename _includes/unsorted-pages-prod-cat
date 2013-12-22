@@ -1,0 +1,8 @@
+<!-- filtered pages for product and category list script -->
+<script>
+	{% capture unsorted_prod_cat_page_list %}{% for p in site.pages %}{% if p.product == page.product and p.category == page.category %}{% if p.no-catalog == null or p.no-nav == null or p.no-nav == 'api' %}{ title: '{{ p.title | escape }}', navtitle: '{{ p.nav-title | escape }}', weight: '{{ p.weight }}', type: '{{ p.type }}', url: '{{ p.url }}', description: '{{ p.description | escape }}', no_nav: '{{ p.no-nav }}', no_catalog: '{{ p.no-catalog }}' } , {% endif %}{% endif %}{% endfor %}{% endcapture %}
+	var unsorted_pages_prod_cat = [ 
+		{{ unsorted_prod_cat_page_list | replace: ',  ]', ']' | replace: '\'', '\\x27' }} 
+		];
+</script>
+<!-- end filtered pages for product and category list script -->

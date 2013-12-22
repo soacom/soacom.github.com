@@ -1,0 +1,78 @@
+<!-- catalog script -->
+<script>
+	var cat_pages = unsorted_pages_prod_cat.filter(function(a) {
+        return (a.no_catalog == '');
+    }).sort(function CustomSort(a, b) {
+		if ( ! a["weight"] ) { a["weight"] = 1000 ;}
+		if ( ! b["weight"] ) { b["weight"] = 1000 ;}
+		var weighta = a['weight'];
+		var weightb = b['weight'];
+		if(weighta != weightb){
+			return (weighta - weightb);
+		}
+		else{
+			return (a.title.localeCompare(b.title));
+		}
+	});
+	function catalog(div)
+    {
+        var ObjUl = $('<ul></ul>').hide();
+        ObjUl.addClass("soa-ui-dc-content-catalog-items");
+
+        for (i = 0; i < cat_pages.length; i++)
+        {
+            var Objli = $('<li></li>');
+            var Obja = $('<a></a>');
+            var ObjAvDiv = $('<div></div>');
+            var ObjDetDiv = $('<div></div>');
+            var ObjSecDiv = $('<div></div>');
+            var ObjH3 = $('<h3></h3>');
+            var ObjH4 = $('<h4></h4>');
+            var ObjP = $('<p></p>');
+
+            ObjH4.addClass("soa-ui-dc-icon-imgtxt soa-ui-dc-document-type");
+            if (cat_pages[i].type == 'pdf') {
+                ObjH4.addClass("soa-ui-dc-icon-pdf");
+            } else {
+                ObjH4.addClass("soa-ui-dc-icon-document");
+            }
+            ObjH4.text("Document");
+            ObjAvDiv.append(ObjH4);
+            ObjAvDiv.addClass("soa-ui-dc-avatar-box");
+
+        	if ( "{{ site.baseurl }}" ) {
+            	Obja.attr("href", "{{ site.baseurl }}".concat(cat_pages[i].url) );
+            } else {
+            	Obja.attr("href", cat_pages[i].url );
+            }
+            if (cat_pages[i].type == 'pdf') {
+                Obja.attr("target", "_blank");
+            }
+            Obja.html(cat_pages[i].navtitle.replace("&nbsp;", " "));
+            ObjH3.append(Obja);
+            ObjH3.addClass("soa-ui-dc-section-header");
+
+            ObjP.addClass("soa-ui-dc-section-paragraph");
+            ObjP.html(cat_pages[i].description);
+
+            ObjSecDiv.append(ObjH3);
+            ObjSecDiv.append(ObjP);
+            ObjSecDiv.addClass("soa-ui-dc-section");
+            ObjDetDiv.append(ObjSecDiv);
+            ObjDetDiv.addClass("soa-ui-dc-details-box");
+
+            Objli.addClass("soa-ui-dc-content-catalog-item soa-ui-dc-2col-with-avatar soa-ui-dc-clearthis");
+
+            Objli.append(ObjAvDiv);
+            Objli.append(ObjDetDiv);
+
+            ObjUl.append(Objli);
+        }
+        $(div).append(ObjUl);
+    }
+    $(document).ready(function() {
+        catalog(".soa-ui-dc-content-catalog");
+        $(".soa-ui-dc-content-catalog").find("ul").show();
+    });
+</script>
+<!-- End catalog script -->

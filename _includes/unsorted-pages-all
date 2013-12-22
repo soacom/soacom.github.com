@@ -1,0 +1,8 @@
+<!-- filtered pages all script -->
+<script>
+	{% capture unsorted_page_list %}{% for p in site.pages %}{% if p.no-catalog == null or p.no-nav == null or p.no-nav == 'api' %}{ title: '{{ p.title | escape }}', prod: '{{ p.product }}', cat: '{{ p.category }}', navtitle: '{{ p.nav-title | escape }}', weight: '{{ p.weight }}', type: '{{ p.type }}', url: '{{ p.url }}', description: '{{ p.description | escape }}', no_nav: '{{ p.no-nav }}', no_catalog: '{{ p.no-catalog }}' } , {% endif %}{% endfor %}{% endcapture %}
+	var unsorted_pages_all = [ 
+		{{ unsorted_page_list | replace: ',  ]', ']' }}
+		];
+</script>
+<!-- end filtered pages all script -->

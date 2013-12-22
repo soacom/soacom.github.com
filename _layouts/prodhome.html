@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-	{% include header %}
+	<head>
+		{% include header %}
+		{% include unsorted-pages-all %}
+	</head>
 	<body>
-
 		<div class="soa-ui-dc-container-top soa-ui-dc-clearthis">
 			{% include logo %}
 			{% include search %}
@@ -10,62 +12,23 @@
 		</div>
 		<div class="soa-ui-dc-container-main soa-ui-dc-clearthis">
 			{{ content }}
-			<!-- 3-col index starts here -->
 			<ul class="soa-ui-dc-detail-columns soa-ui-dc-clearthis">
-				<!-- col 1 index starts here -->
-				<li class="soa-ui-dc-detail-column">
+				<li class="soa-ui-dc-detail-column" data-limit="0" data-prod="{{ page.product }}" data-cat="gs">
 					<h4 class="soa-ui-dc-detail-column-header"><a href="{{ site.baseurl }}/{{ page.product }}/getting-started.html" class="soa-ui-dc-icon soa-ui-dc-icon-action-dark">Getting Started</a></h4>
-					<ul class="soa-ui-dc-detail-column-items">{% assign ctr = '' %}{% for weight in (1..site.MAXWEIGHT) %}{% for p in site.pages %}{% if p.weight == weight and p.product == page.product and p.category == 'gs' and p.no-nav == null %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
-					      <li class="soa-ui-dc-detail-column-item">
-					        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon {% if p.type == 'pdf' %}soa-ui-dc-icon-pdf-17px{% else %}soa-ui-dc-icon-document-20px{% endif %}" href="{{ site.baseurl }}{{ p.url }}"{% if p.type == 'pdf' %} target="_blank"{% endif %}>
-					          {% if p.nav-title != null %}{{ p.nav-title }}{% else %}{{ p.title }}{% endif %}
-					        </a>
-					      </li>{% endif %}{% endfor %}{% endfor %}{% for p in site.pages %}{% if p.weight == null and p.product == page.product and p.category == 'gs' and p.no-nav == null %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
-					      <li class="soa-ui-dc-detail-column-item">
-					        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon {% if p.type == 'pdf' %}soa-ui-dc-icon-pdf-17px{% else %}soa-ui-dc-icon-document-20px{% endif %}" href="{{ site.baseurl }}{{ p.url }}"{% if p.type == 'pdf' %} target="_blank"{% endif %}>
-					          {% if p.nav-title != null %}{{ p.nav-title }}{% else %}{{ p.title }}{% endif %}
-					        </a>
-					      </li>{% endif %}{% endfor %}
-					</ul>
+
 				</li>
-				<!-- col 1 index ends here -->
-				<!-- col 3 index starts here -->
-				<li class="soa-ui-dc-detail-column">
+				<li class="soa-ui-dc-detail-column" data-limit="0" data-prod="{{ page.product }}" data-cat="learn">
 					<h4 class="soa-ui-dc-detail-column-header"><a href="{{ site.baseurl }}/{{ page.product }}/learning.html" class="soa-ui-dc-icon soa-ui-dc-icon-action-dark">Learning</a></h4>
-					<ul class="soa-ui-dc-detail-column-items">{% assign ctr = '' %}{% for weight in (1..site.MAXWEIGHT) %}{% for p in site.pages %}{% if p.weight == weight and p.product == page.product and p.category == 'learn' and p.no-nav == null %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
-					      <li class="soa-ui-dc-detail-column-item">
-					        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon {% if p.type == 'pdf' %}soa-ui-dc-icon-pdf-17px{% else %}soa-ui-dc-icon-document-20px{% endif %}" href="{{ site.baseurl }}{{ p.url }}"{% if p.type == 'pdf' %} target="_blank"{% endif %}>
-					          {% if p.nav-title != null %}{{ p.nav-title }}{% else %}{{ p.title }}{% endif %}
-					        </a>
-					      </li>{% endif %}{% endfor %}{% endfor %}{% for p in site.pages %}{% if p.weight == null and p.product == page.product and p.category == 'learn' and p.no-nav == null %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
-					      <li class="soa-ui-dc-detail-column-item">
-					        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon {% if p.type == 'pdf' %}soa-ui-dc-icon-pdf-17px{% else %}soa-ui-dc-icon-document-20px{% endif %}" href="{{ site.baseurl }}{{ p.url }}"{% if p.type == 'pdf' %} target="_blank"{% endif %}>
-					          {% if p.nav-title != null %}{{ p.nav-title }}{% else %}{{ p.title }}{% endif %}
-					        </a>
-					      </li>{% endif %}{% endfor %}
-					</ul>
+
 				</li>
-				<!-- col 3 index ends here -->
-				<!-- col 2 index starts here -->
-				<li class="soa-ui-dc-detail-column">
+				<li class="soa-ui-dc-detail-column" data-limit="0" data-prod="{{ page.product }}" data-cat="ref">
 					<h4 class="soa-ui-dc-detail-column-header"><a href="{{ site.baseurl }}/{{ page.product }}/reference.html" class="soa-ui-dc-icon soa-ui-dc-icon-action-dark">Reference</a></h4>
-					<ul class="soa-ui-dc-detail-column-items">{% assign ctr = '' %}{% for weight in (1..site.MAXWEIGHT) %}{% for p in site.pages %}{% if p.weight == weight and p.product == page.product and p.category == 'ref' and p.no-nav == null %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
-					      <li class="soa-ui-dc-detail-column-item">
-					        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon {% if p.type == 'pdf' %}soa-ui-dc-icon-pdf-17px{% else %}soa-ui-dc-icon-document-20px{% endif %}" href="{{ site.baseurl }}{{ p.url }}"{% if p.type == 'pdf' %} target="_blank"{% endif %}>
-					          {% if p.nav-title != null %}{{ p.nav-title }}{% else %}{{ p.title }}{% endif %}
-					        </a>
-					      </li>{% endif %}{% endfor %}{% endfor %}{% for p in site.pages %}{% if p.weight == null and p.product == page.product and p.category == 'ref' and p.no-nav == null %}{% capture temp %}{{ ctr }}*{% endcapture %}{% assign ctr = temp %}
-					      <li class="soa-ui-dc-detail-column-item">
-					        <a class="soa-ui-dc-detail-column-item-link soa-ui-dc-icon {% if p.type == 'pdf' %}soa-ui-dc-icon-pdf-17px{% else %}soa-ui-dc-icon-document-20px{% endif %}" href="{{ site.baseurl }}{{ p.url }}"{% if p.type == 'pdf' %} target="_blank"{% endif %}>
-					          {% if p.nav-title != null %}{{ p.nav-title }}{% else %}{{ p.title }}{% endif %}
-					        </a>
-					      </li>{% endif %}{% endfor %}
-					</ul>
+
 				</li>
-				<!-- col 2 index ends here -->
 			</ul>
 			<!-- 3-col index ends here -->
 			{% include footer %}
 		</div>
+		{% include prod-cat-column %}
 	</body>
 </html>

@@ -9,7 +9,7 @@
 								<div class="soa-ui-dc-details-box">
 									<div class="soa-ui-dc-section">
 										<h3 class="soa-ui-dc-section-header">
-											<a href="{{ site.baseurl }}{{ p.url }}"{% if p.layout == 'download' %} target="_blank"{% endif %}>{{ p.title }}</a>
+											<a href="{{ site.baseurl }}{{ p.url }}"{% if p.type == 'pdf' %} target="_blank"{% endif %}>{{ p.title }}</a>
 										</h3>
 										<p class="soa-ui-dc-section-paragraph">
 											{{ p.description }} 
@@ -26,7 +26,7 @@
 								<div class="soa-ui-dc-details-box">
 									<div class="soa-ui-dc-section">
 										<h3 class="soa-ui-dc-section-header">
-											<a href="{{ site.baseurl }}{{ p.url }}"{% if p.layout == 'download' %} target="_blank"{% endif %}>{{ p.title }}</a>
+											<a href="{{ site.baseurl }}{{ p.url }}"{% if p.type == 'pdf' %} target="_blank"{% endif %}>{{ p.title }}</a>
 										</h3>
 										<p class="soa-ui-dc-section-paragraph">
 											{{ p.description }} 
