@@ -76,7 +76,7 @@
           category = "/reference.html";
           break;
         case "gs":
-          category = "/getting_started.html";
+          category = "/getting-started.html";
         }
         if ( "{{ site.baseurl }}" ) {
             Obja.attr("href", "{{ site.baseurl }}".concat(prod).concat(category) );
