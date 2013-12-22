@@ -62,31 +62,34 @@
 
           ObjUl.append(Objli);
         }
-        var Objli = $('<li></li>');
-        var Obja = $('<a></a>');
-        Objli.addClass("soa-ui-dc-detail-column-item");
-        Obja.addClass("soa-ui-dc-detail-column-item-link soa-ui-dc-icon soa-ui-dc-icon-action-light");
-        var url = "";
-        switch (cat)
-        {
-        case "learn":
-          category = "/learning.html";
-          break;
-        case "ref":
-          category = "/reference.html";
-          break;
-        case "gs":
-          category = "/getting-started.html";
+        // Add a more link if there are more objects
+        if (limit != pages.length) {
+          var Objli = $('<li></li>');
+          var Obja = $('<a></a>');
+          Objli.addClass("soa-ui-dc-detail-column-item");
+          Obja.addClass("soa-ui-dc-detail-column-item-link soa-ui-dc-icon soa-ui-dc-icon-action-light");
+          var url = "";
+          switch (cat)
+          {
+          case "learn":
+            category = "/learning.html";
+            break;
+          case "ref":
+            category = "/reference.html";
+            break;
+          case "gs":
+            category = "/getting-started.html";
+          }
+          if ( "{{ site.baseurl }}" ) {
+              Obja.attr("href", "{{ site.baseurl }}".concat(prod).concat(category) );
+          } else {
+            Obja.attr("href", "/".concat(prod.concat(category)) );
+          }
+          Obja.html("More");
+          Objli.append(Obja);
+          ObjUl.append(Objli);
         }
-        if ( "{{ site.baseurl }}" ) {
-            Obja.attr("href", "{{ site.baseurl }}".concat(prod).concat(category) );
-        } else {
-          Obja.attr("href", "/".concat(prod.concat(category)) );
-        }
-        Obja.html("More");
-        Objli.append(Obja);
-        ObjUl.append(Objli);
-        $(column).last().append(ObjUl);
+        $(column).append(ObjUl);
     }
     $(document).ready(function() {
         $(".soa-ui-dc-detail-column").each(function() {
