@@ -14,7 +14,7 @@ nav-title: Using the Cross Site Scripting Policy
 <a name="top"></a>
 <div class="documentation supportContent">
   <h2 name="top">Using the Cross-Site Scripting Detection Policy</h2>
-  <p>Learn how configure a tag white list to protect your web service  from being exploited by cross site scripting. </p>
+  <p>Learn how to configure tag white and black lists to protect your web service from being exploited by cross site scripting attacks. </p>
 
 <a href="policy_management.htm" class="button secondary">Managing Policies</a>
   <p></p>
@@ -34,21 +34,16 @@ nav-title: Using the Cross Site Scripting Policy
   </ol>
   <div class = "divider1"></div><p></p>
 
-
-
-
-
-
 <a name="introduction">
 <h3>Introduction</h3></a>
 
-<p>The Cross Site Scripting Detection Policy is an Operational policy that allows you to block potentially malicous HTML tags in the request message body using a <em>black</em> and <em>white</em> tag list approach. </p>
+<p>The Cross Site Scripting Detection Policy is an Operational policy that allows you to block potentially malicous HTML tags in the request message body using <em>black</em> and <em>white</em> lists of tags. </p>
 <ul class="usingOrderedList">
   <li>The black list includes a list of HTML tags that will be blocked if they are found in the request message body. </li>
   <li>The  white list (which you define in the policy definition) includes a set of tags and attributes that are allowed in the request message body. If a white list tag is found, Network Director passes the request message to the downstream service. </li>
 </ul>
 
- <p>Say for example your web service includes an anchor &lt;a&gt; tag. When you attach a default Cross Site Scripting Detection Policy to a REST service and send a request message to the Network Director container that is hosting the service, you will receive an &quot;HTTP 403 Forbidden&quot; error. This is because the &lt;a&gt; tag is not defined in the policie's &quot;white list.&quot;</p>
+ <p>Say for example your web service includes an anchor &lt;a&gt; tag. When you attach a default Cross Site Scripting Detection Policy to a REST service and send a request message to the Network Director container that is hosting the service, you will receive an &quot;HTTP 403 Forbidden&quot; error. This is because the &lt;a&gt; tag is not defined in the policy's &quot;white list.&quot;</p>
 
 
  <p><a href="#top">Back to top</a></p>
@@ -83,7 +78,7 @@ nav-title: Using the Cross Site Scripting Policy
 <h5>Step 2: Modify Policy</h5>
 <p>When you <strong>Modify</strong> the Cross Site Scripting Detection policy on the <em>Policy Details</em> page the initial policy will look like this:</p>
 <p><img src="modify_cross_site_scripting_policy.jpg" width="430" height="489"></p>
-<p>If you use the default policy (without defining a white list) all tags in the black list default policy (listed above) will be forbidden when Network Director  passes the request message to the downstream service and an HTTP 404 Forbidden error will be raised.</p>
+<p>If you use the default policy (without defining a white list) all tags in the default black list (listed above) will be forbidden when Network Director  passes the request message to the downstream service and an HTTP 404 Forbidden error will be raised.</p>
 <h5>Step 3: Configure White List / Custom Tags</h5>
 <p>The next step is to define your tag white list. These represent tags that comprise the HTML in your request message body and that you have designated as ones that could be  potentially attacked. White list tags are allowed when Network Director passes the request message to the downstream service.  The following options are available:</p>
 <h5></h5>
