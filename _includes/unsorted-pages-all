@@ -1,6 +1,6 @@
 <!-- filtered pages all script -->
 <script>
-	{% capture unsorted_page_list %}{% for p in site.pages %}{% if p.no-catalog == null or p.no-nav == null or p.no-nav == 'api' %}{ title: '{{ p.title | escape }}', prod: '{{ p.product }}', cat: '{{ p.category }}', navtitle: '{{ p.nav-title | escape }}', weight: '{{ p.weight }}', type: '{{ p.type }}', url: '{{ p.url }}', description: '{{ p.description | escape }}', no_nav: '{{ p.no-nav }}', no_catalog: '{{ p.no-catalog }}' } , {% endif %}{% endfor %}{% endcapture %}
+	{% capture unsorted_page_list %}{% for p in site.pages %}{% if p.no-catalog != 'true' or p.no-nav != 'true' or p.no-nav == 'api' %}{% if p.sub-nav != 'true' %}{ t: '{{ p.title | escape }}', p: '{{ p.product }}', c: '{{ p.category }}', nt: '{{ p.nav-title | escape }}', w: '{{ p.weight }}', ty: '{{ p.type }}', u: '{{ p.url }}', d: '{{ p.description | escape }}', nn: '{{ p.no-nav }}', nc: '{{ p.no-catalog }}', sn: '{{ p.sub-nav }}', sc: '{{ p.sub-nav-class }}' } , {% endif %}{% endif %}{% endfor %}{% endcapture %}
 	var unsorted_pages_all = [ 
 		{{ unsorted_page_list | replace: ',  ]', ']' }}
 		];

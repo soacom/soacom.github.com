@@ -613,9 +613,13 @@ a.soa-ui-dc-container-main-left-header-link {
   color: #7d7e7f;
   margin: 0;
   padding: 0;
+  word-wrap: break-word;
 }
 .soa-ui-dc-container-main-left-nav-item-selected {
   font-weight: bold;
+}
+.soa-ui-dc-container-main-left-nav-item-selected .soa-ui-dc-container-main-left-nav-inner {
+  display: block;
 }
 a.soa-ui-dc-container-main-left-nav-item-link {
   border-bottom: 1px solid #c6c5c6;
@@ -629,6 +633,9 @@ a.soa-ui-dc-container-main-left-nav-item-link {
 }
 .soa-ui-dc-container-main-left-nav-inner {
   border-bottom: 1px solid #c6c5c6;
+  font-weight: normal;
+  padding-left: 5px;
+  display: none;
 }
 .soa-ui-dc-document-type {
   padding: 0;

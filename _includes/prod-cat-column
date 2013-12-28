@@ -8,17 +8,17 @@
   function prod_cat_col(column, prod, cat, limit)
     {
         var pages = unsorted_pages_all.filter(function(a) {
-          return (a.no_nav == '' && a.prod == prod && a.cat == cat);
+          return (a.nn == '' && a.p == prod && a.c == cat);
         }).sort(function CustomSort(a, b) {
-          if ( ! a["weight"] ) { a["weight"] = 1000 ;}
-          if ( ! b["weight"] ) { b["weight"] = 1000 ;}
-          var weighta = a['weight'];
-          var weightb = b['weight'];
+          if ( ! a["w"] ) { a["w"] = 1000 ;}
+          if ( ! b["w"] ) { b["w"] = 1000 ;}
+          var weighta = a['w'];
+          var weightb = b['w'];
           if(weighta != weightb){
               return (weighta - weightb);
           }
           else{
-              return (a.navtitle.localeCompare(b.navtitle));
+              return (a.nt.localeCompare(b.nt));
           }
         });
 
@@ -40,12 +40,12 @@
           Objli.attr("role", "menuitem");
 
           if ( "{{ site.baseurl }}" ) {
-              Obja.attr("href", "{{ site.baseurl }}".concat(pages[i].url) );
+              Obja.attr("href", "{{ site.baseurl }}".concat(pages[i].u) );
           } else {
-            Obja.attr("href", pages[i].url );
+            Obja.attr("href", pages[i].u );
           }
 
-          if ( pages[i].type == 'pdf' ) {
+          if ( pages[i].ty == 'pdf' ) {
             Obja.addClass("soa-ui-dc-detail-column-item-link soa-ui-dc-icon soa-ui-dc-icon-pdf-17px");
             Obja.attr("target", "_blank");
           } else {
@@ -53,10 +53,10 @@
           }
 
           Objli.addClass("soa-ui-dc-detail-column-item");
-          if (pages[i].navtitle) {
-            Obja.html(pages[i].navtitle.replace("&nbsp;", " "));
+          if (pages[i].nt) {
+            Obja.html(pages[i].nt.replace("&amp;nbsp;", " "));
           } else {
-            Obja.html(pages[i].title.replace("&nbsp;", " "));
+            Obja.html(pages[i].title.replace("&amp;nbsp;", " "));
           }
           Objli.append(Obja);
 
