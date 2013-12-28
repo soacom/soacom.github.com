@@ -9,7 +9,6 @@
 			<div id="soa-control-dc-overlay" class="soa-ui-dc-overlay"></div>
 			<script type="text/javascript">
 				$(function() {
-					$(".soa-control-dc-tabs").tabs();
 					$('#soa-control-dc-search-query').lunrSearch({
 						indexUrl: '{{ site.baseurl }}/search.json',
 						results:  '#soa-control-dc-search-results',
