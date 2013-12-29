@@ -81,7 +81,7 @@
             category = "/getting-started.html";
           }
           if ( "{{ site.baseurl }}" ) {
-              Obja.attr("href", "{{ site.baseurl }}".concat(prod).concat(category) );
+              Obja.attr("href", "{{ site.baseurl }}".concat("/").concat(prod).concat(category) );
           } else {
             Obja.attr("href", "/".concat(prod.concat(category)) );
           }
