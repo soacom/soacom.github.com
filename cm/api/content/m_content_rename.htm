@@ -1,10 +1,10 @@
 ---
 layout: apipage
-title: PUT&nbsp;content/rename Operation | Content Service | Community Platform API
+title: PUT&nbsp;/content/rename Operation | Content Service | Community Platform API
 description: Renames the specified content resource on the platform.
 product: cm
 category: ref
-nav-title: PUT&nbsp;content/rename
+nav-title: PUT&nbsp;/content/rename
 no-nav: api
 sub-nav: true
 sub-nav-class: content
@@ -12,12 +12,12 @@ no-catalog: true
 ---
 
 <!-- InstanceBeginEditable name="Heading" -->
-<h2><a name="top" id="top"></a>PUT&nbsp;content/rename Operation</h2>
+<h2><a name="top" id="top"></a>PUT&nbsp;/content/rename Operation</h2>
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_content_rename.lbi" -->Renames the specified content resource on the platform.<!-- #EndLibraryItem --></p>
-<p>Note: If you rename a resource that's included in the documentation Table of Contents for your API, you'll also need to update the corresponding JSON table of contents file and upload the new JSON file using the <span class="apidoc_code"><a href="m_content_add.htm">POST&nbsp;content/add</a></span> operation. For more information, see <a href="../Ref_ManagingAPIDocumentationContent.htm">Updating API Documentation Content</a>.</p>
+<p>Note: If you rename a resource that's included in the documentation Table of Contents for your API, you'll also need to update the corresponding JSON table of contents file and upload the new JSON file using the <span class="apidoc_code"><a href="m_content_add.htm">POST&nbsp;/content/add</a></span> operation. For more information, see <a href="../Ref_ManagingAPIDocumentationContent.htm">Updating API Documentation Content</a>.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a>.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -48,7 +48,7 @@ no-catalog: true
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/content/{contentpath}</pre>
+<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/content/{contentpath}</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -57,9 +57,9 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request to rename a resource. The current path and name are specified in the URL and the new name is in the request body.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://&lt;hostname&gt;/content/api/api18969.open/documents/index.htm</pre>
+<pre>https://&lt;hostname&gt;/content/api/api18969.acmecorp/documents/index.htm</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT&nbsp;/content/api/api18969.open/documents/index.htm HTTP/1.1
+<pre>PUT&nbsp;/content/api/api18969.acmecorp/documents/index.htm HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: */*
 Content-Type: application/x-www-form-urlencoded; charset=UTF-8</pre>

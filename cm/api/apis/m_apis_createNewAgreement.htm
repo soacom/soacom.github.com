@@ -16,7 +16,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" --><p><!-- #BeginLibraryItem "/Library/desc_createNewAgreement.lbi" -->
 Adds information about a new legal agreement for the specified API version.<!-- #EndLibraryItem --></p>
-<p><strong>Prerequisite</strong>: Before running this operation, you must upload the legal agreement using the <span class="apidoc_code"><a href="../content/m_content_add.htm">POST&nbsp;content/add</a></span> or <span class="apidoc_code"><a href="../content/m_content_upload.htm">POST&nbsp;content/upload</a></span> operation in the <a href="../index_content.htm">Content service</a>.</p>
+<p><strong>Prerequisite</strong>: Before running this operation, you must upload the legal agreement using the <span class="apidoc_code"><a href="../content/m_content_add.htm">POST&nbsp;/content/add</a></span> or <span class="apidoc_code"><a href="../content/m_content_upload.htm">POST&nbsp;/content/upload</a></span> operation in the <a href="../index_content.htm">Content service</a>.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/Library/roles_user.lbi" --> To complete this operation successfully, a user must be logged in<!-- #EndLibraryItem --> and must be an Administrator for the API.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -54,19 +54,19 @@ Adds information about a new legal agreement for the specified API version.<!-- 
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a new legal agreement being added.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion500.open/legals</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion500.acmecorp/legals</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST&nbsp;/api/apis/versions/apiversion500.open/legals HTTP/1.1
+<pre>POST&nbsp;/api/apis/versions/apiversion500.acmecorp/legals HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: */*
 Content-Type: application/json; charset=UTF-8</pre>
 <p><strong>Sample request body</strong></p>
 <pre>{
-  "ContentPath":"api/api200.open/legal/myapi_new_legalagreement.html",
-  "PrintContentPath":"api/api200.open/legal/myapi_new_legalagreement.html",
+  "ContentPath":"api/api200.acmecorp/legal/myapi_new_legalagreement.html",
+  "PrintContentPath":"api/api200.acmecorp/legal/myapi_new_legalagreement.html",
   "Name":"Legal Agreement 2.0",
   "Description":"Updated Version of Legal Agreement for version 2.0",
-  "AgreementType":"com.soa.open.legals.eula"
+  "AgreementType":"com.soa.acmecorp.legals.eula"
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -146,7 +146,7 @@ The unique ID for the specified API version.<!-- #EndLibraryItem --></td>
 Date: Mon, 04 Feb 2013 19:46:03 GMT
 Content-Type: text/plain</pre>
 <p><strong>Sample response body</strong></p>
-<pre>apiversion500.open</pre>
+<pre>apiversion500.acmecorp</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
