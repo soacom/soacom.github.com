@@ -14,6 +14,7 @@ no-catalog: false
 <h2><a name="top"></a>APIs Service: Overview</h2>
 <p><!-- #BeginLibraryItem "/Library/descsvc_apis.lbi" -->
 The APIs service provides a REST interface and a set of operations for managing APIs in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->. This API includes operations to support complete API lifecycle management, including creating and managing APIs and API versions, managing API OAuth details, managing legal agreements and the API Board, API monitoring and documentation, and relationships between APIs and apps.<!-- #EndLibraryItem --></p>
+<p>If you want to generate a list of APIs for a specific user, that operation is part of the Users service: <a href="users/m_users_getApis.htm">GET&nbsp;/api/users/{UserID}/apis</a>.</p>
 <p><strong>URL</strong>: <span class="apidoc_code"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis</span></p>
 <p>This overview includes two sections:</p>
 <ul>
@@ -260,7 +261,7 @@ Removes the connection between a <a href="glossary_communityplatform.htm#viewer"
   </tr>
     <tr>
       <td>update rating</td>
-      <td><a href="ratings/m_ratings_updateRating.htm">PUTÂ apis/versions/{ID}/ratings/{UserID}</a></td>
+      <td><a href="ratings/m_ratings_updateRating.htm">PUT&nbsp;apis/versions/{ID}/ratings/{UserID}</a></td>
       <td><!-- #BeginLibraryItem "/Library/desc_updateRating_all.lbi" -->
 Adds or updates a specific user's rating for a resource. If the rating doesn't exist, this operation adds it; if it already exists, the operation updates it.<!-- #EndLibraryItem --></td>
     </tr>
@@ -351,7 +352,7 @@ Adds or updates a specific user's rating for a resource. If the rating doesn't e
 <ul>
   <li><a href="ratings/m_ratings_getRating.htm">GET&nbsp;/api/apis/versions/{ID}/ratings/{UserID}</a></li>
   <li><a href="ratings/m_ratings_getRatingSummary.htm">GET&nbsp;/api/apis/versions/{ID}/ratings/summary</a></li>
-  <li><a href="ratings/m_ratings_updateRating.htm">PUTÂ apis/versions/{ID}/ratings/{UserID}</a></li>
+  <li><a href="ratings/m_ratings_updateRating.htm">PUT&nbsp;apis/versions/{ID}/ratings/{UserID}</a></li>
 </ul>
 
 <h4>Images/Avatars</h4>

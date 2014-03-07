@@ -18,7 +18,7 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getApps.lbi" -->
 Returns information about the apps for which the user is on the app team, and optionally also information about app versions. <!-- #BeginLibraryItem "/Library/_rss.lbi" -->The information is sent as an RSS feed in JSON format.<!-- #EndLibraryItem --><!-- #EndLibraryItem --></p>
-
+<!--<p>Returns a list of apps, list apps, apps listing, user apps list, list of apps for a user, apps list.</p>-->
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_authorizeduser">Authorized User</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
 
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
@@ -60,9 +60,9 @@ Returns information about the apps for which the user is on the app team, and op
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for the apps associated with a specific user.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user13967.open/apps</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user13967.acmecorp/apps</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&nbsp;/api/users/user13967.open/apps HTTP/1.1
+<pre>GET&nbsp;/api/users/user13967.acmecorp/apps HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: application/json, text/javascript, */*; q=0.01</pre>
 <p><strong>Sample request body</strong></p>
@@ -166,7 +166,7 @@ Date: Fri, 17 May 2013 18:48:15 GMT</pre>
 <pre>{
   "channel" : {
     "title" : "My Apps",
-    "link" : "../../atmosphere#/user/user13967.open/applications",
+    "link" : "../../acmecorp#/user/user13967.acmecorp/applications",
     "description" : "List of applications by user",
     "item" : [ {
       "title" : "PaaStime",
@@ -179,17 +179,17 @@ Date: Fri, 17 May 2013 18:48:15 GMT</pre>
         "domain" : "uddi:soa.com:visibility"
       } ],
       "guid" : {
-        "value" : "app16964.open"
+        "value" : "app16964.acmecorp"
       },
       "pubDate" : "Tue, 30 Apr 2013 19:25:09 +0000",
       "Rating" : 3.2,
       "Followers" : 3,
       "Image" : {
-        "Url" : "https://&lt;hostname&gt;/api/apps/app16964.open/avatar"
+        "Url" : "https://&lt;hostname&gt;/api/apps/app16964.acmecorp/avatar"
       },
       "EntityReference" : {
         "Title" : "PaaStime (2.0)",
-        "Guid" : "4iXro2Uxs2h4LviCshR9pK9w.open",
+        "Guid" : "4iXro2Uxs2h4LviCshR9pK9w.acmecorp",
         "Category" : [ {
           "value" : "app-version",
           "domain" : "uddi:soa.com:resourcetype"
@@ -214,21 +214,21 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0"
 xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
   &lt;channel&gt;
     &lt;title&gt;My Apps&lt;/title&gt;
-    &lt;link&gt;../../atmosphere#/user/user13967.open/applications&lt;/link&gt;
+    &lt;link&gt;../../acmecorp#/user/user13967.acmecorp/applications&lt;/link&gt;
     &lt;description&gt;List of applications by user&lt;/description&gt;
     &lt;item&gt;
       &lt;title&gt;PaaStime&lt;/title&gt;
       &lt;description&gt;Android game&lt;/description&gt;
       &lt;category domain="uddi:soa.com:resourcetype"&gt;app&lt;/category&gt;
       &lt;category domain="uddi:soa.com:visibility"&gt;Public&lt;/category&gt;
-      &lt;guid&gt;app16964.open&lt;/guid&gt;
+      &lt;guid&gt;app16964.acmecorp&lt;/guid&gt;
       &lt;pubDate&gt;Tue, 30 Apr 2013 19:25:09 +0000&lt;/pubDate&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;https://&lt;hostname&gt;/api/apps/app16964.open/avatar&lt;/Url&gt;
+        &lt;Url&gt;https://&lt;hostname&gt;/api/apps/app16964.acmecorp/avatar&lt;/Url&gt;
       &lt;/ns4:Image&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;PaaStime (2.0)&lt;/Title&gt;
-        &lt;Guid&gt;4iXro2Uxs2h4LviCshR9pK9w.open&lt;/Guid&gt;
+        &lt;Guid&gt;4iXro2Uxs2h4LviCshR9pK9w.acmecorp&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app-version&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:Connections&gt;5&lt;/ns4:Connections&gt;
