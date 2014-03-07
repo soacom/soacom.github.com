@@ -11,13 +11,9 @@ nav-title:
 no-nav: true
 no-catalog: true
 ---
-
 <h2 id="top">Licenses</h2>
-
 <p>Information about setting up the components of the Licenses feature, adding and managing licenses, license terms, and scopes, and assigning licenses to APIs.</p>
-<p class="apidoc_note"><strong>Note</strong>: For an overview of the Licenses feature, with implementation scenarios and examples, see <a href="ov_licenses.htm">Licenses: Feature Overview</a>.
-  
-</p>
+<p class="apidoc_note"><strong>Note</strong>: For an overview of the Licenses feature, with implementation scenarios and examples, see <a href="ov_licenses.htm">Licenses: Feature Overview</a>.</p>
 <div class = "divider1"></div>
 
 <h3 style="color: gray;">Table of Contents</h3>
@@ -51,7 +47,7 @@ no-catalog: true
 <p><strong>Defining a License:</strong></p>
 <p>Business Administrators can define a license in the <em>Administration &gt; Licenses</em> section using the <strong>+Add License</strong> function. As a prerequisite to defining a license you must have scopes pre-defined (via the <em>Administration &gt; Scopes</em> section) as scopes are a component of the license definition.</p>
 <p>Some points to note when defining a license:</p>
-<ul class="usingOrderedList">
+<ul>
   <li>It's best to define scopes first. You can define a license without adding Scopes, but a license is meaningless without at least one scope assigned to it.</li>
   <li>As part of the license, you must define one or more <a href="basics_glossary.htm#gl_licenseterm">license terms</a>.</li>
   <li>One or more Scopes can be assigned a license using the <strong>Add Scope</strong> function.</li>
@@ -76,7 +72,7 @@ no-catalog: true
 
 <a name="what_are_the_visiblity_rules_for_a_license"></a><h3>What are the visibility rules for a license?</h3>
 <p>The following visibility rules apply for a license:</p>
-<ul class="usingOrderedList">
+<ul>
   <li>Public licenses are always available  for selection in the API Access Request wizard.</li>
   <li>Private licenses are only visible to an app developer if the developer's visibility scope for an API version includes that license. This happens when a group that the developer is a member of has access to the license.</li>
   <li>A public API can have a private license. In this scenario, all users see the parts of the API that are not included in the private license. The operations that are in the private license, and their corresponding documentation, are only visible to users who have explicit access to all scopes within that license.</li>
@@ -95,7 +91,7 @@ no-catalog: true
 
 <a name="how_do_i_add_a_scope"></a><h3>How do I add a scope?</h3>
 <p>You can configure a scope using the <strong>Add Scope</strong> function in the <em>Administration &gt; Scopes</em> section of the platform. Some things to note about scopes:</p>
-<ul class="usingOrderedList">
+<ul>
   <li>The only required fields are Name and Short Description. You can also add a more detailed description in the Full Description field.</li>
   <li>Specify the visibility. A public license is visible to app developers when requesting API access for an app.</li>
   <li>Choose whether anonymous access will be allowed to your Sandbox or Production environments (not recommended)</li>
@@ -109,8 +105,9 @@ no-catalog: true
   <li><strong>Delete a scope</strong>. Highlight the scope and then, in the right pane, click <strong>Delete</strong>.</li>
 </ul>
 <p><em>Note: Scopes can only be configured by Business Administrators.</em></p>
-<a name="scope_add"></a><h5>To add a scope</h5>
-<ol class=" usingOrderedList">
+<a name="scope_add"></a>
+<h5>To add a scope:</h5>
+<ol>
   <li>Navigate to <em>Site Administration &gt; Licenses</em>. The <em>Scopes </em>screen displays.</li>
   <li>Click <strong>Add Scope</strong>. In the right panel, specify the following:
 <ul>
@@ -118,11 +115,11 @@ no-catalog: true
   <li>Short Description (required)</li>
   <li>Full Description</li>
   <li><strong>Visibility</strong>: When a scope has public visibility, anything mapped to the scope (operations or documents) is visible to all users including anonymous users. Private visibility implies that anything mapped to this scope is visible to users that have the same visibility scope granted to them, based on API invitations to one or more groups that the user is a member of.</li>
-  <li><strong>Anonymous access</strong>: If anonymous access is allowed for a scope, operations that are mapped to the scope can be used by apps that do not identify themselves to the gateway with any credentials. The app does not even need to be registered in platform. We recommend not allowing anonymous access to your API.</li>
+  <li><strong>Anonymous access</strong>: If anonymous access is allowed for a scope, operations that are mapped to the scope can be used by apps that do not identify themselves to the gateway with any credentials. The app does not even need to be registered in the platform. We recommend not allowing anonymous access to your API. For more information, see <a href="api_admin_api_publishing.htm#what_is_anonymous_api_access">What is Anonymous API Access?</a></li>
 </ul></li>
   <li>If you are using OAuth, specify the two OAuth values:
     <ul>
-      <li><strong>Default Scope</strong>: If OAuth is being used and an app’s grant access request does not specify scopes, all scopes that have the Default scope option checked are included in the scope of the grant.</li>
+      <li><strong>Default Scope</strong>: If OAuth is being used and an app's grant access request does not specify scopes, all scopes that have the Default scope option checked are included in the scope of the grant.</li>
       <li><strong>User Authorization Required</strong>: If the scope is being used for OAuth, user authorization is required for scope access. If an OAuth grant includes all scopes with this option disabled, the provider does not require the resource owner to authorize the grant request.</li>
     </ul>
  </li>
@@ -135,8 +132,8 @@ no-catalog: true
 <a name="how_do_i_modify_a_scope"></a><h3>How do I modify a scope?</h3>
 <p>You can modify a scope using the <strong>Edit</strong> function in the <em>Administration &gt; Scopes </em>section of the platform.</p>
 <p><strong>Note</strong>: When a scope is active you cannot modify it.</p>
-<h5>To edit a scope</h5>
-<ol class=" usingOrderedList">
+<h5>To edit a scope:</h5>
+<ol>
   <li>Navigate to <em>Site Administration &gt; Scopes</em>. The <em>Scopes </em>screen displays.</li>
   <li>In the left panel, select the  scope you want to edit, and click <strong>Edit</strong> in the right panel. Change the values as needed. For explanations of the fields and their values, refer to <a href="#scope_add">To add a scope</a>. There are also explanations of key fields on the page itself (available on hover).</li>
  <li>Click <strong>Save</strong>. The modified scope is now available for selection when creating a license.</li>
@@ -147,9 +144,9 @@ no-catalog: true
 
 <a name="how_do_i_add_a_license"></a><h3>How do I add a license?</h3>
 <p>You can configure a license using the <strong>Add License</strong> function in the <em>Administration &gt; Licenses </em>section of the platform:</p>
-<ul class="usingOrderedList">
-  <li>Scopes must be predefined in the<em> Administration &gt; Scopes </em>section so that they are available for selection when defining the license.</li>
-  <li>Quality of Service (QoS) policies must be defined in Policy Manager.</li>
+<ul>
+  <li>Scopes must be predefined in the <em>Administration &gt; Scopes </em>section so that they are available for selection when defining the license.</li>
+  <li>Quality of Service (QoS) policies must be defined in <a href="basics_glossary.htm#gl_policy_manager">Policy Manager</a>.</li>
   <li>The process of configuring a license involves assigning a name and description, configuring the approval level for Sandbox and Production Access (Auto Approved or Approval Required), setting Visibility (Public or Private), and defining one or more license terms, each of which includes one or more scopes and QoS policies that will apply to the license (in the <em>Admin &gt; Licenses</em> section).</li>
   <li>You can upload legal agreements during the license creation process.</li>
   <li>The <strong>Add Term</strong> function allows you to add a license term. A license can include multiple terms, each of which can include one or more scopes and QoS policies.</li>
@@ -157,11 +154,11 @@ no-catalog: true
 </ul>
 <p><em>Note: Licenses can only be configured by Business Administrators.</em></p>
 <a name="license_add"></a><h5>To add a license</h5>
-<ol class=" usingOrderedList">
+<ol>
   <li>Navigate to <em>Site Administration &gt; Licenses</em>. The <em>Licenses </em>screen displays.</li>
   <li>Click <strong>Add License</strong>. Specify the Name, Description, Visibility (Public/Private), and Sandbox Access and Production Access options you would like to assign to the license definition.
     <br /><br />
-    <table cellspacing="0px" class="doctable" style="width: 80%;">
+    <table cellspacing="0px" class="doctable" style="width: 90%;">
       <thead>
       <tr>
         <th width="20%">Item</th>
@@ -181,7 +178,7 @@ no-catalog: true
       <tr class="t2row">
         <td>Sandbox Access</td>
         <td>This setting determines whether API access requests for the sandbox environment are granted automatically or require API Admin approval. If the API is set to auto approval, access is always automatic. If the API is set to manual approval, the setting for the license is used. Choose from the following:
-          <ul class="usingOrderedList">
+          <ul>
             <li><strong>Auto Approval</strong>: If an app requests Sandbox API access for one or more licenses all of which are set to Sandbox Access &gt;Auto Approved, the API access request is auto approved.</li>
             <li><strong>Approval Required:</strong> If any one of the licenses is set to Sandbox Access &gt; Auto Approved, the API access request is placed in a Pending Approval state until approved by the API Admin.</li>
           </ul></td>
@@ -189,7 +186,7 @@ no-catalog: true
       <tr class="t1row">
         <td>Production Access</td>
         <td>This setting determines whether API access requests for the production environment are granted automatically or require API Admin approval. If the API is set to auto approval, access is always automatic. If the API is set to manual approval, the setting for the license is used. Choose from the following:
-          <ul class="usingOrderedList">
+          <ul>
             <li><strong>Auto Approval</strong>: If an app requests production API access for one or more licenses all of which are set to Production Access Auto Approved, the API access request is auto approved.</li>
             <li><strong>Approval Required</strong>: If any one of the licenses is set to Approval Required, the whole API access request will be placed in Pending Approval state.</li>
           </ul></td>
@@ -201,9 +198,9 @@ no-catalog: true
   <li><strong>Public</strong>: A public license is visible to app developers when requesting API access for an app.
 <p>If there is documentation  or downloadable  content for a public API's licenses, scopes, or operations that are designated with a visibility of public, those resources are visible to all users. If the API itself is private but the scope is public, the resources are visible to all users who have been invited to the API.</p></li>
   <li><strong>Private</strong>: A private license is visible only to an app developer who is a member of one or more groups invited to have visibility into the license (<a href="basics_glossary.htm#gl_visibilityscope">visibility scope</a>).
-<p>If an app developer’s visibility scope for an API version includes a private license, that developer will have the option to choose that license when requesting API access.</p>
+<p>If an app developer's visibility scope for an API version includes a private license, that developer will have the option to choose that license when requesting API access.</p>
 <p>If a license is private, only users that have the license in their visibility scope can access the API documentation/downloadable files that are mapped to the license.</p>
-<p><strong>Note</strong>: The API admin must make sure that the documentation is appropriately tagged. If it is not, it will not be visible even to authorized individuals. For information on tagging API documentation, see <a href="publish_api_documentation_maintenance.htm#how_do_i_control_visibility_of_api_documentation_files">How do I control visibility of API documentation files?</a></p>
+<p><strong>Note</strong>: The API admin must make sure that the documentation is appropriately tagged. If it is not, it will not be visible even to authorized individuals. For information on tagging API documentation, see <a href="api_admin_documentation_maintenance.htm#how_do_i_control_visibility_of_api_documentation_files">How do I control visibility of API documentation files?</a></p>
  </li>
 </ul></td>
 </tr>
@@ -237,15 +234,15 @@ no-catalog: true
 <a name="how_do_i_edit_a_license"></a><h3>How do I edit a license?</h3>
 <p>You can modify a license, if it is deactivated, using the <strong>Edit</strong> function in the <em>Administration &gt; License </em>section of the platform.</p>
 <p><strong>Note</strong>: When a license is active you cannot modify it.</p>
-<h5>To edit a license</h5>
-<ol class=" usingOrderedList">
+<h5>To edit a license:</h5>
+<ol>
   <li>Navigate to <em>Site Administration &gt; Licenses</em>. The <em>Licenses </em>screen displays.</li>
   <li>In the left panel, select the  license Parent or Child you would like to edit, and click <strong>Edit</strong> in the right panel. Change the values as needed. For explanations of the fields and their values, refer to <a href="#license_add">To add a license</a>.</li>
- <li>Click <strong>Next</strong>. The <em>Scopes  </em> page displays. Here you can modify the existing Scope Definition or add a new Scope definition.</li>
+ <li>Click <strong>Next</strong>. The <em>Scopes</em> page displays. Here you can modify the existing Scope Definition or add a new Scope definition.</li>
  <li>To modify an existing Scope Definition, click <strong>Select</strong>. The <em>Select Scope</em> popup displays. Update as needed.</li>
  <li>To add a new Scope Definition, click <strong>Add Scope</strong>, and then click <strong>Select</strong>. The <em>Select  Scope</em> popup displays. Click the checkbox for each Scope you would like to  add to the license definition. Click <strong>Confirm</strong> to save your changes. <br />
 </li>
- <li>Click <strong>Save</strong>. The modified license is now available for selection in the<em> API Access Wizard</em>.</li>
+ <li>Click <strong>Save</strong>. The modified license is now available for selection in the <em>API Access Wizard</em>.</li>
 </ol>
 <p><a href="#top">Back to top</a></p>
 
@@ -254,19 +251,19 @@ no-catalog: true
 <a name="how_do_i_deactivate_or_reactivate_a_license"></a><h3>How do I deactivate or reactivate a license?</h3>
 <p>You can deactivate a license definition on the <em>License Definitions</em> screen using the <strong>Deactivate</strong> function. Note the following points:</p>
 
-<ul class="usingOrderedList">
+<ul>
   <li>When you deactivate a license it still exists on the License Definitions screen, but is not available for selection on the <em>Licenses</em> page in the <em>API Access Wizard</em>.</li>
   <li>You can edit the license when it is deactivated.</li>
   <li>You cannot deactivate a  license if it is in use in a current API access request or contract. You must first cancel any pending or approved API Access Requests.</li>
 </ul>
 <h5>To deactivate a license:</h5>
-<ol class=" usingOrderedList">
+<ol>
   <li>Navigate to <em>Site Administration &gt; Licenses</em>. The licenses list displays.</li>
   <li>Find the license you want to deactivate, and click the license name to go to the license details page.</li>
   <li>Click <strong>Deactivate</strong>. The license is deactivated.</li>
 </ol>
 <h5>To reactivate a license:</h5>
-<ol class=" usingOrderedList">
+<ol>
   <li>Navigate to <em>Site Administration &gt; Licenses</em>. The licenses list displays.</li>
   <li>Find the license you want to reactivate, and click the license name to go to the license details page.</li>
   <li>Click <strong>Activate</strong>. The license is reactivated.</li>
@@ -278,11 +275,11 @@ no-catalog: true
 <a name="how_do_i_delete_a_license"></a><h3>How do I delete a license?</h3>
 <p>You can delete a license on the <em>License Definitions</em> screen using the <strong>Delete</strong> function:</p>
 
-<ul class="usingOrderedList">
+<ul>
   <li>You cannot delete a  License if it is  use (i.e., selected as part of an API Access Request). You must first cancel any pending or approved API Access Requests.</li>
 </ul>
-<h5>To delete a License</h5>
-<ol class=" usingOrderedList">
+<h5>To delete a license:</h5>
+<ol>
   <li>Navigate to <em>Site Administration &gt; Licenses</em>. The licenses list displays.</li>
   <li>Find the license you want to delete, and click the license name to go to the license details page.</li>
   <li>In the license details page,  click <strong>Delete</strong>. Click <strong>OK</strong> to confirm.</li>
@@ -292,21 +289,21 @@ no-catalog: true
 
 
 <a name="how_do_i_add_a_policy"></a><h3>How do I add a policy?</h3>
-<p>The Licenses feature uses policies as a component when building the license definition; policies are an optional component in license terms. However, licenses are defined outside the platform, in Policy Manager.</p>
-<p>As soon as the policy is defined in Policy Manager, it is available for selection when you click <strong>Add License</strong> ( <em>Administration &gt; Licenses</em>) and add a license term to the license.</p>
+<p>The Licenses feature uses policies as a component when building the license definition; policies are an optional component in license terms. However, policies are defined outside the platform, in <a href="basics_glossary.htm#gl_policy_manager">Policy Manager</a>.</p>
+<p>As soon as the policy is defined in the <a href="basics_glossary.htm#gl_api_gateway">API Gateway</a>, it is available for selection when you click <strong>Add License</strong> ( <em>Administration &gt; Licenses</em>) and add a license term to the license.</p>
 <p>If you want to create licenses but the policies are not set up yet, you can go ahead and set up the licenses without the policies, and then go back and add the policies when they're available.</p>
 <p><a href="#top">Back to top</a></p>
 
 
 
 <a name="how_do_i_modify_a_policy"></a><h3>How do I modify a policy?</h3>
-<p>You can modify a policy by changing the policy definition in Policy Manager.</p>
+<p>You can modify a policy by changing the policy definition in <a href="basics_glossary.htm#gl_policy_manager">Policy Manager</a>.</p>
 <p><a href="#top">Back to top</a></p>
 
 
 
 <a name="how_do_i_delete_a_policy"></a><h3>How do I delete a policy?</h3>
-<p>If you want to delete a policy, it must be done in Policy Manager, where the policies are set up. Note that you can only delete a policy that is not in use.</p>
+<p>If you want to delete a policy, it must be done in <a href="basics_glossary.htm#gl_policy_manager">Policy Manager</a>, where the policies are set up. Note that you can only delete a policy that is not in use.</p>
 <p>You <strong>cannot</strong> delete a policy if:</p>
 <ul>
   <li>There is a license definition that references the policy.</li>
@@ -321,5 +318,3 @@ no-catalog: true
 </ul>
 <p>Once those steps are complete, any licenses that include those scopes in the license definition are presented to the app developer for selection when the app developer initiates an API access request.</p>
 <p><a href="#top">Back to top</a></p>
-
-<div class = "divider1"></div>

@@ -9,7 +9,6 @@ weight: 35
 type: page
 nav-title: Policy List
 ---
-
 <h2 id="top">Policy List</h2>
 
 <p>Includes information about the following types of policies:</p>
@@ -25,37 +24,37 @@ nav-title: Policy List
 
 
 <a name="operational_policies"></a><h5>Operational Policies</h5>
-<table cellspacing="0px" class="doctable" style="width: 80%;">
-    <thead>
+<table cellspacing="0px" class="doctable" style="width: 90%;">
+  <thead>
     <tr>
     <th width="20%">Policy Name</th>
     <th width="80%">Description</th>
     </tr>
-    </thead>
-    <tbody>
-    <tr class="t2row">
-      <td>API Consumer Application Security Policy</td>
-      <td><p>Used  to identify (authenticate) the application that is attempting to consume an API  to determine if it is authorized or not.&nbsp;This policy type supports  multiple mechanisms for the App to present its identity, including plain text  App Id, signed header with x.509 or a shared secret, or OAuth (1.0 or 2.0).</p>
-<p><em>Category: </em> Security</p></td>
+ </thead>
+<tbody>
+  <tr class="t2row">
+    <td>API Consumer Application Security Policy</td>
+    <td><p>Used to identify (authenticate) the application that is attempting to consume an API to determine if it is authorized or not. This policy type supports multiple mechanisms for the App to present its identity, including plain text App Id, signed header with x.509 or a shared secret, or OAuth (1.0 or 2.0).</p>
+<p><em>Category:</em> Security</p></td>
     </tr>
     <tr class="t1row">
        <td>API User Security Policy</td>
-      <td><p>Is the default security policy for Atmosphere services and controls who can perform administrative    actions on the Atmosphere portal.</p>
-<p><em>Category: </em> Security</p></td>
+      <td><p>Is the default security policy for Community Manager services and controls who can perform administrative actions on the Community Manager portal.</p>
+<p><em>Category:</em> Security</p></td>
     </tr>
     <tr class="t2row">
       <td>BasicAuditing</td>
-      <td><p>Provides basic auditing of messages. Message metrics will be recorded in   the Policy Manager Usage Logs Monitoring tab. The messages themselves will not be audited. That can be achieved using the DetailedAuditing policy.</p>
+      <td><p>Provides basic auditing of messages. Message metrics will be recorded in the <a href="basics_glossary.htm#gl_policy_manager">Policy Manager</a> Usage Logs Monitoring tab. The messages themselves will not be audited. That can be achieved using the DetailedAuditing policy.</p>
 <p><em>Category:</em> Auditing</p></td>
     </tr>
     <tr class="t1row">
       <td>DetailedAuditing</td>
-      <td><p>Provides detailed auditing of messages. Message metrics will be recorded   in the Policy Manager Usage Logs Monitoring tab as well as the entire messages of each exchange.</p>
+      <td><p>Provides detailed auditing of messages. Message metrics will be recorded in the Policy Manager Usage Logs Monitoring tab as well as the entire messages of each exchange.</p>
 <p><em>Category:</em> Auditing</p></td>
     </tr>
     <tr class="t2row">
       <td>WS-Auditing Message Policy</td>
-      <td>Used to audit  to service operations and binding operations.</td>
+      <td>Used to audit to service operations and binding operations.</td>
     </tr>
     <tr class="t1row">
         <td>WS-Auditing SOAP Message Policy</td>
@@ -65,16 +64,16 @@ nav-title: Policy List
     <tr class="t2row">
           <td>WS-Auditing SOAP Service Policy</td>
           <td><p>Used to audit SOAP binding operations.</p>
-            <p><em>Category: </em> Auditing</p></td>
+            <p><em>Category:</em> Auditing</p></td>
     </tr>
     <tr class="t1row">
-            <td>WS-Auditing  Service Policy</td>
+            <td>WS-Auditing Service Policy</td>
             <td><p>Used to audit Services, Bindings, Operations, and Access Points.</p>
-<p><em>Category: </em> Auditing</p></td>
+<p><em>Category:</em> Auditing</p></td>
 </tr>
     <tr class="t2row">
               <td>WS-Auditing  Transaction Tracking Policy</td>
-              <td><p>Supports Transaction Tracking functionality that correlates related web service events  within a single activity or transaction. For example, if a service in a  Container uses the SOA Software Delegate to call another service in a different  container that is managed by the SOA Software Agent, it will automatically  insert correlation information into the message that is collected and used by Policy  Manager to collect tracking and log information.</p>
+              <td><p>Supports Transaction Tracking functionality that correlates related web service events within a single activity or transaction. For example, if a service in a Container uses the SOA Software Delegate to call another service in a different container that is managed by the SOA Software Agent, it will automatically insert correlation information into the message that is collected and used by Policy Manager to collect tracking and log information.</p>
 <p><em>Category:</em> Auditing</p></td>
     </tr>
 </tbody>
@@ -83,8 +82,8 @@ nav-title: Policy List
 
 
 
-<a name="service_level_policies"></a><h5>Service Level Policies</h5>
-  <table cellspacing="0px" class="doctable" style="width: 80%;">
+<a name="service_level_policies"></a><h5>Service-Level Policies</h5>
+  <table cellspacing="0px" class="doctable" style="width: 90%;">
     <thead>
     <tr>
     <th width="20%">Policy Name</th>
@@ -93,47 +92,44 @@ nav-title: Policy List
 </thead>
 <tbody>
     <tr class="t2row">
-      <td>Service Level Policy</td>
-      <td><p>Defines conditions for measuring and  reporting performance of a specific Contract. Each policy is composed of a  &quot;Rule&quot; and &quot;Access Interval.&quot; Rules represent the  conditions you define to measure and report performance of a service contract. When a defined system condition matches a defined rule, an alert is raised.</p>
+      <td>Service-Level Policy</td>
+      <td><p>Defines conditions for measuring and reporting performance of a specific Contract. Each policy is composed of a &quot;Rule&quot; and &quot;Access Interval.&quot; Rules represent the conditions you define to measure and report performance of a service contract. When a defined system condition matches a defined rule, an alert is raised.</p>
         <p><em>Category: </em>QoS (Quality of Service Policy)</p></td>
     </tr>
     <tr class="t1row">
       <td>Bandwidth Quota Policy</td>
-      <td><p>Allows  you to configure the bandwidth cap (i.e, quota) that a consumer can upload or  download at any given time. The bandwidth cap can be specified as kilobytes or megabytes  per second. If the quota is exceeded, the runtime will throttle the traffic to  conform to the quota policy. The quota is also assigned to either the request (upload)  or response (download). No alerts are generated for this policy since the bandwidth  consumed is a function of the network speed and capabilities of the service provider, not the consumer.</p>
+      <td><p>Allows you to configure the bandwidth cap (i.e, quota) that a consumer can upload or download at any given time. The bandwidth cap can be specified as kilobytes or megabytes per second. If the quota is exceeded, the runtime will throttle the traffic to conform to the quota policy. The quota is also assigned to either the request (upload) or response (download). No alerts are generated for this policy since the bandwidth consumed is a function of the network speed and capabilities of the service provider, not the consumer.</p>
 <p><em>Category: </em>QoS (Quality of Service Policy)</p></td>
     </tr>
     <tr class="t2row">
-        <td>Script  Policy</td>
-        <td><p>Allows you to update a policy defined using BeanShell or Jython script languages. A series  of predefined functions and variables are provided that allow you to build a  custom policy expression that is evaluated at runtime. Several sample scripts  are also provided that illustrate common quota management activities.</p>
+        <td>Script Policy</td>
+        <td><p>Allows you to update a policy defined using BeanShell or Jython script languages. A series of predefined functions and variables are provided that allow you to build a custom policy expression that is evaluated at runtime. Several sample scripts are also provided that illustrate common quota management activities.</p>
         <p><em>Category: </em>QoS (Quality of Service Policy)</p></td>
     </tr>
     <tr class="t1row">
           <td>Service Level Enforcement</td>
-          <td><p>The Service Level Enforcement Policy is a Quality of Service  (QoS) policy that allows you to enable and configure the error message returned  to the consumer when their SLA is violated.</p>
-<p>This policy works in conjunction with a Service Level Policy and only applies to the following Service Level rules: &quot;Usage Count,&quot; &quot;Total Request Message Size,&quot; and &quot;Total Response Message  Size.&quot;</p>
-<p>You define a Service Level Policy and specify  each service level condition and alert code, then you define a Service Level  Enforcement Policy and specify the error message you would like displayed when a specified service level condition is violated.</p>
-<p><em>Category: </em> QoS (Quality of Service Policy)</p></td>
+          <td><p>The Service Level Enforcement Policy is a Quality of Service (QoS) policy that allows you to enable and configure the error message returned to the consumer when their SLA is violated.</p>
+<p>This policy works in conjunction with a Service-Level Policy and only applies to the following Service-Level rules: &quot;Usage Count,&quot; &quot;Total Request Message Size,&quot; and &quot;Total Response Message Size.&quot;</p>
+<p>You define a Service-Level Policy and specify each service level condition and alert code, then you define a Service Level Enforcement Policy and specify the error message you would like displayed when a specified service level condition is violated.</p>
+<p><em>Category:</em> QoS (Quality of Service Policy)</p></td>
     </tr>
     <tr class="t2row">
             <td>Throughput Quota Policy</td>
-            <td><p>Allows you to monitor web service throughput  performance by specifying a throughput limit (i.e., quota), queue size, and  configuring fault and alert notifications.</p>
+            <td><p>Allows you to monitor web service throughput performance by specifying a throughput limit (i.e., quota), queue size, and configuring fault and alert notifications.</p>
 <p>If the quota is exceeded, a consumer fault message will be returned to the service consumer and an alert will be logged.</p>
-<p><em>Category: </em> QoS (Quality of Service Policy)</p></td>
+<p><em>Category:</em> QoS (Quality of Service Policy)</p></td>
     </tr>
     <tr class="t1row">
               <td>Timeout Policy</td>
-              <td><p>Allows  you allows you to configure the timeout for each request and specify a custom  fault error message that is returned to the client.</p>
-<p><em>Category: </em> QoS (Quality of Service Policy)</p></td>
+              <td><p>Allows you to configure the timeout for each request and specify a custom fault error message that is returned to the client.</p>
+<p><em>Category:</em> QoS (Quality of Service Policy)</p></td>
     </tr>
     <tr class="t2row">
                 <td>Concurrency Quota Policy</td>
-                <td><p>Allows you to monitor the web service concurrency  performance by specifying a concurrency limit (i.e., quota) that represents the  maximum number of concurrency connections, and configuring fault and alert  notifications.</p>
+                <td><p>Allows you to monitor the web service concurrency performance by specifying a concurrency limit (i.e., quota) that represents the maximum number of concurrency connections, and configuring fault and alert notifications.</p>
 <p>If the specified concurrency limit is exceeded, Policy Manager will return a fault and send an alert.</p>
 <p><em>Category:</em> QoS (Quality of Service Policy)</p></td>
     </tr>
-</tbody>
+  </tbody>
 </table>
 <p><a href="#top">Back to top</a></p>
-
-<div class = "divider1"></div>
-

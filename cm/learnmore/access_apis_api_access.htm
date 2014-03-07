@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Community Manager API Access
-description: Learn how to use Community Manager to access APIs
+description: Learn how to use Community Manager to access APIs.
 product: cm
 category: learn
 subcategory: Access APIs
@@ -11,7 +11,6 @@ nav-title:
 no-nav: true
 no-catalog: true
 ---
-
 <h2 id="top">API Access</h2>
 
 <p>Set up API access contracts for your app and manage API access requests.</p>
@@ -26,11 +25,8 @@ no-catalog: true
   <li><a href="#what_happens_if_the_license_changes_for_an_api_im_using">What happens if the license changes for an API I'm using?</a></li>
   <li><a href="#how_do_i_cancel_an_api_access_request">How do I cancel an API access request?</a></li>
   <li><a href="#how_do_i_edit_the_license_app_developer">How do I edit the license in my API access request?</a></li>
-  <li><a href="#how_do_i_disconnect_my_app_from_an_API">How do I disconnect my app from an API?</a></li>
-  <li><a href="#how_do_i_delete_an_app_version">How do I delete an app version?</a></li>
-  <li><a href="#how_do_i_delete_my_app">How do I delete my app?</a></li>
-  </ol>
-<p>&nbsp;</p>
+  <li><a href="#how_do_i_disconnect_my_app_from_an_api">How do I disconnect my app from an API?</a></li>
+</ol>
 <div class = "divider1"></div>
 
 
@@ -39,56 +35,62 @@ no-catalog: true
 <p>After you have defined your app on the platform and chosen one or more APIs that include functionality you want to use in your app, the next step is to connect you app to an API by requesting API access.</p>
 <p><em>Note: Before you can make a call to an API you must add credentials for your app. See <a href="create_app_security.htm#how_do_app_credentials_work">How do app credentials work?</a> for details.</em></p>
 <p>Here are some general points relating to API access:</p>
-<ul class="usingOrderedList">
-  <li>If your app shows a status of <em>Contracted</em>, you already have access to the API. For example, you might already have a Sandbox contract but now want to request Production access. To view a summary of the API contracts for your app, go to the My Apps page and choose the app. From the App Board, click APIs on the left to view the <em>App &gt; API : Connections </em> page.</li>
+<ul>
+  <li>If your app shows a status of <em>Contracted</em>, you already have access to the API. For example, you might already have a Sandbox contract but now want to request Production access. To view a summary of the API contracts for your app, go to the My Apps page and choose the app. From the App Board, click APIs on the left to view the <em>App &gt; API : Connections</em> page.</li>
   <li><em>Licenses</em>&#8212;If the API supports licenses, you are offered a list of available licenses as part of the API Access Wizard. If the API doesn't support licenses, this tab is not present.</li>
-  <li><em>Legal Agreements</em>&#8212;If the API requires any agreements to be accepted for setting up the connection, the<em> Legal Agreements</em> page is displayed as part of the API Access Wizard.</li>
-  <li>After clicking <strong>Save</strong> you are redirected to the <em>App &gt; APIs : Connections </em> page where you can view the status of the API access request.</li>
+  <li><em>Legal Agreements</em>&#8212;If the API requires any agreements to be accepted for setting up the connection, the <em>Legal Agreements</em> page is displayed as part of the API Access Wizard.</li>
+  <li>After clicking <strong>Save</strong> you are redirected to the <em>App &gt; APIs : Connections</em> page where you can view the status of the API access request.</li>
 </ul>
+
+
 <h5>The API Access Wizard</h5>
 <p>When you go to the homepage of an API you want to connect to, and click the <strong>Access</strong> link in the top right corner, the API Access Wizard is launched.</p>
 <p>Depending on the options that have been set up for the specific API you're connecting to, the API Access Wizard will include three or more of the following tabs:</p>
-<ul>
+<ol>
   <li><strong>Select App (all)</strong>: If you have more than one app, choose which one you want the API connection for. If you have more than one version of your app, make sure you choose the correct version. Click <strong>Add</strong>, and then click <strong>Next</strong>.</li>
   <li><strong>Endpoint (all)</strong>: Choose the environment you want the app/API connection for: Sandbox or Production, and then click <strong>Next</strong>.</li>
   <li><strong>Policies (if defined and the API does not use the Licenses feature)</strong>: If one or more QoS policies are available for the API, you can choose one or more (not required). Note that if the API uses licenses (next tab), the QoS policies that are associated with the license are the ones that apply to your API contract.</li>
   <li><strong>Licenses (if defined for the API)</strong>: If the API offers licensing options you have some choices here. Choose <strong>Unrestricted Access</strong> or, if licenses are available, click <strong>Restricted License</strong> and choose one of the license options. Click <strong>Next</strong>.</li>
   <li><strong>Legal Agreements</strong>: This tab is always present, even if there are no agreements to accept. If the API includes one or more legal agreements (EULA, end-user license agreement), you will <strong>need</strong> to accept the legal agreement in order to complete the API access contract. Review the agreement, click <strong>Accept</strong>, and then click <strong>OK</strong> at the confirmation prompt. If there is more than one EULA, each is displayed in a separate tab and you must accept each separately.</li>
-</ul>
-<h5>To request API access</h5>
+</ol>
+
+
+<h5>To request API access:</h5>
 <ol>
   <li>Use the <em>Search</em> feature to find an API you're interested in using. See <a href="basics_navigation.htm#how_do_i_search_for_information">How do I search for information?</a> for details. You can click through from the search results to the <em>API details</em> page and browse the API documentation via the Documents link on the left.</li>
   <li>From the <em>API Details</em> page, click <strong>Access</strong> in the upper right hand corner of the screen. The API Access Wizard launches at the first step, <strong>Select App.</strong></li>
   <li>In the <strong>Add</strong> column, click the radio button of the app version you would like API access for. If you have multiple versions, make sure the right version is selected and then click <strong>Next</strong>.</li>
   <li>At the <strong>Endpoint</strong> page, choose the environment for which you're requesting access, and then click <strong>Next</strong>.</li>
   <li>Conditional: if policies are defined for the API you will see a list, and can choose one or more policies for your API access contract. Click <strong>Next</strong>.</li>
-  <li>If the <em>Licenses </em> page displays, select a license option. The options available to you depend on how the individual API is set up.</li>
+  <li>If the <em>Licenses</em> page displays, select a license option. The options available to you depend on how the individual API is set up.</li>
   <li>If there are any legal agreements associated with the API, you will need to accept each agreement as part of your API access request. If there are multiple agreements, each is in a separate tab. Review each agreement and click <strong>Accept</strong>, then confirm your acceptance.</li>
-  <li>Click Save. The API access request is sent, and you are redirected to the <em>App &gt; APIs : Connections </em>page.</li>
+  <li>Click Save. The API access request is sent, and you are redirected to the <em>App &gt; APIs : Connections</em> page.</li>
   </ol>
+
+
 <h5>API Contract Status</h5>
 <p>Depending on how the API is set up, and the access you requested, the status of your API access request will be one of the following:</p>
 <ul>
-    <li><em><strong>Approved</strong></em>&#8212;The API Access Request has been approved but is still pending activation by the API Provider.</li>
-    <li><em><strong>Activated</strong></em>&#8212;The API Access Request was automatically approved and your app is connected to the API. Requests for access to the Sandbox environment are often, but not always, set up for auto-approval.</li>
-    <li><em><strong>Access Pending</strong></em>&#8212;The API Access Request is pending approval by the API Provider. Requests for access to a Production environment can sometimes be auto-approved, but a request may require additional review.</li>
+  <li><em><strong>Approved</strong></em>&#8212;The API Access Request has been approved but is still pending activation by the API Provider.</li>
+  <li><em><strong>Activated</strong></em>&#8212;The API Access Request was automatically approved and your app is connected to the API. Requests for access to the Sandbox environment are often, but not always, set up for auto-approval.</li>
+  <li><em><strong>Access Pending</strong></em>&#8212;The API Access Request is pending approval by the API Provider. Requests for access to a Production environment can sometimes be auto-approved, but a request may require additional review.</li>
 </ul>
-<p>The API Access Request is processed, and an &quot;API Access Request&quot; ticket is posted to the <em>App Board </em> for the related app with a &quot;Pending&quot; status. The ticket is identified with a contract request icon. The API is also visible in the <em>APIs Used</em> section of the <em>My Apps</em> page.</p>
-<p>For pending requests, the Access Request is also posted to the <em>APIs &gt; Apps : Connections </em>and <em>App &gt; API</em>s<em> : Connection </em> pages with a status of <em>Pending Request</em>. Upon approval by the API Provider, the API Access Request status changes to <em>Activated</em>. Access to the API is granted and the API is visible in the <em>APIs Used</em> section of the <em>My Apps &gt; Details</em> page.</p>
-<p>See <a href="access_apis_connections.htm#how_do_i_manage_API_connections">How do I manage API connections?</a> and <a href="go_live_production_approval.htm#how_do_i_go_live_in_a_production_environment">How do I go live in a production environment?</a></p>
+<p>The API Access Request is processed, and an &quot;API Access Request&quot; ticket is posted to the <em>App Board</em> for the related app with a &quot;Pending&quot; status. The ticket is identified with a contract request icon. The API is also visible in the <em>APIs Used</em> section of the <em>My Apps</em> page.</p>
+<p>For pending requests, the Access Request is also posted to the <em>APIs &gt; Apps : Connections</em> and <em>App &gt; APIs : Connections</em> pages with a status of <em>Pending Request</em>. Upon approval by the API Provider, the API Access Request status changes to <em>Activated</em>. Access to the API is granted and the API is visible in the <em>APIs Used</em> section of the <em>My Apps &gt; Details</em> page.</p>
+<p>See <a href="access_apis_connections.htm#how_do_i_manage_api_connections">How do I manage API connections?</a> and <a href="go_live_production_approval.htm#how_do_i_go_live_in_a_production_environment">How do I go live in a production environment?</a></p>
 <p><em>Contract Generation and Approval</em>:</p>
-<p>After the API access request is completed, a contract post is created and the request  is submitted to the Admin Team  for approval. Some points to note:</p>
-<ul class="usingOrderedList">
+<p>After the API access request is completed, a contract post is created and the request is submitted to the Admin Team for approval. Some points to note:</p>
+<ul>
   <li>You can view the contract in the <em>My Apps &gt; Board</em>.</li>
-  <li>The contract is labeled as  an &quot;API Access Request&quot; and is identified with a contract icon.</li>
+  <li>The contract is labeled as an &quot;API Access Request&quot; and is identified with a contract icon.</li>
   <li>If the request is automatically approved, the ticket status is <strong>Activated</strong>.</li>
   <li>If the request is not approved, the ticket status is <strong>Pending Approval</strong>.</li>
   <li>Pending requests are reviewed and approved by the API Admin team.</li>
 </ul>
 <p><em>Notes:</em></p>
-<ul class="usingOrderedList">
+<ul>
   <li>If you request access for the production environment, an API Access Request contract is not created for the sandbox environment.</li>
-  <li>After the API Access Request for the production environment is approved, to gain access to the sandbox environment, you must run the <strong>API Access</strong> function again to generate a new contract  for the sandbox environment.</li>
+  <li>After the API Access Request for the production environment is approved, to gain access to the sandbox environment, you must run the <strong>API Access</strong> function again to generate a new contract for the sandbox environment.</li>
   <li>Note that contracts are cancelled when you switch environments. This means that new contracts must be generated using the <strong>API Access</strong> function each time you would like to switch sandbox/production environments.</li>
   <li>App Developers and API Administrators can edit the license scope (the license option you selected on the <em>Licenses</em> page) any time before the API Access Request is approved by the API Administrator.</li>
 </ul>
@@ -119,6 +121,8 @@ no-catalog: true
 
 <a name="how_do_i_cancel_an_api_access_request"></a><h3>How do I cancel an API access request?</h3>
 <p>If you want to cancel an API access request, follow the instructions below.</p>
+
+
 <h5>To cancel an API access request:</h5>
 <ol>
   <li>Go to the My Apps page for the app and click APIs.</li>
@@ -133,7 +137,9 @@ no-catalog: true
 <a name="how_do_i_edit_the_license_app_developer"></a><h3>How do I edit the license in my API access request?</h3>
 <p>An app developer can change the license for a specific API access request prior to the request being approved by the API Administrator. There are a variety of different scenarios the can require changing the license. For example, if the API now offers a different license that better suits your needs, you can modify your request.</p>
 <p>Note: <em>You can update the license configuration at any time prior to the API Access Request being approved by the API Administrator. Once the API Access Request is approved, the <strong>Edit Scope</strong> function is disabled.</em></p>
-<h5>To edit the license</h5>
+
+
+<h5>To edit the license:</h5>
 <ol>
   <li>Go to <em>Apps &gt; APIs.</em></li>
   <li>Select an API access request that has a status of <strong>Access Pending</strong>.</li>
@@ -145,36 +151,10 @@ no-catalog: true
 
 
 
-<a name="how_do_i_disconnect_my_app_from_an_API"></a><h3>How do I disconnect my app from an API?</h3>
-<p>You can disconnect your app from an API it is consuming in either the Sandbox or Production environment by using the <strong>Cancel</strong> or <strong>Suspend</strong> functions. Go to <em>My Apps</em>, choose the app, and then in the left pane click <em>APIs</em>. For more information, see <a href="access_apis_connections.htm#how_do_i_update_approved_API_access_requests">How do I update approved API access requests?</a></p>
-<p><a href="#top">Back to top</a></p>
-
-
-
-<a name="how_do_i_delete_an_app_version"></a><h3>How do I delete an app version?</h3>
-<p>You can delete an app version on the <em>App Details </em> page.</p>
-<p><strong>Note</strong>: If you want to delete an old version and add a new version, add the new version first. If you delete the only version, the app is deleted. If you add the new version, you can then delete the older version.</p>
-<a name="pro_to_delete_an_app_version"></a><h5>To delete an app version</h5>
-<ol>
-  <li>Navigate to<em> My Apps</em>.</li>
-  <li>From the <em>Version</em> menu at the top right of the page, choose the version you want to delete.</li>
-  <li>Click <strong> Delete Version</strong>.</li>
-  <li>At the confirmation message, click <strong>OK </strong>. The app version is deleted.</li>
-</ol>
-<p><a href="#top">Back to top</a></p>
-
-
-
-<a name="how_do_i_delete_my_app"></a><h3>How do I delete my app?</h3>
-<p>When there is only one version of an app, and you delete it, the entire app is deleted. If there is more than one version, and you want to delete the app, you must delete each version separately.</p>
-<h5>To delete an app</h5>
-<ol>
-  <li>Follow the instructions in <a href="#pro_to_delete_an_app_version">To delete an app version</a> above.</li>
-  <li>The confirmation message warns you that deleting the last version deletes the app. Click <strong>OK </strong>to confirm. The app is deleted.</li>
-</ol>
+<a name="how_do_i_disconnect_my_app_from_an_api"></a><h3>How do I disconnect my app from an API?</h3>
+<p>You can disconnect your app from an API it is consuming in either the Sandbox or Production environment by using the <strong>Cancel</strong> or <strong>Suspend</strong> functions. Go to <em>My Apps</em>, choose the app, and then in the left pane click <em>APIs</em>. For more information, see <a href="access_apis_connections.htm#how_do_i_update_approved_api_access_requests">How do I update approved API access requests?</a></p>
 <p><a href="#top">Back to top</a></p>
 
 
 
 <div class = "divider1"></div>
-
