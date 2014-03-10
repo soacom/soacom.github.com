@@ -15,12 +15,11 @@ no-catalog: true
 <p>The Community Platform uses a number of unique identifiers to identify different resources and other objects commonly referenced on the platform, such as apps, APIs, tickets, discussions, users, reviews, notifications, and many others.</p>
 <p>These IDs are essentially simple strings. However, they generally have a two-part construction, such as:</p>
 <pre>&lt;uniqueid for object/tenant&gt;.&lt;tenant name&gt;</pre>
-<p>For example, a unique UserID for a user on Community Platform might be <strong>user10011.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->
-open<!-- #EndLibraryItem --></strong>. In this example:</p>
+<p>For example, a unique UserID for a user on Community Platform might be <strong>user10011.acmecorp</strong>. In this example:</p>
 <ul>
   <li><strong>user</strong> indicates that this is a user ID.</li>
   <li><strong>10011</strong> is unique to Community Platform, so the unique user record can be located in the Community Platform database.</li>
-  <li><strong>open</strong> indicates the tenant name. Including the tenant name after the period increases the usefulness of the object, because even if two tenants both have a user10011, each ID is unique across the entirety of the platform in a federated scenario where there might be many tenants.</li>
+  <li><strong>acmecorp</strong> indicates the tenant name. Including the tenant name after the period increases the usefulness of the object, because even if two tenants both have a user10011, each ID is unique across the entirety of the platform in a federated scenario where there might be many tenants.</li>
 </ul>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -40,7 +39,7 @@ open<!-- #EndLibraryItem --></strong>. In this example:</p>
       <td><a id="id_admingroupid"></a>AdminGroupID</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_AdminGroupID.lbi" -->
 The unique ID for a specific API's Admin Group, comprised of all administrators associated with that API. <!--This value is only used in response messages. Example usage: &lt;span class=&quot;code&quot;&gt;getAPIAdministrators&lt;/span&gt; returns a list of administrators. Alternatively you can use the groupID and invoke the group API, getMembers operation. Or if you want to add an administrator you can get the groupID and invoke the inviteMemberToGroup operation.In the group API you would use it as the group ID. We return the team ID of the app and use it to manage the app team members using the group API. AdminGroupID is always applicable to an API group.--><!-- #EndLibraryItem --></td>
-      <td>group18970.open</td>
+      <td>group18970.acmecorp</td>
   </tr>
     <tr>
       <td><a id="id_admingrouprecipientobjectid"></a>AdminGroupRecipientObjectID</td>
@@ -68,37 +67,37 @@ The unique ID for the specified alert.<!-- #EndLibraryItem --></td>
       <td><a id="id_apiid"></a>APIID</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_APIID.lbi" -->
 The unique ID for the specified API.<!-- #EndLibraryItem --></td>
-      <td>api10041.open</td>
+      <td>api10041.acmecorp</td>
   </tr>
     <tr>
       <td><a id="id_apiversionid"></a>APIVersionID</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->
 The unique ID for the specified API version.<!-- #EndLibraryItem --></td>
-      <td>apiversion13558.open</td>
+      <td>apiversion13558.acmecorp</td>
   </tr>
     <tr>
       <td><a id="id_appid"></a>AppID</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_AppID.lbi" -->
 The unique ID for the specified app.<!-- #EndLibraryItem --></td>
-      <td>app10021.open</td>
+      <td>app10021.acmecorp</td>
   </tr>
     <tr>
       <td><a id="id_appruntimeid"></a>AppRuntimeID</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_AppRuntimeID.lbi" --><p>Unique ID used at runtime by the app version.</p>
 <p><strong>Note</strong>: The RuntimeID for an app and the AppVersionID are essentially the same, but the values are reversed.</p><!-- #EndLibraryItem --></td>
-      <td><!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" --> open<!-- #EndLibraryItem -->.72zNE5InKlf2z00y8fWSp3AU</td>
+      <td>acmecorp.72zNE5InKlf2z00y8fWSp3AU</td>
   </tr>
     <tr>
       <td><a id="id_appversionid"></a>AppVersionID</td>
       <td><p><!-- #BeginLibraryItem "/Library/o_ID_AppVersionID.lbi" -->
         The unique ID for the specified app version.<!-- #EndLibraryItem --> The App Version ID is made up of two elements, separated by a dot: an <a href="glossary_communityplatform.htm#rdn">RDN</a>, which is a 24-character hex value randomly generated when the version is created, and the <a href="#id_fedmemberid">FedmemberID</a> (tenant name).</p>
         <p><strong>Note</strong>: RuntimeID AppVersionID are the same value. When this appears in a form parameter, the API uses AppVersionID; when it's part of a request or response object, the API uses RuntimeID.</p></td>
-      <td>72zNE5InKlf2z00y8fWSp3AU.open</td>
+      <td>72zNE5InKlf2z00y8fWSp3AU.acmecorp</td>
   </tr>
     <tr>
       <td><a id="id_appversiondn"></a>AppVersionDN</td>
       <td>Same as <a href="#">AppVersionID</a>, see above.</td>
-      <td>72zNE5InKlf2z00y8fWSp3AU.open</td>
+      <td>72zNE5InKlf2z00y8fWSp3AU.acmecorp</td>
     </tr>
     <tr>
       <td><a id="id_avatarversionid"></a>AvatarVersionID</td>
@@ -139,7 +138,7 @@ The unique ID of the object that a group belongs to, if applicable. For an app t
       <td><a id="id_contractid"></a>ContractID</td>
       <td><p><!-- #BeginLibraryItem "/Library/o_ID_ContractID.lbi" --> The unique ID for a specific contract between an app version and an API version.<!-- #EndLibraryItem --></p>
         <p><strong>Note</strong>: ContractID and APIAccessRequest are synonymous.</p></td>
-      <td>contract17172.open</td>
+      <td>contract17172.acmecorp</td>
   </tr>
     <tr>
       <td><a id="id_contractrequestid"></a>ContractRequestID</td>
@@ -157,25 +156,25 @@ The latest or only version ID for the app.<!-- #EndLibraryItem --></td>
       <td><a id="id_discussionid"></a>DiscussionID</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_DiscussionID.lbi" -->
 The unique ID for a specific <a href="glossary_communityplatform.htm#discussion">discussion</a>.<!-- #EndLibraryItem --></td>
-      <td>discussion25796.open</td>
+      <td>discussion25796.acmecorp</td>
   </tr>
     <tr>
       <td><a id="id_discussionsubjectid"></a>DiscussionSubjectID</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_DiscussionSubjectID.lbi" -->
 The unique ID for the specific resource that a <a href="glossary_communityplatform.htm#discussion">discussion</a> relates to; for example, the AppVersionID, APIVersionID, GroupID, or a custom BoardID.<!-- #EndLibraryItem --></td>
-      <td>apiversion20693.open, 4iXro2Uxs2h4LviCshR9pK9w.open</td>
+      <td>apiversion20693.acmecorp, 4iXro2Uxs2h4LviCshR9pK9w.acmecorp</td>
   </tr>
     <tr>
       <td><a id="id_documentid"></a>DocumentID</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_DocumentID.lbi" -->
 The unique ID for a specific legal document, such as an API licensing agreement.<!-- #EndLibraryItem --></td>
-      <td>api200eula2.open</td>
+      <td>api200eula2.acmecorp</td>
   </tr>
     <tr>
       <td><a id="id_fedmemberid"></a>FedMemberID</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_FedMemberID.lbi" -->
 The unique ID for a specific federation member.<!-- #EndLibraryItem --></td>
-      <td>Tenant01, open</td>
+      <td>Tenant01.acmecorp</td>
   </tr>
     <tr>
       <td><a id="id_followedid"></a>FollowedID</td>
@@ -186,13 +185,13 @@ The unique ID for a specific federation member.<!-- #EndLibraryItem --></td>
       <td><a id="id_followingid"></a>FollowingID</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_FollowingID.lbi" -->
 The unique ID for a &quot;following&quot; relationship between a user and a specific resource the user is following (app or API).<!-- #EndLibraryItem --></td>
-      <td>follow15927.open</td>
+      <td>follow15927.acmecorp</td>
     </tr>
     <tr>
       <td><a id="id_groupid"></a>GroupID</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_GroupID.lbi" -->
 The unique ID for a specific group.<!-- #EndLibraryItem --></td>
-      <td>group19793.open</td>
+      <td>group19793.acmecorp</td>
   </tr>
     <tr>
       <td><a id="id_groupmembershipid"></a>GroupMembershipID</td>
@@ -221,17 +220,17 @@ The unique ID for a specific <a href="glossary_communityplatform.htm#boarditem">
     <tr>
       <td><a id="id_latestversionid"></a>LatestVersionID</td>
       <td>The APIVersionID for the latest version of an API that's available to the requesting user. Depending on the user's permissions, this might be the actual latest version of the API; however, if the user doesn't have access permission for the latest version, but has access to one or more earlier versions, it will be the latest version the user has access to.</td>
-      <td>apiversion13558.open</td>
+      <td>apiversion13558.acmecorp</td>
   </tr>
     <tr>
       <td><a id="id_legaldocumentid"></a>LegalDocumentID</td>
       <td>The unique ID for a legal document associated with an API.</td>
-      <td>api200eula2.open</td>
+      <td>api200eula2.acmecorp</td>
     </tr>
     <tr>
       <td><a id="id_logindomainid"></a>LoginDomainID</td>
       <td>The unique ID for a user's <a href="glossary_communityplatform.htm#logindomain">login domain</a>.</td>
-      <td>siteusers.open</td>
+      <td>siteusers.acmecorp</td>
     </tr>
     <tr>
       <td><a id="id_logoid"></a>LogoID</td>
@@ -242,7 +241,7 @@ The unique ID for a specific <a href="glossary_communityplatform.htm#boarditem">
       <td><a id="id_membershiprequestid"></a>MembershipRequestID</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_MembershipRequestID.lbi" -->
 The unique Board Item ID for a specific group membership request.<!-- #EndLibraryItem --></td>
-      <td>group_member_req10034.open</td>
+      <td>group_member_req10034.acmecorp</td>
   </tr>
     <tr>
       <td><a id="id_notificationid"></a>NotificationID</td>
@@ -254,7 +253,7 @@ The unique ID for a specific instance of a notification on a specific user's Das
       <td><a id="id_notificationsubjectid"></a>NotificationSubjectID</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_NotificationSubjectID.lbi" -->
 The unique ID for the subject of a specific notification, which is the Board Item ID for the Board item that caused the notification to be triggered. For example, if someone changes the priority of a ticket, or closes it, and that generates a notification, the notification subject ID is the Board Item ID for the ticket. All notifications generated by a specific Board item have the same NotificationSubjectID.<!-- #EndLibraryItem --></td>
-      <td>notification30170.open</td>
+      <td>notification30170.acmecorp</td>
   </tr>
     <tr>
       <td><a id="id_oauthclientid"></a>OAuthClientID</td>
@@ -283,37 +282,36 @@ The ID of the third party providing validation for the user, such as Facebook&re
       <td><a id="id_resourceid"></a>ResourceID</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_ResourceID.lbi" -->
 The unique ID for a specific resource.<!-- #EndLibraryItem --> For example, the <span class="apidoc_code"><a href="users/m_users_getUserRoles.htm">GET&nbsp;/api/users/{UserID}/roles</a></span> operation references a <a href="#id_userid">UserID</a> as a resource ID.</td>
-      <td>user13967.open</td>
+      <td>user13967.acmecorp</td>
   </tr>
     <tr>
       <td><a id="id_reviewid"></a>ReviewID</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_ReviewID.lbi" -->The unique ID for a specific review.<!-- #EndLibraryItem --></td>
-      <td>review24085.open</td>
+      <td>review24085.acmecorp</td>
   </tr>
     <tr>
       <td><a id="id_reviewauthorid"></a>ReviewAuthorID</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_ReviewAuthorID.lbi" -->
 The unique UserID for the author of a specific review.<!-- #EndLibraryItem --></td>
-      <td>user23531.open</td>
+      <td>user23531.acmecorp</td>
     </tr>
     <tr>
       <td><a id="id_reviewsubjectid"></a>ReviewSubjectID</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_ReviewSubjectID.lbi" -->
 The unique ID for a specific review subject.<!-- #EndLibraryItem --></td>
-      <td>gbGPCs7Uvz4VV8D0Zuvzdq6C.open</td>
+      <td>gbGPCs7Uvz4VV8D0Zuvzdq6C.acmecorp</td>
   </tr>
     <tr>
       <td><a id="id_retrievinguserid"></a>RetrievingUserID</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_RetrievingUserID.lbi" -->
 The unique UserID of the user performing a specific action.<!-- #EndLibraryItem --></td>
-      <td>user10011.open</td>
+      <td>user10011.acmecorp</td>
   </tr>
     <tr>
       <td><a id="id_runtimeid"></a>RuntimeID</td>
       <td><p>Same as <a href="#id_appversionid">AppVersionID</a>.</p>
 <p><strong>Note</strong>: RuntimeID AppVersionID are the same value. When this appears in a form parameter, the API uses AppVersionID; when it's part of a request or response object, the API uses RuntimeID.</p></td>
-      <td><!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->
-open<!-- #EndLibraryItem -->.9ezRSOnifci8EYNndZu79U6w</td>
+      <td>acmecorp.9ezRSOnifci8EYNndZu79U6w</td>
   </tr>
     <tr>
       <td><a id="id_scopeid"></a>ScopeID</td>
@@ -329,7 +327,7 @@ open<!-- #EndLibraryItem -->.9ezRSOnifci8EYNndZu79U6w</td>
       <td><a id="id_ticketid"></a>TicketID</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_TicketID.lbi" -->
 The unique ID for a specific ticket.<!-- #EndLibraryItem --></td>
-      <td>ticket25687.open</td>
+      <td>ticket25687.acmecorp</td>
   </tr>
     <tr>
       <td><a id="id_transactionid"></a>TransactionID</td>
@@ -341,12 +339,12 @@ The unique ID for a specific <a href="glossary_communityplatform.htm#transaction
       <td><a id="id_userid"></a>UserID</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_UserID.lbi" -->
 The unique ID for a specific user.<!-- #EndLibraryItem --></td>
-      <td>user10011.open</td>
+      <td>user10011.acmecorp</td>
   </tr>
     <tr>
       <td><a id="id_viewerid"></a>ViewerID</td>
       <td>The ID of a user viewing a group.  For example, the <span class="apidoc_code"><a href="apis/m_apis_uninvitePrivateViewer.htm">DELETE&nbsp;/api/apis/versions/{APIVersionID}/viewers/{ViewerID}</a></span> operation has the ViewerID as an input parameter.</td>
-      <td>user23531.open</td>
+      <td>user23531.acmecorp</td>
     </tr>
     <tr>
       <td><a id="id_visibletoid"></a>VisibleToID</td>

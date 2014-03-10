@@ -50,11 +50,11 @@ Returns information about an app.<!-- #EndLibraryItem --></p>
 <h3 id="samplerequest">Sample Request</h3>
 <p>The example below requests information for the specified app.</p>
 <p><strong>Sample request URL #1</strong></p>
-<pre>https://&lt;hostname&gt;/api/apps/app16964.open</pre>
+<pre>https://&lt;hostname&gt;/api/apps/app16964.acmecorp</pre>
 <p><strong>Sample request URL #2</strong></p>
-<pre>https://&lt;hostname&gt;/api/apps/app16964.open?IncludeSettings=true</pre>
+<pre>https://&lt;hostname&gt;/api/apps/app16964.acmecorp?IncludeSettings=true</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&nbsp;/api/apps/app16964.open HTTP/1.1
+<pre>GET&nbsp;/api/apps/app16964.acmecorp HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: application/json, text/javascript, */*; q=0.01</pre>
 <p><strong>Sample request body</strong></p>
@@ -129,11 +129,11 @@ Date: Mon, 08 Jul 2013 18:06:21 GMT</pre>
 <p><strong>Sample response body #1</strong></p>
 <pre>
 {
-  "AppID" : "app16964.open",
+  "AppID" : "app16964.acmecorp",
   "Name" : "PaaStime",
   "Description" : "Android game",
   "Visibility" : "Limited",
-  "DefaultVersionID" : "4iXro2Uxs2h4LviCshR9pK9w.open",
+  "DefaultVersionID" : "4iXro2Uxs2h4LviCshR9pK9w.acmecorp",
   "IsFollowed" : true,
   "RatingSummary" : {
     "Five" : 1,
@@ -145,16 +145,16 @@ Date: Mon, 08 Jul 2013 18:06:21 GMT</pre>
   "State" : "com.soa.app.state.active",
   "Created" : "2012-11-09T15:30:43Z",
   "Updated" : "2013-06-11T22:45:58Z",
-  "AvatarURL" : "https://&lt;hostname&gt;/api/apps/app16964.open/avatars/b49540e4-a45e-4186-807f-a4e74d94fd83.png"
+  "AvatarURL" : "https://&lt;hostname&gt;/api/apps/app16964.acmecorp/avatars/b49540e4-a45e-4186-807f-a4e74d94fd83.png"
 }</pre>
 <p><strong>Sample response body #2</strong></p>
 <p><strong>IncludeSettings</strong> parameter was set to <strong>true</strong> in the request, so app settings are included in the response.</p>
 <pre>{
-  "AppID" : "app16964.open",
+  "AppID" : "app16964.acmecorp",
   "Name" : "PaaStime",
   "Description" : "Android game",
   "Visibility" : "Limited",
-  "DefaultVersionID" : "4iXro2Uxs2h4LviCshR9pK9w.open",
+  "DefaultVersionID" : "4iXro2Uxs2h4LviCshR9pK9w.acmecorp",
   "IsFollowed" : true,
   "RatingSummary" : {
     "Five" : 1,
@@ -166,7 +166,7 @@ Date: Mon, 08 Jul 2013 18:06:21 GMT</pre>
   "State" : "com.soa.app.state.active",
   "Created" : "2012-11-09T15:30:43Z",
   "Updated" : "2013-06-11T22:45:58Z",
-  "AvatarURL" : "https://&lt;hostname&gt;/api/apps/app16964.open/avatars/b49540e4-a45e-4186-807f-a4e74d94fd83.png",
+  "AvatarURL" : "https://&lt;hostname&gt;/api/apps/app16964.acmecorp/avatars/b49540e4-a45e-4186-807f-a4e74d94fd83.png",
   "AppSettings" : {
     "PublicAppSupport" : "com.soa.feature.enabled",
     "PublicAppBoardSupport" : "com.soa.feature.enabled",

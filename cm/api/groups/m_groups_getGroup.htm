@@ -56,9 +56,9 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for information about the specified group, including settings.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://&lt;hostname&gt;/api/groups/group19212.open?IncludeSettings=true</pre>
+<pre>https://&lt;hostname&gt;/api/groups/group19212.acmecorp?IncludeSettings=true</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&nbsp;/api/groups/group19212.open?IncludeSettings=true HTTP/1.1
+<pre>GET&nbsp;/api/groups/group19212.acmecorp?IncludeSettings=true HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: application/json, text/javascript, */*; q=0.01</pre>
 <p><strong>Sample request body</strong></p>
@@ -137,13 +137,13 @@ Content-Type: application/json
 Date: Sat, 08 Jun 2013 00:42:41 GMT</pre>
 <p><strong>Sample response body</strong></p>
 <pre>{
-  "GroupID" : "group19212.open",
+  "GroupID" : "group19212.acmecorp",
   "Name" : "ACME Payments API UG",
   "Description" : "ACME Payments API User Group",
   "Tag" : [ "users" ],
   "Visibility" : "Limited",
   "GroupType" : "com.soa.group.type.independent",
-  "ContextObjectID" : "apiversion19184.open",
+  "ContextObjectID" : "apiversion19184.acmecorp",
   "Created" : "2013-02-06T16:08:24Z",
   "Updated" : "2013-06-14T15:36:02Z",
   "RatingSummary" : {

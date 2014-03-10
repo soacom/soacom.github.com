@@ -71,9 +71,9 @@ Adds or updates a specific user's rating for a resource. If the rating doesn't e
 
 <p id="id_samplerequest">The example below shows a specific user changing their rating of the specified API version to 5.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion10024.open/ratings/user10002.open</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion10024.acmecorp/ratings/user10002.acmecorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT&nbsp;/api/apis/versions/apiversion10024.open/ratings/user10002.open HTTP/1.1
+<pre>PUT&nbsp;/api/apis/versions/apiversion10024.acmecorp/ratings/user10002.acmecorp HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: application/json
 Content-Type: application/json; charset=UTF-8</pre>
@@ -87,16 +87,16 @@ Content-Type: application/json; charset=UTF-8</pre>
 <h4 id="samplerequest_2">Sample request: Apps service</h4>
 <p id="id_samplerequest_2">The example below shows a specific user changing their rating for an app version to 4.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://&lt;hostname&gt;/api/apps/versions/90VsIX3WmpP32sqoYQk8jj4J.open/ratings/user13967.open</pre>
+<pre>https://&lt;hostname&gt;/api/apps/versions/90VsIX3WmpP32sqoYQk8jj4J.acmecorp/ratings/user13967.acmecorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT&nbsp;/api/apps/versions/90VsIX3WmpP32sqoYQk8jj4J.open/ratings/user13967.open HTTP/1.1
+<pre>PUT&nbsp;/api/apps/versions/90VsIX3WmpP32sqoYQk8jj4J.acmecorp/ratings/user13967.acmecorp HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/json; charset=UTF-8</pre>
 <p><strong>Sample request body</strong></p>
 <pre>{
-  "ID":"90VsIX3WmpP32sqoYQk8jj4J.open",
-  "UserID":"user13967.open",
+  "ID":"90VsIX3WmpP32sqoYQk8jj4J.acmecorp",
+  "UserID":"user13967.acmecorp",
   "Rating":4
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -105,9 +105,9 @@ Content-Type: application/json; charset=UTF-8</pre>
 <h4 id="samplerequest_4">Sample request: Groups service</h4>
 <p id="id_samplerequest_4">The example below shows a specific user changing their rating for a group to 5.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://&lt;hostname&gt;/api/groups/group23509.open/ratings/user23509.open</pre>
+<pre>https://&lt;hostname&gt;/api/groups/group23509.acmecorp/ratings/user23509.acmecorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT /api/groups/group24386.open/ratings/user23509.open HTTP/1.1
+<pre>PUT /api/groups/group24386.acmecorp/ratings/user23509.acmecorp HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/json; charset=UTF-8</pre>
@@ -121,15 +121,15 @@ Content-Type: application/json; charset=UTF-8</pre>
 <h4 id="samplerequest_3">Sample request: Users service</h4>
 <p id="id_samplerequest_3">The example below shows a specific user changing their rating for an app version to 1.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://&lt;hostname&gt;/api/apps/versions/AMyrWWlF0Qj2ZPGqF8dPsa7O.open/ratings/user12262.open</pre>
+<pre>https://&lt;hostname&gt;/api/apps/versions/AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp/ratings/user12262.acmecorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT&nbsp;/api/apps/versions/AMyrWWlF0Qj2ZPGqF8dPsa7O.open/ratings/user12262.open HTTP/1.1
+<pre>PUT&nbsp;/api/apps/versions/AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp/ratings/user12262.acmecorp HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: application/json, text/javascript, */*; q=0.01</pre>
 <p><strong>Sample request body</strong></p>
 <pre>{
-  "ID":"AMyrWWlF0Qj2ZPGqF8dPsa7O.open",
-  "UserID":"user12262.open",
+  "ID":"AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp",
+  "UserID":"user12262.acmecorp",
   "Rating":1
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -254,8 +254,8 @@ Content-Type: application/json</pre>
 
 <p><strong>Sample response body</strong></p>
 <pre>{
-  "ID" : "90VsIX3WmpP32sqoYQk8jj4J.open",
-  "UserID" : "user13967.open",
+  "ID" : "90VsIX3WmpP32sqoYQk8jj4J.acmecorp",
+  "UserID" : "user13967.acmecorp",
   "Rating" : 4
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -271,8 +271,8 @@ Date: Wed, 19 Jun 2013 14:01:28 GMT</pre>
 
 <p><strong>Sample response body</strong></p>
 <pre>{
-  "ID" : "group24386.open",
-  "UserID" : "user23509.open",
+  "ID" : "group24386.acmecorp",
+  "UserID" : "user23509.acmecorp",
   "Rating" : 5
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -288,8 +288,8 @@ Date: Thu, 30 May 2013 17:31:58 GMT</pre>
 
 <p><strong>Sample response body</strong></p>
 <pre>{
-  "ID" : "AMyrWWlF0Qj2ZPGqF8dPsa7O.open",
-  "UserID" : "user12262.open",
+  "ID" : "AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp",
+  "UserID" : "user12262.acmecorp",
   "Rating" : 1
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>

@@ -60,7 +60,7 @@ Changes the <a href="../Ref_Values.htm#values_userstatus">status</a> of the spec
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a status change, disabling access for the specified user with a comment.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://&lt;hostname&gt;/api/users/user23531.open/status</pre>
+<pre>https://&lt;hostname&gt;/api/users/user23531.acmecorp/status</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Content-Type: application/json
 Accept: application/json</pre>
@@ -148,8 +148,8 @@ Content-Type: application/json
 Date: Thu, 30 May 2013 22:55:26 GMT</pre>
 <p><strong>Sample response body: JSON</strong></p>
 <pre>{
-  "UserID" : "user11111.open",
-  "UserName" : "open-JaneMead",
+  "UserID" : "user11111.acmecorp",
+  "UserName" : "acmecorp-JaneMead",
   "FirstName" : "Jane",
   "LastName" : "Mead",
   "AuthIdentifier" : "",
@@ -171,8 +171,8 @@ Date: Thu, 30 May 2013 22:55:26 GMT</pre>
 <p><strong>Sample response body: XML</strong></p>
 <pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
 &lt;User xmlns="http://soa.com/xsd/user/1.0" xmlns:ns2="http://soa.com/xsd/business/1.0"&gt;
-  &lt;UserID&gt;user23531.open&lt;/UserID&gt;
-  &lt;UserName&gt;open-JaneMead&lt;/UserName&gt;
+  &lt;UserID&gt;user23531.acmecorp&lt;/UserID&gt;
+  &lt;UserName&gt;acmecorp-JaneMead&lt;/UserName&gt;
   &lt;FirstName&gt;Jane&lt;/FirstName&gt;
   &lt;LastName&gt;Mead&lt;/LastName&gt;
   &lt;AuthIdentifier&gt;&lt;/AuthIdentifier&gt;

@@ -51,14 +51,28 @@ Adds a  version of an app&#8212;either the original version when the app is crea
 <h3 id="samplerequest">Sample Request</h3>
 <p>The example below sends information about the initial version of a crossword puzzle app.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://&lt;hostname&gt;/api/apps/app10037.open/versions</pre>
+<pre>https://&lt;hostname&gt;/api/apps/app10037.acmecorp/versions</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST&nbsp;/api/apps/app10037.open/versions HTTP/1.1
+<pre>POST&nbsp;/api/apps/app10037.acmecorp/versions HTTP/1.1
 Host: <!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!-- #EndLibraryItem -->
 Accept: */*
 Content-Type: application/json; charset=UTF-8</pre>
 <p><strong>Sample request body</strong></p>
-<pre><span id="s-1">{</span><br />Â Â <span id="s-2">&quot;Name&quot;</span><span id="s-3">:</span><span id="s-4">&quot;1.0&quot;</span><span id="s-5">,</span><br />Â Â <span id="s-6">&quot;Description&quot;</span><span id="s-7">:</span><span id="s-8">&quot;1.0&quot;</span><span id="s-9">,</span><br />Â Â <span id="s-10">&quot;Tag&quot;</span><span id="s-11">:</span><span id="s-12">[</span><br />Â Â Â Â <span id="s-13">&quot;Puzzle&quot;</span><span id="s-14">,</span><br />Â Â Â Â <span id="s-15">&quot;crossword&quot;</span><span id="s-16">,</span><br />Â Â Â Â <span id="s-17">&quot;game&quot;</span><span id="s-18">,</span><br />Â Â Â Â <span id="s-19">&quot;Android&quot;</span><br />Â Â <span id="s-20">]</span><span id="s-21">,</span><br />Â Â <span id="s-22">&quot;AppID&quot;</span><span id="s-23">:</span><span id="s-24">&quot;app10037.open&quot;,</span><span id="s-25"></span><br />Â Â <span id="s-26">&quot;InitialEnvironment&quot;</span><span id="s-27">:</span><span id="s-28">&quot;Sandbox&quot;</span><span id="s-29">,</span><br />Â Â <span id="s-30">&quot;Visibility&quot;</span><span id="s-31">:</span><span id="s-32">&quot;Public&quot;</span><span id="s-33">,</span><br />Â Â <span id="s-34">&quot;WebsiteAddress&quot;</span><span id="s-35">:</span><span id="s-36">&quot;&quot;</span><br /><span id="s-37">}</span></pre>
+<pre>
+{
+  "Name":"1.0",
+  "Description":"1.0",
+  "Tag":[
+    "Puzzle",
+    "crossword",
+    "game",
+    "Android"
+  ],
+  "AppID":"app10037.acmecorp",
+  "InitialEnvironment":"Sandbox",
+  "Visibility":"Public",
+  "WebsiteAddress":""
+}</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -133,7 +147,7 @@ Content-Type: text/plain
 Atmo-Renew-Token: renew</pre>
 
 <p><strong>Sample response body</strong></p>
-<pre>72zNE5InKlf2z00y8fWSp3AU.open</pre>
+<pre>72zNE5InKlf2z00y8fWSp3AU.acmecorp</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

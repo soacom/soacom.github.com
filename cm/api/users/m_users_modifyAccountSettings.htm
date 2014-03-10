@@ -49,14 +49,14 @@ Changes a user's account settings such as email notification preferences.<!-- #E
 <h3 id="samplerequest">Sample Request</h3>
 <p>The example below sends some changes the user has made to notifications preferences. The user has opted out of one of the notifications groups, so it is omitted from the request object.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user13967.open/settings</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user13967.acmecorp/settings</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT&nbsp;/api/users/user10016.open/settings HTTP/1.1
+<pre>PUT&nbsp;/api/users/user10016.acmecorp/settings HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: text/plain, */*; q=0.01
 Content-Type: application/json; charset=UTF-8</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{<br />  &quot;UserID&quot; : &quot;user13967.open&quot;,<br />  &quot;Email&quot; : &quot;janemead@example.com&quot;,<br />  &quot;OptedNotification&quot; : [ &quot;com.soa.notification.type.ticket.change&quot;, &quot;com.soa.notification.type.app.alert&quot;, 
+<pre>{<br />  &quot;UserID&quot; : &quot;user13967.acmecorp&quot;,<br />  &quot;Email&quot; : &quot;janemead@example.com&quot;,<br />  &quot;OptedNotification&quot; : [ &quot;com.soa.notification.type.ticket.change&quot;, &quot;com.soa.notification.type.app.alert&quot;, 
 &quot;com.soa.notification.type.post.comment&quot;, &quot;com.soa.notification.type.contract.state.change&quot;, 
 &quot;com.soa.notification.type.appteam&quot;, &quot;com.soa.notification.type.app.lifecycle&quot;, 
 &quot;com.soa.notification.type.news.update&quot;, &quot;com.soa.notification.type.app.post&quot; ]<br />}</pre>
@@ -132,7 +132,7 @@ Content-Type: text/plain
 Date: Fri, 17 May 2013 16:54:28 GMT</pre>
 
 <p><strong>Sample response body</strong></p>
-<pre>user13967.open</pre>
+<pre>user13967.acmecorp</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

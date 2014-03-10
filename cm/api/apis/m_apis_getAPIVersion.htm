@@ -48,13 +48,13 @@ Returns the specified API version.<!-- #EndLibraryItem --></p>
 
 
 <h3 id="samplerequest">Sample Request</h3>
-<p id="id_samplerequest">The example below shows a request for the API version object for apiversion18971.open.</p>
+<p id="id_samplerequest">The example below shows a request for the API version object for apiversion18971.acmecorp.</p>
 <p><strong>Sample request URL #1</strong></p>
-<pre>https://&lt;hostname&gt;/api/apis/versions/apiversion18971.open</pre>
+<pre>https://&lt;hostname&gt;/api/apis/versions/apiversion18971.acmecorp</pre>
 <p><strong>Sample request URL #2</strong></p>
-<pre>https://&lt;hostname&gt;/api/apis/versions/apiversion11793.open?includeTargetAPI=true&amp;includeOperations=true</pre>
+<pre>https://&lt;hostname&gt;/api/apis/versions/apiversion11793.acmecorp?includeTargetAPI=true&amp;includeOperations=true</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&nbsp;/api/apis/versions/apiversion18971.open HTTP/1.1
+<pre>GET&nbsp;/api/apis/versions/apiversion18971.acmecorp HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: application/json, text/javascript, */*; q=0.01</pre>
 <p><strong>Sample request body</strong></p>
@@ -136,13 +136,13 @@ Content-Type: application/json</pre>
 
 <p><strong>Sample response body</strong></p>
 <pre>{
-  "APIVersionID" : "apiversion18971.open",
-  "APIID" : "api18969.open",
+  "APIVersionID" : "apiversion18971.acmecorp",
+  "APIID" : "api18969.acmecorp",
   "Name" : "1.0",
   "Type" : "shttp",
   "Description" : "First release.",
   "Tag" : [ "payments API" ],
-  "State" : "com.soa.api.state.open",
+  "State" : "com.soa.api.state.acmecorp",
   "ProductionEndpoint" : "https://acmepayments.broker.soa.com/payments",
   "SandboxEndpoint" : "https://acmepaymentssandbox.broker.soa.com/payments",
   "Endpoints" : {
@@ -183,8 +183,8 @@ Date: Mon, 29 Apr 2013 15:22:01 GMT</pre>
 <p><strong>Note</strong>: The sample response below has been abbreviated for display reasons. Three operations are shown, but this parameter returns a list of all operations.</p>
 <pre>
 {
-  "APIVersionID" : "apiversion11155.open",
-  "APIID" : "api11153.open",
+  "APIVersionID" : "apiversion11155.acmecorp",
+  "APIID" : "api11153.acmecorp",
   "Name" : "1.0",
   "Description" : "Version 1.0",
   "Type" : "shttp",
@@ -264,7 +264,7 @@ Date: Mon, 29 Apr 2013 15:22:01 GMT</pre>
   "Visibility" : "Public",
   "Created" : "2012-06-04T11:59:36Z",
   "Updated" : "2013-01-12T00:29:23Z",
-  "State" : "com.soa.api.state.open",
+  "State" : "com.soa.api.state.acmecorp",
   "ProductionEndpointAccessAutoApproved" : true,
   "SandboxEndpointAccessAutoApproved" : true,
   "RatingSummary" : {

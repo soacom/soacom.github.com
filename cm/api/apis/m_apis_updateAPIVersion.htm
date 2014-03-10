@@ -53,31 +53,31 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below adds a third tag to the API version.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion10022.open</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion10022.acmecorp</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Content-Type: application/json
 Accept: application/json</pre>
 <p><strong>Sample request body: JSON</strong></p>
 <pre>{
-  "APIVersionID" : "apiversion10022.open",
-  "APIID" : "api10028.open",
+  "APIVersionID" : "apiversion10022.acmecorp",
+  "APIID" : "api10028.acmecorp",
   "Name" : "Payments API Latest",
   "Description" : "Version 1.3",
   "Type" : "shttp",
   "Tag" : [ "Payments version 1.3", "update", "Android" ],
-  "SandboxEndpoint" : "https://acme_payments_2013020804.open.soa.local:9902/",
+  "SandboxEndpoint" : "https://acme_payments_2013020804.acmecorp.soa.local:9902/",
   "Endpoints" : {
     "Endpoint" : [ {
-      "CName" : "acme_payments_2013020804.open.soa.local",
+      "CName" : "acme_payments_2013020804.acmecorp.soa.local",
       "Category" : "Sandbox",
-      "Uri" : "https://open.soa.local:9902/",
+      "Uri" : "https://developer.acmecorp.com:9902/",
       "ConnectionProperties" : [ ]
     } ]
   },
   "Visibility" : "Public",
   "Created" : "2013-02-08T16:15:36.894Z",
   "Updated" : "2013-02-08T19:50:36.190Z",
-  "State" : "com.soa.api.state.open",
+  "State" : "com.soa.api.state.acmecorp",
   "ProductionEndpointAccessAutoApproved" : true,
   "SandboxEndpointAccessAutoApproved" : true,
   "RatingSummary" : {
@@ -91,26 +91,26 @@ Accept: application/json</pre>
 <p><strong>Sample request body: XML</strong></p>
 <pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
 &lt;APIVersion xmlns="http://soa.com/xsd/api/1.0" xmlns:ns2="http://soa.com/xsd/resource/1.0"&gt;
-  &lt;APIVersionID&gt;apiversion10022.open&lt;/APIVersionID&gt;
-  &lt;APIID&gt;api10028.open&lt;/APIID&gt;
+  &lt;APIVersionID&gt;apiversion10022.acmecorp&lt;/APIVersionID&gt;
+  &lt;APIID&gt;api10028.acmecorp&lt;/APIID&gt;
   &lt;Name&gt;Payments API Latest&lt;/Name&gt;
   &lt;Description&gt;Version 1.3&lt;/Description&gt;
   &lt;Type&gt;shttp&lt;/Type&gt;
   &lt;Tag&gt;Payments version 1.3&lt;/Tag&gt;
   &lt;Tag&gt;update&lt;/Tag&gt;
   &lt;Tag&gt;Android&lt;/Tag&gt;
-  &lt;SandboxEndpoint&gt;https://acme_payments_2013020804.open.soa.local:9902/&lt;/SandboxEndpoint&gt;
+  &lt;SandboxEndpoint&gt;https://acme_payments_2013020804.acmecorp.soa.local:9902/&lt;/SandboxEndpoint&gt;
   &lt;Endpoints&gt;
     &lt;Endpoint&gt;
       &lt;Category&gt;Sandbox&lt;/Category&gt;
-      &lt;Uri&gt;https://open.soa.local:9902/&lt;/Uri&gt;
-      &lt;CName&gt;acme_payments_2013020804.open.soa.local&lt;/CName&gt;
+      &lt;Uri&gt;https://developer.acmecorp.com:9902/&lt;/Uri&gt;
+      &lt;CName&gt;acme_payments_2013020804.acmecorp.soa.local&lt;/CName&gt;
     &lt;/Endpoint&gt;
   &lt;/Endpoints&gt;
   &lt;Visibility&gt;Public&lt;/Visibility&gt;
   &lt;Created&gt;2013-02-08T16:15:36.894Z&lt;/Created&gt;
   &lt;Updated&gt;2013-02-08T19:50:36.190Z&lt;/Updated&gt;
-  &lt;State&gt;com.soa.api.state.open&lt;/State&gt;
+  &lt;State&gt;com.soa.api.state.acmecorp&lt;/State&gt;
   &lt;ProductionEndpointAccessAutoApproved&gt;true&lt;/ProductionEndpointAccessAutoApproved&gt;
   &lt;SandboxEndpointAccessAutoApproved&gt;true&lt;/SandboxEndpointAccessAutoApproved&gt;
   &lt;ns2:RatingSummary&gt;
@@ -201,25 +201,25 @@ Content-Type: application/json
 Date: Fri, 08 Feb 2013 19:51:34 GMT</pre>
 <p><strong>Sample response body: JSON</strong></p>
 <pre>{
-  "APIVersionID" : "apiversion10022.open",
-  "APIID" : "api10028.open",
+  "APIVersionID" : "apiversion10022.acmecorp",
+  "APIID" : "api10028.acmecorp",
   "Name" : "Payments API Latest",
   "Description" : "Version 1.3",
   "Type" : "shttp",
   "Tag" : [ "Payments version 1.3", "update", "Android" ],
-  "SandboxEndpoint" : "https://acme_payments_2013020804.open.soa.local:9902/",
+  "SandboxEndpoint" : "https://acme_payments_2013020804.acmecorp.soa.local:9902/",
   "Endpoints" : {
     "Endpoint" : [ {
-      "CName" : "acme_payments_2013020804.open.soa.local",
+      "CName" : "acme_payments_2013020804.acmecorp.soa.local",
       "Category" : "Sandbox",
-      "Uri" : "https://open.soa.local:9902/",
+      "Uri" : "https://developer.acmecorp.com:9902/",
       "ConnectionProperties" : [ ]
     } ]
   },
   "Visibility" : "Public",
   "Created" : "2013-02-08T16:15:36.894Z",
   "Updated" : "2013-02-08T19:50:36.190Z",
-  "State" : "com.soa.api.state.open",
+  "State" : "com.soa.api.state.acmecorp",
   "ProductionEndpointAccessAutoApproved" : true,
   "SandboxEndpointAccessAutoApproved" : true,
   "RatingSummary" : {
@@ -237,26 +237,26 @@ Content-Type: application/xml</pre>
 <p><strong>Sample response body: XML</strong></p>
 <pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
 &lt;APIVersion xmlns="http://soa.com/xsd/api/1.0" xmlns:ns2="http://soa.com/xsd/resource/1.0"&gt;
-  &lt;APIVersionID&gt;apiversion10022.open&lt;/APIVersionID&gt;
-  &lt;APIID&gt;aapi10028.open&lt;/APIID&gt;
+  &lt;APIVersionID&gt;apiversion10022.acmecorp&lt;/APIVersionID&gt;
+  &lt;APIID&gt;aapi10028.acmecorp&lt;/APIID&gt;
   &lt;Name&gt;Payments API Latest&lt;/Name&gt;
   &lt;Description&gt;Version 1.3&lt;/Description&gt;
   &lt;Type&gt;shttp&lt;/Type&gt;
   &lt;Tag&gt;Payments version 1.3&lt;/Tag&gt;
   &lt;Tag&gt;update&lt;/Tag&gt;
   &lt;Tag&gt;Android&lt;/Tag&gt;
-  &lt;SandboxEndpoint&gt;https://acme_payments_2013020804.open.soa.local:9902/&lt;/SandboxEndpoint&gt;
+  &lt;SandboxEndpoint&gt;https://acme_payments_2013020804.acmecorp.soa.local:9902/&lt;/SandboxEndpoint&gt;
   &lt;Endpoints&gt;
     &lt;Endpoint&gt;
       &lt;Category&gt;Sandbox&lt;/Category&gt;
-      &lt;Uri&gt;https://open.soa.local:9902/&lt;/Uri&gt;
-      &lt;CName&gt;acme_payments_2013020804.open.soa.local&lt;/CName&gt;
+      &lt;Uri&gt;https://developer.acmecorp.com:9902/&lt;/Uri&gt;
+      &lt;CName&gt;acme_payments_2013020804.acmecorp.soa.local&lt;/CName&gt;
     &lt;/Endpoint&gt;
   &lt;/Endpoints&gt;
   &lt;Visibility&gt;Public&lt;/Visibility&gt;
   &lt;Created&gt;2013-02-08T16:15:36.894Z&lt;/Created&gt;
   &lt;Updated&gt;2013-02-08T19:50:36.190Z&lt;/Updated&gt;
-  &lt;State&gt;com.soa.api.state.open&lt;/State&gt;
+  &lt;State&gt;com.soa.api.state.acmecorp&lt;/State&gt;
   &lt;ProductionEndpointAccessAutoApproved&gt;true&lt;/ProductionEndpointAccessAutoApproved&gt;
   &lt;SandboxEndpointAccessAutoApproved&gt;true&lt;/SandboxEndpointAccessAutoApproved&gt;
   &lt;ns2:RatingSummary&gt;

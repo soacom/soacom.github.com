@@ -59,10 +59,10 @@ Returns a list of Board items for the specified user.<!-- #EndLibraryItem --></p
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest1"><strong>Request URL</strong> #1</p>
 <p>Returns only group member requests.</p>
-<pre>https://&lt;hostname&gt;/api/users/user13967.open/board?ItemType=GroupMemberReq</pre>
+<pre>https://&lt;hostname&gt;/api/users/user13967.acmecorp/board?ItemType=GroupMemberReq</pre>
 <p><strong>Request URL</strong> #2</p>
 <p id="id_samplerequest2">Returns only the Board item that matches the specified ItemID.</p>
-<pre>https://&lt;hostname&gt;/api/users/user13967.open/board?ItemID=group_member_req11039.open</pre><p><strong>Sample request headers</strong></p>
+<pre>https://&lt;hostname&gt;/api/users/user13967.acmecorp/board?ItemID=group_member_req11039.acmecorp</pre><p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -245,21 +245,21 @@ Date: Tue, 21 May 2013 00:28:30 GMT</pre>
         "domain" : "uddi:soa.com:archivable"
       } ],
       "guid" : {
-        "value" : "group_member_req11039.open"
+        "value" : "group_member_req11039.acmecorp"
       },
       "pubDate" : "2012-05-25T04:07:56.000Z",
       "AuthoringUser" : {
-        "ID" : "user10998.open",
+        "ID" : "user10998.acmecorp",
         "Name" : "melgm",
         "Image" : {
-          "Url" : "https://&lt;hostname&gt;/api/users/user10998.open/avatar",
+          "Url" : "https://&lt;hostname&gt;/api/users/user10998.acmecorp/avatar",
           "Title" : "melgm",
-          "Link" : "#/users/user10998.open/details"
+          "Link" : "#/users/user10998.acmecorp/details"
         }
       },
       "Image" : {
-        "Url" : "https://&lt;hostname&gt;/api/users/user10998.open/avatar",
-        "Link" : "#/user/user10998.open/details"
+        "Url" : "https://&lt;hostname&gt;/api/users/user10998.acmecorp/avatar",
+        "Link" : "#/user/user10998.acmecorp/details"
       },
       "CreatedDate" : "2012-05-25T04:07:56.000Z",
       "Marks" : {
@@ -269,20 +269,20 @@ Date: Tue, 21 May 2013 00:28:30 GMT</pre>
       "CommentsPreview" : {
         "Count" : 1,
         "Comment" : [ {
-          "CommentID" : "comment11040.open",
-          "CommentSubjectID" : "group_member_req11039.open",
+          "CommentID" : "comment11040.acmecorp",
+          "CommentSubjectID" : "group_member_req11039.acmecorp",
           "Content" : "melgm cancelled the membership request",
           "Created" : "2012-05-25T04:07:56Z",
           "Marks" : 0,
           "IsMarked" : false,
-          "UserID" : "user10998.open",
+          "UserID" : "user10998.acmecorp",
           "UserName" : "melgm",
-          "AvatarURL" : "https://&lt;hostname&gt;/api/users/user10998.open/avatar"
+          "AvatarURL" : "https://&lt;hostname&gt;/api/users/user10998.acmecorp/avatar"
         } ]
       },
       "EntityReference" : {
         "Title" : "melgm",
-        "Guid" : "user10998.open",
+        "Guid" : "user10998.acmecorp",
         "Category" : [ {
           "value" : "user",
           "domain" : "uddi:soa.com:resourcetype"
@@ -313,7 +313,7 @@ xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
       &lt;description&gt;Membership is cancelled&lt;/description&gt;
       &lt;category domain="uddi:soa.com:resourcetype"&gt;GROUP_MEMBER_REQ&lt;/category&gt;
       &lt;category domain="uddi:soa.com:archivable"&gt;true&lt;/category&gt;
-      &lt;guid&gt;group_member_req11039.open&lt;/guid&gt;
+      &lt;guid&gt;group_member_req11039.acmecorp&lt;/guid&gt;
       &lt;pubDate&gt;2012-05-25T04:07:56.000Z&lt;/pubDate&gt;
       &lt;ns4:CreatedDate&gt;2012-05-25T04:07:56.000Z&lt;/ns4:CreatedDate&gt;
       &lt;ns4:Marks&gt;
@@ -323,34 +323,34 @@ xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
       &lt;ns5:CommentsPreview&gt;
         &lt;ns5:Count&gt;1&lt;/ns5:Count&gt;
         &lt;ns5:Comment&gt;
-          &lt;ns5:CommentID&gt;comment11040.open&lt;/ns5:CommentID&gt;
-          &lt;ns5:CommentSubjectID&gt;group_member_req11039.open&lt;/ns5:CommentSubjectID&gt;
+          &lt;ns5:CommentID&gt;comment11040.acmecorp&lt;/ns5:CommentID&gt;
+          &lt;ns5:CommentSubjectID&gt;group_member_req11039.acmecorp&lt;/ns5:CommentSubjectID&gt;
           &lt;ns5:Content&gt;melgm cancelled the membership request&lt;/ns5:Content&gt;
           &lt;ns5:Created&gt;2012-05-25T04:07:56Z&lt;/ns5:Created&gt;
           &lt;ns5:Marks&gt;0&lt;/ns5:Marks&gt;
           &lt;ns5:IsMarked&gt;false&lt;/ns5:IsMarked&gt;
-          &lt;ns3:UserID&gt;user10998.open&lt;/ns3:UserID&gt;
+          &lt;ns3:UserID&gt;user10998.acmecorp&lt;/ns3:UserID&gt;
           &lt;ns3:UserName&gt;melgm&lt;/ns3:UserName&gt;
-          &lt;ns3:AvatarURL&gt;https://&lt;hostname&gt;/api/users/user10998.open/avatar&lt;/ns3:AvatarURL&gt;
+          &lt;ns3:AvatarURL&gt;https://&lt;hostname&gt;/api/users/user10998.acmecorp/avatar&lt;/ns3:AvatarURL&gt;
         &lt;/ns5:Comment&gt;
       &lt;/ns5:CommentsPreview&gt;
       &lt;ns4:AuthoringUser&gt;
-        &lt;ID&gt;user10998.open&lt;/ID&gt;
+        &lt;ID&gt;user10998.acmecorp&lt;/ID&gt;
         &lt;Name&gt;melgm&lt;/Name&gt;
         &lt;ns4:Image&gt;
-          &lt;Url&gt;https://&lt;hostname&gt;/api/users/user10998.open/avatar&lt;/Url&gt;
+          &lt;Url&gt;https://&lt;hostname&gt;/api/users/user10998.acmecorp/avatar&lt;/Url&gt;
           &lt;Title&gt;melgm&lt;/Title&gt;
-          &lt;Link&gt;#/users/user10998.open/details&lt;/Link&gt;
+          &lt;Link&gt;#/users/user10998.acmecorp/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;
       &lt;/ns4:AuthoringUser&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;melgm&lt;/Title&gt;
-        &lt;Guid&gt;user10998.open&lt;/Guid&gt;
+        &lt;Guid&gt;user10998.acmecorp&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;user&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;https://&lt;hostname&gt;/api/users/user10998.open/avatar&lt;/Url&gt;
-        &lt;Link&gt;#/user/user10998.open/details&lt;/Link&gt;
+        &lt;Url&gt;https://&lt;hostname&gt;/api/users/user10998.acmecorp/avatar&lt;/Url&gt;
+        &lt;Link&gt;#/user/user10998.acmecorp/details&lt;/Link&gt;
       &lt;/ns4:Image&gt;
     &lt;/item&gt;
   &lt;/channel&gt;

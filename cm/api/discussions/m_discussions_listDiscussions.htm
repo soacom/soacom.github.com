@@ -58,7 +58,7 @@ Returns a list of <a href="../glossary_communityplatform.htm#discussion">discuss
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for the discussion items relating to a specific discussion about a specific API version.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://&lt;hostname&gt;/api/discussions?DiscussionSubjectID=apiversion20693.open&amp;ItemID=discussion25796.open</pre>
+<pre>https://&lt;hostname&gt;/api/discussions?DiscussionSubjectID=apiversion20693.acmecorp&amp;ItemID=discussion25796.acmecorp</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
@@ -198,13 +198,13 @@ Date: Tue, 23 Jul 2013 13:51:51 GMT</pre>
 {
   "channel" : {
     "title" : "",
-    "link" : "../atmosphere#/forum/discussions",
+    "link" : "../acmecorp#/forum/discussions",
     "description" : "",
     "startIndex" : 0,
     "itemsPerPage" : 0,
     "item" : [ {
       "title" : "Upcoming user event: Atlanta, Sat 11/16/13",
-      "link" : "../atmosphere#/forum/discussions/discussion25796.open/details",
+      "link" : "../acmecorp#/forum/discussions/discussion25796.acmecorp/details",
       "description" : "We are pleased to announce the first annual ACMEPayments user event, in Atlanta on Sat 16 Nov 2013. Details to come.",
       "category" : [ {
         "value" : "DISCUSSION",
@@ -232,21 +232,21 @@ Date: Tue, 23 Jul 2013 13:51:51 GMT</pre>
         "domain" : "uddi:soa.com:state"
       } ],
       "guid" : {
-        "value" : "discussion25796.open"
+        "value" : "discussion25796.acmecorp"
       },
       "pubDate" : "2013-07-22T20:15:34.000Z",
       "AuthoringUser" : {
-        "ID" : "user12262.open",
+        "ID" : "user12262.acmecorp",
         "Name" : "JaneMead",
         "Image" : {
-          "Url" : "http://&lt;hostname&gt;/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png",
+          "Url" : "http://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png",
           "Title" : "JaneMead",
-          "Link" : "#/users/user12262.open/details"
+          "Link" : "#/users/user12262.acmecorp/details"
         }
       },
       "Image" : {
-        "Url" : "http://&lt;hostname&gt;/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png",
-        "Link" : "../atmosphere#/user/user12262.open/details"
+        "Url" : "http://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png",
+        "Link" : "../acmecorp#/user/user12262.acmecorp/details"
       },
       "CreatedDate" : "2013-07-22T20:15:34.000Z",
       "Actions" : {
@@ -265,14 +265,14 @@ Date: Tue, 23 Jul 2013 13:51:51 GMT</pre>
       },
       "EntityReference" : [ {
         "Title" : "ACMEPayments",
-        "Guid" : "api18969.open",
+        "Guid" : "api18969.acmecorp",
         "Category" : [ {
           "value" : "api",
           "domain" : "uddi:soa.com:resourcetype"
         } ]
       }, {
         "Title" : "3.0",
-        "Guid" : "apiversion20693.open",
+        "Guid" : "apiversion20693.acmecorp",
         "Category" : [ {
           "value" : "apiversion",
           "domain" : "uddi:soa.com:resourcetype"
@@ -294,13 +294,13 @@ xmlns:ns5="http://soa.com/xsd/comment/1.0" xmlns:ns6="http://a9.com/-/spec/opens
 xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
   &lt;channel&gt;
     &lt;title&gt;&lt;/title&gt;
-    &lt;link&gt;../atmosphere#/forum/discussions&lt;/link&gt;
+    &lt;link&gt;../acmecorp#/forum/discussions&lt;/link&gt;
     &lt;description&gt;&lt;/description&gt;
     &lt;ns6:startIndex&gt;0&lt;/ns6:startIndex&gt;
     &lt;ns6:itemsPerPage&gt;0&lt;/ns6:itemsPerPage&gt;
     &lt;item&gt;
       &lt;title&gt;Upcoming user event: Atlanta, Sat 11/16/13&lt;/title&gt;
-      &lt;link&gt;../atmosphere#/forum/discussions/discussion25796.open/details&lt;/link&gt;
+      &lt;link&gt;../acmecorp#/forum/discussions/discussion25796.acmecorp/details&lt;/link&gt;
       &lt;description&gt;We are pleased to announce the first annual ACMEPayments user event, in Atlanta on Sat 16 Nov 2013. Details to come.&lt;/description&gt;
       &lt;category domain="uddi:soa.com:resourcetype"&gt;DISCUSSION&lt;/category&gt;
       &lt;category domain="uddi:soa.com:discussiontype"&gt;com.soa.discussion.type.comment&lt;/category&gt;
@@ -310,11 +310,11 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
       &lt;category domain="uddi:soa.com:tag"&gt;Atlanta&lt;/category&gt;
       &lt;category domain="uddi:soa.com:tag"&gt;event&lt;/category&gt;
       &lt;category domain="uddi:soa.com:state"&gt;com.soa.board.item.closed&lt;/category&gt;
-      &lt;guid&gt;discussion25796.open&lt;/guid&gt;
+      &lt;guid&gt;discussion25796.acmecorp&lt;/guid&gt;
       &lt;pubDate&gt;2013-07-22T20:15:34.000Z&lt;/pubDate&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;http://&lt;hostname&gt;/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png&lt;/Url&gt;
-        &lt;Link&gt;../atmosphere#/user/user12262.open/details&lt;/Link&gt;
+        &lt;Url&gt;http://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png&lt;/Url&gt;
+        &lt;Link&gt;../acmecorp#/user/user12262.acmecorp/details&lt;/Link&gt;
       &lt;/ns4:Image&gt;
       &lt;ns4:CreatedDate&gt;2013-07-22T20:15:34.000Z&lt;/ns4:CreatedDate&gt;
       &lt;ns4:Marks&gt;
@@ -325,22 +325,22 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
         &lt;ns5:Count&gt;0&lt;/ns5:Count&gt;
       &lt;/ns5:CommentsPreview&gt;
       &lt;ns4:AuthoringUser&gt;
-        &lt;ID&gt;user12262.open&lt;/ID&gt;
+        &lt;ID&gt;user12262.acmecorp&lt;/ID&gt;
         &lt;Name&gt;JaneMead&lt;/Name&gt;
         &lt;ns4:Image&gt;
-          &lt;Url&gt;http://&lt;hostname&gt;/api/users/user12262.open/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png&lt;/Url&gt;
+          &lt;Url&gt;http://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png&lt;/Url&gt;
           &lt;Title&gt;JaneMead&lt;/Title&gt;
-          &lt;Link&gt;#/users/user12262.open/details&lt;/Link&gt;
+          &lt;Link&gt;#/users/user12262.acmecorp/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;
       &lt;/ns4:AuthoringUser&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;ACMEPayments&lt;/Title&gt;
-        &lt;Guid&gt;api18969.open&lt;/Guid&gt;
+        &lt;Guid&gt;api18969.acmecorp&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;api&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;3.0&lt;/Title&gt;
-        &lt;Guid&gt;apiversion20693.open&lt;/Guid&gt;
+        &lt;Guid&gt;apiversion20693.acmecorp&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;apiversion&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:Actions&gt;

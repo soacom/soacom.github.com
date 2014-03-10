@@ -54,9 +54,9 @@ Retrieves information about legal documents for the specified API version.<!-- #
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for legal documents for an API.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion500.open/legals?Drafts=true&amp;Inactive=true</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion500.acmecorp/legals?Drafts=true&amp;Inactive=true</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&nbsp;/api/apis/versions/apiversion500.open/legals?Drafts=true&amp;Inactive=true HTTP/1.1
+<pre>GET&nbsp;/api/apis/versions/apiversion500.acmecorp/legals?Drafts=true&amp;Inactive=true HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/x-www-form-urlencoded</pre>
@@ -148,13 +148,13 @@ Content-Type: application/json</pre>
     "title" : "Agreement Documents",
     "item" : [ {
       "title" : "Legal Agreement 2.0",
-      "link" : "api/api200.open/legal/dev_update_test_agreement.html?version=1",
+      "link" : "api/api200.acmecorp/legal/dev_update_test_agreement.html?version=1",
       "description" : "Updated Version of Legal Agreement for version 2.0",
       "category" : [ {
         "value" : "agreement",
         "domain" : "uddi:soa.com:resourcetype"
       }, {
-        "value" : "com.soa.open.legals.eula",
+        "value" : "com.soa.acmecorp.legals.eula",
         "domain" : "uddi:soa.com:documenttype"
       }, {
         "value" : "com.soa.status.active",
@@ -166,26 +166,26 @@ Content-Type: application/json</pre>
         "value" : "1",
         "domain" : "uddi:soa.com:version"
       }, {
-        "value" : "api/api200.open/legal/dev_update_test_agreement.html",
+        "value" : "api/api200.acmecorp/legal/dev_update_test_agreement.html",
         "domain" : "uddi:soa.com:docpath"
       } ],
       "guid" : {
-        "value" : "agreement10015.open"
+        "value" : "agreement10015.acmecorp"
       },
       "EntityReferences" : {
         "EntityReference" : [ {
-          "Guid" : "apiversion500.open"
+          "Guid" : "apiversion500.acmecorp"
         } ]
       }
     }, {
       "title" : "ACME Payments API SDK Agreement",
-      "link" : "/api/api200.open/legal/Sample_EULA.htm?version=1",
+      "link" : "/api/api200.acmecorp/legal/Sample_EULA.htm?version=1",
       "description" : "SDK Agreement for applications to be able to access PaymentsAPI",
       "category" : [ {
         "value" : "agreement",
         "domain" : "uddi:soa.com:resourcetype"
       }, {
-        "value" : "com.soa.open.legals.eula",
+        "value" : "com.soa.acmecorp.legals.eula",
         "domain" : "uddi:soa.com:documenttype"
       }, {
         "value" : "com.soa.status.active",
@@ -197,26 +197,26 @@ Content-Type: application/json</pre>
         "value" : "1",
         "domain" : "uddi:soa.com:version"
       }, {
-        "value" : "/api/api200.open/legal/Sample_EULA.htm",
+        "value" : "/api/api200.acmecorp/legal/Sample_EULA.htm",
         "domain" : "uddi:soa.com:docpath"
       } ],
       "guid" : {
-        "value" : "api200eula2.open"
+        "value" : "api200eula2.acmecorp"
       },
       "EntityReferences" : {
         "EntityReference" : [ {
-          "Guid" : "apiversion500.open"
+          "Guid" : "apiversion500.acmecorp"
         } ]
       }
     }, {
       "title" : "ACME Payments API SDK Agreement",
-      "link" : "/api/api200.open/legal/Sample_EULA.htm?version=1",
+      "link" : "/api/api200.acmecorp/legal/Sample_EULA.htm?version=1",
       "description" : "SDK Agreement for applications to be able to access PaymentsAPI",
       "category" : [ {
         "value" : "agreement",
         "domain" : "uddi:soa.com:resourcetype"
       }, {
-        "value" : "com.soa.open.legals.eula",
+        "value" : "com.soa.acmecorp.legals.eula",
         "domain" : "uddi:soa.com:documenttype"
       }, {
         "value" : "com.soa.status.inactive",
@@ -228,15 +228,15 @@ Content-Type: application/json</pre>
         "value" : "1",
         "domain" : "uddi:soa.com:version"
       }, {
-        "value" : "/api/api200.open/legal/Sample_EULA.htm",
+        "value" : "/api/api200.acmecorp/legal/Sample_EULA.htm",
         "domain" : "uddi:soa.com:docpath"
       } ],
       "guid" : {
-        "value" : "api200eula1.open"
+        "value" : "api200eula1.acmecorp"
       },
       "EntityReferences" : {
         "EntityReference" : [ {
-          "Guid" : "apiversion500.open"
+          "Guid" : "apiversion500.acmecorp"
         } ]
       }
     } ]
@@ -297,7 +297,7 @@ The response body is in the form of an RSS channel, and includes the items liste
       <td>category</td>
       <td><p>One or more categories. Each category is a set of two name/value pairs. The second item defines the Domain, and the first defines the actual value for the property. For example, the set of values below shows that the document type is a legal eula (end-user licensing agreement) document:</p>
         <pre>{
-  "value" : "com.soa.open.legals.eula",
+  "value" : "com.soa.acmecorp.legals.eula",
   "domain" : "uddi:soa.com:documenttype"
 }</pre>
 <p>The domains for which values are defined are:</p>

@@ -13,7 +13,7 @@ no-catalog: true
 
 <h2><a name="top"></a>The &quot;Wrap In HTML&quot; Parameter</h2>
 <p>In some cases the platform uses a &quot;Wrap In HTML&quot; parameter in request messages. The sample request for the <span class="apidoc_code"><a href="apps/m_apps_addKeyInfo.htm">POST&nbsp;/api/apps/versions/{RuntimeID}/keyinfo</a></span> operation is an example of this, as shown below:</p>
-<pre>https://&lt;hostname&gt;/api/apps/versions/4iXro2Uxs2h4LviCshR9pK9w.open/keyinfo?<strong>wrapInHTML=true</strong></pre>
+<pre>https://&lt;hostname&gt;/api/apps/versions/4iXro2Uxs2h4LviCshR9pK9w.acmecorp/keyinfo?<strong>wrapInHTML=true</strong></pre>
 <p>We use this parameter to work around the fact that if we return an error message that is less that 512K in size, and the user's browser is Internet Explorer, the IE &quot;Friendly Error Messages&quot; feature replaces the custom error page with a generic one. In order to make sure the custom error message is displayed, we add padding that increases the size to over 512K.</p>
 <p>For example, the response below is an HTTP status 200 success message. The padding in the meta tag is not displayed to the user, but ensures that the user does see the response message sent by the platform rather than an Internet Explorer default page.</p>
 <pre>&lt;!DOCTYPE html&gt;

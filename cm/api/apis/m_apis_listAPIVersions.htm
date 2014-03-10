@@ -17,7 +17,7 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_listAPIVersions.lbi" -->
 Returns a list of API versions for all APIs.<!-- #EndLibraryItem --> </p>
-<p class="apidoc_note"><strong>Note</strong>: this operation might return a large amount of content. If you want to view versions for a specific API, use the <span class="apidoc_code"><a href="m_apis_getAPIVersions.htm">GETÂ apis/{APIID}/versions</a></span><a href="m_apis_getAPIVersions.htm"></a> operation instead.</p>
+<p class="apidoc_note"><strong>Note</strong>: this operation might return a large amount of content. If you want to view versions for a specific API, use the <span class="apidoc_code"><a href="m_apis_getAPIVersions.htm">GET&nbsp;apis/{APIID}/versions</a></span><a href="m_apis_getAPIVersions.htm"></a> operation instead.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/Library/roles_none.lbi" -->Anyone can use this operation; login is not required<!-- #EndLibraryItem -->. However, the results that are returned are restricted based on the user's access rights. For example, Private APIs that the user doesn't have access to are not returned.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -57,7 +57,7 @@ Returns a list of API versions for all APIs.<!-- #EndLibraryItem --> </p>
 <p><strong>Request URL #1</strong></p>
 <pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions</pre>
 <p><strong>Request URL #2</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions?state=com.soa.api.state.open</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions?state=com.soa.api.state.acmecorp</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>GET&nbsp;/api/apis/versions HTTP/1.1
 Accept: application/json, text/xml</pre>
@@ -108,7 +108,7 @@ Accept: application/json, text/xml</pre>
       <td>Optional</td>
       <td><p>If a state is specified, only APIs in that state are returned. Possible values:</p>
         <ul class="apidoctable_ul">
-          <li>com.soa.api.state.open</li>
+          <li>com.soa.api.state.acmecorp</li>
           <li>            com.soa.api.state.closed</li>
         </ul>
         <p>If this parameter is not specified, all matching results are returned.</p></td>
@@ -146,7 +146,7 @@ Content-Type: application/json</pre>
             "domain": "uddi:soa.com:resourcetype"
           },
           {
-            "value": "com.soa.api.state.open",
+            "value": "com.soa.api.state.acmecorp",
             "domain": "uddi:soa.com:state"
           },
           {
@@ -159,7 +159,7 @@ Content-Type: application/json</pre>
           }
         ],
         "guid": {
-          "value": "apiversion18972.open"
+          "value": "apiversion18972.acmecorp"
         },
         "pubDate": "Fri, 18 Jan 2013 09:10:50 GMT",
         "Endpoints": {
@@ -178,7 +178,7 @@ Content-Type: application/json</pre>
           "EntityReference": [
             {
               "Title": "ACMEPayments",
-              "Guid": "api18969.open",
+              "Guid": "api18969.acmecorp",
               "Category": [
                 {
                   "value": "api",
@@ -198,7 +198,7 @@ Content-Type: application/json</pre>
             "domain": "uddi:soa.com:resourcetype"
           },
           {
-            "value": "com.soa.api.state.open",
+            "value": "com.soa.api.state.acmecorp",
             "domain": "uddi:soa.com:state"
           },
           {
@@ -211,7 +211,7 @@ Content-Type: application/json</pre>
           }
         ],
         "guid": {
-          "value": "apiversion18971.open"
+          "value": "apiversion18971.acmecorp"
         },
         "pubDate": "Fri, 18 Jan 2013 08:46:27 GMT",
         "Endpoints": {
@@ -230,7 +230,7 @@ Content-Type: application/json</pre>
           "EntityReference": [
             {
               "Title": "ACMEPayments",
-              "Guid": "api18969.open",
+              "Guid": "api18969.acmecorp",
               "Category": [
                 {
                   "value": "api",
@@ -259,7 +259,7 @@ Content-Type: application/json</pre>
           }
         ],
         "guid": {
-          "value": "apiversion401.open"
+          "value": "apiversion401.acmecorp"
         },
         "pubDate": "Wed, 13 Jun 2012 06:31:01 GMT",
         "Endpoints": {
@@ -277,8 +277,8 @@ Content-Type: application/json</pre>
         "EntityReferences": {
           "EntityReference": [
             {
-              "Title": "Atmosphere Content Management API",
-              "Guid": "api101.open",
+              "Title": "ACMECorp Content Management API",
+              "Guid": "api101.acmecorp",
               "Category": [
                 {
                   "value": "api",
@@ -298,7 +298,7 @@ Content-Type: application/json</pre>
             "domain": "uddi:soa.com:resourcetype"
           },
           {
-            "value": "com.soa.api.state.open",
+            "value": "com.soa.api.state.acmecorp",
             "domain": "uddi:soa.com:state"
           },
           {
@@ -323,7 +323,7 @@ Content-Type: application/json</pre>
           }
         ],
         "guid": {
-          "value": "apiversion13558.open"
+          "value": "apiversion13558.acmecorp"
         },
         "pubDate": "Fri, 11 Jan 2013 07:13:29 GMT",
         "Endpoints": {
@@ -338,7 +338,7 @@ Content-Type: application/json</pre>
           "EntityReference": [
             {
               "Title": "Yahoo Weather",
-              "Guid": "api13556.open",
+              "Guid": "api13556.acmecorp",
               "Category": [
                 {
                   "value": "api",
@@ -369,15 +369,15 @@ xmlns:ns8="http://soa.com/xsd/api/1.0" xmlns:ns9="http://soa.com/xsd/board/1.0" 
       &lt;title&gt;1.1&lt;/title&gt;
       &lt;description&gt;Update to first release includes key fixes.&lt;/description&gt;
       &lt;category domain="uddi:soa.com:resourcetype"&gt;apiversion&lt;/category&gt;
-      &lt;category domain="uddi:soa.com:state"&gt;com.soa.api.state.open&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:state"&gt;com.soa.api.state.acmecorp&lt;/category&gt;
       &lt;category domain="uddi:soa.com:visibility"&gt;Public&lt;/category&gt;
       &lt;category domain="uddi:soa.com:tag"&gt;payments API&lt;/category&gt;
-      &lt;guid&gt;apiversion18972.open&lt;/guid&gt;
+      &lt;guid&gt;apiversion18972.acmecorp&lt;/guid&gt;
       &lt;pubDate&gt;Fri, 18 Jan 2013 09:10:50 GMT&lt;/pubDate&gt;
       &lt;ns2:EntityReferences&gt;
         &lt;ns2:EntityReference&gt;
           &lt;Title&gt;ACMEPayments&lt;/Title&gt;
-          &lt;Guid&gt;api18969.open&lt;/Guid&gt;
+          &lt;Guid&gt;api18969.acmecorp&lt;/Guid&gt;
           &lt;ns2:Category domain="uddi:soa.com:resourcetype"&gt;api&lt;/ns2:Category&gt;
         &lt;/ns2:EntityReference&gt;
       &lt;/ns2:EntityReferences&gt;
@@ -397,15 +397,15 @@ xmlns:ns8="http://soa.com/xsd/api/1.0" xmlns:ns9="http://soa.com/xsd/board/1.0" 
       &lt;title&gt;1.0&lt;/title&gt;
       &lt;description&gt;First release.&lt;/description&gt;
       &lt;category domain="uddi:soa.com:resourcetype"&gt;apiversion&lt;/category&gt;
-      &lt;category domain="uddi:soa.com:state"&gt;com.soa.api.state.open&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:state"&gt;com.soa.api.state.acmecorp&lt;/category&gt;
       &lt;category domain="uddi:soa.com:visibility"&gt;Public&lt;/category&gt;
       &lt;category domain="uddi:soa.com:tag"&gt;payments API&lt;/category&gt;
-      &lt;guid&gt;apiversion18971.open&lt;/guid&gt;
+      &lt;guid&gt;apiversion18971.acmecorp&lt;/guid&gt;
       &lt;pubDate&gt;Fri, 18 Jan 2013 08:46:27 GMT&lt;/pubDate&gt;
       &lt;ns2:EntityReferences&gt;
         &lt;ns2:EntityReference&gt;
           &lt;Title&gt;ACMEPayments&lt;/Title&gt;
-          &lt;Guid&gt;api18969.open&lt;/Guid&gt;
+          &lt;Guid&gt;api18969.acmecorp&lt;/Guid&gt;
           &lt;ns2:Category domain="uddi:soa.com:resourcetype"&gt;api&lt;/ns2:Category&gt;
         &lt;/ns2:EntityReference&gt;
       &lt;/ns2:EntityReferences&gt;
@@ -427,12 +427,12 @@ xmlns:ns8="http://soa.com/xsd/api/1.0" xmlns:ns9="http://soa.com/xsd/board/1.0" 
       &lt;category domain="uddi:soa.com:resourcetype"&gt;apiversion&lt;/category&gt;
       &lt;category domain="uddi:soa.com:state"&gt;com.soa.api.state.deleted&lt;/category&gt;
       &lt;category domain="uddi:soa.com:visibility"&gt;Public&lt;/category&gt;
-      &lt;guid&gt;apiversion401.open&lt;/guid&gt;
+      &lt;guid&gt;apiversion401.acmecorp&lt;/guid&gt;
       &lt;pubDate&gt;Wed, 13 Jun 2012 06:31:01 GMT&lt;/pubDate&gt;
       &lt;ns2:EntityReferences&gt;
         &lt;ns2:EntityReference&gt;
-          &lt;Title&gt;Atmosphere Content Management API&lt;/Title&gt;
-          &lt;Guid&gt;api101.open&lt;/Guid&gt;
+          &lt;Title&gt;ACMECorp Content Management API&lt;/Title&gt;
+          &lt;Guid&gt;api101.acmecorp&lt;/Guid&gt;
           &lt;ns2:Category domain="uddi:soa.com:resourcetype"&gt;api&lt;/ns2:Category&gt;
         &lt;/ns2:EntityReference&gt;
       &lt;/ns2:EntityReferences&gt;
@@ -451,18 +451,18 @@ xmlns:ns8="http://soa.com/xsd/api/1.0" xmlns:ns9="http://soa.com/xsd/board/1.0" 
       &lt;title&gt;v1&lt;/title&gt;
       &lt;description&gt;v1&lt;/description&gt;
       &lt;category domain="uddi:soa.com:resourcetype"&gt;apiversion&lt;/category&gt;
-      &lt;category domain="uddi:soa.com:state"&gt;com.soa.api.state.open&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:state"&gt;com.soa.api.state.acmecorp&lt;/category&gt;
       &lt;category domain="uddi:soa.com:visibility"&gt;Public&lt;/category&gt;
       &lt;category domain="uddi:soa.com:tag"&gt;weather&lt;/category&gt;
       &lt;category domain="uddi:soa.com:tag"&gt;Yahoo&lt;/category&gt;
       &lt;category domain="uddi:soa.com:tag"&gt;Yahoo Weather&lt;/category&gt;
       &lt;category domain="uddi:soa.com:tag"&gt;YahooWeather&lt;/category&gt;
-      &lt;guid&gt;apiversion13558.open&lt;/guid&gt;
+      &lt;guid&gt;apiversion13558.acmecorp&lt;/guid&gt;
       &lt;pubDate&gt;Fri, 11 Jan 2013 07:13:29 GMT&lt;/pubDate&gt;
       &lt;ns2:EntityReferences&gt;
         &lt;ns2:EntityReference&gt;
           &lt;Title&gt;Yahoo Weather&lt;/Title&gt;
-          &lt;Guid&gt;api13556.open&lt;/Guid&gt;
+          &lt;Guid&gt;api13556.acmecorp&lt;/Guid&gt;
           &lt;ns2:Category domain="uddi:soa.com:resourcetype"&gt;api&lt;/ns2:Category&gt;
         &lt;/ns2:EntityReference&gt;
       &lt;/ns2:EntityReferences&gt;
@@ -524,8 +524,8 @@ The response body is in the form of an RSS channel, and includes the items liste
       <td>category</td>
       <td><p>An array of  name/value pair sets containing information about values associated with the API version.</p>
         <p>Each includes Value and Domain. Domain indicates the type of value, Value indicates the actual value. For example:</p>
-<p><span class="apidoc_code">Â &quot;value&quot;: &quot;Public&quot;,</span></p>
-        <p><span class="apidoc_code">Â &quot;domain&quot;: &quot;uddi:soa.com:visibility&quot;</span></p>
+<p><span class="apidoc_code">&quot;value&quot;: &quot;Public&quot;,</span></p>
+        <p><span class="apidoc_code">&quot;domain&quot;: &quot;uddi:soa.com:visibility&quot;</span></p>
         <p>The above indicates that the visibility setting for the API version is public.</p></td>
     </tr>
     <tr>
@@ -540,8 +540,8 @@ The response body is in the form of an RSS channel, and includes the items liste
       <td>Endpoints</td>
       <td><p>An array of name/value pair sets containing information about the endpoints for the API version. </p>
         <p>Each includes Category, which is either Sandbox or Production, and URI, which is the URI for the endpoint. For example:</p>
-<p><span class="apidoc_code">Â &quot;Category&quot;: &quot;Sandbox&quot;,</span></p>
-        <p><span class="apidoc_code">Â &quot;Uri&quot;: &quot;http://acmepaymentssandbox.broker.soa.com/payments&quot;</span></p>
+<p><span class="apidoc_code">&quot;Category&quot;: &quot;Sandbox&quot;,</span></p>
+        <p><span class="apidoc_code">&quot;Uri&quot;: &quot;http://acmepaymentssandbox.broker.soa.com/payments&quot;</span></p>
         <p>The above indicates that the specified URI is for the Sandbox environment.</p></td>
 
     </tr>
@@ -552,8 +552,8 @@ The response body is in the form of an RSS channel, and includes the items liste
           <li>Title: The title of the API</li>
           <li>Guid: The APIID</li>
           <li>Category: An array of name/value pair sets containing information about values associated with the API. For example:
-            <p><span class="apidoc_code">Â &quot;value&quot;: &quot;api&quot;,</span></p>
-          <p><span class="apidoc_code">Â &quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;</span></p>
+            <p><span class="apidoc_code">&quot;value&quot;: &quot;api&quot;,</span></p>
+          <p><span class="apidoc_code">&quot;domain&quot;: &quot;uddi:soa.com:resourcetype&quot;</span></p>
         <p>The above indicates that the entity that the API version is associated with is a resource of type API.</p></li>
         </ul></td>
     </tr>

@@ -57,7 +57,7 @@ Returns information about the login domain for the specified user.<!-- #EndLibra
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for the login domain for the specified user.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user10002.open/logindomain</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user10002.acmecorp/logindomain</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json
 </pre>
@@ -138,7 +138,7 @@ Content-Type: text/html;charset=ISO-8859-1
 Date: Thu, 16 May 2013 21:12:15 GMT</pre>
 <p><strong>Sample response body: JSON</strong></p>
 <pre>{
-  "LoginDomainID" : "siteusers.open",
+  "LoginDomainID" : "siteusers.acmecorp",
   "FedmemberId" : "open",
   "Title" : "open-users",
   "Sequence" : -1,
@@ -152,7 +152,7 @@ Date: Thu, 16 May 2013 21:12:15 GMT</pre>
 Content-Type: application/xml
 Date: Fri, 17 May 2013 02:10:08 GMT</pre>
 <p><strong>Sample response body: XML</strong></p>
-<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;<br />&lt;LoginDomain xmlns=&quot;https://soa.com/xsd/login/1.0&quot;&gt;<br />    &lt;LoginDomainID&gt;siteusers.open&lt;/LoginDomainID&gt;<br />    &lt;FedmemberId&gt;open&lt;/FedmemberId&gt;<br />    &lt;Title&gt;open-users&lt;/Title&gt;<br />    &lt;Sequence&gt;-1&lt;/Sequence&gt;<br />    &lt;IdSystemType&gt;Policy Manager&lt;/IdSystemType&gt;<br />    &lt;LogoAssigned&gt;false&lt;/LogoAssigned&gt;<br />    &lt;Enabled&gt;true&lt;/Enabled&gt;<br />&lt;/LoginDomain&gt;</pre>
+<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;<br />&lt;LoginDomain xmlns=&quot;https://soa.com/xsd/login/1.0&quot;&gt;<br />    &lt;LoginDomainID&gt;siteusers.acmecorp&lt;/LoginDomainID&gt;<br />    &lt;FedmemberId&gt;open&lt;/FedmemberId&gt;<br />    &lt;Title&gt;open-users&lt;/Title&gt;<br />    &lt;Sequence&gt;-1&lt;/Sequence&gt;<br />    &lt;IdSystemType&gt;Policy Manager&lt;/IdSystemType&gt;<br />    &lt;LogoAssigned&gt;false&lt;/LogoAssigned&gt;<br />    &lt;Enabled&gt;true&lt;/Enabled&gt;<br />&lt;/LoginDomain&gt;</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <!-- InstanceEndEditable -->

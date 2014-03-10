@@ -57,19 +57,19 @@ Updates the specified review.<!-- #EndLibraryItem --></p>
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows the specified review being updated.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://&lt;hostname&gt;/api/reviews/review24149.open</pre>
+<pre>https://&lt;hostname&gt;/api/reviews/review24149.acmecorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT&nbsp;/api/reviews/review24149.open HTTP/1.1
+<pre>PUT&nbsp;/api/reviews/review24149.acmecorp HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/json; charset=UTF-8</pre>
 <p><strong>Sample request body</strong></p>
 <pre>{
-  "ReviewID":"review24149.open",
-  "ReviewSubjectID":"gbGPCs7Uvz4VV8D0Zuvzdq6C.open",
+  "ReviewID":"review24149.acmecorp",
+  "ReviewSubjectID":"gbGPCs7Uvz4VV8D0Zuvzdq6C.acmecorp",
   "Topic":"Love this app!",
   "Content":"Great app for a first version. But we need more... when is version 2 coming out?",
-  "UserID":"user13998.open",
+  "UserID":"user13998.acmecorp",
   "UserName":"PhilipPirrip",
   "Created":"2013-06-06T00:11:29Z",
   "Comments":0,
@@ -160,11 +160,11 @@ Content-Encoding: gzip
 Date: Thu, 06 Jun 2013 00:11:58 GMT</pre>
 <p><strong>Sample response body</strong></p>
 <pre>{
-  "ReviewID" : "review24149.open",
-  "ReviewSubjectID" : "gbGPCs7Uvz4VV8D0Zuvzdq6C.open",
+  "ReviewID" : "review24149.acmecorp",
+  "ReviewSubjectID" : "gbGPCs7Uvz4VV8D0Zuvzdq6C.acmecorp",
   "Topic" : "Love this app!",
   "Content" : "Great app for a first version. But we need more... when is version 2 coming out?",
-  "UserID" : "user13998.open",
+  "UserID" : "user13998.acmecorp",
   "UserName" : "PhilipPirrip",
   "Created" : "2013-06-06T00:11:29Z",
   "Comments" : 0,

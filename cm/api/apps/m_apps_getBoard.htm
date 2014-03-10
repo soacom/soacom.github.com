@@ -52,9 +52,9 @@ Returns a list of Board items for the specified app.<!-- #EndLibraryItem --></p>
 <p id="id_samplerequest">The example below shows a request for the first two items on an app's board.</p>
 <!--<p>Better example.</p>-->
 <p><strong>Sample request URL</strong></p>
-<pre>https://&lt;hostname&gt;/api/apps/app16964.open/board?start=0&amp;count=2&amp;RetrievingUserID=user12262.open</pre>
+<pre>https://&lt;hostname&gt;/api/apps/app16964.acmecorp/board?start=0&amp;count=2&amp;RetrievingUserID=user12262.acmecorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&nbsp;/api/apps/app16964.open/board?start=0&amp;count=2&amp;RetrievingUserID=user12262.open HTTP/1.1
+<pre>GET&nbsp;/api/apps/app16964.acmecorp/board?start=0&amp;count=2&amp;RetrievingUserID=user12262.acmecorp HTTP/1.1
 Host: <!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!-- #EndLibraryItem -->
 Accept: application/json, text/javascript, */*; q=0.01</pre>
 <p><strong>Sample request body</strong></p>
@@ -226,8 +226,8 @@ Content-Type: application/json</pre>
     "startIndex" : 0,
     "itemsPerPage" : 2,
     "item" : [ {
-      "title" : "Open member MaryJones  has been invited to the PaaStime application team",
-      "description" : "Open member MaryJones, I would like to invite you to join the development team for my application.  ",
+      "title" : "ACMECorp member MaryJones  has been invited to the PaaStime application team",
+      "description" : "ACMECorp member MaryJones, I would like to invite you to join the development team for my application.  ",
       "category" : [ {
         "value" : "GROUP_MEMBER_REQ",
         "domain" : "uddi:soa.com:resourcetype"
@@ -239,21 +239,21 @@ Content-Type: application/json</pre>
         "domain" : "uddi:soa.com:wfstate"
       } ],
       "guid" : {
-        "value" : "group_member_req23850.open"
+        "value" : "group_member_req23850.acmecorp"
       },
       "pubDate" : "2013-05-31T18:10:19.000Z",
       "AuthoringUser" : {
-        "ID" : "user12262.open",
+        "ID" : "user12262.acmecorp",
         "Name" : "JaneMead",
         "Image" : {
-          "Url" : "https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
+          "Url" : "https://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
           "Title" : "JaneMead",
-          "Link" : "#/users/user12262.open/details"
+          "Link" : "#/users/user12262.acmecorp/details"
         }
       },
       "Image" : {
-        "Url" : "https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
-        "Link" : "#/user/user12262.open/details"
+        "Url" : "https://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
+        "Link" : "#/user/user12262.acmecorp/details"
       },
       "CreatedDate" : "2013-05-30T00:36:00.000Z",
       "Marks" : {
@@ -263,52 +263,52 @@ Content-Type: application/json</pre>
       "CommentsPreview" : {
         "Count" : 2,
         "Comment" : [ {
-          "CommentID" : "comment23861.open",
-          "CommentSubjectID" : "group_member_req23850.open",
+          "CommentID" : "comment23861.acmecorp",
+          "CommentSubjectID" : "group_member_req23850.acmecorp",
           "Content" : "Love to, thanks!",
           "Created" : "2013-05-30T01:14:53Z",
           "Marks" : 0,
           "IsMarked" : false,
-          "UserID" : "user13998.open",
+          "UserID" : "user13998.acmecorp",
           "UserName" : "PhilipPirrip",
-          "AvatarURL" : "https://&lt;hostname&gt;/api/users/user13998.open/avatars/ce76ac4e-02db-47a3-a0d4-1f2e66a6cf3e.png"
+          "AvatarURL" : "https://&lt;hostname&gt;/api/users/user13998.acmecorp/avatars/ce76ac4e-02db-47a3-a0d4-1f2e66a6cf3e.png"
         }, {
-          "CommentID" : "comment23923.open",
-          "CommentSubjectID" : "group_member_req23850.open",
+          "CommentID" : "comment23923.acmecorp",
+          "CommentSubjectID" : "group_member_req23850.acmecorp",
           "Content" : "MaryJones accepted the membership invitation and commented \"Of course! Appreciate the invite. Sounds like a great app.\"",
           "Created" : "2013-05-31T18:10:19Z",
           "Marks" : 0,
           "IsMarked" : false,
-          "UserID" : "user23531.open",
+          "UserID" : "user23531.acmecorp",
           "UserName" : "JenniferMeadows",
-          "AvatarURL" : "https://&lt;hostname&gt;/api/users/user23531.open/avatars/14402873-86bf-4b70-a5b1-acf50e789eeb.png"
+          "AvatarURL" : "https://&lt;hostname&gt;/api/users/user23531.acmecorp/avatars/14402873-86bf-4b70-a5b1-acf50e789eeb.png"
         } ]
       },
       "EntityReference" : [ {
         "Title" : "PaaStime",
-        "Guid" : "app16964.open",
+        "Guid" : "app16964.acmecorp",
         "Category" : [ {
           "value" : "app",
           "domain" : "uddi:soa.com:resourcetype"
         } ]
       }, {
         "Title" : "Application team for [PaaStime]",
-        "Guid" : "group16965.open",
+        "Guid" : "group16965.acmecorp",
         "Category" : [ {
           "value" : "group",
           "domain" : "uddi:soa.com:resourcetype"
         } ]
       }, {
         "Title" : "JenniferMeadows",
-        "Guid" : "user23531.open",
+        "Guid" : "user23531.acmecorp",
         "Category" : [ {
           "value" : "user",
           "domain" : "uddi:soa.com:resourcetype"
         } ]
       } ]
     }, {
-      "title" : "Open member JonathanSwift  has been invited to the PaaStime application team",
-      "description" : "Open member JonathanSwift, I would like to invite you to join the development team for my application.  ",
+      "title" : "ACMECorp member JonathanSwift  has been invited to the PaaStime application team",
+      "description" : "ACMECorp member JonathanSwift, I would like to invite you to join the development team for my application.  ",
       "category" : [ {
         "value" : "GROUP_MEMBER_REQ",
         "domain" : "uddi:soa.com:resourcetype"
@@ -320,21 +320,21 @@ Content-Type: application/json</pre>
         "domain" : "uddi:soa.com:wfstate"
       } ],
       "guid" : {
-        "value" : "group_member_req23851.open"
+        "value" : "group_member_req23851.acmecorp"
       },
       "pubDate" : "2013-05-31T17:50:47.000Z",
       "AuthoringUser" : {
-        "ID" : "user12262.open",
+        "ID" : "user12262.acmecorp",
         "Name" : "JaneMead",
         "Image" : {
-          "Url" : "https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
+          "Url" : "https://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
           "Title" : "JaneMead",
-          "Link" : "#/users/user12262.open/details"
+          "Link" : "#/users/user12262.acmecorp/details"
         }
       },
       "Image" : {
-        "Url" : "https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
-        "Link" : "#/user/user12262.open/details"
+        "Url" : "https://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
+        "Link" : "#/user/user12262.acmecorp/details"
       },
       "CreatedDate" : "2013-05-30T00:35:49.000Z",
       "Marks" : {
@@ -344,34 +344,34 @@ Content-Type: application/json</pre>
       "CommentsPreview" : {
         "Count" : 1,
         "Comment" : [ {
-          "CommentID" : "comment23932.open",
-          "CommentSubjectID" : "group_member_req23851.open",
+          "CommentID" : "comment23932.acmecorp",
+          "CommentSubjectID" : "group_member_req23851.acmecorp",
           "Content" : "JonathanSwift accepted the membership invitation and commented \"Love to, thanks!\"",
           "Created" : "2013-05-31T17:50:47Z",
           "Marks" : 0,
           "IsMarked" : false,
-          "UserID" : "user13967.open",
+          "UserID" : "user13967.acmecorp",
           "UserName" : "JonathanSwift",
-          "AvatarURL" : "https://&lt;hostname&gt;/api/users/user13967.open/avatars/12d0fdd6-4707-4262-8c88-28ab3b5036c3.png"
+          "AvatarURL" : "https://&lt;hostname&gt;/api/users/user13967.acmecorp/avatars/12d0fdd6-4707-4262-8c88-28ab3b5036c3.png"
         } ]
       },
       "EntityReference" : [ {
         "Title" : "JonathanSwift",
-        "Guid" : "user13967.open",
+        "Guid" : "user13967.acmecorp",
         "Category" : [ {
           "value" : "user",
           "domain" : "uddi:soa.com:resourcetype"
         } ]
       }, {
         "Title" : "PaaStime",
-        "Guid" : "app16964.open",
+        "Guid" : "app16964.acmecorp",
         "Category" : [ {
           "value" : "app",
           "domain" : "uddi:soa.com:resourcetype"
         } ]
       }, {
         "Title" : "Application team for [PaaStime]",
-        "Guid" : "group16965.open",
+        "Guid" : "group16965.acmecorp",
         "Category" : [ {
           "value" : "group",
           "domain" : "uddi:soa.com:resourcetype"
@@ -392,12 +392,12 @@ xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
     &lt;ns6:startIndex&gt;0&lt;/ns6:startIndex&gt;
     &lt;ns6:itemsPerPage&gt;2&lt;/ns6:itemsPerPage&gt;
     &lt;item&gt;
-      &lt;title&gt;Open member MaryJones  has been invited to the PaaStime application team&lt;/title&gt;
-      &lt;description&gt;Open member MaryJones, I would like to invite you to join the development team for my application.  &lt;/description&gt;
+      &lt;title&gt;ACMECorp member MaryJones  has been invited to the PaaStime application team&lt;/title&gt;
+      &lt;description&gt;ACMECorp member MaryJones, I would like to invite you to join the development team for my application.  &lt;/description&gt;
       &lt;category domain="uddi:soa.com:resourcetype"&gt;GROUP_MEMBER_REQ&lt;/category&gt;
       &lt;category domain="uddi:soa.com:archivable"&gt;false&lt;/category&gt;
       &lt;category domain="uddi:soa.com:wfstate"&gt;com.soa.group.membership.state.approved&lt;/category&gt;
-      &lt;guid&gt;group_member_req23850.open&lt;/guid&gt;
+      &lt;guid&gt;group_member_req23850.acmecorp&lt;/guid&gt;
       &lt;pubDate&gt;2013-05-31T18:10:19.000Z&lt;/pubDate&gt;
       &lt;ns4:CreatedDate&gt;2013-05-30T00:36:00.000Z&lt;/ns4:CreatedDate&gt;
       &lt;ns4:Marks&gt;
@@ -407,64 +407,64 @@ xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
       &lt;ns5:CommentsPreview&gt;
         &lt;ns5:Count&gt;2&lt;/ns5:Count&gt;
         &lt;ns5:Comment&gt;
-          &lt;ns5:CommentID&gt;comment23861.open&lt;/ns5:CommentID&gt;
-          &lt;ns5:CommentSubjectID&gt;group_member_req23850.open&lt;/ns5:CommentSubjectID&gt;
+          &lt;ns5:CommentID&gt;comment23861.acmecorp&lt;/ns5:CommentID&gt;
+          &lt;ns5:CommentSubjectID&gt;group_member_req23850.acmecorp&lt;/ns5:CommentSubjectID&gt;
           &lt;ns5:Content&gt;Love to, thanks!&lt;/ns5:Content&gt;
           &lt;ns5:Created&gt;2013-05-30T01:14:53Z&lt;/ns5:Created&gt;
           &lt;ns5:Marks&gt;0&lt;/ns5:Marks&gt;
           &lt;ns5:IsMarked&gt;false&lt;/ns5:IsMarked&gt;
-          &lt;ns3:UserID&gt;user13998.open&lt;/ns3:UserID&gt;
+          &lt;ns3:UserID&gt;user13998.acmecorp&lt;/ns3:UserID&gt;
           &lt;ns3:UserName&gt;PhilipPirrip&lt;/ns3:UserName&gt;
-          &lt;ns3:AvatarURL&gt;https://&lt;hostname&gt;/api/users/user13998.open/avatars/ce76ac4e-02db-47a3-a0d4-1f2e66a6cf3e.png&lt;/ns3:AvatarURL&gt;
+          &lt;ns3:AvatarURL&gt;https://&lt;hostname&gt;/api/users/user13998.acmecorp/avatars/ce76ac4e-02db-47a3-a0d4-1f2e66a6cf3e.png&lt;/ns3:AvatarURL&gt;
         &lt;/ns5:Comment&gt;
         &lt;ns5:Comment&gt;
-          &lt;ns5:CommentID&gt;comment23923.open&lt;/ns5:CommentID&gt;
-          &lt;ns5:CommentSubjectID&gt;group_member_req23850.open&lt;/ns5:CommentSubjectID&gt;
+          &lt;ns5:CommentID&gt;comment23923.acmecorp&lt;/ns5:CommentID&gt;
+          &lt;ns5:CommentSubjectID&gt;group_member_req23850.acmecorp&lt;/ns5:CommentSubjectID&gt;
           &lt;ns5:Content&gt;MaryJones accepted the membership invitation and commented "Of course! Appreciate the invite. Sounds like a great app."&lt;/ns5:Content&gt;
           &lt;ns5:Created&gt;2013-05-31T18:10:19Z&lt;/ns5:Created&gt;
           &lt;ns5:Marks&gt;0&lt;/ns5:Marks&gt;
           &lt;ns5:IsMarked&gt;false&lt;/ns5:IsMarked&gt;
-          &lt;ns3:UserID&gt;user23531.open&lt;/ns3:UserID&gt;
+          &lt;ns3:UserID&gt;user23531.acmecorp&lt;/ns3:UserID&gt;
           &lt;ns3:UserName&gt;JenniferMeadows&lt;/ns3:UserName&gt;
-          &lt;ns3:AvatarURL&gt;https://&lt;hostname&gt;/api/users/user23531.open/avatars/14402873-86bf-4b70-a5b1-acf50e789eeb.png&lt;/ns3:AvatarURL&gt;
+          &lt;ns3:AvatarURL&gt;https://&lt;hostname&gt;/api/users/user23531.acmecorp/avatars/14402873-86bf-4b70-a5b1-acf50e789eeb.png&lt;/ns3:AvatarURL&gt;
         &lt;/ns5:Comment&gt;
       &lt;/ns5:CommentsPreview&gt;
       &lt;ns4:AuthoringUser&gt;
-        &lt;ID&gt;user12262.open&lt;/ID&gt;
+        &lt;ID&gt;user12262.acmecorp&lt;/ID&gt;
         &lt;Name&gt;JaneMead&lt;/Name&gt;
         &lt;ns4:Image&gt;
-          &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
+          &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
           &lt;Title&gt;JaneMead&lt;/Title&gt;
-          &lt;Link&gt;#/users/user12262.open/details&lt;/Link&gt;
+          &lt;Link&gt;#/users/user12262.acmecorp/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;
       &lt;/ns4:AuthoringUser&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;PaaStime&lt;/Title&gt;
-        &lt;Guid&gt;app16964.open&lt;/Guid&gt;
+        &lt;Guid&gt;app16964.acmecorp&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;Application team for [PaaStime]&lt;/Title&gt;
-        &lt;Guid&gt;group16965.open&lt;/Guid&gt;
+        &lt;Guid&gt;group16965.acmecorp&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;group&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;JenniferMeadows&lt;/Title&gt;
-        &lt;Guid&gt;user23531.open&lt;/Guid&gt;
+        &lt;Guid&gt;user23531.acmecorp&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;user&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
-        &lt;Link&gt;#/user/user12262.open/details&lt;/Link&gt;
+        &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
+        &lt;Link&gt;#/user/user12262.acmecorp/details&lt;/Link&gt;
       &lt;/ns4:Image&gt;
     &lt;/item&gt;
     &lt;item&gt;
-      &lt;title&gt;Open member JonathanSwift  has been invited to the PaaStime application team&lt;/title&gt;
-      &lt;description&gt;Open member JonathanSwift, I would like to invite you to join the development team for my application.  &lt;/description&gt;
+      &lt;title&gt;ACMECorp member JonathanSwift  has been invited to the PaaStime application team&lt;/title&gt;
+      &lt;description&gt;ACMECorp member JonathanSwift, I would like to invite you to join the development team for my application.  &lt;/description&gt;
       &lt;category domain="uddi:soa.com:resourcetype"&gt;GROUP_MEMBER_REQ&lt;/category&gt;
       &lt;category domain="uddi:soa.com:archivable"&gt;false&lt;/category&gt;
       &lt;category domain="uddi:soa.com:wfstate"&gt;com.soa.group.membership.state.approved&lt;/category&gt;
-      &lt;guid&gt;group_member_req23851.open&lt;/guid&gt;
+      &lt;guid&gt;group_member_req23851.acmecorp&lt;/guid&gt;
       &lt;pubDate&gt;2013-05-31T17:50:47.000Z&lt;/pubDate&gt;
       &lt;ns4:CreatedDate&gt;2013-05-30T00:35:49.000Z&lt;/ns4:CreatedDate&gt;
       &lt;ns4:Marks&gt;
@@ -474,44 +474,44 @@ xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
       &lt;ns5:CommentsPreview&gt;
         &lt;ns5:Count&gt;1&lt;/ns5:Count&gt;
         &lt;ns5:Comment&gt;
-          &lt;ns5:CommentID&gt;comment23932.open&lt;/ns5:CommentID&gt;
-          &lt;ns5:CommentSubjectID&gt;group_member_req23851.open&lt;/ns5:CommentSubjectID&gt;
+          &lt;ns5:CommentID&gt;comment23932.acmecorp&lt;/ns5:CommentID&gt;
+          &lt;ns5:CommentSubjectID&gt;group_member_req23851.acmecorp&lt;/ns5:CommentSubjectID&gt;
           &lt;ns5:Content&gt;JonathanSwift accepted the membership invitation and commented "Love to, thanks!"&lt;/ns5:Content&gt;
           &lt;ns5:Created&gt;2013-05-31T17:50:47Z&lt;/ns5:Created&gt;
           &lt;ns5:Marks&gt;0&lt;/ns5:Marks&gt;
           &lt;ns5:IsMarked&gt;false&lt;/ns5:IsMarked&gt;
-          &lt;ns3:UserID&gt;user13967.open&lt;/ns3:UserID&gt;
+          &lt;ns3:UserID&gt;user13967.acmecorp&lt;/ns3:UserID&gt;
           &lt;ns3:UserName&gt;JonathanSwift&lt;/ns3:UserName&gt;
-          &lt;ns3:AvatarURL&gt;https://&lt;hostname&gt;/api/users/user13967.open/avatars/12d0fdd6-4707-4262-8c88-28ab3b5036c3.png&lt;/ns3:AvatarURL&gt;
+          &lt;ns3:AvatarURL&gt;https://&lt;hostname&gt;/api/users/user13967.acmecorp/avatars/12d0fdd6-4707-4262-8c88-28ab3b5036c3.png&lt;/ns3:AvatarURL&gt;
         &lt;/ns5:Comment&gt;
       &lt;/ns5:CommentsPreview&gt;
       &lt;ns4:AuthoringUser&gt;
-        &lt;ID&gt;user12262.open&lt;/ID&gt;
+        &lt;ID&gt;user12262.acmecorp&lt;/ID&gt;
         &lt;Name&gt;JaneMead&lt;/Name&gt;
         &lt;ns4:Image&gt;
-          &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
+          &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
           &lt;Title&gt;JaneMead&lt;/Title&gt;
-          &lt;Link&gt;#/users/user12262.open/details&lt;/Link&gt;
+          &lt;Link&gt;#/users/user12262.acmecorp/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;
       &lt;/ns4:AuthoringUser&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;JonathanSwift&lt;/Title&gt;
-        &lt;Guid&gt;user13967.open&lt;/Guid&gt;
+        &lt;Guid&gt;user13967.acmecorp&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;user&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;PaaStime&lt;/Title&gt;
-        &lt;Guid&gt;app16964.open&lt;/Guid&gt;
+        &lt;Guid&gt;app16964.acmecorp&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;Application team for [PaaStime]&lt;/Title&gt;
-        &lt;Guid&gt;group16965.open&lt;/Guid&gt;
+        &lt;Guid&gt;group16965.acmecorp&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;group&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
-        &lt;Link&gt;#/user/user12262.open/details&lt;/Link&gt;
+        &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
+        &lt;Link&gt;#/user/user12262.acmecorp/details&lt;/Link&gt;
       &lt;/ns4:Image&gt;
     &lt;/item&gt;
   &lt;/channel&gt;

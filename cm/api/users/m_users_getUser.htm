@@ -57,7 +57,7 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for the profile of a specific user.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://&lt;hostname&gt;/api/users/user12262.open</pre>
+<pre>https://&lt;hostname&gt;/api/users/user12262.acmecorp</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
@@ -130,11 +130,11 @@ Content-Type: application/json
 Date: Tue, 14 May 2013 17:54:27 GMT</pre>
 <p><strong>Sample response body #1: local user</strong></p>
 <pre>{
-  "UserID" : "user12262.open",
+  "UserID" : "user12262.acmecorp",
   "UserName" : "JaneMead",
   "FirstName" : "Jane",
   "LastName" : "Mead",
-  "AuthIdentifier" : "urn:atmosphere:user:open:user12262",
+  "AuthIdentifier" : "urn:acmecorp:user:open:user12262",
   "Visibility" : "0",
   "Email" : "jane.mead@example.com",
   "Title" : "",
@@ -147,7 +147,7 @@ Date: Tue, 14 May 2013 17:54:27 GMT</pre>
 }</pre>
 <p><strong>Sample response body#2: Facebook user</strong></p>
 <pre>{
-  "UserID" : "user24566.open",
+  "UserID" : "user24566.acmecorp",
   "UserName" : "100000861099315",
   "FirstName" : "Jonathan",
   "LastName" : "Bellissimo",

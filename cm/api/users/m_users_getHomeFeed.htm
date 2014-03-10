@@ -60,14 +60,14 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p><strong>Request URL #1</strong></p>
 <p>The example below requests the first 10 items for the specified user.</p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.open/feeds/homefeed?start=0&amp;count=10&amp;RetrievingUserID=user12262.open
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmecorp/feeds/homefeed?start=0&amp;count=10&amp;RetrievingUserID=user12262.acmecorp
 </pre>
 <p><strong>Request URL #2</strong></p>
 <p>The example below requests the third and fourth items, with comments excluded.</p>
-<pre>https://&lt;hostname&gt;/api/users/user12262.open/feeds/homefeed?start=2&amp;count=2&amp;RetrievingUserID=user12262.open&amp;IncludeComments=false
+<pre>https://&lt;hostname&gt;/api/users/user12262.acmecorp/feeds/homefeed?start=2&amp;count=2&amp;RetrievingUserID=user12262.acmecorp&amp;IncludeComments=false
 </pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&nbsp;/api/users/user12262.open/feeds/homefeed?start=0&amp;count=10&amp;RetrievingUserID=user13998.open&amp;SortBy=DescendingDate HTTP/1.1
+<pre>GET&nbsp;/api/users/user12262.acmecorp/feeds/homefeed?start=0&amp;count=10&amp;RetrievingUserID=user13998.acmecorp&amp;SortBy=DescendingDate HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: application/json, text/javascript, */*; q=0.01</pre>
 <p><strong>Sample request body</strong></p>
@@ -229,8 +229,8 @@ Date: Thu, 30 May 2013 20:11:25 GMT</pre>
     "startIndex" : 2,
     "itemsPerPage" : 2,
     "item" : [ {
-      "title" : "Open member JonathanSwift  has been invited to the PaaStime application team",
-      "description" : "Open member JonathanSwift, I would like to invite you to join the development team for my application.",
+      "title" : "ACMECorp member JonathanSwift  has been invited to the PaaStime application team",
+      "description" : "ACMECorp member JonathanSwift, I would like to invite you to join the development team for my application.",
       "category" : [ {
         "value" : "GROUP_MEMBER_REQ",
         "domain" : "uddi:soa.com:resourcetype"
@@ -239,21 +239,21 @@ Date: Thu, 30 May 2013 20:11:25 GMT</pre>
         "domain" : "uddi:soa.com:archivable"
       } ],
       "guid" : {
-        "value" : "group_member_req17574.open"
+        "value" : "group_member_req17574.acmecorp"
       },
       "pubDate" : "2013-05-30T00:10:01.000Z",
       "AuthoringUser" : {
-        "ID" : "user12262.open",
+        "ID" : "user12262.acmecorp",
         "Name" : "JaneMead",
         "Image" : {
-          "Url" : "https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
+          "Url" : "https://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
           "Title" : "JaneMead",
-          "Link" : "#/users/user12262.open/details"
+          "Link" : "#/users/user12262.acmecorp/details"
         }
       },
       "Image" : {
-        "Url" : "https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
-        "Link" : "#/user/user12262.open/details"
+        "Url" : "https://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
+        "Link" : "#/user/user12262.acmecorp/details"
       },
       "CreatedDate" : "2012-11-26T15:20:30.000Z",
       "Marks" : {
@@ -265,14 +265,14 @@ Date: Thu, 30 May 2013 20:11:25 GMT</pre>
       },
       "EntityReference" : [ {
         "Title" : "JonathanSwift",
-        "Guid" : "user13967.open",
+        "Guid" : "user13967.acmecorp",
         "Category" : [ {
           "value" : "user",
           "domain" : "uddi:soa.com:resourcetype"
         } ]
       }, {
         "Title" : "PaaStime",
-        "Guid" : "app16964.open",
+        "Guid" : "app16964.acmecorp",
         "Category" : [ {
           "value" : "app",
           "domain" : "uddi:soa.com:resourcetype"
@@ -280,7 +280,7 @@ Date: Thu, 30 May 2013 20:11:25 GMT</pre>
       } ]
     }, {
       "title" : "API Access request",
-      "description" : "Open member JaneMead has requested access to the Sandbox environment for the ACME Payments DeLuxe (Version 2.0) 
+      "description" : "ACMECorp member JaneMead has requested access to the Sandbox environment for the ACME Payments DeLuxe (Version 2.0) 
 on behalf of the  PaaStime (2.0) application",
       "category" : [ {
         "value" : "CONTRACT_REQUEST",
@@ -296,21 +296,21 @@ on behalf of the  PaaStime (2.0) application",
         "domain" : "uddi:soa.com:environment"
       } ],
       "guid" : {
-        "value" : "contract_request23623.open"
+        "value" : "contract_request23623.acmecorp"
       },
       "pubDate" : "2013-05-23T22:14:30.000Z",
       "AuthoringUser" : {
-        "ID" : "user12262.open",
+        "ID" : "user12262.acmecorp",
         "Name" : "JaneMead",
         "Image" : {
-          "Url" : "https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
+          "Url" : "https://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
           "Title" : "JaneMead",
-          "Link" : "#/users/user12262.open/details"
+          "Link" : "#/users/user12262.acmecorp/details"
         }
       },
       "Image" : {
-        "Url" : "https://&lt;hostname&gt;/api/apps/app16964.open/avatars/f250a96e-2f81-4e3e-88fc-61431fd80e5c.png",
-        "Link" : "#/app/app16964.open"
+        "Url" : "https://&lt;hostname&gt;/api/apps/app16964.acmecorp/avatars/f250a96e-2f81-4e3e-88fc-61431fd80e5c.png",
+        "Link" : "#/app/app16964.acmecorp"
       },
       "CreatedDate" : "2013-05-23T22:14:30.000Z",
       "Actions" : {
@@ -331,7 +331,7 @@ on behalf of the  PaaStime (2.0) application",
       },
       "EntityReferences" : {
         "EntityReference" : [ {
-          "Guid" : "contract23622.open",
+          "Guid" : "contract23622.acmecorp",
           "Category" : [ {
             "value" : "contract",
             "domain" : "uddi:soa.com:resourcetype"
@@ -340,42 +340,42 @@ on behalf of the  PaaStime (2.0) application",
       },
       "EntityReference" : [ {
         "Title" : "PaaStime",
-        "Guid" : "app16964.open",
+        "Guid" : "app16964.acmecorp",
         "Category" : [ {
           "value" : "app",
           "domain" : "uddi:soa.com:resourcetype"
         } ]
       }, {
         "Title" : "PaaStime",
-        "Guid" : "app16964.open",
+        "Guid" : "app16964.acmecorp",
         "Category" : [ {
           "value" : "app",
           "domain" : "uddi:soa.com:resourcetype"
         } ]
       }, {
         "Title" : "2.0",
-        "Guid" : "4iXro2Uxs2h4LviCshR9pK9w.open",
+        "Guid" : "4iXro2Uxs2h4LviCshR9pK9w.acmecorp",
         "Category" : [ {
           "value" : "app-version",
           "domain" : "uddi:soa.com:resourcetype"
         } ]
       }, {
         "Title" : "ACME Payments DeLuxe",
-        "Guid" : "api19427.open",
+        "Guid" : "api19427.acmecorp",
         "Category" : [ {
           "value" : "api",
           "domain" : "uddi:soa.com:resourcetype"
         } ]
       }, {
         "Title" : "ACME Payments DeLuxe",
-        "Guid" : "api19427.open",
+        "Guid" : "api19427.acmecorp",
         "Category" : [ {
           "value" : "api",
           "domain" : "uddi:soa.com:resourcetype"
         } ]
       }, {
         "Title" : "Version 2.0",
-        "Guid" : "apiversion19429.open",
+        "Guid" : "apiversion19429.acmecorp",
         "Category" : [ {
           "value" : "apiversion",
           "domain" : "uddi:soa.com:resourcetype"
@@ -398,11 +398,11 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
     &lt;ns6:startIndex&gt;2&lt;/ns6:startIndex&gt;
     &lt;ns6:itemsPerPage&gt;2&lt;/ns6:itemsPerPage&gt;
     &lt;item&gt;
-      &lt;title&gt;Open member JonathanSwift  has been invited to the PaaStime application team&lt;/title&gt;
-      &lt;description&gt;Open member JonathanSwift, I would like to invite you to join the development team for my application.&lt;/description&gt;
+      &lt;title&gt;ACMECorp member JonathanSwift  has been invited to the PaaStime application team&lt;/title&gt;
+      &lt;description&gt;ACMECorp member JonathanSwift, I would like to invite you to join the development team for my application.&lt;/description&gt;
       &lt;category domain="uddi:soa.com:resourcetype"&gt;GROUP_MEMBER_REQ&lt;/category&gt;
       &lt;category domain="uddi:soa.com:archivable"&gt;true&lt;/category&gt;
-      &lt;guid&gt;group_member_req17574.open&lt;/guid&gt;
+      &lt;guid&gt;group_member_req17574.acmecorp&lt;/guid&gt;
       &lt;pubDate&gt;2013-05-30T00:10:01.000Z&lt;/pubDate&gt;
       &lt;ns4:CreatedDate&gt;2012-11-26T15:20:30.000Z&lt;/ns4:CreatedDate&gt;
       &lt;ns4:Marks&gt;
@@ -413,38 +413,38 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
         &lt;ns5:Count&gt;3&lt;/ns5:Count&gt;
       &lt;/ns5:CommentsPreview&gt;
       &lt;ns4:AuthoringUser&gt;
-        &lt;ID&gt;user12262.open&lt;/ID&gt;
+        &lt;ID&gt;user12262.acmecorp&lt;/ID&gt;
         &lt;Name&gt;JaneMead&lt;/Name&gt;
         &lt;ns4:Image&gt;
-          &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
+          &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
           &lt;Title&gt;JaneMead&lt;/Title&gt;
-          &lt;Link&gt;#/users/user12262.open/details&lt;/Link&gt;
+          &lt;Link&gt;#/users/user12262.acmecorp/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;
       &lt;/ns4:AuthoringUser&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;JonathanSwift&lt;/Title&gt;
-        &lt;Guid&gt;user13967.open&lt;/Guid&gt;
+        &lt;Guid&gt;user13967.acmecorp&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;user&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;PaaStime&lt;/Title&gt;
-        &lt;Guid&gt;app16964.open&lt;/Guid&gt;
+        &lt;Guid&gt;app16964.acmecorp&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
-        &lt;Link&gt;#/user/user12262.open/details&lt;/Link&gt;
+        &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
+        &lt;Link&gt;#/user/user12262.acmecorp/details&lt;/Link&gt;
       &lt;/ns4:Image&gt;
     &lt;/item&gt;
     &lt;item&gt;
       &lt;title&gt;API Access request&lt;/title&gt;
-      &lt;description&gt;Open member JaneMead has requested access to the Sandbox environment for the ACME Payments DeLuxe (Version 2.0) 
+      &lt;description&gt;ACMECorp member JaneMead has requested access to the Sandbox environment for the ACME Payments DeLuxe (Version 2.0) 
 on behalf of the  PaaStime (2.0) application&lt;/description&gt;
       &lt;category domain="uddi:soa.com:resourcetype"&gt;CONTRACT_REQUEST&lt;/category&gt;
       &lt;category domain="uddi:soa.com:archivable"&gt;false&lt;/category&gt;
       &lt;category domain="uddi:soa.com:wfstate"&gt;apicontract.status.activated&lt;/category&gt;
       &lt;category domain="uddi:soa.com:environment"&gt;Sandbox&lt;/category&gt;
-      &lt;guid&gt;contract_request23623.open&lt;/guid&gt;
+      &lt;guid&gt;contract_request23623.acmecorp&lt;/guid&gt;
       &lt;pubDate&gt;2013-05-23T22:14:30.000Z&lt;/pubDate&gt;
       &lt;ns4:CreatedDate&gt;2013-05-23T22:14:30.000Z&lt;/ns4:CreatedDate&gt;
       &lt;ns4:Marks&gt;
@@ -455,51 +455,51 @@ on behalf of the  PaaStime (2.0) application&lt;/description&gt;
         &lt;ns5:Count&gt;1&lt;/ns5:Count&gt;
       &lt;/ns5:CommentsPreview&gt;
       &lt;ns4:AuthoringUser&gt;
-        &lt;ID&gt;user12262.open&lt;/ID&gt;
+        &lt;ID&gt;user12262.acmecorp&lt;/ID&gt;
         &lt;Name&gt;JaneMead&lt;/Name&gt;
         &lt;ns4:Image&gt;
-          &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
+          &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
           &lt;Title&gt;JaneMead&lt;/Title&gt;
-          &lt;Link&gt;#/users/user12262.open/details&lt;/Link&gt;
+          &lt;Link&gt;#/users/user12262.acmecorp/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;
       &lt;/ns4:AuthoringUser&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;PaaStime&lt;/Title&gt;
-        &lt;Guid&gt;app16964.open&lt;/Guid&gt;
+        &lt;Guid&gt;app16964.acmecorp&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;PaaStime&lt;/Title&gt;
-        &lt;Guid&gt;app16964.open&lt;/Guid&gt;
+        &lt;Guid&gt;app16964.acmecorp&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;2.0&lt;/Title&gt;
-        &lt;Guid&gt;4iXro2Uxs2h4LviCshR9pK9w.open&lt;/Guid&gt;
+        &lt;Guid&gt;4iXro2Uxs2h4LviCshR9pK9w.acmecorp&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app-version&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;ACME Payments DeLuxe&lt;/Title&gt;
-        &lt;Guid&gt;api19427.open&lt;/Guid&gt;
+        &lt;Guid&gt;api19427.acmecorp&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;api&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;ACME Payments DeLuxe&lt;/Title&gt;
-        &lt;Guid&gt;api19427.open&lt;/Guid&gt;
+        &lt;Guid&gt;api19427.acmecorp&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;api&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;Version 2.0&lt;/Title&gt;
-        &lt;Guid&gt;apiversion19429.open&lt;/Guid&gt;
+        &lt;Guid&gt;apiversion19429.acmecorp&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;apiversion&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;https://&lt;hostname&gt;/api/apps/app16964.open/avatars/f250a96e-2f81-4e3e-88fc-61431fd80e5c.png&lt;/Url&gt;
-        &lt;Link&gt;#/app/app16964.open&lt;/Link&gt;
+        &lt;Url&gt;https://&lt;hostname&gt;/api/apps/app16964.acmecorp/avatars/f250a96e-2f81-4e3e-88fc-61431fd80e5c.png&lt;/Url&gt;
+        &lt;Link&gt;#/app/app16964.acmecorp&lt;/Link&gt;
       &lt;/ns4:Image&gt;
       &lt;ns4:EntityReferences&gt;
         &lt;ns4:EntityReference&gt;
-          &lt;Guid&gt;contract23622.open&lt;/Guid&gt;
+          &lt;Guid&gt;contract23622.acmecorp&lt;/Guid&gt;
           &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;contract&lt;/ns4:Category&gt;
         &lt;/ns4:EntityReference&gt;
       &lt;/ns4:EntityReferences&gt;

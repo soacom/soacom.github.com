@@ -56,17 +56,17 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request to modify the specified group.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://&lt;hostname&gt;/api/groups/group24147.open</pre>
+<pre>https://&lt;hostname&gt;/api/groups/group24147.acmecorp</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json
 Content-type: application/json</pre>
 <p><strong>Sample request body: JSON</strong></p>
-<pre>{<br />  &quot;GroupID&quot; : &quot;group24147.open&quot;,<br />  &quot;Name&quot; : &quot;LEAD Tier Two&quot;,<br />  &quot;Description&quot; : &quot;League of Extraordinary Application Developers&quot;,<br />  &quot;Tag&quot; : [ &quot;brilliant&quot;, &quot;advanced&quot;, &quot;innovative&quot;, &quot;league&quot; ],<br />  &quot;Visibility&quot; : &quot;Limited&quot;,<br />  &quot;PictureID&quot; : 1520,<br />  &quot;GroupType&quot; : &quot;com.soa.group.type.independent&quot;<br />}
+<pre>{<br />  &quot;GroupID&quot; : &quot;group24147.acmecorp&quot;,<br />  &quot;Name&quot; : &quot;LEAD Tier Two&quot;,<br />  &quot;Description&quot; : &quot;League of Extraordinary Application Developers&quot;,<br />  &quot;Tag&quot; : [ &quot;brilliant&quot;, &quot;advanced&quot;, &quot;innovative&quot;, &quot;league&quot; ],<br />  &quot;Visibility&quot; : &quot;Limited&quot;,<br />  &quot;PictureID&quot; : 1520,<br />  &quot;GroupType&quot; : &quot;com.soa.group.type.independent&quot;<br />}
 </pre>
 <p><strong>Sample request body: XML</strong></p>
 <pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
 &lt;Group xmlns=&quot;http://soa.com/xsd/group/1.0&quot; xmlns:ns2=&quot;http://soa.com/xsd/resource/1.0&quot;&gt;
-  &lt;GroupID&gt;group24147.open&lt;/GroupID&gt;
+  &lt;GroupID&gt;group24147.acmecorp&lt;/GroupID&gt;
   &lt;Name&gt;LEAD Tier Two&lt;/Name&gt;
   &lt;Description&gt;League of Extraordinary Application Developers&lt;/Description&gt;
   &lt;Tag&gt;brilliant&lt;/Tag&gt;
@@ -155,7 +155,7 @@ Content-Type: application/json
 Date: Tue, 11 Jun 2013 21:21:58 GMT</pre>
 <p><strong>Sample response body: JSON</strong></p>
 <pre>{
-  "GroupID" : "group24147.open",
+  "GroupID" : "group24147.acmecorp",
   "Name" : "LEAD Tier Two",
   "Description" : "League of Extraordinary Application Developers",
   "Tag" : [ "brilliant", "advanced", "innovative", "league" ],
@@ -166,7 +166,7 @@ Date: Tue, 11 Jun 2013 21:21:58 GMT</pre>
 <p><strong>Sample response body: XML</strong></p>
 <pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
 &lt;Group xmlns="http://soa.com/xsd/group/1.0" xmlns:ns2="http://soa.com/xsd/resource/1.0"&gt;
-  &lt;GroupID&gt;group24147.open&lt;/GroupID&gt;
+  &lt;GroupID&gt;group24147.acmecorp&lt;/GroupID&gt;
   &lt;Name&gt;LEAD Tier Two&lt;/Name&gt;
   &lt;Description&gt;League of Extraordinary Application Developers&lt;/Description&gt;
   &lt;Tag&gt;brilliant&lt;/Tag&gt;

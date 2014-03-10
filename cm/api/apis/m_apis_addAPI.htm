@@ -71,13 +71,13 @@ Content-Type: application/json; charset=UTF-8</pre>
         {
           "Uri":"http://acmepayments.&lt;hostname&gt;/payment",
           "Category":"Production",
-          "CName":"acmepayments.open.soa.local",
+          "CName":"acmepayments.acmecorp.soa.local",
           "DeploymentZoneRule":"1b16623b-1609-4664-9900-06f8441bdefault-http"
         },
         {
           "Uri":"http://acmepayments.&lt;hostname&gt;/s/payment",
           "Category":"Sandbox",
-          "CName":"acmepayments.open.soa.local",
+          "CName":"acmepayments.acmecorp.soa.local",
           "DeploymentZoneRule":"1b16623b-1609-4664-9900-06f8441bdefault-http"
         }
       ]
@@ -117,7 +117,7 @@ Content-Type: application/json; charset=UTF-8</pre>
     "Policies":{
       "Policy":[
         {
-          "PolicyKey":"10001-AtmosphereApplicationSecurityPolicy",
+          "PolicyKey":"10001-ACMECorpApplicationSecurityPolicy",
           "PolicyType":"Operational Policy"
         },
         {
@@ -234,7 +234,7 @@ Content-Type: application/json; charset=UTF-8</pre>
     &lt;/Endpoints&gt;
     &lt;Policies&gt;
       &lt;Policy&gt;
-        &lt;PolicyKey&gt;10001-AtmosphereApplicationSecurityPolicy&lt;/PolicyKey&gt;
+        &lt;PolicyKey&gt;10001-ACMECorpApplicationSecurityPolicy&lt;/PolicyKey&gt;
         &lt;PolicyType&gt;Operational Policy&lt;/PolicyType&gt;
       &lt;/Policy&gt;
       &lt;Policy&gt;
@@ -358,14 +358,14 @@ Atmo-Renew-Token: renew</pre>
 
 <p><strong>Sample response body: JSON</strong></p>
 <pre>{
-  "APIID" : "api10020.open",
+  "APIID" : "api10020.acmecorp",
   "Name" : "ACMEPayments",
   "Description" : "Payments API for ACME payment type.",
   "Visibility" : "Public",
   "Tag" : [ ],
   "APIVersion" : {
-    "APIVersionID" : "apiversion10022.open",
-    "APIID" : "api10020.open",
+    "APIVersionID" : "apiversion10022.acmecorp",
+    "APIID" : "api10020.acmecorp",
     "Name" : "1.0",
     "Type" : "shttp",
     "DefaultProfile" : "XML or JSON in/XML or JSON out",
@@ -394,13 +394,13 @@ Atmo-Renew-Token: renew</pre>
     },
     "Endpoints" : {
       "Endpoint" : [ {
-        "CName" : "acmepayments.open.soa.local",
+        "CName" : "acmepayments.acmecorp.soa.local",
         "Category" : "Production",
         "Uri" : "http://acmepayments.&lt;hostname&gt;/payment",
         "DeploymentZoneRule" : "1b16623b-1609-4664-9900-06f8441bdefault-http",
         "ConnectionProperties" : [ ]
       }, {
-        "CName" : "acmepayments.open.soa.local",
+        "CName" : "acmepayments.acmecorp.soa.local",
         "Category" : "Sandbox",
         "Uri" : "http://acmepayments.&lt;hostname&gt;/s/payment",
         "DeploymentZoneRule" : "1b16623b-1609-4664-9900-06f8441bdefault-http",
@@ -409,7 +409,7 @@ Atmo-Renew-Token: renew</pre>
     },
     "Policies" : {
       "Policy" : [ {
-        "PolicyKey" : "10001-AtmosphereApplicationSecurityPolicy",
+        "PolicyKey" : "10001-ACMECorpApplicationSecurityPolicy",
         "PolicyType" : "Operational Policy"
       }, {
         "PolicyKey" : "10001-BasicAuditing",
@@ -468,13 +468,13 @@ Atmo-Renew-Token: renew</pre>
 <p><strong>Sample response body: XML</strong></p>
 <pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
 &lt;API xmlns="http://soa.com/xsd/api/1.0" xmlns:ns2="http://soa.com/xsd/resource/1.0"&gt;
-  &lt;APIID&gt;api10028.open&lt;/APIID&gt;
+  &lt;APIID&gt;api10028.acmecorp&lt;/APIID&gt;
   &lt;Name&gt;ACME Payments API De Luxe&lt;/Name&gt;
   &lt;Description&gt;Payments API for ACME customers.&lt;/Description&gt;
   &lt;Visibility&gt;Limited&lt;/Visibility&gt;
   &lt;APIVersion&gt;
-    &lt;APIVersionID&gt;apiversion10030.open&lt;/APIVersionID&gt;
-    &lt;APIID&gt;api10028.open&lt;/APIID&gt;
+    &lt;APIVersionID&gt;apiversion10030.acmecorp&lt;/APIVersionID&gt;
+    &lt;APIID&gt;api10028.acmecorp&lt;/APIID&gt;
     &lt;Name&gt;999&lt;/Name&gt;
     &lt;Description&gt;Initial release.&lt;/Description&gt;
     &lt;Type&gt;shttp&lt;/Type&gt;
@@ -482,7 +482,7 @@ Atmo-Renew-Token: renew</pre>
     &lt;Tag&gt;payments&lt;/Tag&gt;
     &lt;Tag&gt;ACME&lt;/Tag&gt;
     &lt;Tag&gt;efficient&lt;/Tag&gt;
-    &lt;SandboxEndpoint&gt;http://999.open.soa.local:9902/&lt;/SandboxEndpoint&gt;
+    &lt;SandboxEndpoint&gt;http://999.acmecorp.soa.local:9902/&lt;/SandboxEndpoint&gt;
     &lt;Operations&gt;
       &lt;Operation&gt;
         &lt;Name&gt;addPayment&lt;/Name&gt;
@@ -508,14 +508,14 @@ Atmo-Renew-Token: renew</pre>
     &lt;Endpoints&gt;
       &lt;Endpoint&gt;
         &lt;Category&gt;Sandbox&lt;/Category&gt;
-        &lt;Uri&gt;http://999.open.soa.local:9902/&lt;/Uri&gt;
-        &lt;CName&gt;999.open.soa.local&lt;/CName&gt;
+        &lt;Uri&gt;http://999.acmecorp.soa.local:9902/&lt;/Uri&gt;
+        &lt;CName&gt;999.acmecorp.soa.local&lt;/CName&gt;
         &lt;DeploymentZoneRule&gt;dzone-rule-2&lt;/DeploymentZoneRule&gt;
       &lt;/Endpoint&gt;
     &lt;/Endpoints&gt;
     &lt;Policies&gt;
       &lt;Policy&gt;
-        &lt;PolicyKey&gt;10001-AtmosphereApplicationSecurityPolicy&lt;/PolicyKey&gt;
+        &lt;PolicyKey&gt;10001-ACMECorpApplicationSecurityPolicy&lt;/PolicyKey&gt;
         &lt;PolicyType&gt;Operational Policy&lt;/PolicyType&gt;
       &lt;/Policy&gt;
       &lt;Policy&gt;

@@ -56,7 +56,7 @@ no-catalog: true
 Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
 <pre>{
-  "APIID":"api10017.open",
+  "APIID":"api10017.acmecorp",
   "Name":"2013020804",
   "Description":"Version 2013020804",
   "Type":"shttp",
@@ -107,7 +107,7 @@ Accept: application/json</pre>
   "Policies":{
     "Policy":[
       {
-        "PolicyKey":"10001-AtmosphereApplicationSecurityPolicy",
+        "PolicyKey":"10001-ACMECorpApplicationSecurityPolicy",
         "PolicyType":"Operational Policy"
       },
       {
@@ -173,7 +173,7 @@ Accept: application/json</pre>
   "Visibility":"Public",
   "Created":"2013-02-08T15:47:09.675Z",
   "Updated":"2013-02-08T15:47:11.453Z",
-  "State":"com.soa.api.state.open",
+  "State":"com.soa.api.state.acmecorp",
   "ProductionEndpointAccessAutoApproved":true,
   "SandboxEndpointAccessAutoApproved":true,
   "RatingSummary":{
@@ -251,8 +251,8 @@ Date: Fri, 08 Feb 2013 16:15:35 GMT</pre>
 
 <p><strong>Sample response body</strong></p>
 <pre>{
-  "APIVersionID" : "apiversion10022.open",
-  "APIID" : "api10017.open",
+  "APIVersionID" : "apiversion10022.acmecorp",
+  "APIID" : "api10017.acmecorp",
   "Name" : "2013020804",
   "Description" : "Version 2013020804",
   "Type" : "shttp",
@@ -283,7 +283,7 @@ Date: Fri, 08 Feb 2013 16:15:35 GMT</pre>
   },
   "Endpoints" : {
     "Endpoint" : [ {
-      "CName" : "acme_payments_2013020804.open.soa.local",
+      "CName" : "acme_payments_2013020804.acmecorp.soa.local",
       "Category" : "Sandbox",
       "Uri" : "https://acme_payments_2013020804.&lt;hostname&gt;/",
       "DeploymentZoneRule" : "dzone-rule-2",
@@ -292,7 +292,7 @@ Date: Fri, 08 Feb 2013 16:15:35 GMT</pre>
   },
   "Policies" : {
     "Policy" : [ {
-      "PolicyKey" : "10001-AtmosphereApplicationSecurityPolicy",
+      "PolicyKey" : "10001-ACMECorpApplicationSecurityPolicy",
       "PolicyType" : "Operational Policy"
     }, {
       "PolicyKey" : "10001-BasicAuditing",
@@ -344,7 +344,7 @@ Date: Fri, 08 Feb 2013 16:15:35 GMT</pre>
   "Visibility" : "Public",
   "Created" : "2013-02-08T15:47:09.675Z",
   "Updated" : "2013-02-08T15:47:11.453Z",
-  "State" : "com.soa.api.state.open",
+  "State" : "com.soa.api.state.acmecorp",
   "ProductionEndpointAccessAutoApproved" : true,
   "SandboxEndpointAccessAutoApproved" : true,
   "RatingSummary" : {

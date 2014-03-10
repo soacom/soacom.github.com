@@ -127,12 +127,12 @@ Content-Type: application/json</pre>
 <p id="id_samplerequest">The example below shows a LoginRequest object returned when a user signs in. There are no pending notifications for this user, and a fresh authorization token is returned. The authToken value includes line breaks for display purposes.</p>
 <pre>{
   "userName" : "JaneMead",
-  "authToken" : "TokenID=a3e681cf-0283-11e2-bc9a-fee8d69763d6,claimed_id=urn:atmosphere:user:atmosphere:user10035,issueTime=
-1348077518865,expirationTime=1348079318830,Groups=[\"group10038.open\"],Followings=[\"app10037.open\"],
-AttributesIncluded=true,UserFDN=user10035.open,Apps=[\"app10037.open\"],UserName=JaneMead,sig=N5oiEMsEUwSpmSkPM
+  "authToken" : "TokenID=a3e681cf-0283-11e2-bc9a-fee8d69763d6,claimed_id=urn:acmecorp:user:acmecorp:user10035,issueTime=
+1348077518865,expirationTime=1348079318830,Groups=[\"group10038.acmecorp\"],Followings=[\"app10037.acmecorp\"],
+AttributesIncluded=true,UserFDN=user10035.acmecorp,Apps=[\"app10037.acmecorp\"],UserName=JaneMead,sig=N5oiEMsEUwSpmSkPM
 j4tLwr38o9fAQp1cXo6X4qM9ZPdf6n8mOhH2bFC8Yt2Q0CJVNTK7j4EEypIfPbfGSkBssCbQMgk2GgNzQQkpjXj1lTasPcg_fbHMbD6XgCAH41acYR9UCTywIVv
 mZuvHEsZE0gtgOav2oyvXlCO9EKdo4o",
-  "userFDN" : "user10035.open&quot;,
+  "userFDN" : "user10035.acmecorp&quot;,
   "pendingNotifications" : 0
 }</pre>
 <h5>Sample response body #2</h5>
@@ -140,15 +140,15 @@ mZuvHEsZE0gtgOav2oyvXlCO9EKdo4o",
 <p>If there is a pending legal agreement, you must invoke the <span class="apidoc_code"><a href="../legals/m_legals_acceptAgreement.htm">POST&nbsp;/api/legals/agreements</a></span> operation, part of the Legals service, so that the user can accept the legal agreement and complete the login process.</p>
 <pre>{
   "userName": "JaneMead",
-  "authToken": "TokenID%3D03c789e1-7f61-11e2-9935-a554e25a5b7c%2Cclaimed_id%3Durn%3Aatmosphere%3Auser%3Aopen%3A
+  "authToken": "TokenID%3D03c789e1-7f61-11e2-9935-a554e25a5b7c%2Cclaimed_id%3Durn%3Aacmecorp%3Auser%3Aacmecorp%3A
 user10002%2CissueTime%3D1361806545094%2CexpirationTime%3D1361808342650%2CAttributesIncluded%3Dfalse%2CUserFDN%3D
 user10002%252Eopen%2CHasPendingAgreements%3Dtrue%2CUserName%3DJaneMead%2Csig%3DoWKUdvg32YdqILd_2QCto9RVqBLn8UmT
 KAnXu1UgPOHA0t31dIKw4TafxLNMmC-GFekkPhvNti4vUimqP-5e5gnf1H0bkLcXKQLT1131R6Cx9MX3ue9z6z-jmD6QesLRkWXwzRkBrb-wLerHn
 Blx_Tnr9p3g-SrPA7pPirmpADA",
-  "userFDN": "user10002.open",
-  "avatarURL": "https://&lt;hostname&gt;/api/users/user10002.open/avatar",
+  "userFDN": "user10002.acmecorp",
+  "avatarURL": "https://&lt;hostname&gt;/api/users/user10002.acmecorp/avatar",
   "pendingNotifications": 0,
-  "pendingAgreements": ["signupagrmtv2.open"]
+  "pendingAgreements": ["signupagrmtv2.acmecorp"]
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 

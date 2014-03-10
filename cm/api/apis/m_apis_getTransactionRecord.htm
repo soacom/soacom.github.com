@@ -56,7 +56,7 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for a specific transaction record for a specific API.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->versions/apiversion400.open/txlogs/5e38b76e-b8b6-11e2-985a-a81e</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->versions/apiversion400.acmecorp/txlogs/5e38b76e-b8b6-11e2-985a-a81e</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
@@ -137,9 +137,9 @@ Date: Thu, 09 May 2013 15:48:47 GMT</pre>
 <p><strong>Sample response body: JSON</strong></p>
 <pre>{
   "TransactionID" : "5e38b76e-b8b6-11e2-985a-a81e78f0181a",
-  "APIID" : "api100.open",
+  "APIID" : "api100.acmecorp",
   "APIName" : "LoginAPI Service",
-  "APIVersionID" : "apiversion400.open",
+  "APIVersionID" : "apiversion400.acmecorp",
   "MethodName" : "getLoginDomains",
   "RequestDateTime" : "2013-05-09T14:40:17.887Z",
   "ResponseStatusCode" : 0,
@@ -157,17 +157,17 @@ Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0\nAccept
 Accept-Language: en-US,en;q=0.5\nAccept-Encoding: gzip, deflate\nCookie: __utma=120274954.1033981115.1360618092.136
 7978778.1368109070.82; __utmz=120274954.1360695664.4.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmc=120274954; __
 utmb=120274954.9.10.1368109070; JSESSIONID_pm60=1ou8r2dy4j7p1; AtmoAuthToken_open=TokenID%3Dd88eba49-b8b5-11e2-985a-a81e7
-8f0181a%2Cclaimed_id%3Durn%3Aatmosphere%3Auser%open%3Auser10002%2CissueTime%3D1368110193668%2CexpirationTime%3D13681119936
+8f0181a%2Cclaimed_id%3Durn%3Aacmecorp%3Auser%open%3Auser10002%2CissueTime%3D1368110193668%2CexpirationTime%3D13681119936
 36%2CAttributesIncluded%3Dfalse%2CUserFDN%3Duser10002%open%2CUserName%3Daopen%2Csig%3DGQIPSVgVrKf_5zhlJ_zsqlSwWVaY3z0MVFz_t
 rMBwRnoa51hGWbZlzXxxPCFrUbhDrl1zZmlytdCh3CfOiOHms9Ry4duim7Q9k97ruhss5-ncJ-wT2KXcLVPuagWdVPuZrzF0mpy-L5PUT1V-LOy3QpIjfWiZJZs
-TdNnSeKUMtE; AtmoAuthToken_myplatform=TokenID%3Dd8991b3c-b8b5-11e2-81b9-f5950bd2d239%2Cclaimed_id%3Durn%3Aatmosphere%3Ause
-r%3Aopen%3Auser10002%2CissueTime%3D1368110193739%2CexpirationTime%3D1368111993704%2CAttributesIncluded%3Dfalse%2CUserFDN%3D
+TdNnSeKUMtE; AtmoAuthToken_myplatform=TokenID%3Dd8991b3c-b8b5-11e2-81b9-f5950bd2d239%2Cclaimed_id%3Durn%3Aacmecorp%3Ause
+r%3Aacmecorp%3Auser10002%2CissueTime%3D1368110193739%2CexpirationTime%3D1368111993704%2CAttributesIncluded%3Dfalse%2CUserFDN%3D
 user10002%252Eopen%2CUserName%3Dopen%2Csig%3DNoZbjkCblMuafFXGKlshF6t886SC1K9bl7XDStKBxkAaUNaHzUe3XaE1uwYnG2lL0_4Krk_scR3Mu
 6_ps4AqAYAsVVZuoRDfFwj5n3vVQrCys4f8cTr92HRWE9fU0HmZeNrL78sfJXeiC6lla8RMC4YE4yUVaZJAXOwXEZW_RWg\nConnection: keep-alive\
-nReferer: https://&lt;hostname&gt;/atmosphere/\nX-Requested-With: XMLHttpRequest\n"
+nReferer: https://&lt;hostname&gt;/acmecorp/\nX-Requested-With: XMLHttpRequest\n"
   },
   "ResponseMessage" : {
-    "Message" : "[ {\n  \"LoginDomainID\" : \"siteusers.open\",\n  \"FedmemberId\" : \"open\",\n  \"Title\" : \"open-users\",
+    "Message" : "[ {\n  \"LoginDomainID\" : \"siteusers.acmecorp\",\n  \"FedmemberId\" : \"open\",\n  \"Title\" : \"open-users\",
 \n  \"Sequence\" : -1,\n  \"VirtualHost\" : [ ],\n  \"IdSystemType\" : \"Policy Manager\",\n  \"LogoAssigned\" : false,
 \n  \"Enabled\" : true\n} ]",
     "TransportHeaders" : "Content-Encoding: gzip\nDate: Thu, 09 May 2013 14:40:17 GMT\nContent-Type: application/json
@@ -183,9 +183,9 @@ Date: Thu, 09 May 2013 15:33:35 GMT</pre>
 <pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
 &lt;TransactionRecord xmlns:ns2=&quot;http://soa.com/xsd/performance/1.0&quot;&gt;
     &lt;ns2:TransactionID&gt;5e38b76e-b8b6-11e2-985a-a81e78f0181a&lt;/ns2:TransactionID&gt;
-    &lt;ns2:APIID&gt;api100.open&lt;/ns2:APIID&gt;
+    &lt;ns2:APIID&gt;api100.acmecorp&lt;/ns2:APIID&gt;
     &lt;ns2:APIName&gt;LoginAPI Service&lt;/ns2:APIName&gt;
-    &lt;ns2:APIVersionID&gt;apiversion400.open&lt;/ns2:APIVersionID&gt;
+    &lt;ns2:APIVersionID&gt;apiversion400.acmecorp&lt;/ns2:APIVersionID&gt;
     &lt;ns2:MethodName&gt;getLoginDomains&lt;/ns2:MethodName&gt;
     &lt;ns2:RequestDateTime&gt;2013-05-09T14:40:17.887Z&lt;/ns2:RequestDateTime&gt;
     &lt;ns2:ResponseStatusCode&gt;0&lt;/ns2:ResponseStatusCode&gt;
@@ -203,20 +203,20 @@ User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/
 Accept: application/json,text/javascript,*/*;q=0.01 Accept-Language: en-US,en;q=0.5 Accept-Encoding: gzip, 
 deflate Cookie: __utma=120274954.1033981115.1360618092.1367978778.1368109070.82; __utmz=120274954.1360695664.4.1.utmcsr=
 (direct)|utmccn=(direct)|utmcmd=(none); __utmc=120274954; __utmb=120274954.9.10.1368109070; JSESSIONID_pm60=1ou8r2dy4j7p1; 
-AtmoAuthToken_open=TokenID%3Dd88eba49-b8b5-11e2-985a-a81e78f0181a%2Cclaimed_id%3Durn%3Aatmosphere%3Auser%3Aopen%3Auser10002
+AtmoAuthToken_open=TokenID%3Dd88eba49-b8b5-11e2-985a-a81e78f0181a%2Cclaimed_id%3Durn%3Aacmecorp%3Auser%3Aacmecorp%3Auser10002
 %2CissueTime%3D1368110193668%2CexpirationTime%3D1368111993636%2CAttributesIncluded%3Dfalse%2CUserFDN%3Duser10002%252Eopen%2
 CUserName%3Dopen%2Csig%3DGQIPSVgVrKf_5zhlJ_zsqlSwWVaY3z0MVFz_trMBwRnoa51hGWbZlzXxxPCFrUbhDrl1zZmlytdCh3CfOiOHms9Ry4duim7Q9k
 97ruhss5-ncJ-wT2KXcLVPuagWdVPuZrzF0mpy-L5PUT1V-LOy3QpIjfWiZJZsTdNnSeKUMtE; AtmoAuthToken_myplatform=TokenID%3Dd8991b3c-b8b
-5-11e2-81b9-f5950bd2d239%2Cclaimed_id%3Durn%3Aatmosphere%3Auser%3Aopen%3Auser10002%2CissueTime%3D1368110193739%2Cexpiration
+5-11e2-81b9-f5950bd2d239%2Cclaimed_id%3Durn%3Aacmecorp%3Auser%3Aacmecorp%3Auser10002%2CissueTime%3D1368110193739%2Cexpiration
 Time%3D1368111993704%2CAttributesIncluded%3Dfalse%2CUserFDN%3Duser10002%252Eopen%2CUserName%3Dopen%2Csig%3DNoZbjkCblMuafFX
 GKlshF6t886SC1K9bl7XDStKBxkAaUNaHzUe3XaE1uwYnG2lL0_4Krk_scR3Mu6_ps4AqAYAsVVZuoRDfFwj5n3vVQrCys4f8cTr92HRWE9fU0HmZeNrL78sfJ
 XeiC6lla8RMC4YE4yUVaZJAXOwXEZW_RWg
-Connection: keep-alive Referer: https://&lt;hostname&gt;/atmosphere/ X-Requested-With: XMLHttpRequest
+Connection: keep-alive Referer: https://&lt;hostname&gt;/acmecorp/ X-Requested-With: XMLHttpRequest
 &lt;/ns2:TransportHeaders&gt;
     &lt;/ns2:RequestMessage&gt;
     &lt;ns2:ResponseMessage&gt;
         &lt;ns2:Message&gt;[ {
-  &quot;LoginDomainID&quot; : &quot;siteusers.open&quot;,
+  &quot;LoginDomainID&quot; : &quot;siteusers.acmecorp&quot;,
   &quot;FedmemberId&quot; : &quot;open&quot;,
   &quot;Title&quot; : &quot;open-users&quot;,
   &quot;Sequence&quot; : -1,

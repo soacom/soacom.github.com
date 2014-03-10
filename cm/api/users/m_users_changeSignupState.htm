@@ -59,9 +59,9 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request to change the signup state for the specified user.</p>
 <p><strong>Request URL</strong></p>
-<pre>http://soa.local.com/api/users/user10027.open/registration/state</pre>
+<pre>http://soa.local.com/api/users/user10027.acmecorp/registration/state</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT /api/users/user10027.open/registration/state HTTP/1.1
+<pre>PUT /api/users/user10027.acmecorp/registration/state HTTP/1.1
 Host: &lt;hostname&gt;
 Content-Type: application/json; charset=UTF-8</pre>
 <p><strong>Sample request body</strong></p>
@@ -147,7 +147,7 @@ Date: Wed, 26 Jun 2013 19:16:06 GMT
 Content-Type: application/json</pre>
 <p><strong>Sample response body: JSON</strong></p>
 <pre>{
-  "UserID" : "user10030.open",
+  "UserID" : "user10030.acmecorp",
   "UserName" : "JonathanSwift",
   "FirstName" : "Jonathan",
   "LastName" : "Swift",
@@ -171,7 +171,7 @@ Content-Type: application/xml</pre>
 <p><strong>Sample response body: XML</strong></p>
 <pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
 &lt;User xmlns="http://soa.com/xsd/user/1.0" xmlns:ns2="http://soa.com/xsd/business/1.0"&gt;
-  &lt;UserID&gt;user10027.open&lt;/UserID&gt;
+  &lt;UserID&gt;user10027.acmecorp&lt;/UserID&gt;
   &lt;UserName&gt;JaneMead&lt;/UserName&gt;
   &lt;FirstName&gt;Jane&lt;/FirstName&gt;
   &lt;LastName&gt;Mead&lt;/LastName&gt;

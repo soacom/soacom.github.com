@@ -69,7 +69,7 @@ no-catalog: true
 <h4 id="samplerequest_1">Sample request: APIs service</h4>
 <p>The example below shows a request for a specific user's rating of a specific API version.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://&lt;hostname&gt;/api/apis/versions/apiversion23609.open/ratings/user12262.open</pre>
+<pre>https://&lt;hostname&gt;/api/apis/versions/apiversion23609.acmecorp/ratings/user12262.acmecorp</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
@@ -79,9 +79,9 @@ no-catalog: true
 <h4 id="samplerequest_2">Sample request: Apps service</h4>
 <p>The example below shows a request for a specific user's rating of a specific app version.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://&lt;hostname&gt;/api/apps/versions/90VsIX3WmpP32sqoYQk8jj4J.open/ratings/user13967.open</pre>
+<pre>https://&lt;hostname&gt;/api/apps/versions/90VsIX3WmpP32sqoYQk8jj4J.acmecorp/ratings/user13967.acmecorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&nbsp;/api/apps/versions/90VsIX3WmpP32sqoYQk8jj4J.open/ratings/user13967.open
+<pre>GET&nbsp;/api/apps/versions/90VsIX3WmpP32sqoYQk8jj4J.acmecorp/ratings/user13967.acmecorp
 Host: &lt;hostname&gt;
 Accept: application/json, text/javascript, */*; q=0.01</pre>
 <p><strong>Sample request body</strong></p>
@@ -92,7 +92,7 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 <h4 id="samplerequest_4">Sample request: Groups service</h4>
 <p>The example below shows a request for a specific user's rating of a specific group.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://&lt;hostname&gt;/api/groups/group24386.open/ratings/user23509.open</pre>
+<pre>https://&lt;hostname&gt;/api/groups/group24386.acmecorp/ratings/user23509.acmecorp</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
@@ -103,9 +103,9 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 <h4 id="samplerequest_3">Sample request: Users service</h4>
 <p>The example below shows a request for a specific user's rating of a specific app version.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://&lt;hostname&gt;/api/apps/versions/AMyrWWlF0Qj2ZPGqF8dPsa7O.open/ratings/user12262.open</pre>
+<pre>https://&lt;hostname&gt;/api/apps/versions/AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp/ratings/user12262.acmecorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&nbsp;/api/apps/versions/AMyrWWlF0Qj2ZPGqF8dPsa7O.open/ratings/user12262.open?_=1369932294081 HTTP/1.1
+<pre>GET&nbsp;/api/apps/versions/AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp/ratings/user12262.acmecorp?_=1369932294081 HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: application/json, text/javascript, */*; q=0.01</pre>
 <p><strong>Sample request body</strong></p>
@@ -194,15 +194,15 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 Content-Type: application/json
 Date: Thu, 23 May 2013 19:54:46 GMT</pre>
 <p><strong>Sample response body: JSON</strong></p>
-<pre>{<br />  &quot;ID&quot;: &quot;apiversion23609.open&quot;,<br />  &quot;UserID&quot;: &quot;user12262.open&quot;,<br />  &quot;Rating&quot;: 3<br />}</pre>
+<pre>{<br />  &quot;ID&quot;: &quot;apiversion23609.acmecorp&quot;,<br />  &quot;UserID&quot;: &quot;user12262.acmecorp&quot;,<br />  &quot;Rating&quot;: 3<br />}</pre>
 
 <p><strong>Sample response headers: XML</strong></p>
 <pre>Content-Type: text/xml</pre>
 <p><strong>Sample response body: XML</strong></p>
 <pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
 &lt;Rating xmlns=&quot;http://soa.com/xsd/resource/1.0&quot; xmlns:ns2=&quot;http://soa.com/xsd/user/1.0&quot;&gt;
-  &lt;ID&gt;apiversion23609.open&lt;/ID&gt;
-  &lt;ns2:UserID&gt;user12262.open&lt;/ns2:UserID&gt;
+  &lt;ID&gt;apiversion23609.acmecorp&lt;/ID&gt;
+  &lt;ns2:UserID&gt;user12262.acmecorp&lt;/ns2:UserID&gt;
   &lt;Rating&gt;3&lt;/Rating&gt;
 &lt;/Rating&gt;
 </pre>
@@ -219,15 +219,15 @@ Date: Fri, 14 Dec 2012 21:45:46 GMT</pre>
 
 <p><strong>Sample response body: JSON</strong></p>
 <pre>{
-  "ID" : "90VsIX3WmpP32sqoYQk8jj4J.open",
-  "UserID" : "user13967.open",
+  "ID" : "90VsIX3WmpP32sqoYQk8jj4J.acmecorp",
+  "UserID" : "user13967.acmecorp",
   "Rating" : 4
 }</pre>
 <p><strong>Sample response body: XML</strong></p>
 <pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
 &lt;Rating xmlns="http://soa.com/xsd/resource/1.0" xmlns:ns2="http://soa.com/xsd/user/1.0"&gt;
-  &lt;ID&gt;90VsIX3WmpP32sqoYQk8jj4J.open&lt;/ID&gt;
-  &lt;ns2:UserID&gt;user13967.open&lt;/ns2:UserID&gt;
+  &lt;ID&gt;90VsIX3WmpP32sqoYQk8jj4J.acmecorp&lt;/ID&gt;
+  &lt;ns2:UserID&gt;user13967.acmecorp&lt;/ns2:UserID&gt;
   &lt;Rating&gt;4&lt;/Rating&gt;
 &lt;/Rating&gt;
 </pre>
@@ -242,8 +242,8 @@ Content-Type: application/json
 Date: Wed, 19 Jun 2013 15:19:10 GMT</pre>
 <p><strong>Sample response body: JSON</strong></p>
 <pre>{
-  "ID" : "group24386.open",
-  "UserID" : "user23509.open",
+  "ID" : "group24386.acmecorp",
+  "UserID" : "user23509.acmecorp",
   "Rating" : 5
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -257,8 +257,8 @@ Content-Type: application/json
 Date: Thu, 30 May 2013 16:44:54 GMT</pre>
 <p><strong>Sample response body: JSON</strong></p>
 <pre>{
-  "ID" : "AMyrWWlF0Qj2ZPGqF8dPsa7O.open",
-  "UserID" : "user12262.open",
+  "ID" : "AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp",
+  "UserID" : "user12262.acmecorp",
   "Rating" : 2
 }</pre>
 
@@ -267,8 +267,8 @@ Date: Thu, 30 May 2013 16:44:54 GMT</pre>
 <p><strong>Sample response body: XML</strong></p>
 <pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
 &lt;Rating xmlns="http://soa.com/xsd/resource/1.0" xmlns:ns2="http://soa.com/xsd/user/1.0"&gt;
-  &lt;ID&gt;AMyrWWlF0Qj2ZPGqF8dPsa7O.open&lt;/ID&gt;
-  &lt;ns2:UserID&gt;user12262.open&lt;/ns2:UserID&gt;
+  &lt;ID&gt;AMyrWWlF0Qj2ZPGqF8dPsa7O.acmecorp&lt;/ID&gt;
+  &lt;ns2:UserID&gt;user12262.acmecorp&lt;/ns2:UserID&gt;
   &lt;Rating&gt;2&lt;/Rating&gt;
 &lt;/Rating&gt;
 </pre>

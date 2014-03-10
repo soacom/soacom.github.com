@@ -58,9 +58,9 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below queries whether the specified user is authorized to add an API.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user13998.open/auzstatus?ResourceType=api&amp;Action=Add</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user13998.acmecorp/auzstatus?ResourceType=api&amp;Action=Add</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&nbsp;/api/users/user13998.open/auzstatus?ResourceType=api&amp;Action=Add HTTP/1.1
+<pre>GET&nbsp;/api/users/user13998.acmecorp/auzstatus?ResourceType=api&amp;Action=Add HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: application/json, text/javascript, */*; q=0.01</pre>
 <p><strong>Sample request body</strong></p>
@@ -176,7 +176,7 @@ Content-Type: application/json
 Date: Thu, 16 May 2013 14:07:29 GMT</pre>
 <p><strong>Sample response body: JSON</strong></p>
 <pre>{
-  "UserID" : "user13998.open",
+  "UserID" : "user13998.acmecorp",
   "ResourceType" : "api",
   "Result" : "Authorized"
 }</pre>
@@ -186,7 +186,7 @@ Date: Thu, 16 May 2013 14:07:29 GMT</pre>
 <p><strong>Sample response body: XML</strong></p>
 <pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
 &lt;AuthorizationResult xmlns="http://soa.com/xsd/user/1.0"&gt;
-  &lt;UserID&gt;user12262.open&lt;/UserID&gt;
+  &lt;UserID&gt;user12262.acmecorp&lt;/UserID&gt;
   &lt;ResourceType&gt;api&lt;/ResourceType&gt;
   &lt;Result&gt;Authorized&lt;/Result&gt;
 &lt;/AuthorizationResult&gt;

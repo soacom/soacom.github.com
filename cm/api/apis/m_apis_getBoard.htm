@@ -16,7 +16,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getBoard_apis.lbi" -->Returns a list of Board items for the specified API.<!-- #EndLibraryItem --></p>
-<p>If the API only has one version, the results returned for the <span class="apidoc_code">GETÂ apis/{APIID}/board</span> and <span class="apidoc_code"><a href="m_apis_getVersionBoard.htm">GETÂ apis/{APIVersionID}/board</a></span> operations are the same.</p>
+<p>If the API only has one version, the results returned for the <span class="apidoc_code">GET&nbsp;apis/{APIID}/board</span> and <span class="apidoc_code"><a href="m_apis_getVersionBoard.htm">GET&nbsp;apis/{APIVersionID}/board</a></span> operations are the same.</p>
 
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/Library/roles_none.lbi" -->Anyone can use this operation; login is not required<!-- #EndLibraryItem -->. However, the results that are returned are restricted based on the user's access rights. For example, Board items relating to a Private API are not returned unless the user is logged in and has access rights to the API.</p>
 
@@ -56,10 +56,10 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below a request for an API's Board items. The request is limited to the first 10 items relating to a specified user.</p>
 <p><strong>Request URL</strong> #1</p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api18969.open/board?start=0&amp;count=10&amp;RetrievingUserID=user12262.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->open<!-- #EndLibraryItem -->&amp;SortBy=DescendingDate</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api18969.acmecorp/board?start=0&amp;count=10&amp;RetrievingUserID=user12262.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->open<!-- #EndLibraryItem -->&amp;SortBy=DescendingDate</pre>
 <p><strong>Request URL</strong> #2</p>
 <p>Requests Board items of type <strong>Alert</strong> for the specified API.</p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api200.open/board?start=0&amp;count=10&amp;RetrievingUserID=user10002.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->open<!-- #EndLibraryItem -->&amp;SortBy=DescendingDate&amp;ItemType=Alert</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api200.acmecorp/board?start=0&amp;count=10&amp;RetrievingUserID=user10002.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->open<!-- #EndLibraryItem -->&amp;SortBy=DescendingDate&amp;ItemType=Alert</pre>
 
 <p><strong>Sample request headers</strong></p>
 <pre>Accept:application/json</pre>
@@ -237,7 +237,7 @@ Content-Type: application/json</pre>
     "totalResults" : 0,
     "itemsPerPage" : 10,
     "item" : [ {
-      "title" : "Open member PhilipPirrip  has been invited to the ACME Payments API UG Group",
+      "title" : "ACMECorp member PhilipPirrip  has been invited to the ACME Payments API UG Group",
       "description" : "Please join the ACME Payments API user group!",
       "category" : [ {
         "value" : "GROUP_MEMBER_REQ",
@@ -250,21 +250,21 @@ Content-Type: application/json</pre>
         "domain" : "uddi:soa.com:wfstate"
       } ],
       "guid" : {
-        "value" : "group_member_req19794.open"
+        "value" : "group_member_req19794.acmecorp"
       },
       "pubDate" : "2013-02-12T17:11:37.000Z",
       "AuthoringUser" : {
-        "ID" : "user12262.open",
+        "ID" : "user12262.acmecorp",
         "Name" : "JaneMead",
         "Image" : {
-          "Url" : "http://cdn.&lt;hostname&gt;/api/users/user12262.open/avatar",
+          "Url" : "http://cdn.&lt;hostname&gt;/api/users/user12262.acmecorp/avatar",
           "Title" : "JaneMead",
-          "Link" : "#/users/user12262.open/details"
+          "Link" : "#/users/user12262.acmecorp/details"
         }
       },
       "Image" : {
-        "Url" : "http://cdn.&lt;hostname&gt;/api/users/user12262.open/avatar",
-        "Link" : "#/user/user12262.open/details"
+        "Url" : "http://cdn.&lt;hostname&gt;/api/users/user12262.acmecorp/avatar",
+        "Link" : "#/user/user12262.acmecorp/details"
       },
       "CreatedDate" : "2013-02-12T17:11:37.000Z",
       "Marks" : {
@@ -277,28 +277,28 @@ Content-Type: application/json</pre>
       },
       "EntityReference" : [ {
         "Title" : "PhilipPirrip",
-        "Guid" : "user13998.open",
+        "Guid" : "user13998.acmecorp",
         "Category" : [ {
           "value" : "user",
           "domain" : "uddi:soa.com:resourcetype"
         } ]
       }, {
         "Title" : "ACMEPayments",
-        "Guid" : "api18969.open",
+        "Guid" : "api18969.acmecorp",
         "Category" : [ {
           "value" : "api",
           "domain" : "uddi:soa.com:resourcetype"
         } ]
       }, {
         "Title" : "2.0",
-        "Guid" : "apiversion19184.open",
+        "Guid" : "apiversion19184.acmecorp",
         "Category" : [ {
           "value" : "apiversion",
           "domain" : "uddi:soa.com:resourcetype"
         } ]
       } ]
     }, {
-      "title" : "Open member JonathanSwift  has been invited to the ACME Payments API UG Group",
+      "title" : "ACMECorp member JonathanSwift  has been invited to the ACME Payments API UG Group",
       "description" : "Please join the ACME Payments API user group!",
       "category" : [ {
         "value" : "GROUP_MEMBER_REQ",
@@ -311,21 +311,21 @@ Content-Type: application/json</pre>
         "domain" : "uddi:soa.com:wfstate"
       } ],
       "guid" : {
-        "value" : "group_member_req19795.open"
+        "value" : "group_member_req19795.acmecorp"
       },
       "pubDate" : "2013-02-12T17:11:37.000Z",
       "AuthoringUser" : {
-        "ID" : "user12262.open",
+        "ID" : "user12262.acmecorp",
         "Name" : "JaneMead",
         "Image" : {
-          "Url" : "http://cdn.&lt;hostname&gt;/api/users/user12262.open/avatar",
+          "Url" : "http://cdn.&lt;hostname&gt;/api/users/user12262.acmecorp/avatar",
           "Title" : "JaneMead",
-          "Link" : "#/users/user12262.open/details"
+          "Link" : "#/users/user12262.acmecorp/details"
         }
       },
       "Image" : {
-        "Url" : "http://cdn.&lt;hostname&gt;/api/users/user12262.open/avatar",
-        "Link" : "#/user/user12262.open/details"
+        "Url" : "http://cdn.&lt;hostname&gt;/api/users/user12262.acmecorp/avatar",
+        "Link" : "#/user/user12262.acmecorp/details"
       },
       "CreatedDate" : "2013-02-12T17:11:37.000Z",
       "Marks" : {
@@ -338,21 +338,21 @@ Content-Type: application/json</pre>
       },
       "EntityReference" : [ {
         "Title" : "JonathanSwift",
-        "Guid" : "user13967.open",
+        "Guid" : "user13967.acmecorp",
         "Category" : [ {
           "value" : "user",
           "domain" : "uddi:soa.com:resourcetype"
         } ]
       }, {
         "Title" : "ACMEPayments",
-        "Guid" : "api18969.open",
+        "Guid" : "api18969.acmecorp",
         "Category" : [ {
           "value" : "api",
           "domain" : "uddi:soa.com:resourcetype"
         } ]
       }, {
         "Title" : "2.0",
-        "Guid" : "apiversion19184.open",
+        "Guid" : "apiversion19184.acmecorp",
         "Category" : [ {
           "value" : "apiversion",
           "domain" : "uddi:soa.com:resourcetype"
@@ -393,21 +393,21 @@ Content-Type: application/json</pre>
         "domain" : "uddi:soa.com:alertenvironment"
       } ],
       "guid" : {
-        "value" : "alert10027.open"
+        "value" : "alert10027.acmecorp"
       },
       "pubDate" : "2013-02-20T20:19:15.518Z",
       "AuthoringUser" : {
-        "ID" : "user10002.open",
+        "ID" : "user10002.acmecorp",
         "Name" : "JaneMead",
         "Image" : {
-          "Url" : "https://&lt;hostname&gt;/api/users/user10002.open/avatar",
+          "Url" : "https://&lt;hostname&gt;/api/users/user10002.acmecorp/avatar",
           "Title" : "JaneMead",
-          "Link" : "#/users/user10002.open/details"
+          "Link" : "#/users/user10002.acmecorp/details"
         }
       },
       "Image" : {
-        "Url" : "https://&lt;hostname&gt;/api/users/user10002.open/avatar",
-        "Link" : "../atmosphere#/user/user10002.open/details"
+        "Url" : "https://&lt;hostname&gt;/api/users/user10002.acmecorp/avatar",
+        "Link" : "../acmecorp#/user/user10002.acmecorp/details"
       },
       "CreatedDate" : "2013-02-20T20:19:15.518Z",
       "Actions" : {
@@ -426,14 +426,14 @@ Content-Type: application/json</pre>
       },
       "EntityReference" : [ {
         "Title" : "ACME Payments API",
-        "Guid" : "api200.open",
+        "Guid" : "api200.acmecorp",
         "Category" : [ {
           "value" : "api",
           "domain" : "uddi:soa.com:resourcetype"
         } ]
       }, {
         "Title" : "1.0",
-        "Guid" : "apiversion500.open",
+        "Guid" : "apiversion500.acmecorp",
         "Category" : [ {
           "value" : "apiversion",
           "domain" : "uddi:soa.com:resourcetype"
@@ -465,12 +465,12 @@ xmlns:ns9="http://soa.com/xsd/board/1.0" version="1.0"&gt;
     &lt;ns5:itemsPerPage&gt;10&lt;/ns5:itemsPerPage&gt;
     &lt;ns5:totalResults&gt;0&lt;/ns5:totalResults&gt;
     &lt;item&gt;
-      &lt;title&gt;Open member PhilipPirrip  has been invited to the ACME Payments API UG Group&lt;/title&gt;
+      &lt;title&gt;ACMECorp member PhilipPirrip  has been invited to the ACME Payments API UG Group&lt;/title&gt;
       &lt;description&gt;Please join the ACME Payments API user group!&lt;/description&gt;
       &lt;category domain="uddi:soa.com:resourcetype"&gt;GROUP_MEMBER_REQ&lt;/category&gt;
       &lt;category domain="uddi:soa.com:archivable"&gt;false&lt;/category&gt;
       &lt;category domain="uddi:soa.com:wfstate"&gt;com.soa.group.membership.state.pending&lt;/category&gt;
-      &lt;guid&gt;group_member_req19794.open&lt;/guid&gt;
+      &lt;guid&gt;group_member_req19794.acmecorp&lt;/guid&gt;
       &lt;pubDate&gt;2013-02-12T17:11:37.000Z&lt;/pubDate&gt;
       &lt;ns2:CreatedDate&gt;2013-02-12T17:11:37.000Z&lt;/ns2:CreatedDate&gt;
       &lt;ns2:Marks&gt;
@@ -481,41 +481,41 @@ xmlns:ns9="http://soa.com/xsd/board/1.0" version="1.0"&gt;
         &lt;ns3:Count&gt;0&lt;/ns3:Count&gt;
       &lt;/ns3:CommentsPreview&gt;
       &lt;ns2:AuthoringUser&gt;
-        &lt;ID&gt;user12262.open&lt;/ID&gt;
+        &lt;ID&gt;user12262.acmecorp&lt;/ID&gt;
         &lt;Name&gt;JaneMead&lt;/Name&gt;
         &lt;ns2:Image&gt;
-          &lt;Url&gt;http://cdn.&lt;hostname&gt;/api/users/user12262.open/avatar&lt;/Url&gt;
+          &lt;Url&gt;http://cdn.&lt;hostname&gt;/api/users/user12262.acmecorp/avatar&lt;/Url&gt;
           &lt;Title&gt;JaneMead&lt;/Title&gt;
-          &lt;Link&gt;#/users/user12262.open/details&lt;/Link&gt;
+          &lt;Link&gt;#/users/user12262.acmecorp/details&lt;/Link&gt;
         &lt;/ns2:Image&gt;
       &lt;/ns2:AuthoringUser&gt;
       &lt;ns2:EntityReference&gt;
         &lt;Title&gt;PhilipPirrip&lt;/Title&gt;
-        &lt;Guid&gt;user13998.open&lt;/Guid&gt;
+        &lt;Guid&gt;user13998.acmecorp&lt;/Guid&gt;
         &lt;ns2:Category domain="uddi:soa.com:resourcetype"&gt;user&lt;/ns2:Category&gt;
       &lt;/ns2:EntityReference&gt;
       &lt;ns2:EntityReference&gt;
         &lt;Title&gt;ACMEPayments&lt;/Title&gt;
-        &lt;Guid&gt;api18969.open&lt;/Guid&gt;
+        &lt;Guid&gt;api18969.acmecorp&lt;/Guid&gt;
         &lt;ns2:Category domain="uddi:soa.com:resourcetype"&gt;api&lt;/ns2:Category&gt;
       &lt;/ns2:EntityReference&gt;
       &lt;ns2:EntityReference&gt;
         &lt;Title&gt;2.0&lt;/Title&gt;
-        &lt;Guid&gt;apiversion19184.open&lt;/Guid&gt;
+        &lt;Guid&gt;apiversion19184.acmecorp&lt;/Guid&gt;
         &lt;ns2:Category domain="uddi:soa.com:resourcetype"&gt;apiversion&lt;/ns2:Category&gt;
       &lt;/ns2:EntityReference&gt;
       &lt;ns2:Image&gt;
-        &lt;Url&gt;http://cdn.&lt;hostname&gt;/api/users/user12262.open/avatar&lt;/Url&gt;
-        &lt;Link&gt;#/user/user12262.open/details&lt;/Link&gt;
+        &lt;Url&gt;http://cdn.&lt;hostname&gt;/api/users/user12262.acmecorp/avatar&lt;/Url&gt;
+        &lt;Link&gt;#/user/user12262.acmecorp/details&lt;/Link&gt;
       &lt;/ns2:Image&gt;
     &lt;/item&gt;
     &lt;item&gt;
-      &lt;title&gt;Open member JonathanSwift  has been invited to the ACME Payments API UG Group&lt;/title&gt;
+      &lt;title&gt;ACMECorp member JonathanSwift  has been invited to the ACME Payments API UG Group&lt;/title&gt;
       &lt;description&gt;Please join the ACME Payments API user group!&lt;/description&gt;
       &lt;category domain="uddi:soa.com:resourcetype"&gt;GROUP_MEMBER_REQ&lt;/category&gt;
       &lt;category domain="uddi:soa.com:archivable"&gt;false&lt;/category&gt;
       &lt;category domain="uddi:soa.com:wfstate"&gt;com.soa.group.membership.state.pending&lt;/category&gt;
-      &lt;guid&gt;group_member_req19795.open&lt;/guid&gt;
+      &lt;guid&gt;group_member_req19795.acmecorp&lt;/guid&gt;
       &lt;pubDate&gt;2013-02-12T17:11:37.000Z&lt;/pubDate&gt;
       &lt;ns2:CreatedDate&gt;2013-02-12T17:11:37.000Z&lt;/ns2:CreatedDate&gt;
       &lt;ns2:Marks&gt;
@@ -526,32 +526,32 @@ xmlns:ns9="http://soa.com/xsd/board/1.0" version="1.0"&gt;
         &lt;ns3:Count&gt;0&lt;/ns3:Count&gt;
       &lt;/ns3:CommentsPreview&gt;
       &lt;ns2:AuthoringUser&gt;
-        &lt;ID&gt;user12262.open&lt;/ID&gt;
+        &lt;ID&gt;user12262.acmecorp&lt;/ID&gt;
         &lt;Name&gt;JaneMead&lt;/Name&gt;
         &lt;ns2:Image&gt;
-          &lt;Url&gt;http://cdn.&lt;hostname&gt;/api/users/user12262.open/avatar&lt;/Url&gt;
+          &lt;Url&gt;http://cdn.&lt;hostname&gt;/api/users/user12262.acmecorp/avatar&lt;/Url&gt;
           &lt;Title&gt;JaneMead&lt;/Title&gt;
-          &lt;Link&gt;#/users/user12262.open/details&lt;/Link&gt;
+          &lt;Link&gt;#/users/user12262.acmecorp/details&lt;/Link&gt;
         &lt;/ns2:Image&gt;
       &lt;/ns2:AuthoringUser&gt;
       &lt;ns2:EntityReference&gt;
         &lt;Title&gt;JonathanSwift&lt;/Title&gt;
-        &lt;Guid&gt;user13967.open&lt;/Guid&gt;
+        &lt;Guid&gt;user13967.acmecorp&lt;/Guid&gt;
         &lt;ns2:Category domain="uddi:soa.com:resourcetype"&gt;user&lt;/ns2:Category&gt;
       &lt;/ns2:EntityReference&gt;
       &lt;ns2:EntityReference&gt;
         &lt;Title&gt;ACMEPayments&lt;/Title&gt;
-        &lt;Guid&gt;api18969.open&lt;/Guid&gt;
+        &lt;Guid&gt;api18969.acmecorp&lt;/Guid&gt;
         &lt;ns2:Category domain="uddi:soa.com:resourcetype"&gt;api&lt;/ns2:Category&gt;
       &lt;/ns2:EntityReference&gt;
       &lt;ns2:EntityReference&gt;
         &lt;Title&gt;2.0&lt;/Title&gt;
-        &lt;Guid&gt;apiversion19184.open&lt;/Guid&gt;
+        &lt;Guid&gt;apiversion19184.acmecorp&lt;/Guid&gt;
         &lt;ns2:Category domain="uddi:soa.com:resourcetype"&gt;apiversion&lt;/ns2:Category&gt;
       &lt;/ns2:EntityReference&gt;
       &lt;ns2:Image&gt;
-        &lt;Url&gt;http://cdn.&lt;hostname&gt;/api/users/user12262.open/avatar&lt;/Url&gt;
-        &lt;Link&gt;#/user/user12262.open/details&lt;/Link&gt;
+        &lt;Url&gt;http://cdn.&lt;hostname&gt;/api/users/user12262.acmecorp/avatar&lt;/Url&gt;
+        &lt;Link&gt;#/user/user12262.acmecorp/details&lt;/Link&gt;
       &lt;/ns2:Image&gt;
     &lt;/item&gt;
   &lt;/channel&gt;

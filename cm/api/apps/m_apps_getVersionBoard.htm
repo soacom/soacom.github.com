@@ -52,9 +52,9 @@ Returns a list of Board items for the specified app version.<!-- #EndLibraryItem
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for the Board for a specific app version.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://&lt;hostname&gt;/api/apps/versions/4iXro2Uxs2h4LviCshR9pK9w.open/board</pre>
+<pre>https://&lt;hostname&gt;/api/apps/versions/4iXro2Uxs2h4LviCshR9pK9w.acmecorp/board</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&nbsp;/api/apps/versions/4iXro2Uxs2h4LviCshR9pK9w.open/board HTTP/1.1
+<pre>GET&nbsp;/api/apps/versions/4iXro2Uxs2h4LviCshR9pK9w.acmecorp/board HTTP/1.1
 Host: <!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!-- #EndLibraryItem -->
 Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
@@ -244,28 +244,28 @@ Content-Type: application/json</pre>
         "value" : "true",
         "domain" : "uddi:soa.com:archivable"
       }, {
-        "value" : "com.soa.board.item.open",
+        "value" : "com.soa.board.item.acmecorp",
         "domain" : "uddi:soa.com:state"
       }, {
         "value" : "com.soa.discussion.type.comment",
         "domain" : "uddi:soa.com:discussiontype"
       } ],
       "guid" : {
-        "value" : "discussion23921.open"
+        "value" : "discussion23921.acmecorp"
       },
       "pubDate" : "2013-05-31T17:48:09.000Z",
       "AuthoringUser" : {
-        "ID" : "user12262.open",
+        "ID" : "user12262.acmecorp",
         "Name" : "JaneMead",
         "Image" : {
-          "Url" : "https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
+          "Url" : "https://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
           "Title" : "JaneMead",
-          "Link" : "#/users/user12262.open/details"
+          "Link" : "#/users/user12262.acmecorp/details"
         }
       },
       "Image" : {
-        "Url" : "https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
-        "Link" : "#/user/user12262.open/details"
+        "Url" : "https://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
+        "Link" : "#/user/user12262.acmecorp/details"
       },
       "CreatedDate" : "2013-05-31T17:48:09.000Z",
       "Actions" : {
@@ -284,14 +284,14 @@ Content-Type: application/json</pre>
       },
       "EntityReference" : [ {
         "Title" : "PaaStime",
-        "Guid" : "app16964.open",
+        "Guid" : "app16964.acmecorp",
         "Category" : [ {
           "value" : "app",
           "domain" : "uddi:soa.com:resourcetype"
         } ]
       }, {
         "Title" : "2.0",
-        "Guid" : "4iXro2Uxs2h4LviCshR9pK9w.open",
+        "Guid" : "4iXro2Uxs2h4LviCshR9pK9w.acmecorp",
         "Category" : [ {
           "value" : "app-version",
           "domain" : "uddi:soa.com:resourcetype"
@@ -299,7 +299,7 @@ Content-Type: application/json</pre>
       } ]
     }, {
       "title" : "API Access request",
-      "description" : "Open member JaneMead has requested access to the Sandbox environment for the ACME Payments DeLuxe (Version 2.0) on behalf of the  PaaStime (2.0) application",
+      "description" : "ACMECorp member JaneMead has requested access to the Sandbox environment for the ACME Payments DeLuxe (Version 2.0) on behalf of the  PaaStime (2.0) application",
       "category" : [ {
         "value" : "CONTRACT_REQUEST",
         "domain" : "uddi:soa.com:resourcetype"
@@ -314,21 +314,21 @@ Content-Type: application/json</pre>
         "domain" : "uddi:soa.com:environment"
       } ],
       "guid" : {
-        "value" : "contract_request23623.open"
+        "value" : "contract_request23623.acmecorp"
       },
       "pubDate" : "2013-05-23T22:14:30.000Z",
       "AuthoringUser" : {
-        "ID" : "user12262.open",
+        "ID" : "user12262.acmecorp",
         "Name" : "JaneMead",
         "Image" : {
-          "Url" : "https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
+          "Url" : "https://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
           "Title" : "JaneMead",
-          "Link" : "#/users/user12262.open/details"
+          "Link" : "#/users/user12262.acmecorp/details"
         }
       },
       "Image" : {
-        "Url" : "https://&lt;hostname&gt;/api/apps/app16964.open/avatars/f250a96e-2f81-4e3e-88fc-61431fd80e5c.png",
-        "Link" : "#/app/app16964.open"
+        "Url" : "https://&lt;hostname&gt;/api/apps/app16964.acmecorp/avatars/f250a96e-2f81-4e3e-88fc-61431fd80e5c.png",
+        "Link" : "#/app/app16964.acmecorp"
       },
       "CreatedDate" : "2013-05-23T22:14:30.000Z",
       "Actions" : {
@@ -347,20 +347,20 @@ Content-Type: application/json</pre>
       "CommentsPreview" : {
         "Count" : 1,
         "Comment" : [ {
-          "CommentID" : "comment23624.open",
-          "CommentSubjectID" : "contract_request23623.open",
+          "CommentID" : "comment23624.acmecorp",
+          "CommentSubjectID" : "contract_request23623.acmecorp",
           "Content" : "API access has been activated. ",
           "Created" : "2013-05-23T22:14:30Z",
           "Marks" : 0,
           "IsMarked" : false,
-          "UserID" : "global.open",
-          "UserName" : "Atmosphere",
-          "AvatarURL" : "https://&lt;hostname&gt;/api/tenants/global.open/avatar"
+          "UserID" : "global.acmecorp",
+          "UserName" : "ACMECorp",
+          "AvatarURL" : "https://&lt;hostname&gt;/api/tenants/global.acmecorp/avatar"
         } ]
       },
       "EntityReferences" : {
         "EntityReference" : [ {
-          "Guid" : "contract23622.open",
+          "Guid" : "contract23622.acmecorp",
           "Category" : [ {
             "value" : "contract",
             "domain" : "uddi:soa.com:resourcetype"
@@ -369,42 +369,42 @@ Content-Type: application/json</pre>
       },
       "EntityReference" : [ {
         "Title" : "PaaStime",
-        "Guid" : "app16964.open",
+        "Guid" : "app16964.acmecorp",
         "Category" : [ {
           "value" : "app",
           "domain" : "uddi:soa.com:resourcetype"
         } ]
       }, {
         "Title" : "PaaStime",
-        "Guid" : "app16964.open",
+        "Guid" : "app16964.acmecorp",
         "Category" : [ {
           "value" : "app",
           "domain" : "uddi:soa.com:resourcetype"
         } ]
       }, {
         "Title" : "2.0",
-        "Guid" : "4iXro2Uxs2h4LviCshR9pK9w.open",
+        "Guid" : "4iXro2Uxs2h4LviCshR9pK9w.acmecorp",
         "Category" : [ {
           "value" : "app-version",
           "domain" : "uddi:soa.com:resourcetype"
         } ]
       }, {
         "Title" : "ACME Payments DeLuxe",
-        "Guid" : "api19427.open",
+        "Guid" : "api19427.acmecorp",
         "Category" : [ {
           "value" : "api",
           "domain" : "uddi:soa.com:resourcetype"
         } ]
       }, {
         "Title" : "ACME Payments DeLuxe",
-        "Guid" : "api19427.open",
+        "Guid" : "api19427.acmecorp",
         "Category" : [ {
           "value" : "api",
           "domain" : "uddi:soa.com:resourcetype"
         } ]
       }, {
         "Title" : "Version 2.0",
-        "Guid" : "apiversion19429.open",
+        "Guid" : "apiversion19429.acmecorp",
         "Category" : [ {
           "value" : "apiversion",
           "domain" : "uddi:soa.com:resourcetype"
@@ -432,9 +432,9 @@ xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
       &lt;category domain="uddi:soa.com:tag"&gt;version&lt;/category&gt;
       &lt;category domain="uddi:soa.com:tag"&gt;feature&lt;/category&gt;
       &lt;category domain="uddi:soa.com:archivable"&gt;true&lt;/category&gt;
-      &lt;category domain="uddi:soa.com:state"&gt;com.soa.board.item.open&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:state"&gt;com.soa.board.item.acmecorp&lt;/category&gt;
       &lt;category domain="uddi:soa.com:discussiontype"&gt;com.soa.discussion.type.comment&lt;/category&gt;
-      &lt;guid&gt;discussion23921.open&lt;/guid&gt;
+      &lt;guid&gt;discussion23921.acmecorp&lt;/guid&gt;
       &lt;pubDate&gt;2013-05-31T17:48:09.000Z&lt;/pubDate&gt;
       &lt;ns4:CreatedDate&gt;2013-05-31T17:48:09.000Z&lt;/ns4:CreatedDate&gt;
       &lt;ns4:Marks&gt;
@@ -445,27 +445,27 @@ xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
         &lt;ns5:Count&gt;0&lt;/ns5:Count&gt;
       &lt;/ns5:CommentsPreview&gt;
       &lt;ns4:AuthoringUser&gt;
-        &lt;ID&gt;user12262.open&lt;/ID&gt;
+        &lt;ID&gt;user12262.acmecorp&lt;/ID&gt;
         &lt;Name&gt;JaneMead&lt;/Name&gt;
         &lt;ns4:Image&gt;
-          &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
+          &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
           &lt;Title&gt;JaneMead&lt;/Title&gt;
-          &lt;Link&gt;#/users/user12262.open/details&lt;/Link&gt;
+          &lt;Link&gt;#/users/user12262.acmecorp/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;
       &lt;/ns4:AuthoringUser&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;PaaStime&lt;/Title&gt;
-        &lt;Guid&gt;app16964.open&lt;/Guid&gt;
+        &lt;Guid&gt;app16964.acmecorp&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;2.0&lt;/Title&gt;
-        &lt;Guid&gt;4iXro2Uxs2h4LviCshR9pK9w.open&lt;/Guid&gt;
+        &lt;Guid&gt;4iXro2Uxs2h4LviCshR9pK9w.acmecorp&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app-version&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
-        &lt;Link&gt;#/user/user12262.open/details&lt;/Link&gt;
+        &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
+        &lt;Link&gt;#/user/user12262.acmecorp/details&lt;/Link&gt;
       &lt;/ns4:Image&gt;
       &lt;ns4:Actions&gt;
         &lt;ns4:Action label="discussion.action.delete"&gt;discussion.action.delete&lt;/ns4:Action&gt;
@@ -473,12 +473,12 @@ xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
     &lt;/item&gt;
     &lt;item&gt;
       &lt;title&gt;API Access request&lt;/title&gt;
-      &lt;description&gt;Open member JaneMead has requested access to the Sandbox environment for the ACME Payments DeLuxe (Version 2.0) on behalf of the  PaaStime (2.0) application&lt;/description&gt;
+      &lt;description&gt;ACMECorp member JaneMead has requested access to the Sandbox environment for the ACME Payments DeLuxe (Version 2.0) on behalf of the  PaaStime (2.0) application&lt;/description&gt;
       &lt;category domain="uddi:soa.com:resourcetype"&gt;CONTRACT_REQUEST&lt;/category&gt;
       &lt;category domain="uddi:soa.com:archivable"&gt;false&lt;/category&gt;
       &lt;category domain="uddi:soa.com:wfstate"&gt;apicontract.status.activated&lt;/category&gt;
       &lt;category domain="uddi:soa.com:environment"&gt;Sandbox&lt;/category&gt;
-      &lt;guid&gt;contract_request23623.open&lt;/guid&gt;
+      &lt;guid&gt;contract_request23623.acmecorp&lt;/guid&gt;
       &lt;pubDate&gt;2013-05-23T22:14:30.000Z&lt;/pubDate&gt;
       &lt;ns4:CreatedDate&gt;2013-05-23T22:14:30.000Z&lt;/ns4:CreatedDate&gt;
       &lt;ns4:Marks&gt;
@@ -488,63 +488,63 @@ xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
       &lt;ns5:CommentsPreview&gt;
         &lt;ns5:Count&gt;1&lt;/ns5:Count&gt;
         &lt;ns5:Comment&gt;
-          &lt;ns5:CommentID&gt;comment23624.open&lt;/ns5:CommentID&gt;
-          &lt;ns5:CommentSubjectID&gt;contract_request23623.open&lt;/ns5:CommentSubjectID&gt;
+          &lt;ns5:CommentID&gt;comment23624.acmecorp&lt;/ns5:CommentID&gt;
+          &lt;ns5:CommentSubjectID&gt;contract_request23623.acmecorp&lt;/ns5:CommentSubjectID&gt;
           &lt;ns5:Content&gt;API access has been activated. &lt;/ns5:Content&gt;
           &lt;ns5:Created&gt;2013-05-23T22:14:30Z&lt;/ns5:Created&gt;
           &lt;ns5:Marks&gt;0&lt;/ns5:Marks&gt;
           &lt;ns5:IsMarked&gt;false&lt;/ns5:IsMarked&gt;
-          &lt;ns3:UserID&gt;global.open&lt;/ns3:UserID&gt;
-          &lt;ns3:UserName&gt;Atmosphere&lt;/ns3:UserName&gt;
-          &lt;ns3:AvatarURL&gt;https://&lt;hostname&gt;/api/tenants/global.open/avatar&lt;/ns3:AvatarURL&gt;
+          &lt;ns3:UserID&gt;global.acmecorp&lt;/ns3:UserID&gt;
+          &lt;ns3:UserName&gt;ACMECorp&lt;/ns3:UserName&gt;
+          &lt;ns3:AvatarURL&gt;https://&lt;hostname&gt;/api/tenants/global.acmecorp/avatar&lt;/ns3:AvatarURL&gt;
         &lt;/ns5:Comment&gt;
       &lt;/ns5:CommentsPreview&gt;
       &lt;ns4:AuthoringUser&gt;
-        &lt;ID&gt;user12262.open&lt;/ID&gt;
+        &lt;ID&gt;user12262.acmecorp&lt;/ID&gt;
         &lt;Name&gt;JaneMead&lt;/Name&gt;
         &lt;ns4:Image&gt;
-          &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.open/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
+          &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
           &lt;Title&gt;JaneMead&lt;/Title&gt;
-          &lt;Link&gt;#/users/user12262.open/details&lt;/Link&gt;
+          &lt;Link&gt;#/users/user12262.acmecorp/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;
       &lt;/ns4:AuthoringUser&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;PaaStime&lt;/Title&gt;
-        &lt;Guid&gt;app16964.open&lt;/Guid&gt;
+        &lt;Guid&gt;app16964.acmecorp&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;PaaStime&lt;/Title&gt;
-        &lt;Guid&gt;app16964.open&lt;/Guid&gt;
+        &lt;Guid&gt;app16964.acmecorp&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;2.0&lt;/Title&gt;
-        &lt;Guid&gt;4iXro2Uxs2h4LviCshR9pK9w.open&lt;/Guid&gt;
+        &lt;Guid&gt;4iXro2Uxs2h4LviCshR9pK9w.acmecorp&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app-version&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;ACME Payments DeLuxe&lt;/Title&gt;
-        &lt;Guid&gt;api19427.open&lt;/Guid&gt;
+        &lt;Guid&gt;api19427.acmecorp&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;api&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;ACME Payments DeLuxe&lt;/Title&gt;
-        &lt;Guid&gt;api19427.open&lt;/Guid&gt;
+        &lt;Guid&gt;api19427.acmecorp&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;api&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;Version 2.0&lt;/Title&gt;
-        &lt;Guid&gt;apiversion19429.open&lt;/Guid&gt;
+        &lt;Guid&gt;apiversion19429.acmecorp&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;apiversion&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;https://&lt;hostname&gt;/api/apps/app16964.open/avatars/f250a96e-2f81-4e3e-88fc-61431fd80e5c.png&lt;/Url&gt;
-        &lt;Link&gt;#/app/app16964.open&lt;/Link&gt;
+        &lt;Url&gt;https://&lt;hostname&gt;/api/apps/app16964.acmecorp/avatars/f250a96e-2f81-4e3e-88fc-61431fd80e5c.png&lt;/Url&gt;
+        &lt;Link&gt;#/app/app16964.acmecorp&lt;/Link&gt;
       &lt;/ns4:Image&gt;
       &lt;ns4:EntityReferences&gt;
         &lt;ns4:EntityReference&gt;
-          &lt;Guid&gt;contract23622.open&lt;/Guid&gt;
+          &lt;Guid&gt;contract23622.acmecorp&lt;/Guid&gt;
           &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;contract&lt;/ns4:Category&gt;
         &lt;/ns4:EntityReference&gt;
       &lt;/ns4:EntityReferences&gt;
