@@ -343,6 +343,7 @@ a.soa-ui-dc-subnav-item-link.soa-ui-dc-subnav-item-link-active {
   position: absolute;
   right: 0;
   margin-top: 12px;
+  margin-right: 40px;
   z-index: 99;
 }
 .soa-ui-dc-topsearch-button,
