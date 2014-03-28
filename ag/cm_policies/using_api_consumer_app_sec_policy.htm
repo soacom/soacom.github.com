@@ -4,7 +4,7 @@ title: Using the API Consumer Application Security Policy
 description: Learn how to configure authentication methods used to identify  an application that is attempting to consume an API.
 product: ag
 category: learn
-weight:	7
+weight:	11
 subcategory:
 type: page
 nav-title: Using the API Consumer Application Security Policy
@@ -71,16 +71,16 @@ nav-title: Using the API Consumer Application Security Policy
     <p>You can create an API Consumer Application Security Policy   instance using <strong>Add Policy</strong> in the <em>Policies &gt; Operational Policies</em> section.</p>
     <h5>Step 2: Modify Policy</h5>
   <p>When you <strong>Modify</strong> the API Consumer Application Security Policy on the <em>Policy Details</em> page the initial policy will look like this. The <strong>No Signature</strong> checked option provides a simple header security (e.g.,  ApplicationSecurityUnsigned) default policy. </p>
-  <p><img src="modify_api_con_app_sec_policy.jpg" width="459" height="445"></p>
+  <p><img src="images/modify_api_con_app_sec_policy.jpg" width="459" height="445"></p>
   <p>Another common simple header security policy for Community Manager applications provides SHA1 - Shared Secret (e.g.,  ApplicationSecuritySigned) support as follows: </p>
-  <p><img src="shared_secret_default.jpg" width="445" height="438"></p>
+  <p><img src="images/shared_secret_default.jpg" width="445" height="438"></p>
   <p>You can get started using the default policy configurations (provided here), and then expand your configuration based on your requirements:</p>
   <h5>Step 2: Assign Policy to API in Community Manager</h5>
   <p>After you configure the policy, launch  Community Manager and  assign the policy:</p>
   <p>On the <em>API Details</em> page, select <strong>Edit</strong>, go to the <em>Proxy</em> page, select (e.g.,  <strong>ApplicationSecurityUnsigned</strong>), and save the configuration.</p>
-  <p><img src="edit_api_menu.jpg" width="124" height="154"><img src="select api consumer policy.jpg" width="296" height="53"></p>
+  <p><img src="images/edit_api_menu.jpg" width="124" height="154"><img src="images/select api consumer policy.jpg" width="296" height="53"></p>
   <p>To verify  the policy is attached to the API in Policy Manager, launch the <em>Policy Manager Management Console</em>, go to the <em>Services</em> folder and select the service (i.e., API) that is added to the <em>Community Manager</em> portal. The policy will display in the <em>Policy Attachments &gt; Operational</em> section as illustrated below.</p>
-  <p><img src="api_consumer_assign_policy.jpg" width="504" height="194"><br>
+  <p><img src="images/api_consumer_assign_policy.jpg" width="504" height="194"><br>
   </p>
 <p><a href="#top">Back to top</a></p>
 <div class = "divider1"></div>

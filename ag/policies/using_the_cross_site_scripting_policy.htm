@@ -59,8 +59,8 @@ nav-title: Using the Cross Site Scripting Policy
 
 
 <p>The default policy state includes a white list with the following tags:</p>
-<p><img src="cross_site_white_list1.jpg" width="414" height="393" /></p>
-<p><img src="cross_site_white_list2.jpg" width="414" height="395" /></p>
+<p><img src="images/cross_site_white_list1.jpg" width="414" height="393" /></p>
+<p><img src="images/cross_site_white_list2.jpg" width="414" height="395" /></p>
 
 
 
@@ -81,7 +81,7 @@ nav-title: Using the Cross Site Scripting Policy
 </ul>
 <h5>Step 2: Modify Policy</h5>
 <p>When you <strong>Modify</strong> the Cross Site Scripting Detection policy on the <em>Policy Details</em> page the initial policy will look like this:</p>
-<p><img src="modify_cross_site_scripting_policy.jpg" width="430" height="489"></p>
+<p><img src="images/modify_cross_site_scripting_policy.jpg" width="430" height="489"></p>
 <p>If you use the default policy without defining a white list, all tags will be disallowed.  If you define a white list all tags in the white list will be accepted, and all other tags (i.e., black list) will be forbidden when Network Director  passes the request message to the downstream service and an HTTP 404 Forbidden error will be raised.</p>
 <h5>Step 3: Configure White List / Custom Tags</h5>
 <p>The next step is to define your tag white list. These represent tags that comprise the HTML in your request message body and that you have designated as ones that could be  potentially attacked. White list tags are allowed when Network Director passes the request message to the downstream service.  The following options are available:</p>
@@ -92,7 +92,7 @@ nav-title: Using the Cross Site Scripting Policy
 </ul>
 <h5>Step 4: Attach Policy</h5>
 <p>After you have saved your policy you can  attach it to a web service  or you can attach the policy at the Organization level and the policy will be active for all services defined within the orgnization. </p>
-<p><img src="attach policy.jpg" width="485" height="221"></p>
+<p><img src="images/attach policy.jpg" width="485" height="221"></p>
 
 
 <p><a href="#top">Back to top</a></p>

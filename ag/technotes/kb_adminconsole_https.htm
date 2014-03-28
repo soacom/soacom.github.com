@@ -4,7 +4,7 @@ title: Enable HTTPS Access to the SOA Software Administration Console for Policy
 description: Configure container system.properties to enable HTTPS access to the SOA Software Administration Console.
 product: ag
 category: learn
-weight:	8
+weight:	6
 subcategory: Technical Note
 type: page
 nav-title: Enable HTTPS Access to the SOA Software Administration Console for Policy Manager 6.x/7.x
@@ -12,7 +12,7 @@ nav-title: Enable HTTPS Access to the SOA Software Administration Console for Po
 ---
 <h2 name="top">Enable HTTPS Access to the SOA Software Administration Console for Policy Manager 6.x/7.x</h2>
 
-<p>Configure container system.properties to enable HTTPS  access to the SOA Software Administration Console.</p>
+<p>Configure container system.properties to enable HTTPS access to the SOA Software Administration Console.</p>
 
 
 
@@ -55,14 +55,14 @@ nav-title: Enable HTTPS Access to the SOA Software Administration Console for Po
     <li>If you add an HTTPS listener to the system.properties file <em>after</em> you install the Policy Manager features, the HTTPS listener will not registered automatically in the database and you will need to add an HTTPS listener using the <strong>Add Container Listener</strong> function in the Policy Manager &quot;Containers&quot; section in order to update the container metadata. Note that the HTTPS listener configuration should have &quot;Bind to all interfaces&quot; checked, and you can optionally choose to clone services hosted on other listeners. You must also generate a certificate for the listener after it is defined using the <strong>Manage PKI Keys </strong>option. See screen examples below. </li>
     <li>If you add a UI-Browsing listener to the system.properties file, Policy Manager will get the listener information from the system.properties file. </li>
   </ul>
-<p><img src="add_https_listener.jpg" width="503" height="372"></p>
-<p><img src="manage_pki_keys.jpg" width="509" height="138"></p>
+<p><img src="images/add_https_listener.jpg" width="503" height="372"></p>
+<p><img src="images/manage_pki_keys.jpg" width="509" height="138"></p>
 <p><a href="#top">Back to top</a></p>
 <h3><a name="configuration">Configuration</a></h3>
   <p>Let's take a quick walkthrough of the HTTPS configuration process to get your started. </p>
   <h5>Step 1: Add HTTPS Listener (Options)</h5>
   <p>To enable an HTTPS listener  you must update the system.properties file in the \&lt;release_directory&gt;\instances  folder. Load the system.properties file into an editor and configure it based on the following SOA Software Administration Console access scenarios. We use port 9446 in these examples.</p>
-  <p><img src="system_properties_folder.jpg" width="566" height="299"></p>
+  <p><img src="images/system_properties_folder.jpg" width="566" height="299"></p>
   <p> </p>
   <h5>Option 1: HTTPS Access / UI Browsing Only</h5>
 <p>This option restricts access to the SOA Software Administration Console to the specified HTTPS listener. </p>
@@ -104,7 +104,7 @@ nav-title: Enable HTTPS Access to the SOA Software Administration Console for Po
 
    <li>Copy the file to the  \deploy folder as illustrated below:<br>
      <br>
-     <img src="admin_console_config.jpg" width="603" height="169"><br><br>
+     <img src="images/admin_console_config.jpg" width="603" height="169"><br><br>
    </li>
 
    <li>Restart the container.
@@ -124,7 +124,7 @@ nav-title: Enable HTTPS Access to the SOA Software Administration Console for Po
   </ul>
 
   </li>
-  <img src="admin_config_category.jpg">
+  <img src="images/admin_config_category.jpg">
   </ul>
   <br>
 <br>
@@ -167,4 +167,5 @@ The reason is that when Policy Manager starts its listener is tries to determine
   </ol>
 
 
+  <p><a href="#top">Back to top</a></p>
 <div class = "divider1"></div>
