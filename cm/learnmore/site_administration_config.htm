@@ -64,23 +64,11 @@ no-catalog: true
 
 <h5 style="color: gray;">Configuration:</h5>
 <ol class="table_of_contents">
-  <li><a href="#how_do_i_configure_api_settings">How do I configure API settings?</a></li>
-  <li><a href="#how_do_i_configure_app_settings">How do I configure app settings?</a></li>
-  <li><a href="#how_do_i_configure_group_settings">How do I configure group settings?</a></li>
-</ol>
-
-
-
-<h5 style="color: gray;">Workflow:</h5>
-<ol class="table_of_contents">
-  <li><a href="#which_workflows_can_i_customize">Which workflows can I customize?</a></li>
-  <li><a href="#how_do_i_set_up_and_manage_custom_workflows">How do I set up and manage custom workflows?</a></li>
-  <li><a href="#how_do_i_specify_a_custom_workflow_for_apis">How do I specify a custom workflow for APIs?</a></li>
-  <li><a href="#how_do_i_specify_a_custom_workflow_for_apps">How do I specify a custom workflow for apps?</a></li>
-  <li><a href="#how_do_i_specify_a_custom_workflow_for_app_api_contracts">How do I specify a custom workflow for app/API contracts?</a></li>
-  <li><a href="#how_do_i_specify_a_custom_workflow_for_groups">How do I specify a custom workflow for groups?</a></li>
-  <li><a href="#how_do_i_specify_a_custom_workflow_for_tickets">How do I specify a custom workflow for tickets?</a></li>
-  <li><a href="#how_do_i_specify_a_custom_workflow_for_oauth_grants">How do I specify a custom workflow for OAuth grants?</a></li>
+  <li><a href="#how_do_i_configure_settings_for_apis">How do I configure settings for APIs?</a></li>
+  <li><a href="#how_do_i_configure_settings_for_apps">How do I configure settings for apps?</a></li>
+  <li><a href="#how_do_i_configure_settings_for_connections">How do I configure settings for app/API connections?</a></li>
+  <li><a href="#how_do_i_configure_settings_for_groups">How do I configure settings for groups?</a></li>
+  <li><a href="#how_do_i_configure_settings_for_tickets">How do I configure settings for tickets?</a></li>
 </ol>
 
 
@@ -365,13 +353,13 @@ no-catalog: true
 
 
 <a name="what_is_a_target_host"></a><h3>What is a Target Host?</h3>
-<p>Site Administrators can specify different URLs for logging into the platform based on roles (Administrator, Developer, User, etc.), or for a Backdoor Login if one of your domain configurations is down. This is accomplished by specifying a virtual host address for each login domain referred to as a <em>Target Host</em> (e.g., &lt;role&gt;.&lt;company&gt;.com).</p>
+<p>Site Administrators can specify different URLs for logging into the platform based on role (Business Admin, API Admin, Developer, and so forth), or for a Backdoor Login if one of the domain configurations is down. This is accomplished by specifying a virtual host address for each login domain referred to as a <em>Target Host</em> (e.g., &lt;role&gt;.&lt;company&gt;.com).</p>
 <p>The recommended approach is to develop a login plan for each role that covers different types of login scenarios.</p>
+<p>For example, if your site uses CA SiteMinder exclusively for logins, and the CA SiteMinder login is down for some reason, you will need a backdoor login to investigate the problem. To provide a resolution for this scenario, here are two possible approaches:</p>
 <ul>
-  <li>For example, if your site uses CA SiteMinder exclusively for logins, and the CA SiteMinder login is down for some reason, you will need a backdoor login to investigate the problem.</li>
-  <li>In this scenario you could configure the platform default login Target Host so that only the Site Administrator can log in using email and password credentials.</li>
-  <li>You could also configure an alternate Facebook (using the Facebook Connector domain) or Google login (using the OpenID Relying Provider domain) and specify a Target Host for backdoor logins.
-</li>
+  <li>Configure the platform default login Target Host so that only the Site Administrator can log in using email and password credentials.</li>
+  <li>Configure an alternate Facebook domain (using the Facebook Connector domain) or Google login domain (using the OpenID Relying Provider domain) and specify a Target Host for back door logins.
+  </li>
 </ul>
 <p><a href="#top">Back to top</a></p>
 
@@ -513,7 +501,7 @@ no-catalog: true
 
 
 
-<a name="how_do_i_configure_api_settings"></a><h3>How do I configure API settings?</h3>
+<a name="how_do_i_configure_settings_for_apis"></a><h3>How do I configure settings for APIs?</h3>
 <p>You can configure API settings to determine which features will be available for all APIs on the platform. If a feature is disabled in the API settings page it will not be present in the user interface.</p>
 <p>Unless otherwise noted, settings are either enabled or disabled.</p>
 <p>You can configure the API settings shown in the tables below:</p>
@@ -531,6 +519,14 @@ no-catalog: true
   </tr>
 </thead>
 <tbody>
+  <tr class="t2row">
+    <td>Creation of API with new service</td>
+    <td>Determines whether users can create an API that isn't already set up as a service in the API Gateway. Choose this option if users won't need to take advantage of the advanced capabilities offered by the API Gateway. (Default: enabled)</td>
+  </tr>
+  <tr class="t1row">
+    <td>Creation of API with existing service</td>
+    <td>Determines whether users can create an API by referencing a service already defined in the API Gateway. Choose this option if users might want to use the flexible service definition model offered by the API Gateway. (Default: diabled)</td>
+  </tr>
   <tr class="t2row">
     <td>API Workflow Definition</td>
     <td>The workflow definition (default or custom) that will apply to all new APIs on the platform (existing APIs are not affected).</td>
@@ -645,7 +641,7 @@ no-catalog: true
 
 
 
-<a name="how_do_i_configure_app_settings"></a><h3>How do I configure app settings?</h3>
+<a name="how_do_i_configure_settings_for_apps"></a><h3>How do I configure settings for apps?</h3>
 <p>You can configure app settings to determine which features will be available for all apps on the platform. If a feature is disabled in the app settings page it will not be present in the user interface.</p>
 <p>Unless otherwise noted, settings are either enabled or disabled.</p>
 <p>Available app configuration settings are shows in the tables below:</p>
@@ -673,7 +669,7 @@ no-catalog: true
     <td>SImultaneous Access to Sandbox and Production</td>
     <td> If enabled, grants access to both environments in one request.</td>
   </tr>
-  <tr class="t1row">
+  <tr class="t2row">
     <td>App Workflow Definition</td>
     <td>The workflow definition (default or custom) that will apply to all new apps on the platform (existing apps are not affected).</td>
   </tr>
@@ -740,7 +736,40 @@ no-catalog: true
 
 
 
-<a name="how_do_i_configure_group_settings"></a><h3>How do I configure group settings?</h3>
+<a name="how_do_i_configure_settings_for_connections"></a><h3>How do I configure settings for app/API connections?</h3>
+<p>You can configure connection settings to determine which features will be available for app/API connections on the platform. If a feature is disabled in the connection settings page it will not be present in the user interface.</p>
+<p>Unless otherwise noted, settings are either enabled or disabled.</p>
+<h5>General App/API Connection Settings</h5>
+<table cellspacing="0px" class="doctable" style="width: 90%;">
+<thead>
+  <tr>
+    <th width="40%">This setting...</th>
+    <th width="60%">Controls this feature...</th>
+  </tr>
+</thead>
+<tbody>
+  <tr class="t2row">
+    <td>Sandbox Contract  Workflow Definition</td>
+    <td>The workflow definition (default or custom) that will apply to all new sandbox app/API contracts on the platform (existing contracts are not  affected).</td>
+  </tr>
+  <tr class="t1row">
+    <td>Production Contract  Workflow Definition</td>
+    <td>The workflow definition (default or custom) that will apply to all new production app/API contracts on the platform (existing contracts are not  affected).</td>
+  </tr>
+</tbody>
+</table>
+
+<h5><a name="to_configure_app_api_connection_settings"></a>To configure app/API connection settings:</h5>
+<ol>
+  <li>Go to <em>Administration &gt; Config &gt; Connections</em>.</li>
+  <li>Change the settings as needed. For explanations of your choices, refer to the table above.</li>
+  <li>When done, click <strong>Save</strong>.</li>
+</ol>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_configure_settings_for_groups"></a><h3>How do I configure settings for groups?</h3>
 <p>You can configure group settings to determine which features will be available for all group on the platform. If a feature is disabled in the group settings page it will not be present in the user interface.</p>
 <p>Unless otherwise noted, settings are either enabled or disabled.</p>
 <p>Available group configuration settings are shows in the tables below:</p>
@@ -763,6 +792,10 @@ no-catalog: true
   <tr class="t2row">
     <td>Group Support</td>
     <td>Determines whether groups are supported on the platform. If this setting is disabled, nothing about groups appears in the platform and no other options relating to groups are available. </td>
+  </tr>
+  <tr class="t1row">
+    <td>Group Membership Workflow</td>
+    <td>The workflow definition (default or custom) that will apply to all new groups on the platform (existing groups are not affected).</td>
   </tr>
 </tbody>
 </table>
@@ -832,104 +865,35 @@ no-catalog: true
 
 
 
-<h4>Workflow:</h4>
+<a name="how_do_i_configure_settings_for_tickets"></a><h3>How do I configure settings for tickets?</h3>
+<p>You can configure ticket settings to determine which features will be available for tickets on the platform. If a feature is disabled in the ticket settings page it will not be present in the user interface.</p>
+<p>Unless otherwise noted, settings are either enabled or disabled.</p>
+<h5>General Ticket Settings</h5>
+<table cellspacing="0px" class="doctable" style="width: 90%;">
+<thead>
+  <tr>
+    <th width="40%">This setting...</th>
+    <th width="60%">Controls this feature...</th>
+  </tr>
+</thead>
+<tbody>
+  <tr class="t2row">
+    <td>Ticket Support</td>
+    <td>Determines whether tickets are supported on the platform. If this setting is disabled, nothing about tickets appears in the platform and no other options relating to tickets are available. </td>
+  </tr>
+  <tr class="t1row">
+    <td>Ticket Workflow Definition</td>
+    <td>The workflow definition (default or custom) that will apply to all new tickets on the platform (existing tickets are not affected).</td>
+  </tr>
+</tbody>
+</table>
 
-
-
-<a name="which_workflows_can_i_customize"></a><h3>Which workflows can I customize?</h3>
-<p>You can customize the following workflows:</p>
-<ul>
-  <li>API (Business Admin uploads in Administrator / Workflows; Site Admin specifies as default in Config / APIs) </li>
-  <li>App (Business Admin uploads in Administrator / Workflows; Site Admin specifies as default in Config / Apps)</li>
-  <li>API access request (must be changed in database; <a href="basics_support.htm#how_do_i_contact_technical_support">contact Technical Support</a>)</li>
-  <li>Group membership request (must be changed in database; <a href="basics_support.htm#how_do_i_contact_technical_support">contact Technical Support</a>)</li>
-  <li>Ticket (must be changed in database; <a href="basics_support.htm#how_do_i_contact_technical_support">contact Technical Support</a>)</li>
-<!--  <li>OAuth Grants (must be changed in database; <a href="basics_support.htm#how_do_i_contact_technical_support">contact Technical Support</a>)</li>-->
-</ul>
-<p class="apidoc_note"><strong>Note</strong>: OAuth grants cannot be customized at this time.</p>
-<p><a href="#top">Back to top</a></p>
-
-
-
-<a name="how_do_i_set_up_and_manage_custom_workflows"></a><h3>How do I set up and manage custom workflows?</h3>
-<p>The first step in implementing a custom workflow is for the Business Admin to develop the custom workflow and upload it to the platform. For more information on custom workflows and the upload process, refer to <a href="business_administration_workflows.htm#what_is_a_custom_workflow">What is a custom workflow?</a> and <a href="business_administration_workflows.htm#how_do_i_set_up_and_manage_custom_workflows">How do I set up and manage custom workflows?</a></p>
-<p>Once the Business Admin has uploaded a custom workflow, the Site Admin can specify that workflow as the default for the resource type. From that point onwards, the new workflow applies to any new resources of that type. Existing resources are not affected.</p>
-<p> Follow the instructions for the applicable object type:</p>
-<ul>
-  <li><a href="#how_do_i_specify_a_custom_workflow_for_apps">How do I specify a custom workflow for apps?</a></li>
-  <li><a href="#how_do_i_specify_a_custom_workflow_for_apis">How do I specify a custom workflow for APIs?</a></li>
-  <li><a href="#how_do_i_specify_a_custom_workflow_for_app_api_contracts">How do I specify a custom workflow for app/API contracts?</a></li>
-  <li><a href="#how_do_i_specify_a_custom_workflow_for_groups">How do I specify a custom workflow for groups?</a></li>
-  <li><a href="#how_do_i_specify_a_custom_workflow_for_tickets">How do I specify a custom workflow for tickets?</a></li>
-<!--  <li><a href="#how_do_i_specify_a_custom_workflow_for_oauth_grants">How do I specify a custom workflow for OAuth grants?</a></li>-->
-</ul>
-<p class="apidoc_note"><strong>Note</strong>: when you specify a new custom workflow for a resource, it affects all future resources. Existing resources are not affected. In some cases, it's possible to modify the workflow used for an individual resource. For example, the API Admin or Business Admin can modify the workflow that a specific API uses, in the API Details page.</p>
-
-<h5>To view a custom workflow:</h5>
+<h5><a name="to_configure_ticket_settings"></a>To configure ticket settings:</h5>
 <ol>
-  <li>Log in as Site Admin or Business Admin.</li>
-  <li>Go to <em>Admin &gt; Workflows</em>.</li>
-  <li>Find the workflow on the list and click <strong>View</strong>. The workflow XML file is displayed in a separate window.</li>
+  <li>Go to <em>Administration &gt; Config &gt; Tickets</em>.</li>
+  <li>Change the settings as needed. For explanations of your choices, refer to the table above.</li>
+  <li>When done, click <strong>Save</strong>.</li>
 </ol>
-<p><a href="#top">Back to top</a></p>
-
-
-
-<a name="how_do_i_specify_a_custom_workflow_for_apis"></a><h3>How do I specify a custom workflow for APIs?</h3>
-<p>The Site Admin can specify a custom workflow and set that as the default workflow for all future APIs on the platform. When the default workflow is changed, the new workflow applies to all new APIs, but existing APIs are not affected.</p>
-<p>Before specifying the custom workflow as the platform default, the Business Admin must first create the custom workflow externally and upload it. For instructions, see <a href="business_administration_workflows.htm#to_upload_a_custom_workflow">To upload a custom workflow</a>.</p>
-<h5>To specify a custom workflow for APIs:</h5>
-<ol>
-  <li>Log in as Site Admin.</li>
-  <li>Go to <em>Admin &gt; Config &gt; APIs</em>.</li>
-  <li>Under API Workflow Definition, click the drop-down list to choose the custom workflow. 
-  <span class="apidoc_note"><strong>Note</strong>: If the workflow isn't available for selection, it hasn't yet been uploaded by the Business Admin. For instructions, see <a href="business_administration_workflows.htm#to_upload_a_custom_workflow">To upload a custom workflow</a>.</span>
-</li>
-  <li>Click <strong>Save</strong>.</li>
-</ol>
-<p>For more information on API settings, refer to <a href="#to_configure_api_settings">To configure API settings</a>.</p>
-<p><a href="#top">Back to top</a></p>
-
-
-
-<a name="how_do_i_specify_a_custom_workflow_for_apps"></a><h3>How do I specify a custom workflow for apps?</h3>
-<p>The Site Admin can specify a custom workflow and set that as the default workflow for all future apps on the platform. When the default workflow is changed, the new workflow applies to all new apps, but existing apps are not affected.</p>
-<p>Before specifying the custom workflow as the platform default, the Business Admin must first create the custom workflow externally and upload it. For instructions, see <a href="business_administration_workflows.htm#to_upload_a_custom_workflow">To upload a custom workflow</a>.</p>
-<h5>To specify a custom workflow for apps:</h5>
-<ol>
-  <li>Log in as Site Admin.</li>
-  <li>Go to <em>Admin &gt; Config &gt; Apps</em>.</li>
-  <li>Under App Workflow Definition, click the drop-down list to choose the custom workflow. 
-  <span class="apidoc_note"><strong>Note</strong>: If the workflow isn't available for selection, it hasn't yet been uploaded by the Business Admin. For more information, see <a href="business_administration_workflows.htm#to_upload_a_custom_workflow">To upload a custom workflow</a>.</span>
-</li>
-  <li>Click <strong>Save</strong>.</li>
-</ol>
-<p>For more information on API settings, refer to <a href="#to_configure_api_settings">To configure API settings</a>.</p>
-<p><a href="#top">Back to top</a></p>
-
-
-
-
-<a name="how_do_i_specify_a_custom_workflow_for_app_api_contracts"></a><h3>How do I specify a custom workflow for app/API contracts?</h3>
-<p>You can modify the default workflow for app/API contracts (API access requests), but there is currently no way to apply the custom workflow through the user interface. You'd need to make modifications to the database. If you need to do this, <a href="basics_support.htm#how_do_i_contact_technical_support">contact technical support</a> for assistance.</p>
-<p><a href="#top">Back to top</a></p>
-
-
-
-<a name="how_do_i_specify_a_custom_workflow_for_groups"></a><h3>How do I specify a custom workflow for groups?</h3>
-<p>You can modify the default workflow for groups, but there is currently no way to apply the custom workflow through the user interface. You'd need to make modifications to the database. If you need to do this, <a href="basics_support.htm#how_do_i_contact_technical_support">contact technical support</a> for assistance.</p>
-<p><a href="#top">Back to top</a></p>
-
-
-
-<a name="how_do_i_specify_a_custom_workflow_for_tickets"></a><h3>How do I specify a custom workflow for tickets?</h3>
-<p>You can modify the default workflow for tickets, but there is currently no way to apply the custom workflow through the user interface. You'd need to make modifications to the database. If you need to do this, <a href="basics_support.htm#how_do_i_contact_technical_support">contact technical support</a> for assistance.</p>
-<p><a href="#top">Back to top</a></p>
-
-
-
-<a name="how_do_i_specify_a_custom_workflow_for_oauth_grants"></a><h3>How do I specify a custom workflow for OAuth grants?</h3>
-<p>You can modify the default workflow for OAuth grants, but there is currently no way to apply the custom workflow through the user interface. You'd need to make modifications to the database. If you need to do this, <a href="basics_support.htm#how_do_i_contact_technical_support">contact technical support</a> for assistance.</p>
 <p><a href="#top">Back to top</a></p>
 
 

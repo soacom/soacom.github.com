@@ -21,8 +21,8 @@ no-catalog: true
 
 <ol class="table_of_contents">
   <li><a href="#what_are_connections">What are Connections?</a></li>
-  <li><a href="#how_do_i_manage_api_connections">How do I manage API connections?</a></li>
   <li><a href="#what_is_the_api_approval_process">What is the API approval process?</a></li>
+  <li><a href="#how_do_i_see_the_status_of_my_apps_connections_to_apis">How do I see the status of my app's connections to APIs?</li>
   <li><a href="#how_do_i_update_approved_api_access_requests">How do I update approved API Access Requests?</a></li>
 </ol>
 <div class = "divider1"></div>
@@ -65,13 +65,25 @@ no-catalog: true
 
 
 
-<a name="how_do_i_manage_api_connections"></a><h3>How do I manage API Connections?</h3>
-<p>The <em>My APIs &gt; Apps</em> page provides a high level summary of workflow status for apps that have requested access to the current API using the <strong>API Access</strong> function.</p>
+<a name="what_is_the_api_approval_process"></a><h3>What is the API approval process?</h3>
+<p>When an API Access Request is submitted:</p>
+<ul>
+  <li>A board entry is posted to the <em>My Apps &gt; Board</em> of the app developer making the request, a notification is posted on the API Administrator's <em>Dashboard</em> page, and the API is added to <em>My APIs &gt; Apps</em> with a &quot;Pending Approval&quot; status.</li>
+  <li>The API Administrator reviews the API Access Request.</li>
+  <li>If the submitted API complies with the required approval criteria, the API Administrator approves the request, the ticket is updated to an &quot;Approved&quot; status, and the table entry for the API in <em>My Apps &gt; API Name &gt; APIs</em> is updated to an &quot;Activated&quot; status.</li>
+  <li>After API access is activated, you can use the API in the applicable environment.</li>
+</ul>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_see_the_status_of_my_apps_connections_to_apis"></a><h3>How do I see the status of my app's connections to APIs?</h3>
+<p>You can review the status of your app's connections with APIs, including pending and active API access requests, in the <em>My Apps &gt; App &gt; APIs</em> page. This page provides a high level summary of the current state for current API access contracts or pending API access requests.</p>
 <p>Each listing includes:</p>
 <ul>
   <li>Apps&#8212;The App Name. This link clicks through to the <em>App Details</em> page.</li>
   <li>Legals&#8212;A column that indicates whether the Legal Agreements have been accepted (Check = Accepted, No Check = No Accepted).</li>
-  <li>Sandbox / Production&#8212;Represent the two environments that an API Access Request can be submitted for. Each column displays the current status of the API Access Request and relevant management functions (e.g., Cancel, Suspect, Resume, Request Access, Switch to Production).</li>
+  <li>Sandbox / Production&#8212;Represent the two environments that an API Access Request can be submitted for. Each column displays the current status of the API Access Request and available API management functions (e.g., Cancel, Suspend, Resume, Request Access, Switch to Production). The valid actions for a specific contract are determined by the current state of the contract; for example, only a contract that is currently in a state of Suspended can be resumed, only a contract in a state of Activated can be cancelled. For more information on API access states and valid actions, see <a href="business_administration_workflows.htm#what_is_the_default_workflow_for_app_api_contracts">What is the default workflow for app/API contracts?</a></li>
 </ul>
 <p>The following table shows <em>App Status</em> and <em>App Management Tasks</em> for apps that have requested access to the current API using the <strong>API Access</strong> function:</p>
 <table cellspacing="0px" class="doctable" style="width: 90%;">
@@ -173,17 +185,6 @@ no-catalog: true
   </table>
 <p><a href="#top">Back to top</a></p>
 
-
-
-<a name="what_is_the_api_approval_process"></a><h3>What is the API approval process?</h3>
-<p>When an API Access Request is submitted:</p>
-<ul>
-  <li>A board entry is posted to the <em>My Apps &gt; Board</em> of the app developer making the request, a notification is posted on the API Administrator's <em>Dashboard</em> page, and the API is added to <em>My APIs &gt; Apps</em> with a &quot;Pending Approval&quot; status.</li>
-  <li>The API Administrator reviews the API Access Request.</li>
-  <li>If the submitted API complies with the required approval criteria, the API Administrator approves the request, the ticket is updated to an &quot;Approved&quot; status, and the table entry for the API in <em>My Apps &gt; API Name &gt; APIs</em> is updated to an &quot;Activated&quot; status.</li>
-  <li>After API access is activated, you can use the API in the applicable environment.</li>
-</ul>
-<p><a href="#top">Back to top</a></p>
 
 
 <a name="how_do_i_update_approved_api_access_requests"></a><h3>How do I update approved API Access Requests?</h3>

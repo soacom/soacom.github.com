@@ -58,11 +58,7 @@ no-catalog: true
 
 
 <a name="what_domain_types_are_supported"></a><h3>What domain types are supported?</h3>
-<p>The platform domain types can be used to log into the platform, or can be configured with an OAuth Provider. After each domain is installed, entries will show in the platform as follows:</p>
-<ul>
-  <li>In the <em>Site Administration &gt; Domain</em>s section, the defined domain will be selectable from the <em>Resource Owner Authentication Domain</em> drop-down when you configure an OAuth Provider domain.</li>
-  <li>In the <em>Site Administration &gt; Config &gt; Users</em> section the defined domain will be available on the <em>List of Users</em> page and can be enabled as a login option.</li>
-</ul>
+<p>The platform domain types can be used to log in to the platform, or can be configured with an OAuth Provider.</p>
 <p>The following domains are supported:</p>
 <ul>
   <li><a href="#how_do_i_configure_a_platform_login_default_domain">Platform Login (Default)</a></li>
@@ -86,12 +82,21 @@ no-catalog: true
 
 <a name="how_do_i_configure_a_facebook_connector_domain"></a>
 <h3>How do I configure a Facebook Connector domain?</h3>
-<p>The Facebook Connector domain allows users to log into the platform using Facebook credentials.</p>
-<h5>Installation Method:</h5>
-<p>A <strong>Facebook Connector</strong> domain option is installed (by default) to the <strong>Site Administration &gt; Domains </strong> section of your platform deployment.</p>
-<p>Using the <strong>Add Domain</strong> function, Site Administrators can select the <strong>Facebook Connector</strong> domain type. This launches the <strong>Add Connector Domain Wizard</strong> where you can assign an App ID and App Secret, then enable the domain in the <em>Site Administrator &gt; Config &gt; Logins </em>section.</p>
-<h5>Documentation:</h5>
-<p>See the <em>Site Admin &gt; Domains </em>and <em>Site Admin &gt; Config</em> sections of the platform online help for more information.</p>
+<p>The Facebook Connector domain allows users to log into the platform using Facebook credentials. Essentially, the Site Admin registers the platform with Facebook as a Facebook app, and then uses the values provided by Facebook for App ID and App Secret to set up the Facebook Connector domain. Once this is set up, the Facebook icon appears during signup and users can log in using Facebook credentials.</p>
+<p><strong>Note</strong>: For certain actions, such as creating an API, users must complete the standard platform signup process. Logging in with Facebook is not adequate for these activities.</p>
+<p>Before setting up the domain in the platform, you'll need to register the platform as an app on the Facebook developer site and get the App ID and Shared Secret values. For instructions, see below.</p>
+<p>Once the configuration steps are done, you can enable the domain in the <em>Site Administrator &gt; Config &gt; Logins </em>section.</p>
+<h5><a name="to_configure_domain_facebook_connector"></a>To configure a Facebook Connector domain:</h5>
+<ol>
+  <li>Log in as the Site Administrator.</li>
+  <li>Click the <em>Administration</em> quick filter (wrench icon). The <em>Site Administration</em> page displays.</li>
+  <li>Click <strong>Domains</strong>. The <em>Domains Summary</em> page displays.</li>
+  <li>Click <strong>Add Domain</strong>. The <strong>Select Domain Type</strong> drop-down menu displays.</li>
+  <li>Select <strong>Facebook Connector</strong> and click <strong>Select</strong>. The <em>Add Connector Domain</em> page displays.</li>
+  <li>Specify values for Name and Description and then click <strong>Next</strong>.</li>
+  <li>For App ID and App Secret, provide the values that were assigned by Facebook after registering the platform as an app at <a href="https://developers.facebook.com/apps" target="_blank">https://developers.facebook.com/apps</a>.</li>
+  <li>Click <strong>Save</strong>.</li>
+</ol>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -105,7 +110,7 @@ no-catalog: true
 <p><em>Note: This domain type adds the OAuth Provider domain option to the &quot;Select Domain Type&quot; menu and is not posted as a Login option in the Site Administration &gt; Config &gt; Logins section. </em></p>
 <h5>Configuration:</h5>
 <p>After defining your access permissions domain, the next step is to configure one or more OAuth Provider domains that represent the OAuth authentication use case types the APIs in your platform deployment will support.</p>
-<h5>To configure an OAuth Provider domain:</h5>
+<h5><a name="to_configure_domain_oauth_provider"></a>To configure an OAuth Provider domain:</h5>
 <ol>
   <li>Click the <em>Administration</em> quick filter (wrench icon). The <em>Site Administration</em> page displays.</li>
   <li>Click <strong>Domains</strong>. The <em>Domains Summary</em> page displays.</li>
@@ -139,7 +144,7 @@ no-catalog: true
 </ul>
 </li>
   <li>Click <strong>Next</strong>. The <em>Grant Properties</em> page displays.</li>
-  <li>In the &quot;Properties&quot; section, click <strong>+Add</strong> to create a grant property instance and specify the &quot;Property Label&quot; and &quot;Property ID.&quot;  <em>Note that specifying grant properties is optional.</em>
+  <li>In the &quot;Properties&quot; section, click <strong>+Add</strong> to create a grant property instance and specify the &quot;Property Label&quot; and &quot;Property ID.&quot; <em>Note that specifying grant properties is optional.</em>
     <ul>
       <li>The &quot;Property Label&quot; represents the text description of the grant property. It is only visible in the platform.</li>
       <li>The &quot;Property ID&quot; represents the object ID that references the property file that is stored on the OAuth Provider's site.</li>
@@ -242,8 +247,8 @@ no-catalog: true
 <p>As part of setting up the OAuth domain, the Site Admin must specify the Authorization Server URL. This is the URL that the browser for the resource owner (app user) will be accessing for the OAuth grant.</p>
 <p>It is the URL at which the OAuth Provider accesses the requests, for both Authorization Endpoint and Token Endpoint.</p>
 <p><strong>Note</strong>: One deployment can support more than one OAuth Provider. If there is more than one, it is important that each OAuth Provider has a different Authorization Server URL, for both Authorization Endpoint and Token Endpoint.</p>
-<p>For a full definition of Authorization Endpoint and Token Endpoint, refer to the OAuth specification.
-<p>When setting up the OAuth domain, once you have specified the Authorization  Server URL it is important to make sure that requests are directed to this URL where either OAuth Provider or OAuth Provider Agent features are installed. This might include additional actions; for example, adding a DNS entry or configuring the load balancer if the URL is a virtual endpoint on F5.</p>
+<p>For a full definition of Authorization Endpoint and Token Endpoint, refer to the OAuth specification.</p>
+<p>When setting up the OAuth domain, once you have specified the Authorization Server URL it is important to make sure that requests are directed to this URL where either OAuth Provider or OAuth Provider Agent features are installed. This might include additional actions; for example, adding a DNS entry or configuring the load balancer if the URL is a virtual endpoint on F5.</p>
 <p>The URL you provide for the Authorization Server is the base of the URL for the Request Token URL, Access Token URL, and Authorize URL, with additional parts of the paths as shown below. The Callback URL is the Redirect URL that an app developer would provide in the App details page. </p>
 <p>The URLs for both supported OAuth versions are shown below.</p>
 <p>OAuth 1.0a:</p>

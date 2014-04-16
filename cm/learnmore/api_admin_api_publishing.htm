@@ -45,6 +45,7 @@ no-catalog: true
   <li><a href="#how_do_i_delete_an_api">How do I delete an API?</a></li>
   <li><a href="#how_do_i_determine_what_licenses_will_be_available_for_my_api">How do I determine what licenses will be available for my API?</a></li>
   <li><a href="#how_do_i_edit_the_license_on_an_api_access_request_api_administrator">How do I edit the license on an API access request?</a></li>
+  <li><a href="#how_do_i_see_the_status_of_my_apis_contracts_with_apps">How do I see the status of my API's contracts with apps?</a></li>
 </ol>
 <div class = "divider1"></div>
 
@@ -182,12 +183,15 @@ no-catalog: true
 
 
 <a name="how_do_i_add_an_api"></a><h3>How do I add an API?</h3>
-<p>The platform provides an<strong> Add a New API</strong> function that allows you to either add an API by defining a new service, (SOAP-based or REST-based), or add an API for a service that's already defined in the <a href="basics_glossary.htm#gl_api_gateway">API Gateway</a>.</p>
-<p>From the <em>Plus Menu</em> (the <strong>+</strong> icon at the top of the page), select <strong>Add a New API</strong>. In the <strong>Select Type of API</strong> overlay, choose one of the following:</p>
+<p>Your ability to add an API, and the choices available to you, vary according to the configuration settings for the specific instance of the platform you are using.</p>
+<p>If you have the applicable permission, you can add an API. Click the  <em>Plus Menu</em> (the <strong>+</strong> icon at the top of the page) and choose Add a New API. For additional instructions, see <a href="#how_do_i_add_a_new_api">How do I add a new API (API with New Service)?</a> below.</p>
+<p>In some cases, your version of the platform might be configured to allow you to either add an API by defining a new service, (SOAP-based or REST-based), or add an API for a service that's already defined in the <a href="basics_glossary.htm#gl_api_gateway">API Gateway</a>.</p>
+<p>If this is your scenario&#8212;from the <em>Plus Menu</em> (the <strong>+</strong> icon at the top of the page), select <strong>Add a New API</strong> and you will see the <strong>Select Type of API</strong> overlay. Choose one of the following:</p>
 <ul>
   <li><strong>API with New Service</strong>: use this option for any API that isn't already set up as a service in <a href="basics_glossary.htm#gl_api_gateway">the API Gateway</a>, or if you don't need to take advantage of the additional options offered by the API Gateway. For additional information and instructions, see <a href="#how_do_i_add_a_new_api">How do I add a new API (API with New Service)?</a> below.</li>
   <li><strong>API with Existing Service</strong>: use this option when the service is already defined in the API Gateway console, or if you want to create the service using the flexible service definition model offered by the API Gateway. For more information, see <a href="#how_do_i_add_an_api_from_a_policy_manager_service">How do I add an API from an existing API Gateway service (API with Existing Service)?</a> below.</li>
 </ul>
+<p><strong>Note</strong>: If the above options are not available to you and you feel they should be, contact your Site Admin for assistance.</p>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -195,7 +199,7 @@ no-catalog: true
 <a name="how_do_i_add_a_new_api"></a>
 <h3>How do I add a new API (API with New Service)?</h3>
 <p>The platform provides an<strong> Add a New API</strong> function that allows you to add a <em>SOAP</em> or <em>REST</em>-based API. APIs can be added for both Sandbox and Production environments.</p>
-<p>Note: If you want to add an API from a service already defined in the <a href="basics_glossary.htm#gl_api_gateway">API Gateway</a>, use the <strong>Add API from Service</strong> option instead of Add a New API. For more information, see <a href="#how_do_i_add_an_api_from_a_policy_manager_service">How do I add an API from an existing API Gateway service (API with Existing Service)?</a> below.</p>
+<p>Note: If you want to add an API from a service already defined in the <a href="basics_glossary.htm#gl_api_gateway">API Gateway</a>, use the <strong>Add API from Service</strong> option (if available) instead of Add a New API. For more information, see <a href="#how_do_i_add_an_api_from_a_policy_manager_service">How do I add an API from an existing API Gateway service (API with Existing Service)?</a> below.</p>
 <p><strong>Prerequisites:</strong></p>
 <ul>
   <li>Have your API documentation and legal agreements ready to upload before publishing your API.</li>
@@ -207,7 +211,8 @@ no-catalog: true
 <p><strong>Target</strong></p>
 <p>On the <em>Target</em> page, you can configure SOAP-based APIs by specifying the SOAP version and WSDL. REST-based APIs are configured by specifying one or more operations. Policy selection is not required for the Target URL.</p>
 <p><strong>Proxy</strong></p>
-<p>The Proxy API page allows you to configure your API's proxy settings. If you would like to proxy your API, select the <strong>Yes</strong> radio button in the <em>Proxy API</em> section. There are many benefits to proxying your API including utilizing platform security and service-level policies, monitoring performance, and allowing App Developers to gain access to your API sandbox endpoint (to test API functionality in their app), and production endpoint (to use API functionality in a live application). The Allow Anonymous Access option allows you to enable anonymous access to an API endpoint if you would like to offer a preview of an API to developers without requiring users to create an app or sign up to the platform. For more information, see <a href="#what_is_anonymous_api_access">What is anonymous API access?</a>.</p>
+<p>The Proxy API page allows you to configure your API's proxy settings. If you would like to proxy your API, select the <strong>Yes</strong> radio button in the <em>Proxy API</em> section.</p>
+<p>There are many benefits to proxying your API including utilizing platform security and service-level policies, monitoring performance, and allowing App Developers to gain access to your API sandbox endpoint (to test API functionality in their app), and production endpoint (to use API functionality in a live application). The Allow Anonymous Access option allows you to enable anonymous access to an API endpoint if you would like to offer a preview of an API to developers without requiring users to create an app or sign up to the platform. For more information, see <a href="#what_is_anonymous_api_access">What is anonymous API access?</a></p>
 <h5>To add a new API:</h5>
 <p><strong>A. Launch the Add a New API Wizard</strong></p>
 <ol>
@@ -337,11 +342,11 @@ no-catalog: true
     </ul>
   </li>
   </ol>
-<p><strong>G. Configure Production Endpoint</strong></p>
+<p><strong>G. Configure Production Endpoint (Proxy)</strong></p>
 <ol>
   <li>In the <em>Production Endpoint</em> section, configure the proxy information for each Sandbox or Production endpoint.
     <ul>
-      <li>In the <strong>URL</strong> section, specify the protocol. When the system proxies the API, the URL is made up of a selected protocol and hostname in the first field plus the path in the second field. You do not need to specify a path.</li>
+      <li>In the <strong>URL</strong> section, specify the protocol. When the system proxies the API, the URL is made up of a selected protocol and hostname in the first field plus the path in the second field. You do not need to specify a path. The default URL shown in this field is constructed from the deployment zones loaded in the platform or, if no deployment zones were loaded, based on Network Director instances configured in the organization path from the root to the tenant organization.</li>
       <li>For <strong>Allow Anonymous Access</strong>, click the <strong>Yes</strong> or <strong>No</strong> radio button to indicate whether you would like to enable or disable anonymous access for this API. See <a href="#what_is_anonymous_api_access">What is Anonymous API Access?</a> for more information.</li>
       <li>For <strong>This API requires Approval</strong>, indicate whether you would like to approve API access requests made with the <strong>API Access Wizard</strong>. All API Access Requests can be monitored by API Providers and designated administrators in the <em>API Name &gt; Apps</em> section.</li>
       <li>If you select <strong>Yes</strong>, proceed and configure the <em>Production Endpoint </em>and <em>Advanced Options</em>.</li>
@@ -411,8 +416,7 @@ no-catalog: true
   <li>Click <strong>Next</strong> to go to the <strong>Target API</strong> page.</li>
   <li>Set up the following values for at least one environment in which the API is running:
     <ul>
-  <li>Service Key. Enter the environment name, unique service key, or URL. The platform locates the API Gateway service, and you can then select it. <br />
-    To locate the appropriate value, go to the API Gateway, open up the service, and click Edit. Copy the value and paste it into this field. </li>
+  <li>Service Key. Enter the environment name, unique service key, or URL. The platform locates the API Gateway service, and you can then select it. To locate the appropriate value, go to the API Gateway, open up the service, and click Edit. Copy the value and paste it into this field.</li>
   <li>Allow <a href="#what_is_anonymous_api_access">anonymous access</a> (yes/no)</li>
       <li>Approval required (yes/no)</li>
     </ul>
@@ -513,7 +517,7 @@ no-catalog: true
 <p><strong><u>B. Set up Contract </u></strong></p>
 <ol>
   <li>Add a new app. See <a href="create_app_creation.htm#how_do_i_create_a_new_app">How do I create a new app?</a></li>
-  <li>Request API access for the newly added REST API. See <a href="access_apis_api_access.htm#how_do_i_get_api_access_for_my_app">How do I add APIs to my app?</a></li>
+  <li>Request API access for the newly added REST API. See <a href="access_apis_api_access.htm#how_do_i_get_api_access_for_my_app">How do I get API access for my app?</a></li>
   <li>The API Administrator will then approve and activate your API Access Request. After approval, you are ready to test the API with your app.</li>
 </ol>
 
@@ -559,14 +563,14 @@ http://&lt;API_URL&gt;/&lt;API_path&gt;?postalCode=90020&amp;o=xml&amp;key=AoCDR
 <p><em>Scenario 1</em>&#8212;You build an API and would like to expose specific functionality for the purposes of collaborating with a selected development and/or discussion group. You do not want to the API to be visible to anyone outside the selected group. To accomplish this:</p>
 <ul>
   <li>Add a new API, configure with private visibility, and add a proxy API for operations you would like to expose. See the <a href="api_admin_tutorial.htm">quick start</a> for API Providers for more information.</li>
-  <li>App developers can submit an API access request and connect to your API. See <a href="access_apis_api_access.htm#how_do_i_get_api_access_for_my_app">How do I add APIs to my app?</a></li>
+  <li>App developers can submit an API access request and connect to your API. See <a href="access_apis_api_access.htm#how_do_i_get_api_access_for_my_app">How do I get API access for my app?</a></li>
   <li>Create a Private API Group and invite selected individuals you would like to be part of your collaboration group<em>.</em> See <a href="collaborate_groups.htm">Groups</a> for more information.</li>
   <li>Update the API definition and adjust the configuration based on your business requirements.</li>
 </ul>
 <p><em>Scenario 2</em>&#8212;You build an API and would like to expose specific functionality to the public for them to use in their applications. To accomplish this:</p>
 <ul>
   <li>Add a new API, configure with public visibility, and add a proxy API for operations you would like to expose. Your API will be visible via the <em>Search</em> function. See the <a href="api_admin_tutorial.htm">quick start</a> for API Providers for more information.</li>
-  <li>App developers can submit an API access request and connect to your API. See <a href="access_apis_api_access.htm#how_do_i_get_api_access_for_my_app">How do I add APIs to my app?</a></li>
+  <li>App developers can submit an API access request and connect to your API. See <a href="access_apis_api_access.htm#how_do_i_get_api_access_for_my_app">How do I get API access for my app?</a></li>
   <li>Create an Independent Group and invite individuals you would like to be part of your collaboration group<em>.</em> See <a href="collaborate_groups.htm">Groups</a> for more information.</li>
   <li>Update the API definition and adjust the configuration based on your business requirements.</li>
 </ul>
@@ -796,6 +800,116 @@ http://&lt;API_URL&gt;/&lt;API_path&gt;?postalCode=90020&amp;o=xml&amp;key=AoCDR
   <li>Change the license option as needed.</li>
   <li>Click through the rest of the wizard and then click <strong>Save</strong>.</li>
 </ol>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_see_the_status_of_my_apis_contracts_with_apps"></a><h3>How do I see the status of my API's contracts with apps?</h3>
+<p>You can review the status of your API's connections, including pending and active API access requests, in the <em>My APIs &gt; API &gt; Apps</em> page. This page provides a high level summary of workflow status for apps with current API access contracts or pending API access requests for the current API.</p>
+<p>Each listing includes:</p>
+<ul>
+  <li>Apps&#8212;The App Name. This link clicks through to the <em>App Details</em> page.</li>
+  <li>Legals&#8212;A column that indicates whether the Legal Agreements have been accepted (Check = Accepted, No Check = No Accepted).</li>
+  <li>Sandbox / Production&#8212;Represent the two environments that an API Access Request can be submitted for. Each column displays the current status of the API Access Request and available API management functions (e.g., Cancel, Suspend, Resume, Request Access, Switch to Production). The valid actions for a specific contract are determined by the current state of the contract; for example, only a contract that is currently in a state of Suspended can be resumed, only a contract in a state of Activated can be cancelled. For more information on API access states and valid actions, see <a href="business_administration_workflows.htm#what_is_the_default_workflow_for_app_api_contracts">What is the default workflow for app/API contracts?</a></li>
+</ul>
+<p>The following table shows <em>App Status</em> and <em>App Management Tasks</em> for app/API contracts:</p>
+<table cellspacing="0px" class="doctable" style="width: 90%;">
+  <thead>
+  <tr>
+    <th width="30%">Contract Status</th>
+    <th width="70%">Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr class="t2row">
+      <td>Access Requested</td>
+      <td>An App has requested access to an API but the request has not been approved and activated in the Sandbox or Production environment.</td>
+    </tr>
+  <tr class="t1row">
+    <td>Active</td>
+    <td>API Access has been approved and activated.</td>
+  </tr>
+  <tr class="t2row">
+    <td>Inactive</td>
+    <td>API access has not yet been requested.</td>
+  </tr>
+  <tr class="t1row">
+    <td>Rejected</td>
+    <td>The API Access Request has been rejected.</td>
+  </tr>
+  <tr class="t2row">
+    <td>Suspended</td>
+    <td>API Access that was previously active has been suspended.</td>
+  </tr>
+  </tbody>
+</table>
+<p>&nbsp;</p>
+<table cellspacing="0px" class="doctable" style="width: 90%;">
+  <thead>
+  <tr>
+    <th width="30%">App Management Task</th>
+    <th width="70%">Description</th>
+</tr>
+</thead>
+<tbody>
+    <tr class="t2row">
+      <td>Cancel</td>
+      <td>Cancels an API Access Request. Listing is removed from the <em>API Connections</em> page. Requestor must submit another request to initiate the process again.</td>
+    </tr>
+  <tr class="t1row">
+    <td>Suspend</td>
+    <td>Suspends the API Access Request. This action can only be performed when the request status is Active.</td>
+  </tr>
+  <tr class="t2row">
+    <td>Resume</td>
+    <td>Resumes the API Access Request and changes the request status to <em>Active</em> after it has been suspended.</td>
+  </tr>
+  <tr class="t1row">
+    <td>Switch to Sandbox</td>
+    <td>Switches the app to the Sandbox Environment and uses the Sandbox Endpoint.</td>
+  </tr>
+  <tr class="t2row">
+    <td>Switch to Production</td>
+    <td>Switches the app to the Production Environment and uses the Production Endpoint.</td>
+  </tr>
+</tbody>
+  </table>
+<p>&nbsp;</p>
+<table cellspacing="0px" class="doctable" style="width: 90%;">
+  <thead>
+  <tr>
+    <th width="30%">API Access Request Task</th>
+    <th width="70%">Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr class="t2row">
+      <td>Approve</td>
+      <td>Approves the API Action Request. <br />
+      <em>Note that the request still requires activation after it has been approved.</em></td>
+    </tr>
+  <tr class="t1row">
+    <td>Reject</td>
+    <td>Rejects the API Action Request.</td>
+  </tr>
+  <tr class="t2row">
+    <td>Cancel</td>
+    <td>Cancels the API Action Request. Requestor must submit another request to initiate the process again.</td>
+  </tr>
+  <tr class="t1row">
+    <td>Activate</td>
+    <td>Activates the API Access Request.</td>
+  </tr>
+  <tr class="t2row">
+    <td>Suspend</td>
+    <td>Suspends the API Access Request and is performed after the request has been activated.</td>
+  </tr>
+    <tr class="t1row">
+    <td>Resume</td>
+    <td>Resumes the API Access Request and puts it into an activated state after it has been suspended.</td>
+  </tr>
+</tbody>
+  </table>
 <p><a href="#top">Back to top</a></p>
 
 
