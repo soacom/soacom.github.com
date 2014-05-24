@@ -1,17 +1,17 @@
 ---
 layout: apipage
-title: POST&nbsp;/api/dropbox/wsdls Operation | Dropbox Service | Community Platform API
+title: Read WSDL ZIP | Dropbox Service | Enterprise API Platform API
 description: Accepts a ZIP file containing a WSDL and responds with an list of operations.  It could return a list of files in the ZIP file for the user to select. A resend is then required with the filename. A successful send returns a list of operations, starting with the ID of the WSDL.
 product: cm
 category: ref
-nav-title: POST&nbsp;/api/dropbox/wsdls
+nav-title: Read WSDL ZIP 
 no-nav: api
 sub-nav: true
 sub-nav-class: dropbox
 no-catalog: true
 ---
 
-<h2><a name="top"></a>POST&nbsp;/api/dropbox/wsdls Method</h2>
+<h2><a name="top"></a>POST&nbsp;/api/dropbox/wsdls</h2>
 <p><!-- #BeginLibraryItem "/Library/desc_readWsdlZip.lbi" -->Accepts a ZIP file containing a WSDL and responds with an list of operations.<!-- #EndLibraryItem -->  It could return a list of files in the ZIP file for the user to select. A resend is then required with the filename. A successful send returns a list of operations, starting with the ID of the WSDL.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: To complete this operation successfully, a user must be logged in and must be either an authorized user for the resource or a site admin.</p><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -40,16 +40,16 @@ no-catalog: true
 
 
 <h3 id="endpoint">URL</h3>
-<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/dropbox/wsdls</pre>
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->dropbox/wsdls</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below includes the WSDL file in the request body.</p>
 <p><strong>Request URL</strong></p>
-<pre><span class="apidoc_div_codeendpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem --></span>dropbox/wsdls?wrapInHTML=true&amp;document.domain=&lt;hostname&gt;</pre>
+<pre><span class="apidoc_div_codeendpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem --></span>dropbox/wsdls?wrapInHTML=true&amp;document.domain=api.acmecorp.com</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST&nbsp;/api/dropbox/wsdls?wrapInHTML=true&amp;document.domain=&lt;hostname&gt; HTTP/1.1
+<pre>POST&nbsp;/api/dropbox/wsdls?wrapInHTML=true&amp;document.domain=api.acmecorp.com HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</pre>
 <p><strong>Sample request body</strong></p>
@@ -58,7 +58,7 @@ Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</pre>
 
 
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -73,7 +73,7 @@ Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</pre>
   </tr>
     <tr>
       <td><a href="../Ref_apireference.htm#contenttype_request">Content-Type</a></td>
-      <td>multipart/form-data</td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_multipart_form-data.lbi" --> <strong>multipart/form-data</strong><!-- #EndLibraryItem --></td>
   </tr>
   </tbody>
 </table>
@@ -101,7 +101,7 @@ Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</pre>
   </tr>
 </tbody>
 </table>
-<p class="apidoc_note"><strong>Note</strong>: for information about the <strong>wrapInHTML</strong> parameter shown in the sample request above, see <a href="../Ref_WrapInHTMLParameter.htm">The &quot;Wrap In HTML&quot; Parameter</a>.</p>
+<p class="apidoc_note"><strong>Note</strong>: for information about the <strong>wrapInHTML</strong> parameter shown in the sample request above, see <a href="../Ref_FileUploadWithAjax.htm">File Upload with Ajax</a>.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -125,14 +125,15 @@ Content-Type: text/html</pre>
 ornare eget luctus vel, porta id elit. Maecenas molestie, libero sit amet blandit faucibus, orci nisi aliquet nisi, 
 id mollis mauris ipsum a enim. Morbi lacus velit, placerat sit amet luctus eget, pulvinar a massa. Lorem ipsum dolor sit amet, 
 consectetur adipiscing elit. Morbi eleifend tincidunt pellentesque. Cras eu sapien massa, vitae rutrum sapien. Aenean id 
-condimentum sem. Suspendisse tempor luctus ipsum, vel metus."&gt;&lt;script type="text/javascript"&gt;document.domain='&lt;hostname&gt;';
+condimentum sem. Suspendisse tempor luctus ipsum, vel metus."&gt;&lt;script type="text/javascript"&gt;document.domain='api.acmecorp.com';
 &lt;/script&gt;&lt;/head&gt;&lt;body&gt;PersonService.wsdl,xsd0.xsd,xsd1.xsd,xsd10.xsd,xsd11.xsd,xsd12.xsd,xsd13.xsd,xsd14.xsd,xsd15.xsd,xsd2.xsd,
 xsd3.xsd,xsd4.xsd,xsd5.xsd,xsd6.xsd,xsd7.xsd,xsd8.xsd,xsd9.xsd&lt;/body&gt;&lt;/html&gt;</pre>
+<p class="apidoc_note"><strong>Note</strong>: for information about the HTML wrapper shown in the sample response above, see <a href="../Ref_FileUploadWithAjax.htm">File Upload with Ajax</a>.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
 <thead>
   <tr bgcolor="#DDDDDD">
@@ -151,27 +152,7 @@ xsd3.xsd,xsd4.xsd,xsd5.xsd,xsd6.xsd,xsd7.xsd,xsd8.xsd,xsd9.xsd&lt;/body&gt;&lt;/
 
 
 <h3 id="responsebody">Response Body</h3>
-<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
-<thead>
-  <tr bgcolor="#DDDDDD">
-    <th width="20%">Name</th>
-    <th width="15%">Type</th>
-    <th width="65%">Description</th>
-    </tr>
-</thead>
-<tbody>
-    <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-  </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-  </tr>
-</tbody>
-</table>
+<p>The response body is a listing of the contents of the WSDL ZIP file.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -191,23 +172,23 @@ xsd3.xsd,xsd4.xsd,xsd5.xsd,xsd6.xsd,xsd7.xsd,xsd8.xsd,xsd9.xsd&lt;/body&gt;&lt;/
   </tr>
   </tbody>
 </table>
-<p><a href="../Ref_apireference.htm#errormessages">Full list of Community Platform API error messages.</a></p>
+<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of Enterprise API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
-<table width="600" border="0" cellspacing="0" cellpadding="2">
+<table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
   <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
   <li><a href="../docconventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
-    <td width="300"><ul>
+    <td width="400"><ul>
   <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
   <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

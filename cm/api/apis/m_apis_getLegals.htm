@@ -1,10 +1,10 @@
 ---
 layout: apipage
-title: GET&nbsp;/api/apis/versions/{ApiVersionID}/legals Operation | APIs Service | Community Platform API
-description:  Retrieves information about legal documents for the specified API version.
+title: Get Legals | APIs Service | Enterprise API Platform API
+description:  Retrieves a summary of information about legal documents for the specified API version.
 product: cm
 category: ref
-nav-title: GET&nbsp;/api/apis/versions/{ApiVersionID}/legals
+nav-title: Get Legals 
 no-nav: api
 sub-nav: true
 sub-nav-class: apis
@@ -16,7 +16,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getLegals.lbi" -->
-Retrieves information about legal documents for the specified API version.<!-- #EndLibraryItem --></p>
+Retrieves a summary of information about legal documents for the specified API version.<!-- #EndLibraryItem --></p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/Library/roles_user.lbi" --> To complete this operation successfully, a user must be logged in<!-- #EndLibraryItem --> and must be an Administrator for the API.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -46,7 +46,7 @@ Retrieves information about legal documents for the specified API version.<!-- #
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h3 id="endpoint">URL</h3>
-<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/apis/versions/{APIVersionID}/legals</pre><!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/{APIVersionID}/legals</pre><!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -54,7 +54,7 @@ Retrieves information about legal documents for the specified API version.<!-- #
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for legal documents for an API.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion500.acmecorp/legals?Drafts=true&amp;Inactive=true</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/a4cc9f79-e8ff-4b06-ad70-2c1a08139776.acmecorp/legals?Drafts=true&amp;Inactive=true</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>GET&nbsp;/api/apis/versions/apiversion500.acmecorp/legals?Drafts=true&amp;Inactive=true HTTP/1.1
 Host: &lt;hostname&gt;
@@ -68,7 +68,7 @@ Content-Type: application/x-www-form-urlencoded</pre>
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -113,14 +113,14 @@ The unique ID for the specified API version.<!-- #EndLibraryItem --></td>
       <td>Query</td>
       <td>boolean</td>
       <td>Optional</td>
-      <td>Optional parameter indicating whether legal documents with a status of Draft should be included in the results returned. Defaults to <strong>false</strong>; if this parameter is not specified, drafts are not included.</td>
+      <td>Optional parameter indicating whether legal documents with a legal document state value of <strong>Draft</strong> should be included in the results returned. Defaults to <strong>false</strong>; if this parameter is not specified, drafts are not included.</td>
     </tr>
     <tr>
       <td>Inactive</td>
       <td>Query</td>
       <td>boolean</td>
       <td>Optional</td>
-      <td>Optional parameter indicating whether legal documents with a status of Inactive should be included in the results returned. Defaults to <strong>false</strong>; if not specified, inactive documents are not included.</td>
+      <td>Optional parameter indicating whether legal documents with a state of <strong>inactive</strong> should be included in the results returned. Defaults to <strong>false</strong>; if not specified, inactive documents are not included.</td>
     </tr>
   </tbody>
 </table>
@@ -140,16 +140,16 @@ The unique ID for the specified API version.<!-- #EndLibraryItem --></td>
 <p id="id_sampleresponse">The sample response below shows the requested legal agreements returned.</p>
 <p><strong>Sample response headers: JSON</strong></p>
 <pre>HTTP/1.1 200 OK
-Date: Mon, 04 Feb 2013 19:46:05 GMT
+Date: Fri, 25 Apr 2014 13:28:20 GMT
 Content-Type: application/json</pre>
 <p><a id="rss_agreementdocuments_json"></a><strong>Sample response body: JSON</strong></p>
 <pre>{
   "channel" : {
     "title" : "Agreement Documents",
     "item" : [ {
-      "title" : "Legal Agreement 2.0",
-      "link" : "api/api200.acmecorp/legal/dev_update_test_agreement.html?version=1",
-      "description" : "Updated Version of Legal Agreement for version 2.0",
+      "title" : "Basic EULA",
+      "link" : "api/492f7d2e-c2c6-41f3-a113-c614bf424252.acmecorp/legal/EULA_1.txt?version=1",
+      "description" : "Basic EULA for most users.",
       "category" : [ {
         "value" : "agreement",
         "domain" : "uddi:soa.com:resourcetype"
@@ -160,96 +160,120 @@ Content-Type: application/json</pre>
         "value" : "com.soa.status.active",
         "domain" : "uddi:soa.com:state"
       }, {
-        "value" : "dev_update_test_agreement.html",
+        "value" : "EULA_1.txt",
         "domain" : "uddi:soa.com:filename"
       }, {
         "value" : "1",
         "domain" : "uddi:soa.com:version"
       }, {
-        "value" : "api/api200.acmecorp/legal/dev_update_test_agreement.html",
+        "value" : "api/492f7d2e-c2c6-41f3-a113-c614bf424252.acmecorp/legal/EULA_1.txt",
         "domain" : "uddi:soa.com:docpath"
       } ],
       "guid" : {
-        "value" : "agreement10015.acmecorp"
+        "value" : "1e5039cb-45b6-4844-8c18-f27d3a7c8f41.acmecorp"
       },
       "EntityReferences" : {
         "EntityReference" : [ {
-          "Guid" : "apiversion500.acmecorp"
+          "Title" : "1.0",
+          "Guid" : "a4cc9f79-e8ff-4b06-ad70-2c1a08139776.acmecorp",
+          "Category" : [ {
+            "value" : "apiversion",
+            "domain" : "uddi:soa.com:resourcetype"
+          } ]
+        }, {
+          "Title" : "ACME Payments API",
+          "Guid" : "492f7d2e-c2c6-41f3-a113-c614bf424252.acmecorp",
+          "Category" : [ {
+            "value" : "api",
+            "domain" : "uddi:soa.com:resourcetype"
+          } ]
         } ]
       }
     }, {
-      "title" : "ACME Payments API SDK Agreement",
-      "link" : "/api/api200.acmecorp/legal/Sample_EULA.htm?version=1",
-      "description" : "SDK Agreement for applications to be able to access PaymentsAPI",
+      "title" : "EULA_2.txt",
+      "link" : "/content/api/492f7d2e-c2c6-41f3-a113-c614bf424252.acmecorp/legal/EULA_2.txt?version=1",
       "category" : [ {
         "value" : "agreement",
         "domain" : "uddi:soa.com:resourcetype"
       }, {
-        "value" : "com.soa.acmecorp.legals.eula",
         "domain" : "uddi:soa.com:documenttype"
       }, {
-        "value" : "com.soa.status.active",
+        "value" : "com.soa.status.draft",
         "domain" : "uddi:soa.com:state"
       }, {
-        "value" : "Sample_EULA.htm",
+        "value" : "EULA_2.txt",
         "domain" : "uddi:soa.com:filename"
       }, {
         "value" : "1",
         "domain" : "uddi:soa.com:version"
       }, {
-        "value" : "/api/api200.acmecorp/legal/Sample_EULA.htm",
+        "value" : "api/492f7d2e-c2c6-41f3-a113-c614bf424252.acmecorp/legal/EULA_2.txt",
         "domain" : "uddi:soa.com:docpath"
       } ],
       "guid" : {
-        "value" : "api200eula2.acmecorp"
-      },
-      "EntityReferences" : {
-        "EntityReference" : [ {
-          "Guid" : "apiversion500.acmecorp"
-        } ]
-      }
-    }, {
-      "title" : "ACME Payments API SDK Agreement",
-      "link" : "/api/api200.acmecorp/legal/Sample_EULA.htm?version=1",
-      "description" : "SDK Agreement for applications to be able to access PaymentsAPI",
-      "category" : [ {
-        "value" : "agreement",
-        "domain" : "uddi:soa.com:resourcetype"
-      }, {
-        "value" : "com.soa.acmecorp.legals.eula",
-        "domain" : "uddi:soa.com:documenttype"
-      }, {
-        "value" : "com.soa.status.inactive",
-        "domain" : "uddi:soa.com:state"
-      }, {
-        "value" : "Sample_EULA.htm",
-        "domain" : "uddi:soa.com:filename"
-      }, {
-        "value" : "1",
-        "domain" : "uddi:soa.com:version"
-      }, {
-        "value" : "/api/api200.acmecorp/legal/Sample_EULA.htm",
-        "domain" : "uddi:soa.com:docpath"
-      } ],
-      "guid" : {
-        "value" : "api200eula1.acmecorp"
-      },
-      "EntityReferences" : {
-        "EntityReference" : [ {
-          "Guid" : "apiversion500.acmecorp"
-        } ]
+        "value" : "EULA_2.txt"
       }
     } ]
   },
   "version" : "1.0"
 }</pre>
+<p><strong>Sample response headers: text/XML</strong></p>
+<pre>HTTP/1.1 200 OK
+Date: Fri, 25 Apr 2014 13:37:36 GMT
+Content-Type: application/json</pre>
+<p><a id="rss_agreementdocuments_textxml"></a><strong>Sample response body: text/XML</strong></p>
+<pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;rss xmlns:ns2="http://soa.com/xsd/business/1.0" xmlns:ns3="http://soa.com/xsd/rss/1.0" xmlns:ns4="http://soa.com/xsd/user/1.0" 
+xmlns:ns5="http://soa.com/xsd/comment/1.0" xmlns:ns6="http://a9.com/-/spec/opensearch/1.1/" xmlns:ns7="http://soa.com/xsd/resource/1.0" 
+xmlns:ns8="http://soa.com/xsd/legals/1.0" xmlns:ns9="http://soa.com/xsd/fault/1.0" xmlns:ns10="http://soa.com/xsd/api/1.0" 
+xmlns:ns11="http://soa.com/xsd/board/1.0" xmlns:ns12="http://soa.com/xsd/search/1.0" xmlns:ns13="http://soa.com/xsd/workflow/1.0" version="1.0"&gt;
+  &lt;channel&gt;
+    &lt;title&gt;Agreement Documents&lt;/title&gt;
+    &lt;item&gt;
+      &lt;title&gt;Basic EULA&lt;/title&gt;
+      &lt;link&gt;api/492f7d2e-c2c6-41f3-a113-c614bf424252.acmecorp/legal/EULA_1.txt?version=1&lt;/link&gt;
+      &lt;description&gt;Basic EULA for most users.&lt;/description&gt;
+      &lt;category domain="uddi:soa.com:resourcetype"&gt;agreement&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:documenttype"&gt;com.soa.acmecorp.legals.eula&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:state"&gt;com.soa.status.active&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:filename"&gt;EULA_1.txt&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:version"&gt;1&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:docpath"&gt;api/492f7d2e-c2c6-41f3-a113-c614bf424252.acmecorp/legal/EULA_1.txt&lt;/category&gt;
+      &lt;guid&gt;1e5039cb-45b6-4844-8c18-f27d3a7c8f41.acmecorp&lt;/guid&gt;
+      &lt;ns3:EntityReferences&gt;
+        &lt;ns3:EntityReference&gt;
+          &lt;Title&gt;1.0&lt;/Title&gt;
+          &lt;Guid&gt;a4cc9f79-e8ff-4b06-ad70-2c1a08139776.acmecorp&lt;/Guid&gt;
+          &lt;ns3:Category domain="uddi:soa.com:resourcetype"&gt;apiversion&lt;/ns3:Category&gt;
+        &lt;/ns3:EntityReference&gt;
+        &lt;ns3:EntityReference&gt;
+          &lt;Title&gt;ACME Payments API&lt;/Title&gt;
+          &lt;Guid&gt;492f7d2e-c2c6-41f3-a113-c614bf424252.acmecorp&lt;/Guid&gt;
+          &lt;ns3:Category domain="uddi:soa.com:resourcetype"&gt;api&lt;/ns3:Category&gt;
+        &lt;/ns3:EntityReference&gt;
+      &lt;/ns3:EntityReferences&gt;
+    &lt;/item&gt;
+    &lt;item&gt;
+      &lt;title&gt;EULA_2.txt&lt;/title&gt;
+      &lt;link&gt;/content/api/492f7d2e-c2c6-41f3-a113-c614bf424252.acmecorp/legal/EULA_2.txt?version=1&lt;/link&gt;
+      &lt;category domain="uddi:soa.com:resourcetype"&gt;agreement&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:documenttype" /&gt;
+      &lt;category domain="uddi:soa.com:state"&gt;com.soa.status.draft&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:filename"&gt;EULA_2.txt&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:version"&gt;1&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:docpath"&gt;api/492f7d2e-c2c6-41f3-a113-c614bf424252.acmecorp/legal/EULA_2.txt&lt;/category&gt;
+      &lt;guid&gt;EULA_2.txt&lt;/guid&gt;
+    &lt;/item&gt;
+  &lt;/channel&gt;
+&lt;/rss&gt;
+</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -260,8 +284,7 @@ Content-Type: application/json</pre>
   <tbody>
     <tr>
       <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_resp_json_or_txtxml.lbi" -->
-application/json or text/xml<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_accept_txtxml_or_json.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -272,7 +295,7 @@ application/json or text/xml<!-- #EndLibraryItem --></td>
 <!-- InstanceBeginEditable name="Response Body" -->
 <h3 id="responsebody">Response Body</h3>
 <p><!-- #BeginLibraryItem "/Library/_rss_responsetable_intro.lbi" -->
-The response body is in the form of an RSS channel, and includes the items listed below. The RSS version is 1.0.<!-- #EndLibraryItem --> The title of the RSS channel is  <strong>List Agreement Documents</strong>. Each item in the channel represents an agreement document, and includes the information listed below.</p>
+The response body is in the form of an RSS channel, and includes the items listed below. The RSS version is 1.0.<!-- #EndLibraryItem --> The title of the RSS channel is  <strong>Agreement Documents</strong>. Each item in the channel represents an agreement document, and includes the information listed below.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -304,7 +327,7 @@ The response body is in the form of an RSS channel, and includes the items liste
 <ul class="apidoctable_ul">
   <li><strong>Resource type</strong>: uddi:soa.com:resourcetype</li>
   <li><strong>Document type</strong>: uddi:soa.com:documenttype</li>
-  <li><strong>Document State</strong>: uddi:soa.com:state</li>
+  <li><strong>Document State</strong>: uddi:soa.com:state (for values, see <a href="../Ref_Values.htm#values_legaldocumentstate">Legal Document States</a>).</li>
   <li><strong>Filename</strong>: uddi:soa.com:filename</li>
   <li><strong>Version</strong>: uddi:soa.com:version</li>
   <li><strong>Document path</strong>: uddi:soa.com:docpath</li>
@@ -312,7 +335,7 @@ The response body is in the form of an RSS channel, and includes the items liste
     </tr>
     <tr>
       <td><a href="../Ref_RSSChannelsOnThePlatform.htm#rss_guid">guid</a></td>
-      <td>GUID for the legal agreement.</td>
+      <td>GUID for the legal agreement; the <a href="../Ref_IDsOnThePlatform.htm#id_legaldocumentid">LegalDocumentID</a>.</td>
     </tr>
     <tr>
       <td><a href="../Ref_RSSChannelsOnThePlatform.htm#rss_entityreferences">EntityReferences</a></td>
@@ -345,23 +368,23 @@ The response body is in the form of an RSS channel, and includes the items liste
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#errormessages">Full list of Community Platform API error messages.</a></p>
+<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
-<table width="600" border="0" cellspacing="0" cellpadding="2">
+<table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
   <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
   <li><a href="../docconventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
-    <td width="300"><ul>
+    <td width="400"><ul>
   <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
   <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

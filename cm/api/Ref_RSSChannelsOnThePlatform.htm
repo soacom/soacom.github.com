@@ -1,6 +1,6 @@
 ---
 layout: apipage
-title: RSS Channels on the Platform | Reference Material | Community Platform API
+title: RSS Channels on the Platform | Reference Material | Enterprise API Platform API
 description: RSS is a widely used technology that allows users to subscribe to website content they're interested in. The content provider organizes information in a defined information structure called an RSS channel. Users can then subscribe to the channel via a piece of software called an RSS feed. Once a user subscribes to an RSS feed, content updates are automatically delivered, without the user having to check the individual websites for updates.
 product: cm
 category: ref
@@ -13,11 +13,13 @@ no-catalog: true
 
 <h2><a name="top"></a>RSS Channels on the Platform</h2>
 <p>RSS is a widely used technology that allows users to subscribe to website content they're interested in. The content provider organizes information in a defined information structure called an RSS channel. Users can then subscribe to the channel via a piece of software called an RSS feed. Once a user subscribes to an RSS feed, content updates are automatically delivered, without the user having to check the individual websites for updates.</p>
-<p>Many of the operations in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> API use RSS in the response. In general, GET&nbsp;operations that return any type of list return the information as an RSS channel, in either JSON or XML format. For examples, see <a href="#atmo_rss">Community Platform Objects Returned as RSS Channels</a> below.</p>
-<p>The RSS channel always includes the required summary information, and can also hold a list of items. In some cases, the RSS structure includes additional extension elements. In cases where Community Platform operations use additional extension elements, they are described in the documentation for the applicable operation.<!--<p>Methods that return information in the form of an RSS channel return the mandatory fields listed below and some or all of the optional elements; the  elements applicable to a specific operation are identified in the operation's description. Since the item elements are somewhat general, the documentation for each method explains which method parameters maps to which RSS item elements.</p>--></p>
+<p>Many of the operations in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API use RSS in the response. In general, GET&nbsp;operations that return any type of list return the information as an RSS channel, in either JSON or XML format. For examples, see <a href="#platform_rss"><!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> Objects Returned as RSS Channels</a> below.</p>
+<p>The RSS channel always includes the required summary information, and can also hold a list of items. In some cases, the RSS structure includes additional extension elements. In cases where <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> operations use additional extension elements, they are described in the documentation for the applicable operation.<!--<p>Methods that return information in the form of an RSS channel return the mandatory fields listed below and some or all of the optional elements; the  elements applicable to a specific operation are identified in the operation's description. Since the item elements are somewhat general, the documentation for each method explains which method parameters maps to which RSS item elements.</p>--></p>
 
-<h4 class="apidoc_h4" id="rssfieldsoptional">RSS Fields</h4>
-<p>The following table describes elements that might appear in RSS feeds returned by the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> API.</p>
+<h4><a name="rssfieldsoptional"></a>RSS Fields</h4>
+<p>The following tables describe elements that might appear in RSS feeds returned by the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API.</p>
+<p>In general, platform RSS responses include a few main values, and then one or more items, each with a set of values. These two sets of information are described in the tables below.</p>
+<p><strong>RSS response main values</strong>:</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0"
 	cellpadding="2">
 <thead>
@@ -29,12 +31,32 @@ no-catalog: true
 <tbody>
     <tr>
       <td><a name="rss_title"></a>title</td>
-      <td>Name of the item. In the Community Platform, examples are <strong>Application Contracts</strong> (for <span class="apidoc_code"><a href="apps/m_apps_getContracts.htm">GET&nbsp;/api/apps/versions/{AppVersionID}/contracts</a></span>), <strong>APIs</strong> (for <span class="apidoc_code"><a href="apis/m_apis_listAPIs.htm">GET&nbsp;/api/apis</a></span>), <strong>User Notifications</strong> (for <span class="apidoc_code">GET&nbsp;notifications/types</span>).</td>
+      <td>Name of the item. In the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, examples are <strong>Application Contracts</strong> (for <span class="apidoc_code"><a href="apps/m_apps_getContracts.htm">GET&nbsp;/api/apps/versions/{AppVersionID}/contracts</a></span>), <strong>APIs</strong> (for <span class="apidoc_code"><a href="apis/m_apis_listAPIs.htm">GET&nbsp;/api/apis</a></span>), <strong>User Notifications</strong> (for <span class="apidoc_code">GET&nbsp;notifications/types</span>).</td>
   </tr>
+    <tr>
+      <td>item</td>
+      <td>One or more items specific to the individual RSS feed. For possible item structures, and likely values, refer to the table below.</td>
+    </tr>
+    <tr>
+      <td>version</td>
+      <td>The RSS version is always <strong>1.0</strong>.</td>
+    </tr>
+</tbody>
+</table>
+<p><strong>RSS item values:</strong></p>
+<table class="tableparmsresponse" width="100%" cellspacing="0"
+	cellpadding="2">
+<thead>
+  <tr bgcolor="#DDDDDD">
+    <th width="20%">Header</th>
+    <th width="80%">Description</th>
+    </tr>
+</thead>
+<tbody>
     <tr>
       <td>link</td>
       <td>The URL to the HTML page with details of the item.</td>
-  </tr>
+    </tr>
     <tr>
       <td>description</td>
       <td>Short description of the item. This may be the actual description of the item or an automatically generated descriptor of the resource based on its attributes.</td>
@@ -70,15 +92,15 @@ no-catalog: true
   </tr>
     <tr>
       <td>enclosure</td>
-      <td>A media file that needs to be rendered with the item. This field is standard to the RSS feed structure, but isn't used by the Community Platform API.</td>
+      <td>A media file that needs to be rendered with the item. This field is standard to the RSS feed structure, but isn't used by the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API.</td>
   </tr>
     <tr>
-      <td><a name="rss_pubdate"></a>pubdate</td>
-      <td>The last publication date for the item, formatted in <a href="glossary_communityplatform.htm#coordinateduniversaltime">Coordinated Universal Time (UTC)</a>.</td>
+      <td><a name="rss_pubdate"></a>pubDate</td>
+      <td>The date the item was created, or last modified, formatted in <a href="glossary_communityplatform.htm#gl_coordinateduniversaltime">Coordinated Universal Time (UTC)</a>.</td>
   </tr>
     <tr>
-      <td><a name="rss_guid"></a><a href="glossary_communityplatform.htm#guid">guid</a></td>
-      <td>Globally unique identifier for the item (<a href="glossary_communityplatform.htm#fdn">FDN</a>).</td>
+      <td><a name="rss_guid"></a><a href="glossary_communityplatform.htm#gl_guid">guid</a></td>
+      <td>Globally unique identifier for the item (<a href="glossary_communityplatform.htm#gl_fdn">FDN</a>).</td>
   </tr>
     <tr>
       <td><a name="rss_action"></a>Action</td>
@@ -108,8 +130,8 @@ no-catalog: true
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h4 class="apidoc_h4"><a name="pagingofreturnedrssitems"></a>Paging of Returned RSS Items</h4>
-<p>When the total number of items in a list exceeds the search results page size, the list is broken down into pages, where each returned RSS channel is one page. <a href="glossary_communityplatform.htm#opensearch">OpenSearch</a> 1.1 elements are used as extensions to the RSS <span class="apidoc_code">channel</span> element to describe how the returned channel represents a page and where it fits in the overall list.</p>
+<h4><a name="pagingofreturnedrssitems"></a>Paging of Returned RSS Items</h4>
+<p>When the total number of items in a list exceeds the search results page size, the list is broken down into pages, where each returned RSS channel is one page. <a href="glossary_communityplatform.htm#gl_opensearch">OpenSearch</a> 1.1 elements are used as extensions to the RSS <span class="apidoc_code">channel</span> element to describe how the returned channel represents a page and where it fits in the overall list.</p>
 <p>For example, if the search results are limited to elements 101-200 out of a total of 1000 possible results, that information is included in the RSS channel, in the OpenSearch fields: totalResults, startIndex, and itemsPerPage. Including this information allows the user to get the broader picture of the possible search results available.  If the full set of possible search results is returned, we don't include totalResults.</p>
 <p>Definitions for the paging properties are listed below.</p>
 <table width="100%"
@@ -151,58 +173,54 @@ no-catalog: true
   },
   &quot;version&quot; : &quot;1.0&quot;
 }</pre>
-<h4 class="apidoc_h4" id="atmo_rss"> Community Platform Objects Returned as RSS Channels</h4>
-<p>The following is a list of some of the types of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> information that are returned as RSS channels:</p>
+<h4><a name="platform_rss"></a><!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> Objects Returned as RSS Channels</h4>
+<p>The following is a list of some of the types of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> information that are returned as RSS channels:</p>
 <ul>
   <li>APIs: <a href="apis/m_apis_listAPIs.htm#rss_apis_json">JSON example</a>, <a href="apis/m_apis_listAPIs.htm#rss_apis_xml">XML example</a></li>
   <li>API Board: <a href="apis/m_apis_getBoard.htm#rss_apiboard_json">JSON example</a>, <a href="apis/m_apis_getBoard.htm#rss_apiboard_xml">XML example</a></li>
+  <li>API Followers: <a href="apis/m_apis_getFollowers.htm#rss_followers_json">JSON only</a></li>
   <li>API Version Board: <a href="apis/m_apis_getVersionBoard.htm#rss_apiversionboard_json">JSON example</a>, <a href="apis/m_apis_getVersionBoard.htm#rss_apiversionboard_xml">XML example</a></li>
   <li>API Versions: <a href="apis/m_apis_getAPIVersions.htm#rss_apiversions">JSON example</a> </li>
   <li>API Contracts (contract versions): <a href="apis/m_apis_getContractVersions.htm#rss_apicontracts_json">JSON example</a>, <a href="apis/m_apis_getContractVersions.htm#rss_apicontracts_xml">XML example</a> </li>
   <li>App Board: <a href="apps/m_apps_getBoard.htm#rss_appboard_json">JSON example</a>, <a href="apps/m_apps_getBoard.htm#rss_appboard_xml">XML example</a></li>
-
-  <li>App Version Board: <a href="apps/m_apps_getVersionBoard.htm#rss_appversionboard_json">JSON example</a>, <a href="apps/m_apps_getVersionBoard.htm#rss_appversionboard_xml">XML example</a></li>
-  <li>Application Versions: <a href="apps/m_apps_listVersions.htm#rss_applicationversions_json">JSON example</a>, <a href="apps/m_apps_listVersions.htm#rss_applicationversions_xml">XML example</a></li>
-  <li>App Followers: <a href="apps/m_apps_getFollowers.htm#rss_followers_json">JSON only</a></li>
-  <li>Application Contracts: <a href="apps/m_apps_getContracts.htm#rss_applicationcontracts_json">JSON example</a>, <a href="apps/m_apps_getContracts.htm#rss_applicationcontracts_xml">XML example</a></li>
-  <li>Application team members: <a href="apps/m_apps_getTeamMembers.htm#rss_applicationteammembers">JSON example</a></li>
-  <li>Application versions: <a href="apps/m_apps_getVersions.htm#rss_applicationversions">JSON example</a></li>
   <li>Apps connected to a specific API version: <a href="apis/m_apis_getConnectedApps.htm#rss_appsconnected_json">JSON example</a>, <a href="apis/m_apis_getConnectedApps.htm#rss_appsconnected_xml">XML example</a></li>
+  <li>App Contracts: <a href="apps/m_apps_getContracts.htm#rss_applicationcontracts_json">JSON example</a>, <a href="apps/m_apps_getContracts.htm#rss_applicationcontracts_xml">XML example</a></li>
+  <li>App Followers: <a href="apps/m_apps_getFollowers.htm#rss_followers_json">JSON only</a></li>
+  <li>App Team Members: <a href="apps/m_apps_getTeamMembers.htm#rss_applicationteammembers">JSON example</a></li>
+  <li>App Version Board: <a href="apps/m_apps_getVersionBoard.htm#rss_appversionboard_json">JSON example</a>, <a href="apps/m_apps_getVersionBoard.htm#rss_appversionboard_xml">XML example</a></li>
+  <li>App Versions: <a href="apps/m_apps_listVersions.htm#rss_applicationversions_json">JSON example</a>, <a href="apps/m_apps_listVersions.htm#rss_applicationversions_xml">XML example</a></li>
   <li>Deployment Zones: <a href="deploymentzones/m_deploymentzones_getDeploymentZones.htm#rss_deploymentzones_json">JSON example</a>, <a href="deploymentzones/m_deploymentzones_getDeploymentZones.htm#rss_deploymentzones_xml">XML example</a></li>
-  <li>API Followers: <a href="apis/m_apis_getFollowers.htm#rss_followers_json">JSON only</a></li>
   <li>Group Board: <a href="groups/m_groups_getBoard.htm#rss_groupboard_json">JSON example</a>, <a href="groups/m_groups_getBoard.htm#rss_groupboard_xml">XML example</a></li>
   <li>Group Followers: <a href="groups/m_groups_getFollowers.htm#rss_groupfollowers_json">JSON only</a></li>
-  <li>Legal Agreement Documents: <a href="apis/m_apis_getLegals.htm#rss_agreementdocuments_json">JSON example</a></li>
+  <li>Legal Agreement Documents: <a href="apis/m_apis_getLegals.htm#rss_agreementdocuments_json">JSON example</a>, <a href="apis/m_apis_getLegals.htm#rss_agreementdocuments_textxml">text/XML example</a></li>
   <li>User Notifications (notifications for an individual user): <a href="users/m_users_getNotifications.htm#rss_notifications_json">JSON example</a></li>
-  <li>Notification Types</li>
   <li>Policies: <a href="policies/m_policies_getPolicies.htm#rss_policies_json">JSON example</a>, <a href="policies/m_policies_getPolicies.htm#rss_policies_xml">XML example</a></li>
   <li>Private Viewers: <a href="apis/m_apis_getPrivateViewers.htm#rss_privateviewers_json">JSON example</a>, <a href="apis/m_apis_getPrivateViewers.htm#rss_privateviewers_xml">XML example</a></li>
   <li>Reviews: <a href="reviews/m_reviews_listReviews.htm#rss_reviews_json">JSON example</a>, <a href="reviews/m_reviews_listReviews.htm#rss_reviews_xml">XML example</a></li>
   <li>Search results: <a href="search/m_search_search.htm#rss_search_json">JSON example</a>, <a href="search/m_search_search.htm#rss_search_xml">XML example</a></li>
-  <li>Tickets</li>
   <li>User Feed: <a href="users/m_users_getHomeFeed.htm#rss_userfeed_json">JSON example</a>, <a href="users/m_users_getHomeFeed.htm#rss_userfeed_xml">XML example</a></li>
-  <li>A specific user's apps: <a href="users/m_users_getApps.htm#rss_myapps_json">JSON example</a>, <a href="users/m_users_getApps.htm#rss_myapps_xml">XML example</a></li>
-  <li>A specific user's APIs: <a href="users/m_users_getApis.htm#rss_myapis_json">JSON example</a>, <a href="users/m_users_getApis.htm#rss_myapis_xml">XML example</a></li>
-  <li>A specific user's groups: <a href="users/m_users_getMyGroups.htm#rss_mygroups_json">JSON example</a>, <a href="users/m_users_getMyGroups.htm#rss_mygroups_xml">XML example</a></li>
-  <li>A specific user's Board items: <a href="users/m_users_getBoard.htm#rss_userboard_json">JSON example</a>, <a href="users/m_users_getBoard.htm#rss_userboard_xml">XML example</a></li>
+  <li>User's list of apps: <a href="users/m_users_getApps.htm#rss_myapps_json">JSON example</a>, <a href="users/m_users_getApps.htm#rss_myapps_xml">XML example</a></li>
+  <li>User's list of APIs: <a href="users/m_users_getApis.htm#rss_myapis_json">JSON example</a>, <a href="users/m_users_getApis.htm#rss_myapis_xml">XML example</a></li>
+  <li>User's list of groups: <a href="users/m_users_getMyGroups.htm#rss_mygroups_json">JSON example</a>, <a href="users/m_users_getMyGroups.htm#rss_mygroups_xml">XML example</a></li>
+  <li>User's list of Board items: <a href="users/m_users_getBoard.htm#rss_userboard_json">JSON example</a>, <a href="users/m_users_getBoard.htm#rss_userboard_xml">XML example</a></li>
 </ul>
 <p>The properties in the objects above are mapped to specific fields in the RSS channel. For details, refer to the documentation pages for specific operations.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
-<table width="600" border="0" cellspacing="0" cellpadding="2">
+<table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="index.htm">Community Platform API: Overview</a></li>
+  <li><a href="index.htm">Enterprise API Platform API: Overview</a></li>
   <li><a href="glossary_communityplatform.htm">Glossary of Terms</a></li>
   <li><a href="docconventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
-    <td width="300"><ul>
+    <td width="400"><ul>
   <li><a href="authenticationandsecurity.htm">Authentication and Security</a></li>
   <li><a href="troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="Ref_apireference.htm">Community Platform API Reference Material</a></li>
+  <li><a href="Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

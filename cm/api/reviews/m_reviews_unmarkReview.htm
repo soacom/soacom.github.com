@@ -1,10 +1,10 @@
 ---
 layout: apipage
-title: DELETE&nbsp;/api/reviews/{ReviewID}/marks/{UserID} Operation | Reviews Service | Community Platform API
-description:  Removes the specified user's <a href="../glossary_communityplatform.htm#mark">mark</a> from a review that the user has previously marked.
+title: Unmark Review | Reviews Service | Enterprise API Platform API
+description:  Removes the specified user's <a href="../glossary_communityplatform.htm#gl_mark">mark</a> from a review that the user has previously marked.
 product: cm
 category: ref
-nav-title: DELETE&nbsp;/api/reviews/{ReviewID}/marks/{UserID}
+nav-title: Unmark Review 
 no-nav: api
 sub-nav: true
 sub-nav-class: reviews
@@ -12,12 +12,12 @@ no-catalog: true
 ---
 
 <!-- InstanceBeginEditable name="Heading" -->
-<h2><a name="top" id="top"></a>DELETE&nbsp;/api/reviews/{ReviewID}/marks/{UserID} Operation</h2>
+<h2><a name="top" id="top"></a>DELETE&nbsp;/api/reviews/{ReviewID}/marks/{UserID}</h2>
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_unmarkReview.lbi" -->
-Removes the specified user's <a href="../glossary_communityplatform.htm#mark">mark</a> from a review that the user has previously marked.<!-- #EndLibraryItem --></p>
+Removes the specified user's <a href="../glossary_communityplatform.htm#gl_mark">mark</a> from a review that the user has previously marked.<!-- #EndLibraryItem --></p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_authorizeduser">Authorized User</a>.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -48,7 +48,7 @@ Removes the specified user's <a href="../glossary_communityplatform.htm#mark">ma
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/reviews/{ReviewID}/marks/{UserID}</pre>
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->reviews/{ReviewID}/marks/{UserID}</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -57,9 +57,9 @@ Removes the specified user's <a href="../glossary_communityplatform.htm#mark">ma
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request to delete the specified user's mark from the specified review.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://&lt;hostname&gt;/api/discussions/review24087.acmecorp/marks/user12262.acmecorp</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->reviews/review10491.acmecorp/marks/3b0b496a-ccf9-46f5-9919-0d1b77f7348f.acmecorp</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>DELETE&nbsp;/api/discussions/review24087.acmecorp/marks/user12262.acmecorp HTTP/1.1
+<pre>DELETE&nbsp;/api/reviews/review10491.acmecorp/marks/3b0b496a-ccf9-46f5-9919-0d1b77f7348f.acmecorp HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: */*
 Content-Type: application/x-www-form-urlencoded; charset=UTF-8</pre>
@@ -71,7 +71,7 @@ Content-Type: application/x-www-form-urlencoded; charset=UTF-8</pre>
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -140,7 +140,7 @@ Content-Type: application/x-www-form-urlencoded; charset=UTF-8</pre>
 <p><strong>Sample response headers</strong></p>
 <pre>HTTP/1.1 200 OK
 Content-Type: text/plain
-Date: Wed, 05 Jun 2013 00:29:41 GMT</pre>
+Date: Thu, 08 May 2014 00:29:00 GMT</pre>
 <p><strong>Sample response body</strong></p>
 <pre>2</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -149,7 +149,7 @@ Date: Wed, 05 Jun 2013 00:29:41 GMT</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -212,23 +212,23 @@ Date: Wed, 05 Jun 2013 00:29:41 GMT</pre>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#errormessages">Full list of Community Platform API error messages.</a></p>
+<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
-<table width="600" border="0" cellspacing="0" cellpadding="2">
+<table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
   <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
   <li><a href="../docconventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
-    <td width="300"><ul>
+    <td width="400"><ul>
   <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
   <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

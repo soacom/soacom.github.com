@@ -1,22 +1,21 @@
 ---
 layout: apipage
-title: GET&nbsp;/api/users/{UserID}/notifications Operation | Users Service | Community Platform API
+title: Get Notifications | Users Service | Enterprise API Platform API
 description:  Returns unarchived notifications for the specified user.
 product: cm
 category: ref
-nav-title: GET&nbsp;/api/users/{UserID}/notifications
+nav-title: Get Notifications 
 no-nav: api
 sub-nav: true
 sub-nav-class: users
 no-catalog: true
 ---
 
-<h2><a name="top"></a>GET&nbsp;/api/users/{UserID}/notifications Method</h2>
+<h2><a name="top"></a>GET&nbsp;/api/users/{UserID}/notifications</h2>
 <p><!-- #BeginLibraryItem "/Library/desc_getNotifications.lbi" -->
 Returns unarchived notifications for the specified user.<!-- #EndLibraryItem --></p>
 
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_authorizeduser">Authorized User</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
-<!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_authorizeduser">Authorized User</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
   <tr>
@@ -43,14 +42,14 @@ Returns unarchived notifications for the specified user.<!-- #EndLibraryItem -->
 
 
 <h3 id="endpoint">URL</h3>
-<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/users/{UserID}/notifications</pre>
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/{UserID}/notifications</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="samplerequest">Sample Request</h3>
 <p>The example below requests the notifications for user10057.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://&lt;hostname&gt;/api/users/user13998.acmecorp/notifications</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user13998.acmecorp/notifications</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>GET&nbsp;/api/users/user13998.acmecorp/notifications?_=1368713248785 HTTP/1.1
 Host: &lt;hostname&gt;
@@ -61,7 +60,7 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 
 
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -263,7 +262,7 @@ Date: Thu, 16 May 2013 14:07:29 GMT</pre>
 
 
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
 <thead>
   <tr bgcolor="#DDDDDD">
@@ -348,23 +347,23 @@ Date: Thu, 16 May 2013 14:07:29 GMT</pre>
   </tr>
   </tbody>
 </table>
-<p><a href="../Ref_apireference.htm#errormessages">Full list of Community Platform API error messages.</a></p>
+<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of Enterprise API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
-<table width="600" border="0" cellspacing="0" cellpadding="2">
+<table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
   <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
   <li><a href="../docconventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
-    <td width="300"><ul>
+    <td width="400"><ul>
   <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
   <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

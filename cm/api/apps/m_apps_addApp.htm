@@ -1,23 +1,26 @@
 ---
 layout: apipage
-title: POST&nbsp;/api/apps Operation | Apps Service | Community Platform API
-description:  Creates a new app. This method should be immediately followed by the <span class="apidoc_code"><a href="m_apps_addVersion.htm">POST&nbsp;/api/apps/{AppID}/versions</a></span> method which creates a single app version with a generated runtime ID and a default name that is the same as the AppID.
+title: Add App | Apps Service | Enterprise API Platform API
+description:  Creates a new app, which includes the first app version.
 product: cm
 category: ref
-nav-title: POST&nbsp;/api/apps
+nav-title: Add App 
 no-nav: api
 sub-nav: true
 sub-nav-class: apps
 no-catalog: true
 ---
 
-<h2><a name="top"></a>POST&nbsp;/api/apps Method</h2>
+<!-- InstanceBeginEditable name="Heading" -->
+<h2><a name="top"></a>POST&nbsp;/api/apps</h2>
+<!-- InstanceEndEditable -->
+
+<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_addApp.lbi" -->
-Creates a new app. This method should be immediately followed by the <span class="apidoc_code"><a href="m_apps_addVersion.htm">POST&nbsp;/api/apps/{AppID}/versions</a></span> method which creates a single app version with a generated runtime ID and a default name that is the same as the AppID.<!-- #EndLibraryItem --></p>
-<p>This method creates the app, but an app is not usable without at least one version. The Community Manager user interface doesn't support an app with no version; in the user interface, when an app is added a version is added also, and when the only version is deleted the app is automatically deleted also. This operation should always be immediately followed by the <span class="apidoc_code"><a href="../apps/m_apps_addVersion.htm">POST&nbsp;/api/apps/{AppID}/versions</a></span> operation.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_user">User</a>, <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Administrator</a></p>
-<p><!-- #BeginLibraryItem "/Library/_authtokenrenewal.lbi" -->
-<strong>Authorization token renewal</strong>: This operation changes information that is reflected in the authorization token; therefore, when invoking this operation, you  must also renew the token.<!-- #EndLibraryItem --></p><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+Creates a new app, which includes the first app version.<!-- #EndLibraryItem --></p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_user">User</a>, <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a></p>
+<p><!-- #BeginLibraryItem "/Library/_authtokenrenewal.lbi" --> <strong>Authorization token renewal</strong>: This operation changes information that is reflected in the authorization token; therefore, when invoking this operation, you  must also renew the token.<!-- #EndLibraryItem --></p>
+<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
   <tr>
@@ -39,34 +42,52 @@ Creates a new app. This method should be immediately followed by the <span class
 </td>
   </tr>
 </table><!-- #EndLibraryItem --><h3 id="httpmethod">HTTP Method</h3>
+<!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">POST</p>
+<!-- InstanceEndEditable -->
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+<h3 id="endpoint">URL</h3>
+<!-- InstanceBeginEditable name="URL" -->
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps</pre>
+<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3 id="endpoint">URL</h3>
-<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/apps</pre><p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-
-
+<!-- InstanceBeginEditable name="Sample Request" -->
 <h3 id="samplerequest">Sample Request</h3>
-<p>The example below adds a crossword puzzle app. A picture was uploaded for the app.</p>
+<p id="id_samplerequest">The example below adds a crossword puzzle app.</p>
 <p><strong>Sample request URL</strong></p>
 <pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST&nbsp;/api/apps HTTP/1.1
-Host: <!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!-- #EndLibraryItem -->
-Accept: text/plain
-Content-Type: application/json; charset=UTF-8</pre>
+<pre>POST /api/apps HTTP/1.1
+Host: &lt;hostname&gt;
+Accept: */*
+Content-Type: application/json; charset=UTF-8
+</pre>
 <p><strong>Sample request body</strong></p>
-<pre>{
+<pre>
+{
   "Name":"Crosfhocal",
-  "Description":"Crossword puzzle app",
-  "PictureID":"1001"
+  &quot;Description&quot;:&quot;Crossword puzzle app&quot;,
+  "ApplicationVersion":{
+    "Name":"1.0",
+    "Description":"Initial version",
+    "Tag":[
+
+    ],
+    "InitialEnvironment":"Sandbox",
+    "Visibility":"Public",
+    "WebsiteAddress":"www.example.com/crosfhocal"
+  }
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -77,17 +98,19 @@ Content-Type: application/json; charset=UTF-8</pre>
   <tbody>
     <tr>
       <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
-      <td> <!-- #BeginLibraryItem "/Library/hdrval_accept_textplain.lbi" --> Any Accept header value that supports a response Content-Type of <strong>text/plain</strong> is valid; for example, <strong>*/*</strong>.<!-- #EndLibraryItem --></td>
-  </tr>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_accept_textplain.lbi" --> Any Accept header value that supports a response Content-Type of <strong>text/plain</strong> is valid; for example, <strong>*/*</strong>.<!-- #EndLibraryItem --></td>
+    </tr>
     <tr>
       <td><a href="../Ref_apireference.htm#contenttype_request">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_content_type_req_json.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
-  </tr>
-  </tbody>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_json.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+    </tr>
+    </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Request Parameters" -->
 <h3 id="requestparameters">Request Parameters</h3>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
@@ -106,77 +129,85 @@ Content-Type: application/json; charset=UTF-8</pre>
       <td><a href="../obj/o_apps_Application.htm">Application</a></td>
       <td>Required</td>
       <td>The name and description of  the app being added, plus picture ID if a picture was uploaded.</td>
-  </tr>
+    </tr>
   </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Response Description" -->
 <h3 id="response">Response</h3>
 <p id="id_successstatement">If successful, this method returns HTTP status code 200, with the AppID of the new app in plain text.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Sample Response" -->
 <h3 id="sampleresponse">Sample Response</h3>
 <p id="id_sampleresponse">The sample response below shows the AppID in plain text.</p>
-
 <p><strong>Sample response headers</strong></p>
-<pre>HTTP/1.1 200 OK
-Date: Tue, 31 Jul 2012 15:22:16 GMT
+<pre>
+HTTP/1.1 200 OK
 Content-Type: text/plain
+Expires: Tue, 22 Apr 2014 10:07:41 GMT
 Atmo-Renew-Token: renew</pre>
-
 <p><strong>Sample response body</strong></p>
-<pre>app10021.acmecorp</pre>
+<pre>7b9f3d33-f6df-4255-a729-d42320bee5f9.acmecorp</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
-<thead>
-  <tr bgcolor="#DDDDDD">
-    <th width="20%">Header</th>
-    <th width="80%">Description</th>
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Header</th>
+      <th width="80%">Description</th>
     </tr>
-</thead>
-<tbody>
+  </thead>
+  <tbody>
     <tr>
       <td><a href="../Ref_apireference.htm#atmorenewtoken">Atmo-Renew-Token</a></td>
-<td><strong><a href="../Ref_apireference.htm#atmorenewtoken">renew</a></strong></td>
-  </tr>
+      <td><strong><a href="../Ref_apireference.htm#atmorenewtoken">renew</a></strong></td>
+    </tr>
     <tr>
       <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
       <td><strong>text/plain</strong></td>
-  </tr>
-</tbody>
+    </tr>
+    </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Response Body" -->
 <h3 id="responsebody">Response Body</h3>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
-<thead>
-  <tr bgcolor="#DDDDDD">
-    <th width="20%">Name</th>
-    <th width="15%">Type</th>
-    <th width="65%">Description</th>
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Name</th>
+      <th width="15%">Type</th>
+      <th width="65%">Description</th>
     </tr>
-</thead>
-<tbody>
+  </thead>
+  <tbody>
     <tr>
       <td><a href="../Ref_IDsOnThePlatform.htm#id_AppID">AppID</a></td>
       <td>string</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_AppID.lbi" -->
-The unique ID for the specified app.<!-- #EndLibraryItem --></td>
-  </tr>
-</tbody>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_AppID.lbi" --> The unique ID for the specified app.<!-- #EndLibraryItem --></td>
+    </tr>
+  </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
 <h3 id="errorcodes">Error Codes/Messages</h3>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
+<!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -188,41 +219,32 @@ The unique ID for the specified app.<!-- #EndLibraryItem --></td>
     <tr>
       <td><a href="../Ref_apireference.htm#http401">401</a></td>
       <td>Unauthorized. </td>
-  </tr>
+    </tr>
     <tr>
       <td><a href="../Ref_apireference.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
-  </tr>
-  </tbody>
+    </tr>
+    </tbody>
 </table>
-<p><a href="../Ref_apireference.htm#errormessages">Full list of Community Platform API error messages.</a></p>
+<!-- InstanceEndEditable -->
+<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
-<table width="600" border="0" cellspacing="0" cellpadding="2">
+<table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
   <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
   <li><a href="../docconventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
-    <td width="300"><ul>
+    <td width="400"><ul>
   <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
   <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><table width="600" border="0" cellspacing="0" cellpadding="2">
-  <tr>
-    <td width="300" valign="top"><ul>
-      <li><a href="../Ref_ManagingAppVersions.htm">Managing App Versions</a></li>
-      <li><a href="../Ref_Ex_AddingAnApp.htm">Example: Adding an App</a></li>
-    </ul>
-    </td>
-    <td width="300" valign="top">&nbsp;</td>
-  </tr>
-</table>
-<hr />
+</table><!-- #EndLibraryItem --><hr />

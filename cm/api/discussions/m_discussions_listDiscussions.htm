@@ -1,10 +1,10 @@
 ---
 layout: apipage
-title: GET&nbsp;/api/discussions Operation | Discussions Service | Community Platform API
-description:  Returns a list of <a href="../glossary_communityplatform.htm#discussion">discussions</a> that match specified filter criteria.
+title: List Discussions | Discussions Service | Enterprise API Platform API
+description:  Returns a list of <a href="../glossary_communityplatform.htm#gl_discussion">discussions</a> that match specified filter criteria.
 product: cm
 category: ref
-nav-title: GET&nbsp;/api/discussions
+nav-title: List Discussions 
 no-nav: api
 sub-nav: true
 sub-nav-class: discussions
@@ -17,7 +17,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_listDiscussions.lbi" -->
-Returns a list of <a href="../glossary_communityplatform.htm#discussion">discussions</a> that match specified filter criteria.<!-- #EndLibraryItem --></p>
+Returns a list of <a href="../glossary_communityplatform.htm#gl_discussion">discussions</a> that match specified filter criteria.<!-- #EndLibraryItem --></p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: This operation applies to all users. Login is not required. However, the results are restricted according to the user's permissions. When the user is not logged in, only public discussion information is returned.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -48,7 +48,7 @@ Returns a list of <a href="../glossary_communityplatform.htm#discussion">discuss
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/discussions[?DiscussionSubjectID={DiscussionSubjectID}][&amp;ItemID={ItemID}][&amp;Tag={Tag}]
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->discussions[?DiscussionSubjectID={DiscussionSubjectID}][&amp;ItemID={ItemID}][&amp;Tag={Tag}]
 [&amp;SortBy={SortBy}][&amp;IncludeComments={IncludeComments}][&amp;NumberOfComments={NumberOfComments}][&amp;count={count}]</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -58,7 +58,7 @@ Returns a list of <a href="../glossary_communityplatform.htm#discussion">discuss
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for the discussion items relating to a specific discussion about a specific API version.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://&lt;hostname&gt;/api/discussions?DiscussionSubjectID=apiversion20693.acmecorp&amp;ItemID=discussion25796.acmecorp</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->discussions?DiscussionSubjectID=apiversion20693.acmecorp&amp;ItemID=discussion25796.acmecorp</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
@@ -69,7 +69,7 @@ Returns a list of <a href="../glossary_communityplatform.htm#discussion">discuss
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -107,14 +107,14 @@ Returns a list of <a href="../glossary_communityplatform.htm#discussion">discuss
       <td>string</td>
       <td>Optional</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_DiscussionSubjectID.lbi" -->
-The unique ID for the specific resource that a <a href="../glossary_communityplatform.htm#discussion">discussion</a> relates to; for example, the AppVersionID, APIVersionID, GroupID, or a custom BoardID.<!-- #EndLibraryItem -->&nbsp;Use this if you only want information about discussions for a specific resource such as an app version or API version.</td>
+The unique ID for the specific resource that a <a href="../glossary_communityplatform.htm#gl_discussion">discussion</a> relates to; for example, the AppVersionID, APIVersionID, GroupID, or a custom BoardID.<!-- #EndLibraryItem -->&nbsp;Use this if you only want information about discussions for a specific resource such as an app version or API version.</td>
     </tr>
     <tr>
       <td>DiscussionType</td>
       <td>Query</td>
       <td>string</td>
       <td>Optional</td>
-      <td>The <a href="../glossary_communityplatform.htm#discussiontype">type of discussion</a>. No longer in use.</td>
+      <td>The <a href="../glossary_communityplatform.htm#gl_discussiontype">type of discussion</a>. No longer in use.</td>
       </tr>
     <tr>
       <td><a href="../Ref_IDsOnThePlatform.htm#id_retrievinguserid">RetrievingUserID</a></td>
@@ -129,7 +129,7 @@ The unique ID for the specific resource that a <a href="../glossary_communitypla
       <td>string</td>
       <td>Optional</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_ItemID.lbi" -->
-The unique ID for a specific <a href="../glossary_communityplatform.htm#boarditem">Board item</a>.<!-- #EndLibraryItem --></td>
+The unique ID for a specific <a href="../glossary_communityplatform.htm#gl_boarditem">Board item</a>.<!-- #EndLibraryItem --></td>
       </tr>
     <tr>
       <td>Tag</td>
@@ -239,13 +239,13 @@ Date: Tue, 23 Jul 2013 13:51:51 GMT</pre>
         "ID" : "user12262.acmecorp",
         "Name" : "JaneMead",
         "Image" : {
-          "Url" : "http://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png",
+          "Url" : "http://api.acmecorp.com/api/users/user12262.acmecorp/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png",
           "Title" : "JaneMead",
           "Link" : "#/users/user12262.acmecorp/details"
         }
       },
       "Image" : {
-        "Url" : "http://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png",
+        "Url" : "http://api.acmecorp.com/api/users/user12262.acmecorp/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png",
         "Link" : "../acmecorp#/user/user12262.acmecorp/details"
       },
       "CreatedDate" : "2013-07-22T20:15:34.000Z",
@@ -313,7 +313,7 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
       &lt;guid&gt;discussion25796.acmecorp&lt;/guid&gt;
       &lt;pubDate&gt;2013-07-22T20:15:34.000Z&lt;/pubDate&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;http://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png&lt;/Url&gt;
+        &lt;Url&gt;http://api.acmecorp.com/api/users/user12262.acmecorp/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png&lt;/Url&gt;
         &lt;Link&gt;../acmecorp#/user/user12262.acmecorp/details&lt;/Link&gt;
       &lt;/ns4:Image&gt;
       &lt;ns4:CreatedDate&gt;2013-07-22T20:15:34.000Z&lt;/ns4:CreatedDate&gt;
@@ -328,7 +328,7 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
         &lt;ID&gt;user12262.acmecorp&lt;/ID&gt;
         &lt;Name&gt;JaneMead&lt;/Name&gt;
         &lt;ns4:Image&gt;
-          &lt;Url&gt;http://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png&lt;/Url&gt;
+          &lt;Url&gt;http://api.acmecorp.com/api/users/user12262.acmecorp/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png&lt;/Url&gt;
           &lt;Title&gt;JaneMead&lt;/Title&gt;
           &lt;Link&gt;#/users/user12262.acmecorp/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;
@@ -358,7 +358,7 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -476,23 +476,23 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#errormessages">Full list of Community Platform API error messages.</a></p>
+<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
-<table width="600" border="0" cellspacing="0" cellpadding="2">
+<table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
   <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
   <li><a href="../docconventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
-    <td width="300"><ul>
+    <td width="400"><ul>
   <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
   <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

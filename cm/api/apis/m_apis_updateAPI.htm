@@ -1,19 +1,20 @@
 ---
 layout: apipage
-title: PUT&nbsp;/api/apis/{apiID} Operation | APIs Service | Community Platform API
+title: Update API | APIs Service | Enterprise API Platform API
 description: Updates information about an API on the platform.
 product: cm
 category: ref
-nav-title: PUT&nbsp;/api/apis/{apiID}
+nav-title: Update API 
 no-nav: api
 sub-nav: true
 sub-nav-class: apis
 no-catalog: true
 ---
 
-<h2><a name="top"></a>PUT&nbsp;/api/apis/{APIID} Method</h2>
+<h2><a name="top"></a>PUT&nbsp;/api/apis/{APIID}</h2>
 <p><!-- #BeginLibraryItem "/Library/desc_updateAPI.lbi" -->Updates information about an API on the platform.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/Library/roles_user.lbi" --> To complete this operation successfully, a user must be logged in<!-- #EndLibraryItem --> and must be an Administrator for the API.</p><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p class="apidoc_note"><strong>Note</strong>: This operation has been used in the past to add an API version. It still has that capability, for backwards compatibility. However, to add a new API version, it's best to use the <a href="m_apis_addAPIVersion.htm">POST&nbsp;/api/apis/versions</a> operation.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/Library/roles_user.lbi" --> To complete this operation successfully, a user must be logged in<!-- #EndLibraryItem --> and must have modify permission for the API; an <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
   <tr>
@@ -40,7 +41,7 @@ no-catalog: true
 
 
 <h3 id="endpoint">URL</h3>
-<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/apis/{APIID}</pre>
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/{APIID}</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -186,7 +187,7 @@ Content-Type: application/json; charset=UTF-8</pre>
   "AdminGroupID":"group10018.acmecorp",
   "Created":"2013-02-13T16:04:36.251Z",
   "Updated":"2013-02-13T16:28:39.733Z",
-  "AvatarURL":"https://&lt;hostname&gt;/api/apis/api10017.acmecorp/avatar",
+  "AvatarURL":"<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api10017.acmecorp/avatar",
   "APIVersion":{
     "APIID":"api10017.acmecorp",
     "Name":"1.2",
@@ -197,7 +198,7 @@ Content-Type: application/json; charset=UTF-8</pre>
       "Payments",
       "ACME"
     ],
-    "SandboxEndpoint":"https://acme_payments.&lt;hostname&gt;/",
+    "SandboxEndpoint":"https://acme_payments.acmecorp.soa.com/",
     "Operations":{
       "Operation":[
         {
@@ -230,9 +231,9 @@ Content-Type: application/json; charset=UTF-8</pre>
     "Endpoints":{
       "Endpoint":[
         {
-          "Uri":"https://acme_payments.&lt;hostname&gt;/",
+          "Uri":"https://acme_payments.acmecorp.soa.com/",
           "Category":"Sandbox",
-          "CName":"acme_payments.&lt;hostname&gt;",
+          "CName":"acme_payments.acmecorp.soa.com",
           "DeploymentZoneRule":"dzone-rule-2"
         }
       ]
@@ -286,7 +287,7 @@ Content-Type: application/json; charset=UTF-8</pre>
     "Visibility":"Limited",
     "Created":"2013-02-13T16:28:24.332Z",
     "Updated":"2013-02-13T16:28:25.794Z",
-    "State":"com.soa.api.state.acmecorp",
+    "State":"com.soa.api.state.open",
     "ProductionEndpointAccessAutoApproved":true,
     "SandboxEndpointAccessAutoApproved":true,
     "RatingSummary":{
@@ -309,7 +310,7 @@ Content-Type: application/json; charset=UTF-8</pre>
 
 
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -320,11 +321,11 @@ Content-Type: application/json; charset=UTF-8</pre>
   <tbody>
     <tr>
       <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_accept_json_or_appxml.lbi" --><strong>application/json</strong> or <strong>application/xml</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_json_or_appxml.lbi" --><strong>application/json</strong> or <strong>application/xml</strong><!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td><a href="../Ref_apireference.htm#contenttype_request">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_accept_json_or_appxml.lbi" --><strong>application/json</strong> or <strong>application/xml</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_json_or_appxml.lbi" --><strong>application/json</strong> or <strong>application/xml</strong><!-- #EndLibraryItem --></td>
   </tr>
   </tbody>
 </table>
@@ -400,7 +401,7 @@ Content-Type: application/json</pre>
     "DefaultProfile" : "XML or JSON in/XML or JSON out",
     "Description" : "Update to first release includes key fixes.",
     "Tag" : [ "payments API" ],
-    "State" : "com.soa.api.state.acmecorp",
+    "State" : "com.soa.api.state.open",
     "ProductionEndpoint" : "http://acmepayments.broker.soa.com/payments",
     "SandboxEndpoint" : "http://acmepaymentssandbox.broker.soa.com/payments",
     "Operations" : {
@@ -492,7 +493,7 @@ Content-Type: application/json</pre>
   "AdminGroupID" : "group18970.acmecorp",
   "Created" : "2013-01-18T08:46:22Z",
   "Updated" : "2013-01-18T08:46:22Z",
-  "AvatarURL" : "https://&lt;hostname&gt;/api/apis/api18969.acmecorp/avatars/a0af2266-2df8-46e7-971d-bee414a6e038.png"
+  "AvatarURL" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api18969.acmecorp/avatars/a0af2266-2df8-46e7-971d-bee414a6e038.png"
 }</pre>
 <p><strong>Sample response body: XML</strong></p>
 <p>The example below shows an XML response to an update for the ACME Payments API.</p>
@@ -520,7 +521,7 @@ Content-Type: application/json</pre>
     &lt;DefaultProfile&gt;Any in and out&lt;/DefaultProfile&gt;
     &lt;Tag&gt;Payments&lt;/Tag&gt;
     &lt;Tag&gt;ACME&lt;/Tag&gt;
-    &lt;SandboxEndpoint&gt;http://acmepayments.&lt;hostname&gt;/&lt;/SandboxEndpoint&gt;
+    &lt;SandboxEndpoint&gt;http://acmepayments.acmecorp.soa.com/&lt;/SandboxEndpoint&gt;
     &lt;Operations&gt;
       &lt;Operation&gt;
         &lt;Name&gt;addPayment&lt;/Name&gt;
@@ -546,7 +547,7 @@ Content-Type: application/json</pre>
     &lt;Endpoints&gt;
       &lt;Endpoint&gt;
         &lt;Category&gt;Sandbox&lt;/Category&gt;
-        &lt;Uri&gt;http://acmepayments.&lt;hostname&gt;/&lt;/Uri&gt;
+        &lt;Uri&gt;http://acmepayments.acmecorp.soa.com/&lt;/Uri&gt;
         &lt;CName&gt;acmepayments.acmecorp.soa.local&lt;/CName&gt;
         &lt;DeploymentZoneRule&gt;dzone-rule-2&lt;/DeploymentZoneRule&gt;
       &lt;/Endpoint&gt;
@@ -588,7 +589,7 @@ Content-Type: application/json</pre>
     &lt;Visibility&gt;Public&lt;/Visibility&gt;
     &lt;Created&gt;2013-02-11T20:07:54.064Z&lt;/Created&gt;
     &lt;Updated&gt;2013-02-11T20:07:55.764Z&lt;/Updated&gt;
-    &lt;State&gt;com.soa.api.state.acmecorp&lt;/State&gt;
+    &lt;State&gt;com.soa.api.state.open&lt;/State&gt;
     &lt;ProductionEndpointAccessAutoApproved&gt;true&lt;/ProductionEndpointAccessAutoApproved&gt;
     &lt;SandboxEndpointAccessAutoApproved&gt;true&lt;/SandboxEndpointAccessAutoApproved&gt;
     &lt;ns2:RatingSummary&gt;
@@ -602,13 +603,13 @@ Content-Type: application/json</pre>
   &lt;AdminGroupID&gt;group10069.acmecorp&lt;/AdminGroupID&gt;
   &lt;Created&gt;2013-02-11T20:07:54.012Z&lt;/Created&gt;
   &lt;Updated&gt;2013-02-11T20:07:54.012Z&lt;/Updated&gt;
-  &lt;AvatarURL&gt;https://&lt;hostname&gt;/api/apis/api10068.acmecorp/avatar&lt;/AvatarURL&gt;
+  &lt;AvatarURL&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api10068.acmecorp/avatar&lt;/AvatarURL&gt;
 &lt;/API&gt;</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
 <thead>
   <tr bgcolor="#DDDDDD">
@@ -619,7 +620,7 @@ Content-Type: application/json</pre>
 <tbody>
     <tr>
       <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_accept_json_or_appxml.lbi" --><strong>application/json</strong> or <strong>application/xml</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_json_or_appxml.lbi" --><strong>application/json</strong> or <strong>application/xml</strong><!-- #EndLibraryItem --></td>
   </tr>
 </tbody>
 </table>
@@ -662,23 +663,23 @@ Content-Type: application/json</pre>
   </tr>
   </tbody>
 </table>
-<p><a href="../Ref_apireference.htm#errormessages">Full list of Community Platform API error messages.</a></p>
+<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of Enterprise API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
-<table width="600" border="0" cellspacing="0" cellpadding="2">
+<table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
   <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
   <li><a href="../docconventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
-    <td width="300"><ul>
+    <td width="400"><ul>
   <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
   <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

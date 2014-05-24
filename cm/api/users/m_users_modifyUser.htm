@@ -1,10 +1,10 @@
 ---
 layout: apipage
-title: PUT&nbsp;/api/users/{UserID} Operation | Users Service | Community Platform API
+title: Modify User | Users Service | Enterprise API Platform API
 description: Modifies a user in the system. 
 product: cm
 category: ref
-nav-title: PUT&nbsp;/api/users/{UserID}
+nav-title: Modify User 
 no-nav: api
 sub-nav: true
 sub-nav-class: users
@@ -12,7 +12,7 @@ no-catalog: true
 ---
 
 <!-- InstanceBeginEditable name="Heading" -->
-<h2><a name="top" id="top"></a>PUT&nbsp;/api/users/{UserID} Method</h2>
+<h2><a name="top" id="top"></a>PUT&nbsp;/api/users/{UserID}</h2>
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
@@ -49,7 +49,7 @@ no-catalog: true
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/users/{UserID}</pre>
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/{UserID}</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -69,7 +69,7 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
   "UserName":"JaneMead",
   "FirstName":"Jane",
   "LastName":"Mead",
-  "AuthIdentifier":"urn:acmecorp:user:open:user12262",
+  "AuthIdentifier":"urn:acme:user:open:user12262",
   "Visibility":"0",
   "Email":"jane.mead@example.com",
   "Title":"",
@@ -86,7 +86,7 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -135,7 +135,8 @@ The unique ID for a specific user.<!-- #EndLibraryItem --></td>
       <td>Body</td>
       <td><a href="../obj/o_users_User.htm">User</a></td>
       <td>Required</td>
-      <td><!-- #BeginLibraryItem "/Library/o_users_User.lbi" --> Contains information about a <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> user.<!-- #EndLibraryItem --> The sent object includes the information that's being modified.</td>
+      <td><!-- #BeginLibraryItem "/Library/o_users_User.lbi" -->
+Contains information about an<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->user.<!-- #EndLibraryItem -->The sent object includes the information that's being modified.</td>
     </tr>
   </tbody>
 </table>
@@ -166,7 +167,7 @@ Date: Wed, 15 May 2013 18:10:05 GMT</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -225,23 +226,23 @@ Date: Wed, 15 May 2013 18:10:05 GMT</pre>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#errormessages">Full list of Community Platform API error messages.</a></p>
+<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
-<table width="600" border="0" cellspacing="0" cellpadding="2">
+<table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
   <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
   <li><a href="../docconventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
-    <td width="300"><ul>
+    <td width="400"><ul>
   <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
   <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

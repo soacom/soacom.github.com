@@ -1,10 +1,10 @@
 ---
 layout: apipage
-title: GET&nbsp;/api/apis/versions/{ApiVersionID}/swagger.{format} Operation | APIs Service | Community Platform API
-description:  Returns the automatically-generated <a href="../glossary_communityplatform.htm#swagger">Swagger</a> resource document for the specified API version, showing the path to each resource.This operation automatically generates an inventory of all operations for the specified API version, and stores it in a Swagger file of the format specified in the parameters.
+title: Get Swagger Resource Document | APIs Service | Enterprise API Platform API
+description:  Returns the automatically-generated <a href="../glossary_communityplatform.htm#gl_swagger">Swagger</a> resource document for the specified API version, showing the path to each resource.This operation automatically generates an inventory of all operations for the specified API version, and stores it in a Swagger file of the format specified in the parameters.
 product: cm
 category: ref
-nav-title: GET&nbsp;/api/apis/versions/{ApiVersionID}/swagger.{format}
+nav-title: Get Swagger Resource Document 
 no-nav: api
 sub-nav: true
 sub-nav-class: apis
@@ -16,7 +16,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getSwaggerResourceDocument.lbi" -->
-Returns the automatically-generated <a href="../glossary_communityplatform.htm#swagger">Swagger</a> resource document for the specified API version, showing the path to each resource.<!-- #EndLibraryItem -->This operation automatically generates an inventory of all operations for the specified API version, and stores it in a Swagger file of the format specified in the parameters.</p>
+Returns the automatically-generated <a href="../glossary_communityplatform.htm#gl_swagger">Swagger</a> resource document for the specified API version, showing the path to each resource.<!-- #EndLibraryItem -->This operation automatically generates an inventory of all operations for the specified API version, and stores it in a Swagger file of the format specified in the parameters.</p>
 <p>Additional information:</p>
 <ul>
   <li>For more information about using Swagger for your API documentation on the platform, refer to <a href="../Ref_ManagingAPIDocumentationContent.htm#managingapidocumentationwithswagger">Managing API Documentation with Swagger</a>.</li>
@@ -51,7 +51,7 @@ Returns the automatically-generated <a href="../glossary_communityplatform.htm#s
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h3 id="endpoint">URL</h3>
-<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/apis/versions/{APIVersionID}/swagger.{format}</pre><!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/{APIVersionID}/swagger.{format}</pre><!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -72,7 +72,7 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -135,7 +135,7 @@ The locale applicable to the user requesting the content. For more information, 
 
 <!-- InstanceBeginEditable name="Response Description" -->
 <h3 id="response">Response</h3>
-<p id="id_successstatement">If successful, this method returns HTTP status code 200, with information about the Swagger document in JSON or XML format..</p>
+<p id="id_successstatement">If successful, this method returns HTTP status code 200, with information about the Swagger document in JSON or XML format.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -189,7 +189,7 @@ Content-Type: application/json</pre>
   }, {
     "path" : "/lists.{format}"
   } ],
-  "basePath" : "https://&lt;hostname&gt;/api/apis/versions/apiversion11155.acmecorp",
+  "basePath" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion11155.acmecorp",
   "swaggerVersion" : "1.1"
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -259,7 +259,7 @@ Content-Type: text/xml</pre>
       &lt;path&gt;/lists.{format}&lt;/path&gt;
     &lt;/element&gt;
   &lt;/apis&gt;
-  &lt;basePath&gt;https://&lt;hostname&gt;/api/apis/versions/apiversion11155.acmecorp&lt;/basePath&gt;
+  &lt;basePath&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion11155.acmecorp&lt;/basePath&gt;
   &lt;swaggerVersion&gt;1.1&lt;/swaggerVersion&gt;
 &lt;/Any&gt;
 </pre>
@@ -269,7 +269,7 @@ Content-Type: text/xml</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -328,23 +328,23 @@ Content-Type: text/xml</pre>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#errormessages">Full list of Community Platform API error messages.</a></p>
+<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
-<table width="600" border="0" cellspacing="0" cellpadding="2">
+<table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
   <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
   <li><a href="../docconventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
-    <td width="300"><ul>
+    <td width="400"><ul>
   <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
   <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

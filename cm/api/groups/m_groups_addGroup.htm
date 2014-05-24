@@ -1,10 +1,10 @@
 ---
 layout: apipage
-title: POST&nbsp;/api/groups Operation | Groups Service | Community Platform API
+title: Add Group | Groups Service | Enterprise API Platform API
 description: Adds an independent group to the platform.
 product: cm
 category: ref
-nav-title: POST&nbsp;/api/groups
+nav-title: Add Group 
 no-nav: api
 sub-nav: true
 sub-nav-class: groups
@@ -12,7 +12,7 @@ no-catalog: true
 ---
 
 <!-- InstanceBeginEditable name="Heading" -->
-<h2><a name="top" id="top"></a>POST&nbsp;/api/groups Operation</h2>
+<h2><a name="top" id="top"></a>POST&nbsp;/api/groups</h2>
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
@@ -48,7 +48,7 @@ no-catalog: true
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/groups</pre>
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->groups</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -57,7 +57,7 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a new group being added.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://&lt;hostname&gt;/api/groups</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->groups</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>POST /api/groups HTTP/1.1
 Host: &lt;hostname&gt;
@@ -85,7 +85,7 @@ Content-Type: application/json; charset=UTF-8</pre>
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -149,8 +149,8 @@ Content-Type: application/json; charset=UTF-8</pre>
 Content-Type: application/json
 Date: Mon, 10 Jun 2013 22:46:07 GMT
 Set-Cookie: AtmoAuthToken_open=TokenID%3D8a2f4931-d21f-11e2-a8ac-cbfcc05f2607%2Cclaimed_id%3Durn
-%3Aacmecorp%3Auser%3Aacmecorp%3Auser12262%2CissueTime%3D1370904367894%2CexpirationTime%3D1370906167871
-%2CAttributesIncluded%3Dfalse%2CUserFDN%3Duser12262%252Eopen%2CUserName%3Dacmecorp-JaneMead%2Csig%3DOVX-XWv7XRRyslt
+%3Aacme%3Auser%3Aacmecorp%3Auser12262%2CissueTime%3D1370904367894%2CexpirationTime%3D1370906167871
+%2CAttributesIncluded%3Dfalse%2CUserFDN%3Duser12262%252Eopen%2CUserName%3Dopen-JaneMead%2Csig%3DOVX-XWv7XRRyslt
 hf8c7MmZRFNvBj_XzeZ90MGUSAdWZHdwq1ALn9CNFVfbdCmDpinGS7azEf0luXwZ-QQJrU7ZThWixkggVMWx47R9ZK0XVPtlW6O
 CDdDkj6edeWYa4QUP7e9qYNqnr9OxXcqvyuQAxoZftBga3-iwbt1yQTMg;path=/;expires=Mon, 10-Jun-2013 23:11:07 GMT;HttpOnly</pre>
 <p><strong>Sample response body: JSON</strong></p>
@@ -169,9 +169,9 @@ CDdDkj6edeWYa4QUP7e9qYNqnr9OxXcqvyuQAxoZftBga3-iwbt1yQTMg;path=/;expires=Mon, 10
 <pre>Status Code: 200 OK
 Content-Type: application/xml
 Date: Mon, 10 Jun 2013 23:52:04 GMT
-Set-Cookie: AtmoAuthToken_open=TokenID%3Dc0ba5d62-d228-11e2-a8ac-cbfcc05f2607%2Cclaimed_id%3Durn%3Aacmecorp
+Set-Cookie: AtmoAuthToken_open=TokenID%3Dc0ba5d62-d228-11e2-a8ac-cbfcc05f2607%2Cclaimed_id%3Durn%3Aacme
 %3Auser%3Aacmecorp%3Auser12 262%2CissueTime%3D1370908324871%2CexpirationTime%3D1370910124850%2CAttributesIncluded
-%3Dfalse%2CUserFDN%3Duser12262%252E open%2CUserName%3Dacmecorp-JaneMead%2Csig%3DNHlX_eIXSexfNRgvkXw_S8MUf6DnhnEXP9
+%3Dfalse%2CUserFDN%3Duser12262%252E open%2CUserName%3Dopen-JaneMead%2Csig%3DNHlX_eIXSexfNRgvkXw_S8MUf6DnhnEXP9
 z_W3dU82o5qdrF9s96yf0aC1MF07FbNGq6yZeDmcSyTDJsIBvQncuzdTrTdraurzNVMC8JUEHRvZbB04FKdsoHObyvMQzAZ4_RSXUsKFfTylfm
 OxPiMT1ylqPba-vB9WW4XvDTssk;path=/;expires=Tue, 11-Jun-2013 00:17:04 GMT;HttpOnly</pre>
 <p><strong>Sample response body: XML</strong></p>
@@ -195,7 +195,7 @@ OxPiMT1ylqPba-vB9WW4XvDTssk;path=/;expires=Tue, 11-Jun-2013 00:17:04 GMT;HttpOnl
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -232,7 +232,7 @@ OxPiMT1ylqPba-vB9WW4XvDTssk;path=/;expires=Tue, 11-Jun-2013 00:17:04 GMT;HttpOnl
     <tr>
       <td>Group</td>
       <td><a href="../obj/o_groups_Group.htm">Group</a></td>
-      <td><!-- #BeginLibraryItem "/Library/o_groups_Group.lbi" -->Contains information about a <a href="../glossary_communityplatform.htm#group">group</a> on the platform.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_groups_Group.lbi" -->Contains information about a <a href="../glossary_communityplatform.htm#gl_group">group</a> on the platform.<!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -263,23 +263,23 @@ Method Not Allowed. For example, you might get this if you specified an invalid 
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#errormessages">Full list of Community Platform API error messages.</a></p>
+<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
-<table width="600" border="0" cellspacing="0" cellpadding="2">
+<table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
   <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
   <li><a href="../docconventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
-    <td width="300"><ul>
+    <td width="400"><ul>
   <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
   <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

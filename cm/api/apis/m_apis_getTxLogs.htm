@@ -1,10 +1,10 @@
 ---
 layout: apipage
-title: GET&nbsp;/api/apis/versions/{ApiVersionID}/txlogs Operation | APIs Service | Community Platform API
-description:  Returns transaction logs for the specified API version.With the optional ContractID, returns transaction logs for a specific app/API contract. Additional optional parameters allow you to specify more clearly the set of transaction logs that you want.
+title: Get Transaction Logs | APIs Service | Enterprise API Platform API
+description:  Returns transaction logs for the specified API version.
 product: cm
 category: ref
-nav-title: GET&nbsp;/api/apis/versions/{ApiVersionID}/txlogs
+nav-title: Get Transaction Logs 
 no-nav: api
 sub-nav: true
 sub-nav-class: apis
@@ -16,8 +16,9 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getTxLogs_apis.lbi" -->
-Returns transaction logs for the specified API version.<!-- #EndLibraryItem -->With the optional ContractID, returns transaction logs for a specific app/API contract. Additional optional parameters allow you to specify more clearly the set of transaction logs that you want.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/Library/roles_user.lbi" --> To complete this operation successfully, a user must be logged in<!-- #EndLibraryItem --> and must be an Administrator for the API.</p>
+Returns transaction logs for the specified API version.<!-- #EndLibraryItem --></p>
+<p>With the optional ContractID, returns transaction logs for a specific app/API contract. Additional optional parameters allow you to specify more clearly the set of transaction logs that you want.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/Library/roles_user.lbi" --> To complete this operation successfully, a user must be logged in<!-- #EndLibraryItem --> and must have monitor permission for the API; an <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a>, <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>, or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a> for an app that has a contract with the API.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -47,7 +48,7 @@ Returns transaction logs for the specified API version.<!-- #EndLibraryItem -->W
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/apis/versions/{APIVersionID}/txlogs[?Environment={environment}][&amp;StartDate={StartDate}][&amp;EndDate={EndDate}]
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/{APIVersionID}/txlogs[?Environment={environment}][&amp;StartDate={StartDate}][&amp;EndDate={EndDate}]
 [&amp;TimeZone={TimeZone}][&amp;Duration={Duration}][&amp;start={start}][&amp;count={count}]</pre><!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -67,7 +68,7 @@ Returns transaction logs for the specified API version.<!-- #EndLibraryItem -->W
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -78,7 +79,7 @@ Returns transaction logs for the specified API version.<!-- #EndLibraryItem -->W
   <tbody>
     <tr>
       <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
-      <td>application/json or text/xml</td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_accept_json_or_txtxml.lbi" --> <strong>application/json</strong> or <strong>text/xml</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -141,8 +142,7 @@ The beginning point for the date range of metric information requested. If Start
       <td>Query</td>
       <td>string</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/Library/parm_Duration.lbi" -->
-The <a href="../Ref_apireference.htm#datatypes_duration">duration</a> for the metric information. If not specified, defaults to two hours (2h). The StartDate, EndDate, and Duration fields work together to define the information to be returned.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/parm_Duration.lbi" -->The <a href="../Ref_apireference.htm#datatypes_duration">duration</a> for the metric information. If not specified, defaults to two hours (2h). The StartDate, EndDate, and Duration fields work together to define the information to be returned.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>start</td>
@@ -167,7 +167,7 @@ The number of results to be returned, from the specified starting point. If not 
 
 <!-- InstanceBeginEditable name="Response Description" -->
 <h3 id="response">Response</h3>
-<p id="id_successstatement">If successful, this method returns HTTP status code 200, with the transaction log entries.</p>
+<p id="id_successstatement">If successful, this method returns HTTP status code 200, with the transaction logs in JSON or XML format.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -188,7 +188,7 @@ Fri, 03 May 2013 16:22:12 GMT</pre>
     "APIName" : "LoginAPI Service",
     "APIVersionID" : "apiversion400.acmecorp",
     "MethodName" : "renewToken",
-    "AppName" : "SOA Software ACMECorp",
+    &quot;AppName&quot; : &quot;ACME Corporation ACMECorp app&quot;,
     "RequestDateTime" : "2013-05-03T15:34:29.807Z",
     "ResponseStatusCode" : 0
   }, {
@@ -197,7 +197,7 @@ Fri, 03 May 2013 16:22:12 GMT</pre>
     "APIName" : "LoginAPI Service",
     "APIVersionID" : "apiversion400.acmecorp",
     "MethodName" : "loginWithSSO",
-    "AppName" : "SOA Software ACMECorp",
+    &quot;AppName&quot; : &quot;ACME Corporation ACMECorp app&quot;,
     "RequestDateTime" : "2013-05-03T15:30:42.061Z",
     "ResponseStatusCode" : 0
   }, {
@@ -206,7 +206,7 @@ Fri, 03 May 2013 16:22:12 GMT</pre>
     "APIName" : "LoginAPI Service",
     "APIVersionID" : "apiversion400.acmecorp",
     "MethodName" : "loginWithSSO",
-    "AppName" : "SOA Software ACMECorp",
+    &quot;AppName&quot; : &quot;ACME Corporation ACMECorp app&quot;,
     "RequestDateTime" : "2013-05-03T15:25:47.234Z",
     "ResponseStatusCode" : 0
   }, {
@@ -215,7 +215,7 @@ Fri, 03 May 2013 16:22:12 GMT</pre>
     "APIName" : "LoginAPI Service",
     "APIVersionID" : "apiversion400.acmecorp",
     "MethodName" : "login",
-    "AppName" : "SOA Software ACMECorp",
+    &quot;AppName&quot; : &quot;ACME Corporation ACMECorp app&quot;,
     "RequestDateTime" : "2013-05-03T14:04:05.411Z",
     "ResponseStatusCode" : 0
   } ]
@@ -234,7 +234,7 @@ Date: Fri, 03 May 2013 16:22:42 GMT</pre>
     &lt;APIName&gt;LoginAPI Service&lt;/APIName&gt;
     &lt;APIVersionID&gt;apiversion400.acmecorp&lt;/APIVersionID&gt;
     &lt;MethodName&gt;loginWithSSO&lt;/MethodName&gt;
-    &lt;AppName&gt;SOA Software ACMECorp&lt;/AppName&gt;
+    &lt;AppName&gt;ACME Corporation ACMECorp app&lt;/AppName&gt;
     &lt;RequestDateTime&gt;2013-05-03T15:50:47.188Z&lt;/RequestDateTime&gt;
     &lt;ResponseStatusCode&gt;0&lt;/ResponseStatusCode&gt;
   &lt;/TransactionInfo&gt;
@@ -244,7 +244,7 @@ Date: Fri, 03 May 2013 16:22:42 GMT</pre>
     &lt;APIName&gt;LoginAPI Service&lt;/APIName&gt;
     &lt;APIVersionID&gt;apiversion400.acmecorp&lt;/APIVersionID&gt;
     &lt;MethodName&gt;renewToken&lt;/MethodName&gt;
-    &lt;AppName&gt;SOA Software ACMECorp&lt;/AppName&gt;
+    &lt;AppName&gt;ACME Corporation ACMECorp app&lt;/AppName&gt;
     &lt;RequestDateTime&gt;2013-05-03T15:34:29.807Z&lt;/RequestDateTime&gt;
     &lt;ResponseStatusCode&gt;0&lt;/ResponseStatusCode&gt;
   &lt;/TransactionInfo&gt;
@@ -254,7 +254,7 @@ Date: Fri, 03 May 2013 16:22:42 GMT</pre>
     &lt;APIName&gt;LoginAPI Service&lt;/APIName&gt;
     &lt;APIVersionID&gt;apiversion400.acmecorp&lt;/APIVersionID&gt;
     &lt;MethodName&gt;loginWithSSO&lt;/MethodName&gt;
-    &lt;AppName&gt;SOA Software ACMECorp&lt;/AppName&gt;
+    &lt;AppName&gt;ACME Corporation ACMECorp app&lt;/AppName&gt;
     &lt;RequestDateTime&gt;2013-05-03T15:30:42.061Z&lt;/RequestDateTime&gt;
     &lt;ResponseStatusCode&gt;0&lt;/ResponseStatusCode&gt;
   &lt;/TransactionInfo&gt;
@@ -264,7 +264,7 @@ Date: Fri, 03 May 2013 16:22:42 GMT</pre>
     &lt;APIName&gt;LoginAPI Service&lt;/APIName&gt;
     &lt;APIVersionID&gt;apiversion400.acmecorp&lt;/APIVersionID&gt;
     &lt;MethodName&gt;login&lt;/MethodName&gt;
-    &lt;AppName&gt;SOA Software ACMECorp&lt;/AppName&gt;
+    &lt;AppName&gt;ACME Corporation ACMECorp app&lt;/AppName&gt;
     &lt;RequestDateTime&gt;2013-05-03T14:04:05.411Z&lt;/RequestDateTime&gt;
     &lt;ResponseStatusCode&gt;0&lt;/ResponseStatusCode&gt;
   &lt;/TransactionInfo&gt;
@@ -276,7 +276,7 @@ Date: Fri, 03 May 2013 16:22:42 GMT</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -287,7 +287,7 @@ Date: Fri, 03 May 2013 16:22:42 GMT</pre>
   <tbody>
     <tr>
       <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
-      <td>application/json or text/xml</td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_accept_json_or_txtxml.lbi" --> <strong>application/json</strong> or <strong>text/xml</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -335,23 +335,23 @@ Date: Fri, 03 May 2013 16:22:42 GMT</pre>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#errormessages">Full list of Community Platform API error messages.</a></p>
+<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
-<table width="600" border="0" cellspacing="0" cellpadding="2">
+<table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
   <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
   <li><a href="../docconventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
-    <td width="300"><ul>
+    <td width="400"><ul>
   <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
   <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

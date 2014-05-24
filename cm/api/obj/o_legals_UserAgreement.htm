@@ -1,7 +1,7 @@
 ---
 layout: apipage
-title: UserAgreement Object | Legals Service | Community Platform API
-description:  Includes information about a user's agreement to a legal document associated with an API, including the ID of the document and the ID of the user who is making the agreement.
+title: UserAgreement Object | Legals Service | Enterprise API Platform API
+description:  Information about a legal agreement document.
 product: cm
 category: ref
 nav-title: UserAgreement Object 
@@ -12,8 +12,8 @@ no-catalog: true
 ---
 
 <h2><a name="top"></a>UserAgreement Object</h2>
-<p><!-- #BeginLibraryItem "/Library/o_legals_AgreeentDocument.lbi" -->
-Includes information about a user's agreement to a legal document associated with an API, including the ID of the document and the ID of the user who is making the agreement.<!-- #EndLibraryItem --></p>
+<p><!-- #BeginLibraryItem "/Library/o_legals_AgreementDocument.lbi" -->
+Information about a legal agreement document.<!-- #EndLibraryItem --></p>
 
 <p class="usedby">This object is used by the following operations:</p>
 <ul>
@@ -42,15 +42,14 @@ Includes information about a user's agreement to a legal document associated wit
         The unique ID for a specific user.<!-- #EndLibraryItem --> Required in the request message when a user is accepting a legal agreement.</td>
   </tr>
     <tr>
-      <td>DocumentID</td>
+      <td>DocumentID (same as <a href="../Ref_IDsOnThePlatform.htm#id_legaldocumentid">LegalDocumentID</a>)</td>
       <td>string</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_DocumentID.lbi" -->
-        The unique ID for a specific legal document, such as an API licensing agreement.<!-- #EndLibraryItem --> Required in the request message when a user is accepting a legal agreement.</td>
+      <td> <!-- #BeginLibraryItem "/Library/o_ID_LegalDocumentID.lbi" -->The unique ID for the association of a specific legal document with a resource such as an API version, license, or the platform.<!-- #EndLibraryItem --> Required in the request message when a user is accepting a legal agreement.</td>
   </tr>
     <tr>
       <td><a href="../Ref_IDsOnThePlatform.htm#id_agreementscopeid">AgreementScopeID</a></td>
       <td>string</td>
-      <td>A unique ID for the <a href="../glossary_communityplatform.htm#scope">scope</a> of the legal agreement.</td>
+      <td>A unique ID for the <a href="../glossary_communityplatform.htm#gl_scope">scope</a> of the legal agreement.</td>
   </tr>
     <tr>
       <td>AgreementDate</td>
@@ -63,18 +62,18 @@ Includes information about a user's agreement to a legal document associated wit
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
-<table width="600" border="0" cellspacing="0" cellpadding="2">
+<table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
   <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
   <li><a href="../docconventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
-    <td width="300"><ul>
+    <td width="400"><ul>
   <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
   <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

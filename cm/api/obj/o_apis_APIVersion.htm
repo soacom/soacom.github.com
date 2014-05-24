@@ -1,6 +1,6 @@
 ---
 layout: apipage
-title: APIVersion Object | APIs Service | Community Platform API
+title: APIVersion Object | APIs Service | Enterprise API Platform API
 description: Includes information about an API version.
 product: cm
 category: ref
@@ -53,6 +53,12 @@ The unique ID for the specified API.<!-- #EndLibraryItem --></td>
       <td>The name of the API.</td>
   </tr>
     <tr>
+      <td>Description</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td>The description of the API version.</td>
+    </tr>
+    <tr>
       <td>Type</td>
       <td>string</td>
       <td>Optional</td>
@@ -71,22 +77,16 @@ The unique ID for the specified API.<!-- #EndLibraryItem --></td>
         <p>Only applicable for adding operations via the user interface.</p></td>
   </tr>
     <tr>
-      <td>Description</td>
-      <td>string</td>
-      <td>Optional</td>
-      <td>The description of the API version.</td>
-  </tr>
-    <tr>
       <td>Tag</td>
       <td>string[&nbsp;]</td>
       <td>Optional</td>
       <td>One or more user-defined tags assigned to the discussion.</td>
-  </tr>
+    </tr>
     <tr>
       <td><a id="productionendpoint"></a>ProductionEndpoint</td>
       <td>anyURI</td>
       <td>Optional</td>
-      <td>The Production endpoint listed for the API version in the API Details page in the user interface.</td>
+      <td>The Production endpoint listed for the API version in the API Details page in the user interface. This is typically the same as the URI in the <a href="o_apis_Endpoint.htm">Endpoints</a> object.</td>
     </tr>
      <tr>
       <td>ProductionEndpointOAuthDetails</td>
@@ -99,7 +99,7 @@ The unique ID for the specified API.<!-- #EndLibraryItem --></td>
       <td><a id="sandboxendpoint"></a>SandboxEndpoint</td>
       <td>anyURI</td>
       <td>Optional</td>
-      <td>The Sandbox endpoint listed for the API version in the API Details page in the user interface.</td>
+      <td>The Sandbox endpoint listed for the API version in the API Details page in the user interface. This is typically the same as the URI in the <a href="o_apis_Endpoint.htm">Endpoints</a> object.</td>
   </tr>
      <tr>
       <td>SandboxEndpointOAuthDetails</td>
@@ -113,7 +113,7 @@ The unique ID for the specified API.<!-- #EndLibraryItem --></td>
       <td><a href="../obj/o_apis_Descriptor.htm">Descriptor</a></td>
       <td>Optional</td>
       <td><!-- #BeginLibraryItem "/Library/parm_descriptor.lbi" -->
-SOAP APIs only: Includes information about the WSDL that contains the technical details about the API version. For SOAP APIs, this is required in the request message when adding or updating an API version.<!-- #EndLibraryItem --></td>
+SOAP APIs only: Includes information about the WSDL that contains the technical details about the API version. For SOAP APIs, this is required in the request message when adding or updating an API version. Not used in response messages.<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td>Operations</td>
@@ -142,13 +142,13 @@ An array of information about one or more policies that are enforced for the API
       <td><a href="../obj/o_apis_TargetAPI.htm">TargetAPI</a></td>
       <td>Optional</td>
       <td><!-- #BeginLibraryItem "/Library/parm_TargetAPI.lbi" -->
-Includes information about the <a href="../glossary_communityplatform.htm#targetapi">target API</a>&#8212;the destination endpoint, or next hop, defined when an API is using the platform as a proxy.<!-- #EndLibraryItem --></td>
+Includes information about the <a href="../glossary_communityplatform.htm#gl_targetapi">target API</a>&#8212;the destination endpoint, or next hop, defined when an API is using the platform as a proxy.<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td>Visibility</td>
       <td>string</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/Library/parm_Visibility_apis.lbi" -->The <a href="../glossary_communityplatform.htm#visibility_api">visibility</a> setting for the API; either Public, which is visible to all users, or Limited, which is visible only to API Administrators and Private API Group members.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/parm_Visibility_apis.lbi" -->The <a href="../glossary_communityplatform.htm#gl_visibility_api">visibility</a> setting for the API; either Public, which is visible to all users, or Limited, which is visible only to API Administrators and Private API Group members.<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td>Created</td>
@@ -194,24 +194,55 @@ The date/time stamp when the resource was last updated. Used only in response me
       <td>Optional</td>
       <td>Indicates whether a Sandbox endpoint exists for this API. For internal use only.</td>
   </tr>
+    <tr>
+      <td>SandboxAnonymousAccessAllowed</td>
+      <td>boolean</td>
+      <td>Optional</td>
+      <td>Indicates whether users who are not logged in can use the Sandbox endpoint for this API version. Defaults to <strong>false</strong>.</td>
+    </tr>
+    <tr>
+      <td>ProductionAnonymousAccessAllowed</td>
+      <td>boolean</td>
+      <td>Optional</td>
+      <td>Indicates whether users who are not logged in can use the Production endpoint for this API version. Defaults to <strong>false</strong>.</td>
+    </tr>
+    <tr>
+      <td>APIVersionSettings</td>
+      <td><a href="o_apis_APIVersionSettings.htm">APIVersionSettings</a></td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/o_apis_APIVersionSettings.lbi" -->
+Includes information about the settings for an API version; for example, whether access is auto approved and whether ratings and reviews are supported. If not specified for the API version, settings are inherited from the API, business, or tenant.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>APIVersionResourceDetails</td>
+      <td>APIVersionResourceDetails</td>
+      <td>Optional</td>
+      <td>Information about the API version resource details.</td>
+    </tr>
+    <tr>
+      <td>ResourceLevelPermissionsSupported</td>
+      <td>boolean</td>
+      <td>Optional</td>
+      <td>If resource level permissions are supported, set to <strong>true</strong>.</td>
+    </tr>
     </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
-<table width="600" border="0" cellspacing="0" cellpadding="2">
+<table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
   <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
   <li><a href="../docconventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
-    <td width="300"><ul>
+    <td width="400"><ul>
   <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
   <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

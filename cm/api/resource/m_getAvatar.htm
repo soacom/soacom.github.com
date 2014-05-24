@@ -1,10 +1,10 @@
 ---
 layout: apipage
-title: GET&nbsp;/api/{service}/{ID}/avatars/{version}.png Operation | Groups Service | Community Platform API
+title: Get Avatar | Groups Service | Enterprise API Platform API
 description:  Retrieves the specified avatar associated with the specified resource. The avatar might be the current one or an earlier one.
 product: cm
 category: ref
-nav-title: GET&nbsp;/api/{service}/{ID}/avatars/{version}.png
+nav-title: Get Avatar 
 no-nav: api
 sub-nav: true
 sub-nav-class: resource
@@ -12,7 +12,7 @@ no-catalog: true
 ---
 
 <!-- InstanceBeginEditable name="Heading" -->
-<h2><a name="top" id="top"></a>GET&nbsp;/api/{service}/{ID}/avatars/{AvatarVersionID}.png Operation</h2>
+<h2><a name="top" id="top"></a>GET&nbsp;/api/{service}/{ID}/avatars/{AvatarVersionID}.png</h2>
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
@@ -56,7 +56,7 @@ Retrieves the specified avatar associated with the specified resource. The avata
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/{service}/{ID}/avatars/{AvatarVersionID}.png</pre>
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->{service}/{ID}/avatars/{AvatarVersionID}.png</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -83,7 +83,7 @@ Retrieves the specified avatar associated with the specified resource. The avata
 <h4 id="samplerequest_2">Sample request: Apps service</h4>
 <p>The example below shows a request for the avatar for the specified app/app version.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://&lt;hostname&gt;/api/apps/app16964.acmecorp/avatars/4iXro2Uxs2h4LviCshR9pK9w.acmecorp.png</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app16964.acmecorp/avatars/4iXro2Uxs2h4LviCshR9pK9w.acmecorp.png</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: image/png</pre>
 <p><strong>Sample request body</strong></p>
@@ -93,7 +93,7 @@ Retrieves the specified avatar associated with the specified resource. The avata
 
 <h4 id="samplerequest_4">Sample request: Groups service</h4>
 <p>The example below shows a request for the avatar for the specified group.</p>
-<pre>https://&lt;hostname&gt;/api/apis/api18969.acmecorp/avatars/8a8dd915-5a17-4c23-bbbe-ab5022f88185.png?size=75</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api18969.acmecorp/avatars/8a8dd915-5a17-4c23-bbbe-ab5022f88185.png?size=75</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: image/png</pre>
 <p><strong>Sample request body</strong></p>
@@ -103,7 +103,7 @@ Retrieves the specified avatar associated with the specified resource. The avata
 
 <h4 id="samplerequest_3">Sample request: Users service</h4>
 <p>The example below shows a request for the avatar for the specified user. In the context of the Users service, the UserID is used twice in the URL since only apps and APIs have different versions.</p>
-<pre>https://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/user12262.acmecorp.png</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmecorp/avatars/user12262.acmecorp.png</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: image/png</pre>
 <p><strong>Sample request body</strong></p>
@@ -115,7 +115,7 @@ Retrieves the specified avatar associated with the specified resource. The avata
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -241,7 +241,7 @@ Date: Thu, 23 May 2013 18:37:59 GMT</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -256,7 +256,7 @@ Date: Thu, 23 May 2013 18:37:59 GMT</pre>
     </tr>
     <tr>
       <td><a href="../Ref_apireference.htm#cachecontrol">Cache-Control</a></td>
-      <td>public, max-age=604800. For information about caching, see <a href="../Ref_apireference.htm#atmo_caching">How the Community Platform API Uses Caching</a>.</td>
+      <td>public, max-age=604800. For information about caching, see <a href="../Ref_apireference.htm#ref_atmo_caching">How the<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->API Uses Caching</a>.</td>
     </tr>
   </tbody>
 </table>
@@ -304,23 +304,23 @@ Date: Thu, 23 May 2013 18:37:59 GMT</pre>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#errormessages">Full list of Community Platform API error messages.</a></p>
+<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
-<table width="600" border="0" cellspacing="0" cellpadding="2">
+<table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
   <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
   <li><a href="../docconventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
-    <td width="300"><ul>
+    <td width="400"><ul>
   <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
   <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

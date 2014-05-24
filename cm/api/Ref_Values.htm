@@ -1,6 +1,6 @@
 ---
 layout: apipage
-title: Valid Values for Components on the Platform | Reference Material | Community Platform API
+title: Valid Values for Components on the Platform | Reference Material | Enterprise API Platform API
 description: This topic includes lists of valid values for the following common elements used on the platform-
 product: cm
 category: ref
@@ -13,65 +13,136 @@ no-catalog: true
 
 <h2><a name="top"></a>Valid Values for Components on the Platform</h2>
 <p>This topic includes lists of valid values for the following common elements used on the platform:</p>
-
-<table width="100%" border="0" cellspacing="0" cellpadding="2">
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+<thead>
   <tr>
-    <td width="50%"><ul>
-      <li><a href="#values_visibilitysettings">Visibility Settings</a></li>
-      <li><a href="#values_appsecuritymechanisms">App Security Mechanisms</a></li>
-      <li><a href="#values_appsettings">App Settings</a></li>
-      <li><a href="#values_userroles">User Roles</a></li>
-      <li><a href="#values_client_auth_policy_options">Client Authorization Policy Options</a></li>
-      <li><a href="#values_apitypes">API Types</a></li>
-      <li><a href="#values_apistate">API States</a></li>
-      <li><a href="#values_grouptypes">Group Types</a></li>
-      <li><a href="#values_groupstates">Group States</a></li>
-      <li><a href="#values_groupmembershipstates">Group Membership States</a></li>
-      <li><a href="#values_groupsettings">Group Settings</a></li>
-      <li><a href="#values_boarditemtypes">Board Item Types</a></li>
-      <li><a href="#values_groupmemberroles">Group Member Roles</a></li>
-      <li><a href="#values_legaldocumentstate">Legal Document States</a></li>
-      <li><a href="#values_legalagreementtype">Legal Agreement Types</a></li>
-      <li><a href="#values_timeintervals">Time Intervals</a></li>
-      <li><a href="#values_policytypes">Policy Types</a></li>
-      <li><a href="#values_sortorder">Sort Order Values</a></li>
-      <li><a href="#values_sortby">Sort By Values</a></li>
-    </ul>
-</td>
-    <td width="50%"><ul>
-  <li><a href="#values_ticketlabel">Ticket Label Values</a></li>
-  <li><a href="#values_ticketstate">Ticket State Values</a></li>
-  <li><a href="#values_usersignupstate">User Signup State Values</a></li>
-  <li><a href="#values_notificationsgroup">Notification Group Values</a></li>
-  <li><a href="#values_notificationstate">Notification State Values</a></li>
-  <li><a href="#values_apiaccessstate">API Access States (API Contract States)</a></li>
-  <li><a href="#values_contractenvironment">App/API Contract Environment Values</a></li>
-  <li><a href="#values_appstate">App State Values</a></li>
-  <li><a href="#values_resourcetype">Resource Types</a></li>
-  <li><a href="#values_userpreferences">User Preferences</a></li>
-  <li><a href="#values_userstatus">User Status</a></li>
-  <li><a href="#values_avatarproviders">Avatar Providers</a></li>
-  <li><a href="#values_environment">Environment</a></li>
-  <li><a href="#values_useractions">User Actions on a Resource</a></li>
-  <li><a href="#values_workflowactions">Workflow Actions</a></li>
-  <li><a href="#values_displaymode">Display Mode</a></li>
-  <li><a href="#values_oauthclienttype">OAuth Client Type</a><a href="../troubleshootingandsupport.htm"></a></li>
-</ul>
-</td>
+  <th width="50%">Element</th>
+  <th width="50%">Element</th>
   </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><a href="#values_apicontractstatus">API Contract Status</a></td>
+    <td><a href="#values_metrickey">Metric Key Values</a></td>
+    </tr>
+  <tr>
+    <td><a href="#values_apistate">API States</a></td>
+    <td><a href="#values_notificationsgroup">Notification Group Values</a></td>
+    </tr>
+  <tr>
+    <td><a href="#values_apitypes">API Types</a></td>
+    <td><a href="#values_notificationstate">Notification State Values</a></td>
+    </tr>
+  <tr>
+    <td><a href="#values_appsecuritymechanisms">App Security Mechanisms</a></td>
+    <td><a href="#values_oauthclienttype">OAuth Client Type</a></td>
+    </tr>
+  <tr>
+    <td><a href="#values_appsettings">App Settings</a></td>
+    <td><a href="#values_policytypes">Policy Types</a></td>
+    </tr>
+  <tr>
+    <td><a href="#values_appstate">App State Values</a></td>
+    <td><a href="#values_reporttype">Report Type</a></td>
+    </tr>
+  <tr>
+    <td><a href="#values_contractenvironment">App/API Contract Environment Values</a></td>
+    <td><a href="#values_resourcetype">Resource Types</a></td>
+    </tr>
+  <tr>
+    <td><a href="#values_appversionsettings">App Version Settings</a></td>
+    <td><a href="#values_sortby">Sort By Values</a></td>
+    </tr>
+  <tr>
+    <td><a href="#values_avatarproviders">Avatar Providers</a></td>
+    <td><a href="#values_sortorder">Sort Order Values</a></td>
+    </tr>
+  <tr>
+    <td><a href="#values_boarditemtypes">Board Item Types</a></td>
+    <td><a href="#values_ticketlabel">Ticket Label Values</a></td>
+    </tr>
+  <tr>
+    <td><a href="#values_client_auth_policy_options">Client Authorization Policy Options</a></td>
+    <td><a href="#values_ticketstate">Ticket State Values</a></td>
+    </tr>
+  <tr>
+    <td><a href="#values_displaymode">Display Mode</a></td>
+    <td><a href="#values_timeintervals">Time Intervals</a></td>
+    </tr>
+  <tr>
+    <td><a href="#values_environment">Environment</a></td>
+    <td><a href="#values_useractions">User Actions on a Resource</a></td>
+    </tr>
+  <tr>
+    <td><a href="#values_groupmemberroles">Group Member Roles</a></td>
+    <td><a href="#values_userpreferences">User Preferences</a></td>
+    </tr>
+  <tr>
+    <td><a href="#values_groupmembershipstates">Group Membership States</a></td>
+    <td><a href="#values_usersignupstate">User Signup State Values</a></td>
+    </tr>
+  <tr>
+    <td><a href="#values_groupsettings">Group Settings</a></td>
+    <td><a href="#values_userstatus">User Status</a></td>
+    </tr>
+  <tr>
+    <td><a href="#values_groupstates">Group States</a></td>
+    <td><a href="#values_visibilitysettings">Visibility Settings</a></td>
+    </tr>
+  <tr>
+    <td><a href="#values_grouptypes">Group Types</a></td>
+    <td><a href="#values_workflowactions">Workflow Actions</a></td>
+    </tr>
+  <tr>
+    <td><a href="#values_legalagreementtype">Legal Agreement Types</a></td>
+    <td><a href="#values_workflowstates">Workflow States</a></td>
+    </tr>
+  <tr>
+    <td><a href="#values_legaldocumentstate">Legal Document States</a></td>
+    <td><!--c--></td>
+    </tr>
+</tbody>
 </table>
 
-<h3><a id="values_visibilitysettings"></a>Visibility Settings</h3>
-<p>For app, API, or group visibility, there are two valid values:<br />
-</p>
+
+
+<h3><a id="values_apicontractstatus"></a>API Contract Status</h3>
+<p>During the lifecycle of an API access contract between an app and an API, the contract might have a change in status depending on various events. Certain operations execute workflow actions that result in a change to the status of the API contract. The API access status values are never used in request messages, but are sometimes included in response messages. </p>
+<p>For more information about workflow actions relating to API access, refer to <a href="Ref_ExecutingWorkflowActions.htm#values_workflowactions_contracts">App/API Contracts: Valid Workflow Actions</a>.</p>
+<p>The status values for an API contract are:</p>
 <ul>
-  <li>Public: everyone can see the app or API.</li>
-  <li>Limited: an app is visible only to app team members; an API is visible only to API Administrators or Private API Group members.</li>
+  <li>apicontract.status.pending_approval</li>
+  <li>apicontract.status.config_pending (used only in certain custom workflow scenarios or in <a href="glossary_communityplatform.htm#gl_laas">LaaS</a> integration)</li>
+  <li>apicontract.status.approved</li>
+  <li>apicontract.status.activated</li>
+  <li>apicontract.status.rejected</li>
+  <li>apicontract.status.resubmitted</li>
+  <li>apicontract.status.suspended</li>
+  <li>apicontract.status.cancelled</li>
 </ul>
-<p>For users, visibility is always Public.</p>
-<p class="apidoc_note"><strong>Note</strong>: If an app has multiple versions, the visibility setting for the app is Private if at least one version is set to Private.</p>
-<p>For more information about visibility of apps, see <a href="Ref_apireference.htm#publicandprivateapps">Public and Limited (Private) Apps</a>.</p>
+<p class="apidoc_note"><strong>Note</strong>: in some cases we use the State field in a JSON response for the API contract status value.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+
+<h3><a id="values_apistate"></a>API States</h3>
+<p>There are two valid states for an API:</p>
+<ul>
+  <li><strong>Active</strong>: com.soa.api.state.active</li>
+  <li> <strong>Deleted</strong>: com.soa.api.state.deleted</li>
+</ul>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+<h3><a id="values_apitypes"></a>API Types</h3><!-- #BeginLibraryItem "/Library/values_APIType.lbi" --><p>Valid values:</p>
+        <ul class="apidoctable_ul">
+          <li>REST API: <strong>shttp</strong></li>
+          <li>SOAP 1.1 API: <strong>soap11</strong></li>
+          <li>SOAP 1.2 API: <strong>soap12</strong></li>
+        </ul><!-- #EndLibraryItem --><p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
 
 
 <h3><a id="values_appsecuritymechanisms"></a>App Security Mechanisms</h3>
@@ -81,6 +152,7 @@ no-catalog: true
   <li>com.soa.security.mechanism.pki</li>
 </ul>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
 
 
 <h3><a id="values_appsettings"></a>App Settings</h3>
@@ -173,196 +245,131 @@ no-catalog: true
         </li>
       </ul></td>
     </tr>
+    <tr>
+      <td>ReturnPlainTextSharedSecret</td>
+      <td><ul class="apidoctable_ul">
+        <li>com.soa.feature.enabled</li>
+        <li>com.soa.feature.disabled<br />
+        </li>
+      </ul></td>
+    </tr>
   </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3><a id="values_userroles"></a>User Roles</h3>
-<p>User roles and their values are listed below.</p>
-<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
-      <thead>
-        <tr>
-      <th width="20%">Value</th>
-      <th width="80%">Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>admin</td>
-          <td>Administrator</td>
-        </tr>
-        <tr>
-          <td>siteadmin</td>
-          <td>Site Administrator</td>
-        </tr>
-        <tr>
-          <td>apiadmin</td>
-          <td>API Administrator</td>
-        </tr>
-        <tr>
-          <td>appadmin</td>
-          <td>App Administrator</td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-          <td>Business Administrator</td>
-        </tr>
-      </tbody>
-  </table>
-<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
+<h3><a id="values_appstate"></a>App State Values</h3>
+<p>There are five possible states for an app in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->. When a user first creates an app, the app state is <strong>Initial</strong>. Other possible values are: <strong>Sandbox</strong>, <strong>Review</strong>, <strong>Approved</strong>, <strong>Live</strong>.</p>
+<p>When an app is first set up, before any API contracts are initiated, it is in the Initial state.</p>
+<p>Changes in state are part of the sequence as an app requests access to first one environment and then the other.</p>
+<p>In setting up the sequence for granting access to an API's sandbox or production environment, the API provider can choose whether a review stage is needed before sandbox access is granted, and also whether review is needed before production access is granted. As an example,  the API owner might decide to grant sandbox access automatically but to require review before approving production access.</p>
+<p>The <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> user interface is designed to guide app developers through these state changes.</p>
+<p class="apidoc_note"><strong>Note</strong>: Changing an app's state to <strong>production</strong> gives an application access to the production endpoints of all the APIs it has contracts with. This can only be achieved if <strong>all</strong> of the app's API contracts are approved as production contracts.</p>
 
-<h3><a id="values_client_auth_policy_options"></a>Client Authorization Policy Options</h3>
+<p>When a user first creates an app, the app state is <strong>Initial</strong>. Other possible values are: <strong>Sandbox</strong>, <strong>Review</strong>, <strong>Approved</strong>, <strong>Live</strong>.</p>
+<p>In some instances, the values below are used. For example, these are used by the <a href="obj/o_apps_Application.htm">Application</a> object in the /<a href="index_apps.htm">apps</a>/ service.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
-<thead>
+  <thead>
     <tr>
       <th width="20%">Value</th>
       <th width="80%">Description</th>
       </tr>
-</thead>
-<tbody>
+  </thead>
+  <tbody>
     <tr>
-      <td><a id="com_soa_oauth_client_public"></a>com.soa.oauth.client.public</td>
-      <td>Public Client. Client does not provide shared secret or PKI; verification is based only on the redirect URL. All OAuth grant types are supported. When using our provider, the app visibility must be set to Public.</td>
+      <td>com.soa.app.state.sandbox</td>
+      <td>Sandbox</td>
       </tr>
     <tr>
-      <td><a id="com_soa_oauth_client_security_basicauth"></a>com.soa.oauth.client.security.basicauth</td>
-      <td>Confidential Client. Client provides client_id and client_secret in basic authentication header.</td>
+      <td>com.soa.app.state.production</td>
+      <td>Production</td>
       </tr>
-    <tr>
-      <td><a id="com_soa_oauth_client_security_https_2way"></a>com.soa.oauth.client.security.https.2way</td>
-      <td>Confidential Client. Client uses two-way HTTPS to invoke the OAuth 2.0 Token Endpoint. Client is verified using the client certificate from the HTTPS socket.</td>
-      </tr>
-    <tr>
-      <td><a id="com_soa_oauth_client_security_client_id_security"></a>com.soa.oauth.client.security.client.id_security</td>
-      <td>Confidential Client. Client uses client_id and client_secret as HTTP GET/POST&nbsp;parameters, as outlined in the OAuth 2.0 specification.</td>
-      </tr>
-</tbody>
+  </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3><a id="values_apitypes"></a>API Types</h3><!-- #BeginLibraryItem "/Library/values_APIType.lbi" --><p>Valid values:</p>
-        <ul class="apidoctable_ul">
-          <li>REST API: <strong>shttp</strong></li>
-          <li>SOAP 1.1 API: <strong>soap11</strong></li>
-          <li>SOAP 1.2 API: <strong>soap12</strong></li>
-        </ul><!-- #EndLibraryItem --><p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
-
-<h3><a id="values_apistate"></a>API States</h3>
-<p>There are two valid states for an API:</p>
-<ul>
-  <li><strong>Active</strong>: com.soa.api.state.active</li>
-  <li> <strong>Deleted</strong>: com.soa.api.state.deleted</li>
-</ul>
+<h3><a id="values_contractenvironment"></a>App/API Contract Environment Values</h3>
+<p>An app can connect to an API in either of two environments: Sandbox or Production. An app/API contract is always specific to the environment. Generally, the contract in the Sandbox environment is first; usually, the Sandbox contract is terminated when the app goes live in the Production environment, activating the Production contract.</p>
+<p>In some cases an app can have contracts with the same API Version in both environments at the same time. Each contract has a unique <a href="Ref_IDsOnThePlatform.htm#id_contractid">ContractID</a>.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3><a id="values_grouptypes"></a>Group Types</h3>
-<p>In practical terms, the only valid group type you'll see in working with the Community Manager API is for an independent group:</p>
-<ul>
-  <li>com.soa.group.type.independent</li>
-</ul>
-<p>Usage example: <strong>Group Type</strong> is part of the <a href="obj/o_groups_Group.htm">Group</a> object.</p>
-<p>Additional group type values are used by the API in some contexts, but these are reserved. The value above is the only one in general use. The additional group types are for app teams, API administrators, site administrators, and business administrators.</p>
-<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
-
-<h3><a id="values_groupstates"></a>Group States</h3>
-<p>There are two valid states for a group, as shown below.</p>
+<h3><a id="values_appversionsettings"></a>App Version Settings</h3>
+<p>Most app version settings used by the <a href="obj/o_apps_AppVersionSettings.htm">AppVersionSettings</a> object, but not all, have two values, one for the enabled state and one for the disabled state. All app version setting values are shown below.</p>
 <table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
   <thead>
     <tr>
-      <th width="20%">Value</th>
-      <th width="80%">Description</th>
-      </tr>
+      <th width="20%">Setting</th>
+      <th width="80%">Values</th>
+    </tr>
   </thead>
   <tbody>
     <tr>
-      <td>com.soa.api.state.active</td>
-      <td>Active</td>
-      </tr>
+      <td>AppBoardSupport</td>
+      <td><ul class="apidoctable_ul">
+        <li>com.soa.feature.enabled</li>
+        <li>com.soa.feature.disabled<br />
+          </li>
+      </ul></td>
+    </tr>
     <tr>
-      <td>com.soa.api.state.deleted</td>
-      <td>Deleted</td>
-      </tr>
+      <td>AppRatingsSupport</td>
+      <td><ul class="apidoctable_ul">
+        <li>com.soa.feature.enabled</li>
+        <li>com.soa.feature.disabled<br />
+          </li>
+      </ul></td>
+    </tr>
+    <tr>
+      <td>AppReviewsSupport</td>
+      <td><ul class="apidoctable_ul">
+        <li>com.soa.feature.enabled</li>
+        <li>com.soa.feature.disabled<br />
+          </li>
+      </ul></td>
+    </tr>
+    <tr>
+      <td>UserDefinedIdentitySupport</td>
+      <td><ul class="apidoctable_ul">
+        <li>com.soa.feature.enabled</li>
+        <li>com.soa.feature.disabled</li>
+        <li>com.soa.feature.enabled.for.siteadmins</li>
+      </ul></td>
+    </tr>
+    <tr>
+      <td>SimultaneousSandboxProductAccessSupport</td>
+      <td><ul class="apidoctable_ul">
+        <li>com.soa.feature.enabled</li>
+        <li>com.soa.feature.disabled<br />
+          </li>
+      </ul></td>
+    </tr>
+    <tr>
+      <td>ReturnPlainTextSharedSecret</td>
+      <td><ul class="apidoctable_ul">
+        <li>com.soa.feature.enabled</li>
+        <li>com.soa.feature.disabled<br />
+          </li>
+      </ul></td>
+    </tr>
   </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3><a id="values_groupmembershipstates"></a>Group Membership States</h3>
-<p>The following states are valid for group membership: </p>
-<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
-  <thead>
-    <tr>
-      <th width="20%">Value</th>
-      <th width="80%">Description</th>
-      </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>com.soa.group.membership.state.pending</td>
-      <td>Pending</td>
-      </tr>
-    <tr>
-      <td>com.soa.group.membership.state.approved</td>
-      <td>Approved</td>
-      </tr>
-    <tr>
-      <td>com.soa.group.membership.state.disapproved</td>
-      <td>Declined</td>
-      </tr>
-    <tr>
-      <td>com.soa.group.membership.state.cancelled</td>
-      <td>Cancelled</td>
-      </tr>
-    <tr>
-      <td>com.soa.group.membership.state.removed</td>
-      <td>Removed</td>
-      </tr>
-    <tr>
-      <td>com.soa.group.membership.state.group.deleted</td>
-      <td>Deleted</td>
-      </tr>
-  </tbody>
-</table>
+
+<h3><a id="values_avatarproviders"></a>Avatar Providers</h3>
+<p>Valid values for <strong>AvatarProvider</strong> are as follows:</p>
+<ul>
+  <li>com.soa.imageprovider.type.gravatar</li>
+  <li>com.soa.imageprovider.type.default (platform default avatar)</li>
+</ul>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
-
-<h3><a id="values_groupsettings"></a>Group Settings</h3>
-<p>Valid values for group settings are shown below.</p>
-
-<h4><a id="values_groupsettings_GroupBoardSupport"></a>Group Settings: GroupBoardSupport</h4>
-<p>The <strong>GroupBoardSupport</strong> property indicates whether a Board is supported for the group.</p>
-<p>Possible values:</p>
-<ul>
-  <li><strong>Enabled</strong>: com.soa.feature.enabled</li>
-  <li><strong>Disabled</strong>: com.soa.feature.disabled</li>
-</ul>
-<p>For example, this property is part of the <a href="obj/o_groups_GroupSettings.htm">Group Settings</a> object returned by the <span class="apidoc_code"><a href="groups/m_groups_getGroup.htm">GET&nbsp;/api/groups/{GroupID}</a></span> operation</p>
-
-<h4><a id="values_groupsettings_GroupRatingsSupport"></a>Group Settings: GroupRatingsSupport</h4>
-<p>The <strong>GroupRatingsSupport</strong> property indicates whether ratings are supported for the group.</p>
-<p>Possible values:</p>
-<ul>
-  <li><strong>Enabled</strong>: com.soa.feature.enabled</li>
-  <li><strong>Disabled</strong>: com.soa.feature.disabled</li>
-</ul>
-<p>For example, this property is part of the <a href="obj/o_groups_GroupSettings.htm">Group Settings</a> object returned by the <span class="apidoc_code"><a href="groups/m_groups_getGroup.htm">GET&nbsp;/api/groups/{GroupID}</a></span> operation</p>
-
-<h4><a id="values_groupsettings_GroupReviewsSupport"></a>Group Settings: GroupReviewsSupport</h4>
-
-<p>The <strong>GroupReviewsSupport</strong> property indicates whether reviews are supported for the group.</p>
-<p>Possible values:</p>
-<ul>
-  <li><strong>Enabled</strong>: com.soa.feature.enabled</li>
-  <li><strong>Disabled</strong>: com.soa.feature.disabled</li>
-</ul>
-<p>For example, this property is part of the <a href="obj/o_groups_GroupSettings.htm">Group Settings</a> object returned by the <span class="apidoc_code"><a href="groups/m_groups_getGroup.htm">GET&nbsp;/api/groups/{GroupID}</a></span> operation</p>
-<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3><a id="values_boarditemtypes"></a>Board Item Types</h3>
@@ -408,6 +415,59 @@ no-catalog: true
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
+
+<h3><a id="values_client_auth_policy_options"></a>Client Authorization Policy Options</h3>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+<thead>
+    <tr>
+      <th width="20%">Value</th>
+      <th width="80%">Description</th>
+      </tr>
+</thead>
+<tbody>
+    <tr>
+      <td><a id="com_soa_oauth_client_public"></a>com.soa.oauth.client.public</td>
+      <td>Public Client. Client does not provide shared secret or PKI; verification is based only on the redirect URL. All OAuth grant types are supported. When using our provider, the app visibility must be set to Public.</td>
+      </tr>
+    <tr>
+      <td><a id="com_soa_oauth_client_security_basicauth"></a>com.soa.oauth.client.security.basicauth</td>
+      <td>Confidential Client. Client provides client_id and client_secret in basic authentication header.</td>
+      </tr>
+    <tr>
+      <td><a id="com_soa_oauth_client_security_https_2way"></a>com.soa.oauth.client.security.https.2way</td>
+      <td>Confidential Client. Client uses two-way HTTPS to invoke the OAuth 2.0 Token Endpoint. Client is verified using the client certificate from the HTTPS socket.</td>
+      </tr>
+    <tr>
+      <td><a id="com_soa_oauth_client_security_client_id_security"></a>com.soa.oauth.client.security.client.id_security</td>
+      <td>Confidential Client. Client uses client_id and client_secret as HTTP GET/POST&nbsp;parameters, as outlined in the OAuth 2.0 specification.</td>
+      </tr>
+</tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+<h3><a id="values_displaymode"></a>Display Mode</h3>
+<p>Valid values for display mode are as follows:</p>
+<ul>
+  <li>MAINPAGE</li>
+  <li>POPUP</li>
+</ul>
+<p>For example, these values are part of the <a href="obj/o_login_LoginDomain.htm">LoginDomain</a> object used by the <span class="apidoc_code"><a href="users/m_users_getMyLoginDomain.htm">GET&nbsp;/api/users/{UserID}/logindomain</a></span> operation.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+<h3><a id="values_environment"></a>Environment</h3>
+<p>Valid values for <a href="glossary_communityplatform.htm#gl_environment">environment</a> are as follows:</p>
+<ul>
+  <li>Sandbox</li>
+  <li>Production</li>
+</ul>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
 <h3><a id="values_groupmemberroles"></a>Group Member Roles</h3>
 <p>Group member roles and their values are listed below.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
@@ -435,15 +495,115 @@ no-catalog: true
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3><a id="values_legaldocumentstate"></a>Legal Document States</h3>
-<p>The State or DocumentState value of a legal document indicates its  activation state. When the document is first added, it is in a <strong>draft</strong> state. Once the document has been activated, the API Admin can switch states between <strong>active</strong> and <strong>inactive</strong>.</p>
+
+<h3><a id="values_groupmembershipstates"></a>Group Membership States</h3>
+<p>The following states are valid for group membership: </p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr>
+      <th width="20%">Value</th>
+      <th width="80%">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>com.soa.group.membership.state.pending</td>
+      <td>Pending</td>
+      </tr>
+    <tr>
+      <td>com.soa.group.membership.state.approved</td>
+      <td>Approved</td>
+      </tr>
+    <tr>
+      <td>com.soa.group.membership.state.disapproved</td>
+      <td>Declined</td>
+      </tr>
+    <tr>
+      <td>com.soa.group.membership.state.cancelled</td>
+      <td>Cancelled</td>
+      </tr>
+    <tr>
+      <td>com.soa.group.membership.state.removed</td>
+      <td>Removed</td>
+      </tr>
+    <tr>
+      <td>com.soa.group.membership.state.group.deleted</td>
+      <td>Deleted</td>
+      </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+<h3><a id="values_groupsettings"></a>Group Settings</h3>
+<p>Valid values for group settings are shown below.</p>
+
+<h4><a id="values_groupsettings_GroupBoardSupport"></a>Group Settings: GroupBoardSupport</h4>
+<p>The <strong>GroupBoardSupport</strong> property indicates whether a Board is supported for the group.</p>
 <p>Possible values:</p>
 <ul>
-  <li><strong>Draft</strong>: com.soa.status.draft</li>
-  <li><strong>Active</strong>: com.soa.status.active</li>
-  <li><strong>Inactive</strong>: com.soa.status.inactive</li>
+  <li><strong>Enabled</strong>: com.soa.feature.enabled</li>
+  <li><strong>Disabled</strong>: com.soa.feature.disabled</li>
 </ul>
+<p>For example, this property is part of the <a href="obj/o_groups_GroupSettings.htm">Group Settings</a> object returned by the <span class="apidoc_code"><a href="groups/m_groups_getGroup.htm">GET&nbsp;/api/groups/{GroupID}</a></span> operation</p>
+
+<h4><a id="values_groupsettings_GroupRatingsSupport"></a>Group Settings: GroupRatingsSupport</h4>
+<p>The <strong>GroupRatingsSupport</strong> property indicates whether ratings are supported for the group.</p>
+<p>Possible values:</p>
+<ul>
+  <li><strong>Enabled</strong>: com.soa.feature.enabled</li>
+  <li><strong>Disabled</strong>: com.soa.feature.disabled</li>
+</ul>
+<p>For example, this property is part of the <a href="obj/o_groups_GroupSettings.htm">Group Settings</a> object returned by the <span class="apidoc_code"><a href="groups/m_groups_getGroup.htm">GET&nbsp;/api/groups/{GroupID}</a></span> operation</p>
+
+<h4><a id="values_groupsettings_GroupReviewsSupport"></a>Group Settings: GroupReviewsSupport</h4>
+
+<p>The <strong>GroupReviewsSupport</strong> property indicates whether reviews are supported for the group.</p>
+<p>Possible values:</p>
+<ul>
+  <li><strong>Enabled</strong>: com.soa.feature.enabled</li>
+  <li><strong>Disabled</strong>: com.soa.feature.disabled</li>
+</ul>
+<p>For example, this property is part of the <a href="obj/o_groups_GroupSettings.htm">Group Settings</a> object returned by the <span class="apidoc_code"><a href="groups/m_groups_getGroup.htm">GET&nbsp;/api/groups/{GroupID}</a></span> operation</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+<h3><a id="values_groupstates"></a>Group States</h3>
+<p>There are two valid states for a group, as shown below.</p>
+<table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
+  <thead>
+    <tr>
+      <th width="20%">Value</th>
+      <th width="80%">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>com.soa.api.state.active</td>
+      <td>Active</td>
+      </tr>
+    <tr>
+      <td>com.soa.api.state.deleted</td>
+      <td>Deleted</td>
+      </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+<h3><a id="values_grouptypes"></a>Group Types</h3>
+<p>In practical terms, the only valid group type you'll see in working with the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API is for an independent group:</p>
+<ul>
+  <li>com.soa.group.type.independent</li>
+</ul>
+<p>Usage example: <strong>Group Type</strong> is part of the <a href="obj/o_groups_Group.htm">Group</a> object.</p>
+<p>Additional group type values are used by the API in some contexts, but these are reserved. The value above is the only one in general use. The additional group types are for app teams, API administrators, site administrators, and business administrators.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
 
 
 <h3><a id="values_legalagreementtype"></a>Legal Agreement Types</h3>
@@ -469,55 +629,101 @@ no-catalog: true
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3><a id="values_timeintervals"></a>Time Intervals</h3><!-- #BeginLibraryItem "/Library/values_metrics.lbi" --><p>By default, the platform supports tracking of metrics in the increments shown below.</p>
-<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
-<thead>
-    <tr>
-      <th width="20%">This designation&#8230;</th>
-      <th width="20%">Indicates this unit of measure&#8230;</th>
-      <th width="60%">And is available in these increments&#8230;</th>
-    </tr>
-</thead>
-<tbody>
-    <tr>
-      <td>s</td>
-      <td>Seconds</td>
-      <td>Five-second increments (5s)</td>
-      </tr>
-    <tr>
-      <td>m</td>
-      <td>Minutes</td>
-      <td>Fifteen-minute increments (15m)</td>
-      </tr>
-    <tr>
-      <td>h</td>
-      <td>Hours</td>
-      <td>Hourly increments (1h, 2h, etc.) up to 24h</td>
-      </tr>
 
-    <tr>
-      <td>d</td>
-      <td>Days</td>
-      <td>Daily increments (1d, 2d etc.)</td>
-      </tr>
-<!--  <tr>
-      <td>FedMember*</td>
-      <td>Any federation member process; not any of the team  members. (FEDMEMBER)</td>
-  </tr>
--->  <tr>
-  <td>w</td>
-  <td>Weeks</td>
-  <td>Weekly increments (1w, 2w, etc.)</td>
-      </tr>
-<tr>
-  <td>M</td>
-  <td>Months</td>
-  <td>Monthly increments (1M, 2M, etc.)</td>
-  </tr>
-</tbody>
-</table><!-- #EndLibraryItem --><p>for more information about time intervals, refer to <a href="Ref_WorkingWithTimeZonesAndTimeIntervals.htm">Working with Time Zones and Time Intervals</a>.</p>
-
+<h3><a id="values_legaldocumentstate"></a>Legal Document States</h3>
+<p>The State or DocumentState value of a legal document indicates its  activation state. When the document is first added, it is in a <strong>draft</strong> state. Once the document has been activated, the API Admin can switch states between <strong>active</strong> and <strong>inactive</strong>.</p>
+<p>Possible values:</p>
+<ul>
+  <li><strong>Draft</strong>: com.soa.status.draft</li>
+  <li><strong>Active</strong>: com.soa.status.active</li>
+  <li><strong>Inactive</strong>: com.soa.status.inactive</li>
+</ul>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+<h3><a id="values_metrickey"></a>Metric Key Values</h3>
+<p>The metric key indicates the information type. It corresponds to the column name in the metrics  export file, if the information is exported.</p>
+<p>Possible values:</p>
+<ul>
+  <li>avgResponseTime</li>
+  <li>minResponseTime</li>
+  <li>maxResponseTime</li>
+  <li>totalCount</li>
+  <li>successCount</li>
+  <li>faultCount</li>
+</ul>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+<h3><a id="values_notificationsgroup"></a>Notification Group Values</h3>
+<p>As part of their preference settings, users can choose whether to receive email notifications for events in the categories listed below. Notifications are sent by default. These settings are returned by the <span class="apidoc_code"><a href="users/m_users_getAccountSettings.htm">GET&nbsp;/api/users/{UserID}/settings</a></span> operation, and can be modified using the <span class="apidoc_code"><a href="users/m_users_modifyAccountSettings.htm">PUT&nbsp;/api/users/{UserID}/settings</a></span> operation.</p>
+<p>Valid notification groups are listed in the table below.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr>
+      <th width="20%">This notification group&#8230;</th>
+      <th width="80%">Sends notifications when&#8230;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>com.soa.notification.type.app.alert</td>
+      <td>The user's app receives an alert.</td>
+    </tr>
+    <tr>
+      <td> com.soa.notification.type.app.lifecycle</td>
+      <td>There is a major lifecycle change for the user's app.</td>
+    </tr>
+    <tr>
+      <td> com.soa.notification.type.app.post</td>
+      <td>A post is created for the user's app.</td>
+    </tr>
+    <tr>
+      <td>com.soa.notification.type.appteam</td>
+      <td>There is a change to the app's team.</td>
+    </tr>
+    <tr>
+      <td>com.soa.notification.type.contract.state.change</td>
+      <td>There is an API access change for the user's app.</td>
+    </tr>
+    <tr>
+      <td>com.soa.notification.type.news.update</td>
+      <td>There is a platform news update.</td>
+    </tr>
+    <tr>
+      <td>com.soa.notification.type.post.comment</td>
+      <td>Someone comments on one of the user's posts.</td>
+    </tr>
+    <tr>
+      <td>com.soa.notification.type.privateapi</td>
+      <td>There are changes to the user's Private API Group.</td>
+    </tr>
+    <tr>
+      <td>com.soa.notification.type.ticket.change</td>
+      <td>Tickets referencing the user's app are created or updated.</td>
+    </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+<h3><a id="values_notificationstate"></a>Notification State Values</h3>
+<p>When a user first receives a notification, the notification state is <strong>Unread</strong>. Other valid notification states are: <strong>Read</strong>, <strong>Archived</strong>.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+<h3><a id="values_oauthclienttype"></a>OAuth Client Type</h3>
+<p>Valid values for <strong>OAuth Client Type</strong> are as follows:</p>
+<ul>
+  <li>Confidential: <strong>com.soa.oauth.ctype.confidential</strong></li>
+  <li>Public: <strong>com.soa.oauth.clienttype.public</strong></li>
+</ul>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
 
 
 <h3><a id="values_policytypes"></a>Policy Types</h3>
@@ -556,31 +762,62 @@ no-catalog: true
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3><a id="values_sortorder"></a>Sort Order Values</h3>
-<p>As part of retrieving some types of information, such as the Board for an app or API, you can define the sort order for the information that's returned. Valid values are shown below.</p>
-<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
-<thead>
+<h3><a id="values_reporttype"></a>Report Type</h3>
+<p>Valid values for the <strong>Report Type</strong> parameter are shown in the table below.</p>
+<p>This parameter is used by the following metrics operations Apps and APIs services:</p>
+<ul>
+  <li>App / Get Metrics: <span class="apidoc_code"><a href="apps/m_apps_getMetrics.htm">GET&nbsp;/api/apps/versions/{AppVersionID}/metrics</a></span></li>
+  <li>App / Export Metrics: <span class="apidoc_code"><a href="apps/m_apps_exportMetrics.htm">GET&nbsp;/api/apps/versions/{AppVersionID}/metrics/export</a></span></li>
+  <li>API / Get Metrics: <span class="apidoc_code"><a href="apis/m_apis_getMetrics.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/metrics</a></span></li>
+  <li>API / Export Metrics: <span class="apidoc_code"><a href="apis/m_apis_exportMetrics.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/metrics/export</a></span></li>
+</ul>
+<p>The second column indicates where these operations are currently used in the platform user interface.</p>
+<table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
+  <thead>
     <tr>
-    <th width="34%">This sort order&#8230;</th>
-    <th width="33%">Has this value&#8230;</th>
-    <th width="33%">Which indicates this selection&#8230;</th>
+      <th width="33%">Value</th>
+      <th width="33%">Usage in Platform UI / Output Info</th>
     </tr>
-</thead>
-<tbody>
+  </thead>
+  <tbody>
     <tr>
-      <td>SORT_ASCENDING</td>
-      <td>asc</td>
-      <td>Sort in ascending order</td>
-      </tr>
+      <td>api.all.apps</td>
+      <td><p>App monitoring tab: Overview, middle row left side pie chart</p>
+        <p>Output columns: appName, Count</p></td>
+    </tr>
     <tr>
-      <td>SORT_DESCENDING</td>
-      <td>desc</td>
-      <td>Sort in descending order</td>
-      </tr>
-</tbody>
+      <td>service.all.operations</td>
+      <td><p>API monitoring tab: Overview, Usage By Operation</p>
+        <p>Output columns: Operation, Count</p></td>
+    </tr>
+    <tr>
+      <td>business.top10.apis</td>
+      <td><p>API and App monitoring tab: Overview, bottom row â &ldquo;top APIs&rdquo; chart</p>
+        <p>Output columns: ApiName (version), Count</p></td>
+    </tr>
+    <tr>
+      <td>app.all.apis</td>
+      <td><p>App monitoring tab: Overview, API usage.</p>
+        <p>Output columns: apiName, Count</p></td>
+    </tr>
+  </tbody>
 </table>
-<p>For an example of how sort order is used, see the <span class="apidoc_code"><a href="policies/m_policies_getPolicies.htm">GET&nbsp;/api/policies</a></span> operation.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+<h3><a id="values_resourcetype"></a>Resource Types</h3>
+<p>The Users service includes operations that report on a specific user's connection with a resource type.</p>
+<p>For the purposes of these operations, valid values for resource type are as follows:</p>
+<ul>
+  <li>app</li>
+  <li>app-version</li>
+  <li>api</li>
+  <li>apiversion</li>
+  <li>group</li>
+</ul>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
 
 
 <h3><a id="values_sortby"></a>Sort By Values</h3>
@@ -630,6 +867,35 @@ no-catalog: true
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
+
+<h3><a id="values_sortorder"></a>Sort Order Values</h3>
+<p>As part of retrieving some types of information, such as the Board for an app or API, you can define the sort order for the information that's returned. Valid values are shown below.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+<thead>
+    <tr>
+    <th width="34%">This sort order&#8230;</th>
+    <th width="33%">Has this value&#8230;</th>
+    <th width="33%">Which indicates this selection&#8230;</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+      <td>SORT_ASCENDING</td>
+      <td>asc</td>
+      <td>Sort in ascending order</td>
+      </tr>
+    <tr>
+      <td>SORT_DESCENDING</td>
+      <td>desc</td>
+      <td>Sort in descending order</td>
+      </tr>
+</tbody>
+</table>
+<p>For an example of how sort order is used, see the <span class="apidoc_code"><a href="policies/m_policies_getPolicies.htm">GET&nbsp;/api/policies</a></span> operation.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
 <h3><a id="values_ticketlabel"></a>Ticket Label Values</h3>
 <p>The platform supports the writing and tracking of tickets on apps and APIs. Authorized users can assign a label to the ticket indicating its priority. The same user, or another authorized user, can change the priority value of a ticket.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
@@ -659,6 +925,7 @@ no-catalog: true
 </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
 
 
 <h3><a id="values_ticketstate"></a>Ticket State Values</h3>
@@ -704,133 +971,70 @@ no-catalog: true
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3><a id="values_usersignupstate"></a>User Signup State Values</h3>
-<p>The user signup state can be either of the following:</p>
-<ul>
-  <li>pending_validation</li>
-  <li>registered</li>
-</ul>
-<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
-
-<h3><a id="values_notificationsgroup"></a>Notification Group Values</h3>
-<p>As part of their preference settings, users can choose whether to receive email notifications for events in the categories listed below. Notifications are sent by default. These settings are returned by the <span class="apidoc_code"><a href="users/m_users_getAccountSettings.htm">GET&nbsp;/api/users/{UserID}/settings</a></span> operation, and can be modified using the <span class="apidoc_code"><a href="users/m_users_modifyAccountSettings.htm">PUT&nbsp;/api/users/{UserID}/settings</a></span> operation.</p>
-<p>Valid notification groups are listed in the table below.</p>
+<h3><a id="values_timeintervals"></a>Time Intervals</h3><!-- #BeginLibraryItem "/Library/values_metrics.lbi" --><p>By default, the platform supports tracking of metrics in the increments shown below.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
-  <thead>
+<thead>
     <tr>
-      <th width="20%">This notification group&#8230;</th>
-      <th width="80%">Sends notifications when&#8230;</th>
+      <th width="20%">This designation&#8230;</th>
+      <th width="20%">Indicates this unit of measure&#8230;</th>
+      <th width="60%">And is available in these increments&#8230;</th>
     </tr>
-  </thead>
-  <tbody>
+</thead>
+<tbody>
     <tr>
-      <td>com.soa.notification.type.app.alert</td>
-      <td>The user's app receives an alert.</td>
-    </tr>
+      <td>s</td>
+      <td>Seconds</td>
+      <td>Five-second increments (5s)</td>
+      </tr>
     <tr>
-      <td> com.soa.notification.type.app.lifecycle</td>
-      <td>There is a major lifecycle change for the user's app.</td>
-    </tr>
+      <td>m</td>
+      <td>Minutes</td>
+      <td>Fifteen-minute increments (15m)</td>
+      </tr>
     <tr>
-      <td> com.soa.notification.type.app.post</td>
-      <td>A post is created for the user's app.</td>
-    </tr>
+      <td>h</td>
+      <td>Hours</td>
+      <td>Hourly increments (1h, 2h, etc.) up to 24h</td>
+      </tr>
+
     <tr>
-      <td>com.soa.notification.type.appteam</td>
-      <td>There is a change to the app's team.</td>
-    </tr>
-    <tr>
-      <td>com.soa.notification.type.contract.state.change</td>
-      <td>There is an API access change for the user's app.</td>
-    </tr>
-    <tr>
-      <td>com.soa.notification.type.news.update</td>
-      <td>There is an Open news update.</td>
-    </tr>
-    <tr>
-      <td>com.soa.notification.type.post.comment</td>
-      <td>Someone comments on one of the user's posts.</td>
-    </tr>
-    <tr>
-      <td>com.soa.notification.type.privateapi</td>
-      <td>There are changes to the user's Private API Group.</td>
-    </tr>
-    <tr>
-      <td>com.soa.notification.type.ticket.change</td>
-      <td>Tickets referencing the user's app are created or updated.</td>
-    </tr>
-  </tbody>
-</table>
+      <td>d</td>
+      <td>Days</td>
+      <td>Daily increments (1d, 2d etc.)</td>
+      </tr>
+<!--  <tr>
+      <td>FedMember*</td>
+      <td>Any federation member process; not any of the team  members. (FEDMEMBER)</td>
+  </tr>
+-->  <tr>
+  <td>w</td>
+  <td>Weeks</td>
+  <td>Weekly increments (1w, 2w, etc.)</td>
+      </tr>
+<tr>
+  <td>M</td>
+  <td>Months</td>
+  <td>Monthly increments (1M, 2M, etc.)</td>
+  </tr>
+</tbody>
+</table><!-- #EndLibraryItem --><p>for more information about time intervals, refer to <a href="Ref_WorkingWithTimeZonesAndTimeIntervals.htm">Working with Time Zones and Time Intervals</a>.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3><a id="values_notificationstate"></a>Notification State Values</h3>
-<p>When a user first receives a notification, the notification state is <strong>Unread</strong>. Other valid notification states are: <strong>Read</strong>, <strong>Archived</strong>.</p>
-<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
-
-<h3><a id="values_apiaccessstate"></a>API Access States (API Contract States)</h3>
-<p>During the lifecycle of an API access contract between an app and an API, the contract goes through various states depending on various events. Certain operations execute workflow actions that result in a change to the state of the API contract. The API access state values are never used in request messages, but are sometimes included in response messages. </p>
-<p>For more information about workflow actions relating to API access, refer to <a href="Ref_ExecutingWorkflowActions.htm#values_workflowactions_contracts">App/API Contracts: Valid Workflow Actions</a>.</p>
-<p>The valid API access states are:</p>
+<h3><a id="values_useractions"></a>User Actions on a Resource</h3>
+<p>Valid actions users can take on a resource, such as an app or API, are as follows:</p>
 <ul>
-  <li>apicontract.status.pending_approval</li>
-  <li>apicontract.status.approved</li>
-  <li>apicontract.status.activated</li>
-  <li>apicontract.status.rejected</li>
-  <li>apicontract.status.resubmitted</li>
-  <li>apicontract.status.suspended</li>
-  <li>apicontract.status.cancelled</li>
-</ul>
-<h3><a id="values_contractenvironment"></a>App/API Contract Environment Values</h3>
-<p>An app can connect to an API in either of two environments: Sandbox or Production. An app/API contract is always specific to the environment. Generally, the contract in the Sandbox environment is first; usually, the Sandbox contract is terminated when the app goes live in the Production environment, activating the Production contract.</p>
-<p>In some cases an app can have contracts with the same API Version in both environments at the same time. Each contract has a unique <a href="Ref_IDsOnThePlatform.htm#id_contractid">ContractID</a>.</p>
+  <li>Add</li>
+  <li>Modify</li>
+  <li>Delete</li>
+  <li>Read</li>
+  <li>Monitor</li>
+  </ul>
+<p>For example, these values are used in one of the query parameters for the <span class="apidoc_code"><a href="users/m_users_getAuthorizationResult.htm">GET&nbsp;{UserID}/auzstatus</a></span> operation.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
-
-<h3><a id="values_appstate"></a>App State Values</h3>
-<p>There are five possible states for an app in the Community Platform. When a user first creates an app, the app state is <strong>Initial</strong>. Other possible values are: <strong>Sandbox</strong>, <strong>Review</strong>, <strong>Approved</strong>, <strong>Live</strong>.</p>
-<p>When an app is first set up, before any API contracts are initiated, it is in the Initial state.</p>
-<p>Changes in state are part of the sequence as an app requests access to first one environment and then the other.</p>
-<p>In setting up the sequence for granting access to an API's sandbox or production environment, the API provider can choose whether a review stage is needed before sandbox access is granted, and also whether review is needed before production access is granted. As an example,  the API owner might decide to grant sandbox access automatically but to require review before approving production access.</p>
-<p>The Community Platform user interface is designed to guide app developers through these state changes.</p>
-<p class="apidoc_note"><strong>Note</strong>: Changing an app's state to <strong>production</strong> gives an application access to the production endpoints of all the APIs it has contracts with. This can only be achieved if <strong>all</strong> of the app's API contracts are approved as production contracts.</p>
-
-<p>When a user first creates an app, the app state is <strong>Initial</strong>. Other possible values are: <strong>Sandbox</strong>, <strong>Review</strong>, <strong>Approved</strong>, <strong>Live</strong>.</p>
-<p>In some instances, the values below are used. For example, these are used by the <a href="obj/o_apps_Application.htm">Application</a> object in the /<a href="index_apps.htm">apps</a>/ service.</p>
-<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
-  <thead>
-    <tr>
-      <th width="20%">Value</th>
-      <th width="80%">Description</th>
-      </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>com.soa.app.state.sandbox</td>
-      <td>Sandbox</td>
-      </tr>
-    <tr>
-      <td>com.soa.app.state.production</td>
-      <td>Production</td>
-      </tr>
-  </tbody>
-</table>
-<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-
-
-<h3><a id="values_resourcetype"></a>Resource Types</h3>
-<p>The Users service includes operations that report on a specific user's connection with a resource type.</p>
-<p>For the purposes of these operations, valid values for resource type are as follows:</p>
-<ul>
-  <li>app</li>
-  <li>app-version</li>
-  <li>api</li>
-  <li>apiversion</li>
-  <li>group</li>
-</ul>
-<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3><a id="values_userpreferences"></a>User Preferences</h3>
@@ -873,6 +1077,17 @@ no-catalog: true
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
+
+<h3><a id="values_usersignupstate"></a>User Signup State Values</h3>
+<p>The user signup state can be either of the following:</p>
+<ul>
+  <li>pending_validation</li>
+  <li>registered</li>
+</ul>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
 <h3><a id="values_userstatus"></a>User Status</h3>
 <p>A user with Business Admin rights can enable or disable an existing user. A user who has been disabled no longer has access to the platform. After disabling a user's access, the Business Admin can enable it, which restores any access rights the user previously had.</p>
 <p>Valid values for <strong>UserStatus</strong> are as follows:</p>
@@ -884,35 +1099,19 @@ no-catalog: true
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3><a id="values_avatarproviders"></a>Avatar Providers</h3>
-<p>Valid values for <strong>AvatarProvider</strong> are as follows:</p>
+
+<h3><a id="values_visibilitysettings"></a>Visibility Settings</h3>
+<p>For app, API, or group visibility, there are two valid values:<br />
+</p>
 <ul>
-  <li>com.soa.imageprovider.type.gravatar</li>
-  <li>com.soa.imageprovider.type.default (platform default avatar)</li>
+  <li>Public: everyone can see the app or API.</li>
+  <li>Limited: an app is visible only to app team members; an API is visible only to API Administrators or Private API Group members.</li>
 </ul>
+<p>For users, visibility is always Public.</p>
+<p class="apidoc_note"><strong>Note</strong>: If an app has multiple versions, the visibility setting for the app is Private if at least one version is set to Private.</p>
+<p>For more information about visibility of apps, see <a href="Ref_apireference.htm#ref_publicandprivateapps">Public and Limited (Private) Apps</a>.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
-
-<h3><a id="values_environment"></a>Environment</h3>
-<p>Valid values for <a href="glossary_communityplatform.htm#environment">environment</a> are as follows:</p>
-<ul>
-  <li>Sandbox</li>
-  <li>Production</li>
-</ul>
-<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-
-
-<h3><a id="values_useractions"></a>User Actions on a Resource</h3>
-<p>Valid actions users can take on a resource, such as an app or API, are as follows:</p>
-<ul>
-  <li>Add</li>
-  <li>Modify</li>
-  <li>Delete</li>
-  <li>Read</li>
-  <li>Monitor</li>
-  </ul>
-<p>For example, these values are used in one of the query parameters for the <span class="apidoc_code"><a href="users/m_users_getAuthorizationResult.htm">GET&nbsp;{UserID}/auzstatus</a></span> operation.</p>
-<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3><a id="values_workflowactions"></a>Workflow Actions</h3>
@@ -1035,43 +1234,30 @@ no-catalog: true
       <td>apicontract.action.resume</td>
     </tr>
   </tbody>
-</table><!-- #EndLibraryItem --><p>&nbsp;</p>
+</table><!-- #EndLibraryItem --><p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
+
+
+<h3><a id="values_workflowstates"></a>Workflow States</h3>
+<p>The workflow state values depend on the workflow definition XML file. For details of workflow states for your specific installation, refer to the applicable XML file.</p>
+<p>In the user interface you can find the XML file. First check which workflow file is in use, in the applicable Administration / Config page (APIs, Apps, Tickets, and so forth). Then, go to Administration/Workflows and view or download the file.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
-
-<h3><a id="values_displaymode"></a>Display Mode</h3>
-<p>Valid values for display mode are as follows:</p>
-<ul>
-  <li>MAINPAGE</li>
-  <li>POPUP</li>
-</ul>
-<p>For example, these values are part of the <a href="obj/o_login_LoginDomain.htm">LoginDomain</a> object used by the <span class="apidoc_code"><a href="users/m_users_getMyLoginDomain.htm">GET&nbsp;/api/users/{UserID}/logindomain</a></span> operation.</p>
-<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-
-
-<h3><a id="values_oauthclienttype"></a>OAuth Client Type</h3>
-<p>Valid values for <strong>OAuth Client Type</strong> are as follows:</p>
-<ul>
-  <li>Confidential: <strong>com.soa.oauth.ctype.confidential</strong></li>
-  <li>Public: <strong>com.soa.oauth.clienttype.public</strong></li>
-</ul>
-<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
-<table width="600" border="0" cellspacing="0" cellpadding="2">
+<table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="index.htm">Community Platform API: Overview</a></li>
+  <li><a href="index.htm">Enterprise API Platform API: Overview</a></li>
   <li><a href="glossary_communityplatform.htm">Glossary of Terms</a></li>
   <li><a href="docconventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
-    <td width="300"><ul>
+    <td width="400"><ul>
   <li><a href="authenticationandsecurity.htm">Authentication and Security</a></li>
   <li><a href="troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="Ref_apireference.htm">Community Platform API Reference Material</a></li>
+  <li><a href="Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

@@ -1,20 +1,20 @@
 ---
 layout: apipage
-title: POST&nbsp;/api/users/completeSignup Operation | Users Service | Community Platform API
+title: Complete Signup | Users Service | Enterprise API Platform API
 description: Registers the user, so the user can log in and perform authenticated actions.
 product: cm
 category: ref
-nav-title: POST&nbsp;/api/users/completeSignup
+nav-title: Complete Signup 
 no-nav: api
 sub-nav: true
 sub-nav-class: users
 no-catalog: true
 ---
 
-<h2><a name="top"></a>POST&nbsp;/api/users/completeSignup Method</h2>
+<h2><a name="top"></a>POST&nbsp;/api/users/completeSignup</h2>
 <p><!-- #BeginLibraryItem "/Library/desc_completeSignup.lbi" -->Registers the user, so the user can log in and perform authenticated actions.<!-- #EndLibraryItem --></p>
 <p>Before: The user clicks the signup code in the notification email, and then puts in the password. Those actions serve to validate the user input; processing of the new user registration can now be completed by means of the <span class="apidoc_code">completeSignup</span> operation.</p>
-<p>After: When this operation is complete, the user is logged in and can begin using <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->.</p>
+<p>After: When this operation is complete, the user is logged in and can begin using<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->.</p>
 <p>This operation can be used in two ways:</p>
 <ul>
   <li>The operation sends a signup code from a signup email.</li>
@@ -48,14 +48,14 @@ no-catalog: true
 
 
 <h3 id="endpoint">URL</h3>
-<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/users/completeSignup</pre>
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/completeSignup</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="samplerequest">Sample Request</h3>
-<p id="id_samplerequest">The example below shows the password and signup code passed as URL parameters. In this example the user is completing the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> signup process rather than using Google&reg; or Facebook&reg;.</p>
+<p id="id_samplerequest">The example below shows the password and signup code passed as URL parameters. In this example the user is completing the<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->signup process rather than using Google&reg; or Facebook&reg;.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://&lt;hostname&gt;/api/users/completeSignup?password=Margaret23&amp;signupCode=TjXfXSiqJBmRIoMGHyTD5kxBSRosu8Nqj4YBDXNYH-DkjnRxl84Wzw</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/completeSignup?password=Margaret23&amp;signupCode=TjXfXSiqJBmRIoMGHyTD5kxBSRosu8Nqj4YBDXNYH-DkjnRxl84Wzw</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: */*
 Content-Type: application/x-www-form-urlencoded; charset=UTF-8</pre>
@@ -65,7 +65,7 @@ Content-Type: application/x-www-form-urlencoded; charset=UTF-8</pre>
 
 
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -76,7 +76,7 @@ Content-Type: application/x-www-form-urlencoded; charset=UTF-8</pre>
   <tbody>
     <tr>
       <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
-      <td>application/json</td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_json.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td><a href="../Ref_apireference.htm#contenttype_request">Content-Type</a></td>
@@ -134,6 +134,13 @@ Content-Type: application/x-www-form-urlencoded; charset=UTF-8</pre>
       <td>Required</td>
       <td>The user's email address.</td>
     </tr>
+    <tr>
+      <td>signupAgreementsAccepted</td>
+      <td>Form</td>
+      <td>boolean</td>
+      <td>Required</td>
+      <td>Indicates whether the user has accepted the required signup agreements, if there are any. Defaults to <strong>false</strong>.</td>
+    </tr>
   </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -150,8 +157,8 @@ Content-Type: application/x-www-form-urlencoded; charset=UTF-8</pre>
 <p><strong>Sample response headers</strong></p>
 <pre>HTTP/1.1 200 OK
 Date: Mon, 17 Sep 2012 23:31:17 GMT
-Set-Cookie: AtmoAuthToken_acmecorp=TokenID%3Dc7a5ecab-011f-11e2-8920-facd34229ee6
-%2Cclaimed_id%3Durn%3Aacmecorp%3Auser%3Aacmecorp%3Auser10015%2CissueTime
+Set-Cookie: AtmoAuthToken_acme=TokenID%3Dc7a5ecab-011f-11e2-8920-facd34229ee6
+%2Cclaimed_id%3Durn%3Aacme%3Auser%3Aacme%3Auser10015%2CissueTime
 %3D1347924677986%2CexpirationTime%3D1347926477969%2CAttributesIncluded%3Dtrue
 %2CUserFDN%3Duser10015.acmecorp%2CUserName%3DJaneMead%2Csig%3DRSxPijSfkfAqQbP1T
 ZFNJfYd1NUjvb4iBZPJvYvfeYmtYNJPNs3743nUN9mRU4dvnkjbY_mNaw1fTJXhcAg5pk0Y8oKcbHyIGTfskn
@@ -164,7 +171,7 @@ expires=Mon, 17-Sep-2012 23:56:17 GMT;HttpOnly;Version=1</pre>
 
 
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
 <thead>
   <tr bgcolor="#DDDDDD">
@@ -192,7 +199,7 @@ expires=Mon, 17-Sep-2012 23:56:17 GMT;HttpOnly;Version=1</pre>
 
 
 <h3 id="errorcodes">Error Codes/Messages</h3>
-<p><a href="../Ref_apireference.htm#errormessages">Full list of Community Platform API error messages.</a></p>
+<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of Enterprise API Platform API error messages.</a></p>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
 <p>If the user has already completed the signup registration process, this operation returns an error.</p>
 <table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
@@ -213,18 +220,18 @@ expires=Mon, 17-Sep-2012 23:56:17 GMT;HttpOnly;Version=1</pre>
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
-<table width="600" border="0" cellspacing="0" cellpadding="2">
+<table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
   <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
   <li><a href="../docconventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
-    <td width="300"><ul>
+    <td width="400"><ul>
   <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
   <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

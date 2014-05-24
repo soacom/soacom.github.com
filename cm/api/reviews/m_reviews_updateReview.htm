@@ -1,10 +1,10 @@
 ---
 layout: apipage
-title: PUT&nbsp;/api/reviews/{ReviewID} Operation | Reviews Service | Community Platform API
+title: Update Review | Reviews Service | Enterprise API Platform API
 description:  Updates the specified review.
 product: cm
 category: ref
-nav-title: PUT&nbsp;/api/reviews/{ReviewID}
+nav-title: Update Review 
 no-nav: api
 sub-nav: true
 sub-nav-class: reviews
@@ -12,7 +12,7 @@ no-catalog: true
 ---
 
 <!-- InstanceBeginEditable name="Heading" -->
-<h2><a name="top" id="top"></a>PUT&nbsp;/api/reviews/{ReviewID} Operation</h2>
+<h2><a name="top" id="top"></a>PUT&nbsp;/api/reviews/{ReviewID}</h2>
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
@@ -48,7 +48,7 @@ Updates the specified review.<!-- #EndLibraryItem --></p>
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/reviews/{ReviewID}</pre>
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->reviews/{ReviewID}</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -57,7 +57,7 @@ Updates the specified review.<!-- #EndLibraryItem --></p>
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows the specified review being updated.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://&lt;hostname&gt;/api/reviews/review24149.acmecorp</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->reviews/review24149.acmecorp</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>PUT&nbsp;/api/reviews/review24149.acmecorp HTTP/1.1
 Host: &lt;hostname&gt;
@@ -68,7 +68,7 @@ Content-Type: application/json; charset=UTF-8</pre>
   "ReviewID":"review24149.acmecorp",
   "ReviewSubjectID":"gbGPCs7Uvz4VV8D0Zuvzdq6C.acmecorp",
   "Topic":"Love this app!",
-  "Content":"Great app for a first version. But we need more... when is version 2 coming out?",
+  "Content":"Great app for a first version. But when is version 2 coming out?",
   "UserID":"user13998.acmecorp",
   "UserName":"PhilipPirrip",
   "Created":"2013-06-06T00:11:29Z",
@@ -85,7 +85,7 @@ Content-Type: application/json; charset=UTF-8</pre>
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -96,13 +96,11 @@ Content-Type: application/json; charset=UTF-8</pre>
   <tbody>
     <tr>
       <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_json.lbi" -->
-<strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_json.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a href="../Ref_apireference.htm#contenttype_request">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_json.lbi" -->
-<strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_json.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -135,7 +133,7 @@ Content-Type: application/json; charset=UTF-8</pre>
       <td>Body</td>
       <td><a href="../obj/o_reviews_Review.htm">Review</a></td>
       <td>Required</td>
-      <td><!-- #BeginLibraryItem "/Library/o_reviews_Review.lbi" -->Includes information about a review in the Community Platform.<!-- #EndLibraryItem --> All review values are sent in the request.</td>
+      <td><!-- #BeginLibraryItem "/Library/o_reviews_Review.lbi" -->Includes information about a review in the<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->.<!-- #EndLibraryItem -->All review values are sent in the request.</td>
     </tr>
   </tbody>
 </table>
@@ -163,7 +161,7 @@ Date: Thu, 06 Jun 2013 00:11:58 GMT</pre>
   "ReviewID" : "review24149.acmecorp",
   "ReviewSubjectID" : "gbGPCs7Uvz4VV8D0Zuvzdq6C.acmecorp",
   "Topic" : "Love this app!",
-  "Content" : "Great app for a first version. But we need more... when is version 2 coming out?",
+  "Content" : "Great app for a first version. But when is version 2 coming out?",
   "UserID" : "user13998.acmecorp",
   "UserName" : "PhilipPirrip",
   "Created" : "2013-06-06T00:11:29Z",
@@ -179,7 +177,7 @@ Date: Thu, 06 Jun 2013 00:11:58 GMT</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -190,8 +188,7 @@ Date: Thu, 06 Jun 2013 00:11:58 GMT</pre>
   <tbody>
     <tr>
       <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_json.lbi" -->
-<strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_json.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -243,23 +240,23 @@ Date: Thu, 06 Jun 2013 00:11:58 GMT</pre>
     </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#errormessages">Full list of Community Platform API error messages.</a></p>
+<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
-<table width="600" border="0" cellspacing="0" cellpadding="2">
+<table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
   <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
   <li><a href="../docconventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
-    <td width="300"><ul>
+    <td width="400"><ul>
   <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
   <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

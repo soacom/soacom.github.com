@@ -1,10 +1,10 @@
 ---
 layout: apipage
-title: GET&nbsp;/api/users/{UserID}/feeds/homefeed Operation | Users Service | Community Platform API
+title: Get Home Feed | Users Service | Enterprise API Platform API
 description: Returns the user's feed from the user's home system.
 product: cm
 category: ref
-nav-title: GET&nbsp;/api/users/{UserID}/feeds/homefeed
+nav-title: Get Home Feed 
 no-nav: api
 sub-nav: true
 sub-nav-class: users
@@ -12,7 +12,7 @@ no-catalog: true
 ---
 
 <!-- InstanceBeginEditable name="Heading" -->
-<h2><a name="top" id="top"></a>GET&nbsp;/api/users/{UserID}/feeds/homefeed Method</h2>
+<h2><a name="top" id="top"></a>GET&nbsp;/api/users/{UserID}/feeds/homefeed</h2>
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
@@ -49,7 +49,7 @@ no-catalog: true
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/users/{UserID}/feeds/homefeed[?APIID=APIID][&amp;ItemType=ItemType][&amp;TicketLabel=TicketLabel]
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/{UserID}/feeds/homefeed[?APIID=APIID][&amp;ItemType=ItemType][&amp;TicketLabel=TicketLabel]
 [&amp;TicketState=TicketState][&amp;ItemID=ItemID][&amp;Tag=Tag][&amp;IncludeComments=IncludeComments]
 [&amp;NumberOfComments=NumberOfComments][&amp;IncludeActions=IncludeActions][&amp;count=count][&amp;SortBy=SortBy]</pre>
 <!-- InstanceEndEditable -->
@@ -64,7 +64,7 @@ no-catalog: true
 </pre>
 <p><strong>Request URL #2</strong></p>
 <p>The example below requests the third and fourth items, with comments excluded.</p>
-<pre>https://&lt;hostname&gt;/api/users/user12262.acmecorp/feeds/homefeed?start=2&amp;count=2&amp;RetrievingUserID=user12262.acmecorp&amp;IncludeComments=false
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmecorp/feeds/homefeed?start=2&amp;count=2&amp;RetrievingUserID=user12262.acmecorp&amp;IncludeComments=false
 </pre>
 <p><strong>Sample request headers</strong></p>
 <pre>GET&nbsp;/api/users/user12262.acmecorp/feeds/homefeed?start=0&amp;count=10&amp;RetrievingUserID=user13998.acmecorp&amp;SortBy=DescendingDate HTTP/1.1
@@ -78,7 +78,7 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -131,7 +131,7 @@ The unique ID for the specified API.<!-- #EndLibraryItem --></td>
       <td>Query</td>
       <td>string[ ]</td>
       <td>Optional</td>
-      <td>A filtering parameter, specifying one or more <a href="../glossary_communityplatform.htm#boarditem">board item</a> types to be returned, such as an alert, discussion, or ticket. For a list of valid values, see <a href="../Ref_Values.htm#values_boarditemtypes">Board Item Types</a>.</td>
+      <td>A filtering parameter, specifying one or more <a href="../glossary_communityplatform.htm#gl_boarditem">board item</a> types to be returned, such as an alert, discussion, or ticket. For a list of valid values, see <a href="../Ref_Values.htm#values_boarditemtypes">Board Item Types</a>.</td>
     </tr>
     <tr>
       <td>TicketLabel</td>
@@ -154,7 +154,8 @@ A filtering parameter: if specified, only tickets of that state are returned. Fo
       <td>Query</td>
       <td>string</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_ItemID.lbi" --> The unique ID for a specific <a href="../glossary_communityplatform.htm#boarditem">Board item</a>.<!-- #EndLibraryItem --> If specified, results are limited to items relating to that item ID. If not specified, no filter is applied.</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_ItemID.lbi" -->
+The unique ID for a specific <a href="../glossary_communityplatform.htm#gl_boarditem">Board item</a>.<!-- #EndLibraryItem -->If specified, results are limited to items relating to that item ID. If not specified, no filter is applied.</td>
     </tr>
     <tr>
       <td>Tag</td>
@@ -246,13 +247,13 @@ Date: Thu, 30 May 2013 20:11:25 GMT</pre>
         "ID" : "user12262.acmecorp",
         "Name" : "JaneMead",
         "Image" : {
-          "Url" : "https://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
+          "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
           "Title" : "JaneMead",
           "Link" : "#/users/user12262.acmecorp/details"
         }
       },
       "Image" : {
-        "Url" : "https://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
+        "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
         "Link" : "#/user/user12262.acmecorp/details"
       },
       "CreatedDate" : "2012-11-26T15:20:30.000Z",
@@ -303,13 +304,13 @@ on behalf of the  PaaStime (2.0) application",
         "ID" : "user12262.acmecorp",
         "Name" : "JaneMead",
         "Image" : {
-          "Url" : "https://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
+          "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
           "Title" : "JaneMead",
           "Link" : "#/users/user12262.acmecorp/details"
         }
       },
       "Image" : {
-        "Url" : "https://&lt;hostname&gt;/api/apps/app16964.acmecorp/avatars/f250a96e-2f81-4e3e-88fc-61431fd80e5c.png",
+        "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app16964.acmecorp/avatars/f250a96e-2f81-4e3e-88fc-61431fd80e5c.png",
         "Link" : "#/app/app16964.acmecorp"
       },
       "CreatedDate" : "2013-05-23T22:14:30.000Z",
@@ -416,7 +417,7 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
         &lt;ID&gt;user12262.acmecorp&lt;/ID&gt;
         &lt;Name&gt;JaneMead&lt;/Name&gt;
         &lt;ns4:Image&gt;
-          &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
+          &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
           &lt;Title&gt;JaneMead&lt;/Title&gt;
           &lt;Link&gt;#/users/user12262.acmecorp/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;
@@ -432,7 +433,7 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
+        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
         &lt;Link&gt;#/user/user12262.acmecorp/details&lt;/Link&gt;
       &lt;/ns4:Image&gt;
     &lt;/item&gt;
@@ -458,7 +459,7 @@ on behalf of the  PaaStime (2.0) application&lt;/description&gt;
         &lt;ID&gt;user12262.acmecorp&lt;/ID&gt;
         &lt;Name&gt;JaneMead&lt;/Name&gt;
         &lt;ns4:Image&gt;
-          &lt;Url&gt;https://&lt;hostname&gt;/api/users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
+          &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
           &lt;Title&gt;JaneMead&lt;/Title&gt;
           &lt;Link&gt;#/users/user12262.acmecorp/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;
@@ -494,7 +495,7 @@ on behalf of the  PaaStime (2.0) application&lt;/description&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;apiversion&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;https://&lt;hostname&gt;/api/apps/app16964.acmecorp/avatars/f250a96e-2f81-4e3e-88fc-61431fd80e5c.png&lt;/Url&gt;
+        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app16964.acmecorp/avatars/f250a96e-2f81-4e3e-88fc-61431fd80e5c.png&lt;/Url&gt;
         &lt;Link&gt;#/app/app16964.acmecorp&lt;/Link&gt;
       &lt;/ns4:Image&gt;
       &lt;ns4:EntityReferences&gt;
@@ -517,7 +518,7 @@ on behalf of the  PaaStime (2.0) application&lt;/description&gt;
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -605,23 +606,23 @@ on behalf of the  PaaStime (2.0) application&lt;/description&gt;
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#errormessages">Full list of Community Platform API error messages.</a></p>
+<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
-<table width="600" border="0" cellspacing="0" cellpadding="2">
+<table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
   <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
   <li><a href="../docconventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
-    <td width="300"><ul>
+    <td width="400"><ul>
   <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
   <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

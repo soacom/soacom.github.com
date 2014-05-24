@@ -1,20 +1,24 @@
 ---
 layout: apipage
-title: GET&nbsp;/api/apps/{AppID}/versions Operation | Apps Service | Community Platform API
+title: Get Versions | Apps Service | Enterprise API Platform API
 description: Returns a list of versions for the specified app.
 product: cm
 category: ref
-nav-title: GET&nbsp;/api/apps/{AppID}/versions
+nav-title: Get Versions 
 no-nav: api
 sub-nav: true
 sub-nav-class: apps
 no-catalog: true
 ---
 
-<h2><a name="top"></a>GET&nbsp;apps/{AppID}/versions Method</h2>
+<!-- InstanceBeginEditable name="Heading" -->
+<h2><a name="top"></a>GET&nbsp;apps/{AppID}/versions</h2>
+<!-- InstanceEndEditable -->
+
+<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getVersions.lbi" -->Returns a list of versions for the specified app.<!-- #EndLibraryItem --></p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Administrator</a>, <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>, or other <a href="../Ref_AuthorizationRolesOnThePlatform.htm">authorized user</a></p>
-<!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
   <tr>
@@ -36,29 +40,35 @@ no-catalog: true
 </td>
   </tr>
 </table><!-- #EndLibraryItem --><h3 id="httpmethod">HTTP Method</h3>
+<!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
+<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-
 
 <h3 id="endpoint">URL</h3>
-<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/apps/{AppID}/versions</pre>
+<!-- InstanceBeginEditable name="URL" -->
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/{AppID}/versions</pre>
+<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
+<!-- InstanceBeginEditable name="Sample Request" -->
 <h3 id="samplerequest">Sample Request</h3>
-<p>The example below gets the versions for a specific app.</p>
+<p id="id_samplerequest">The example below gets the versions for a specific app.</p>
 <p><strong>Sample request URL</strong></p>
-<pre>https://&lt;hostname&gt;/api/apps/app10033.acmecorp/versions</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app10033.acmecorp/versions</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json, text/javascript, */*; q=0.01
-Host: <!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!-- #EndLibraryItem --></pre>
+Host:<!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -70,12 +80,14 @@ Host: <!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!-
     <tr>
       <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
       <td><!-- #BeginLibraryItem "/Library/hdrval_accept_txtxml_or_json.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
-  </tr>
+    </tr>
   </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Request Parameters" -->
 <h3 id="requestparameters">Request Parameters</h3>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
@@ -93,91 +105,96 @@ Host: <!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!-
       <td>Path</td>
       <td>string</td>
       <td>Yes</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_AppID.lbi" -->
-The unique ID for the specified app.<!-- #EndLibraryItem --></td>
-  </tr>
-    </tbody>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_AppID.lbi" --> The unique ID for the specified app.<!-- #EndLibraryItem --></td>
+    </tr>
+  </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Response Description" -->
 <h3 id="response">Response</h3>
 <p id="id_successstatement">If successful, this method returns HTTP status code 200, with information about the app versions in JSON or XML format.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Sample Response" -->
 <h3 id="sampleresponse">Sample Response</h3>
 <p>In the example below, the app has only one version.</p>
-
 <p><strong>Sample response headers</strong></p>
 <pre>HTTP/1.1 200 OK
 Date: Tue, 24 Jul 2012 21:00:56 GMT
 Content-Type: application/json</pre>
-
-<p><a name="rss_applicationversions"></a><strong>Sample response body</strong></p>
+<p><a name="rss_applicationversions" id="rss_applicationversions"></a><strong>Sample response body</strong></p>
 <pre>{
-  "channel" : {
-    "title" : "Application versions",
-    "item" : [ {
-      "title" : "1.0",
-      "description" : "Multi-player card game for Android phones.",
-      "category" : [ {
-        "value" : "app-version",
-        "domain" : "uddi:soa.com:resourcetype"
+  &quot;channel&quot; : {
+    &quot;title&quot; : &quot;Application versions&quot;,
+    &quot;item&quot; : [ {
+      &quot;title&quot; : &quot;1.0&quot;,
+      &quot;description&quot; : &quot;Multi-player card game for Android phones.&quot;,
+      &quot;category&quot; : [ {
+        &quot;value&quot; : &quot;app-version&quot;,
+        &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;
       }, {
-        "value" : "Sandbox",
-        "domain" : "uddi:soa.com:environment"
+        &quot;value&quot; : &quot;Sandbox&quot;,
+        &quot;domain&quot; : &quot;uddi:soa.com:environment&quot;
       }, {
-        "value" : "com.soa.app.state.sandbox",
-        "domain" : "uddi:soa.com:application.state"
+        &quot;value&quot; : &quot;com.soa.app.state.sandbox&quot;,
+        &quot;domain&quot; : &quot;uddi:soa.com:application.state&quot;
       }, {
-        "value" : "cards",
-        "domain" : "uddi:soa.com:tag"
+        &quot;value&quot; : &quot;cards&quot;,
+        &quot;domain&quot; : &quot;uddi:soa.com:tag&quot;
       }, {
-        "value" : "game",
-        "domain" : "uddi:soa.com:tag"
+        &quot;value&quot; : &quot;game&quot;,
+        &quot;domain&quot; : &quot;uddi:soa.com:tag&quot;
       } ],
-      "guid" : {
-        "value" : "2FEBF9WSXVa5qHCVSnue41AV.acmecorp&quot;
+      &quot;guid&quot; : {
+        &quot;value&quot; : &quot;2FEBF9WSXVa5qHCVSnue41AV.acmecorp&quot;
       },
-      "pubDate" : "Tue, 24 Jul 2012 13:45:12 PDT",
-      "EntityReferences" : {
-        "EntityReference" : [ {
-          "Title" : "110",
-          "Guid" : "app10033.acmecorp&quot;,
-          "Category" : [ {
-            "value" : "app",
-            "domain" : "uddi:soa.com:resourcetype"
+      &quot;pubDate&quot; : &quot;Tue, 24 Jul 2012 13:45:12 PDT&quot;,
+      &quot;EntityReferences&quot; : {
+        &quot;EntityReference&quot; : [ {
+          &quot;Title&quot; : &quot;110&quot;,
+          &quot;Guid&quot; : &quot;app10033.acmecorp&quot;,
+          &quot;Category&quot; : [ {
+            &quot;value&quot; : &quot;app&quot;,
+            &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;
           } ]
         } ]
       }
     } ]
   },
-  "version" : "1.0"
+  &quot;version&quot; : &quot;1.0&quot;
 }</pre>
-
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<p id="id_sampleresponse">&nbsp;</p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
-<thead>
-  <tr bgcolor="#DDDDDD">
-    <th width="20%">Header</th>
-    <th width="80%">Description</th>
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Header</th>
+      <th width="80%">Description</th>
     </tr>
-</thead>
-<tbody>
+  </thead>
+  <tbody>
     <tr>
       <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_content_type_rsp_json.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
-  </tr>
-</tbody>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_json.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+    </tr>
+  </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Response Body" -->
 <h3 id="responsebody">Response Body</h3>
 <p id="responserss"><!-- #BeginLibraryItem "/Library/_rss_responsetable_intro.lbi" --> The response body is in the form of an RSS channel, and includes the items listed below. The RSS version is 1.0.<!-- #EndLibraryItem --> The title of the RSS channel is <strong>Application versions</strong>. Each item in the channel represents one app version, and includes the information listed below.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
@@ -203,7 +220,7 @@ Content-Type: application/json</pre>
         <p>A second category for the   &quot;uddi:soa.com:tag&quot; domain is provided for each tag assigned to the app   version. </p>
         <p>A third category for the &quot;uddi:soa.com:application.state&quot;   domain is provided with the value representing the version's state.</p>
         <p>There is also a name/value pair for each tag assigned to the app version. </p>
-        <p>For information regarding app state, refer to <a href="../Ref_apireference.htm#derivingstatevalue">Determining the State Value of an App</a>.</p></td>
+        <p>For information regarding app state, refer to <a href="../Ref_apireference.htm#ref_derivingstatevalue">Determining the State Value of an App</a>.</p></td>
     </tr>
     <tr>
       <td><a href="../Ref_RSSChannelsOnThePlatform.htm#rss_guid">guid</a></td>
@@ -220,10 +237,12 @@ Content-Type: application/json</pre>
     </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
 <h3 id="errorcodes">Error Codes/Messages</h3>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
+<!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -235,30 +254,31 @@ Content-Type: application/json</pre>
     <tr>
       <td><a href="../Ref_apireference.htm#http404">404</a></td>
       <td>The resource could not be found.</td>
-  </tr>
+    </tr>
     <tr>
       <td><a href="../Ref_apireference.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
-  </tr>
-  </tbody>
+    </tr>
+    </tbody>
 </table>
-<p><a href="../Ref_apireference.htm#errormessages">Full list of Community Platform API error messages.</a></p>
+<!-- InstanceEndEditable -->
+<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
-<table width="600" border="0" cellspacing="0" cellpadding="2">
+<table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
   <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
   <li><a href="../docconventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
-    <td width="300"><ul>
+    <td width="400"><ul>
   <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
   <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

@@ -1,6 +1,6 @@
 ---
 layout: apipage
-title: Login Service | Overview | Community Platform API
+title: Login Service | Overview | Enterprise API Platform API
 description:  The Login service provides a REST interface and a set of operations that deal with logging in and out, including getting an authentication token, renewing an authorization token, and deleting an authorization token cookie. This API also includes interfaces to perform SSOLogin.%|%
 product: cm
 category: ref
@@ -30,7 +30,7 @@ The Login service provides a REST interface and a set of operations that deal wi
       <td>log in</td>
       <td><a href="login/m_login_login.htm">POST&nbsp;/api/login</a></td>
       <td><!-- #BeginLibraryItem "/Library/desc_Login.lbi" -->
-Allows a registered user to log in, returning an authentication cookie that is used to make authenticated calls via the Community Platform. The cookie is valid for 25 minutes. To renew it, use the <span class="apidoc_code"><a href="login/m_login_renewToken.htm">POST&nbsp;/api/login/renewToken</a></span> method.<!-- #EndLibraryItem --></td>
+Allows a registered user to log in, returning an authentication cookie that is used to make authenticated calls via the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->. The cookie is valid for 25 minutes. To renew it, use the <span class="apidoc_code"><a href="login/m_login_renewToken.htm">POST&nbsp;/api/login/renewToken</a></span> method.<!-- #EndLibraryItem --></td>
   </tr>
 
     <tr>
@@ -50,24 +50,24 @@ Destroys any authentication cookies associated with the current session for a te
       <td><!-- #BeginLibraryItem "/Library/desc_renewToken.lbi" -->
       Updates the time for which an authentication token cookie is valid, as well as other information stored in the cookie.<!-- #EndLibraryItem --></td>
   </tr>
-  </tbody>
+</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
-<table width="600" border="0" cellspacing="0" cellpadding="2">
+<table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="index.htm">Community Platform API: Overview</a></li>
+  <li><a href="index.htm">Enterprise API Platform API: Overview</a></li>
   <li><a href="glossary_communityplatform.htm">Glossary of Terms</a></li>
   <li><a href="docconventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
-    <td width="300"><ul>
+    <td width="400"><ul>
   <li><a href="authenticationandsecurity.htm">Authentication and Security</a></li>
   <li><a href="troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="Ref_apireference.htm">Community Platform API Reference Material</a></li>
+  <li><a href="Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

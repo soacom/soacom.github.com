@@ -1,10 +1,10 @@
 ---
 layout: apipage
-title: GET&nbsp;/api/apps/{AppID}/settings Operation | Apps Service | Community Platform API
+title: Get App Settings | Apps Service | Enterprise API Platform API
 description: Returns a summary of the settings for the specified app.
 product: cm
 category: ref
-nav-title: GET&nbsp;/api/apps/{AppID}/settings
+nav-title: Get App Settings 
 no-nav: api
 sub-nav: true
 sub-nav-class: apps
@@ -12,12 +12,12 @@ no-catalog: true
 ---
 
 <!-- InstanceBeginEditable name="Heading" -->
-<h2><a name="top" id="top"></a>GET&nbsp;/api/apps/{AppID}/settings Operation</h2>
+<h2><a name="top" id="top"></a>GET&nbsp;/api/apps/{AppID}/settings</h2>
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getAppSettings.lbi" -->Returns a summary of the settings for the specified app.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Administrator</a><strong>, </strong> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a><strong>, </strong> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -47,7 +47,7 @@ no-catalog: true
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/apps/{AppID}/settings</pre>
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/{AppID}/settings</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -56,7 +56,7 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for the settings for the specified app.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://&lt;hostname&gt;/api/apps/app16964.acmecorp/settings</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app16964.acmecorp/settings</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
@@ -67,7 +67,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -78,7 +78,7 @@ no-catalog: true
   <tbody>
     <tr>
       <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_accept_json_or_appxml.lbi" --><strong>application/json</strong> or <strong>application/xml</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_json_or_appxml.lbi" --><strong>application/json</strong> or <strong>application/xml</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -125,7 +125,7 @@ no-catalog: true
 <p><strong>Sample response headers: JSON</strong></p>
 <pre>Status Code: 200 OK
 Content-Type: application/json
-Date: Wed, 03 Jul 2013 15:57:44 GMT</pre>
+Date: Tue, 22 Apr 2014 12:52:58 GMT</pre>
 <p><strong>Sample response body: JSON</strong></p>
 <pre>{
   "PublicAppSupport" : "com.soa.feature.enabled",
@@ -137,16 +137,17 @@ Date: Wed, 03 Jul 2013 15:57:44 GMT</pre>
   "PrivateAppRatingsSupport" : "com.soa.feature.enabled",
   "PrivateAppReviewsSupport" : "com.soa.feature.enabled",
   "UserDefinedIdentitySupport" : "com.soa.feature.enabled.for.siteadmins",
-  "SimultaneousSandboxProductAccessSupport" : "com.soa.feature.enabled"
+  "SimultaneousSandboxProductAccessSupport" : "com.soa.feature.enabled",
+  "ReturnPlainTextSharedSecret" : "com.soa.feature.enabled"
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <p><strong>Sample response headers: application/xml</strong></p>
 <pre>Status Code: 200 OK
 Content-Type: application/xml
-Date: Wed, 03 Jul 2013 19:02:56 GMT</pre>
+Date: Tue, 22 Apr 2014 12:50:58 GMT</pre>
 <p><strong>Sample response body: application/xml</strong></p>
 <pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
-&lt;AppSettings xmlns="http://soa.com/xsd/app/1.0"&gt;
+&lt;AppSettings xmlns="http://soa.com/xsd/app/1.0" xmlns:ns2="http://soa.com/xsd/resource/1.0"&gt;
   &lt;PublicAppSupport&gt;com.soa.feature.enabled&lt;/PublicAppSupport&gt;
   &lt;PublicAppBoardSupport&gt;com.soa.feature.enabled&lt;/PublicAppBoardSupport&gt;
   &lt;PublicAppRatingsSupport&gt;com.soa.feature.enabled&lt;/PublicAppRatingsSupport&gt;
@@ -157,6 +158,7 @@ Date: Wed, 03 Jul 2013 19:02:56 GMT</pre>
   &lt;PrivateAppReviewsSupport&gt;com.soa.feature.enabled&lt;/PrivateAppReviewsSupport&gt;
   &lt;UserDefinedIdentitySupport&gt;com.soa.feature.enabled.for.siteadmins&lt;/UserDefinedIdentitySupport&gt;
   &lt;SimultaneousSandboxProductAccessSupport&gt;com.soa.feature.enabled&lt;/SimultaneousSandboxProductAccessSupport&gt;
+  &lt;ReturnPlainTextSharedSecret&gt;com.soa.feature.enabled&lt;/ReturnPlainTextSharedSecret&gt;
 &lt;/AppSettings&gt;
 </pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -165,7 +167,7 @@ Date: Wed, 03 Jul 2013 19:02:56 GMT</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -176,7 +178,7 @@ Date: Wed, 03 Jul 2013 19:02:56 GMT</pre>
   <tbody>
     <tr>
       <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_accept_json_or_appxml.lbi" --><strong>application/json</strong> or <strong>application/xml</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_json_or_appxml.lbi" --><strong>application/json</strong> or <strong>application/xml</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -224,23 +226,23 @@ Date: Wed, 03 Jul 2013 19:02:56 GMT</pre>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#errormessages">Full list of Community Platform API error messages.</a></p>
+<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
-<table width="600" border="0" cellspacing="0" cellpadding="2">
+<table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
   <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
   <li><a href="../docconventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
-    <td width="300"><ul>
+    <td width="400"><ul>
   <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
   <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

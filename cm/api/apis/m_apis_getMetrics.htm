@@ -1,10 +1,10 @@
 ---
 layout: apipage
-title: GET&nbsp;/api/apis/versions/{ApiVersionID}/metrics Operation | APIs Service | Community Platform API
-description:  Returns a set of metric information for the specified API version, in the form of a chart to be displayed.
+title: Get Metrics | APIs Service | Enterprise API Platform API
+description:  Returns a set of metric information for the specified API version, in JSON or XML format, that can be used to create a chart.
 product: cm
 category: ref
-nav-title: GET&nbsp;/api/apis/versions/{ApiVersionID}/metrics
+nav-title: Get Metrics 
 no-nav: api
 sub-nav: true
 sub-nav-class: apis
@@ -12,14 +12,15 @@ no-catalog: true
 ---
 
 <!-- InstanceBeginEditable name="Heading" -->
-<h2><a name="top" id="top"></a>GET&nbsp;/api/apis/versions/{APIVersionID}/metrics</h2><!-- InstanceEndEditable -->
+<h2><a name="top" id="top"></a>GET&nbsp;/api/apis/versions/{APIVersionID}/metrics</h2>
+<!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getMetrics_apis.lbi" -->
-Returns a set of metric information for the specified API version, in the form of a chart to be displayed.<!-- #EndLibraryItem --></p>
+Returns a set of metric information for the specified API version, in JSON or XML format, that can be used to create a chart.<!-- #EndLibraryItem --></p>
 <p><!-- #BeginLibraryItem "/Library/ref_Metrics.lbi" -->For additional information regarding the set of operations dealing with metric information, see <a href="../Ref_MetricsOnThePlatform.htm">Metrics on the Platform</a>.<!-- #EndLibraryItem --></p>
 <p class="apidoc_note"><strong>Note</strong>: This operation returns metric data as a chart; the <span class="apidoc_code"><a href="m_apis_exportMetrics.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/metrics/export</a></span> operation returns the data as a table.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a>.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/Library/roles_user.lbi" --> To complete this operation successfully, a user must be logged in<!-- #EndLibraryItem --> and must have monitor permission for the API; an <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a>, <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>, or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a> for an app that has a contract with the API.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -48,7 +49,7 @@ Returns a set of metric information for the specified API version, in the form o
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h3 id="endpoint">URL</h3>
-<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/apis/versions/{APIVersionID}/metrics</pre><!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/{APIVersionID}/metrics</pre><!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -56,7 +57,7 @@ Returns a set of metric information for the specified API version, in the form o
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for the metric information for the specified API version.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://&lt;hostname&gt;/api/apis/versions/apiversion18972.acmecorp/metrics?TimeInterval=5s&amp;Duration=1m&amp;Environment=Sandbox</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion18972.acmecorp/metrics?TimeInterval=5s&amp;Duration=1m&amp;Environment=Sandbox</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>GET&nbsp;/api/apis/versions/apiversion18972.acmecorp/metrics?TimeInterval=5s&amp;Duration=1m&amp;Environment=Sandbox HTTP/1.1
 Host: &lt;hostname&gt;
@@ -69,7 +70,7 @@ Accept: */*</pre>
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -80,7 +81,7 @@ Accept: */*</pre>
   <tbody>
     <tr>
       <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_accept_txtxml_or_json.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_json.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -108,6 +109,13 @@ Accept: */*</pre>
       <td>Required</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->
 The unique ID for the specified API version.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>ReportType</td>
+      <td>Query</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/parm_ReportType.lbi" -->The type of metric information. For valid values, see <a href="../Ref_Values.htm#values_reporttype">Report Type</a>.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>Environment</td>
@@ -151,8 +159,7 @@ The beginning point for the date range of metric information requested. If Start
       <td>Query</td>
       <td>string</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/Library/parm_Duration.lbi" -->
-The <a href="../Ref_apireference.htm#datatypes_duration">duration</a> for the metric information. If not specified, defaults to two hours (2h). The StartDate, EndDate, and Duration fields work together to define the information to be returned.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/parm_Duration.lbi" -->The <a href="../Ref_apireference.htm#datatypes_duration">duration</a> for the metric information. If not specified, defaults to two hours (2h). The StartDate, EndDate, and Duration fields work together to define the information to be returned.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>ShowSummary</td>
@@ -170,6 +177,13 @@ Indicates whether a summary of the metric information should be included in the 
       <td><!-- #BeginLibraryItem "/Library/parm_ShowSLAs.lbi" -->
 Indicates whether SLAs should be included in the information returned. If not specified, defaults to false, meaning that SLAs are not returned.<!-- #EndLibraryItem --></td>
     </tr>
+    <tr>
+      <td>ShowIntervalData</td>
+      <td>Query</td>
+      <td>boolean</td>
+      <td>Optional</td>
+      <td>Indicates whether the metric information that's returned should be broken up by time interval. For example, if the TimeInterval value is five minutes (5m) and the Duration value is one hour (1h), and ShowIntervalData is set to true, the results would include 12 sets of information, one for each five-minute interval. Time interval data can be used to create a bar chart.</td>
+    </tr>
   </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -178,40 +192,94 @@ Indicates whether SLAs should be included in the information returned. If not sp
 
 <!-- InstanceBeginEditable name="Response Description" -->
 <h3 id="response">Response</h3>
-<p id="id_successstatement">If successful, this method returns HTTP status code 200, with the metrics for the specified API in JSON or XML format.</p>
+<p id="id_successstatement">If successful, this method returns HTTP status code 200, with the metrics for the specified API version in JSON or XML format.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
 
 <!-- InstanceBeginEditable name="Sample Response" -->
 <h3 id="sampleresponse">Sample Response</h3>
-<p id="id_sampleresponse">The sample response below shows that there are currently no metrics for the specified API.</p>
+<p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: JSON</strong></p>
 <pre>HTTP/1.1 200 OK
-Date: Thu, 31 Jan 2013 20:19:17 GMT
+Date: Thu, 17 Apr 2014 20:47:50 GMT
 Content-Type: application/json</pre>
 <p><strong>Sample response body: JSON</strong></p>
-<pre>{
-  "StartTime" : "2013-01-31T20:18:20Z",
-  "EndTime" : "2013-01-31T20:19:20Z"
-}</pre>
-<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<pre>{<br />  &quot;StartTime&quot; : &quot;2014-04-17T00:00:00Z&quot;,<br />  &quot;EndTime&quot; : &quot;2014-04-18T00:00:00Z&quot;,<br />  &quot;Summaries&quot; : [ {<br />    &quot;Metric&quot; : [ {<br />      &quot;Name&quot; : &quot;avgResponseTime&quot;,<br />      &quot;Value&quot; : -1<br />    }, {<br />      &quot;Name&quot; : &quot;minResponseTime&quot;,<br />      &quot;Value&quot; : 0<br />    }, {<br />      &quot;Name&quot; : &quot;maxResponseTime&quot;,<br />      &quot;Value&quot; : 0<br />    }, {<br />      &quot;Name&quot; : &quot;totalCount&quot;,<br />      &quot;Value&quot; : 0<br />    }, {<br />      &quot;Name&quot; : &quot;successCount&quot;,<br />      &quot;Value&quot; : 0<br />    }, {<br />      &quot;Name&quot; : &quot;faultCount&quot;,<br />      &quot;Value&quot; : 0<br />    } ],<br />    &quot;StartTime&quot; : &quot;2014-04-17T20:46:55Z&quot;,<br />    &quot;EndTime&quot; : &quot;2014-04-17T20:47:55Z&quot;,<br />    &quot;Duration&quot; : &quot;P0Y0M0DT0H1M0.000S&quot;<br />  }, {<br />    &quot;Metric&quot; : [ {<br />      &quot;Name&quot; : &quot;avgResponseTime&quot;,<br />      &quot;Value&quot; : 248<br />    }, {<br />      &quot;Name&quot; : &quot;minResponseTime&quot;,<br />      &quot;Value&quot; : 248<br />    }, {<br />      &quot;Name&quot; : &quot;maxResponseTime&quot;,<br />      &quot;Value&quot; : 248<br />    }, {<br />      &quot;Name&quot; : &quot;totalCount&quot;,<br />      &quot;Value&quot; : 1<br />    }, {<br />      &quot;Name&quot; : &quot;successCount&quot;,<br />      &quot;Value&quot; : 1<br />    }, {<br />      &quot;Name&quot; : &quot;faultCount&quot;,<br />      &quot;Value&quot; : 0<br />    } ],<br />    &quot;StartTime&quot; : &quot;2014-04-17T00:00:00Z&quot;,<br />    &quot;EndTime&quot; : &quot;2014-04-18T00:00:00Z&quot;,<br />    &quot;Duration&quot; : &quot;P0Y0M1DT0H0M0.000S&quot;<br />  } ]<br />}</pre>
 <p><strong>Sample response headers: XML</strong></p>
-<pre>Status Code: 200 OK
+<pre>HTTP/1.1 200 OK
+Date: Thu, 17 Apr 2014 20:49:50 GMT
 Content-Type: text/xml</pre>
-<p><strong>Sample response body: XML</strong></p>
+<p><strong>Sample response body: JSON</strong></p>
 <pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
 &lt;Graph xmlns="http://soa.com/xsd/performance/1.0"&gt;
-  &lt;StartTime&gt;2013-01-31T20:30:55Z&lt;/StartTime&gt;
-  &lt;EndTime&gt;2013-01-31T20:31:55Z&lt;/EndTime&gt;
-&lt;/Graph&gt;</pre>
+  &lt;StartTime&gt;2014-04-17T21:51:50Z&lt;/StartTime&gt;
+  &lt;EndTime&gt;2014-04-17T21:52:50Z&lt;/EndTime&gt;
+  &lt;Summaries Duration="P0Y0M0DT0H1M0.000S"&gt;
+    &lt;Metric&gt;
+      &lt;Name&gt;avgResponseTime&lt;/Name&gt;
+      &lt;Value&gt;-1&lt;/Value&gt;
+    &lt;/Metric&gt;
+    &lt;Metric&gt;
+      &lt;Name&gt;minResponseTime&lt;/Name&gt;
+      &lt;Value&gt;0&lt;/Value&gt;
+    &lt;/Metric&gt;
+    &lt;Metric&gt;
+      &lt;Name&gt;maxResponseTime&lt;/Name&gt;
+      &lt;Value&gt;0&lt;/Value&gt;
+    &lt;/Metric&gt;
+    &lt;Metric&gt;
+      &lt;Name&gt;totalCount&lt;/Name&gt;
+      &lt;Value&gt;0&lt;/Value&gt;
+    &lt;/Metric&gt;
+    &lt;Metric&gt;
+      &lt;Name&gt;successCount&lt;/Name&gt;
+      &lt;Value&gt;0&lt;/Value&gt;
+    &lt;/Metric&gt;
+    &lt;Metric&gt;
+      &lt;Name&gt;faultCount&lt;/Name&gt;
+      &lt;Value&gt;0&lt;/Value&gt;
+    &lt;/Metric&gt;
+    &lt;StartTime&gt;2014-04-17T21:51:50Z&lt;/StartTime&gt;
+    &lt;EndTime&gt;2014-04-17T21:52:50Z&lt;/EndTime&gt;
+  &lt;/Summaries&gt;
+  &lt;Summaries Duration="P0Y0M1DT0H0M0.000S"&gt;
+    &lt;Metric&gt;
+      &lt;Name&gt;avgResponseTime&lt;/Name&gt;
+      &lt;Value&gt;248&lt;/Value&gt;
+    &lt;/Metric&gt;
+    &lt;Metric&gt;
+      &lt;Name&gt;minResponseTime&lt;/Name&gt;
+      &lt;Value&gt;248&lt;/Value&gt;
+    &lt;/Metric&gt;
+    &lt;Metric&gt;
+      &lt;Name&gt;maxResponseTime&lt;/Name&gt;
+      &lt;Value&gt;248&lt;/Value&gt;
+    &lt;/Metric&gt;
+    &lt;Metric&gt;
+      &lt;Name&gt;totalCount&lt;/Name&gt;
+      &lt;Value&gt;1&lt;/Value&gt;
+    &lt;/Metric&gt;
+    &lt;Metric&gt;
+      &lt;Name&gt;successCount&lt;/Name&gt;
+      &lt;Value&gt;1&lt;/Value&gt;
+    &lt;/Metric&gt;
+    &lt;Metric&gt;
+      &lt;Name&gt;faultCount&lt;/Name&gt;
+      &lt;Value&gt;0&lt;/Value&gt;
+    &lt;/Metric&gt;
+    &lt;StartTime&gt;2014-04-17T00:00:00Z&lt;/StartTime&gt;
+    &lt;EndTime&gt;2014-04-18T00:00:00Z&lt;/EndTime&gt;
+  &lt;/Summaries&gt;
+&lt;/Graph&gt;
+</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -222,7 +290,7 @@ Content-Type: text/xml</pre>
   <tbody>
     <tr>
       <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_accept_txtxml_or_json.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_json.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -242,9 +310,9 @@ Content-Type: text/xml</pre>
   </thead>
   <tbody>
     <tr>
-      <td>Response</td>
-      <td>Response</td>
-      <td>Metric information.</td>
+      <td>Graph</td>
+      <td><a href="../obj/o_performance_Graph.htm">Graph</a></td>
+      <td><!-- #BeginLibraryItem "/Library/o_performance_Graph.lbi" -->Contains metric information.<!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -270,23 +338,23 @@ Content-Type: text/xml</pre>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#errormessages">Full list of Community Platform API error messages.</a></p>
+<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
-<table width="600" border="0" cellspacing="0" cellpadding="2">
+<table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
   <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
   <li><a href="../docconventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
-    <td width="300"><ul>
+    <td width="400"><ul>
   <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
   <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

@@ -1,10 +1,10 @@
 ---
 layout: apipage
-title: GET&nbsp;/api/apis/versions/{ApiVersionID}/viewers Operation | APIs Service | Community Platform API
-description:  Returns a list of <a href="../glossary_communityplatform.htm#viewer">viewers</a> (groups) that can view the specified API.
+title: Get Private Viewers | APIs Service | Enterprise API Platform API
+description:  Returns a list of <a href="../glossary_communityplatform.htm#gl_viewer">viewers</a> (groups) that can view the specified API.
 product: cm
 category: ref
-nav-title: GET&nbsp;/api/apis/versions/{ApiVersionID}/viewers
+nav-title: Get Private Viewers 
 no-nav: api
 sub-nav: true
 sub-nav-class: apis
@@ -16,7 +16,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getPrivateViewers.lbi" -->
-Returns a list of <a href="../glossary_communityplatform.htm#viewer">viewers</a> (groups) that can view the specified API.<!-- #EndLibraryItem --></p>
+Returns a list of <a href="../glossary_communityplatform.htm#gl_viewer">viewers</a> (groups) that can view the specified API.<!-- #EndLibraryItem --></p>
 <p class="apidoc_note"><strong>Note</strong>: This operation returns groups, not individual users. Once you have the list of groups you can use the Group IDs to get a list of individuals in the groups, if needed, using an operation in the Groups service (getGroupMembers, not yet documented).</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: You must be logged in to perform this operation</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
@@ -47,7 +47,7 @@ Returns a list of <a href="../glossary_communityplatform.htm#viewer">viewers</a>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h3 id="endpoint">URL</h3>
-<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/apis/versions/{APIVersionID}/viewers</pre><!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/{APIVersionID}/viewers</pre><!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -66,7 +66,7 @@ Returns a list of <a href="../glossary_communityplatform.htm#viewer">viewers</a>
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -227,7 +227,7 @@ xmlns:ns8="http://soa.com/xsd/api/1.0" xmlns:ns9="http://soa.com/xsd/board/1.0" 
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -309,23 +309,23 @@ The response body is in the form of an RSS channel, and includes the items liste
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#errormessages">Full list of Community Platform API error messages.</a></p>
+<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
-<table width="600" border="0" cellspacing="0" cellpadding="2">
+<table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
   <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
   <li><a href="../docconventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
-    <td width="300"><ul>
+    <td width="400"><ul>
   <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
   <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

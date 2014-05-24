@@ -1,10 +1,10 @@
 ---
 layout: apipage
-title: GET&nbsp;/api/reviews Operation | Reviews Service | Community Platform API
+title: List Reviews | Reviews Service | Enterprise API Platform API
 description: Returns a list of all reviews.
 product: cm
 category: ref
-nav-title: GET&nbsp;/api/reviews
+nav-title: List Reviews 
 no-nav: api
 sub-nav: true
 sub-nav-class: reviews
@@ -12,7 +12,7 @@ no-catalog: true
 ---
 
 <!-- InstanceBeginEditable name="Heading" -->
-<h2><a name="top" id="top"></a>GET&nbsp;/api/reviews Operation</h2>
+<h2><a name="top" id="top"></a>GET&nbsp;/api/reviews</h2>
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
@@ -47,7 +47,7 @@ no-catalog: true
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/reviews[?ReviewSubjectID={ReviewSubjectID}]
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->reviews[?ReviewSubjectID={ReviewSubjectID}]
 [&amp;RetrievingUserID={RetrievingUserID}][&amp;ItemID={ItemID}]
 [&amp;ReviewAuthorID=ReviewAuthorID][&amp;Tag=Tag][&amp;SortBy=SortBy][&amp;IncludeComments=IncludeComments]
 [&amp;NumberOfComments=NumberOfComments][&amp;start=start][&amp;count=count]</pre>
@@ -59,12 +59,11 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p><strong>Request URL</strong> #1</p>
 <p>Returns all reviews.</p>
-<pre>https://&lt;hostname&gt;/api/reviews
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->reviews
 </pre>
 <p><strong>Request URL</strong> #2</p>
 <p>Returns all reviews written by the specified user.</p>
-<pre>
-https://&lt;hostname&gt;/api/reviews?ReviewAuthorID=user23531.acmecorp</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->reviews?ReviewAuthorID=user23531.acmecorp</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
@@ -75,7 +74,7 @@ https://&lt;hostname&gt;/api/reviews?ReviewAuthorID=user23531.acmecorp</pre>
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -127,7 +126,8 @@ The unique ID for a specific review subject.<!-- #EndLibraryItem --></td>
       <td>Query</td>
       <td>string</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_ItemID.lbi" --> The unique ID for a specific <a href="../glossary_communityplatform.htm#boarditem">Board item</a>.<!-- #EndLibraryItem --> If specified, results are limited to information relating to that item ID. If not specified, no filter is applied.</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_ItemID.lbi" -->
+The unique ID for a specific <a href="../glossary_communityplatform.htm#gl_boarditem">Board item</a>.<!-- #EndLibraryItem -->If specified, results are limited to information relating to that item ID. If not specified, no filter is applied.</td>
     </tr>
     <tr>
       <td><a href="../Ref_IDsOnThePlatform.htm#id_reviewauthorid">ReviewAuthorID</a></td>
@@ -223,13 +223,13 @@ Date: Wed, 05 Jun 2013 16:10:24 GMT</pre>
         "ID" : "user23531.acmecorp",
         "Name" : "JenniferMeadows",
         "Image" : {
-          "Url" : "https://&lt;hostname&gt;/api/users/user23531.acmecorp/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png",
+          "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user23531.acmecorp/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png",
           "Title" : "JenniferMeadows",
           "Link" : "#/users/user23531.acmecorp/details"
         }
       },
       "Image" : {
-        "Url" : "https://&lt;hostname&gt;/api/users/user23531.acmecorp/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png",
+        "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user23531.acmecorp/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png",
         "Link" : "../acmecorp#/user/user23531.acmecorp/details"
       },
       "CreatedDate" : "2013-06-05T16:42:07.000Z",
@@ -272,13 +272,13 @@ Date: Wed, 05 Jun 2013 16:10:24 GMT</pre>
         "ID" : "user23531.acmecorp",
         "Name" : "JenniferMeadows",
         "Image" : {
-          "Url" : "https://&lt;hostname&gt;/api/users/user23531.acmecorp/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png",
+          "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user23531.acmecorp/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png",
           "Title" : "JenniferMeadows",
           "Link" : "#/users/user23531.acmecorp/details"
         }
       },
       "Image" : {
-        "Url" : "https://&lt;hostname&gt;/api/users/user23531.acmecorp/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png",
+        "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user23531.acmecorp/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png",
         "Link" : "../acmecorp#/user/user23531.acmecorp/details"
       },
       "CreatedDate" : "2013-06-04T22:51:14.000Z",
@@ -328,7 +328,7 @@ Date: Wed, 05 Jun 2013 16:10:24 GMT</pre>
       &lt;guid&gt;review24109.acmecorp&lt;/guid&gt;
       &lt;pubDate&gt;2013-06-05T16:42:07.000Z&lt;/pubDate&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;https://&lt;hostname&gt;/api/users/user23531.acmecorp/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png&lt;/Url&gt;
+        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user23531.acmecorp/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png&lt;/Url&gt;
         &lt;Link&gt;../acmecorp#/user/user23531.acmecorp/details&lt;/Link&gt;
       &lt;/ns4:Image&gt;
       &lt;ns4:CreatedDate&gt;2013-06-05T16:42:07.000Z&lt;/ns4:CreatedDate&gt;
@@ -343,7 +343,7 @@ Date: Wed, 05 Jun 2013 16:10:24 GMT</pre>
         &lt;ID&gt;user23531.acmecorp&lt;/ID&gt;
         &lt;Name&gt;JenniferMeadows&lt;/Name&gt;
         &lt;ns4:Image&gt;
-          &lt;Url&gt;https://&lt;hostname&gt;/api/users/user23531.acmecorp/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png&lt;/Url&gt;
+          &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user23531.acmecorp/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png&lt;/Url&gt;
           &lt;Title&gt;JenniferMeadows&lt;/Title&gt;
           &lt;Link&gt;#/users/user23531.acmecorp/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;
@@ -367,7 +367,7 @@ Date: Wed, 05 Jun 2013 16:10:24 GMT</pre>
       &lt;guid&gt;review24085.acmecorp&lt;/guid&gt;
       &lt;pubDate&gt;2013-06-04T22:51:14.000Z&lt;/pubDate&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;https://&lt;hostname&gt;/api/users/user23531.acmecorp/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png&lt;/Url&gt;
+        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user23531.acmecorp/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png&lt;/Url&gt;
         &lt;Link&gt;../acmecorp#/user/user23531.acmecorp/details&lt;/Link&gt;
       &lt;/ns4:Image&gt;
       &lt;ns4:CreatedDate&gt;2013-06-04T22:51:14.000Z&lt;/ns4:CreatedDate&gt;
@@ -382,7 +382,7 @@ Date: Wed, 05 Jun 2013 16:10:24 GMT</pre>
         &lt;ID&gt;user23531.acmecorp&lt;/ID&gt;
         &lt;Name&gt;JenniferMeadows&lt;/Name&gt;
         &lt;ns4:Image&gt;
-          &lt;Url&gt;https://&lt;hostname&gt;/api/users/user23531.acmecorp/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png&lt;/Url&gt;
+          &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user23531.acmecorp/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png&lt;/Url&gt;
           &lt;Title&gt;JenniferMeadows&lt;/Title&gt;
           &lt;Link&gt;#/users/user23531.acmecorp/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;
@@ -407,7 +407,7 @@ Date: Wed, 05 Jun 2013 16:10:24 GMT</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -522,23 +522,23 @@ Date: Wed, 05 Jun 2013 16:10:24 GMT</pre>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#errormessages">Full list of Community Platform API error messages.</a></p>
+<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
-<table width="600" border="0" cellspacing="0" cellpadding="2">
+<table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
   <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
   <li><a href="../docconventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
-    <td width="300"><ul>
+    <td width="400"><ul>
   <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
   <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

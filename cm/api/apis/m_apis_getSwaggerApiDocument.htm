@@ -1,10 +1,10 @@
 ---
 layout: apipage
-title: GET&nbsp;/api/apis/versions/{ApiVersionID}/{ApiName}.{format} Operation | APIs Service | Community Platform API
-description:  Returns the <a href="../glossary_communityplatform.htm#swagger">Swagger</a> API document for the specified API version, showing the details for each operation, in JSON or XML format. The file take the API name (service name).
+title: Get Swagger API Document | APIs Service | Enterprise API Platform API
+description:  Returns the <a href="../glossary_communityplatform.htm#gl_swagger">Swagger</a> API document for the specified API version, showing the details for each operation, in JSON or XML format.The file take the API name (service name).
 product: cm
 category: ref
-nav-title: GET&nbsp;/api/apis/versions/{ApiVersionID}/{ApiName}.{format}
+nav-title: Get Swagger API Document 
 no-nav: api
 sub-nav: true
 sub-nav-class: apis
@@ -17,7 +17,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getSwaggerAPIDocument.lbi" -->
-Returns the <a href="../glossary_communityplatform.htm#swagger">Swagger</a> API document for the specified API version, showing the details for each operation, in JSON or XML format.<!-- #EndLibraryItem --> The file take the API name (service name).</p>
+Returns the <a href="../glossary_communityplatform.htm#gl_swagger">Swagger</a> API document for the specified API version, showing the details for each operation, in JSON or XML format.<!-- #EndLibraryItem -->The file take the API name (service name).</p>
 <p>Additional information:</p>
 <ul>
   <li>For more information about using Swagger for your API documentation on the platform, refer to <a href="../Ref_ManagingAPIDocumentationContent.htm#managingapidocumentationwithswagger">Managing API Documentation with Swagger</a>.</li>
@@ -52,7 +52,7 @@ Returns the <a href="../glossary_communityplatform.htm#swagger">Swagger</a> API 
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h3 id="endpoint">URL</h3>
-<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/apis/versions/{APIVersionID}/{ApiName}.{format}</pre><!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/{APIVersionID}/{ApiName}.{format}</pre><!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -60,9 +60,9 @@ Returns the <a href="../glossary_communityplatform.htm#swagger">Swagger</a> API 
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for the documentation for the <strong>follows</strong> service.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion400.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->open<!-- #EndLibraryItem -->/follows.json</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion400.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem -->/follows.json</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&nbsp;/api/apis/versions/apiversion400.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->open<!-- #EndLibraryItem -->/validatePasswordResetCode.json HTTP/1.1
+<pre>GET&nbsp;/api/apis/versions/apiversion400.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem -->/validatePasswordResetCode.json HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: application/json, text/javascript, */*; q=0.01</pre>
 <p><strong>Sample request body</strong></p>
@@ -73,7 +73,7 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -269,7 +269,7 @@ Content-Type: text/xml</pre>
       &lt;path&gt;/follows&lt;/path&gt;
     &lt;/element&gt;
   &lt;/apis&gt;
-  &lt;basePath&gt;https://&lt;hostname&gt;/api&lt;/basePath&gt;
+  &lt;basePath&gt;https://api.acmecorp.com/api&lt;/basePath&gt;
   &lt;resourcePath&gt;/follows&lt;/resourcePath&gt;
   &lt;swaggerVersion&gt;1.1&lt;/swaggerVersion&gt;
 &lt;/Any&gt;</pre>
@@ -279,7 +279,7 @@ Content-Type: text/xml</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -328,7 +328,7 @@ Content-Type: text/xml</pre>
     <tr>
       <td>basePath</td>
       <td>String</td>
-      <td>The base path for the API information returned in the response. The base path is the same for all operations and services for the API; for example, <strong>https://&lt;hostname&gt;/api</strong>.</td>
+      <td>The base path for the API information returned in the response. The base path is the same for all operations and services for the API; for example, <strong>https://api.acmecorp.com/api</strong>.</td>
     </tr>
     <tr>
       <td>resourcePath</td>
@@ -364,23 +364,23 @@ Content-Type: text/xml</pre>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#errormessages">Full list of Community Platform API error messages.</a></p>
+<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
-<table width="600" border="0" cellspacing="0" cellpadding="2">
+<table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
   <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
   <li><a href="../docconventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
-    <td width="300"><ul>
+    <td width="400"><ul>
   <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
   <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

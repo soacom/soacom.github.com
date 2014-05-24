@@ -1,10 +1,10 @@
 ---
 layout: apipage
-title: GET&nbsp;/api/users/{UserID}/apis Operation | Users Service | Community Platform API
-description:  Returns information about the APIs that the specified user is connected to, either as an API Administrator or Private API Group member or as an app team member for an app that's subscribed to the API. 
+title: Get APIs | Users Service | Enterprise API Platform API
+description:  Returns information about the APIs that the specified user is connected to, either as an API Administrator or Private API Group member or as an app team member for an app that's subscribed to the API.%|%<p id="id_roles"><strong>Authorization Roles/Permissions</strong>- <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_authorizeduser">Authorized User</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.
 product: cm
 category: ref
-nav-title: GET&nbsp;/api/users/{UserID}/apis
+nav-title: Get APIs 
 no-nav: api
 sub-nav: true
 sub-nav-class: users
@@ -12,13 +12,12 @@ no-catalog: true
 ---
 
 <!-- InstanceBeginEditable name="Heading" -->
-<h2><a name="top" id="top"></a>GET&nbsp;/api/users/{UserID}/apis Method</h2>
+<h2><a name="top" id="top"></a>GET&nbsp;/api/users/{UserID}/apis</h2>
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getApis.lbi" -->
-Returns information about the APIs that the specified user is connected to, either as an API Administrator or Private API Group member or as an app team member for an app that's subscribed to the API.<!-- #EndLibraryItem --> </p>
-<!--<p>Returns a list of APIs, list APIs, API listing, user API list, list of APIs for a user, APIs list.</p>-->
+Returns information about the APIs that the specified user is connected to, either as an API Administrator or Private API Group member or as an app team member for an app that's subscribed to the API.<!-- #EndLibraryItem -->
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_authorizeduser">Authorized User</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
 
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
@@ -50,7 +49,7 @@ Returns information about the APIs that the specified user is connected to, eith
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint">https://&lt;hostname&gt;/api/users/{UserID}/apis[?includeVersions=boolean][&amp;start=int]
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/{UserID}/apis[?includeVersions=boolean][&amp;start=int]
 [&amp;count=int][&amp;VersionCount=int]</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -60,7 +59,7 @@ Returns information about the APIs that the specified user is connected to, eith
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for information about APIs the specified user is associated with.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://&lt;hostname&gt;/api/users/user10002.acmecorp/apis</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user10002.acmecorp/apis</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
@@ -71,7 +70,7 @@ Returns information about the APIs that the specified user is connected to, eith
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -111,27 +110,28 @@ Returns information about the APIs that the specified user is connected to, eith
       <td><!-- #BeginLibraryItem "/Library/o_ID_UserID.lbi" -->
         The unique ID for a specific user.<!-- #EndLibraryItem --></td>
     </tr>
-    <tr>
+<!--    <tr>
       <td>IncludeVersions</td>
       <td>Query</td>
       <td>boolean</td>
       <td>Optional</td>
       <td>Indicates whether information about API versions should be included in the results. Defaults to <strong>false</strong>, so API versions are not included unless this parameter is set to <strong>true</strong>.</td>
     </tr>
-    <tr>
+-->
+<!--  <tr>
       <td>start</td>
       <td>Query</td>
       <td>int</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/Library/parm_start.lbi" --> An index number indicating the starting point for the results to be returned. If not specified, results start at position 0, the first result.<!-- #EndLibraryItem --></td>
-    </tr>
-    <tr>
+      <td>Library/parm_start.lbi</td>
+    </tr>-->
+<!--    <tr>
       <td>count</td>
       <td>Query</td>
       <td>int</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/Library/parm_count.lbi" --> The number of results to be returned, from the specified starting point. If not specified, all matching results are returned.<!-- #EndLibraryItem --></td>
-    </tr>
+      <td>Library/parm_count.lbi</td>
+    </tr>-->
     <tr>
       <td>versionCount</td>
       <td>Query</td>
@@ -184,7 +184,7 @@ Date: Mon, 20 May 2013 23:24:13 GMT</pre>
       "Rating" : 0.0,
       "Followers" : 0,
       "Image" : {
-        "Url" : "https://&lt;hostname&gt;/api/apis/api12545.acmecorp/avatar"
+        "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api12545.acmecorp/avatar"
       },
       "EntityReference" : {
         "Title" : "Facepond (1,0)",
@@ -212,7 +212,7 @@ Date: Mon, 20 May 2013 23:24:13 GMT</pre>
       "Rating" : 0.0,
       "Followers" : 2,
       "Image" : {
-        "Url" : "https://&lt;hostname&gt;/api/apis/api13350.acmecorp/avatars/751757c08b084c7058acb2984cc1ac9c.png"
+        "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api13350.acmecorp/avatars/751757c08b084c7058acb2984cc1ac9c.png"
       },
       "EntityReference" : {
         "Title" : "Reddit (v1)",
@@ -240,7 +240,7 @@ Date: Mon, 20 May 2013 23:24:13 GMT</pre>
       "Rating" : 5.0,
       "Followers" : 11,
       "Image" : {
-        "Url" : "https://&lt;hostname&gt;/api/apis/api11135.acmecorp/avatars/751757c08b084c7058acb2984cc1ac9c.png"
+        "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api11135.acmecorp/avatars/751757c08b084c7058acb2984cc1ac9c.png"
       },
       "EntityReference" : {
         "Title" : "Linkedin (1.0)",
@@ -279,7 +279,7 @@ xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
       &lt;guid&gt;api12545.acmecorp&lt;/guid&gt;
       &lt;pubDate&gt;Wed, 15 Aug 2012 23:47:25 +0000&lt;/pubDate&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;https://&lt;hostname&gt;/api/apis/api12545.acmecorp/avatar&lt;/Url&gt;
+        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api12545.acmecorp/avatar&lt;/Url&gt;
       &lt;/ns4:Image&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;Facepond (1,0)&lt;/Title&gt;
@@ -298,7 +298,7 @@ xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
       &lt;guid&gt;api13350.acmecorp&lt;/guid&gt;
       &lt;pubDate&gt;Wed, 19 Dec 2012 11:35:30 +0000&lt;/pubDate&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;https://&lt;hostname&gt;/api/apis/api13350.acmecorp/avatars/751757c08b084c7058acb2984cc1ac9c.png&lt;/Url&gt;
+        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api13350.acmecorp/avatars/751757c08b084c7058acb2984cc1ac9c.png&lt;/Url&gt;
       &lt;/ns4:Image&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;Reddit (v1)&lt;/Title&gt;
@@ -317,7 +317,7 @@ xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
       &lt;guid&gt;api11135.acmecorp&lt;/guid&gt;
       &lt;pubDate&gt;Sat, 20 Apr 2013 05:58:18 +0000&lt;/pubDate&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;https://&lt;hostname&gt;/api/apis/api11135.acmecorp/avatars/751757c08b084c7058acb2984cc1ac9c.png&lt;/Url&gt;
+        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api11135.acmecorp/avatars/751757c08b084c7058acb2984cc1ac9c.png&lt;/Url&gt;
       &lt;/ns4:Image&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;Linkedin (1.0)&lt;/Title&gt;
@@ -337,7 +337,7 @@ xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -441,23 +441,23 @@ xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#errormessages">Full list of Community Platform API error messages.</a></p>
+<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
-<table width="600" border="0" cellspacing="0" cellpadding="2">
+<table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
   <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
   <li><a href="../docconventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
-    <td width="300"><ul>
+    <td width="400"><ul>
   <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
   <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

@@ -1,6 +1,6 @@
 ---
 layout: apipage
-title: Managing Avatars on the Platform | Reference Material | Community Platform API
+title: Managing Avatars on the Platform | Reference Material | Enterprise API Platform API
 description: This topic includes information about managing avatars on the platform, including-
 product: cm
 category: ref
@@ -43,7 +43,7 @@ no-catalog: true
 </ul>
 
 <h3><a name="workingwithresourceimages"></a>Working With Resource Images</h3>
-<p>The Dropbox service provides operations for uploading images to the platform. Working with images might include such activities as uploading an image, cropping it, and saving the cropped portion as the <a href="glossary_communityplatform.htm#avatar">avatar</a> for a resource.</p>
+<p>The Dropbox service provides operations for uploading images to the platform. Working with images might include such activities as uploading an image, cropping it, and saving the cropped portion as the <a href="glossary_communityplatform.htm#gl_avatar">avatar</a> for a resource.</p>
 <p>Below is a suggested implementation that uses several of the Dropbox operations, in sequence, to complete these tasks.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
@@ -80,7 +80,6 @@ no-catalog: true
 
 <p>The services that support managing these various resources include operations that allow you to add, update, or delete avatars or get avatar information:</p>
 <ul>
-  <li><span class="apidoc_code"><a href="resource/m_previewAvatar.htm">GET&nbsp;/api/users/{UserID}/previewavatar?Provider={provider}</a></span>: Users only; Gives a preview of the image associated with the specified resource.</li>
   <li><span class="apidoc_code"><a href="resource/m_deleteImage.htm">DELETE&nbsp;/api/users/{UserID}/picture</a></span> (Users only; deletes an avatar. For APIs and Apps services, you cannot delete an avatar, only replace it).</li>
   <li><span class="apidoc_code"><a href="resource/m_getAvatar.htm">GET&nbsp;{service}/{ID}/avatars/{AvatarVersionID}.png</a></span></li>
   <li><span class="apidoc_code"><a href="resource/m_getDefaultAvatar.htm">GET&nbsp;{service}/{ID}/avatar</a></span>: Retrieves the default avatar image for the specified resource.</li>
@@ -113,7 +112,6 @@ no-catalog: true
   <li>User record is updated: <a href="users/m_users_modifyUser.htm">PUT&nbsp;/api/users/{UserID}</a>.</li>
   <li>Updated user record is retrieved: <a href="users/m_users_getUser.htm">GET&nbsp;/api/users/{UserID}</a>.</li>
   <li>User deletes avatar: <a href="resource/m_deleteImage.htm">DELETE&nbsp;{service}/{ID}/picture</a>.</li>
-  <li>Updated avatar is retrieved for user (now showing the platform default image): <a href="resource/m_previewAvatar.htm">GET&nbsp;{service}/{ID}/previewavatar</a>.</li>
   <li>User record is updated: <a href="users/m_users_modifyUser.htm">PUT&nbsp;/api/users/{UserID}</a>.</li>
   <li>Updated user record is retrieved: <a href="users/m_users_getUser.htm">GET&nbsp;/api/users/{UserID}</a>.</li>
   <li>User uploads a second image from disk: steps 1-6 above are repeated.</li>
@@ -122,18 +120,18 @@ no-catalog: true
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
-<table width="600" border="0" cellspacing="0" cellpadding="2">
+<table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="index.htm">Community Platform API: Overview</a></li>
+  <li><a href="index.htm">Enterprise API Platform API: Overview</a></li>
   <li><a href="glossary_communityplatform.htm">Glossary of Terms</a></li>
   <li><a href="docconventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
-    <td width="300"><ul>
+    <td width="400"><ul>
   <li><a href="authenticationandsecurity.htm">Authentication and Security</a></li>
   <li><a href="troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="Ref_apireference.htm">Community Platform API Reference Material</a></li>
+  <li><a href="Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

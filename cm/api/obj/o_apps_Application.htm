@@ -1,6 +1,6 @@
 ---
 layout: apipage
-title: Application Object | Apps Service | Community Platform API
+title: Application Object | Apps Service | Enterprise API Platform API
 description: Includes information about an app.
 product: cm
 category: ref
@@ -19,7 +19,7 @@ no-catalog: true
 <ul>
   <li><span class="apidoc_code"><a href="../apps/m_apps_addApp.htm">POST&nbsp;apps</a></span></li>
   <li><span class="apidoc_code"><a href="../apps/m_apps_modifyApp.htm">PUT&nbsp;/api/apps/{AppID}</a></span></li>
-  <li><a href="../apps/m_apps_getApp.htm">GET&nbsp;apps/{AppID}</a></li>
+  <li><span class="apidoc_code"><a href="../apps/m_apps_getApp.htm">GET&nbsp;apps/{AppID}</a></span></li>
 </ul>
 
 <p>The properties included in the <strong>Application</strong> object are listed below.</p>
@@ -53,7 +53,7 @@ no-catalog: true
       <td>Visibility</td>
       <td>string</td>
       <td><!-- #BeginLibraryItem "/Library/parm_visibility_app.lbi" -->
-        The <a href="../glossary_communityplatform.htm#visibility_app">visibility</a> setting for this app; Public or Private. For more information, see <a href="../Ref_Values.htm#values_visibilitysettings">App Visibility Settings</a>.<!-- #EndLibraryItem --></td>
+The <a href="../glossary_communityplatform.htm#gl_visibility_app">visibility</a> setting for this app; Public or Private. For more information, see <a href="../Ref_Values.htm#values_visibilitysettings">App Visibility Settings</a>.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>InitialEnvironment</td>
@@ -92,7 +92,7 @@ The latest or only version ID for the app.<!-- #EndLibraryItem --> Used in respo
       <td>State</td>
       <td>string</td>
       <td><!-- #BeginLibraryItem "/Library/o_apps_State.lbi" -->
-        The current <a href="../glossary_communityplatform.htm#state">state</a> of the app. For valid values, see <a href="../Ref_Values.htm#values_appstate">App State Values</a>.<!-- #EndLibraryItem --> Response only.</td>
+The current <a href="../glossary_communityplatform.htm#gl_state">state</a> of the app. For valid values, see <a href="../Ref_Values.htm#values_appstate">App State Values</a>.<!-- #EndLibraryItem --> Response only.</td>
   </tr>
     <tr>
       <td>Created</td>
@@ -122,24 +122,29 @@ URL for the avatar uploaded for the resource, if any. Used only in response mess
       <td><a href="o_apps_AppSettings.htm">AppSettings</a></td>
       <td>Contains information about the settings for an app. Response only.</td>
     </tr>
+    <tr>
+      <td><a href="../Ref_IDsOnThePlatform.htm#id_teamid">TeamID</a></td>
+      <td>string</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_TeamID.lbi" -->The unique ID for the app team associated with the app.<!-- #EndLibraryItem --></td>
+    </tr>
     </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
-<table width="600" border="0" cellspacing="0" cellpadding="2">
+<table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Community Platform API: Overview</a></li>
+  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
   <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
   <li><a href="../docconventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
-    <td width="300"><ul>
+    <td width="400"><ul>
   <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
   <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Community Platform API Reference Material</a></li>
+  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>
