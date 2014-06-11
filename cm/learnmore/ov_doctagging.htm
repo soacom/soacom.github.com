@@ -20,8 +20,8 @@ no-nav: true
   <li><a href="#ov_doctagging_visibility_of_api_documentation">Visibility of API documentation</a></li>
   <li><a href="#ov_doctagging_testing">Testing</a></li>
   <li><a href="#ov_doctagging_documentation_tagging_strategy">Documentation tagging strategy</a></li>
-  <li><a href="#ov_doctagging_tagging_at_the_file_level">Tagging at the file level</a></li>
-  <li><a href="#ov_doctagging_tagging_content_within_a_file">Tagging content within a file</a></li>
+  <li><a href="#ov_doctagging_tagging_at_the_file_level">Approach #1: Tagging at the file level</a></li>
+  <li><a href="#ov_doctagging_tagging_content_within_a_file">Approach #2: Tagging content within a file</a></li>
   <li><a href="#ov_doctagging_making_sure_documentation_is_visible">Making sure documentation Is visible</a></li>
 </ul>
 
@@ -30,6 +30,14 @@ no-nav: true
 
 <a name="ov_doctagging_overview"></a>
 <h3>Overview of documentation tagging</h3>
+<p>Documentation tagging allows you to control who will see your content.</p>
+<p>Here are two examples of how documentation tagging can be used on the platform:</p>
+<ul>
+  <li>Site documentation. The documentation might include instructions for different user groups, such as app developers and API admins. If you don't want your app developers to see the API Admin documentation, you can apply doc tagging. For an example, see <a href="#doctag_ex_showforrole">Example: tagging by user role</a>.</li>
+  <li>API documentation.</li>
+</ul>
+
+<h5>Tagging API Documentation</h5>
 <p>The Licenses feature allows you to package your API into different licenses for different user groups. Whether your licenses offer access to the entire API or to defined subsets of your API operations, when you choose to offer licenses it opens the door to you granting customized access to custom user groups. By doing this, you are at the same time restricting access for users who are not members of the specified groups.</p>
 <p>In some cases, you might also apply privacy at various levels. Privacy settings allow you to restrict visibility into certain areas of your API. You can make the entire API private so that it is visible only to invited users; but you can also define licenses or scopes to be private. For example, you might have a group of new operations that need to be tested, and you want to make these available to a beta partner without exposing them to your main customer base. You can do this by defining a private scope, assigning it to a private license, and inviting your beta partner to have visibility to the private license.</p>
 <p>When you elect to use licenses, you must also tag your documentation to let the platform know which portions of your documentation set should be visible to which users, according to the user's visibility permissions to your API. If your documentation is not tagged, the basic default is as follows:</p>
@@ -47,7 +55,7 @@ no-nav: true
 <p>You can limit visibility—that is, which users can see your API—by applying privacy settings at these levels:</p>
 <ul>
   <li><strong>API</strong>
-    <p>The entire API can be marked as private. If the API is private, a user must be a member of an invited group, or of the private API group, to see the API. If an API is private but all the scopes are public, invited users can see all scopes and operations; if the scopes are private, no matter whether the API is public or private, only users who are specifically invited will see the licenses that include private scopes.</p></li>
+    <p>The entire API can be marked as private. If the API is private, a user must be a member of an invited group, or of the private API group, in order to see the API. If an API is private but all the scopes are public, invited users can see all scopes and operations; if the scopes are private, no matter whether the API is public or private, only users who are specifically invited will see the licenses that include private scopes.</p></li>
   <li><strong>License</strong>
     <p>Whether the API is public or private, a license can be public or private. A public license is visible to those who have visibility of the API; if a license is private, specific permission is required.</p></li>
   <li><strong>Scope</strong>
@@ -141,7 +149,7 @@ no-nav: true
 </ul>
 <p>Because the API is public, any user can request API access and choose between the Bronze and Gold licenses. Only invited users will see the Beta license. Your documentation must be appropriately tagged so that all users will see the documentation for the Bronze and Gold licenses and only Beta license holders will see the documentation for the part of your API you're releasing for those customers.</p>
 <h4>Test steps</h4>
-<p>Here are some test steps you could follow.</p>
+<p>Below are some test steps you could follow.</p>
 <h5>To test that the API documentation is tagged correctly:</h5>
 <ol>
   <li>Set up a test user.</li>
@@ -160,11 +168,12 @@ no-nav: true
 <p>There are two main aspects to the documentation tagging feature. When you understand both, you'll be able to design a strategy that best matches your unique scenario and is most efficient for you and appropriate for your audience. The two work together to give you fine control over the visibility of your API documentation. They are:</p>
 <ul>
   <li><strong>Metadata.xml</strong>: file-based authorization; specifying audience at the file level.
-At the highest level, the <strong>metadata.xml</strong> file allows you to specify which of your documentation files, or groups of files, are visible to which users based on the API version and the licenses, scopes, or operations that the user is authorized to view.
-You must set up the applicable API Version ID in the <strong>metadata.xml</strong> file to ensure that your documentation visibility settings will work.
-For details about how to set up your <strong>metadata.xml</strong> file, see Tagging at the File Level below.</li>
-  <li>Content tagging within a file; this is a more granular approach, allowing you to tag specific pieces of content within a file. The user's view of the file is personalized/customized based on the visibility access of the viewing user.</li>
+At the highest level, the <strong>metadata.xml</strong> file allows you to specify which of your documentation files, or groups of files, are visible to which users based on the API version and the licenses, scopes, or operations that the user is authorized to view, or based on the user's role.For tagging of API documentation, yYou must set up the applicable API Version ID in the <strong>metadata.xml</strong> file to ensure that your documentation visibility settings will work.
+For details about how to set up your <strong>metadata.xml</strong> file, see <a href="#ov_doctagging_tagging_at_the_file_level">Approach #1: Tagging at the File Level</a> below.</li>
+  <li>Content tagging within a file; this is a more granular approach, allowing you to tag specific pieces of content within one or more files. What a viewing user sees is personalized/customized based on the user's access rights and permissions.</li>
 </ul>
+
+
 <h4>How doc tagging works</h4>
 <p>At runtime, the platform checks the settings on the files and/or content and verifies against the access rights of the viewing user. Where there is a match, content is displayed. Any content that doesn't match the viewer's rights is not displayed to the user.</p>
 <p>A recommended approach is to separate out most of your content for different user groups by file. For example, you could have one file for each license you offer; or you could have one file for each operation.</p>
@@ -182,7 +191,7 @@ For details about how to set up your <strong>metadata.xml</strong> file, see Tag
 
 
 <a name="ov_doctagging_tagging_at_the_file_level"></a>
-<h3>Tagging at the file level</h3>
+<h3>Approach #1: Tagging at the file level</h3>
 <p>The top level of doc tagging is at the file level. Here you determine which files or groups of files are accessible to which users based on the user's visibility permissions.</p>
 <p>You can specify visibility at the file level in three ways:</p>
 <ul>
@@ -205,7 +214,6 @@ For details about how to set up your <strong>metadata.xml</strong> file, see Tag
   <li>Five operations: getPayment is assigned to ReadOnly/Bronze, listPayments to Beta, the other three to FullScope/Gold</li>
   <li>Two API versions. Most files are for both API versions, but each version also has one file that's designated for that specific version. The index file is designated for the main version.</li>
 </ul>
-<p>In the example below, variable content is shown in boldface.</p>
 <pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
 &lt;metadataconfig xmlns="http://soa.com/xsd/metadataconfig/1.0"&gt;
   &lt;metadata&gt;
@@ -289,6 +297,30 @@ For details about how to set up your <strong>metadata.xml</strong> file, see Tag
     &lt;/roles&gt;
   &lt;/metadata&gt;
 &lt;/metadataconfig&gt;</pre>
+
+
+
+<h4><a name="doctag_ex_role_inviteduser"></a>Tagging in metadata.xml by user role</h4>
+<p>You can restrict visibility of a specific piece of content by specifying the entire file in the metadata.xml file so that it can only be seen by users with a specific login status<span class="apidoc_red">.</span> The valid roles are:</p>
+<ul>
+  <li><strong>InvitedUser</strong>: for a Private API, a user who has been invited to have visibility into the API and has accepted (generally via an invitation to a group that has visibility into the API)</li>
+  <li><strong>Admin</strong>: the API admin</li>
+</ul>
+<p>In the example below, all invited users for this version of this private API will see the index.html page.</p>
+<pre>&lt;metadata&gt;
+  &lt;APIVersionID xmlns="http://soa.com/xsd/api/1.0"&gt;apiversion10093.acmecorp&lt;/<strong>APIVersionID</strong>&gt;
+  &lt;target&gt;documents/<strong>index.html</strong>&lt;/target&gt;
+  &lt;roles&gt;
+    &lt;role name="<strong>InvitedUser</strong>"/&gt;
+  &lt;/roles&gt;
+&lt;/metadata&gt;</pre>
+
+
+
+
+
+
+
 <h4>Structure of a metadata.xml file entry</h4>
 <p>Each entry in the <strong>metadata.xml</strong> file conforms to the same structure.</p>
 <p>The sample file below has a single entry. The outer tag, &lt;metadataconfig&gt;, is shown in bold. Within this tag you can add as many &lt;metadata&gt; tags as you need.</p>
@@ -325,7 +357,7 @@ For details about how to set up your <strong>metadata.xml</strong> file, see Tag
 
 
 <a name="ov_doctagging_tagging_content_within_a_file"></a>
-<h3>Tagging content within a file</h3>
+<h3>Approach #2: Tagging content within a file</h3>
 <p>Setting up the <strong>metadata.xml</strong> file covers the broad strokes of your documentation tagging, defining which files are accessible to which audiences.</p>
 <p>There will also be at least one or two instances where you'll need to designate content within one file as having limited availability depending on visibility access rights.</p>
 <p>For example, let's say you have two new operations in beta testing and want to make those available only to your beta testing partners. You define the beta scope and license, you write the documentation for those operations, and you set up the <strong>metadata.xml</strong> file so that the beta documentation is available only to those with the beta license.</p>
@@ -340,7 +372,8 @@ For details about how to set up your <strong>metadata.xml</strong> file, see Tag
   <li>Apply tags to individual content sections</li>
 </ul>
 <h4>Tagging: all files</h4>
-<p>Below is an example of the opening &lt;html&gt; tag and entire &lt;head&gt; tag of a sample HTML file, showing where the additional entries are placed to implement the documentation tagging feature. Relevant entries are highlighted.</p>
+<p>If you want to apply doc tagging within a file, you must add some lines of code to the &lt;head&gt; tag of the file.</p>
+<p>Below is an example of the opening &lt;html&gt; tag and entire &lt;head&gt; tag of a sample HTML file, showing where the additional entries are placed to implement the documentation tagging feature.</p>
 <pre>&lt;html <strong>lang="en" xmlns:soa="http://soa.com</strong>"&gt;
 &lt;head&gt;
 &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
@@ -352,21 +385,29 @@ For details about how to set up your <strong>metadata.xml</strong> file, see Tag
 &lt;link href="../../../../resources/style/base.css" rel="stylesheet" type="text/css" /&gt;
 &lt;link href="../../../style/document.css" rel="stylesheet" type="text/css" /&gt;
 
-<strong>&lt;script language="javascript" src="/resources/thirdparty/jquery/jquery-1.8.0.min.js"  type="text/javascript"&gt;&lt;/script&gt;
-&lt;script language="javascript" src="/ui/apps/acmecorp/123/resources/javascript/dynamic_docs.js"  
-type="text/javascript"&gt;&lt;/script&gt;
+<strong>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/resources/style/base.css&quot;/&gt;</strong>
+
+&lt;script language=&quot;javascript&quot; src=&quot;/ui/apps/atmosphere/{resource.version}/resources/uiframework/jquery/jquery.js&quot;
+  type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script language=&quot;javascript&quot; src=&quot;/ui/apps/atmosphere/{resource.version}/resources/console/javascript/dynamic_docs.js&quot;
+  type=&quot;text/javascript&quot;&gt;&lt;/script&gt;<strong>
 </strong>
 &lt;/head&gt;</pre>
-<p>If you are implementing this feature, you have three main choices of how you can tag your documentation for visibility:</p>
+<p><strong>Important</strong>: if you want to use dynamic content in your files you must reference the above two JavaScript files. In the second link above, you can use whatever value you want to use in the /{resource.version}/ part of the path. For example, you could use the platform version (recommended) or your API version or API doc version. The importance of this value is in controlling the version of the <strong>dynamic_docs.js</strong> file that is served to your users. This file is cached by the browser, for efficiency. However, if there is a new version with increased capabilities, and you use those new capabilities in a new version of your documentation, you'll want your users to have the new version of the <strong>dynamic_docs.js</strong> file, not an earlier, cached version. In this scenario, all you need to do is update the value of the {resource.version} variable in the file path. Changing the value ensures that when a user accesses your documentation, their browser will reference the latest version of the file. If you see in the release notes for a new version that there are updates to the dynamic documentation capabilities, it's best to update your version to make sure you and your users get the full functionality of the new features.</p>
+<p>There are several ways you can tag your documentation for visibility. Example of each are shown below:</p>
 <ul>
-  <li>Tagging by scope</li>
-  <li>Tagging by license</li>
-  <li>Tagging by operation</li>
+  <li><a href="#doctag_ex_showforscope">Tagging by scope</a></li>
+  <li><a href="#doctag_ex_showforlicense">Tagging by license</a></li>
+  <li><a href="#doctag_ex_showforoperation">Tagging by operation</a></li>
+  <li><a href="#doctag_ex_showforrole">Tagging by user role</a> (ApiAdmin, BusinessAdmin, SiteAdmin)</li>
+  <li>Tagging by login status (<a href="#doctag_ex_showforloggedinuser">logged in user</a>, <a href="#doctag_ex_showforanonymoususer">anonymous user</a>)</li>
 </ul>
 <p>You can also tag content to be viewable only by a user who is logged in, or only by an anonymous user.</p>
 <p>In each scenario, you'll need to enclose the relevant content within specific code tags as outlined in the sections below.</p>
 <p class="apidoc_note"><strong>Note</strong>: In the tags, make sure that the scope, license, or operation name is exactly the same as it is in the user interface, including case. Case differences might not be an issue, but it's best to be exact.</p>
-<h4>Example: tagging by scope</h4>
+
+
+<h4><a name="doctag_ex_showforscope"></a>Example: tagging by scope</h4>
 <p>If you want to restrict visibility of certain pieces of content within a file so that the content can only be seen by users with visibility into a specific scope, use the tags below.</p>
 <p>Remember to also specify in the <strong>metadata.xml</strong> file that the applicable file is accessible to users with visibility of the same scope. If you don't, users will see the link and be able to click the link but will not have permission to view the target file.</p>
 <p>The platform automatically checks access rights, and makes the content visible to users who have visibility into licenses that include the applicable scope.</p>
@@ -377,7 +418,9 @@ type="text/javascript"&gt;&lt;/script&gt;
   &lt;/div&gt;
 &lt;/soa:showforscope&gt;
 </pre>
-<h4>Example: Tagging by license: public</h4>
+
+
+<h4><a name="doctag_ex_showforlicense"></a>Examples: Tagging by license</h4>
 <p>If you want to restrict visibility of certain pieces of content within a file so that the content can only be seen by users with visibility into a specific license, use the tags below.</p>
 <p>Remember to also specify in the <strong>metadata.xml</strong> file that the applicable file is accessible to users with visibility of the same license. If you don't, users will see the link and be able to click the link but will not have permission to view the target file.</p>
 <p>In the example below, the API is private but the license (LicenseName_Public) is public. All users who have been invited to the API will see the content below. Users who have not been invited will not see the API at all, and will not be able to access the content.</p>
@@ -386,7 +429,8 @@ type="text/javascript"&gt;&lt;/script&gt;
     &lt;p&gt;&lt;a href="<strong>ContentRelatingToPublicLicense.html</strong>"&gt;<strong>Link to file with content relating to LicenseNam</strong>e (a public license)&lt;/a&gt;.&lt;/p&gt;
   &lt;/div&gt;
 &lt;/soa:showforlicense&gt;</pre>
-<h4>Example: Tagging by license: private</h4>
+
+
 <p>In the example below, the API is private and the license (LicenseName_Private) is also private. To see this content, users must be invited to the API but also must be invited to this specific license. Even members of groups that are invited to the API will not see the content unless specifically invited to see this license.</p>
 <p>Remember to also specify in the <strong>metadata.xml</strong> file that the applicable file is accessible to users with visibility of the same license. If you don't, users will see the link and be able to click the link but will not have permission to view the target file.</p>
 <pre>&lt;soa:showforlicense licenseNames="<strong>LicenseName_Private</strong>"&gt;
@@ -394,53 +438,96 @@ type="text/javascript"&gt;&lt;/script&gt;
     &lt;p&gt;&lt;a href="<strong>ContentRelatingToPrivateLicense.html</strong>"&gt;<strong>Link to file with content relating to LicenseName </strong>(a private license)&lt;/a&gt;.&lt;/p&gt;
   &lt;/div&gt;
 &lt;/soa:showforlicense&gt;</pre>
-<h4>Example: Tagging by operation</h4>
+
+
+<h4><a name="doctag_ex_showforoperation"></a>Example: Tagging by operation</h4>
 <p>If you want to restrict visibility of certain pieces of content within a file so that the content can only be seen by users with visibility into a specific operation, use the tags below.</p>
 <p>Remember to also specify in the <strong>metadata.xml</strong> file that the applicable file is accessible to users with visibility of the same operation. If you don't, users will see the link and be able to click the link but will not have permission to view the target file.</p>
 <p>The platform automatically checks access rights, and makes the content accessible to users who have visibility into licenses that include scopes with the applicable operations.</p>
-<pre>&lt;soa:showforlicense operationNames="<strong>addPayment</strong>"&gt;
+<pre>&lt;soa:showforoperation operationNames="<strong>addPayment</strong>"&gt;
   &lt;div class="soa-ui-cm-dynamic-docs"&gt;
     &lt;p&gt;&lt;a href="<strong>addPayment.html</strong>"&gt;<strong>Link to file with content relating to the addPayment operation</strong>&lt;/a&gt;.&lt;/p&gt;
   &lt;/div&gt;
-&lt;/soa:showforlicense&gt;</pre>
-<h4>Example: Tagging by role</h4>
-<p>You can restrict visibility of a specific piece of content so that it can only be seen by users with a specific role. The valid roles are:</p>
+&lt;/soa:showforoperation&gt;</pre>
+
+
+<h4><a name="doctag_ex_showforrole"></a>Example: Tagging by user role (ApiAdmin, BusinessAdmin, SiteAdmin)</h4>
+<p>You can restrict visibility of a specific piece of content within a file so that it can only be seen by users with a specific role. The valid roles are:</p>
 <ul>
-  <li><strong>InvitedUser</strong>: for a Private API, a user who has been invited to have visibility into the API and has accepted (generally via an invitation to a group that has visibility into the API)</li>
-  <li><strong>Admin</strong>: the API admin</li>
+  <li>ApiAdmin</li>
+  <li>BusinessAdmin</li>
+  
+  <li>SiteAdmin</li>
 </ul>
-<p>In the example below, all invited users for this version of this private API will see the index.html page.</p>
-<pre>&lt;metadata&gt;
-  &lt;APIVersionID xmlns="http://soa.com/xsd/api/1.0"&gt;apiversion10093.acmecorp&lt;/<strong>APIVersionID</strong>&gt;
-  &lt;target&gt;documents/<strong>index.html</strong>&lt;/target&gt;
-  &lt;roles&gt;
-    &lt;role name="<strong>InvitedUser</strong>"/&gt;
-  &lt;/roles&gt;
-&lt;/metadata&gt;</pre>
-<h4>Example: Tagging for multiple items</h4>
-<p>You can restrict visibility of a specific piece of content so that it can only be seen by users with a specific combination of more than one license, more than one scope, or more than one operation.</p>
-<p>Multiple items must all be of the same type. For example, you cannot set up a single entry to combine one scope and one license. The entries would have to be separate.</p>
-<p>In the example below, only users who have visibility into <strong>both</strong> scopes will see the designated content.</p>
-Multiple scopes
-<pre>&lt;soa:showforscope scopeNames="<strong>public-scope-1, private-scope-2</strong>"&gt;
-&lt;div class="soa-ui-cm-dynamic-docs"&gt;
-  &lt;a href="<strong>twoscopes.html</strong>"&gt;<strong>twoscopes.html</strong>&lt;/a&gt;&lt;br&gt;&lt;br&gt;
-&lt;/div&gt;
-&lt;/soa:showforscope&gt;</pre>
-<h4>Example: showforanonymoususer</h4>
+<p>The example below shows five pieces of content. Each type of admin (API, Business, Site) will see the one piece of content that's tagged for that role. If content is tagged for either of two roles (OR), and the user has <em>one</em> of the roles, the user will see it. If content is tagged for users who have <em>both</em> roles (AND), only users with both roles will see it.</p>
+<p><a href="example_showforrole.htm" target="_blank">View a complete file with content tagged for each role (click View Source to see the HTML)</a> This example file only works within the platform, not when viewing content on the documentation website, because the supporting files are missing; but you can still use it as a guide in coding your content, and then test by uploading to the platform.</p>
+<pre>&lt;soa:showforrole roleNames="ApiAdmin"&gt;
+  &lt;div class="contentSection soa-ui-cm-dynamic-docs"&gt;
+    &lt;h3&gt;API Admin&lt;/h3&gt;
+    &lt;p&gt;Important information for the API Admin.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/soa:showforrole&gt;
+
+&lt;soa:showforrole roleNames="BusinessAdmin"&gt;
+  &lt;div class="contentSection soa-ui-cm-dynamic-docs"&gt;
+    &lt;h3&gt;Business Admin&lt;/h3&gt;
+    &lt;p&gt;Important information for the Business Admin.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/soa:showforrole&gt;
+
+&lt;soa:showforrole roleNames="SiteAdmin"&gt;
+  &lt;div class="contentSection soa-ui-cm-dynamic-docs"&gt;
+    &lt;h3&gt;Site Admin&lt;/h3&gt;
+    &lt;p&gt;Important information for the Site Admin.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/soa:showforrole&gt;
+
+&lt;soa:showforrole roleNames="SiteAdmin, BusinessAdmin" condition="AND"&gt;
+  &lt;div class="contentSection soa-ui-cm-dynamic-docs"&gt;
+    &lt;h3&gt;Business Admin AND Site Admin&lt;/h3&gt;
+    &lt;p&gt;Important information for any user who is Business Admin and also Site Admin.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/soa:showforrole&gt;
+
+&lt;soa:showforrole roleNames="SiteAdmin, BusinessAdmin"&gt;
+  &lt;div class="contentSection soa-ui-cm-dynamic-docs"&gt;
+    &lt;h3&gt;Site Admin OR Business Admin&lt;/h3&gt;
+    &lt;p&gt;Important information for all users who are either Business Admin or Site Admin.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/soa:showforrole&gt;</pre>
+
+
+<h4><a name="doctag_ex_showforanonymoususer"></a>Example: showforanonymoususer</h4>
 <p>If there is some content in your documentation that you want to share broadly to readers who are not logged in, you can apply the <strong>showforanonymoususer</strong> tag, as shown below. For example, you might use this for a page encouraging users to sign up for the platform and use your API. You'll need to add a link on the documentation TOC for this file, since it wouldn't be accessible via your documentation index page. Users who are logged in do not see this content.</p>
 <pre>&lt;soa:showforanonymoususer&gt;
   &lt;div class="soa-ui-cm-dynamic-docs"&gt;
     &lt;p&gt;&lt;a href="<strong>user_new.html</strong>"&gt;<strong>Learn more about our API and the platform!</strong>&lt;/a&gt;&lt;/p&gt;
   &lt;/div&gt;
 &lt;/soa:showforanonymoususer&gt;</pre>
-<h4>Example: showforloggedinuser</h4>
-<p>If there is some content in your documentation that you want to share with all platform users who are logged in, you can apply the <strong>showforloggedinuser</strong> tag, as shown below.</p>
+
+
+<h4><a name="doctag_ex_showforloggedinuser"></a>Example: showforloggedinuser</h4>
+<p>If there is some content in your documentation that you want to share with all platform users who are logged in, you can apply the <strong>showforloggedinuser</strong> tag. In the example below, only users who are logged in will see this line of content within a file.</p>
 <pre>&lt;soa:showforloggedinuser&gt;
   &lt;div class="soa-ui-cm-dynamic-docs"&gt;
     &lt;p&gt;&lt;a href="<strong>user_loggedin.html</strong>"&gt;<strong>Learn more about our API!</strong>&lt;/a&gt;&lt;/p&gt;
   &lt;/div&gt;
 &lt;/soa:showforloggedinuser&gt;</pre>
+
+
+
+<h4><a name="doctag_ex_showforscope2"></a>Example: Tagging for multiple items</h4>
+<p>You can restrict visibility of a specific piece of content so that it can only be seen by users with a specific combination of more than one license, more than one scope, or more than one operation.</p>
+<p>Multiple items must all be of the same type. For example, you cannot set up a single entry to combine one scope and one license. The entries would have to be separate.</p>
+<p>In the example below, only users who have visibility into <strong>both</strong> scopes will see the designated content.</p>
+Multiple scopes
+<pre>&lt;soa:showforscope scopeNames="<strong>public-scope-1, private-scope-2</strong>"&gt;
+  &lt;div class="soa-ui-cm-dynamic-docs"&gt;
+    &lt;a href="<strong>twoscopes.html</strong>"&gt;<strong>twoscopes.html</strong>&lt;/a&gt;&lt;br&gt;&lt;br&gt;
+  &lt;/div&gt;
+&lt;/soa:showforscope&gt;</pre>
+
+
 <p><a href="#top">Back to top</a></p>
 
 

@@ -27,7 +27,7 @@ no-catalog: true
   <li><a href="#what_style_sheets_do_i_use_to_update_the_color_scheme_on_my_platform_deployment">What style sheets do I use to update the color scheme of my platform deployment?</a></li>
   <li><a href="#how_do_i_download_the_custom_template_less_template">How do I download the custom_template.less template?</a></li>
   <li><a href="#how_do_i_upload_my_customless_file_after_i_have_updated_it">How do I upload my custom.less file after I have updated it?</a></li>
-  <li><a href="#After_i_update_my_customless_file_how_do_i_apply_the_changes_to_my_platform_deployment">After I update my custom.less file, how do I apply the changes to my platform deployment?</a></li>
+  <li><a href="#after_i_update_my_customless_file_how_do_i_apply_the_changes_to_my_platform_deployment">After I update my custom.less file, how do I apply the changes to my platform deployment?</a></li>
   <li><a href="#how_do_i_rebuild_my_color_scheme_styles_after_i_have_uploaded_the_customless_file">How do I rebuild my color scheme styles after I have uploaded the custom.less file?</a></li>
   <li><a href="#what_is_a_sprite">What is a sprite?</a></li>
   <li><a href="#how_do_i_modify_sprite_colors">How do I modify sprite colors?</a></li>
@@ -46,6 +46,7 @@ no-catalog: true
   <li><a href="#what_login_page_integration_modes_are_supported">What login page integration modes are supported?</a></li>
   <li><a href="#how_do_i_enable_and_customize_a_platform_login">How do I enable and customize a platform login?</a></li>
   <li><a href="#how_do_i_disable_a_platform_login">How do I disable a platform login?</a></li>
+  <li><a href="#how_do_i_configure_a_session_timeout_value">How do I configure a session timeout value?</a></li>
 </ol>
 
 
@@ -294,12 +295,21 @@ no-catalog: true
 
 
 <a name="how_does_login_configuration_work"></a><h3>How does login configuration work?</h3>
-<p>As part of the initial platform setup, a Site Administrator installs and a series of domains that represent an enterprise's login requirements for the platform:</p>
+<p>As part of the initial platform setup, a Site Administrator sets up a series of domains that represent an enterprise's login requirements for the platform. Supported domain types for the platform login include:</p>
 <ul>
-  <li>Supported domain types for the platform login include Facebook, OpenID Identity Provider (e.g., Google), LDAP, and CA SiteMinder.</li>
-  <li>The platform installation also includes a default platform domain that is automatically enabled when a new user account is created.</li>
+  <li>Facebook</li>
+  <li>OpenID Identity Provider (e.g., Google)</li>
+  <li>LDAP</li>
+  <li>CA SiteMinder</li>
 </ul>
-<p>After the login domains are installed, they must be enabled and customized with a Target Host (virtual host name) Logo/Avatar (Login Button), and external login screen display Mode (i.e., Popup/Main). The <em>Site Administration &gt; Config &gt; Logins</em> section includes a login management interface where Site Administrators can perform these tasks.</p>
+<p>In versions prior to 7.1.0, the platform installation also included a default platform domain that is automatically enabled when a new user account is created. In 7.1.0 and later, this default has been removed.</p>
+<p>After the login domains are installed, they must be enabled and customized with the following:</p>
+<ul>
+  <li>Target Host (virtual host name)</li>
+  <li>Logo/Avatar (Login Button)</li>
+  <li>External login screen display mode (popup window or main window)</li>
+</ul>
+<p>The <em>Site Administration &gt; Config &gt; Logins</em> section includes a login management interface where the Site Admin can perform these tasks.</p>
 <p>The screen is organized as follows:</p>
 <table cellspacing="0px" class="doctable" style="width: 90%;">
 <thead>
@@ -323,18 +333,18 @@ no-catalog: true
   </tr>
   <tr class="t1row">
     <td>Target Host</td>
-    <td>A text box that allows you to enter a virtual host name for a domain. See <a href="#what_is_a_target_host">What is a Target Host?</a></td>
+    <td>A text box that allows you to enter a virtual host name for a domain. For more information, see <a href="#what_is_a_target_host">What is a Target Host?</a></td>
   </tr>
   <tr class="t2row">
-    <td>Logo / Avatar</td>
-    <td>An <strong>Upload</strong> button that allows you to select a logo that will invoke the login page for the associated domain.</td>
+    <td>Logo</td>
+    <td>An <strong>Upload</strong> button that allows you to select a logo for display on the opening page of the platform. When clicked the button will invoke the login page for the associated domain.</td>
   </tr>
   <tr class="t1row">
     <td>Mode</td>
-    <td><p>Mode allows you to select how the login page associated with a domain will be integrated. Two options are supported:</p>
-      <p><em>Popup</em>&#8212;Displays the external login page as a popup</p>
-      <p><em>Main</em>&#8212;Displays the external login page in the platform home page instead of a popup.</p>
-      <p><em>Note: Mode options are not configurable for the default login page.</em></p></td>
+    <td><p>Mode allows you to select how the login page associated with a domain will be presented to the user:</p>
+      <p><em>Popup</em>&#8212;Displays the external login page as a popup window</p>
+      <p><em>Main</em>&#8212;Displays the external login page in the platform home page instead of a popup</p>
+      <p><em><strong>Note</strong>: Mode options are not configurable for the default login page.</em></p></td>
   </tr>
 </tbody>
 </table>
@@ -343,11 +353,10 @@ no-catalog: true
 
 
 <a name="does_the_platform_provide_a_default_login"></a><h3>Does the platform provide a default login?</h3>
-<p>When the platform is installed, a default login domain is automatically created and can be viewed and managed by the Site Administrator in the <em>Site Administration > Config > Logins</em> section.</p>
-<ul>
-  <li>The default login domain is enabled by default.</li>
-  <li>A new user can log in using the default login domain by clicking the <em>Login/Signup</em> on the platform Top Navigation and entering their email and password on the default <em>Login</em> page.</li>
-</ul>
+<p>In versions prior to 7.1.0, the platform installation  supported certain security domains that allow login with email address and password to be automatically used once the security domain was created.</p>
+<p>As of version 7.1.0, this default has been removed. The platform does not allow the default platform login screen to fall back to security domains supporting email/password-based login.</p>
+<p>If your platform already had logins configured prior to upgrading to the version 7.1.0 release, the default option and configuration will be remain in place after upgrading. However, if you install 7.1.0 and then configure, you'll need to add the login domains and then enable them, in two separate steps.</p>
+<p>For more information, including instructions for restoring the default by running a database query, see <a href="site_administration_domains.htm#how_do_i_enable_a_login_domain">How do I enable a login domain?</a></p>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -398,6 +407,19 @@ no-catalog: true
   <li>To disable the domain, uncheck the &quot;Enable&quot; column.</li>
   <li>Click <strong>Save</strong> to commit your changes.</li>
 </ol>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_configure_a_session_timeout_value"></a><h3>How do I configure a session timeout value?</h3>
+<p>You can configure a session timeout value for the platform, so that if a user is inactive for a specified period of time the user is automatically logged out.</p>
+<p>Currently, you cannot change this setting via the user interface, but you can do it by running a database query. Replace the values in angle brackets below (remove the angle brackets also):</p>
+<ul>
+  <li><strong>&lt;no-of-minutes&gt;</strong>: replace with the session timeout value you want, in minutes. If the value is set to 0 (zero) there is no timeout; if it is set to 30, the session times out after 30 minutes.</li>
+  <li><strong>&lt;tenant-id&gt;</strong>: replace with your specific tenant ID.</li>
+</ul>
+<p>Update the values, and then run the following query on your database:</p>
+<pre>update LOGIN_RULES set LOGIN_SESSION_TIMEOUT=<strong>&lt;no-of-minutes&gt;</strong> where TENANTID = (select TENANTID from TENANTS where FEDMEMBERID='<strong>&lt;tenant-id&gt;</strong>');</pre>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -673,6 +695,11 @@ no-catalog: true
     <td>App Workflow Definition</td>
     <td>The workflow definition (default or custom) that will apply to all new apps on the platform (existing apps are not affected).</td>
   </tr>
+  <tr class="t1row">
+    <td>Shared Secret Display</td>
+    <td><p>Determines how an app&rsquo;s Shared Secret is displayed when viewed on the App Details page; either in plain text or encrypted.</p>
+      <p><strong>Note</strong>: If you change this setting when there are existing apps on the platform, it is effective immediately for all apps. If you make a change, make sure app developers are notified.</p></td>
+  </tr>
 </tbody>
 </table>
 
@@ -750,11 +777,11 @@ no-catalog: true
 <tbody>
   <tr class="t2row">
     <td>Sandbox Contract  Workflow Definition</td>
-    <td>The workflow definition (default or custom) that will apply to all new sandbox app/API contracts on the platform (existing contracts are not  affected).</td>
+    <td>The workflow definition (default or custom) that will apply to all new sandbox contracts on the platform (existing contracts are not  affected).</td>
   </tr>
   <tr class="t1row">
     <td>Production Contract  Workflow Definition</td>
-    <td>The workflow definition (default or custom) that will apply to all new production app/API contracts on the platform (existing contracts are not  affected).</td>
+    <td>The workflow definition (default or custom) that will apply to all new production contracts on the platform (existing contracts are not  affected).</td>
   </tr>
 </tbody>
 </table>

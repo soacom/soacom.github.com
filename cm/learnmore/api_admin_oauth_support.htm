@@ -23,7 +23,7 @@ no-catalog: true
   <li><a href="#what_oauth_versions_are_supported">What OAuth versions are supported?</a></li>
   <li><a href="#how_do_i_set_up_my_deployment_to_support_oauth">How do I set up my deployment to support OAuth?</a></li>
   <li><a href="#how_do_i_configure_my_api_with_an_oauth_provider">How do I configure my API with an OAuth Provider?</a></li>
-  <li><a href="#Whats_the_difference_between_an_oauth_provider_and_a_3rd_party_provider">What's the difference between an OAuth Provider and a Third-Party Provider?</a></li>
+  <li><a href="#whats_the_difference_between_an_oauth_provider_and_a_3rd_party_provider">What's the difference between an OAuth Provider and a Third-Party Provider?</a></li>
   <li><a href="#what_grant_types_does_oauth_support">What grant types does OAuth support?</a></li>
   <li><a href="#how_does_oauth_2legged_and_3legged_authorization_work">How does OAuth 2-Legged and 3-Legged Authorization work?</a></li>
   <li><a href="#how_are_tokens_generated_and_used_in_oauth">How are tokens generated and used in OAuth?</a></li>
@@ -129,10 +129,11 @@ no-catalog: true
 
 
 <a name="Whats_the_difference_between_an_oauth_provider_and_a_3rd_party_provider"></a><h3>What's the difference between an OAuth Provider and a Third-Party Provider?</h3>
-<p>An Identity Provider is a central OAuth enabled provider that provides both user  authentication and user authorization. Using the <strong>API OAuth</strong> function, you can select a pre-defined OAuth Provider or a 3rd Party Provider:</p>
+<p>An Identity Provider is a central OAuth-enabled provider that provides both user  authentication and user authorization. Using the <strong>API OAuth</strong> function, you can select a pre-defined OAuth Provider or a third-party provider:</p>
 <ul>
-  <li><em>OAuth Provider</em>&#8212;If you select a pre-defined OAuth Provider the configuration will be applied to the Proxy API only<em>.</em> Pre-defined providers are filtered to contain OAuth versions, grants, policies, and resource mapping information that pertain to specific OAuth use cases.</li>
-  <li><em>3rd Party Provider</em>&#8212;If you select the 3rd Party Provider the configuration will be applied to the Target API. All information must be provided based on OAuth version and security configuration a specific API supports.</li>
+  <li><em>OAuth Provider</em>&#8212;If you select a pre-defined OAuth Provider the configuration will be applied to the Proxy API only<em>.</em> Pre-defined providers are filtered to contain OAuth versions, grants, policies, and resource mapping information that relate to specific OAuth use cases. Tokens issued by this OAuth Provider could be validated by all agents from SOA Software.<br />
+    <strong>Note</strong>: OAuth providers are set up by the Site Admin in Administration / Domains / OAuth Provider. If the OAuth provider you need is not on the drop-down list, contact your Site Admin.</li>
+  <li><em>3rd Party Provider</em>&#8212;Choose this option if the physical endpoint will be authorizing the OAuth requests. The app still needs to send the OAuth token as part of the request, but the platform passes the token through to the physical endpoint. This allows us to support the API in the Dev Console so that apps can test against it. Provide all the information needed  based on OAuth version and security configuration a specific API supports.</li>
 </ul>
 <p>Reference: <em>API &gt; API Details &gt; OAuth Details &gt; OAuth Provider</em></p>
 <p><a href="#top">Back to top</a></p>

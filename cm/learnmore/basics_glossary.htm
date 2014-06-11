@@ -1,17 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-<title>Basics | Glossary of Terms</title>
-<link href="../../../../resources/style/reset.css" rel="stylesheet" type="text/css" />
-<link href="../../../../resources/style/base.css" rel="stylesheet" type="text/css" />
-<link href="../../style/document.css" rel="stylesheet" type="text/css" />
-
-</head>
-<body>
-<div class="documentation supportContent">
-<!-----
+---
 layout: page
 title: Glossary of Terms
 description: Definitions for some of the terms used on the platform.
@@ -21,7 +8,7 @@ subcategory: Basics
 weight: 30
 type: page
 nav-title: Glossary of Terms
------>
+---
 <h2 id="top">Glossary of Terms</h2>
 <p>Key terminology used in the platform.</p>
 <div class = "divider1"></div>
@@ -139,6 +126,11 @@ nav-title: Glossary of Terms
 
 
 
+<dt><a name="gl_deploymentzone"></a>deployment zone</dt>
+<dd>If an API is hosted on the platform and using the proxy capability, the API owner can specify the deployment zones, such as a geographical area or a specific data center, that the endpoint will be proxied in.</dd>
+
+
+
 <dt><a name="gl_developer"></a>developer</dt>
 <dd>A developer of an app that will consume an API.</dd>
 
@@ -150,7 +142,8 @@ nav-title: Glossary of Terms
 
 
 <dt><a name="gl_environment"></a>environment</dt>
-<dd>Ap app/API contract can apply either to the Sandbox environment, which is a testing area, or the production environment.</dd>
+<dd>An API contract can apply either to the Sandbox environment, which is a testing area, or the production environment.</dd>
+
 
 
 <dt><a name="gl_export"></a>export</dt>
@@ -197,13 +190,13 @@ nav-title: Glossary of Terms
 
 
 <dt><a name="gl_license"></a>license</dt>
-<dd>A License is a tailored API access package designed by the Business Admin/API Admin and offered to the app developer. A license includes one or more <a href="#gl_licenseterm">license terms</a>, each of which can include multiple <a href="#gl_scope">scopes</a>, giving access to specifically designated operations, and multiple <a href="#gl_qosagreement">quality of service (QoS) policies</a>, and also one or more legal agreements applicable to the license.</dd>
+<dd>A License is a tailored API access package designed by the Business Admin/API Admin and offered to the app developer. A license includes one or more <a href="#gl_licenseterm">license terms</a>, each of which can include multiple <a href="#gl_scope">scopes</a>, giving access to specifically designated operations, and multiple <a href="#gl_qospolicy">quality of service (QoS) policies</a>, and also one or more legal agreements applicable to the license.</dd>
 <dd>For more information on the License feature, see <a href="ov_licenses.htm">Licenses: Feature Overview</a>.</dd>
 
 
 
 <dt><a name="gl_licenseterm"></a>license term</dt>
-<dd>A license term defines the access that is being offered in a license (<a href="#gl_scope">scope</a>) and the level of access (<a href="#gl_qosagreement">QoS policy</a>). Each license term includes one or more scopes plus, optionally, the quality of service limits/policies to be applied to all scopes in the license term. Scopes apply to both visibility and access; policies apply only to access. To have any impact, a license term must include at least one scope.</dd>
+<dd>A license term defines the access that is being offered in a license (<a href="#gl_scope">scope</a>) and the level of access (<a href="#gl_qospolicy">QoS policy</a>). Each license term includes one or more scopes plus, optionally, the quality of service limits/policies to be applied to all scopes in the license term. Scopes apply to both visibility and access; policies apply only to access. To have any impact, a license term must include at least one scope.</dd>
 
 
 
@@ -277,7 +270,7 @@ nav-title: Glossary of Terms
 
 
 
-<dt><a name="gl_qosagreement"></a>QoS (quality of service) policy</dt>
+<dt><a name="gl_qospolicy"></a>QoS (quality of service) policy</dt>
 <dd>A QoS policy defines the level of service being offered to an app that is accessing an API; for example, the number of transactions per minute that are allowed for the app. In the platform, QoS policies are tied to <a href="#gl_licenseterm">license terms</a>.</dd>
 
 
@@ -408,10 +401,4 @@ nav-title: Glossary of Terms
 
 
 </dl>
-<p><a href="#top">back to top</a></p>
-
-
-
-</div>
-</body>
-</html>
+<p><a href="#top">Back to top</a></p>
