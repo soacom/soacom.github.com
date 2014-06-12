@@ -10,7 +10,7 @@ type: page
 nav-title: Managing Keys
 
 ---
-<div class="documentation supportContent">
+
 <h2 name="top">Managing Keys</h2>
 
 <p>Overview of key management options for service, organization, container, and user identity categories. </p>
@@ -86,8 +86,19 @@ nav-title: Managing Keys
 <ul class="usingOrderedList">
   <li><strong>Default - </strong>Generates PKI keys and X.509 certificate. </li>
   <li><strong>External Keystore</strong> - Assigns PKI keys and X.509 certificate to the external keystore alias of the current identity. <em> <br />
-  </em><br />
-<img src="images/assign_keys_external.jpg" width="583" height="390" /></li>
+    <br />
+  </em>
+    <p>If you installed the <em>SOA Software External Keystore Feature</em>, the <em>Generate PKI Keys &amp; X.509 Certificate</em> screen will include a <strong>User Keystore Alias/Password </strong>option that allows you to define an alias (i.e., identity) to assign to the PKI Keys and X.509 Certificate being generated. These keys will be stored on your external keystore. 
+    </p>
+    <p><img src="images/assign_keys_external_option.jpg" width="579" height="401" /></p>
+    <p>You can then assign these keys to an identity category by selecting the <strong>Assignment Options &gt; Assign PKI Keys and X.509 Certificate from User Keystore</strong> option on the <em>Manage PKI Keys Wizard</em> home page. You will be presented with the <em>Assign Keys from External Keystore</em> screen. </p>
+    <p>Two options are available for selecting a keystore. </p>
+    <p><strong>Browse Alias:</strong> This option allows you to select an identity from the Policy Manager keystore from a drop-down menu. </p>
+    <p><strong>Enter Alias:</strong> If your containers are using different externals keystores the alias for the keys being used may not exist in the Policy Manager keystore. Use the &quot;Enter Alias&quot; option to reference the alias name if this is the case.    </p>
+    <p>After specifying an alias, you must specify the password to complete the configuration.<br />
+      <br />
+  <img src="images/assign_keys_external.jpg" width="583" height="390" /></p>
+  </li>
 </ul>
 <h4>Generate Certificate Signing Request (CSR)</h4>
 <ul class="usingOrderedList">
