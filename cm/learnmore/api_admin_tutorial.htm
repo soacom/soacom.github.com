@@ -156,7 +156,7 @@ Note:
 <ol>
   <li>In the <em>Production Endpoint</em> section, configure the proxy information for each Sandbox or Production endpoint.
     <ul>
-      <li>In the <strong>URL</strong> section, specify the protocol. When the system proxies the API, the URL is made up of a selected protocol and hostname in the first field plus the path in the second field. You do not need to specify a path. The default URL shown in this field is constructed from the deployment zones loaded in the platform or, if no deployment zones were loaded, based on Network Director instances configured in the organization path from the root to the tenant organization.</li>
+      <li>In the <strong>URL</strong> section, specify the protocol. When the system proxies the API, the URL is made up of a selected protocol and hostname in the first field plus the path in the second field. You do not need to specify a path. The default URL shown in this field is constructed from the <a href="basics_glossary.htm#gl_deploymentzone">deployment zones</a> loaded in the platform or, if no deployment zones were loaded, based on Network Director instances configured in the organization path from the root to the tenant organization.</li>
       <li>For <strong>Allow Anonymous Access</strong>, click the <strong>Yes</strong> or <strong>No</strong> radio button to indicate whether you would like to enable or disable anonymous access for this API. See <a href="api_admin_api_publishing.htm#what_is_anonymous_api_access">What is Anonymous API Access?</a> for more information.</li>
       <li>For <strong>This API requires Approval</strong>, indicate whether you would like to approve API access requests made with the <strong>API Access Wizard</strong>. All API Access Requests can be monitored by API Providers and designated administrators in the <em>API Name &gt; Apps</em> section.</li>
       <li>If you select <strong>Yes</strong>, proceed and configure the <em>Production Endpoint </em>and <em>Advanced Options</em>.</li>
@@ -169,10 +169,7 @@ Note:
     </ul>
   </li>
   </ol>
-  <p><strong>H. Configure Advanced Options</strong></p>
-
-
-  <ol>
+  <p><strong>H. Configure Advanced Options</strong></p> <ol>
   <li>On the <em>Advanced Options </em>line click <strong>Show</strong> to expand the section.</li>
   <li>The <em>Advanced Options</em> section allows you to select a protocol for the Proxy API, select policies, and select a Default Profile (REST option only), and displays the settings configured in the <em>Target</em> section.</li>
   <li>If you would like the Proxy configuration to be different than you initially specified in the <em>Target</em> section, you can update the existing settings. For example, you might have two APIs that have the same <em>Target</em> information, but different <em>Proxy</em> information. Alternatively, you might have a SOAP API implementation but want to offer developers a REST API implementation; in this case the <em>Target</em> would be SOAP, and the <em>Proxy</em> would be REST. <br />
@@ -282,7 +279,7 @@ Note:
   <li>In the<strong> Add a Brief Message</strong> text box, specify the invitation text you would like to send to your invitees.</li>
   <li>Click <strong> Invite</strong>. The invitation email is sent to the invitee.</li>
   <li>After the email invitation is sent, the platform will post an administrator invitation to the platform member's <em>Dashboard</em>. The invited platform member can then log in to accept or decline the administrator invitation.</li>
-  <li>Refer to the <a href="api_admin_management.htm"> Admin Management</a> section for a complete list of admin management topics.</li>
+  <li>Refer to the <a href="api_admin_management.htm">Admin Management</a> section for a complete list of admin management topics.</li>
 </ol>
 <p><em>Note: When you create an API, you are the administrator. Your administrator privilege is automatically approved and is posted to the Admins Summary page. You can then invite additional administrators using the <strong>Invite More</strong> function. <em>Invitees that are not members must sign up before accepting the team invitation.</em></em></p>
 
@@ -290,7 +287,7 @@ Note:
 
 <h3>Step 8: Create Private API Groups (for APIs configured with Visibility = Private)</h3>
 <p>If you API is configured with Visibility = Private, you can use the Private API Group Access functionality which provides a method of creating common interest groups around specific APIs. Group accounts are created by API Administrators, and member invitations are sent and managed by the API Administrator. <em>Only API Administrators can create Private API Groups.</em></p>
-<p>Refer to the <a href="api_admin_visibility.htm"> Private API Groups</a> section for complete instructions on creating a Private API Group, sending out invitations, and assigning group leaders.</p>
+<p>Refer to the <a href="api_admin_visibility.htm">Private API Groups</a> section for complete instructions on creating a Private API Group, sending out invitations, and assigning group leaders.</p>
 
 
 
