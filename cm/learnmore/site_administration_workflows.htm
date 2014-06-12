@@ -21,10 +21,11 @@ no-catalog: true
   <li><a href="#how_do_i_set_up_and_manage_custom_workflows">How do I set up and manage custom workflows?</a></li>
   <li><a href="#how_do_i_specify_a_custom_workflow_for_apis">How do I specify a custom workflow for APIs?</a></li>
   <li><a href="#how_do_i_specify_a_custom_workflow_for_apps">How do I specify a custom workflow for apps?</a></li>
-  <li><a href="#how_do_i_specify_a_custom_workflow_for_app_api_contracts">How do I specify a custom workflow for app/API contracts?</a></li>
+  <li><a href="#how_do_i_specify_a_custom_workflow_for_api_contracts">How do I specify a custom workflow for API contracts?</a></li>
   <li><a href="#how_do_i_specify_a_custom_workflow_for_groups">How do I specify a custom workflow for groups?</a></li>
   <li><a href="#how_do_i_specify_a_custom_workflow_for_tickets">How do I specify a custom workflow for tickets?</a></li>
   <li><a href="#how_do_i_specify_a_custom_workflow_for_oauth_grants">How do I specify a custom workflow for OAuth grants?</a></li>
+  <li><a href="#workflow_not_available">I uploaded a custom workflow, but it isn't showing as available. What do I do?</a></li>
 </ol>
 
 
@@ -55,7 +56,7 @@ no-catalog: true
 <ul>
   <li><a href="#how_do_i_specify_a_custom_workflow_for_apps">How do I specify a custom workflow for apps?</a></li>
   <li><a href="#how_do_i_specify_a_custom_workflow_for_apis">How do I specify a custom workflow for APIs?</a></li>
-  <li><a href="#how_do_i_specify_a_custom_workflow_for_app_api_contracts">How do I specify a custom workflow for app/API contracts?</a></li>
+  <li><a href="#how_do_i_specify_a_custom_workflow_for_api_contracts">How do I specify a custom workflow for API contracts?</a></li>
   <li><a href="#how_do_i_specify_a_custom_workflow_for_groups">How do I specify a custom workflow for groups?</a></li>
   <li><a href="#how_do_i_specify_a_custom_workflow_for_tickets">How do I specify a custom workflow for tickets?</a></li>
 <!--  <li><a href="#how_do_i_specify_a_custom_workflow_for_oauth_grants">How do I specify a custom workflow for OAuth grants?</a></li>-->
@@ -106,10 +107,10 @@ no-catalog: true
 
 
 
-<a name="how_do_i_specify_a_custom_workflow_for_app_api_contracts"></a><h3>How do I specify a custom workflow for app/API contracts?</h3>
-<p>The Site Admin can specify a custom workflow and set that as the default workflow for all future app/API contracts on the platform. When the default workflow is changed, the new workflow applies to all new contracts, but existing contracts are not affected.</p>
+<a name="how_do_i_specify_a_custom_workflow_for_api_contracts"></a><h3>How do I specify a custom workflow for API contracts?</h3>
+<p>The Site Admin can specify a custom workflow and set that as the default workflow for all future API contracts on the platform. When the default workflow is changed, the new workflow applies to all new contracts, but existing contracts are not affected.</p>
 <p>Before specifying the custom workflow as the platform default, the Business Admin must first create the custom workflow externally and upload it. For instructions, see <a href="business_administration_workflows.htm#to_upload_a_custom_workflow">To upload a custom workflow</a>.</p>
-<h5>To specify a custom workflow for app/API contracts:</h5>
+<h5>To specify a custom workflow for API contracts:</h5>
 <ol>
   <li>Log in as Site Admin.</li>
   <li>Go to <em>Admin &gt; Config &gt; Connections</em>.</li>
@@ -160,6 +161,19 @@ no-catalog: true
 <a name="how_do_i_specify_a_custom_workflow_for_oauth_grants"></a><h3>How do I specify a custom workflow for OAuth grants?</h3>
 <p>You can modify the default workflow for OAuth grants, but there is currently no way to apply the custom workflow through the user interface. You'd need to make modifications to the database. If you need to do this, <a href="basics_support.htm#how_do_i_contact_technical_support">contact technical support</a> for assistance.</p>
 <p><a href="#top">Back to top</a></p>
+
+
+
+<a name="workflow_not_available"></a>
+<h3>I uploaded a custom workflow, but it isn't showing as available. What do I do?</h3>
+<p>When you go into Administration / Config and choose a resource for which you can use a custom workflow, any custom workflows that have been uploaded to your platform for that resource type should be available on the drop-down list for selection.</p>
+<p>If the expected custom workflow is not available for selection, first go to Administration / Config / Workflows and check that the workflow was uploaded.</p>
+<p>If you see your workflow on the list, the most likely reason it's not available for selection is that an incorrect resource was specified when uploading the workflow. It's important to specify the correct resource, because only workflows designated for a specific resource&#8212;for example, tickets&#8212;are available on the Config page for that resource.</p>
+<p>To check the resource type, find your workflow on the list and then click <strong>Edit</strong>. In the Edit Workflow page, change the Object Type specified for the workflow, if needed, and then click <strong>Save</strong>.</p>
+<p><a href="#top">Back to <strong>top</strong></a></p>
+
+
+
 
 
 

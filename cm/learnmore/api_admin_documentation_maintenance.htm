@@ -107,7 +107,7 @@ no-catalog: true
   </li>
   <li><strong>Content-based</strong>: This is tagging at a more granular level, by applying tags to specific pieces of content within a file.
 <p>We recommend that you use this approach judiciously. Because permissions vary by user, and documentation projects often include links between files, a simple tagging approach is most efficient. Refer to the example use case below for some ideas.</p>
-<p>Content-based tagging is controlled by referencing the<strong> jquery-1.8.0.min.js</strong> and <strong>dynamic_docs.js</strong> files within the &lt;head&gt; tag of your HTML files. See below for an example.</p>
+<p>Content-based tagging is controlled by referencing the<strong> jquery.js</strong> and <strong>dynamic_docs.js</strong> files within the &lt;head&gt; tag of your HTML files. See <a href="#reference_js_file">Content-based tagging: setting up the file</a> for an example.</p>
 <p><strong>Note</strong>: Unlike file-based authorization, content-based visibility filters are implemented on the browser side only. This feature is considered a &quot;personalization&quot; feature rather than authorization.</p>
 
 </li>
@@ -337,7 +337,7 @@ no-catalog: true
 
 
 
-<h5><a name="reference_js_file" id="reference_js_file"></a>Content-based tagging: Setting up the file</h5>
+<h5><a name="reference_js_file"></a>Content-based tagging: Setting up the file</h5>
 <p>If you want to use the content-based documentation tagging feature to control the visibility of specific pieces of content within a file so that they are displayed to the viewing user based on the user's visibility access rights, you'll need to set up some lines of code in the &lt;head&gt; tag of the HTML file, as shown below.</p>
 
 <ol>
@@ -347,15 +347,15 @@ no-catalog: true
 </li>
   <li>Within the &lt;head&gt; tag, after the &lt;title&gt; tag, add the following lines:
     <pre>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/resources/style/base.css&quot;/&gt;
-<br />&lt;script language=&quot;javascript&quot; src=&quot;/resources/thirdparty/jquery/jquery-1.8.0.min.js&quot;
+&lt;script language=&quot;javascript&quot; src=&quot;/ui/apps/atmosphere/{resource.version}/resources/uiframework/jquery/jquery.js&quot;
   type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
-&lt;script language=&quot;javascript&quot; src=&quot;/ui/apps/acmecorp/{<strong>Version</strong>}/resources/javascript/dynamic_docs.js&quot;
+&lt;script language=&quot;javascript&quot; src=&quot;/ui/apps/atmosphere/{resource.version}/resources/console/javascript/dynamic_docs.js&quot;
   type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</pre>
-<p><strong>Note</strong>: See important note below with regard to the {Version} variable in the last line above.</p>
+<p><strong>Note</strong>: See important note below with regard to the {resource.version} variable above.</p>
 </li>
 <li>Repeat for each file that will have content-based tagging.</li>
 </ol>
-<p><strong>Important</strong>: if you want to use dynamic content in your files you must reference the above two JavaScript files. In the second link above, you can use whatever value you want to use in the /{Version}/ part of the path. For example, you could use your API version, API doc version, or the platform version. The importance of this value is in controlling the version of the <strong>dynamic_docs.js</strong> file that is served to your users. This file is cached by the browser, for efficiency. However, if there is a new version with increased capabilities, and you use those new capabilities in a new version of your documentation, you'll want your users to have the new version of the <strong>dynamic_docs.js</strong> file, not an earlier, cached version. In this scenario, all you need to do is update the value of the {Version} variable in the file path. Changing the value ensures that when a user accesses your documentation, their browser will reference the latest version of the file.</p>
+<p><strong>Important</strong>: if you want to use dynamic content in your files you must reference the above two JavaScript files. In the second link above, you can use whatever value you want to use in the /{resource.version}/ part of the path. For example, you could use the platform version (recommended) or your API version or API doc version. The importance of this value is in controlling the version of the <strong>dynamic_docs.js</strong> file that is served to your users. This file is cached by the browser, for efficiency. However, if there is a new version with increased capabilities, and you use those new capabilities in a new version of your documentation, you'll want your users to have the new version of the <strong>dynamic_docs.js</strong> file, not an earlier, cached version. In this scenario, all you need to do is update the value of the {resource.version} variable in the file path. Changing the value ensures that when a user accesses your documentation, their browser will reference the latest version of the file. If you see in the release notes for a new version that there are updates to the dynamic documentation capabilities, it's best to update your version to make sure you and your users get the full functionality of the new features.</p>
 
 
 

@@ -46,12 +46,14 @@ no-catalog: true
   <li><a href="#how_do_i_determine_what_licenses_will_be_available_for_my_api">How do I determine what licenses will be available for my API?</a></li>
   <li><a href="#how_do_i_edit_the_license_on_an_api_access_request_api_administrator">How do I edit the license on an API access request?</a></li>
   <li><a href="#how_do_i_see_the_status_of_my_apis_contracts_with_apps">How do I see the status of my API's contracts with apps?</a></li>
+  <li><a href="#what_is_a_default_profile_for_a_rest_api">What is a Default Profile for a REST API?</a></li>
+  <li><a href="#how_do_i_define_a_custom_content_type_for_a_rest_api">How do I define a custom content-type for a REST API?</a></li>
 </ol>
 <div class = "divider1"></div>
 
 
 <a name="what_are_apis"></a><h3>What are APIs?</h3>
-<p>APIs are business capabilities exposed over the internet for applications to use. Simply put, an API is a programming interface that your organization exposes over the internet that allows applications to communicate with your backend systems. Typically, you build APIs that expose specific aspects of business functionality. These are things that differentiate you in the market place and that make money for you and your company. So essentially what you are doing through the creation of APIs is creating a new channel for your business by exposing a set of capabilities for your product (i.e., services that people can build into mobile applications and sell to their customers), thereby creating a channel for your products and services online.</p>
+<p>APIs are business capabilities exposed over the internet for applications to use. Simply put, an API is a programming interface that your organization exposes over the internet that allows applications to communicate with your backend systems. Typically, you build APIs that expose specific aspects of business functionality. These are things that differentiate you in the market place and that make money for you and your company. So essentially what you are doing through the creation of APIs is creating a new channel for your business by exposing a set of capabilities for your product (services that people can build into mobile applications and sell to their customers), thereby creating a channel for your products and services online.</p>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -92,7 +94,7 @@ no-catalog: true
 <p>Once the API is running you must promote it. Key considerations when promoting an API include:</p>
 <ol>
   <li>How can you as an organization create a market  for the API?
-<p><em>Collaborate</em>&#8212;To market your API to a set of consumers (i.e., developers writing applications) you must create a community around your API. Creating a community of partners provides a value add to your services and your APIs and allows developers to collaborate with each other. This can be accomplished in the platform using the <em>API Group</em> and <em>API Board</em> functions.</p>
+<p><em>Collaborate</em>&#8212;To market your API to a set of consumers (developers writing apps) you must create a community around your API. Creating a community of partners provides a value add to your services and your APIs and allows developers to collaborate with each other. This can be accomplished in the platform using the <em>API Group</em> and <em>API Board</em> functions.</p>
 <p><em>Search</em>&#8212;Users need to be able to  effectively find your APIs, you need to get access to  the documentation and  collaborate around  developing their applications. This can be accomplished in the platform using the <em>Search</em> function where users can perform a free text search or use a pre-defined search filter.</p>
 <p><em>Support</em>&#8212;You must support the API effectively. As you write your APIs you may run into problems and would like gain expertise and advice from community members. This can be accomplished in the platform using the <em>API Board</em>, trouble ticket management system, and by <a href="basics_support.htm#how_do_i_contact_technical_support">submitting a support request</a>.</p></li>
 </ol>
@@ -154,14 +156,20 @@ no-catalog: true
           <em>Policy Type:</em> WS-Auditing Service Policy<br />
           <br />
         <em>Configuration: </em>Audit All Messages, Audit Message Size, Audit Identities (Consumer and End User), Reporting Options (Log)</p></td>
-    </tr> <tr class="t1row">
+    </tr> 
+    <tr class="t1row">
+      <td>CORSAllowAll</td>
+      <td><p>CORS (cross-origin resource scripting) enables users to access resources from within the browser serving a web page, and defines a way in which the browser and the server can interact to determine whether or not to allow the cross-origin request.</p>
+        <p>The CORSAllowAll policy allows all cross-origin requests.</p></td>
+    </tr>
+    <tr class="t2row">
       <td>DetailedAuditing</td>
       <td>Provides detailed auditing of messages. Message metrics will be recorded in the Usage Logs Monitoring tab as well as the entire messages of each exchange.<br /><br />
         <p><em>Policy Category:</em> Monitoring</p>
         <p><em>Policy Type:</em> WS-Auditing Service Policy</p>
         <p><em>Configuration: </em>Audit All Messages, Audit Input Message, Audit Output Message, Audit Fault Message, Audit Message Size, Audit Binding, Audit Transport, Audit Contract, Audit Identities (Consumer and End User), Reporting Options (Log)</p></td>
     </tr>
-     <tr class="t2row">
+     <tr class="t1row">
       <td>OAuthSecurity</td>
       <td>The OAuthSecurity Policy uses the OAuth configuration assigned to an API when enforcing OAuth tokens in the received request. <br /><br />
         <p><strong>Note:</strong> Selection of this policy is typically assigned to an API after performing the <strong>Edit OAuth Details</strong> configuration on the <em>API Details</em> page in the Community Manager portal. Use Edit on the API Details page, go to the <em>3. Proxy</em> page, and in the <em>Advanced Options</em> select <strong>OAuthSecurity</strong> in the <em>Policy</em> section.</p>
@@ -172,12 +180,14 @@ no-catalog: true
 </tbody>
 </table>
 <br />
-<p>If you subscribe to an  API Enterprise Management Platform or decide to install on-premises then you  also have the ability to create and manage your own Policies. If you require a policy that is not on the default list, <a href="basics_support.htm#how_do_i_contact_technical_support">submit a support request</a>..</p>
+<p>For more information about policies, see <a href="policy_list.htm">Policy List</a>.</p>
+<p>If you subscribe to an  API Enterprise Management Platform or decide to install on-premises then you  also have the ability to create and manage your own Policies. If you require a policy that is not on the default list, <a href="basics_support.htm#how_do_i_contact_technical_support">submit a support request</a>.</p>
 <p><a href="#top">Back to top</a></p>
 
 
 <a name="what_is_the_minimum_policy_requirement_for_my_api"></a><h3>What is the minimum policy requirement for my API?</h3>
-<p>When you add an API using the <strong>Add a New API Wizard</strong>, in the <em>Policies</em> section on the <em>Proxy</em> page, you MUST select one security policy (e.g., Category: Simple Header  Security) and you should select a monitoring policy if you want to see charts  and logs. If no policies display, consult your API Provider or Site Administrator.</p>
+<p>When you add an API using the <strong>Add a New API Wizard</strong>, in the <em>Policies</em> section on the <em>Proxy</em> page, you MUST select one security policy (e.g., Category: Simple Header  Security) and you should select a monitoring policy if you want to see charts  and logs.</p>
+<p>If there are no policies available for selection, consult your Site Admin.</p>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -206,7 +216,7 @@ no-catalog: true
 </ul>
 <p>The <em>Add APIs Wizard</em> includes the following sections:</p>
 <p><strong>API</strong></p>
-<p>On the <em>API</em> page you perform the initial step of specifying an API Name, Version ID, Tags, Visibility (Public/Private), API Description, Version Description, and API Icon. This information displays on your public API page which also displays in the API search results.</p>
+<p>On the <em>API</em> page you perform the initial step of specifying an API Name, Version ID, Tags, Visibility (Public/Private), API Description, Version Description, and API Icon. This information is displayed on your public API page and in the API search results.</p>
 <p>A platform user who performs a search and finds your public API page, sees the API description and can rate and write and review your API. Individuals can also participate in a Yes/No survey indicating whether a review was useful or not. Based on this high visibility it's important that your API description is highly informative and includes the necessary marketing, functional, and use case information that will engage customers to request access to your API.</p>
 <p><strong>Target</strong></p>
 <p>On the <em>Target</em> page, you can configure SOAP-based APIs by specifying the SOAP version and WSDL. REST-based APIs are configured by specifying one or more operations. Policy selection is not required for the Target URL.</p>
@@ -227,8 +237,8 @@ no-catalog: true
 <ol>
   <li>On the <em>API</em> page, specify the API Name, Version ID, Tags, Visibility (Public/Private), API Description, Version Description, and API Icon for the API. All the information you specify here displays on your customer-facing <em>API Details</em> page.
     <ul>
-      <li>See <a href="#how_do_i_manage_api_visibility">How do I manage API visibility?</a> for information on Public and Private APIs.</li>
-      <li>See <a href="basics_account_management.htm#how_do_i_upload_and_crop_icons">How do I upload and crop icons?</a> for details on setting up your API icon.</li>
+      <li>For information on Public and Private APIs, see <a href="#how_do_i_manage_api_visibility">How do I manage API visibility?</a></li>
+      <li>For details on setting up your API avatar, see <a href="basics_account_management.htm#how_do_i_upload_and_crop_icons">How do I upload and crop icons?</a></li>
     </ul>
 </li>
   <li>Define whether the API will use licenses. C<strong>lick the Use Licenses</strong> checkbox to enable the licenses feature, including scope mapping. For more information, see <a href="#what_is_scope_mapping_and_how_do_i_set_it_up">What is scope mapping and how do I set it up?</a></li>
@@ -260,11 +270,19 @@ no-catalog: true
 </ol>
 
 
-<h5>To configure a REST-based API:</h5>
+<h5><a name="to_configure_a_rest_based_api"></a>To configure a REST-based API:</h5>
 <ol>
-  <li>Click the <strong>REST</strong> radio button and select a <em>Default Profile</em> from the drop-down menu. <strong>Any in and out </strong>is the default selection.</li>
-  <li>A &quot;Default_Operation&quot; is automatically assigned, with a GET method, Path that is pre-filled with the default URI, and &quot;API Default&quot; selected for the Request and Response serialization.</li>
-  <li>Modify the &quot;Default_Operation&quot; and/or click <strong>+Add </strong> and specify the operations for the API definition based on your requirements.<br />
+  <li>Click the <strong>REST</strong> radio button and select a <em>Default Profile</em> from the drop-down menu. <strong>Any in and out </strong>is the default selection. For more information about the default profile, see <a href="#what_is_a_default_profile_for_a_rest_api">What is a Default Profile for a REST API?</a> below.</li>
+  <li>A placeholder value, Default_Operation, is available for you to define the first operation. Modify it as needed, specifying these values:
+    <ul>
+      <li>Method (HTTP verb)</li>
+      <li>Path</li>
+      <li>Operation Name</li>
+      <li>Settings</li>
+    </ul>
+    </li>
+  
+  <li>To add another operation, click <strong>+Add </strong> and specify the values as needed. Specify content-type for the request and response if they are not the same as the default profile. To define a custom content-type, see <a href="#how_do_i_define_a_custom_content_type_for_a_rest_api">How do I define a custom content-type for a REST API?</a><br />
     <br />
     For the typical REST service, the most common methods, URIs, and serialization types would be:<br />
     <br />
@@ -276,53 +294,52 @@ no-catalog: true
           <th width="20%">URI</th>
           <th width="20%">Request (Input)</th>
           <th width="20%">Response (Output)</th>
-</tr>
-        </thead>
-        <tbody>
-      <tr class="t2row">
-        <td>list</td>
-        <td>GET</td>
-        <td>/</td>
-        <td>N/A</td>
-        <td>text/xml</td>
         </tr>
-      <tr class="t1row">
-        <td>read</td>
-        <td>GET</td>
-        <td>/{id}</td>
-        <td>N/A</td>
-        <td>text/xml</td>
-        </tr>
-      <tr class="t2row">
-        <td>add</td>
-        <td>POST</td>
-        <td>/</td>
-        <td>text/xml</td>
-        <td>text/xml</td>
+      </thead>
+      <tbody>
+        <tr class="t2row">
+          <td>list</td>
+          <td>GET</td>
+          <td>/</td>
+          <td>N/A</td>
+          <td>text/xml</td>
         </tr>
         <tr class="t1row">
-        <td>delete</td>
-        <td>DELETE</td>
-        <td>/{id}</td>
-        <td>N/A</td>
-        <td>text/xml</td>
+          <td>read</td>
+          <td>GET</td>
+          <td>/{id}</td>
+          <td>N/A</td>
+          <td>text/xml</td>
         </tr>
         <tr class="t2row">
-        <td>update</td>
-        <td>PUT</td>
-        <td>/{id}</td>
-        <td>text/xml</td>
-        <td>text/xml</td>
+          <td>add</td>
+          <td>POST</td>
+          <td>/</td>
+          <td>text/xml</td>
+          <td>text/xml</td>
         </tr>
-  </tbody>
-</table>
-<br />
-</li>
-  <li>Click the <strong>Add Content-Length</strong> checkbox if you would like to send the Content_Length heading to the Target API. This disabled chunked encoding.</li>
+        <tr class="t1row">
+          <td>delete</td>
+          <td>DELETE</td>
+          <td>/{id}</td>
+          <td>N/A</td>
+          <td>text/xml</td>
+        </tr>
+        <tr class="t2row">
+          <td>update</td>
+          <td>PUT</td>
+          <td>/{id}</td>
+          <td>text/xml</td>
+          <td>text/xml</td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+  </li>
+  <li>Click the <strong>Add Content-Length</strong> checkbox if you would like to send the Content_Length header to the Target API. This disables chunked encoding.</li>
   <li>Click the <strong>Use HTTP 1.0</strong> checkbox if you need to force the HTTP version to 1.0 for the Target API. It is unlikely to be needed.</li>
-  <li>See <a href="#how_do_i_add_a_rest_service">How do I add a REST service?</a> for a sample walkthrough.</li>
-</ol>
-<p><strong>E. Configure Proxy</strong></p>
+  </ol>
+<p><a name="configure_proxy"></a><strong>E. Configure Proxy</strong></p>
 <ol>
   <li>After specifying the Target information, click <strong>Next</strong> to continue. The <em>Proxy</em> page displays. Here you will specify the <em>Published URL</em> that represents what users will select when accessing your API. The page displays a summary list of all Production and Sandbox endpoints specified in the previous step. It's recommended that you use a Proxy API to take advantage of important platform functionality. See <a href="#what_is_a_proxy_api">What is a Proxy API?</a> for more information.<br />
     <em><br />
@@ -346,7 +363,7 @@ no-catalog: true
 <ol>
   <li>In the <em>Production Endpoint</em> section, configure the proxy information for each Sandbox or Production endpoint.
     <ul>
-      <li>In the <strong>URL</strong> section, specify the protocol. When the system proxies the API, the URL is made up of a selected protocol and hostname in the first field plus the path in the second field. You do not need to specify a path. The default URL shown in this field is constructed from the deployment zones loaded in the platform or, if no deployment zones were loaded, based on Network Director instances configured in the organization path from the root to the tenant organization.</li>
+      <li>In the <strong>URL</strong> section, specify the protocol. When the system proxies the API, the URL is made up of a selected protocol and hostname in the first field plus the path in the second field. You do not need to specify a path. The default URL shown in this field is constructed from the <a href="basics_glossary.htm#gl_deploymentzone">deployment zones</a> loaded in the platform or, if no deployment zones were loaded, based on Network Director instances configured in the organization path from the root to the tenant organization.</li>
       <li>For <strong>Allow Anonymous Access</strong>, click the <strong>Yes</strong> or <strong>No</strong> radio button to indicate whether you would like to enable or disable anonymous access for this API. See <a href="#what_is_anonymous_api_access">What is Anonymous API Access?</a> for more information.</li>
       <li>For <strong>This API requires Approval</strong>, indicate whether you would like to approve API access requests made with the <strong>API Access Wizard</strong>. All API Access Requests can be monitored by API Providers and designated administrators in the <em>API Name &gt; Apps</em> section.</li>
       <li>If you select <strong>Yes</strong>, proceed and configure the <em>Production Endpoint </em>and <em>Advanced Options</em>.</li>
@@ -431,7 +448,7 @@ no-catalog: true
 <p>If your API is using the Licenses feature, scope mapping is the key to defining which portions of your API will be available for which licenses. The scopes and licenses themselves are defined by the Business Admin, but at the API level you determine which operations are assigned to which scopes. This in turn determines which licenses will be available to app developers requesting access to your API.</p>
 <p>For example, let's say your API includes a set of operations relating to calendar functionality and another set of operations relating to email access and management. App A might only need access to the calendar functionality, and App B might include an email client and might require access to the operations relating to email. The scope mapping feature enables you to group individual operations into logical groups that can be separately packaged into a license for App A and another for App B.</p>
 <p>As another example, let's say you want to offer access to your GET operations, and a higher level of access, for a fee, to all operations including add, modify, and delete. The Business Admin defines READ and MODIFY scopes, and then assigns each to a separate license. The API Admin assigns GET operations to the READ scope and assigns all operations to the MODIFY scope. Users who choose the paid license get access to all scopes; users who choose the free license can only access the GET operations.</p>
-<p>At runtime, when a request is received to an API proxy from a particular app, the request is only passed through to the API if it is using one of the specific operations covered by the license governing the app/API contract.</p>
+<p>At runtime, when a request is received to an API proxy from a particular app, the request is only passed through to the API if it is using one of the specific operations covered by the license governing the API contract.</p>
 <!--<p><em>Note: If your API is configured with OAuth, the scopes were defined as part of the initial OAuth Provider configuration in the Site Administration section. The Edit OAuth Details function on the API Details page includes a <strong>Scope Mapping</strong> function for this scenario.</em></p>-->
 <a name="to_perform_scope_mapping"></a><h5>To perform scope mapping:</h5>
 <ol>
@@ -562,7 +579,7 @@ http://&lt;API_URL&gt;/&lt;API_path&gt;?postalCode=90020&amp;o=xml&amp;key=AoCDR
 <p><strong>Example Scenarios:</strong></p>
 <p><em>Scenario 1</em>&#8212;You build an API and would like to expose specific functionality for the purposes of collaborating with a selected development and/or discussion group. You do not want to the API to be visible to anyone outside the selected group. To accomplish this:</p>
 <ul>
-  <li>Add a new API, configure with private visibility, and add a proxy API for operations you would like to expose. See the <a href="api_admin_tutorial.htm">quick start</a> for API Providers for more information.</li>
+  <li>Add a new API, configure with private visibility, and add a proxy API for operations you would like to expose. For more information, refer to the <a href="api_admin_tutorial.htm">quick start for API Providers</a>.</li>
   <li>App developers can submit an API access request and connect to your API. See <a href="access_apis_api_access.htm#how_do_i_get_api_access_for_my_app">How do I get API access for my app?</a></li>
   <li>Create a Private API Group and invite selected individuals you would like to be part of your collaboration group<em>.</em> See <a href="collaborate_groups.htm">Groups</a> for more information.</li>
   <li>Update the API definition and adjust the configuration based on your business requirements.</li>
@@ -619,7 +636,7 @@ http://&lt;API_URL&gt;/&lt;API_path&gt;?postalCode=90020&amp;o=xml&amp;key=AoCDR
 
 
 <a name="what_are_the_supported_methods_and_content_types_for_requests"></a><h3>What are the supported HTTP method types and content types for requests?</h3>
-<p>If you chose to proxy your API, you can optionally configure the operations with Methods, URLs, and Content Types. After the API settings are saved, the specified information is synched with the Target URLs. The following options are supported:</p>
+<p>If you chose to proxy your API, you can optionally configure the operations with Methods, URLs, and Content Types. After the API settings are saved, the specified information is synchronized with the Target URLs. The following options are supported:</p>
 <table cellspacing="0px" class="doctable" style="width: 90%;">
   <thead>
   <tr>
@@ -640,15 +657,15 @@ http://&lt;API_URL&gt;/&lt;API_path&gt;?postalCode=90020&amp;o=xml&amp;key=AoCDR
       <td>Content Types</td>
       <td>The  Request and  Response sections (accessible by clicking <strong>Show</strong> for each operation), includes a list of  &quot;Pre-defined&quot;  content types that support different message processing requirements for Input and   Output messages. <br />
         <br />
-        <em><u>Request Content-Type</u></em>&#8212;This option is used to describe the content type of the Request Message. The platform uses input serialization to correctly set the content type of the request being issued. The &quot;Pre-defined&quot; content types include API  Default, Any, application/x-www-form-urlencoded, text/xml, application/xml, and application/json.<br />
+        <em><u>Request Content-Type</u></em>&#8212;This option is used to describe the content type of the Request Message. The platform uses input serialization to correctly set the content type of the request being issued. The &quot;Pre-defined&quot; media types include API Default, Any, application/x-www-form-urlencoded, text/xml, application/xml, and application/json.<br />
         <br />
           1) If the request message is a GET or DELETE, the query string contains items that are appended  to the resulting XML or JSON message. <br />
           <br />
           2) If the request message is a PUT or POST, the  body contains a URL encoded string whose elements are appended to the resulting  XML or JSON message. A value of an XML-based content type assumes that the body  contains the whole XML message.<br />
           <br />
-          <u><em>R</em></u><em><u>esponse Content-</u></em><u><em>Type</em></u>&#8212;This option is used to describe the content type of the response message when it is not a fault. The platform uses output serialization to correctly set the content type of the response sent back to the consumer when the response is not a fault. The &quot;Pre-defined&quot; content types include API  Default, Any, text/xml, application/xml, application/json.<br />
+          <u><em>R</em></u><em><u>esponse Content-</u></em><u><em>Type</em></u>&#8212;This option is used to describe the content type of the response message when it is not a fault. The platform uses output serialization to correctly set the content type of the response sent back to the consumer when the response is not a fault. The &quot;Pre-defined&quot; media types include API Default, Any, text/xml, application/xml, application/json.<br />
           <br />
-        <em>NOTE: If Proxy API = Yes, the selected content types are automatically synched to the specified proxy address. If you do not want the content type selections synched to the proxy address, click <strong>delete</strong> next to the &quot;sync to proxy&quot; icon. </em></td>
+        <em>NOTE: If Proxy API = Yes, the selected content types are automatically synchronized to the specified proxy address. If you do not want the content type selections synchronized to the proxy address, click <strong>delete</strong> next to the &quot;sync to proxy&quot; icon. </em></td>
     </tr>
 </tbody>
 </table>
@@ -741,15 +758,15 @@ http://&lt;API_URL&gt;/&lt;API_path&gt;?postalCode=90020&amp;o=xml&amp;key=AoCDR
 <p><img src="images/export_file_api.jpg" alt="File structure for an API export file" /></p>
 <p>The export file will generally include the following:</p>
 <ul>
-   <li>Files at root level: 
-     <ul>
-       <li><strong>objectgraph.xml</strong>: An XML file that shows the relationships between resources.</li>
-       <li><strong>objectdata.xml</strong>: An XML-based  summary of all the data in the export file.</li>
-       <li><strong>exportproperties.properties</strong>: a properties file showing which options were included in the export file.</li>
-      </ul>
-   </li>
-   <li><strong>bpels</strong>: a folder containing XML business process files (<a href="basics_glossary.htm#gl_bpel_file">bpel files</a>). One for each operation, for each environment. So, for example, if the API has five operations, and runs in Sandbox and Production environments, there are 10 bpel files.</li>
-   <li><strong>services</strong>: a folder containing a subfolder for each environment, each subfolder containing a bpel.xml file for the applicable service/environment.</li>
+  <li>Files at root level: 
+    <ul>
+      <li><strong>objectgraph.xml</strong>: An XML file that shows the relationships between resources.</li>
+      <li><strong>objectdata.xml</strong>: An XML-based  summary of all the data in the export file.</li>
+      <li><strong>exportproperties.properties</strong>: a properties file showing which options were included in the export file.</li>
+     </ul>
+  </li>
+  <li><strong>bpels</strong>: a folder containing XML business process files (<a href="basics_glossary.htm#gl_bpel_file">bpel files</a>). One for each operation, for each environment. So, for example, if the API has five operations, and runs in Sandbox and Production environments, there are 10 bpel files.</li>
+  <li><strong>services</strong>: a folder containing a subfolder for each environment, each subfolder containing a bpel.xml file for the applicable service/environment.</li>
   <li><strong>wsdls</strong>: a folder containing WSDL files for the service.</li>
 </ul>
 <p><a href="#top">Back to top</a></p>
@@ -810,9 +827,9 @@ http://&lt;API_URL&gt;/&lt;API_path&gt;?postalCode=90020&amp;o=xml&amp;key=AoCDR
 <ul>
   <li>Apps&#8212;The App Name. This link clicks through to the <em>App Details</em> page.</li>
   <li>Legals&#8212;A column that indicates whether the Legal Agreements have been accepted (Check = Accepted, No Check = No Accepted).</li>
-  <li>Sandbox / Production&#8212;Represent the two environments that an API Access Request can be submitted for. Each column displays the current status of the API Access Request and available API management functions (e.g., Cancel, Suspend, Resume, Request Access, Switch to Production). The valid actions for a specific contract are determined by the current state of the contract; for example, only a contract that is currently in a state of Suspended can be resumed, only a contract in a state of Activated can be cancelled. For more information on API access states and valid actions, see <a href="business_administration_workflows.htm#what_is_the_default_workflow_for_app_api_contracts">What is the default workflow for app/API contracts?</a></li>
+  <li>Sandbox / Production&#8212;Represent the two environments that an API Access Request can be submitted for. Each column displays the current status of the API Access Request and available API management functions (e.g., Cancel, Suspend, Resume, Request Access, Switch to Production). The valid actions for a specific contract are determined by the current state of the contract; for example, only a contract that is currently in a state of Suspended can be resumed, and only a contract in a state of Activated can be cancelled. For more information on API access states and valid actions, see <a href="business_administration_workflows.htm#what_is_the_default_workflow_for_api_contracts">What is the default workflow for API contracts?</a></li>
 </ul>
-<p>The following table shows <em>App Status</em> and <em>App Management Tasks</em> for app/API contracts:</p>
+<p>The following tables provide explanations for information you might see on this page.</p>
 <table cellspacing="0px" class="doctable" style="width: 90%;">
   <thead>
   <tr>
@@ -910,6 +927,34 @@ http://&lt;API_URL&gt;/&lt;API_path&gt;?postalCode=90020&amp;o=xml&amp;key=AoCDR
   </tr>
 </tbody>
   </table>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="what_is_a_default_profile_for_a_rest_api"></a><h3>What is a Default Profile for a REST API?</h3>
+<p>When you're defining a REST API in the platform, the basic API definition includes a default profile. This determines the content-type for request and response that will be used if you don't specific anything different. It's just a default for timesaving purposes.  For example, if 80% of your operations send and receive JSON content, you can choose<strong> JSON in and out</strong>. The default is <strong>Any in and out</strong>.</p>
+<p>Once you've specified the most common scenario as the default profile, you can go ahead and specify content-type for any operations that have different values, by selecting from the list of available content-types. To view the list, click the <strong>Show</strong> link at the far right of the Default_Operation line, in the <strong>Settings</strong> column.</p>
+<p>You can also specify a custom content-type. See <a href="#how_do_i_define_a_custom_content_type_for_a_rest_api">How do I define a custom content-type for a REST API?</a> below.</p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_define_a_custom_content_type_for_a_rest_api"></a><h3>How do I define a custom content-type for a REST API?</h3>
+<p>When you're adding or editing the API definition for a REST API, you have three choices with regard to defining the content-type for request and response messages:</p>
+<ul>
+  <li>Specify a default that will apply to the majority of your operations. See <a href="#what_is_a_default_profile_for_a_rest_api">What is a Default Profile for a REST API?</a> above.</li>
+  <li>Specify content-type individually for any operation that is different from the default, by choosing from the list of common content-types provided.</li>
+  <li>Specify a custom content-type. See below.</li>
+</ul>
+<h5>To specify a custom content-type:</h5>
+<ol>
+  <li>Follow the instructions in <a href="#to_configure_a_rest_based_api">To configure a REST-based API</a> until you get to Step 3.</li>
+  <li>In the Settings column at the far right of the line for the operation, click the <strong>Show</strong> link. You will see the list of media types available for both request and response.</li>
+  <li>In the Request column, clear the <strong>API Default</strong> box, and then click <strong>Custom</strong>. A new field appears for you to define the custom content-type.</li>
+  <li>Specify the value. Make sure it's a valid media type with correct syntax.</li>
+  <li>Continue setting up your API, specifying a custom media type for other operations as needed, and then click <strong>Next</strong> to go to the <strong>Proxy</strong> page.</li>
+  <li>Follow the steps in <a href="#configure_proxy">Configure Proxy</a> above.</li>
+</ol>
 <p><a href="#top">Back to top</a></p>
 
 

@@ -18,6 +18,7 @@ no-catalog: true
 
 <h3 style="color: gray;">Table of Contents</h3>
 <ol class="table_of_contents">
+  <li><a href="#how_do_i_enable_a_login_domain">How do I enable a login domain?</a></li>
   <li><a href="#how_does_the_authentication_provider_configuration_process_work">How does the authentication provider configuration process work?</a></li>
   <li><a href="#what_domain_types_are_supported">What domain types are supported?</a></li>
   <li><a href="#how_do_i_configure_a_platform_login_default_domain">How do I configure a Platform Login (Default) domain?</a></li>
@@ -29,6 +30,7 @@ no-catalog: true
   <li><a href="#how_do_i_configure_access_permissions_for_openid">How do I configure access permissions for OpenID?</a></li>
   <li><a href="#what_is_an_authorization_server_url">What is an Authorization Server URL?</a></li>
   <li><a href="#how_do_i_set_up_a_platform_deployment_to_support_a_third_party_provider">How do I set up a platform deployment to support a third-party provider?</a></li>
+  <li><a href="#how_do_i_add_a_domain">How do I add a domain?</a></li>
   <li><a href="#how_do_i_modify_a_domain">How do I modify a domain?</a></li>
   <li><a href="#how_do_i_delete_a_domain">How do I delete a domain?</a></li>
   <li><a href="#how_do_i_setup_a_connector_domain">How do I set up a connector domain?</a></li>
@@ -38,6 +40,24 @@ no-catalog: true
   <li><a href="#how_do_i_set_up_the_platform_to_log_in_with_ldap">How do I set up the platform to log in with LDAP?</a></li>
 </ol>
 <div class = "divider1"></div>
+
+
+
+<a name="how_do_i_enable_a_login_domain"></a><h3>How do I enable a login domain?</h3>
+<p>In versions prior to the 7.1.0 release, certain security domains that allow login with email address and password were automatically enabled once the security domain was created in Administration / Domains.</p>
+<p> In version 7.1.0, the default has been changed to not allow the default platform login screen to fall back to security domains supporting email/password-based login. Instead, you must explicitly enable the login domain after adding it.</p>
+<p>If you have already configured the platform prior to upgrading to the version 7.1.0 release, your default option and configuration will be unchanged after upgrading. However, if you install 7.1.0 and then configure, you'll need to add the login domains and then enable them, in two separate steps.</p>
+<p>Notes:</p>
+<ul>
+<li>Adding a domain does not automatically enable it for user login in the developer portal.</li>
+<li>After adding one or more specific domains that you want to make available to your users for login to the platform, in Administration / Domains, enable those domains as a separate action.</li>
+<li>For new installations, if you want to restore the old setting so that platform login falls back to security domains supporting email/password login, run the query below query on the database (line break added for display purposes only, query should not include line break):
+  <pre>update LOGIN_RULES set AUTO_LOGIN_EXT_DOMAIN='com.soa.feature.enabled' where BUSINESSID in 
+(select BUSINESSID from TENANTS where FEDMEMBERID='<tenantid>';</pre>
+</li>
+</ul>
+<p>If you have further questions, <a href="basics_support.htm#how_do_i_contact_technical_support">contact SOA Software technical support</a>.</p>
+<p><a href="#top">Back to top</a></p>
 
 
 
@@ -80,8 +100,7 @@ no-catalog: true
 
 
 
-<a name="how_do_i_configure_a_facebook_connector_domain"></a>
-<h3>How do I configure a Facebook Connector domain?</h3>
+<a name="how_do_i_configure_a_facebook_connector_domain"></a><h3>How do I configure a Facebook Connector domain?</h3>
 <p>The Facebook Connector domain allows users to log into the platform using Facebook credentials. Essentially, the Site Admin registers the platform with Facebook as a Facebook app, and then uses the values provided by Facebook for App ID and App Secret to set up the Facebook Connector domain. Once this is set up, the Facebook icon appears during signup and users can log in using Facebook credentials.</p>
 <p><strong>Note</strong>: For certain actions, such as creating an API, users must complete the standard platform signup process. Logging in with Facebook is not adequate for these activities.</p>
 <p>Before setting up the domain in the platform, you'll need to register the platform as an app on the Facebook developer site and get the App ID and Shared Secret values. For instructions, see below.</p>
@@ -189,12 +208,6 @@ no-catalog: true
 
 
 
-
-
-
-
-
-
 <a name="how_do_i_configure_an_ldap_domain"></a><h3>How do I configure an LDAP domain?</h3>
 <p>The LDAP domain allows you to log into the platform using an LDAP domain defined in the <a href="basics_glossary.htm#gl_policy_manager">Policy Manager</a> Management Console.</p>
 <h5>Installation Method:</h5>
@@ -226,7 +239,7 @@ no-catalog: true
   <li>In the <em>Site Administration &gt; Domain</em>s section, the defined domain will be selectable from the <em>Resource Owner Authentication Domain</em> drop-down when you configure an OAuth Provider domain.</li>
   <li>In the <em>Site Administration &gt; Config &gt; Users</em> section the defined domain will be available on the <em>List of Users</em> page and can be enabled as a login option.</li>
 </ul>
-<h5>To configure an OpenID login resource:</h5>
+<a name="configure_openid_login_resource"></a><h5>To configure an OpenID login resource:</h5>
 <ol>
   <li>Click the <em>Administration</em> quick filter (wrench icon). The <em>Site Administration</em> page displays.</li>
   <li>Click <strong>Domains</strong>. The <em>Domains Summary</em> page displays.</li>
@@ -274,14 +287,40 @@ no-catalog: true
 
 
 
+<a name="how_do_i_add_a_domain"></a><h3>How do I add a domain?</h3>
+<h5>To add a domain:</h5>
+<ol>
+  <li>Navigate to <em>Site Administration &gt; Domains</em>. The <em>Domains Summary</em> displays.</li>
+  <li>In the right-hand column of the domain line item, click <strong>Modify</strong>. The <em>Edit</em> wizard for the specific domain type displays.</li>
+  <li>Follow the procedure for adding the specific domain type:
+    <ul>
+      <li> <a href="#to_configure_domain_oauth_provider">OAuth Provider</a></li>
+      <li><a href="#how_do_i_configure_an_openid_relying_party_domain">OpenID Relying Party</a></li>
+      <li><a href="#to_configure_domain_facebook_connector">Facebook Connector</a></li>
+      <li><a href="#how_do_i_configure_a_ca_siteminder_domain">CA Siteminder</a></li>
+    </ul>
+  </li>
+</ol>
+<p><em><strong>Note</strong>: Adding a domain does not automatically enable it for user login in the developer portal.</em> After adding it, you must enable it in the Config / Logins page.</p>
+<p><a href="#top">Back to top</a></p>
+
+
+
 <a name="how_do_i_modify_a_domain"></a><h3>How do I modify a domain?</h3>
 <h5>To modify a domain:</h5>
 <ol>
   <li>Navigate to <em>Site Administration &gt; Domains</em>. The <em>Domains Summary</em> displays.</li>
   <li>In the right-hand column of the domain line item, click <strong>Modify</strong>. The <em>Edit</em> wizard for the specific domain type displays.</li>
-  <li>Follow procedure you used for adding the specific domain type (i.e., OAuth Provider, OpenID Relying Party, Facebook Connector).</li>
-  <li><em>Note that the &quot;Domain Name&quot; cannot be changed after the domain is initially defined and will not be selectable. </em></li>
+  <li>Follow the procedure for adding the specific domain type:
+    <ul>
+      <li> <a href="#to_configure_domain_oauth_provider">OAuth Provider</a></li>
+      <li><a href="#how_do_i_configure_an_openid_relying_party_domain">OpenID Relying Party</a></li>
+      <li><a href="#to_configure_domain_facebook_connector">Facebook Connector</a></li>
+      <li><a href="#how_do_i_configure_a_ca_siteminder_domain">CA Siteminder</a></li>
+    </ul>
+  </li>
 </ol>
+<p><em><strong>Note</strong>: The domain name cannot be changed after the domain is initially defined and will not be selectable. </em></p>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -302,7 +341,7 @@ no-catalog: true
   <li>The process of configuring a connector domain involves adding a Facebook domain using the <strong>Add Domain</strong> function in the <strong>Site Administration &gt; Domains </strong> section, configuring the connector in using the <strong>Add Connector Domain Wizard</strong>, and enabling the domain in the <em>Site Administration &gt; Config &gt; Logins</em> section.</li>
   <li>After the configuration is complete, the connector domain icon will display in the <strong>Sign-in using external ID:</strong> section of the platform <em>Login</em> page.</li>
 </ul>
-<h5>To configure a connector domain:</h5>
+<a name="configure_domain_connector"></a><h5>To configure a connector domain:</h5>
 <ol>
   <li>Click the <em>Site Administration</em> quick filter. The <em>Site Admins</em> page displays.</li>
   <li>Click <strong>Domains</strong>. The <em>Domains Summary</em> page displays.</li>
@@ -327,7 +366,7 @@ no-catalog: true
   <li>The process of configuring a Facebook login involves adding a Facebook domain using the <strong>Add Domain</strong> function in the <strong>Site Administration &gt; Domains </strong> section, configuring the connector in using the <strong>Add Connector Domain Wizard</strong>, and enabling the domain in the <em>Site Administration &gt; Config &gt; Logins</em> section.</li>
   <li>After the configuration is complete, the Facebook icon will display in the <strong>Sign-in using external ID:</strong> section of the platform <em>Login</em> page.</li>
 </ul>
-<h5>To configure a Facebook login:</h5>
+<a name="configure_domain_facebook"></a><h5>To configure a Facebook login:</h5>
 <ol>
   <li>Click the <em>Administration</em> quick filter (wrench icon). The <em>Site Admins</em> page displays.</li>
   <li>Click <strong>Domains</strong>. The <em>Domains Summary</em> page displays.</li>
@@ -357,7 +396,7 @@ no-catalog: true
   <li>The process of configuring a Google login involves adding an OpenID Relying Party domain using the <strong>Add Domain</strong> function in the <strong>Site Administration &gt; Domains </strong> section, configuring the connector in using the <strong>OpenID Relying Party Wizard</strong>, and enabling the domain in the <em>Site Administration &gt; Config &gt; Logins</em> section.</li>
   <li>After the configuration is complete, the Google icon will display in the <strong>Sign-in using external ID:</strong> section of the platform <em>Login</em> page.</li>
 </ul>
-<h5>To configure a Google login:</h5>
+<a name="configure_login_google"></a><h5>To configure a Google login:</h5>
 <ol>
   <li>Click the <em>Administration</em> quick filter (wrrnch icon). The Site Administration page displays.</li>
   <li>Click <strong>Domains</strong>. The <em>Domains Summary</em> page displays.</li>
@@ -387,7 +426,7 @@ no-catalog: true
   <li>Enable and customize the domain in the <em>Site Administration &gt; Config &gt; Logins</em> section of the platform.</li>
   <li>After the configuration is complete, the CA SiteMinder icon will display in the <strong>Sign-in using external ID:</strong> section of the platform <em>Login</em> page.</li>
 </ul>
-<h5>To configure a CA SiteMinder login:</h5>
+<a name="configure_login_ca_siteminder"></a><h5>To configure a CA SiteMinder login:</h5>
 <ol>
   <li>Configure the CA SiteMinder domain in the <em>Configure &gt; Security &gt; Identity Systems </em>section of Policy Manager.</li>
   <li>The next step is to enable the CA SiteMinder Domain. In the platform, navigate to <em>Site Administration &gt; Config &gt; Logins</em>. The <em>Configure</em> screen displays and the Google domain you just added will display in the listing.</li>
@@ -408,7 +447,7 @@ no-catalog: true
   <li>Enable and customize the domain in the <em>Site Administration &gt; Config &gt; Logins</em> section of the platform.</li>
   <li>After the configuration is complete, the LDAP icon will display in the <strong>Sign-in using external ID:</strong> section of the platform <em>Login</em> page.</li>
 </ul>
-<h5>To configure an LDAP login:</h5>
+<a name="configure_login_ldap"></a><h5>To configure an LDAP login:</h5>
 <ol>
   <li>Configure the LDAP domain in the <em>Configure &gt; Security &gt; Identity Systems </em>section of Policy Manager.</li>
   <li>The next step is to enable the LDAP Domain. In the platform, navigate to <em>Site Administration &gt; Config &gt; Logins</em>. The <em>Configure</em> screen displays and the LDAP domain you just added will display in the listing.</li>
