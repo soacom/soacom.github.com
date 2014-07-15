@@ -153,5 +153,10 @@
 						$('#soa-control-dc-search-results').hide();
 						$('#soa-control-dc-overlay').removeClass('soa-ui-dc-overlay-visible');
 					});
+					$("#soa-control-dc-overlay").click(function(e){
+						e.preventDefault();
+						$('#soa-control-dc-search-results').hide();
+						$('#soa-control-dc-overlay').removeClass('soa-ui-dc-overlay-visible');
+					});
 				});
 			</script>

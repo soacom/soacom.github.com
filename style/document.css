@@ -532,6 +532,14 @@ a.docs_overview_signup {
 .supportContent .doctable, .supportContent p.apidoc_note {
 	margin: 0 20px 15px;
 }
+/* remove comments to enable horizontal scroll
+.supportContent pre code {
+	white-space: pre;
+}
+.supportContent pre {
+	white-space: pre;
+	word-wrap: normal;
+}*/
 .horizontalDottedDivider {
     border-bottom: 1px dotted black;
     height: 0;
@@ -566,12 +574,13 @@ div.documentation dd { /*glossary definition*/
 
 
 .supportContent pre { /*Added 11/12/13 */
-	background: #F8F4EE;
+	background: #f6f6f6;
 	font-family: "Courier New", Courier, monospace;
 	font-size: 11px;
 	padding-top: 0px;
 	padding-right: 2px;
-	padding-bottom: 10px;
+	padding-bottom: 0px;
+	margin-bottom: 10px;
 	padding-left: 2px;
 	overflow-x:auto;
 	line-height: 15px;

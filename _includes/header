@@ -8,6 +8,7 @@
             <link rel="stylesheet" href="{{ site.baseurl }}/style/base.css" type="text/css">
             <link rel="stylesheet" href="{{ site.baseurl }}/style/style.css" type="text/css">
             <link rel="stylesheet" href="{{ site.baseurl }}/style/document.css" type="text/css">
+	    <link rel="stylesheet" href="{{ site.baseurl }}/style/pygments.css" type="text/css">
 
             <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700' rel='stylesheet' type='text/css'>
             <link rel="icon" type="image/png" href="http://soa.com/favicon.ico">
