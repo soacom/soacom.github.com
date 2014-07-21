@@ -11,12 +11,15 @@ sub-nav-class: apis
 no-catalog: true
 ---
 
+<!-- InstanceBeginEditable name="Heading" -->
 <h2><a name="top"></a>POST&nbsp;/api/apis</h2>
-<p><!-- #BeginLibraryItem "/Library/desc_addAPI.lbi" -->
-Adds a new API to the platform, and also adds the first API version.<!-- #EndLibraryItem -->This operation sends the new API info in JSON or XML format. The platform assigns the APIID and returns the full API info in the response.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/Library/roles_user.lbi" --> To complete this operation successfully, a user must be logged in<!-- #EndLibraryItem -->. The user who adds the API automatically becomes the first API Administrator.</p>
-<p><!-- #BeginLibraryItem "/Library/_authtokenrenewal.lbi" -->
-<strong>Authorization token renewal</strong>: This operation changes information that is reflected in the authorization token; therefore, when invoking this operation, you  must also renew the token.<!-- #EndLibraryItem --></p><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<!-- InstanceEndEditable -->
+
+<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
+<p><!-- #BeginLibraryItem "/Library/desc_addAPI.lbi" --> Adds a new API to the platform, and also adds the first API version.<!-- #EndLibraryItem -->This operation sends the new API info in JSON or XML format. The platform assigns the APIID and returns the full API info in the response.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:&nbsp;<!-- #BeginLibraryItem "/Library/roles_user.lbi" -->To complete this operation successfully, a user must be logged in.<!-- #EndLibraryItem -->&nbsp;The user who adds the API automatically becomes the first API Administrator.</p>
+<p><!-- #BeginLibraryItem "/Library/_authtokenrenewal.lbi" --> <strong>Authorization token renewal</strong>: This operation changes information that is reflected in the authorization token; therefore, when invoking this operation, you  must also renew the token.<!-- #EndLibraryItem --></p>
+<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
   <tr>
@@ -38,15 +41,19 @@ Adds a new API to the platform, and also adds the first API version.<!-- #EndLib
 </td>
   </tr>
 </table><!-- #EndLibraryItem --><h3 id="httpmethod">HTTP Method</h3>
+<!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">POST</p>
+<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-
 
 <h3 id="endpoint">URL</h3>
+<!-- InstanceBeginEditable name="URL" -->
 <pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis</pre>
+<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
+<!-- InstanceBeginEditable name="Sample Request" -->
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below adds an API named <strong>ACMEPayments</strong>.</p>
 <p><strong>Request URL</strong></p>
@@ -290,12 +297,13 @@ Content-Type: application/json; charset=UTF-8</pre>
 &lt;/API&gt;
 
 </pre>
-
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -305,18 +313,20 @@ Content-Type: application/json; charset=UTF-8</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_json_or_appxml.lbi" --><strong>application/json</strong> or <strong>application/xml</strong><!-- #EndLibraryItem --></td>
+      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appxml_or_appjson.lbi" --><strong>application/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_request">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_json_or_appxml.lbi" --><strong>application/json</strong> or <strong>application/xml</strong><!-- #EndLibraryItem --></td>
+      <td><a href="../Ref_API_Reference.htm#contenttype_request">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appxml_or_appjson.lbi" --><strong>application/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
-  </tbody>
+    </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Request Parameters" -->
 <h3 id="requestparameters">Request Parameters</h3>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
@@ -334,19 +344,22 @@ Content-Type: application/json; charset=UTF-8</pre>
       <td>Body</td>
       <td><a href="../obj/o_apis_API.htm">API</a></td>
       <td>Required</td>
-      <td><!-- #BeginLibraryItem "/Library/o_apis_API.lbi" -->
-Includes information about an API.<!-- #EndLibraryItem --> The request API object does not include APIID or APIVersionID.</td>
-  </tr>
-</tbody>
+      <td><!-- #BeginLibraryItem "/Library/o_apis_API.lbi" --> Includes information about an API.<!-- #EndLibraryItem --> The request API object does not include APIID or APIVersionID.</td>
+    </tr>
+  </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Response Description" -->
 <h3 id="response">Response</h3>
-<p id="id_successstatement">If successful, this method returns HTTP status code 200, with the API information, including the unique APIID for the new API.</p>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with the API information, including the unique APIID for the new API.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Sample Response" -->
 <h3 id="sampleresponse">Sample Response</h3>
 <p id="id_sampleresponse">The sample response below shows the information for the <strong>ACMEPayments</strong> API, in the form of a JSON object as specified in the sample request.</p>
 
@@ -570,54 +583,59 @@ Atmo-Renew-Token: renew</pre>
   &lt;/APIVersion&gt;
 &lt;/API&gt;</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
-<thead>
-  <tr bgcolor="#DDDDDD">
-    <th width="20%">Header</th>
-    <th width="80%">Description</th>
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Header</th>
+      <th width="80%">Description</th>
     </tr>
-</thead>
-<tbody>
+  </thead>
+  <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_json_or_appxml.lbi" --><strong>application/json</strong> or <strong>application/xml</strong><!-- #EndLibraryItem --></td>
+      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appxml_or_appjson.lbi" --><strong>application/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../Ref_apireference.htm#atmorenewtoken">Atmo-Renew-Token</a></td>
-      <td><strong><a href="../Ref_apireference.htm#atmorenewtoken">renew</a></strong></td>
+      <td><a href="../Ref_API_Reference.htm#atmorenewtoken">Atmo-Renew-Token</a></td>
+      <td><strong>renew</strong></td>
     </tr>
-</tbody>
+    </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Response Body" -->
 <h3 id="responsebody">Response Body</h3>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
-<thead>
-  <tr bgcolor="#DDDDDD">
-    <th width="20%">Name</th>
-    <th width="15%">Type</th>
-    <th width="65%">Description</th>
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Name</th>
+      <th width="15%">Type</th>
+      <th width="65%">Description</th>
     </tr>
-</thead>
-<tbody>
+  </thead>
+  <tbody>
     <tr>
       <td>API</td>
       <td><a href="../obj/o_apis_API.htm">API</a></td>
-      <td><!-- #BeginLibraryItem "/Library/o_apis_API.lbi" -->
-Includes information about an API.<!-- #EndLibraryItem --> The response message includes APIID, Name, Description, Visibility, Tags, APIVersion (info on the first API version), and PictureID.</td>
-  </tr>
-</tbody>
+      <td><!-- #BeginLibraryItem "/Library/o_apis_API.lbi" --> Includes information about an API.<!-- #EndLibraryItem --> The response message includes APIID, Name, Description, Visibility, Tags, APIVersion (info on the first API version), and PictureID.</td>
+    </tr>
+  </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
 <h3 id="errorcodes">Error Codes/Messages</h3>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
+<!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -627,17 +645,22 @@ Includes information about an API.<!-- #EndLibraryItem --> The response message 
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#http400">400</a></td>
+      <td><a href="../Ref_API_Reference.htm#http400">400</a></td>
       <td>Bad request: Returned if the client sends invalid parameters or body content.
-For example, you might get this response if you send malformed XML in your request.</td>
-  </tr>
+        For example, you might get this response if you send malformed XML in your request.</td>
+    </tr>
     <tr>
-      <td><a href="../Ref_apireference.htm#http500">500</a></td>
+      <td><a href="../Ref_API_Reference.htm#http405">405</a></td>
+      <td><!-- #BeginLibraryItem "/Library/http_405.lbi" --> Method Not Allowed. For example, you might get this if you specified an invalid Accept header or omitted a required Content-Type header.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
-  </tr>
-  </tbody>
+    </tr>
+    </tbody>
 </table>
-<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of Enterprise API Platform API error messages.</a></p>
+<!-- InstanceEndEditable -->
+<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -646,14 +669,14 @@ For example, you might get this response if you send malformed XML in your reque
   <tr>
     <td width="300"><ul>
   <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

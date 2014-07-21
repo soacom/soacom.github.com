@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Apps Service | Overview | Enterprise API Platform API
-description:  The Apps service provides a REST interface and a set of operations for managing apps in the Enterprise API Platform. This service incluces operations to support complete app lifecycle management, including such activities as creating, modifying, and deleting apps and app versions, managing app teams, and creating, modifying, and deleting the app security mechanism.
+description:  The Apps service provides a REST interface and a set of operations for managing apps in the&nbsp;Enterprise API Platform. This service incluces operations to support complete app lifecycle management, including such activities as creating, modifying, and deleting apps and app versions, managing app teams, and creating, modifying, and deleting the app security mechanism.
 product: cm
 category: ref
 nav-title: Apps Service 
@@ -13,8 +13,8 @@ no-catalog: false
 
 <h2><a name="top"></a>Apps Service: Overview</h2>
 <p><!-- #BeginLibraryItem "/Library/descsvc_apps.lbi" -->
-The Apps service provides a REST interface and a set of operations for managing apps in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->. This service incluces operations to support complete app lifecycle management, including such activities as creating, modifying, and deleting apps and app versions, managing app teams, and creating, modifying, and deleting the app security mechanism.<!-- #EndLibraryItem --></p>
-<p>If you want to generate a list of apps for a specific user, that operation is part of the Users service: <a href="users/m_users_getApps.htm">GET&nbsp;/api/users/{UserID}/apps</a>.</p>
+The Apps service provides a REST interface and a set of operations for managing apps in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->. This service incluces operations to support complete app lifecycle management, including such activities as creating, modifying, and deleting apps and app versions, managing app teams, and creating, modifying, and deleting the app security mechanism.<!-- #EndLibraryItem --></p>
+<p>If you want to generate a list of apps for a specific user, that operation is part of the Users service: <span class="apidoc_code"><a href="users/m_users_getApps.htm">GET&nbsp;/api/users/{UserID}/apps</a></span>.</p>
 <p class="apidoc_note"><strong>Note</strong>: For more information about managing apps and app versions, see <a href="Ref_ManagingAppVersions.htm">Managing App Versions</a>.</p>
 <p><strong>URL</strong>: <span class="apidoc_code"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps</span></p>
 
@@ -82,13 +82,13 @@ Deletes the specified version of an app.<!-- #EndLibraryItem --></td>
     <td>export metrics</td>
     <td><a href="apps/m_apps_exportMetrics.htm">GET&nbsp;/api/apps/versions/{AppVersionID}/metrics/export</a></td>
     <td><!-- #BeginLibraryItem "/Library/desc_exportMetrics_apps.lbi" -->
-Exports a summary of metric information for the specified app version, in the form of a <a href="glossary_communityplatform.htm#gl_csv">CSV</a> file.<!-- #EndLibraryItem --></td>
+Exports a summary of metric information for the specified app version, in the form of a <a href="Ref_Glossary_CommunityPlatform.htm#gl_csv">CSV</a> file.<!-- #EndLibraryItem --></td>
   </tr>
   <tr>
     <td>export usage logs</td>
     <td><a href="apps/m_apps_exportUsageLogs.htm">GET&nbsp;/api/apps/versions/{AppVersionID}/txlogs/export</a></td>
     <td><!-- #BeginLibraryItem "/Library/desc_exportUsageLogs_app.lbi" -->
-Exports the transaction log for an app version's usage of an API, to a <a href="glossary_communityplatform.htm#gl_csv">CSV</a> file.<!-- #EndLibraryItem --></td>
+Exports the transaction log for an app version's usage of an API, to a <a href="Ref_Glossary_CommunityPlatform.htm#gl_csv">CSV</a> file.<!-- #EndLibraryItem --></td>
   </tr>
   <tr>
     <td>get API legals</td>
@@ -116,7 +116,7 @@ Returns the OAuth Client properties for the app, if any exist.<!-- #EndLibraryIt
   <tr>
     <td>get app public profile</td>
     <td><a href="apps/m_apps_getAppPublicProfile.htm">GET&nbsp;/api/apps/versions/{RuntimeID}/publicprofile</a></td>
-    <td><!-- #BeginLibraryItem "/Library/desc_getAppPublicProfile.lbi" -->Returns information about an app's <a href="glossary_communityplatform.htm#gl_publicprofile_app">public profile</a>.<!-- #EndLibraryItem --></td>
+    <td><!-- #BeginLibraryItem "/Library/desc_getAppPublicProfile.lbi" -->Returns information about an app's <a href="Ref_Glossary_CommunityPlatform.htm#gl_publicprofile_app">public profile</a>, if the public profile has been set up.<!-- #EndLibraryItem --></td>
   </tr>
   <tr>
     <td>get app public profile picture</td>
@@ -142,7 +142,7 @@ Returns the OAuth Client properties for the app, if any exist.<!-- #EndLibraryIt
     <td>get avatar</td>
     <td><a href="resource/m_getAvatar.htm">GET&nbsp;/api/apps/{AppID}/avatars/{AvatarVersionID}.png</a></td>
     <td><!-- #BeginLibraryItem "/Library/desc_getAvatar_all.lbi" -->
-Retrieves the specified avatar associated with the specified resource. The avatar might be the current one or an earlier one.<!-- #EndLibraryItem --></td>
+Retrieves the specified avatar version associated with the specified resource. The avatar might be the current one or an earlier one.<!-- #EndLibraryItem --></td>
   </tr>
   <tr>
     <td>get board</td>
@@ -172,7 +172,7 @@ Returns information about the users who are following the specified app.<!-- #En
     <td>get image</td>
     <td><a href="resource/m_getAvatar.htm">GET&nbsp;/api/apps/{AvatarVersionID}/picture</a></td>
     <td><!-- #BeginLibraryItem "/Library/desc_getAvatar_all.lbi" -->
-Retrieves the specified avatar associated with the specified resource. The avatar might be the current one or an earlier one.<!-- #EndLibraryItem --></td>
+Retrieves the specified avatar version associated with the specified resource. The avatar might be the current one or an earlier one.<!-- #EndLibraryItem --></td>
   </tr>
   <tr>
     <td>get key info</td>
@@ -259,10 +259,11 @@ Changes one or more values for an app (Name and/or Description).<!-- #EndLibrary
   </tr>-->
 <!--  <tr>
     <td>modify app version governing workflow</td>
-    <td><a href="apps/__m-apps_modifyAppVersionGoverningWorkflow.htm">PUT&nbsp;/api/apps/versions/{AppVersionID}/governingworkflow</a></td>
-    <td>lib</td>
+    <td>PUT&nbsp;/api/apps/versions/{AppVersionID}/governingworkflow</td>
+    <td>&nbsp;</td>
   </tr>
--->  <tr>
+-->
+  <tr>
     <td>modify version</td>
     <td><a href="apps/m_apps_modifyVersion.htm">PUT&nbsp;/api/apps/versions/{RuntimeID}</a></td>
     <td><!-- #BeginLibraryItem "/Library/desc_modifyVersion.lbi" -->
@@ -277,7 +278,7 @@ Changes one or more values associated with an app version.<!-- #EndLibraryItem -
     <td>regenerate shared secret</td>
     <td><a href="apps/m_apps_regenerateSharedSecret.htm">PUT&nbsp;/api/apps/versions/{AppVersionID}/secret</a></td>
     <td><!-- #BeginLibraryItem "/Library/desc_regenerateSharedSecretdesc_.lbi" -->
-Regenerates the <a href="glossary_communityplatform.htm#gl_sharedsecret">shared secret</a> value for the specified app.<!-- #EndLibraryItem --></td>
+Regenerates the <a href="Ref_Glossary_CommunityPlatform.htm#gl_sharedsecret">shared secret</a> value for the specified app.<!-- #EndLibraryItem --></td>
   </tr>
   <tr>
     <td>remove key info</td>
@@ -321,14 +322,14 @@ Regenerates the <a href="glossary_communityplatform.htm#gl_sharedsecret">shared 
   <tr>
     <td width="300"><ul>
   <li><a href="index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

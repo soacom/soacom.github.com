@@ -22,6 +22,10 @@ no-catalog: true
 </thead>
 <tbody>
   <tr>
+    <td><a href="#values_apibindingtypes">API Binding Types</a></td>
+    <td><a href="#values_logininstructiontype">Login Instruction Types</a></td>
+    </tr>
+  <tr>
     <td><a href="#values_apicontractstatus">API Contract Status</a></td>
     <td><a href="#values_metrickey">Metric Key Values</a></td>
     </tr>
@@ -39,70 +43,85 @@ no-catalog: true
     </tr>
   <tr>
     <td><a href="#values_appsettings">App Settings</a></td>
-    <td><a href="#values_policytypes">Policy Types</a></td>
+    <td><a href="#values_policysubtypes">Policy SubTypes</a></td>
     </tr>
   <tr>
     <td><a href="#values_appstate">App State Values</a></td>
-    <td><a href="#values_reporttype">Report Type</a></td>
+    <td><a href="#values_policytypes">Policy Types</a></td>
     </tr>
   <tr>
     <td><a href="#values_contractenvironment">App/API Contract Environment Values</a></td>
-    <td><a href="#values_resourcetype">Resource Types</a></td>
+    <td><a href="#values_reporttype">Report Type</a></td>
     </tr>
   <tr>
     <td><a href="#values_appversionsettings">App Version Settings</a></td>
-    <td><a href="#values_sortby">Sort By Values</a></td>
+    <td><a href="#values_resourcetype">Resource Types</a></td>
     </tr>
   <tr>
     <td><a href="#values_avatarproviders">Avatar Providers</a></td>
-    <td><a href="#values_sortorder">Sort Order Values</a></td>
+    <td><a href="#values_sortby">Sort By Values</a></td>
     </tr>
   <tr>
     <td><a href="#values_boarditemtypes">Board Item Types</a></td>
-    <td><a href="#values_ticketlabel">Ticket Label Values</a></td>
+    <td><a href="#values_sortorder">Sort Order Values</a></td>
     </tr>
   <tr>
     <td><a href="#values_client_auth_policy_options">Client Authorization Policy Options</a></td>
-    <td><a href="#values_ticketstate">Ticket State Values</a></td>
+    <td><a href="#values_ticketlabel">Ticket Label Values</a></td>
     </tr>
   <tr>
     <td><a href="#values_displaymode">Display Mode</a></td>
-    <td><a href="#values_timeintervals">Time Intervals</a></td>
+    <td><a href="#values_ticketstate">Ticket State Values</a></td>
     </tr>
   <tr>
     <td><a href="#values_environment">Environment</a></td>
-    <td><a href="#values_useractions">User Actions on a Resource</a></td>
+    <td><a href="#values_timeintervals">Time Intervals</a></td>
     </tr>
   <tr>
     <td><a href="#values_groupmemberroles">Group Member Roles</a></td>
-    <td><a href="#values_userpreferences">User Preferences</a></td>
+    <td><a href="#values_useractions">User Actions on a Resource</a></td>
     </tr>
   <tr>
     <td><a href="#values_groupmembershipstates">Group Membership States</a></td>
-    <td><a href="#values_usersignupstate">User Signup State Values</a></td>
+    <td><a href="#values_userpreferences">User Preferences</a></td>
     </tr>
   <tr>
     <td><a href="#values_groupsettings">Group Settings</a></td>
-    <td><a href="#values_userstatus">User Status</a></td>
+    <td><a href="#values_usersignupstate">User Signup State Values</a></td>
     </tr>
   <tr>
     <td><a href="#values_groupstates">Group States</a></td>
-    <td><a href="#values_visibilitysettings">Visibility Settings</a></td>
+    <td><a href="#values_userstatus">User Status</a></td>
     </tr>
   <tr>
     <td><a href="#values_grouptypes">Group Types</a></td>
+    <td><a href="#values_visibilitysettings">Visibility Settings</a></td>
+    </tr>
+  <tr>
+    <td><a href="#values_idsystemtype">IdSystemType values for Login Connector Type</a></td>
     <td><a href="#values_workflowactions">Workflow Actions</a></td>
     </tr>
-  <tr>
-    <td><a href="#values_legalagreementtype">Legal Agreement Types</a></td>
-    <td><a href="#values_workflowstates">Workflow States</a></td>
-    </tr>
-  <tr>
-    <td><a href="#values_legaldocumentstate">Legal Document States</a></td>
-    <td><!--c--></td>
-    </tr>
-</tbody>
+    <tr>
+      <td><a href="#values_legalagreementtype">Legal Agreement Types</a></td>
+      <td><a href="#values_workflowstates">Workflow States</a></td>
+      </tr>
+    <tr>
+      <td><a href="#values_legaldocumentstate">Legal Document States</a></td>
+      <td>&nbsp;</td>
+      </tr>
+  </tbody>
 </table>
+
+
+
+<h3><a id="values_apibindingtypes"></a>API Binding Types</h3>
+<p>The binding type indicates whether an API is SOAP or REST. In some cases, a single API could have both binding types.</p>
+<p>Valid values for API binding type:</p>
+<ul>
+  <li>REST API: <strong>binding.http </strong></li>
+  <li>SOAP 1.1 API: <strong>binding.soap11 </strong></li>
+  <li>SOAP 1.2 API: <strong>binding.soap12 </strong></li>
+</ul><p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 
@@ -112,7 +131,7 @@ no-catalog: true
 <p>The status values for an API contract are:</p>
 <ul>
   <li>apicontract.status.pending_approval</li>
-  <li>apicontract.status.config_pending (used only in certain custom workflow scenarios or in <a href="glossary_communityplatform.htm#gl_laas">LaaS</a> integration)</li>
+  <li>apicontract.status.config_pending (used only in certain custom workflow scenarios or in <a href="Ref_Glossary_CommunityPlatform.htm#gl_laas">LaaS</a> integration)</li>
   <li>apicontract.status.approved</li>
   <li>apicontract.status.activated</li>
   <li>apicontract.status.rejected</li>
@@ -130,18 +149,21 @@ no-catalog: true
 <p>There are two valid states for an API:</p>
 <ul>
   <li><strong>Active</strong>: com.soa.api.state.active</li>
-  <li> <strong>Deleted</strong>: com.soa.api.state.deleted</li>
+  <li><strong>Deleted</strong>: com.soa.api.state.deleted</li>
 </ul>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 
-<h3><a id="values_apitypes"></a>API Types</h3><!-- #BeginLibraryItem "/Library/values_APIType.lbi" --><p>Valid values:</p>
-        <ul class="apidoctable_ul">
-          <li>REST API: <strong>shttp</strong></li>
-          <li>SOAP 1.1 API: <strong>soap11</strong></li>
-          <li>SOAP 1.2 API: <strong>soap12</strong></li>
-        </ul><!-- #EndLibraryItem --><p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<h3><a id="values_apitypes"></a>API Types</h3>
+<p>API Types are deprecated. We now use <a href="#values_apibindingtypes">API Binding Types</a> instead. Although the values are shown below, do not use API Types.</p>
+<p> Values:</p>
+<ul>
+  <li>REST API: <strong>shttp</strong></li>
+  <li>SOAP 1.1 API: <strong>soap11</strong></li>
+  <li>SOAP 1.2 API: <strong>soap12</strong></li>
+</ul>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 
@@ -233,8 +255,8 @@ no-catalog: true
       <td>UserDefinedIdentitySupport</td>
       <td><ul class="apidoctable_ul">
         <li>com.soa.feature.disabled</li>
-        <li>          com.soa.feature.enabled</li>
-        <li>          com.soa.feature.enabled.for.siteadmins</li>
+        <li>com.soa.feature.enabled</li>
+        <li>com.soa.feature.enabled.for.siteadmins</li>
       </ul></td>
     </tr>
     <tr>
@@ -260,11 +282,11 @@ no-catalog: true
 
 
 <h3><a id="values_appstate"></a>App State Values</h3>
-<p>There are five possible states for an app in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->. When a user first creates an app, the app state is <strong>Initial</strong>. Other possible values are: <strong>Sandbox</strong>, <strong>Review</strong>, <strong>Approved</strong>, <strong>Live</strong>.</p>
+<p>There are five possible states for an app in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->. When a user first creates an app, the app state is <strong>Initial</strong>. Other possible values are: <strong>Sandbox</strong>, <strong>Review</strong>, <strong>Approved</strong>, <strong>Live</strong>.</p>
 <p>When an app is first set up, before any API contracts are initiated, it is in the Initial state.</p>
 <p>Changes in state are part of the sequence as an app requests access to first one environment and then the other.</p>
 <p>In setting up the sequence for granting access to an API's sandbox or production environment, the API provider can choose whether a review stage is needed before sandbox access is granted, and also whether review is needed before production access is granted. As an example,  the API owner might decide to grant sandbox access automatically but to require review before approving production access.</p>
-<p>The <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> user interface is designed to guide app developers through these state changes.</p>
+<p>The&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;user interface is designed to guide app developers through these state changes.</p>
 <p class="apidoc_note"><strong>Note</strong>: Changing an app's state to <strong>production</strong> gives an application access to the production endpoints of all the APIs it has contracts with. This can only be achieved if <strong>all</strong> of the app's API contracts are approved as production contracts.</p>
 
 <p>When a user first creates an app, the app state is <strong>Initial</strong>. Other possible values are: <strong>Sandbox</strong>, <strong>Review</strong>, <strong>Approved</strong>, <strong>Live</strong>.</p>
@@ -423,8 +445,8 @@ no-catalog: true
       <th width="20%">Value</th>
       <th width="80%">Description</th>
       </tr>
-</thead>
-<tbody>
+  </thead>
+  <tbody>
     <tr>
       <td><a id="com_soa_oauth_client_public"></a>com.soa.oauth.client.public</td>
       <td>Public Client. Client does not provide shared secret or PKI; verification is based only on the redirect URL. All OAuth grant types are supported. When using our provider, the app visibility must be set to Public.</td>
@@ -440,8 +462,8 @@ no-catalog: true
     <tr>
       <td><a id="com_soa_oauth_client_security_client_id_security"></a>com.soa.oauth.client.security.client.id_security</td>
       <td>Confidential Client. Client uses client_id and client_secret as HTTP GET/POST&nbsp;parameters, as outlined in the OAuth 2.0 specification.</td>
-      </tr>
-</tbody>
+    </tr>
+  </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -459,7 +481,7 @@ no-catalog: true
 
 
 <h3><a id="values_environment"></a>Environment</h3>
-<p>Valid values for <a href="glossary_communityplatform.htm#gl_environment">environment</a> are as follows:</p>
+<p>Valid values for <a href="Ref_Glossary_CommunityPlatform.htm#gl_environment">environment</a> are as follows:</p>
 <ul>
   <li>Sandbox</li>
   <li>Production</li>
@@ -595,7 +617,7 @@ no-catalog: true
 
 
 <h3><a id="values_grouptypes"></a>Group Types</h3>
-<p>In practical terms, the only valid group type you'll see in working with the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API is for an independent group:</p>
+<p>In practical terms, the only valid group type you'll see in working with the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API is for an independent group:</p>
 <ul>
   <li>com.soa.group.type.independent</li>
 </ul>
@@ -606,13 +628,47 @@ no-catalog: true
 
 
 
+<h3><a id="values_idsystemtype"></a>IdSystemType values for Login Connector Type</h3>
+<p>Each login domain connector type has a unique <strong>IdSystemType</strong> value. The login domain connector types that are available for a specific instance of the platform depend on the nature of the platform instance, including installation and configuration choices and any customization.</p>
+<p>Some of the standard <strong>IdSystemType</strong> values are shown below. For additional connector types, refer to the documentation from the connector providor.</p>
+<p>You can check the <strong>IdSystemType</strong> values for your installation by running the <span class="apidoc_code"><a href="login/m_login_getLoginDomains.htm">GET&nbsp;/api/login/domains</a></span> operation.</p>
+<table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
+  <thead>
+    <tr>
+      <th width="33%">This Value...</th>
+      <th width="67%">Is used for this type of login connector...</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>com.soa.securitydomain.openid.relyingparty</td>
+      <td>Google login</td>
+    </tr>
+    <tr>
+      <td>com.soa.securitydomain.fb.connector</td>
+      <td>Facebook login</td>
+    </tr>
+    <tr>
+      <td>Directory Server</td>
+      <td>LDAP/Active Directory login</td>
+    </tr>
+    <tr>
+      <td>Policy Manager</td>
+      <td>Platform login</td>
+    </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
 <h3><a id="values_legalagreementtype"></a>Legal Agreement Types</h3>
 <p>The platform allows you to specify a type for your legal agreement documents. The only reserved legal agreement type is the signup agreement, as listed below.</p>
 <table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
   <thead>
     <tr>
-      <th width="20%">Value</th>
-      <th width="80%">Description</th>
+      <th width="33%">Value</th>
+      <th width="67%">Description</th>
       </tr>
   </thead>
   <tbody>
@@ -631,13 +687,41 @@ no-catalog: true
 
 
 <h3><a id="values_legaldocumentstate"></a>Legal Document States</h3>
-<p>The State or DocumentState value of a legal document indicates its  activation state. When the document is first added, it is in a <strong>draft</strong> state. Once the document has been activated, the API Admin can switch states between <strong>active</strong> and <strong>inactive</strong>.</p>
+<p>The State or DocumentState value of a legal document indicates its activation state. When the document is first added, it is in a <strong>draft</strong> state. Once the document has been activated, the API Admin can switch states between <strong>active</strong> and <strong>inactive</strong>.</p>
 <p>Possible values:</p>
 <ul>
   <li><strong>Draft</strong>: com.soa.status.draft</li>
   <li><strong>Active</strong>: com.soa.status.active</li>
   <li><strong>Inactive</strong>: com.soa.status.inactive</li>
 </ul>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+<h3><a id="values_logininstructiontype"></a>Login Instruction Types</h3>
+<p>Login instruction types (instructionType in the response message) are used by the login service.</p>
+<table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
+  <thead>
+    <tr>
+      <th width="33%">Value</th>
+      <th width="67%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>NeedCredentials</td>
+      <td>Login credentials are needed. Used for some LDAP logins. The specific credentials required are defined as part of the response. For example, login credentials might be Username and Password or SSN and PIN.</td>
+    </tr>
+    <tr>
+      <td>NeedRedirect</td>
+      <td>User must be redirected to another URL for validation. Used for identity providers such as Google and Facebook. The specific redirect URL is specified as part of the response. For example, login with Google redirects the user to a Google login screen (unless the user is already logged in).</td>
+    </tr>
+    <tr>
+      <td>Complete</td>
+      <td>Login is complete; nothing else is needed. Used in scenarios where an SSO provider uses a cookie as an SSO token; for example, SiteMinder.</td>
+    </tr>
+  </tbody>
+</table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -673,11 +757,11 @@ no-catalog: true
       <td>The user's app receives an alert.</td>
     </tr>
     <tr>
-      <td> com.soa.notification.type.app.lifecycle</td>
+      <td>com.soa.notification.type.app.lifecycle</td>
       <td>There is a major lifecycle change for the user's app.</td>
     </tr>
     <tr>
-      <td> com.soa.notification.type.app.post</td>
+      <td>com.soa.notification.type.app.post</td>
       <td>A post is created for the user's app.</td>
     </tr>
     <tr>
@@ -726,40 +810,70 @@ no-catalog: true
 
 
 
-<h3><a id="values_policytypes"></a>Policy Types</h3>
-<p>As part of API setup, the API owner or administrator defines one or more policies that govern the API's operation. Policies are categorized into the policy types listed below.</p>
-<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
-<thead>
+<h3><a id="values_policysubtypes"></a>Policy SubTypes</h3>
+<p>As part of API setup, the API owner or administrator can define one or more policies that govern the API's operation. Policies are categorized into <a href="#values_policytypes">policy types</a> and policy subtypes. Policy subtypes are listed below.</p>
+<table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
+  <thead>
     <tr>
-      <th width="20%">Value</th>
-      <th width="80%">Description</th>
-      </tr>
-</thead>
-<tbody>
+      <th width="33%">Value</th>
+      <th width="67%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
-      <td>POLICY_TYPE_MANAGEMENT_POLICY</td>
-      <td>Management Policy</td>
-      </tr>
+      <td>policy.apisec</td>
+      <td>API security policies</td>
+    </tr>
     <tr>
-      <td>POLICY_TYPE_DoS_POLICY</td>
-      <td>Denial of Service</td>
-      </tr>
+      <td>policy.auditservice</td>
+      <td>auditing policies</td>
+    </tr>
     <tr>
-      <td>POLICY_TYPE_SLA_POLICY</td>
-      <td>Service Level Policy</td>
-      </tr>
+      <td>policy.cors</td>
+      <td>CORS policy</td>
+    </tr>
     <tr>
-      <td>POLICY_TYPE_OPERATIONAL</td>
-      <td>Operational Policy</td>
-      </tr>
-    <tr>
-      <td>POLICY_TYPE_COMPLIANCE</td>
-      <td>Compliance Policy</td>
-      </tr>
-</tbody>
+      <td>policy.oauth</td>
+      <td>OAuth policy</td>
+    </tr>
+  </tbody>
 </table>
-<p>For an example of how policy type is used, see the <span class="apidoc_code"><a href="policies/m_policies_getPolicies.htm">GET&nbsp;/api/policies</a></span> operation.</p>
+<p>For an example of how policy subtype values are used, see the <span class="apidoc_code"><a href="policies/m_policies_getPolicies.htm">GET&nbsp;/api/policies</a></span> operation.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+<h3><a id="values_policytypes"></a>Policy Types</h3>
+<p>As part of API setup, the API owner or administrator can define one or more policies that govern the API's operation. Policies are categorized into the policy types listed below.</p>
+<table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
+  <thead>
+    <tr>
+      <th width="33%">Value</th>
+      <th width="67%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Denial of Service</td>
+      <td><!-- #BeginLibraryItem "/Library/policy_denialofservice.lbi" -->A policy that defines conditions for protecting against, and/or dealing with, a Denial of Service attack.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>Service Level Policy</td>
+      <td><!-- #BeginLibraryItem "/Library/policy_servicelevel.lbi" -->A specific type of Quality of Service (QoS) policy that defines conditions for measuring and reporting performance for a specific contract.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>Operational Policy</td>
+      <td><!-- #BeginLibraryItem "/Library/policy_operational.lbi" -->A policy that defines requirements for addressing the operational implications of services that are shared across enterprise departments. These policies address the operational model for services, capacity monitoring and planning, the handling of policy exceptions and violations, and service execution including the definition and enforcement of runtime policies such as security, access, logging procedures, and service reliability.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>Compliance Policy</td>
+      <td><!-- #BeginLibraryItem "/Library/policy_compliance.lbi" -->A policy that allows an organization to create standards that control the quality of the data in the repository. These policies can be used to analyze the service metamodel, WSDL documents, Schema, and transactional data to determine whether they meet corporate standards.<!-- #EndLibraryItem --></td>
+    </tr>
+  </tbody>
+</table>
+<p>For an example of how policy type values are used, see the <span class="apidoc_code"><a href="policies/m_policies_getPolicies.htm">GET&nbsp;/api/policies</a></span> operation.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
 
 
 <h3><a id="values_reporttype"></a>Report Type</h3>
@@ -776,7 +890,7 @@ no-catalog: true
   <thead>
     <tr>
       <th width="33%">Value</th>
-      <th width="33%">Usage in Platform UI / Output Info</th>
+      <th width="67%">Usage in Platform UI / Output Info</th>
     </tr>
   </thead>
   <tbody>
@@ -853,7 +967,7 @@ no-catalog: true
     </tr>
     <tr>
       <td>SORT_BY_CONNECTIONS</td>
-      <td> com.soa.sort.order.connections</td>
+      <td>com.soa.sort.order.connections</td>
       <td>Items with the most connections are first.</td>
     </tr>
     <tr>
@@ -1101,15 +1215,25 @@ no-catalog: true
 
 
 <h3><a id="values_visibilitysettings"></a>Visibility Settings</h3>
+<p>Valid visibility values are generally Public or Limited. For details, see below.</p>
+<h4>Visibility for apps, APIs, or groups</h4>
 <p>For app, API, or group visibility, there are two valid values:<br />
 </p>
 <ul>
   <li>Public: everyone can see the app or API.</li>
   <li>Limited: an app is visible only to app team members; an API is visible only to API Administrators or Private API Group members.</li>
 </ul>
+<h4>Visibility for licenses and scopes</h4>
+<p>For licenses and scopes, there are two valid values:</p>
+<ul>
+  <li>Public: anyone who is authorized to see an API can see public licenses or scopes associated with the API.</li>
+  <li>Limited: users must be authorized to see the API and, additionally, specifically invited to have visibility to the private licenses or scopes. Uninvited users see other parts of the API, including public licenses, but do not see the private licenses or scopes.</li>
+</ul>
+<p>For general information on how privacy works with the License feature, refer to the Community Manager user interface help (<a href="http://docs.soa.com/cm/learnmore/ov_licenses.htm" target="_blank">Licenses</a>).</p>
+<h4>Visibility for users</h4>
 <p>For users, visibility is always Public.</p>
 <p class="apidoc_note"><strong>Note</strong>: If an app has multiple versions, the visibility setting for the app is Private if at least one version is set to Private.</p>
-<p>For more information about visibility of apps, see <a href="Ref_apireference.htm#ref_publicandprivateapps">Public and Limited (Private) Apps</a>.</p>
+<p>For more information about visibility of apps, see <a href="Ref_API_Reference.htm#ref_publicandprivateapps">Public and Limited (Private) Apps</a>.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -1250,14 +1374,14 @@ no-catalog: true
   <tr>
     <td width="300"><ul>
   <li><a href="index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

@@ -15,7 +15,7 @@ no-catalog: true
 <p>Some operations can be performed even if a user is not logged in to the platform, such as viewing certain types of content. Other operations, such as adding an app, require login.</p>
 <p>In other cases, activities are further restricted so that certain operations can only be performed by a member of a certain user group or group. For details about these scenarios, see <a href="#access_private">Access to Private Resources and Content</a> below.</p>
 <p>Certain roles, such as the business administrator, have a senior level of access to multiple resources.</p>
-<p>The authorization roles used by the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API are listed and explained below. If an API call doesn't meet the necessary authorization role criteria it fails. If a user doesn't have the required access to a private resource, the operation runs successfully, returning an HTTP code 200, but information relating to the private resource is not returned. Depending on the scenario, the response might include a subset of information or might not contain any information at all.</p>
+<p>The authorization roles used by the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API are listed and explained below. If an API call doesn't meet the necessary authorization role criteria it fails. If a user doesn't have the required access to a private resource, the operation runs successfully, returning an HTTP code 200, but information relating to the private resource is not returned. Depending on the scenario, the response might include a subset of information or might not contain any information at all.</p>
 <p>The documentation for each operation includes information on the authorization roles that are required to run the operation.</p>
 <p>Authorization role specification is prefaced by <strong>AuthorizationRole</strong>; for example, <strong>AuthorizationRole.USER</strong>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
@@ -59,7 +59,7 @@ no-catalog: true
   </tr>
 <tr>
   <td><a id="authroles_fedmember"></a>Fedmember</td>
-  <td>In a <a href="glossary_communityplatform.htm#gl_federation">federation</a> scenario only: Any federation member, for the <a href="glossary_communityplatform.htm#gl_tenant">tenant</a> hosting the applicable resource.</td>
+  <td>In a <a href="Ref_Glossary_CommunityPlatform.htm#gl_federation">federation</a> scenario only: Any federation member, for the <a href="Ref_Glossary_CommunityPlatform.htm#gl_tenant">tenant</a> hosting the applicable resource.</td>
 </tr>
 <tr>
       <td>Follower</td>
@@ -71,15 +71,15 @@ no-catalog: true
   </tr>-->
     <tr>
       <td><a id="authroles_admin_group"></a>Group Administrator</td>
-      <td>For Private API Groups, the Adminstrator role is held by the API Administrator. For independent groups, the <a href="glossary_communityplatform.htm#gl_groupadministrator">Administrator</a> role is the most senior role in the group, with greater rights than a <a href="#authroles_leader">Group Leader</a> or <a href="#authroles_member">Group Member</a>.</td>
+      <td>For Private API Groups, the Adminstrator role is held by the API Administrator. For independent groups, the <a href="Ref_Glossary_CommunityPlatform.htm#gl_groupadministrator">Administrator</a> role is the most senior role in the group, with greater rights than a <a href="#authroles_leader">Group Leader</a> or <a href="#authroles_member">Group Member</a>.</td>
   </tr>
     <tr>
       <td><a id="authroles_leader"></a>Group Leader</td>
-      <td>Private API Groups and independent groups only: A user who has a <a href="glossary_communityplatform.htm#gl_leader">Leader</a> role in the group. <a href="Ref_ManagingGroupsOnThePlatform.htm#groups_privateapi">Details about Private API Group</a> and <a href="Ref_ManagingGroupsOnThePlatform.htm#groups_independentgroup">Independent Group</a> member and leader rights.</td>
+      <td>Private API Groups and independent groups only: A user who has a <a href="Ref_Glossary_CommunityPlatform.htm#gl_leader">Leader</a> role in the group. <a href="Ref_ManagingGroupsOnThePlatform.htm#groups_privateapi">Details about Private API Group</a> and <a href="Ref_ManagingGroupsOnThePlatform.htm#groups_independentgroup">Independent Group</a> member and leader rights.</td>
     </tr>
     <tr>
       <td><a id="authroles_member"></a>Group Member</td>
-      <td>Private API Groups and independent groups only: A user who has a <a href="glossary_communityplatform.htm#gl_member">Member</a> role in the group. <a href="Ref_ManagingGroupsOnThePlatform.htm#groups_privateapi">Details about Private API Group</a> and <a href="Ref_ManagingGroupsOnThePlatform.htm#groups_independentgroup">Independent Group</a> member and leader rights.</td>
+      <td>Private API Groups and independent groups only: A user who has a <a href="Ref_Glossary_CommunityPlatform.htm#gl_member">Member</a> role in the group. <a href="Ref_ManagingGroupsOnThePlatform.htm#groups_privateapi">Details about Private API Group</a> and <a href="Ref_ManagingGroupsOnThePlatform.htm#groups_independentgroup">Independent Group</a> member and leader rights.</td>
     </tr>
 
 <!--  <tr>
@@ -97,7 +97,7 @@ no-catalog: true
     <tr>
       <td><a id="authroles_user"></a>User</td>
       <td><p>A user who is logged in. Most operations relating to users, such as changing user preferences and settings, can be performed only by the user or a site admin. Certain operations, such as changing the password, can be performed only by the authorized user (see <a href="#authroles_self">self</a>). Login is required for all operations relating to users except the operations relating to initial signup.</p>
-        <p><a href="glossary_communityplatform.htm#gl_private">Private</a> resources are available to a user only if the user has been granted specific access to those resources (see <a href="#authroles_authorizeduser">Authorized User</a>).</p></td>
+        <p><a href="Ref_Glossary_CommunityPlatform.htm#gl_private">Private</a> resources are available to a user only if the user has been granted specific access to those resources (see <a href="#authroles_authorizeduser">Authorized User</a>).</p></td>
   </tr>
     <tr>
       <td><a id="authroles_none"></a>Login not required</td>
@@ -115,7 +115,7 @@ no-catalog: true
 <h5>Private API Access</h5>
 <p>If an API version is private, it can be seen only by a user who has one of the following roles:</p>
 <ul>
-  <li> API Administrator</li>
+  <li>API Administrator</li>
   <li>Business Administrator</li>
   <li>Sie Administrator</li>
   
@@ -146,14 +146,14 @@ no-catalog: true
   <tr>
     <td width="300"><ul>
   <li><a href="index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

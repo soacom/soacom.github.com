@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Log In | Login Service | Enterprise API Platform API
-description:  Allows a registered user to log in, returning an authentication cookie that is used to make authenticated calls via the Enterprise API Platform. The cookie is valid for 25 minutes. To renew it, use the <span class="apidoc_code"><a href="m_login_renewToken.htm">POST&nbsp;/api/login/renewToken</a></span> method.
+description:  Allows a registered user to log in, returning an authentication cookie that is used to make authenticated calls via the&nbsp;Enterprise API Platform. The cookie is valid for 25 minutes. To renew it, use the <span class="apidoc_code"><a href="m_login_renewToken.htm">POST&nbsp;/api/login/renewToken</a></span> method.
 product: cm
 category: ref
 nav-title: Log In 
@@ -16,8 +16,8 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_Login.lbi" -->
-Allows a registered user to log in, returning an authentication cookie that is used to make authenticated calls via the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->. The cookie is valid for 25 minutes. To renew it, use the <span class="apidoc_code"><a href="m_login_renewToken.htm">POST&nbsp;/api/login/renewToken</a></span> method.<!-- #EndLibraryItem --></p>
+<p><!-- #BeginLibraryItem "/Library/desc_login_.lbi" -->
+Allows a registered user to log in, returning an authentication cookie that is used to make authenticated calls via the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->. The cookie is valid for 25 minutes. To renew it, use the <span class="apidoc_code"><a href="m_login_renewToken.htm">POST&nbsp;/api/login/renewToken</a></span> method.<!-- #EndLibraryItem --></p>
 <p class="apidoc_note"><strong>Note</strong>: If the response includes the pendingAgreements parameter, the user must accept any pending legal agreements, using the <a href="../legals/m_legals_acceptAgreement.htm">POST&nbsp;/api/legals/agreements</a> operation, before the login process is complete. </p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: To complete this operation successfully, a user must be registered on the platform.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
@@ -61,7 +61,8 @@ Allows a registered user to log in, returning an authentication cookie that is u
 <pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->login</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>POST&nbsp;/api/login HTTP/1.1
-Host:<!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!-- #EndLibraryItem -->Accept: application/json, text/javascript, */*; q=0.01
+Host: <!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!-- #EndLibraryItem -->
+Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/json; charset=UTF-8</pre>
 <p><strong>Sample request body</strong></p>
 <pre>{
@@ -74,7 +75,7 @@ Content-Type: application/json; charset=UTF-8</pre>
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -84,12 +85,12 @@ Content-Type: application/json; charset=UTF-8</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
-      <td>application/json, text/javascript, */*; q=0.01</td>
+      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
+      <td><strong>application/json</strong></td>
     </tr>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_request">Content-Type</a></td>
-      <td>application/json; charset=UTF-8</td>
+      <td><a href="../Ref_API_Reference.htm#contenttype_request">Content-Type</a></td>
+      <td><strong>application/json</strong></td>
     </tr>
     </tbody>
 </table>
@@ -125,7 +126,7 @@ Content-Type: application/json; charset=UTF-8</pre>
 
 <!-- InstanceBeginEditable name="Response Description" -->
 <h3 id="response">Response</h3>
-<p id="id_successstatement">If successful, this method returns HTTP status code 200, with an updated cookie for the user in JSON format.</p>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with an updated cookie for the user in JSON format.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -140,10 +141,10 @@ Content-Type: application/json</pre>
 <h5>Sample response body #1</h5>
 <p id="id_samplerequest2">The example below shows a LoginRequest object returned when a user signs in. There are no pending notifications for this user, and a fresh authorization token is returned. The authToken value includes line breaks for display purposes.</p>
 <pre>{
-  &quot;userName&quot; : &quot;JaneMead&quot;,
+  &quot;userName&quot; : &quot;JaneSaoirse&quot;,
   &quot;authToken&quot; : &quot;TokenID=a3e681cf-0283-11e2-bc9a-fee8d69763d6,claimed_id=urn:acme:user:acme:user10035,issueTime=
 1348077518865,expirationTime=1348079318830,Groups=[\&quot;group10038.acmecorp\&quot;],Followings=[\&quot;app10037.acmecorp\&quot;],
-AttributesIncluded=true,UserFDN=user10035.acmecorp,Apps=[\&quot;app10037.acmecorp\&quot;],UserName=JaneMead,sig=N5oiEMsEUwSpmSkPM
+AttributesIncluded=true,UserFDN=user10035.acmecorp,Apps=[\&quot;app10037.acmecorp\&quot;],UserName=JaneSaoirse,sig=N5oiEMsEUwSpmSkPM
 j4tLwr38o9fAQp1cXo6X4qM9ZPdf6n8mOhH2bFC8Yt2Q0CJVNTK7j4EEypIfPbfGSkBssCbQMgk2GgNzQQkpjXj1lTasPcg_fbHMbD6XgCAH41acYR9UCTywIVv
 mZuvHEsZE0gtgOav2oyvXlCO9EKdo4o&quot;,
   &quot;userFDN&quot; : &quot;user10035.acmecorp&quot;,
@@ -153,10 +154,10 @@ mZuvHEsZE0gtgOav2oyvXlCO9EKdo4o&quot;,
 <p id="id_samplerequest_2">The example below shows a scenario where the user must accept a pending legal agreement. Until the legal agreement is accepted, the login process isn't complete. This example also includes avatarURL since the user has specified a custom avatar.</p>
 <p>If there is a pending legal agreement, you must invoke the <span class="apidoc_code"><a href="../legals/m_legals_acceptAgreement.htm">POST&nbsp;/api/legals/agreements</a></span> operation, part of the Legals service, so that the user can accept the legal agreement and complete the login process.</p>
 <pre>{
-  &quot;userName&quot;: &quot;JaneMead&quot;,
+  &quot;userName&quot;: &quot;JaneSaoirse&quot;,
   &quot;authToken&quot;: &quot;TokenID%3D03c789e1-7f61-11e2-9935-a554e25a5b7c%2Cclaimed_id%3Durn%3Aacme%3Auser%3Aacmecorp%3A
 user10002%2CissueTime%3D1361806545094%2CexpirationTime%3D1361808342650%2CAttributesIncluded%3Dfalse%2CUserFDN%3D
-user10002%252Eopen%2CHasPendingAgreements%3Dtrue%2CUserName%3DJaneMead%2Csig%3DoWKUdvg32YdqILd_2QCto9RVqBLn8UmT
+user10002%252Eopen%2CHasPendingAgreements%3Dtrue%2CUserName%3DJaneSaoirse%2Csig%3DoWKUdvg32YdqILd_2QCto9RVqBLn8UmT
 KAnXu1UgPOHA0t31dIKw4TafxLNMmC-GFekkPhvNti4vUimqP-5e5gnf1H0bkLcXKQLT1131R6Cx9MX3ue9z6z-jmD6QesLRkWXwzRkBrb-wLerHn
 Blx_Tnr9p3g-SrPA7pPirmpADA&quot;,
   &quot;userFDN&quot;: &quot;user10002.acmecorp&quot;,
@@ -170,7 +171,7 @@ Blx_Tnr9p3g-SrPA7pPirmpADA&quot;,
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -180,8 +181,8 @@ Blx_Tnr9p3g-SrPA7pPirmpADA&quot;,
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_json.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -223,13 +224,13 @@ Blx_Tnr9p3g-SrPA7pPirmpADA&quot;,
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#http500">500</a></td>
+      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -238,14 +239,14 @@ Blx_Tnr9p3g-SrPA7pPirmpADA&quot;,
   <tr>
     <td width="300"><ul>
   <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

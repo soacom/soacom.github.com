@@ -62,7 +62,8 @@ no-catalog: true
 <pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/versions/4iXro2Uxs2h4LviCshR9pK9w.acmecorp/board</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>GET&nbsp;/api/apps/versions/4iXro2Uxs2h4LviCshR9pK9w.acmecorp/board HTTP/1.1
-Host:<!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!-- #EndLibraryItem -->Accept: application/json</pre>
+Host:<!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!-- #EndLibraryItem -->
+Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -71,7 +72,7 @@ Host:<!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!--
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -81,8 +82,8 @@ Host:<!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!--
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_accept_txtxml_or_json.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_txtxml_or_appjson.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -115,7 +116,7 @@ Host:<!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!--
       <td>Query</td>
       <td>string[&nbsp;]</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/Library/o_apps_ItemType.lbi" --> Indicates the type of <a href="../glossary_communityplatform.htm#gl_boarditem">Board item</a>, such as an alert, discussion, or ticket.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_apps_ItemType.lbi" --> Indicates the type of <a href="../Ref_Glossary_CommunityPlatform.htm#gl_boarditem">Board item</a>, such as an alert, discussion, or ticket.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a href="../Ref_IDsOnThePlatform.htm#id_apiid">APIID</a><a href="../Ref_IDsOnThePlatform.htm"></a></td>
@@ -143,7 +144,7 @@ Host:<!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!--
       <td>Query</td>
       <td>string</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_ItemID.lbi" --> The unique ID for a specific <a href="../glossary_communityplatform.htm#gl_boarditem">Board item</a>.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_ItemID.lbi" --> The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_boarditem">Board item</a>.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>Tag</td>
@@ -171,7 +172,7 @@ Host:<!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!--
       <td>Query</td>
       <td>boolean</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/Library/o_apps_IncludeActions.lbi" --> Indicates whether actions relating to the board item should be included. Default value: <strong>true</strong>. If set to <strong>false</strong>, actions are not included.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_apps_IncludeActions_def_true.lbi" -->Indicates whether workflow actions currently valid for the resource should be included in the results. Default: <strong>true</strong>. For valid workflow actions, see <a href="../Ref_Values.htm#values_workflowactions">Workflow Actions</a>.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>start</td>
@@ -209,7 +210,7 @@ Host:<!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!--
 
 <!-- InstanceBeginEditable name="Response Description" -->
 <h3 id="response">Response</h3>
-<p id="id_successstatement">If successful, this method returns HTTP status code 200, with the app version board items in the form of an RSS feed in JSON or XML format.</p>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with the app version board items in the form of an RSS feed in JSON or XML format.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -255,10 +256,10 @@ Content-Type: application/json</pre>
       &quot;pubDate&quot; : &quot;2013-05-31T17:48:09.000Z&quot;,
       &quot;AuthoringUser&quot; : {
         &quot;ID&quot; : &quot;user12262.acmecorp&quot;,
-        &quot;Name&quot; : &quot;JaneMead&quot;,
+        &quot;Name&quot; : &quot;JaneSaoirse&quot;,
         &quot;Image&quot; : {
           &quot;Url&quot; : &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&quot;,
-          &quot;Title&quot; : &quot;JaneMead&quot;,
+          &quot;Title&quot; : &quot;JaneSaoirse&quot;,
           &quot;Link&quot; : &quot;#/users/user12262.acmecorp/details&quot;
         }
       },
@@ -298,7 +299,7 @@ Content-Type: application/json</pre>
       } ]
     }, {
       &quot;title&quot; : &quot;API Access request&quot;,
-      &quot;description&quot; : &quot;ACMECorp member JaneMead has requested access to the Sandbox environment for the ACME Payments DeLuxe (Version 2.0) on behalf of the  PaaStime (2.0) application&quot;,
+      &quot;description&quot; : &quot;ACMECorp member JaneSaoirse has requested access to the Sandbox environment for the ACME Payments DeLuxe (Version 2.0) on behalf of the  PaaStime (2.0) application&quot;,
       &quot;category&quot; : [ {
         &quot;value&quot; : &quot;CONTRACT_REQUEST&quot;,
         &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;
@@ -318,10 +319,10 @@ Content-Type: application/json</pre>
       &quot;pubDate&quot; : &quot;2013-05-23T22:14:30.000Z&quot;,
       &quot;AuthoringUser&quot; : {
         &quot;ID&quot; : &quot;user12262.acmecorp&quot;,
-        &quot;Name&quot; : &quot;JaneMead&quot;,
+        &quot;Name&quot; : &quot;JaneSaoirse&quot;,
         &quot;Image&quot; : {
           &quot;Url&quot; : &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&quot;,
-          &quot;Title&quot; : &quot;JaneMead&quot;,
+          &quot;Title&quot; : &quot;JaneSaoirse&quot;,
           &quot;Link&quot; : &quot;#/users/user12262.acmecorp/details&quot;
         }
       },
@@ -445,10 +446,10 @@ xmlns:ns10=&quot;http://soa.com/xsd/board/1.0&quot; version=&quot;1.0&quot;&gt;
       &lt;/ns5:CommentsPreview&gt;
       &lt;ns4:AuthoringUser&gt;
         &lt;ID&gt;user12262.acmecorp&lt;/ID&gt;
-        &lt;Name&gt;JaneMead&lt;/Name&gt;
+        &lt;Name&gt;JaneSaoirse&lt;/Name&gt;
         &lt;ns4:Image&gt;
           &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
-          &lt;Title&gt;JaneMead&lt;/Title&gt;
+          &lt;Title&gt;JaneSaoirse&lt;/Title&gt;
           &lt;Link&gt;#/users/user12262.acmecorp/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;
       &lt;/ns4:AuthoringUser&gt;
@@ -472,7 +473,7 @@ xmlns:ns10=&quot;http://soa.com/xsd/board/1.0&quot; version=&quot;1.0&quot;&gt;
     &lt;/item&gt;
     &lt;item&gt;
       &lt;title&gt;API Access request&lt;/title&gt;
-      &lt;description&gt;ACMECorp member JaneMead has requested access to the Sandbox environment for the ACME Payments DeLuxe (Version 2.0) on behalf of the  PaaStime (2.0) application&lt;/description&gt;
+      &lt;description&gt;ACMECorp member JaneSaoirse has requested access to the Sandbox environment for the ACME Payments DeLuxe (Version 2.0) on behalf of the  PaaStime (2.0) application&lt;/description&gt;
       &lt;category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;CONTRACT_REQUEST&lt;/category&gt;
       &lt;category domain=&quot;uddi:soa.com:archivable&quot;&gt;false&lt;/category&gt;
       &lt;category domain=&quot;uddi:soa.com:wfstate&quot;&gt;apicontract.status.activated&lt;/category&gt;
@@ -500,10 +501,10 @@ xmlns:ns10=&quot;http://soa.com/xsd/board/1.0&quot; version=&quot;1.0&quot;&gt;
       &lt;/ns5:CommentsPreview&gt;
       &lt;ns4:AuthoringUser&gt;
         &lt;ID&gt;user12262.acmecorp&lt;/ID&gt;
-        &lt;Name&gt;JaneMead&lt;/Name&gt;
+        &lt;Name&gt;JaneSaoirse&lt;/Name&gt;
         &lt;ns4:Image&gt;
           &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
-          &lt;Title&gt;JaneMead&lt;/Title&gt;
+          &lt;Title&gt;JaneSaoirse&lt;/Title&gt;
           &lt;Link&gt;#/users/user12262.acmecorp/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;
       &lt;/ns4:AuthoringUser&gt;
@@ -560,7 +561,7 @@ xmlns:ns10=&quot;http://soa.com/xsd/board/1.0&quot; version=&quot;1.0&quot;&gt;
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -570,8 +571,8 @@ xmlns:ns10=&quot;http://soa.com/xsd/board/1.0&quot; version=&quot;1.0&quot;&gt;
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_accept_txtxml_or_json.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_txtxml_or_appjson.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -582,7 +583,7 @@ xmlns:ns10=&quot;http://soa.com/xsd/board/1.0&quot; version=&quot;1.0&quot;&gt;
 <!-- InstanceBeginEditable name="Response Body" -->
 <h3 id="responsebody">Response Body</h3>
 <p id="responserss"><!-- #BeginLibraryItem "/Library/_rss_responsetable_intro.lbi" -->
-The response body is in the form of an RSS channel, and includes the items listed below. The RSS version is 1.0.<!-- #EndLibraryItem --> The title of the RSS channel is <strong>App Version Board</strong>, and the channel includes <a href="../Ref_RSSChannelsOnThePlatform.htm#pagingofreturnedrssitems">paging values</a>: StartIndex, TotalResults (if applicable), and ItemsPerPage. Each item in the channel represents a Board item for the app version, and includes the information listed below.</p>
+The response body is in the form of an RSS channel, and includes the items listed below. The RSS version is 1.0.<!-- #EndLibraryItem --> The title of the RSS channel is <strong>App Version Board</strong>, and the channel includes <a href="../Ref_RSSChannelsOnThePlatform.htm#rss_pagingofreturnedrssitems">paging values</a>: StartIndex, TotalResults (if applicable), and ItemsPerPage. Each item in the channel represents a Board item for the app version, and includes the information listed below.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
 <thead>
   <tr bgcolor="#DDDDDD">
@@ -676,13 +677,13 @@ The response body is in the form of an RSS channel, and includes the items liste
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#http500">500</a></td>
+      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -691,14 +692,14 @@ The response body is in the form of an RSS channel, and includes the items liste
   <tr>
     <td width="300"><ul>
   <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

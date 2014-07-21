@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Uninvite Private Viewer | APIs Service | Enterprise API Platform API
-description:  Removes the connection between a <a href="../glossary_communityplatform.htm#gl_viewer">viewer</a> (group) and a private API. The viewer (group) will no longer have access to the Private API and cannot see it once the connection is removed.
+description:  Removes the connection between a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_viewer">viewer</a> (group) and a private API. The viewer (group) will no longer have access to the Private API and cannot see it once the connection is removed.
 product: cm
 category: ref
 nav-title: Uninvite Private Viewer 
@@ -16,8 +16,9 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_uninvitePrivateViewer.lbi" -->
-Removes the connection between a <a href="../glossary_communityplatform.htm#gl_viewer">viewer</a> (group) and a private API. The viewer (group) will no longer have access to the Private API and cannot see it once the connection is removed.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/Library/roles_user.lbi" --> To complete this operation successfully, a user must be logged in<!-- #EndLibraryItem --> and must have modify permission for the API; an <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
+Removes the connection between a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_viewer">viewer</a> (group) and a private API. The viewer (group) will no longer have access to the Private API and cannot see it once the connection is removed.<!-- #EndLibraryItem --></p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must have permission to modify the API; an <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
+<p id="indexmetadata"><strong>Metadata indexing</strong>: <!-- #BeginLibraryItem "/Library/_MetadataIndexing.lbi" -->When this operation is run successfully, the platform metadata is automatically reindexed. Since the API documentation might include a metadata.xml file that directs visibility, the index must be updated when the API documentation resources are updated, to ensure the correct API documentation visibility settings are implemented.<!-- #EndLibraryItem --></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -67,7 +68,7 @@ Accept: text/plain, */*; q=0.01</pre>
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -77,11 +78,11 @@ Accept: text/plain, */*; q=0.01</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
+      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
       <td><!-- #BeginLibraryItem "/Library/hdrval_accept_textplain.lbi" --> Any Accept header value that supports a response Content-Type of <strong>text/plain</strong> is valid; for example, <strong>*/*</strong>.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_request">Content-Type</a></td>
+      <td><a href="../Ref_API_Reference.htm#contenttype_request">Content-Type</a></td>
       <td>*/*</td>
     </tr>
     </tbody>
@@ -108,8 +109,7 @@ Accept: text/plain, */*; q=0.01</pre>
       <td>Path</td>
       <td>string</td>
       <td>Required</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->
-The unique ID for the specified API version.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->The unique ID for a specific API version.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a href="../Ref_IDsOnThePlatform.htm#id_viewerid">ViewerID</a></td>
@@ -126,7 +126,7 @@ The unique ID for the specified API version.<!-- #EndLibraryItem --></td>
 
 <!-- InstanceBeginEditable name="Response Description" -->
 <h3 id="response">Response</h3>
-<p id="id_successstatement">If successful, this method returns HTTP status code 200. There is no response content.</p>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200. There is no response content.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -145,7 +145,7 @@ Date: Fri, 15 Feb 2013 14:44:34 GMT</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -155,8 +155,8 @@ Date: Fri, 15 Feb 2013 14:44:34 GMT</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_text_plain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem --></td>
+      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_textplain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -183,18 +183,18 @@ Date: Fri, 15 Feb 2013 14:44:34 GMT</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#http404">404</a></td>
+      <td><a href="../Ref_API_Reference.htm#http404">404</a></td>
       <td><p>The resource could not be found.</p>
         For example, you might get this if the Accept header is set to a wrong value.</td>
     </tr>
     <tr>
-      <td><a href="../Ref_apireference.htm#http500">500</a></td>
+      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -203,14 +203,14 @@ Date: Fri, 15 Feb 2013 14:44:34 GMT</pre>
   <tr>
     <td width="300"><ul>
   <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

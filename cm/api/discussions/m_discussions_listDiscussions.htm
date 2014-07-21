@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: List Discussions | Discussions Service | Enterprise API Platform API
-description:  Returns a list of <a href="../glossary_communityplatform.htm#gl_discussion">discussions</a> that match specified filter criteria.
+description:  Returns a list of <a href="../Ref_Glossary_CommunityPlatform.htm#gl_discussion">discussions</a> that match specified filter criteria.
 product: cm
 category: ref
 nav-title: List Discussions 
@@ -17,7 +17,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_listDiscussions.lbi" -->
-Returns a list of <a href="../glossary_communityplatform.htm#gl_discussion">discussions</a> that match specified filter criteria.<!-- #EndLibraryItem --></p>
+Returns a list of <a href="../Ref_Glossary_CommunityPlatform.htm#gl_discussion">discussions</a> that match specified filter criteria.<!-- #EndLibraryItem --></p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: This operation applies to all users. Login is not required. However, the results are restricted according to the user's permissions. When the user is not logged in, only public discussion information is returned.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -69,7 +69,7 @@ Returns a list of <a href="../glossary_communityplatform.htm#gl_discussion">disc
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -79,7 +79,7 @@ Returns a list of <a href="../glossary_communityplatform.htm#gl_discussion">disc
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
+      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
       <td><strong>text/xml</strong>, <strong>application/rss+xml</strong>, or <strong>application/json</strong></td>
     </tr>
   </tbody>
@@ -107,14 +107,14 @@ Returns a list of <a href="../glossary_communityplatform.htm#gl_discussion">disc
       <td>string</td>
       <td>Optional</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_DiscussionSubjectID.lbi" -->
-The unique ID for the specific resource that a <a href="../glossary_communityplatform.htm#gl_discussion">discussion</a> relates to; for example, the AppVersionID, APIVersionID, GroupID, or a custom BoardID.<!-- #EndLibraryItem -->&nbsp;Use this if you only want information about discussions for a specific resource such as an app version or API version.</td>
+The unique ID for the specific resource that a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_discussion">discussion</a> relates to; for example, the AppVersionID, APIVersionID, GroupID, or a custom BoardID.<!-- #EndLibraryItem -->&nbsp;Use this if you only want information about discussions for a specific resource such as an app version or API version.</td>
     </tr>
     <tr>
       <td>DiscussionType</td>
       <td>Query</td>
       <td>string</td>
       <td>Optional</td>
-      <td>The <a href="../glossary_communityplatform.htm#gl_discussiontype">type of discussion</a>. No longer in use.</td>
+      <td>The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_discussiontype">type of discussion</a>. No longer in use.</td>
       </tr>
     <tr>
       <td><a href="../Ref_IDsOnThePlatform.htm#id_retrievinguserid">RetrievingUserID</a></td>
@@ -129,7 +129,7 @@ The unique ID for the specific resource that a <a href="../glossary_communitypla
       <td>string</td>
       <td>Optional</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_ItemID.lbi" -->
-The unique ID for a specific <a href="../glossary_communityplatform.htm#gl_boarditem">Board item</a>.<!-- #EndLibraryItem --></td>
+The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_boarditem">Board item</a>.<!-- #EndLibraryItem --></td>
       </tr>
     <tr>
       <td>Tag</td>
@@ -181,7 +181,7 @@ The unique ID for a specific <a href="../glossary_communityplatform.htm#gl_board
 
 <!-- InstanceBeginEditable name="Response Description" -->
 <h3 id="response">Response</h3>
-<p id="id_successstatement">If successful, this method returns HTTP status code 200, with the discussion list. <!-- #BeginLibraryItem "/Library/_rss.lbi" -->The information is sent as an RSS feed in JSON format.<!-- #EndLibraryItem --></p>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with the discussion list. <!-- #BeginLibraryItem "/Library/_rss.lbi" -->The information is sent as an RSS feed in JSON format.<!-- #EndLibraryItem --></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -237,10 +237,10 @@ Date: Tue, 23 Jul 2013 13:51:51 GMT</pre>
       "pubDate" : "2013-07-22T20:15:34.000Z",
       "AuthoringUser" : {
         "ID" : "user12262.acmecorp",
-        "Name" : "JaneMead",
+        "Name" : "JaneSaoirse",
         "Image" : {
           "Url" : "http://api.acmecorp.com/api/users/user12262.acmecorp/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png",
-          "Title" : "JaneMead",
+          "Title" : "JaneSaoirse",
           "Link" : "#/users/user12262.acmecorp/details"
         }
       },
@@ -326,10 +326,10 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
       &lt;/ns5:CommentsPreview&gt;
       &lt;ns4:AuthoringUser&gt;
         &lt;ID&gt;user12262.acmecorp&lt;/ID&gt;
-        &lt;Name&gt;JaneMead&lt;/Name&gt;
+        &lt;Name&gt;JaneSaoirse&lt;/Name&gt;
         &lt;ns4:Image&gt;
           &lt;Url&gt;http://api.acmecorp.com/api/users/user12262.acmecorp/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png&lt;/Url&gt;
-          &lt;Title&gt;JaneMead&lt;/Title&gt;
+          &lt;Title&gt;JaneSaoirse&lt;/Title&gt;
           &lt;Link&gt;#/users/user12262.acmecorp/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;
       &lt;/ns4:AuthoringUser&gt;
@@ -358,7 +358,7 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -368,7 +368,7 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
+      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
       <td><strong>text/xml</strong>, <strong>application/rss+xml</strong>, or <strong>application/json</strong></td>
     </tr>
   </tbody>
@@ -379,7 +379,7 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
 
 <!-- InstanceBeginEditable name="Response Body" -->
 <h3 id="responsebody">Response Body</h3>
-<p><!-- #BeginLibraryItem "/Library/_rss_responsetable_intro.lbi" --> The response body is in the form of an RSS channel, and includes the items listed below. The RSS version is 1.0.<!-- #EndLibraryItem --> The channel includes a link to the Board for the discussion and also <a href="../Ref_RSSChannelsOnThePlatform.htm#pagingofreturnedrssitems">paging values</a>: StartIndex, TotalResults (if applicable), and ItemsPerPage. Each item in the channel represents a discussion, and includes the information listed below.</p>
+<p><!-- #BeginLibraryItem "/Library/_rss_responsetable_intro.lbi" --> The response body is in the form of an RSS channel, and includes the items listed below. The RSS version is 1.0.<!-- #EndLibraryItem --> The channel includes a link to the Board for the discussion and also <a href="../Ref_RSSChannelsOnThePlatform.htm#rss_pagingofreturnedrssitems">paging values</a>: StartIndex, TotalResults (if applicable), and ItemsPerPage. Each item in the channel represents a discussion, and includes the information listed below.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -470,13 +470,13 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#http500">500</a></td>
+      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -485,14 +485,14 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
   <tr>
     <td width="300"><ul>
   <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Get Login Domains | Login Service | Enterprise API Platform API
-description: Returns information about valid login domains.
+description: Returns information about the <a href="../Ref_Glossary_CommunityPlatform.htm#gl_logindomain">login domains</a> that are valid for the platform.
 product: cm
 category: ref
 nav-title: Get Login Domains 
@@ -16,7 +16,7 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_getLoginDomains.lbi" -->Returns information about valid login domains.<!-- #EndLibraryItem --></p>
+<p><!-- #BeginLibraryItem "/Library/desc_getLoginDomains.lbi" -->Returns information about the <a href="../Ref_Glossary_CommunityPlatform.htm#gl_logindomain">login domains</a> that are valid for the platform.<!-- #EndLibraryItem --></p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Anyone can run this operation. Login is not required.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -60,7 +60,6 @@ no-catalog: true
 <p><strong>Sample request headers</strong></p>
 <pre>GET /api/login/domains?IncludeDisabled=true&amp;all=true&amp;cache=false HTTP/1.1
 Host: &lt;hostname&gt;
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:21.0) Gecko/20100101 Firefox/21.0
 Accept: application/json, text/javascript, */*; q=0.01</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -70,7 +69,7 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -80,8 +79,8 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_json.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -121,7 +120,7 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
       <td>Query</td>
       <td>boolean</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/Library/o_parm_cache.lbi" -->Indicates whether the information should be cached. If you don't want the domain information to be read from cache, specify <strong>false</strong>. If not specified, defaults to <strong>true</strong>. For more information about caching on the platform, see <a href="../Ref_apireference.htm#ref_atmo_caching">How the<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->API Uses Caching</a>.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_parm_cache.lbi" -->Indicates whether the information should be cached. If you don't want the domain information to be read from cache, specify <strong>false</strong>. If not specified, defaults to <strong>true</strong>. For more information about caching on the platform, see <a href="../Ref_API_Reference.htm#ref_atmo_caching">How the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API Uses Caching</a>.<!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -131,7 +130,7 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 
 <!-- InstanceBeginEditable name="Response Description" -->
 <h3 id="response">Response</h3>
-<p id="id_successstatement">If successful, this method returns HTTP status code 200, with information about available domains.</p>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with information about available domains.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -194,7 +193,7 @@ Content-Type: application/json
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -204,8 +203,8 @@ Content-Type: application/json
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_json.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -227,7 +226,7 @@ Content-Type: application/json
     <tr>
       <td>LoginDomain[&nbsp;]</td>
       <td><a href="../obj/o_login_LoginDomain.htm">LoginDomain</a>[&nbsp;]</td>
-      <td> Includes information about one or more login domains.</td>
+      <td>Includes information about one or more login domains.</td>
     </tr>
   </tbody>
 </table>
@@ -247,13 +246,13 @@ Content-Type: application/json
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#http500">500</a></td>
+      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -262,14 +261,14 @@ Content-Type: application/json
   <tr>
     <td width="300"><ul>
   <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

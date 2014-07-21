@@ -54,7 +54,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Sample Request" -->
 <h3 id="samplerequest">Sample Request</h3>
-<p id="id_samplerequest">The example below shows a request for a resend of the activation code to the specified email address. The POST&nbsp;content must be encoded; in the example below it is sent as <strong>emailAddress=jane.mead%40example.com</strong>.</p>
+<p id="id_samplerequest">The example below shows a request for a resend of the activation code to the specified email address. The POST&nbsp;content must be encoded; in the example below it is sent as <strong>emailAddress=jane.saoirse%acmecorp.com</strong>.</p>
 <p><strong>Request URL</strong></p>
 <pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/resendActivation</pre>
 <p><strong>Sample request headers</strong></p>
@@ -63,14 +63,14 @@ Host: &lt;hostname&gt;
 Accept: */*
 Content-Type: application/x-www-form-urlencoded; charset=UTF-8</pre>
 <p><strong>Sample request body</strong></p>
-<pre>emailAddress=jane.mead@example.com</pre>
+<pre>emailAddress=jane.saoirse@acmecorp.com</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -80,12 +80,12 @@ Content-Type: application/x-www-form-urlencoded; charset=UTF-8</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
-      <td>application/json</td>
+      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_request">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_contenttype_urlencoded.lbi" --><strong>application/x-www-form-urlencoded</strong><!-- #EndLibraryItem --></td>
+      <td><a href="../Ref_API_Reference.htm#contenttype_request">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_urlencoded.lbi" --><strong>application/x-www-form-urlencoded</strong><!-- #EndLibraryItem --></td>
     </tr>
     </tbody>
 </table>
@@ -121,7 +121,7 @@ Content-Type: application/x-www-form-urlencoded; charset=UTF-8</pre>
 
 <!-- InstanceBeginEditable name="Response Description" -->
 <h3 id="response">Response</h3>
-<p id="id_successstatement">If successful, this method returns HTTP status code 200. There is no response content, but the activation code is resent to the specified email address.</p>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200. There is no response content, but the activation code is resent to the specified email address.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -141,7 +141,7 @@ Wed, 19 Jun 2013 17:17:03 GMT</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -151,8 +151,8 @@ Wed, 19 Jun 2013 17:17:03 GMT</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
-      <td>application/json</td>
+      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -179,17 +179,17 @@ Wed, 19 Jun 2013 17:17:03 GMT</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#http405">405</a></td>
+      <td><a href="../Ref_API_Reference.htm#http405">405</a></td>
       <td><!-- #BeginLibraryItem "/Library/http_405.lbi" --> Method Not Allowed. For example, you might get this if you specified an invalid Accept header or omitted a required Content-Type header.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../Ref_apireference.htm#http500">500</a></td>
+      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -198,14 +198,14 @@ Wed, 19 Jun 2013 17:17:03 GMT</pre>
   <tr>
     <td width="300"><ul>
   <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

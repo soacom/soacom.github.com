@@ -18,7 +18,6 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getApps.lbi" -->
 Returns information about the apps for which the user is on the app team, and optionally also information about app versions. <!-- #BeginLibraryItem "/Library/_rss.lbi" -->The information is sent as an RSS feed in JSON format.<!-- #EndLibraryItem --><!-- #EndLibraryItem --></p>
-<!--<p>Returns a list of apps, list apps, apps listing, user apps list, list of apps for a user, apps list.</p>-->
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_authorizeduser">Authorized User</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
 
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
@@ -73,7 +72,7 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -83,7 +82,7 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
+      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
       <td><strong>text/xml</strong>, <strong>application/rss+xml</strong>, or <strong>application/json</strong></td>
     </tr>
   </tbody>
@@ -150,7 +149,7 @@ The number of results to be returned, from the specified starting point. If not 
 
 <!-- InstanceBeginEditable name="Response Description" -->
 <h3 id="response">Response</h3>
-<p id="id_successstatement">If successful, this method returns HTTP status code 200, with information about the apps for which the user is on the app team.</p>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with information about the apps for which the user is on the app team.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -244,7 +243,7 @@ xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -254,7 +253,7 @@ xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
+      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
       <td><strong>text/xml</strong>, <strong>application/rss+xml</strong>, or <strong>application/json</strong></td>
     </tr>
   </tbody>
@@ -336,23 +335,23 @@ xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
       <th width="80%">Value</th>
     </tr>
     <tr>
-      <td><a href="../Ref_apireference.htm#http401">401</a></td>
+      <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
       <td>Unauthorized. For example, you would get this response if you hadn't completed login before running the operation, or if you had the wrong UserID.</td>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#http405">405</a></td>
+      <td><a href="../Ref_API_Reference.htm#http405">405</a></td>
       <td><!-- #BeginLibraryItem "/Library/http_405.lbi" --> Method Not Allowed. For example, you might get this if you specified an invalid Accept header or omitted a required Content-Type header.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../Ref_apireference.htm#http500">500</a></td>
+      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -361,14 +360,14 @@ xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
   <tr>
     <td width="300"><ul>
   <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

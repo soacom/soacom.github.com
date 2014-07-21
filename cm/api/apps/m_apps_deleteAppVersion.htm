@@ -18,7 +18,7 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_deleteAppVersion.lbi" --> Deletes the specified version of an app.<!-- #EndLibraryItem --></p>
 <p><!-- #BeginLibraryItem "/Library/desc_deleteApp_note.lbi" -->
-<strong>Note</strong>: If you want to completely remove an app, use <span class="apidoc_code"><a href="m_apps_deleteApp.htm">DELETE&nbsp;/api/apps/{AppID}</a></span>. If you want to delete the only existing app version, but keep the app, first add a new version, using <span class="apidoc_code"><a href="m_apps_addVersion.htm">POST&nbsp;apps/{AppID}/versions</a></span>, and then delete the old version using <span class="apidoc_code"><a href="m_apps_deleteAppVersion.htm">DELETE&nbsp;/api/apps/versions/{RuntimeID}</a></span>. An app cannot exist in the<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->without at least one valid version.<!-- #EndLibraryItem --></p>
+<strong>Note</strong>: If you want to completely remove an app, use <span class="apidoc_code"><a href="m_apps_deleteApp.htm">DELETE&nbsp;/api/apps/{AppID}</a></span>. If you want to delete the only existing app version, but keep the app, first add a new version, using <span class="apidoc_code"><a href="m_apps_addVersion.htm">POST&nbsp;apps/{AppID}/versions</a></span>, and then delete the old version using <span class="apidoc_code"><a href="m_apps_deleteAppVersion.htm">DELETE&nbsp;/api/apps/versions/{RuntimeID}</a></span>. An app cannot exist in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;without at least one valid version.<!-- #EndLibraryItem --></p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Administrator</a></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -61,7 +61,8 @@ no-catalog: true
 <pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/versions/1zPOeamQxXm1jzm1CPNvoP7H.acmecorp</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>DELETE&nbsp;/api/apps/versions/1zPOeamQxXm1jzm1CPNvoP7H.acmecorp HTTP/1.1
-Host:<!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!-- #EndLibraryItem -->Accept: */*
+Host: <!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!-- #EndLibraryItem -->
+Accept: */*
 Content-Type: application/x-www-form-urlencoded</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
@@ -71,7 +72,7 @@ Content-Type: application/x-www-form-urlencoded</pre>
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -81,12 +82,12 @@ Content-Type: application/x-www-form-urlencoded</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
+      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
       <td><!-- #BeginLibraryItem "/Library/hdrval_accept_textplain.lbi" --> Any Accept header value that supports a response Content-Type of <strong>text/plain</strong> is valid; for example, <strong>*/*</strong>.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_request">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_contenttype_any.lbi" -->Any format (*/*)<!-- #EndLibraryItem --></td>
+      <td><a href="../Ref_API_Reference.htm#contenttype_request">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_contenttype_any.lbi" --><strong>Any format (*/*)</strong><!-- #EndLibraryItem --></td>
     </tr>
     </tbody>
 </table>
@@ -129,7 +130,7 @@ Content-Type: application/x-www-form-urlencoded</pre>
 
 <!-- InstanceBeginEditable name="Response Description" -->
 <h3 id="response">Response</h3>
-<p id="id_successstatement">If successful, this method returns HTTP status code 200, withâ¦ </p>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200, withâ¦ </p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -150,7 +151,7 @@ Atmo-Renew-Token: renew</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -160,12 +161,12 @@ Atmo-Renew-Token: renew</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#atmorenewtoken">Atmo-Renew-Token</a></td>
-      <td><strong><a href="../Ref_apireference.htm#atmorenewtoken">renew</a></strong></td>
+      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_textplain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_text_plain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem --></td>
+      <td><a href="../Ref_API_Reference.htm#atmorenewtoken">Atmo-Renew-Token</a></td>
+      <td><strong>renew</strong></td>
     </tr>
     </tbody>
 </table>
@@ -207,13 +208,13 @@ Atmo-Renew-Token: renew</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#http500">500</a></td>
+      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -222,14 +223,14 @@ Atmo-Renew-Token: renew</pre>
   <tr>
     <td width="300"><ul>
   <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

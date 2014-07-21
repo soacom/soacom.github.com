@@ -35,8 +35,7 @@ Includes information about an API.<!-- #EndLibraryItem --></p>
     <tr>
       <td><a href="../Ref_IDsOnThePlatform.htm#id_apiid">APIID</a></td>
       <td>string</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_APIID.lbi" -->
-        The unique ID for the specified API.<!-- #EndLibraryItem --> <strong>Required</strong> except when adding an API.</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_APIID.lbi" -->The unique ID for a specific API.<!-- #EndLibraryItem --><strong>Required</strong> except when adding an API.</td>
   </tr>
     <tr>
       <td>Name</td>
@@ -51,13 +50,13 @@ Includes information about an API.<!-- #EndLibraryItem --></p>
     <tr>
       <td>Visibility</td>
       <td>string</td>
-      <td><!-- #BeginLibraryItem "/Library/parm_Visibility_apis.lbi" -->The <a href="../glossary_communityplatform.htm#gl_visibility_api">visibility</a> setting for the API; either Public, which is visible to all users, or Limited, which is visible only to API Administrators and Private API Group members.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/parm_Visibility_apis.lbi" -->The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_visibility_api">visibility</a> setting for the API; either Public, which is visible to all users, or Limited, which is visible only to API Administrators and Private API Group members.<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td><a href="../Ref_IDsOnThePlatform.htm#id_latestversionid">LatestVersionID</a></td>
       <td>string</td>
       <td><p>The unique ID for the latest version of the API.</p>
-        <p>When the API object is received in a response message, LatestVersionID is ID for the latest version of the API the user is authorized to see, based on the user's status and the API's <a href="../glossary_communityplatform.htm#gl_visibility_api">visibility</a> setting. If the app is Private, the user must be logged in and msut be an API Administrator or Private API Group member.</p></td>
+        <p>When the API object is received in a response message, LatestVersionID is ID for the latest version of the API the user is authorized to see, based on the user's status and the API's <a href="../Ref_Glossary_CommunityPlatform.htm#gl_visibility_api">visibility</a> setting. If the app is Private, the user must be logged in and msut be an API Administrator or Private API Group member.</p></td>
   </tr>
     <tr>
       <td>Tag</td>
@@ -86,7 +85,7 @@ Includes information about an API.<!-- #EndLibraryItem --></p>
       <td><p>The latest version of the API that the current user is authorized to see:</p>
         <ul class="apidoctable_ul">
           <li><strong>In the addAPI request message</strong>: the initial API version that the user is adding.</li>
-          <li><strong>In a response message</strong>: the latest version of the API the user is authorized to see, based on the user's status and the API's <a href="../glossary_communityplatform.htm#gl_visibility_api">visibility</a> setting.</li>
+          <li><strong>In a response message</strong>: the latest version of the API the user is authorized to see, based on the user's status and the API's <a href="../Ref_Glossary_CommunityPlatform.htm#gl_visibility_api">visibility</a> setting.</li>
         </ul>        </td>
   </tr>
     <tr>
@@ -134,14 +133,14 @@ URL for the avatar uploaded for the resource, if any. Used only in response mess
   <tr>
     <td width="300"><ul>
   <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

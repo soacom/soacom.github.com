@@ -16,7 +16,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getContractVersions.lbi" -->Returns a list of contract versions for the specified API.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/Library/roles_user.lbi" --> To complete this operation successfully, a user must be logged in<!-- #EndLibraryItem --> and must be an Administrator for the API.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -65,7 +65,7 @@ Content-Type: application/json</pre>
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -75,8 +75,8 @@ Content-Type: application/json</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
-      <td><strong>text/xml</strong> or <strong>application/json</strong></td>
+      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_txtxml_or_appjson.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -102,8 +102,7 @@ Content-Type: application/json</pre>
       <td>Path</td>
       <td>string</td>
       <td>Required</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->
-The unique ID for the specified API version.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->The unique ID for a specific API version.<!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -113,7 +112,7 @@ The unique ID for the specified API version.<!-- #EndLibraryItem --></td>
 
 <!-- InstanceBeginEditable name="Response Description" -->
 <h3 id="response">Response</h3>
-<p id="id_successstatement">If successful, this method returns HTTP status code 200, with information about the API contracts. The information is sent as an RSS channel in JSON or XML format.</p>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with information about the API contracts. The information is sent as an RSS channel in JSON or XML format.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -424,7 +423,7 @@ Date: Fri, 10 May 2013 22:12:25 GMT</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -434,8 +433,8 @@ Date: Fri, 10 May 2013 22:12:25 GMT</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_accept_txtxml_or_json.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_txtxml_or_appjson.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -463,7 +462,7 @@ Date: Fri, 10 May 2013 22:12:25 GMT</pre>
       <td><p>An array of sets of two name/value pairs, each including Value and Domain, with a value for each. For example:</p>
         <pre>"value" : "Sandbox",
 "domain" : "uddi:soa.com:environment"</pre>
-        <p>The example above indicates that the contract applies to the Sandbox <a href="../glossary_communityplatform.htm#gl_environment">environment</a>.</p>
+        <p>The example above indicates that the contract applies to the Sandbox <a href="../Ref_Glossary_CommunityPlatform.htm#gl_environment">environment</a>.</p>
         <pre>"value" : "apicontract.status.activated",
 "domain" : "uddi:soa.com:wfstate"</pre>
         <p>The example above indicates that the contract's <a href="../Ref_Values.htm#values_legaldocumentstate">status</a> is <strong>activated</strong>.</p></td>
@@ -521,19 +520,19 @@ Date: Fri, 10 May 2013 22:12:25 GMT</pre>
       <th width="80%">Value</th>
     </tr>
     <tr>
-      <td><a href="../Ref_apireference.htm#http404">404</a></td>
+      <td><a href="../Ref_API_Reference.htm#http404">404</a></td>
       <td>The resource could not be found. For example, you might get this if there is an error in the APIID, or if there are no contracts for the specified API.</td>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#http500">500</a></td>
+      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -542,14 +541,14 @@ Date: Fri, 10 May 2013 22:12:25 GMT</pre>
   <tr>
     <td width="300"><ul>
   <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

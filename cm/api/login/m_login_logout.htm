@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Log Out | Login Service | Enterprise API Platform API
-description:  Destroys any authentication cookies associated with the current session for a tenant logging out.Since this operation ends the user's session with theEnterprise API Platform, there is no response content.
+description:  Destroys any authentication cookies associated with the current session for a tenant logging out.
 product: cm
 category: ref
 nav-title: Log Out 
@@ -16,7 +16,8 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_logout.lbi" --> Destroys any authentication cookies associated with the current session for a tenant logging out.<!-- #EndLibraryItem -->Since this operation ends the user's session with the<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, there is no response content.</p>
+<p><!-- #BeginLibraryItem "/Library/desc_logout_.lbi" --> Destroys any authentication cookies associated with the current session for a tenant logging out.<!-- #EndLibraryItem --></p>
+<p>Since this operation ends the user's session with the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, there is no response content.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_authorizeduser">Authorized User</a>.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -71,7 +72,7 @@ Content-Type: application/x-www-form-urlencoded</pre>
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -81,13 +82,13 @@ Content-Type: application/x-www-form-urlencoded</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
-      <td><p>application/json</p>
+      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
+      <td><p><strong>application/json</strong></p>
         <p><strong>Note</strong>: Although this operation doesn't include any content in the response, the Accept header is required for forward compatibility with future versions.</p></td>
     </tr>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_request">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_contenttype_urlencoded.lbi" --><strong>application/x-www-form-urlencoded</strong><!-- #EndLibraryItem --></td>
+      <td><a href="../Ref_API_Reference.htm#contenttype_request">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_urlencoded.lbi" --><strong>application/x-www-form-urlencoded</strong><!-- #EndLibraryItem --></td>
     </tr>
     </tbody>
 </table>
@@ -123,14 +124,14 @@ Content-Type: application/x-www-form-urlencoded</pre>
 
 <!-- InstanceBeginEditable name="Response Description" -->
 <h3 id="response">Response</h3>
-<p id="id_successstatement">If successful, this method returns HTTP status code 200. There is no response body since this operation ends the user's session.</p>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200. There is no response body since this operation ends the user's session.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
 
 <!-- InstanceBeginEditable name="Sample Response" -->
 <h3 id="sampleresponse">Sample Response</h3>
-<p id="id_sampleresponse">The sample response below shows that the logout completed successfully. The new set-cookie parameter expires the current cookie, effectively ending the user's<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->session.</p>
+<p id="id_sampleresponse">The sample response below shows that the logout completed successfully. The new set-cookie parameter expires the current cookie, effectively ending the user's&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;session.</p>
 <h5>Sample response header</h5>
 <pre>HTTP/1.1 200 OK
 Date: Wed, 06 Feb 2013 20:30:27 GMT
@@ -143,7 +144,7 @@ Set-Cookie: AtmoAuthToken=none;path=/;expires=Wed, 06-Feb-2013 15:30:27 GMT;Http
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -153,11 +154,11 @@ Set-Cookie: AtmoAuthToken=none;path=/;expires=Wed, 06-Feb-2013 15:30:27 GMT;Http
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
+      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
       <td>JSON, XML, or any format.</td>
     </tr>
     <tr>
-      <td><a href="../Ref_apireference.htm#setcookie_response">Set-Cookie</a></td>
+      <td><a href="../Ref_API_Reference.htm#setcookie_response">Set-Cookie</a></td>
       <td><!-- #BeginLibraryItem "/Library/hdrval_setcookie.lbi" --> The set-cookie response header sets, updates, or expires the platform cookie to reflect changes made by the operation.<!-- #EndLibraryItem --> In this case, it  expires the browser cookie.</td>
     </tr>
     </tbody>
@@ -185,13 +186,13 @@ Set-Cookie: AtmoAuthToken=none;path=/;expires=Wed, 06-Feb-2013 15:30:27 GMT;Http
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#http500">500</a></td>
+      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -200,14 +201,14 @@ Set-Cookie: AtmoAuthToken=none;path=/;expires=Wed, 06-Feb-2013 15:30:27 GMT;Http
   <tr>
     <td width="300"><ul>
   <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

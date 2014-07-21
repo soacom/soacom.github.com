@@ -11,10 +11,14 @@ sub-nav-class: apis
 no-catalog: true
 ---
 
+<!-- InstanceBeginEditable name="Heading" -->
 <h2><a name="top"></a>GET&nbsp;/api/apis/versions/{APIVersionID}</h2>
-<p><!-- #BeginLibraryItem "/Library/desc_getAPIVersion.lbi" -->
-Returns the specified API version.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/Library/roles_none.lbi" -->Anyone can use this operation; login is not required<!-- #EndLibraryItem -->.</p><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<!-- InstanceEndEditable -->
+
+<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
+<p><!-- #BeginLibraryItem "/Library/desc_getAPIVersion.lbi" --> Returns the specified API version.<!-- #EndLibraryItem --></p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:&nbsp;<!-- #BeginLibraryItem "/Library/roles_none.lbi" -->Anyone can use this operation; login is not required.<!-- #EndLibraryItem --></p>
+<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
   <tr>
@@ -36,34 +40,41 @@ Returns the specified API version.<!-- #EndLibraryItem --></p>
 </td>
   </tr>
 </table><!-- #EndLibraryItem --><h3 id="httpmethod">HTTP Method</h3>
+<!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
+<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-
 
 <h3 id="endpoint">URL</h3>
-<pre class="soaapidoc_endpoint">api.acmecorp.com/api/apis/versions/{ApiVersionID}[?includeTargetAPI=boolean][&amp;includeOperations=boolean]
+<!-- InstanceBeginEditable name="URL" -->
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/{APIVersionID}[?][includeTargetAPI=boolean]&amp;[includeOperations=boolean]
+&amp;[includeTargetAPI={Boolean}]&amp;[includeSettings={Boolean}]&amp;[ContractID={ContractID}]
 </pre>
-
+<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
+<!-- InstanceBeginEditable name="Sample Request" -->
 <h3 id="samplerequest">Sample Request</h3>
-<p id="id_samplerequest">The example below shows a request for the API version object for apiversion18971.acmecorp.</p>
+<p id="id_samplerequest">The example below shows a request for specific API version information.</p>
 <p><strong>Sample request URL #1</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion18971.acmecorp</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp</pre>
 <p><strong>Sample request URL #2</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion11793.acmecorp?includeTargetAPI=true&amp;includeOperations=true</pre>
+<p>Includes the optional <span class="apidoc_code">includeOperations</span> parameter.</p>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp?includeOperations=true</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&nbsp;/api/apis/versions/apiversion18971.acmecorp HTTP/1.1
+<pre>GET&nbsp;/api/apis/versions/9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: application/json, text/javascript, */*; q=0.01</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -73,94 +84,105 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_json.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
-  </tr>
+      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+    </tr>
   </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Request Parameters" -->
 <h3 id="requestparameters">Request Parameters</h3>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
-  <thead>
-    <tr>
-      <th width="11%">Parameter</th>
-      <th width="9%">Parm Type</th>
-      <th width="11%">Data Type</th>
-      <th width="11%">Required</th>
-      <th width="58%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="../Ref_IDsOnThePlatform.htm#id_apiversionid">APIVersionID</a></td>
-      <td>Path</td>
-      <td>string</td>
-      <td>Required</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->
-The unique ID for the specified API version.<!-- #EndLibraryItem --></td>
+<thead>
+  <tr>
+    <th width="11%">Parameter</th>
+    <th width="9%">Parm Type</th>
+    <th width="11%">Data Type</th>
+    <th width="11%">Required</th>
+    <th width="58%">Description</th>
   </tr>
-    <tr>
-      <td>includeOperations</td>
-      <td>Query</td>
-      <td>boolean</td>
-      <td>Optional</td>
-      <td>If set to <strong>true</strong>, operations associated with the API version are returned. Default: <strong>false</strong>. See example.</td>
-    </tr>
-    <tr>
-      <td>includeTargetAPI</td>
-      <td>Query</td>
-      <td>boolean</td>
-      <td>Optional</td>
-      <td>If set to <strong>true</strong>, Target API, if applicable, is returned. Default: <strong>false</strong>.</td>
-    </tr>
-  </tbody>
+</thead>
+<tbody>
+  <tr>
+    <td><a href="../Ref_IDsOnThePlatform.htm#id_apiversionid">APIVersionID</a></td>
+    <td>Path</td>
+    <td>string</td>
+    <td>Required</td>
+    <td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->The unique ID for a specific API version.<!-- #EndLibraryItem --></td>
+  </tr>
+  <tr>
+    <td>includeOperations</td>
+    <td>Query</td>
+    <td>boolean</td>
+    <td>Optional</td>
+    <td>If set to <strong>true</strong>, operations associated with the API version are returned. Default: <strong>false</strong>. See example.</td>
+  </tr>
+  <tr>
+    <td>IncludeEndpoints</td>
+    <td>Query</td>
+    <td>boolean</td>
+    <td>Optional</td>
+    <td>Indicates whether endpoints for the API version should be included in the information returned. If not specified, defaults to <strong>false</strong>.</td>
+  </tr>
+  <tr>
+    <td>includeTargetAPI</td>
+    <td>Query</td>
+    <td>boolean</td>
+    <td>Optional</td>
+    <td>If set to <strong>true</strong>, Target API, if applicable, is returned. Default: <strong>false</strong>.</td>
+  </tr>
+  <tr>
+    <td>IncludeSettings</td>
+    <td>Query</td>
+    <td>boolean</td>
+    <td>Optional</td>
+    <td><!-- #BeginLibraryItem "/Library/parm_IncludeSettings.lbi" -->Indicates whether the settings for the resource should be included in the information returned. If not specified, defaults to <strong>false</strong>.<!-- #EndLibraryItem --></td>
+  </tr>
+  <tr>
+    <td><a href="../Ref_IDsOnThePlatform.htm#id_contractid">ContractID</a></td>
+    <td>Query</td>
+    <td>string</td>
+    <td>Required</td>
+    <td><!-- #BeginLibraryItem "/Library/o_ID_ContractID.lbi" --> The unique ID for a specific contract between an app version and an API version.<!-- #EndLibraryItem --></td>
+  </tr>
+</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Response Description" -->
 <h3 id="response">Response</h3>
-<p id="id_successstatement">If successful, this method returns HTTP status code 200, with information about the requested API version.</p>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with information about the specified API version.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Sample Response" -->
 <h3 id="sampleresponse">Sample Response #1</h3>
 <p id="id_sampleresponse">The sample response below shows the response information for sample request #1 above.</p>
 
 <p><strong>Sample response headers</strong></p>
 <pre>HTTP/1.1 200 OK
-Date: Fri, 18 Jan 2013 08:46:27 GMT
+Date: Mon, 23 Jun 2014 19:49:21 GMT
 Content-Type: application/json</pre>
 
 <p><strong>Sample response body</strong></p>
 <pre>{
-  "APIVersionID" : "apiversion18971.acmecorp",
-  "APIID" : "api18969.acmecorp",
+  "APIVersionID" : "9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp",
+  "APIID" : "780e7a30-6f9b-4d08-9366-ae18ea071183.acmecorp",
   "Name" : "1.0",
+  "Description" : "First release",
   "Type" : "shttp",
-  "Description" : "First release.",
-  "Tag" : [ "payments API" ],
+  "Tag" : [ "payments" ],
+  "Visibility" : "Limited",
+  "Created" : "2014-06-23T14:09:53Z",
+  "Updated" : "2014-06-23T14:09:53Z",
   "State" : "com.soa.api.state.open",
-  "ProductionEndpoint" : "https://acmepayments.broker.soa.com/payments",
-  "SandboxEndpoint" : "https://acmepaymentssandbox.broker.soa.com/payments",
-  "Endpoints" : {
-    "Endpoint" : [ {
-      "CName" : "acmepayments.broker.soa.com",
-      "Category" : "Production",
-      "Uri" : "https://broker.soa.com/payments",
-      "ConnectionProperties" : [ ]
-    }, {
-      "CName" : "acmepaymentssandbox.broker.soa.com",
-      "Category" : "Sandbox",
-      "Uri" : "http://broker.soa.com/payments",
-      "ConnectionProperties" : [ ]
-    } ]
-  },
-  "Visibility" : "Public",
-  "Created" : "2013-01-18T08:46:22Z",
-  "Updated" : "2013-01-18T08:46:27Z",
-  "ProductionEndpointAccessAutoApproved" : false,
+  "ProductionEndpointAccessAutoApproved" : true,
   "SandboxEndpointAccessAutoApproved" : true,
   "RatingSummary" : {
     "Five" : 0,
@@ -168,157 +190,452 @@ Content-Type: application/json</pre>
     "Three" : 0,
     "Two" : 0,
     "One" : 0
-  }
+  },
+  "SandboxAnonymousAccessAllowed" : false,
+  "ProductionAnonymousAccessAllowed" : false,
+  "ResourceLevelPermissionsSupported" : true,
+  "APIOwnedImplementations" : true,
+  "ProductionServiceKey" : "uddi:0ced18dc-fae0-11e3-82e1-ee73ce832365",
+  "SandboxServiceKey" : "uddi:0dc2dfb1-fae0-11e3-82e1-ee73ce832365"
 }</pre>
 <h3 id="sampleresponse_2">Sample Response #2</h3>
-<p id="id_sampleresponse">The sample response below shows a response to a query for the Twitter version 1.0 API, where the query included the optional <span class="apidoc_code">includeOperations</span> parameter.</p>
+<p>The sample response below shows the response information for sample request #1 above, where the request message included the optional <span class="apidoc_code">includeOperations</span> parameter.</p>
 
 <p><strong>Sample response headers</strong></p>
 <pre>Status Code: 200 OK
 Content-Type: application/json
-Date: Mon, 29 Apr 2013 15:22:01 GMT</pre>
+Date: Mon, 23 Jun 2014 19:52:48 GMT</pre>
 
 <p><strong>Sample response body</strong></p>
-<p><strong>Note</strong>: The sample response below has been abbreviated for display reasons. Three operations are shown, but this parameter returns a list of all operations.</p>
-<pre>
-{
-  "APIVersionID" : "apiversion11155.acmecorp",
-  "APIID" : "api11153.acmecorp",
+<pre>{
+  "APIVersionID" : "9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp",
+  "APIID" : "780e7a30-6f9b-4d08-9366-ae18ea071183.acmecorp",
   "Name" : "1.0",
-  "Description" : "Version 1.0",
+  "Description" : "First release",
   "Type" : "shttp",
   "DefaultProfile" : "Any in and out",
-  "Tag" : [ "social", "blogging" ],
-  "ProductionEndpoint" : "http://twitter.broker.soa.com/1",
-  "ProductionEndpointOAuthDetails" : {
-    "OAuthProvider" : "com.soa.oauth.provider.third-party",
-    "OAuth10aSupported" : true,
-    "OAuth10aSettings" : {
-      "RequestTokenEndpointURL" : "https://api.twitter.com/oauth/request_token",
-      "AuthorizationEndpointURL" : "https://api.twitter.com/oauth/authorize",
-      "AccessTokenEndpointURL" : "https://api.twitter.com/oauth/access_token",
-      "TokenEndpointRequestVerb" : "POST"
-    },
-    "OAuth20Supported" : false
-  },
+  "Tag" : [ "payments" ],
+  "ProductionEndpoint" : "http://acme_payments_api.10.1.20.137:9901/",
+  "SandboxEndpoint" : "http://acme_payments_api.10.1.20.137:9901/",
   "Operations" : {
     "Operation" : [ {
-      "Name" : "get_status_recent",
+      "Name" : "listPayments",
       "Method" : "GET",
-      "Path" : "/statuses/home_timeline.{format}",
+      "Path" : "/payments",
+      "InputContentType" : "*/*",
+      "OutputContentType" : "*/*",
+      "FaultContentType" : "*/*"
+    }, {
+      "Name" : "getPayment",
+      "Method" : "GET",
+      "Path" : "/payments/{PaymentID}",
       "InputContentType" : "*/*",
       "OutputContentType" : "*/*",
       "FaultContentType" : "*/*",
       "Input" : [ {
-        "Name" : "format",
+        "Name" : "PaymentID",
         "Type" : "path"
       } ]
     }, {
-      "Name" : "get_status_recent_mentions",
-      "Method" : "GET",
-      "Path" : "/statuses/mentions.{format}",
+      "Name" : "addPayment",
+      "Method" : "POST",
+      "Path" : "/payments",
+      "InputContentType" : "*/*",
+      "OutputContentType" : "*/*",
+      "FaultContentType" : "*/*"
+    }, {
+      "Name" : "modifyPayment",
+      "Method" : "PUT",
+      "Path" : "/payments/{PaymentID}",
       "InputContentType" : "*/*",
       "OutputContentType" : "*/*",
       "FaultContentType" : "*/*",
       "Input" : [ {
-        "Name" : "format",
+        "Name" : "PaymentID",
         "Type" : "path"
       } ]
     }, {
-      "Name" : "get_search_result",
-      "Method" : "GET",
-      "Path" : "/search.{format}",
+      "Name" : "deletePayment",
+      "Method" : "DELETE",
+      "Path" : "/payments/{PaymentID}",
       "InputContentType" : "*/*",
       "OutputContentType" : "*/*",
       "FaultContentType" : "*/*",
       "Input" : [ {
-        "Name" : "format",
+        "Name" : "PaymentID",
         "Type" : "path"
       } ]
     } ]
   },
   "Endpoints" : {
     "Endpoint" : [ {
-      "CName" : "twitter.broker.soa.com",
+      "CName" : "acme_payments_api.10.1.20.137",
       "Category" : "Production",
-      "Uri" : "http://broker.soa.com:80/1",
-      "ConnectionProperties" : [ ]
+      "Uri" : "http://10.1.20.137:9901/",
+      "ConnectionProperties" : [ ],
+      "BindingQName" : "{uri:acmecorp}Binding_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp.production.virtual",
+      "BindingType" : "binding.http",
+      "EndpointKey" : "uddi:0d6a112f-fae0-11e3-82e1-ee73ce832365"
+    }, {
+      "CName" : "acme_payments_api.10.1.20.137",
+      "Category" : "Sandbox",
+      "Uri" : "http://10.1.20.137:9901/",
+      "ConnectionProperties" : [ ],
+      "BindingQName" : "{uri:acmecorp}Binding_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp.sandbox.virtual",
+      "BindingType" : "binding.http",
+      "EndpointKey" : "uddi:0e0036f3-fae0-11e3-82e1-ee73ce832365"
     } ]
   },
   "Policies" : {
     "Policy" : [ {
-      "PolicyKey" : "urn:uuid:6282f78f-8a81-11e1-8112-b4822b49f412",
-      "Name" : "Open Simple Header Security",
-      "Description" : "App ID only - no signature, hence low-grade security only.",
+      "PolicyKey" : "10001-acmecorpApplicationSecurityPolicy",
+      "Name" : "acmecorpApplicationSecurityPolicy",
+      "Description" : "",
       "PolicyType" : "Operational Policy",
       "PolicySubType" : "policy.apisec"
     }, {
-      "PolicyKey" : "urn:uuid:cde3fb8a-8a81-11e1-8112-b4822b49f412",
-      "Name" : "Open Monitoring",
-      "Description" : "Collects transaction details including recorded messages for every transaction.",
+      "PolicyKey" : "10001-DetailedAuditing",
+      "Name" : "DetailedAuditing",
+      "Description" : "",
       "PolicyType" : "Operational Policy",
       "PolicySubType" : "policy.auditservice"
     } ]
   },
-  "Visibility" : "Public",
-  "Created" : "2012-06-04T11:59:36Z",
-  "Updated" : "2013-01-12T00:29:23Z",
+  "Visibility" : "Limited",
+  "Created" : "2014-06-23T14:09:53Z",
+  "Updated" : "2014-06-23T14:09:53Z",
   "State" : "com.soa.api.state.open",
   "ProductionEndpointAccessAutoApproved" : true,
   "SandboxEndpointAccessAutoApproved" : true,
   "RatingSummary" : {
-    "Five" : 1,
+    "Five" : 0,
     "Four" : 0,
-    "Three" : 1,
+    "Three" : 0,
     "Two" : 0,
     "One" : 0
   },
-  "ProductionAnonymousAccessAllowed" : false
+  "SandboxAnonymousAccessAllowed" : false,
+  "ProductionAnonymousAccessAllowed" : false,
+  "ResourceLevelPermissionsSupported" : true,
+  "APIOwnedImplementations" : true,
+  "ProductionServiceKey" : "uddi:0ced18dc-fae0-11e3-82e1-ee73ce832365",
+  "SandboxServiceKey" : "uddi:0dc2dfb1-fae0-11e3-82e1-ee73ce832365",
+  "APIImplementations" : {
+    "APIImplementation" : [ {
+      "Environment" : "Production",
+      "Name" : "ACME Payments API_1.0_Production_Virtual",
+      "Description" : "First release",
+      "ServiceKey" : "uddi:0ced18dc-fae0-11e3-82e1-ee73ce832365",
+      "APIBindings" : {
+        "APIBinding" : [ {
+          "BindingQName" : "{uri:acmecorp}Binding_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp.production.virtual",
+          "BindingKey" : "uddi:c49656e3-58ca-c7e0-f91c-62a3bb1809a2",
+          "InterfaceQName" : "{uri:acmecorp}PortType_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp.production",
+          "InterfaceKey" : "uddi:bd988666-235e-66cc-6289-05f613a8751a",
+          "BindingType" : "binding.http",
+          "BindingOperations" : {
+            "BindingOperation" : [ {
+              "OperationName" : "listPayments",
+              "WsdlOperationName" : "listPayments",
+              "HttpOperation" : {
+                "Method" : "GET",
+                "Path" : "/payments",
+                "InputContentType" : "*/*",
+                "OutputContentType" : "*/*",
+                "FaultContentType" : "*/*",
+                "Input" : [ ]
+              }
+            }, {
+              "OperationName" : "getPayment",
+              "WsdlOperationName" : "getPayment",
+              "HttpOperation" : {
+                "Method" : "GET",
+                "Path" : "/payments/{PaymentID}",
+                "InputContentType" : "*/*",
+                "OutputContentType" : "*/*",
+                "FaultContentType" : "*/*",
+                "Input" : [ {
+                  "Name" : "PaymentID",
+                  "Type" : "path"
+                } ]
+              }
+            }, {
+              "OperationName" : "addPayment",
+              "WsdlOperationName" : "addPayment",
+              "HttpOperation" : {
+                "Method" : "POST",
+                "Path" : "/payments",
+                "InputContentType" : "*/*",
+                "OutputContentType" : "*/*",
+                "FaultContentType" : "*/*",
+                "Input" : [ ]
+              }
+            }, {
+              "OperationName" : "modifyPayment",
+              "WsdlOperationName" : "modifyPayment",
+              "HttpOperation" : {
+                "Method" : "PUT",
+                "Path" : "/payments/{PaymentID}",
+                "InputContentType" : "*/*",
+                "OutputContentType" : "*/*",
+                "FaultContentType" : "*/*",
+                "Input" : [ {
+                  "Name" : "PaymentID",
+                  "Type" : "path"
+                } ]
+              }
+            }, {
+              "OperationName" : "deletePayment",
+              "WsdlOperationName" : "deletePayment",
+              "HttpOperation" : {
+                "Method" : "DELETE",
+                "Path" : "/payments/{PaymentID}",
+                "InputContentType" : "*/*",
+                "OutputContentType" : "*/*",
+                "FaultContentType" : "*/*",
+                "Input" : [ {
+                  "Name" : "PaymentID",
+                  "Type" : "path"
+                } ]
+              }
+            } ]
+          }
+        } ]
+      },
+      "APIInterfaces" : {
+        "APIInterface" : [ {
+          "InterfaceQName" : "{uri:acmecorp}PortType_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp.production",
+          "InterfaceKey" : "uddi:bd988666-235e-66cc-6289-05f613a8751a",
+          "InterfaceOperations" : {
+            "InterfaceOperation" : [ {
+              "OperationName" : "listPayments",
+              "WsdlOperationName" : "listPayments"
+            }, {
+              "OperationName" : "getPayment",
+              "WsdlOperationName" : "getPayment"
+            }, {
+              "OperationName" : "addPayment",
+              "WsdlOperationName" : "addPayment"
+            }, {
+              "OperationName" : "modifyPayment",
+              "WsdlOperationName" : "modifyPayment"
+            }, {
+              "OperationName" : "deletePayment",
+              "WsdlOperationName" : "deletePayment"
+            } ]
+          }
+        } ]
+      },
+      "Endpoints" : {
+        "Endpoint" : [ {
+          "CName" : "acme_payments_api.10.1.20.137",
+          "Category" : "Production",
+          "Uri" : "http://10.1.20.137:9901/",
+          "ConnectionProperties" : [ ],
+          "BindingQName" : "{uri:acmecorp}Binding_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp.production.virtual",
+          "BindingType" : "binding.http",
+          "EndpointKey" : "uddi:0d6a112f-fae0-11e3-82e1-ee73ce832365"
+        } ]
+      },
+      "Policies" : {
+        "Policy" : [ {
+          "PolicyKey" : "10001-acmecorpApplicationSecurityPolicy",
+          "Name" : "AtmosphereApplicationSecurityPolicy",
+          "Description" : "",
+          "PolicyType" : "Operational Policy",
+          "PolicySubType" : "policy.apisec"
+        }, {
+          "PolicyKey" : "10001-DetailedAuditing",
+          "Name" : "DetailedAuditing",
+          "Description" : "",
+          "PolicyType" : "Operational Policy",
+          "PolicySubType" : "policy.auditservice"
+        } ]
+      }
+    }, {
+      "Environment" : "Sandbox",
+      "Name" : "ACME Payments API_1.0_Sandbox_Virtual",
+      "Description" : "First release",
+      "ServiceKey" : "uddi:0dc2dfb1-fae0-11e3-82e1-ee73ce832365",
+      "APIBindings" : {
+        "APIBinding" : [ {
+          "BindingQName" : "{uri:acmecorp}Binding_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp.sandbox.virtual",
+          "BindingKey" : "uddi:659417b9-f374-65a1-778a-6b5d8a0025dc",
+          "InterfaceQName" : "{uri:acmecorp}PortType_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp.sandbox",
+          "InterfaceKey" : "uddi:d5dd8c7c-3ad0-211e-7eb0-1b6075bebd1f",
+          "BindingType" : "binding.http",
+          "BindingOperations" : {
+            "BindingOperation" : [ {
+              "OperationName" : "listPayments",
+              "WsdlOperationName" : "listPayments",
+              "HttpOperation" : {
+                "Method" : "GET",
+                "Path" : "/payments",
+                "InputContentType" : "*/*",
+                "OutputContentType" : "*/*",
+                "FaultContentType" : "*/*",
+                "Input" : [ ]
+              }
+            }, {
+              "OperationName" : "getPayment",
+              "WsdlOperationName" : "getPayment",
+              "HttpOperation" : {
+                "Method" : "GET",
+                "Path" : "/payments/{PaymentID}",
+                "InputContentType" : "*/*",
+                "OutputContentType" : "*/*",
+                "FaultContentType" : "*/*",
+                "Input" : [ {
+                  "Name" : "PaymentID",
+                  "Type" : "path"
+                } ]
+              }
+            }, {
+              "OperationName" : "addPayment",
+              "WsdlOperationName" : "addPayment",
+              "HttpOperation" : {
+                "Method" : "POST",
+                "Path" : "/payments",
+                "InputContentType" : "*/*",
+                "OutputContentType" : "*/*",
+                "FaultContentType" : "*/*",
+                "Input" : [ ]
+              }
+            }, {
+              "OperationName" : "modifyPayment",
+              "WsdlOperationName" : "modifyPayment",
+              "HttpOperation" : {
+                "Method" : "PUT",
+                "Path" : "/payments/{PaymentID}",
+                "InputContentType" : "*/*",
+                "OutputContentType" : "*/*",
+                "FaultContentType" : "*/*",
+                "Input" : [ {
+                  "Name" : "PaymentID",
+                  "Type" : "path"
+                } ]
+              }
+            }, {
+              "OperationName" : "deletePayment",
+              "WsdlOperationName" : "deletePayment",
+              "HttpOperation" : {
+                "Method" : "DELETE",
+                "Path" : "/payments/{PaymentID}",
+                "InputContentType" : "*/*",
+                "OutputContentType" : "*/*",
+                "FaultContentType" : "*/*",
+                "Input" : [ {
+                  "Name" : "PaymentID",
+                  "Type" : "path"
+                } ]
+              }
+            } ]
+          }
+        } ]
+      },
+      "APIInterfaces" : {
+        "APIInterface" : [ {
+          "InterfaceQName" : "{uri:acmecorp}PortType_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp.sandbox",
+          "InterfaceKey" : "uddi:d5dd8c7c-3ad0-211e-7eb0-1b6075bebd1f",
+          "InterfaceOperations" : {
+            "InterfaceOperation" : [ {
+              "OperationName" : "listPayments",
+              "WsdlOperationName" : "listPayments"
+            }, {
+              "OperationName" : "getPayment",
+              "WsdlOperationName" : "getPayment"
+            }, {
+              "OperationName" : "addPayment",
+              "WsdlOperationName" : "addPayment"
+            }, {
+              "OperationName" : "modifyPayment",
+              "WsdlOperationName" : "modifyPayment"
+            }, {
+              "OperationName" : "deletePayment",
+              "WsdlOperationName" : "deletePayment"
+            } ]
+          }
+        } ]
+      },
+      "Endpoints" : {
+        "Endpoint" : [ {
+          "CName" : "acme_payments_api.10.1.20.137",
+          "Category" : "Sandbox",
+          "Uri" : "http://10.1.20.137:9901/",
+          "ConnectionProperties" : [ ],
+          "BindingQName" : "{uri:acmecorp}Binding_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp.sandbox.virtual",
+          "BindingType" : "binding.http",
+          "EndpointKey" : "uddi:0e0036f3-fae0-11e3-82e1-ee73ce832365"
+        } ]
+      },
+      "Policies" : {
+        "Policy" : [ {
+          "PolicyKey" : "10001-AtmosphereApplicationSecurityPolicy",
+          "Name" : "AtmosphereApplicationSecurityPolicy",
+          "Description" : "",
+          "PolicyType" : "Operational Policy",
+          "PolicySubType" : "policy.apisec"
+        }, {
+          "PolicyKey" : "10001-DetailedAuditing",
+          "Name" : "DetailedAuditing",
+          "Description" : "",
+          "PolicyType" : "Operational Policy",
+          "PolicySubType" : "policy.auditservice"
+        } ]
+      }
+    } ]
+  }
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
-<thead>
-  <tr bgcolor="#DDDDDD">
-    <th width="20%">Header</th>
-    <th width="80%">Description</th>
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Header</th>
+      <th width="80%">Description</th>
     </tr>
-</thead>
-<tbody>
+  </thead>
+  <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
-      <td>application/json</td>
-  </tr>
-</tbody>
+      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+    </tr>
+  </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Response Body" -->
 <h3 id="responsebody">Response Body</h3>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
-<thead>
-  <tr bgcolor="#DDDDDD">
-    <th width="20%">Name</th>
-    <th width="15%">Type</th>
-    <th width="65%">Description</th>
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Name</th>
+      <th width="15%">Type</th>
+      <th width="65%">Description</th>
     </tr>
-</thead>
-<tbody>
+  </thead>
+  <tbody>
     <tr>
       <td>APIVersion</td>
       <td><a href="../obj/o_apis_APIVersion.htm">APIVersion</a></td>
       <td><!-- #BeginLibraryItem "/Library/o_apis_APIVersion.lbi" -->Includes information about an API version.<!-- #EndLibraryItem --></td>
-  </tr>
-</tbody>
+    </tr>
+  </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
 <h3 id="errorcodes">Error Codes/Messages</h3>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
+<!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -328,16 +645,17 @@ Date: Mon, 29 Apr 2013 15:22:01 GMT</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#http404">404</a></td>
+      <td><a href="../Ref_API_Reference.htm#http404">404</a></td>
       <td>The resource could not be found. For example, you might get this if you include an invalid APIVersionID.</td>
     </tr>
     <tr>
-      <td><a href="../Ref_apireference.htm#http500">500</a></td>
+      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
-  </tr>
-  </tbody>
+    </tr>
+    </tbody>
 </table>
-<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of Enterprise API Platform API error messages.</a></p>
+<!-- InstanceEndEditable -->
+<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -346,14 +664,14 @@ Date: Mon, 29 Apr 2013 15:22:01 GMT</pre>
   <tr>
     <td width="300"><ul>
   <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

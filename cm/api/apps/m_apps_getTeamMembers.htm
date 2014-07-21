@@ -59,7 +59,8 @@ no-catalog: true
 <pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app10021.acmecorp/members</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>GET&nbsp;/api/apps/app10021.acmecorp/members HTTP/1.1
-Host:<!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!-- #EndLibraryItem -->Accept: application/json, text/javascript, */*; q=0.01</pre>
+Host: <!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!-- #EndLibraryItem -->
+Accept: application/json, text/javascript, */*; q=0.01</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -68,7 +69,7 @@ Host:<!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!--
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -78,8 +79,8 @@ Host:<!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!--
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
-      <td><strong>text/xml</strong> or <!-- #BeginLibraryItem "/Library/hdrval_json.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
+      <td><strong>text/xml</strong> or <!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -115,7 +116,7 @@ Host:<!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!--
 
 <!-- InstanceBeginEditable name="Response Description" -->
 <h3 id="response">Response</h3>
-<p id="id_successstatement">If successful, this method returns HTTP status code 200, with information about the team members in an RSS channel formatted as JSON or XML.</p>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with information about the team members in an RSS channel formatted as JSON or XML.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -133,7 +134,7 @@ Content-Type: application/json</pre>
     &quot;title&quot; : &quot;Application team members&quot;,
     &quot;item&quot; : [ {
       &quot;title&quot; : &quot;JonathanSwift&quot;,
-      &quot;description&quot; : &quot;marymead@example.com&quot;,
+      &quot;description&quot; : &quot;marymead@acmecorp.com&quot;,
       &quot;category&quot; : [ {
         &quot;value&quot; : &quot;com.soa.group.membership.state.pending&quot;,
         &quot;domain&quot; : &quot;uddi:soa.com:status&quot;
@@ -147,7 +148,7 @@ Content-Type: application/json</pre>
       }
     }, {
       &quot;title&quot; : &quot;PhilipPirrip&quot;,
-      &quot;description&quot; : &quot;janemead@example.com&quot;,
+      &quot;description&quot; : &quot;janesaoirse@acmecorp.com&quot;,
       &quot;category&quot; : [ {
         &quot;value&quot; : &quot;com.soa.group.membership.state.pending&quot;,
         &quot;domain&quot; : &quot;uddi:soa.com:status&quot;
@@ -160,8 +161,8 @@ Content-Type: application/json</pre>
         &quot;Link&quot; : &quot;../acmecorp#/user/user10017.acmecorp/details&quot;
       }
     }, {
-      &quot;title&quot; : &quot;JaneMead&quot;,
-      &quot;description&quot; : &quot;jane.mead@example2.com&quot;,
+      &quot;title&quot; : &quot;JaneSaoirse&quot;,
+      &quot;description&quot; : &quot;jane.saoirse@example2.com&quot;,
       &quot;category&quot; : [ {
         &quot;value&quot; : &quot;com.soa.group.membership.state.approved&quot;,
         &quot;domain&quot; : &quot;uddi:soa.com:status&quot;
@@ -184,7 +185,7 @@ Content-Type: application/json</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -194,8 +195,8 @@ Content-Type: application/json</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
-      <td><strong>text/xml</strong> or <strong>application/json</strong></td>
+      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_txtxml_or_appjson.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -252,13 +253,13 @@ Content-Type: application/json</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#http500">500</a></td>
+      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -267,14 +268,14 @@ Content-Type: application/json</pre>
   <tr>
     <td width="300"><ul>
   <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

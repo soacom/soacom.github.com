@@ -18,7 +18,7 @@ no-catalog: true
 <p><!-- #BeginLibraryItem "/Library/desc_getTransactionRecord_apis.lbi" -->Returns information about a specific transaction for an API version.<!-- #EndLibraryItem --></p>
 <p><!-- #BeginLibraryItem "/Library/ref_Metrics.lbi" -->For additional information regarding the set of operations dealing with metric information, see <a href="../Ref_MetricsOnThePlatform.htm">Metrics on the Platform</a>.<!-- #EndLibraryItem --></p>
 
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/Library/roles_user.lbi" --> To complete this operation successfully, a user must be logged in<!-- #EndLibraryItem --> and must have monitor permission for the API; an <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a> or an app developer who has a contract with the API.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must be a user with Monitor permission for the API; an <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a> or an app developer who has a contract with the API.</p>
 
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -68,7 +68,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -78,8 +78,8 @@ no-catalog: true
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
-      <td><strong>application/json</strong> or <strong>text/xml</strong></td>
+      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson_or_txtxml.lbi" --> <strong>application/json</strong> or <strong>text/xml</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -105,8 +105,7 @@ no-catalog: true
       <td>Path</td>
       <td>string</td>
       <td>Required</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->
-The unique ID for the specified API version.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->The unique ID for a specific API version.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a href="../Ref_IDsOnThePlatform.htm#id_transactionid">TransactionID</a></td>
@@ -114,7 +113,7 @@ The unique ID for the specified API version.<!-- #EndLibraryItem --></td>
       <td>string</td>
       <td>Required</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_TransactionID.lbi" -->
-        The unique ID for a specific <a href="../glossary_communityplatform.htm#gl_transaction">transaction</a>.<!-- #EndLibraryItem --></td>
+        The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_transaction">transaction</a>.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>TimeZone</td>
@@ -128,7 +127,7 @@ The unique ID for the specified API version.<!-- #EndLibraryItem --></td>
       <td>Query</td>
       <td>boolean</td>
       <td>Optional</td>
-      <td>Tto include the transaction message contents in the response, set to <strong>true</strong>. Default: <strong>false</strong> (message contents are not included).</td>
+      <td><!-- #BeginLibraryItem "/Library/parm_IncludeMessageContents.lbi" -->To include the transaction message contents in the response, set to <strong>true</strong>. Default: <strong>false</strong> (message contents are not included).<!-- #EndLibraryItem --></td>
     </tr>
     </tbody>
 </table>
@@ -138,7 +137,7 @@ The unique ID for the specified API version.<!-- #EndLibraryItem --></td>
 
 <!-- InstanceBeginEditable name="Response Description" -->
 <h3 id="response">Response</h3>
-<p id="id_successstatement">If successful, this method returns HTTP status code 200, with the transaction information in the requested format.</p>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with the transaction information in the requested format.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -255,7 +254,7 @@ Transfer-Encoding: chunked
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -265,8 +264,8 @@ Transfer-Encoding: chunked
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_accept_txtxml_or_json.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson_or_txtxml.lbi" --> <strong>application/json</strong> or <strong>text/xml</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -306,19 +305,19 @@ Transfer-Encoding: chunked
       <th width="80%">Value</th>
     </tr>
     <tr>
-      <td><a href="../Ref_apireference.htm#http401">401</a></td>
+      <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
       <td>Unauthorized. For example, you would get this response if you hadn't completed login before running the operation.</td>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#http500">500</a></td>
+      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -327,14 +326,14 @@ Transfer-Encoding: chunked
   <tr>
     <td width="300"><ul>
   <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

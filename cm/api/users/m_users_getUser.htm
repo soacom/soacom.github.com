@@ -68,7 +68,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -78,8 +78,8 @@ no-catalog: true
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
-      <td>application/json</td>
+      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -116,7 +116,7 @@ The unique ID for a specific user.<!-- #EndLibraryItem --></td>
 
 <!-- InstanceBeginEditable name="Response Description" -->
 <h3 id="response">Response</h3>
-<p id="id_successstatement">If successful, this method returns HTTP status code 200, with the user profile of the specified user in JSON format.</p>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with the user profile of the specified user in JSON format.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -131,19 +131,19 @@ Date: Tue, 14 May 2013 17:54:27 GMT</pre>
 <p><strong>Sample response body #1: local user</strong></p>
 <pre>{
   "UserID" : "user12262.acmecorp",
-  "UserName" : "JaneMead",
+  "UserName" : "JaneSaoirse",
   "FirstName" : "Jane",
-  "LastName" : "Mead",
+  "LastName" : "Saoirse",
   "AuthIdentifier" : "urn:acme:user:open:user12262",
   "Visibility" : "0",
-  "Email" : "jane.mead@example.com",
+  "Email" : "jane.saoirse@acmecorp.com",
   "Title" : "",
   "Industry" : "",
   "Favorites" : "",
   "AvatarProvider" : "com.soa.imageprovider.type.default",
   "HasPicture" : false,
   "LastLoginDate" : "2013-05-14T17:53:24Z",
-  "ProfileName" : "JaneMead"
+  "ProfileName" : "JaneSaoirse"
 }</pre>
 <p><strong>Sample response body#2: Facebook user</strong></p>
 <pre>{
@@ -153,7 +153,7 @@ Date: Tue, 14 May 2013 17:54:27 GMT</pre>
   "LastName" : "Bellissimo",
   "AuthIdentifier" : "100000861099315",
   "Visibility" : "0",
-  "Email" : "jbellissimo@example.com",
+  "Email" : "jbellissimo@acmecorp.com",
   "Title" : "",
   "Industry" : "",
   "Favorites" : "",
@@ -169,7 +169,7 @@ Date: Tue, 14 May 2013 17:54:27 GMT</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -179,8 +179,8 @@ Date: Tue, 14 May 2013 17:54:27 GMT</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
-      <td>application/json</td>
+      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -203,7 +203,7 @@ Date: Tue, 14 May 2013 17:54:27 GMT</pre>
       <td>User</td>
       <td><a href="../obj/o_users_User.htm">User</a></td>
       <td><!-- #BeginLibraryItem "/Library/o_users_User.lbi" -->
-Contains information about an<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->user.<!-- #EndLibraryItem --></td>
+Contains information about an&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;user.<!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -221,19 +221,19 @@ Contains information about an<!-- #BeginLibraryItem "/Library/_PlatformName.lbi"
       <th width="80%">Value</th>
     </tr>
     <tr>
-      <td><a href="../Ref_apireference.htm#http401">401</a></td>
+      <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
       <td>Unauthorized. For example, you would get this response if you hadn't completed login before running the operation, or if you had the wrong UserID.</td>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#http500">500</a></td>
+      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -242,14 +242,14 @@ Contains information about an<!-- #BeginLibraryItem "/Library/_PlatformName.lbi"
   <tr>
     <td width="300"><ul>
   <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

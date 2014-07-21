@@ -11,11 +11,15 @@ sub-nav-class: dropbox
 no-catalog: true
 ---
 
+<!-- InstanceBeginEditable name="Heading" -->
 <h2><a name="top"></a>POST&nbsp;/api/dropbox/pictures</h2>
-<p><!-- #BeginLibraryItem "/Library/desc_addPicture.lbi" -->
-Adds an image for a resource such as a user profile.<!-- #EndLibraryItem --> Provides a temporary storage location for  an avatar image the user uploads as part of creating or updating a resource such as a user profile, an API, or an app.</p>
+<!-- InstanceEndEditable -->
+
+<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
+<p><!-- #BeginLibraryItem "/Library/desc_addPicture.lbi" --> Adds an image for a resource such as a user profile.<!-- #EndLibraryItem --> Provides a temporary storage location for  an avatar image the user uploads as part of creating or updating a resource such as a user profile, an API, or an app.</p>
 <p>For more information on managing images associated with resources on the platform, refer to <a href="../Ref_ManagingAvatarsOnThePlatform.htm">Managing Avatars on the Platform</a>.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: To complete this operation successfully, a user must be logged in and must be either an authorized user for the resource or a site admin.</p><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: To complete this operation successfully, a user must be logged in and must be either an authorized user for the resource or a site admin.</p>
+<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
   <tr>
@@ -37,15 +41,19 @@ Adds an image for a resource such as a user profile.<!-- #EndLibraryItem --> Pro
 </td>
   </tr>
 </table><!-- #EndLibraryItem --><h3 id="httpmethod">HTTP Method</h3>
+<!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">POST</p>
+<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-
 
 <h3 id="endpoint">URL</h3>
+<!-- InstanceBeginEditable name="URL" -->
 <pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->dropbox/pictures</pre>
+<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
+<!-- InstanceBeginEditable name="Sample Request" -->
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a picture being uploaded. The image is part of the multipart request body. </p>
 <p class="apidoc_note"><strong>Note</strong>: If you are using iframes, you can wrap the image in HTML so that it will work with the browser's same-origin security policy. For more information, see <a href="../Ref_FileUploadWithAjax.htm">File Upload with Ajax</a>.</p>
@@ -58,10 +66,12 @@ Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</pre>
 <p><strong>Sample request body</strong></p>
 <p>The request body is the image which the user uploaded.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -71,18 +81,20 @@ Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
+      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
       <td><!-- #BeginLibraryItem "/Library/hdrval_accept_textplain.lbi" --> Any Accept header value that supports a response Content-Type of <strong>text/plain</strong> is valid; for example, <strong>*/*</strong>.<!-- #EndLibraryItem --></td>
-  </tr>
+    </tr>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_request">Content-Type</a></td>
+      <td><a href="../Ref_API_Reference.htm#contenttype_request">Content-Type</a></td>
       <td><!-- #BeginLibraryItem "/Library/hdrval_multipart_form-data.lbi" --> <strong>multipart/form-data</strong><!-- #EndLibraryItem --></td>
-  </tr>
-  </tbody>
+    </tr>
+    </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Request Parameters" -->
 <h3 id="requestparameters">Request Parameters</h3>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
@@ -101,17 +113,21 @@ Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</pre>
       <td>InMultiPart</td>
       <td>Required</td>
       <td>The image that will be associated with the resource, and possibly additional metadata. For example, the picture might be wrapped in HTML; see <a href="../Ref_FileUploadWithAjax.htm">File Upload with Ajax</a>.</td>
-  </tr>
-</tbody>
+    </tr>
+  </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Response Description" -->
 <h3 id="response">Response</h3>
-<p id="id_successstatement">If successful, this method returns HTTP status code 200, with a string confirmation that the operation is complete.</p>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with a string confirmation that the operation is complete.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Sample Response" -->
 <h3 id="sampleresponse">Sample Response</h3>
 <p id="id_sampleresponse">The sample response below shows that the operation completed successfully.</p>
 
@@ -129,50 +145,56 @@ Aenean id condimentum sem. Suspendisse tempor luctus ipsum, vel metus."&gt;&lt;/
 </pre>
 <p class="apidoc_note"><strong>Note</strong>: for information about the HTML wrapper shown in the sample response above, see <a href="../Ref_FileUploadWithAjax.htm">File Upload with Ajax</a>.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
-<thead>
-  <tr bgcolor="#DDDDDD">
-    <th width="20%">Header</th>
-    <th width="80%">Description</th>
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Header</th>
+      <th width="80%">Description</th>
     </tr>
-</thead>
-<tbody>
+  </thead>
+  <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_text_plain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem --></td>
-  </tr>
-</tbody>
+      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_textplain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem --></td>
+    </tr>
+  </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Response Body" -->
 <h3 id="responsebody">Response Body</h3>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
-<thead>
-  <tr bgcolor="#DDDDDD">
-    <th width="20%">Name</th>
-    <th width="15%">Type</th>
-    <th width="65%">Description</th>
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Name</th>
+      <th width="15%">Type</th>
+      <th width="65%">Description</th>
     </tr>
-</thead>
-<tbody>
+  </thead>
+  <tbody>
     <tr>
       <td>DropboxID</td>
       <td>string</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_PictureID.lbi" -->
-The unique ID for a picture on the platform, such as the avatar for an app, API, or user. The picture ID is assigned by the Dropbox when the picture is first uploaded, using the Dropbox service, and stored in a temporary Dropbox location as part of adding or updating the resource. It is then sent to the server where it is permanently stored.<!-- #EndLibraryItem --></td>
-  </tr>
-</tbody>
+The unique ID for a picture on the platform, such as the avatar for an app, API, or user. The PictureID is assigned by the Dropbox when the picture is first uploaded, using the Dropbox service, and stored in a temporary Dropbox location as part of adding or updating the resource. It is then sent to the server where it is permanently stored.<!-- #EndLibraryItem --></td>
+    </tr>
+  </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
 <h3 id="errorcodes">Error Codes/Messages</h3>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
+<!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -182,12 +204,13 @@ The unique ID for a picture on the platform, such as the avatar for an app, API,
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#http500">500</a></td>
+      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
-  </tr>
+    </tr>
   </tbody>
 </table>
-<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of Enterprise API Platform API error messages.</a></p>
+<!-- InstanceEndEditable -->
+<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -196,14 +219,14 @@ The unique ID for a picture on the platform, such as the avatar for an app, API,
   <tr>
     <td width="300"><ul>
   <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

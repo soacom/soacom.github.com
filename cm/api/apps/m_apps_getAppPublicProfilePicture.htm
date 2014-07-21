@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Get App Public Profile Picture | Apps Service | Enterprise API Platform API
-description: Retrieves the image associated with an app version's public profile.
+description: Retrieves the image associated with an app version's public profile. If there is no custom image on the app's public profile, the platform's default image is returned.
 product: cm
 category: ref
 nav-title: Get App Public Profile Picture 
@@ -16,7 +16,8 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_getAppPublicProfilePicture.lbi" -->Retrieves the image associated with an app version's public profile.<!-- #EndLibraryItem --></p>
+<p><!-- #BeginLibraryItem "/Library/desc_getAppPublicProfilePicture.lbi" -->Retrieves the image associated with an app version's public profile.<!-- #EndLibraryItem --> If there is no custom image on the app's public profile, the platform's default image is returned.</p>
+<p class="apidoc_note"><strong>Note</strong>: the image for the public profile is not the necessarily the same as the avatar for the app itself. To retrieve the avatar for the app, use the <span class="apidoc_code"><a href="../resource/m_getDefaultAvatar.htm">GET&nbsp;/api/apps/{AppID}/avatar</a></span> operation.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a><strong>, </strong> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -69,7 +70,7 @@ Accept: image/png,image/*;q=0.8,*/*;q=0.5</pre>
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -79,7 +80,7 @@ Accept: image/png,image/*;q=0.8,*/*;q=0.5</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
+      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
       <td><strong>image/jpeg</strong></td>
     </tr>
   </tbody>
@@ -123,7 +124,7 @@ Accept: image/png,image/*;q=0.8,*/*;q=0.5</pre>
 
 <!-- InstanceBeginEditable name="Response Description" -->
 <h3 id="response">Response</h3>
-<p id="id_successstatement">If successful, this method returns HTTP status code 200, with the requested avatar image.</p>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with the requested avatar image.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -134,7 +135,7 @@ Accept: image/png,image/*;q=0.8,*/*;q=0.5</pre>
 <p><strong>Sample response headers</strong></p>
 <pre>HTTP/1.1 200 OK
 Content-Type: image/jpeg
-Date: Mon, 08 Jul 2013 21:09:53 GMT</pre>
+Date: Tue, 20 May 2014 09:44:30 GMT</pre>
 <p><strong>Sample response body</strong></p>
 <p>The response is the avatar image.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -144,7 +145,7 @@ Date: Mon, 08 Jul 2013 21:09:53 GMT</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -154,7 +155,7 @@ Date: Mon, 08 Jul 2013 21:09:53 GMT</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
+      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
       <td><strong>image/jpeg</strong></td>
     </tr>
   </tbody>
@@ -197,13 +198,13 @@ Date: Mon, 08 Jul 2013 21:09:53 GMT</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#http500">500</a></td>
+      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -212,14 +213,14 @@ Date: Mon, 08 Jul 2013 21:09:53 GMT</pre>
   <tr>
     <td width="300"><ul>
   <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

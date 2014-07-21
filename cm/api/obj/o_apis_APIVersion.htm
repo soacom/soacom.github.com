@@ -16,9 +16,10 @@ no-catalog: true
 
 <p class="usedby">This object is used by the following operations:</p>
 <ul>
-  <li><span class="apidoc_code"><a href="../apis/m_apis_addAPI.htm">POST&nbsp;/api/apis/apis</a></span></li>
-  <li><span class="apidoc_code"><a href="../apis/m_apis_updateAPI.htm">PUT&nbsp;/api/apis/versions/{ApiVersionID}</a></span></li>
+  <li><span class="apidoc_code"><a href="../apis/m_apis_addAPIVersion.htm">POST&nbsp;/api/apis/{APIID}/versions</a></span></li>
+  <li><span class="apidoc_code"><a href="../apis/m_apis_updateAPI.htm">PUT&nbsp;/api/apis/versions/{APIVersionID}</a></span></li>
   <li><span class="apidoc_code"><a href="../apis/m_apis_getAPIVersion.htm">GET&nbsp;/api/apis/versions/{APIVersionID}</a></span></li>
+  <li>Operations that reference the <a href="o_apis_API.htm">API</a> object</li>
 </ul>
 
 <p>The properties included in the <strong>APIVersion</strong> object are listed below.</p>
@@ -36,15 +37,13 @@ no-catalog: true
       <td><a href="../Ref_IDsOnThePlatform.htm#id_apiversionid">APIVersionID</a></td>
       <td>string</td>
       <td>Required</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->
-The unique ID for the specified API version.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->The unique ID for a specific API version.<!-- #EndLibraryItem --> Required except when adding a new API version.</td>
   </tr>
     <tr>
       <td><a href="../Ref_IDsOnThePlatform.htm#id_apiid">APIID</a></td>
       <td>string</td>
       <td>Required</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_APIID.lbi" -->
-The unique ID for the specified API.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_APIID.lbi" -->The unique ID for a specific API.<!-- #EndLibraryItem --> Required.</td>
   </tr>
     <tr>
       <td>Name</td>
@@ -62,20 +61,32 @@ The unique ID for the specified API.<!-- #EndLibraryItem --></td>
       <td>Type</td>
       <td>string</td>
       <td>Optional</td>
-      <td><p>The type for the API version. </p><!-- #BeginLibraryItem "/Library/values_APIType.lbi" --><p>Valid values:</p>
-        <ul class="apidoctable_ul">
-          <li>REST API: <strong>shttp</strong></li>
-          <li>SOAP 1.1 API: <strong>soap11</strong></li>
-          <li>SOAP 1.2 API: <strong>soap12</strong></li>
-        </ul><!-- #EndLibraryItem --></td>
+      <td>The type for the API version. Deprecated. For values, see <a href="../Ref_Values.htm#values_apitypes">API Types</a>.</td>
   </tr>
     <tr>
       <td>DefaultProfile</td>
       <td>string</td>
       <td>Optional</td>
-      <td><p>The <a href="../Ref_API_DefaultProfile.htm">default profile</a> for the API version, if specified.</p>
-        <p>Only applicable for adding operations via the user interface.</p></td>
+      <td><!-- #BeginLibraryItem "/Library/parm_DefaultProfile.lbi" -->The <a href="../Ref_API_DefaultProfile.htm">default profile</a> for the API version. This determines default media type values for request and response messages. In the user interface, the default profile is automatically used for new operations, although it can be changed.<!-- #EndLibraryItem --></td>
   </tr>
+    <tr>
+      <td>DefaultInputContentType</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td>Default content-type for request messages.</td>
+    </tr>
+    <tr>
+      <td>DefaultOutputContentType</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td>Default content-type for response messages.</td>
+    </tr>
+    <tr>
+      <td>DefaultFaultContentType</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td>The default content type (MIME type) for fault response messages for this operation.</td>
+    </tr>
     <tr>
       <td>Tag</td>
       <td>string[&nbsp;]</td>
@@ -131,24 +142,20 @@ SOAP APIs only: Includes information about the WSDL that contains the technical 
       <td>Policies</td>
       <td><a href="../obj/o_apis_Policies.htm">Policies</a></td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/Library/o_apis_Policies.lbi" --><p>
-An array of information about one or more policies that are enforced for the API version, if applicable.</p>
-        <p>For a list of valid policies, see <a href="../Ref_Values.htm#values_client_auth_policy_options">Client Authorization Policy Options</a>.</p>
-        <p>To retrieve a list of available policies, including PolicyKey and PolicyType, use the <span class="apidoc_code"><a href="../policies/m_policies_getPolicies.htm">GET&nbsp;/api/policies</a></span> operation.</p>
-<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_apis_Policies.lbi" -->Contains information about one or more policies that are enforced for the API version, if applicable.<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td>TargetAPI</td>
       <td><a href="../obj/o_apis_TargetAPI.htm">TargetAPI</a></td>
       <td>Optional</td>
       <td><!-- #BeginLibraryItem "/Library/parm_TargetAPI.lbi" -->
-Includes information about the <a href="../glossary_communityplatform.htm#gl_targetapi">target API</a>&#8212;the destination endpoint, or next hop, defined when an API is using the platform as a proxy.<!-- #EndLibraryItem --></td>
+Includes information about the <a href="../Ref_Glossary_CommunityPlatform.htm#gl_targetapi">target API</a>&#8212;the destination endpoint, or next hop, defined when an API is using the platform as a proxy.<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td>Visibility</td>
       <td>string</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/Library/parm_Visibility_apis.lbi" -->The <a href="../glossary_communityplatform.htm#gl_visibility_api">visibility</a> setting for the API; either Public, which is visible to all users, or Limited, which is visible only to API Administrators and Private API Group members.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/parm_Visibility_apis.lbi" -->The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_visibility_api">visibility</a> setting for the API; either Public, which is visible to all users, or Limited, which is visible only to API Administrators and Private API Group members.<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td>Created</td>
@@ -164,6 +171,12 @@ The date/time stamp when the resource was first created. Used only in response m
       <td><!-- #BeginLibraryItem "/Library/o_Updated.lbi" -->
 The date/time stamp when the resource was last updated. Used only in response messages.<!-- #EndLibraryItem --></td>
   </tr>
+    <tr>
+      <td>State</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td>For request messages, if a state is specified, only API versions in that state are returned.</td>
+    </tr>
     <tr>
       <td>ProductionEndpointAccessAutoApproved</td>
       <td>boolean</td>
@@ -215,15 +228,41 @@ Includes information about the settings for an API version; for example, whether
     </tr>
     <tr>
       <td>APIVersionResourceDetails</td>
-      <td>APIVersionResourceDetails</td>
+      <td><a href="o_apis_APIVersionResourceDetails.htm">APIVersionResourceDetails</a></td>
       <td>Optional</td>
-      <td>Information about the API version resource details.</td>
+      <td><!-- #BeginLibraryItem "/Library/o_apis_APIVersionResourceDetails.lbi" -->
+Contains details about operation-specific scope mapping for an API version, if operation-specific scope mapping is in use for the API version.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>ResourceLevelPermissionsSupported</td>
       <td>boolean</td>
       <td>Optional</td>
-      <td>If resource level permissions are supported, set to <strong>true</strong>.</td>
+      <td>Indicates whether resource-level permissions are supported for the API. If resource-level permissions are supported, set to <strong>true</strong>.</td>
+    </tr>
+    <tr>
+      <td>APIOwnedImplementations</td>
+      <td>boolean</td>
+      <td>Optional</td>
+      <td><p>If the API was created on the platform (API with New Service option, the default) this value is <strong>true</strong>. If the API was created using the API With Existing Service option, the service implementation is owned by Policy Manager; in this case, the value is <strong>false</strong>.</p>
+        <p>Default: <strong>true</strong>.</p></td>
+    </tr>
+    <tr>
+      <td>ProductionServiceKey</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td>The unique <a href="../Ref_Glossary_CommunityPlatform.htm#gl_uddikey">UDDI key</a> used for the API binding in Policy Manager, for the production endpoint for this API version. When adding an API from existing service, use the valid service key for the service in Policy Manager. For existing API versions, this field is included in response messages. </td>
+    </tr>
+    <tr>
+      <td>SandboxServiceKey</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td>The service key for the sandbox endpoint for this API version.</td>
+    </tr>
+    <tr>
+      <td>APIImplementations</td>
+      <td><a href="o_apis_APIImplementations.htm">APIImplementations</a></td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/o_apis_APIImplementations.lbi" -->Contains information about one or more API implementations.<!-- #EndLibraryItem --></td>
     </tr>
     </tbody>
 </table>
@@ -235,14 +274,14 @@ Includes information about the settings for an API version; for example, whether
   <tr>
     <td width="300"><ul>
   <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

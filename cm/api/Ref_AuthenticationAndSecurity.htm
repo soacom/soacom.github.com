@@ -6,9 +6,9 @@ product: cm
 category: ref
 nav-title: Authentication and Security 
 no-nav: api
-sub-nav: false
-sub-nav-class: 
-no-catalog: false
+sub-nav: true
+sub-nav-class: ref
+no-catalog: true
 ---
 
 <h2><a name="top"></a>Authentication and Security with the Enterprise API Platform API</h2>
@@ -46,7 +46,7 @@ no-catalog: false
 <p>The operations you can run without logging in are all &quot;read&quot; operations using the HTTP verb <strong>GET</strong>. Some examples:</p>
 <ul>
   <li><span class="apidoc_code"><a href="content/m_content_get.htm">GET&nbsp;/{contentpath}</a></span>: Retrieves a specific content document. To retrieve content, no login is required, unless the content is marked as Private (see <a href="#public_and_private">Public and private resources</a> below).</li>
-  <li><span class="apidoc_code"><a href="apis/m_apis_listAPIs.htm">GET&nbsp;/api/apis</a></span>: Returns a list of APIs. Again, APIs marked as Private are not returned, but all APIs marked as Public are visible to all users in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> user interface, whether logged in or not, and anyone can perform this operation via the API without logging in.</li>
+  <li><span class="apidoc_code"><a href="apis/m_apis_listAPIs.htm">GET&nbsp;/api/apis</a></span>: Returns a list of APIs. Again, APIs marked as Private are not returned, but all APIs marked as Public are visible to all users in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;user interface, whether logged in or not, and anyone can perform this operation via the API without logging in.</li>
 </ul>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -59,12 +59,6 @@ no-catalog: false
 <p>You'll need to have additional roles to run certain operations; for per-operation authentication requirements, refer to the <strong>Authorization Roles/Permissions</strong> section in the documentation for each operation. For general information about roles, see <a href="#operations_additional_roles">Operations that require additional authorization roles / permissions</a> below.</p>
 <p>You'll also need to renew the session cookie after a certain period of time, or after certain events. See <a href="#renewing_cookie">Renewing the cookie</a> below.</p>
 <p>You don't need to be logged in to run operations that require no authentication (see <a href="#operations_no_login">Operations you can run without login</a> above).</p>
-<p>Apart from the login operation mentioned above, there are also ways to obtain a session cookie using SSO with different identity providers. A high-level explaination is below; details will be in an SSO white paper coming later. For questions, contact Technical Support.</p>
-<p>SSO operations (documentation to come):</p>
-<ul>
-  <li>ssoLoginGET: Used when the identity provider has its own login screen and SSO is enabled between the platform and the identity provider. Examples: Facebook, Google.</li>
-  <li>ssoLoginPOST: Used when the identity provider does not have its own login screen and the platform is providing the login form as required by the identity provider.</li>
-</ul>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -99,7 +93,7 @@ no-catalog: false
 
 <a id="session_cookie"></a><h3>The session cookie</h3>
 <p>When you run the <span class="apidoc_code"><a href="login/m_login_login.htm">POST&nbsp;/api/login</a></span> operation, the response includes a session cookie which you'll need to make sure is included in the request headers for subsequent operations. If you're using a browser-based client, the cookie is probably sent automatically, but if not, you must explicitly include it.</p>
-<p>For more information and examples, refer to <a href="Ref_apireference.htm#ref_cookies">Cookies in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --></a>.</p>
+<p>For more information and examples, refer to <a href="Ref_API_Reference.htm#ref_cookies">Cookies in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;</a>.</p>
 <p>You'll also need to renew the cookie, after 30 minutes or after certain events. See <a href="#renewing_cookie">Renewing the cookie</a> below.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -118,7 +112,7 @@ no-catalog: false
 
 <a id="ending_the_session"></a><h3>Ending the session</h3>
 <p>When your session is complete, remember to log out using the <span class="apidoc_code"><a href="login/m_login_logout.htm">POST&nbsp;/api/login/logout</a></span> operation.</p>
-<!--<p>If the platform you are using has federation support, remember to invoke logout on all federation members.</p>-->
+<p class="apidoc_note"><strong>Note</strong>: If the platform you are using has <a href="Ref_Glossary_CommunityPlatform.htm#gl_federation">federation</a> support, remember to invoke logout on all federation members.</p>
 <p>If logout is not invoked, if the renew token is not invoked, the session expires when the token expires.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -129,14 +123,14 @@ no-catalog: false
   <tr>
     <td width="300"><ul>
   <li><a href="index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

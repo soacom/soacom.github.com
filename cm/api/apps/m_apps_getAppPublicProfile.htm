@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Get App Public Profile | Apps Service | Enterprise API Platform API
-description: Returns information about an app's <a href="../glossary_communityplatform.htm#gl_publicprofile_app">public profile</a>.
+description: Returns information about an app's <a href="../Ref_Glossary_CommunityPlatform.htm#gl_publicprofile_app">public profile</a>, if the public profile has been set up.
 product: cm
 category: ref
 nav-title: Get App Public Profile 
@@ -16,7 +16,7 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_getAppPublicProfile.lbi" -->Returns information about an app's <a href="../glossary_communityplatform.htm#gl_publicprofile_app">public profile</a>.<!-- #EndLibraryItem --></p>
+<p><!-- #BeginLibraryItem "/Library/desc_getAppPublicProfile.lbi" -->Returns information about an app's <a href="../Ref_Glossary_CommunityPlatform.htm#gl_publicprofile_app">public profile</a>, if the public profile has been set up.<!-- #EndLibraryItem --></p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: No permission required.</p><!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -68,7 +68,7 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -78,8 +78,8 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_json.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -115,7 +115,7 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 
 <!-- InstanceBeginEditable name="Response Description" -->
 <h3 id="response">Response</h3>
-<p id="id_successstatement">If successful, this method returns HTTP status code 200, with the public profile for the specified app version.</p>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with the public profile for the specified app version.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -133,7 +133,7 @@ Date: Mon, 08 Jul 2013 19:54:44 GMT</pre>
   "Title" : "PaaSTime",
   "SubTitle" : "Learning Fun!",
   "Description" : "A learning app: games, puzzles, language and spelling practice.",
-  "AppURI" : "http://www.example.com/paastime",
+  "AppURI" : "http://www.acmecorp.com/paastime",
   "LogoPictureID" : 1553,
   "LogoAssigned" : true,
   "LogoURL" : "/api/apps/versions/4iXro2Uxs2h4LviCshR9pK9w.acmecorp/publicprofile/picture",
@@ -148,7 +148,7 @@ Date: Mon, 08 Jul 2013 19:54:44 GMT</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -158,8 +158,8 @@ Date: Mon, 08 Jul 2013 19:54:44 GMT</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_json.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -198,16 +198,20 @@ Date: Mon, 08 Jul 2013 19:54:44 GMT</pre>
       <th width="20%">Item</th>
       <th width="80%">Value</th>
     </tr>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#http404">404</a></td>
+      <td>The resource could not be found. For example, you might get this if you included an invalid RuntimeID in the request.</td>
+    </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#http500">500</a></td>
+      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -216,14 +220,14 @@ Date: Mon, 08 Jul 2013 19:54:44 GMT</pre>
   <tr>
     <td width="300"><ul>
   <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

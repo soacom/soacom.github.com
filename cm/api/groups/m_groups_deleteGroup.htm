@@ -57,7 +57,7 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request to delete the specified group.</p>
 <p><strong>Request URL</strong></p>
-<pre><span class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->groups/group24385.acmecorp</span></pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->groups/group24385.acmecorp</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
@@ -68,7 +68,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -78,11 +78,11 @@ no-catalog: true
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
+      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
       <td><!-- #BeginLibraryItem "/Library/hdrval_accept_textplain.lbi" --> Any Accept header value that supports a response Content-Type of <strong>text/plain</strong> is valid; for example, <strong>*/*</strong>.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_request">Content-Type</a></td>
+      <td><a href="../Ref_API_Reference.htm#contenttype_request">Content-Type</a></td>
       <td>*/*</td>
     </tr>
   </tbody>
@@ -119,7 +119,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Response Description" -->
 <h3 id="response">Response</h3>
-<p id="id_successstatement">If successful, this method returns HTTP status code 200, with the <a href="../Ref_IDsOnThePlatform.htm#id_groupid">GroupID</a> as confirmation that the group was deleted. A new Authorization token is included in the response since information stored in the user's cookie has changed.</p>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with the <a href="../Ref_IDsOnThePlatform.htm#id_groupid">GroupID</a> as confirmation that the group was deleted. A new Authorization token is included in the response since information stored in the user's cookie has changed.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -133,7 +133,7 @@ Content-Type: text/plain
 Date: Tue, 11 Jun 2013 20:51:15 GMT
 Set-Cookie: AtmoAuthToken_open=TokenID%3Da7f29dab-d2d8-11e2-87ba-b1ff53277c59%2Cclaimed_id%3Durn%3Aacme%3Auser%3Aacmecorp%3Auser12262
 %2CissueTime%3D1370983875182%2CexpirationTime%3D1370985674700%2CAttributesIncluded%3Dfalse%2CUserFDN%3Duser12262%252E open%2CUserName
-%3Dopen-JaneMead%2Csig%3DgqXY4vBEhwUlidRZFfQfkJd8SFqi5u_9E6I3-9CKE2tv6AtSKhman1zgxK3jZbCLaFjqI2Vyi1NsAGjEpynvCvbpXE_ggXvhwDF77NcNryZRXfn
+%3Dopen-JaneSaoirse%2Csig%3DgqXY4vBEhwUlidRZFfQfkJd8SFqi5u_9E6I3-9CKE2tv6AtSKhman1zgxK3jZbCLaFjqI2Vyi1NsAGjEpynvCvbpXE_ggXvhwDF77NcNryZRXfn
 EzGk5mo3k8OcRYW8FSeMMw_f0pgMrOltA-BAY90XUyCZAa9LmbPci0paSUPs;path=/;expires=Tue, 11-Jun-2013 21:16:15 GMT;HttpOnly</pre>
 <p><strong>Sample response body</strong></p>
 <pre>group24385.acmecorp</pre>
@@ -144,7 +144,7 @@ EzGk5mo3k8OcRYW8FSeMMw_f0pgMrOltA-BAY90XUyCZAa9LmbPci0paSUPs;path=/;expires=Tue,
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -154,11 +154,11 @@ EzGk5mo3k8OcRYW8FSeMMw_f0pgMrOltA-BAY90XUyCZAa9LmbPci0paSUPs;path=/;expires=Tue,
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_content_type_rsp_textplain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem --></td>
+      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_textplain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../Ref_apireference.htm#setcookie_response">Set-Cookie</a></td>
+      <td><a href="../Ref_API_Reference.htm#setcookie_response">Set-Cookie</a></td>
       <td><!-- #BeginLibraryItem "/Library/hdrval_setcookie.lbi" -->
 The set-cookie response header sets, updates, or expires the platform cookie to reflect changes made by the operation.<!-- #EndLibraryItem --></td>
     </tr>
@@ -181,7 +181,7 @@ The set-cookie response header sets, updates, or expires the platform cookie to 
   <tbody>
     <tr>
       <td><a href="../Ref_IDsOnThePlatform.htm#id_groupid">GroupID</a></td>
-      <td><span class="soaapidoc_endpoint">GroupID</span></td>
+      <td>GroupID</td>
       <td>The unique ID for the group that was deleted.</td>
     </tr>
   </tbody>
@@ -202,17 +202,17 @@ The set-cookie response header sets, updates, or expires the platform cookie to 
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#http405">405</a></td>
+      <td><a href="../Ref_API_Reference.htm#http405">405</a></td>
       <td><!-- #BeginLibraryItem "/Library/http_405.lbi" --> Method Not Allowed. For example, you might get this if you specified an invalid Accept header or omitted a required Content-Type header.<!-- #EndLibraryItem --><!-- Actually: had PUT&nbsp;instead of GET&nbsp;for the HTTP verb, and no Content-Type specified, as well, when this code occurred--></td>
     </tr>
     <tr>
-      <td><a href="../Ref_apireference.htm#http500">500</a></td>
+      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -221,14 +221,14 @@ The set-cookie response header sets, updates, or expires the platform cookie to 
   <tr>
     <td width="300"><ul>
   <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

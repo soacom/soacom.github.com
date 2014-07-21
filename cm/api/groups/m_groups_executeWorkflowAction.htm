@@ -74,7 +74,7 @@ Content-Type: application/json; charset=UTF-8</pre>
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -84,12 +84,12 @@ Content-Type: application/json; charset=UTF-8</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
+      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
       <td><!-- #BeginLibraryItem "/Library/hdrval_accept_textplain.lbi" --> Any Accept header value that supports a response Content-Type of <strong>text/plain</strong> is valid; for example, <strong>*/*</strong>.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_request">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_json.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><a href="../Ref_API_Reference.htm#contenttype_request">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
     </tbody>
 </table>
@@ -133,7 +133,7 @@ Contains information about an action performed as part of a <a href="../Ref_Exec
 
 <!-- InstanceBeginEditable name="Response Description" -->
 <h3 id="response">Response</h3>
-<p id="id_successstatement">If successful, this method returns HTTP status code 200, with the MembershipRequestID as confirmation that the operation completed successfully.</p>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with the MembershipRequestID as confirmation that the operation completed successfully.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -154,7 +154,7 @@ Atmo-Renew-Token: renew</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -168,8 +168,8 @@ Atmo-Renew-Token: renew</pre>
       <td><!-- #BeginLibraryItem "/Library/hdrrsp_atmo-renew-token.lbi" --> <strong>renew</strong>. This is a custom response header used when the action of the method causes a change in a value  that's stored in the token. The token includes information on the user's apps, APIs, and groups, so actions such as adding an app or accepting an invitation to join an app team require update of the token. A value of <strong>renew</strong> means that the operation has changed some information that's stored in the token, and you must therefore renew the token using the <span class="apidoc_code"><a href="../login/m_login_renewToken.htm">POST&nbsp;/api/login/renewToken</a></span> operation.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_content_type_rsp_textplain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem --></td>
+      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_textplain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem --></td>
     </tr>
     </tbody>
 </table>
@@ -211,25 +211,25 @@ Atmo-Renew-Token: renew</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#http404">404</a></td>
+      <td><a href="../Ref_API_Reference.htm#http404">404</a></td>
       <td>The resource could not be found.</td>
     </tr>
     <tr>
-      <td><a href="../Ref_apireference.htm#http405">405</a></td>
+      <td><a href="../Ref_API_Reference.htm#http405">405</a></td>
       <td><!-- #BeginLibraryItem "/Library/http_405.lbi" --> Method Not Allowed. For example, you might get this if you specified an invalid Accept header or omitted a required Content-Type header.<!-- #EndLibraryItem --><!-- Actually: had PUT&nbsp;instead of GET&nbsp;for the HTTP verb, and no Content-Type specified, as well, when this code occurred--></td>
     </tr>
     <tr>
-      <td><a href="../Ref_apireference.htm#http409">409</a></td>
+      <td><a href="../Ref_API_Reference.htm#http409">409</a></td>
       <td>Invalid action for current resource state: the action attempted was not valid for the team member's current state.</td>
     </tr>
     <tr>
-      <td><a href="../Ref_apireference.htm#http500">500</a></td>
+      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
     </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -238,14 +238,14 @@ Atmo-Renew-Token: renew</pre>
   <tr>
     <td width="300"><ul>
   <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

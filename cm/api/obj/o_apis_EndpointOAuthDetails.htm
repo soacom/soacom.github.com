@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: EndpointOAuthDetails Object | APIs Service | Enterprise API Platform API
-description: Includes OAuth information for an API's endpoint, such as the supported OAuth version and grant types.
+description: Includes information about the OAuth configuration for an API, such as the supported OAuth version, URLs, and grant types.
 product: cm
 category: ref
 nav-title: EndpointOAuthDetails Object 
@@ -12,7 +12,7 @@ no-catalog: true
 ---
 
 <h2><a name="top"></a>EndpointOAuthDetails Object</h2>
-<p><!-- #BeginLibraryItem "/Library/o_api_EndpointOAuthDetails.lbi" -->Includes OAuth information for an API's endpoint, such as the supported OAuth version and grant types.<!-- #EndLibraryItem --></p>
+<p><!-- #BeginLibraryItem "/Library/o_api_EndpointOAuthDetails.lbi" -->Includes information about the OAuth configuration for an API, such as the supported OAuth version, URLs, and grant types.<!-- #EndLibraryItem --></p>
 <p><strong>Note</strong>: You must create the API using the <span class="apidoc_code"><a href="../apis/m_apis_addAPI.htm">POST&nbsp;/api/apis</a></span> operation before setting up the OAuth details.</p>
 
 <p class="usedby">This object is used by the following operations:</p>
@@ -20,6 +20,7 @@ no-catalog: true
   <li>Operations that reference the <a href="o_apis_EndpointsOAuthDetails.htm">EndpointsOAuthDetails</a> object</li>
   <li>Operations that reference the <a href="o_apis_APIVersion.htm">APIVersion</a> object</li>
   <li>Operations that reference the <a href="o_apis_TargetAPI.htm">TargetAPI</a> object</li>
+  <li>Operations that reference the <a href="o_apis_APIImplementation.htm">APIImplementation</a> object</li>
 </ul>
 
 <p>The properties included in the <strong>EndpointOAuthDetails</strong> object are listed below.</p>
@@ -97,21 +98,31 @@ no-catalog: true
     </tr>
     <tr>
       <td>AuthorizationEndpointParameters</td>
-      <td>AuthorizationEndpointParameters</td>
+      <td><a href="o_apis_AuthorizationEndpointParameters.htm">AuthorizationEndpointParameters</a></td>
       <td>Optional</td>
-      <td>Information about the authorization endpoint parameters.</td>
+      <td><p><!-- #BeginLibraryItem "/Library/o_apis_AuthorizationEndpointParameters.lbi" -->Used only with third-party OAuth provider (com.soa.oauth.provider.third-party): Custom parameters to be sent to the authorization endpoint, if the third-party requires custom parameters.<!-- #EndLibraryItem --></p>
+        <p>If custom parameters are specified here, the Dev Console displays the parameters, with a place for developers to enter a value, so that developers can test their apps with the API.</p></td>
     </tr>
     <tr>
       <td>TokenEndpointParameters</td>
       <td><a href="o_apis_TokenEndpointParameters.htm">TokenEndpointParameters</a></td>
       <td>Optional</td>
-      <td>Information about the token endpoint parameters.</td>
+      <td><p><!-- #BeginLibraryItem "/Library/o_apis_TokenEndpointParameters.lbi" -->Used only with third-party OAuth provider (com.soa.oauth.provider.third-party): Custom parameters to be sent to the token endpoint, if the third-party requires custom parameters.<!-- #EndLibraryItem --></p>
+        <p>If custom parameters are specified here, the Dev Console displays the parameters, with a place for developers to enter a value, so that developers can test their apps with the API.</p></td>
     </tr>
     <tr>
       <td>OAuthTokenResourceURISettings</td>
-      <td>OAuthTokenResourceURISettings</td>
+      <td><a href="o_apis_OAuthTokenResourceURISettings.htm">OAuthTokenResourceURISettings</a></td>
       <td>Optional</td>
-      <td>Information about the OAuth token URI settings.</td>
+      <td><p><!-- #BeginLibraryItem "/Library/o_apis_OAuthTokenResourceURISettings.lbi" -->Contains information about the URI for the OAuth Token Resource.<!-- #EndLibraryItem --></p>
+        <p>Example: com.soa.oauth.token.resource.uri.proxy.url.</p></td>
+    </tr>
+    <tr>
+      <td>PlatformAppIdentitiesInUse</td>
+      <td>boolean</td>
+      <td>Optional</td>
+      <td><p>Used only with third-party OAuth provider (com.soa.oauth.provider.third-party): indicates that the OAuth implementation uses the platform app identity values (App ID and Shared Secret) for authentication of the app. This corresponds with the following setting in the platform user interface OAuth setup for the API: <strong>OAuth Provider uses Platform App identities</strong>.</p>
+        <p>If this property is set to <strong>true</strong>, the Dev Console in the user interface prefills the app identity values when the app developer is testing the app with the API. If it's set to <strong>false</strong>, the Dev Console leaves the fields blank for the app developer to enter authentication values provided by the API owner.</p></td>
     </tr>
     </tbody>
 </table>
@@ -123,14 +134,14 @@ no-catalog: true
   <tr>
     <td width="300"><ul>
   <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

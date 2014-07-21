@@ -1,25 +1,28 @@
 ---
 layout: apipage
-title: GoverningWorkflowChangeRequest Object | APIs Service | Enterprise API Platform API
+title: GoverningWorkflow Object | APIs/Apps Service | Enterprise API Platform API
 description: Contains information about the workflow governing a resource.
 product: cm
 category: ref
-nav-title: GoverningWorkflowChangeRequest Object 
+nav-title: GoverningWorkflow Object 
 no-nav: api
 sub-nav: true
 sub-nav-class: obj
 no-catalog: true
 ---
 
-  <h2><a name="top"></a>GoverningWorkflowChangeRequest Object</h2>
+  <h2><a name="top"></a>GoverningWorkflow Object</h2>
 <p>Contains information about the workflow governing a resource.</p>
 <p class="usedby">This object is used by the following operations:</p>
 <ul>
+  <li><span class="apidoc_code"><a href="../apis/m_apis_getAPIVersionGoverningWorkflow.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/governingworkflow</a></span></li>
   <li><span class="apidoc_code"><a href="../apps/m_apps_getAppVersionGoverningWorkflow.htm">GET&nbsp;/api/apps/versions/{RuntimeID}/governingworkflow</a></span></li>
-  <li><span class="apidoc_code"><a href="../apps/m_apps_getAppVersionGoverningWorkflow.htm">PUT&nbsp;/api/apps/versions/{AppVersionID}/governingworkflow</a></span></li>
+<!--  <li><span class="apidoc_code">PUT&nbsp;/api/apis/versions/{APIVersionID}/governingworkflow</span> (apis_modifyAppVersionGoverningWorkflow)</li>-->
+<!--  <li><span class="apidoc_code">PUT&nbsp;/api/apps/versions/{AppVersionID}/governingworkflow</span> (apps_modifyAppVersionGoverningWorkflow)</li>
+-->
 </ul>
 
-<p>The properties included in the <strong>GoverningWorkflowChangeRequest</strong> object are listed below.</p>
+<p>The properties included in the <strong>GoverningWorkflow</strong> object are listed below.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -52,7 +55,7 @@ no-catalog: true
     <tr>
       <td>State</td>
       <td>Key</td>
-      <td>The current state of the workflow.</td>
+      <td>The current state of the workflow. For information about possible values, see <a href="../Ref_Values.htm#values_workflowstates">Workflow States</a>.</td>
     </tr>
     <tr>
       <td>Updated</td>
@@ -69,14 +72,14 @@ no-catalog: true
   <tr>
     <td width="300"><ul>
   <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

@@ -20,7 +20,8 @@ no-catalog: true
 <p>If the optional ContractID or APIVersionID are not included in the call, this operation returns metrics information for all valid API contracts for the specified app version (if the ShowSummary parameter is set to <strong>true</strong>).</p>
 <p><!-- #BeginLibraryItem "/Library/ref_Metrics.lbi" -->For additional information regarding the set of operations dealing with metric information, see <a href="../Ref_MetricsOnThePlatform.htm">Metrics on the Platform</a>.<!-- #EndLibraryItem --></p>
 <p><strong>Note</strong>: This operation returns metric data as a JSON object that can be used in a chart; the <span class="apidoc_code"><a href="m_apps_exportMetrics.htm">GET&nbsp;/api/apps/versions/{AppVersionID}/metrics/export</a></span> operation returns the data as an exported CSV file.</p>
-<p><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/Library/roles_user.lbi" --> To complete this operation successfully, a user must be logged in<!-- #EndLibraryItem --> and must have monitor permission for the app; an <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a><strong>,</strong> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> for an API that the app has a contract with.</p>
+<p><strong>Authorization Roles/Permissions</strong>:<!-- #BeginLibraryItem "/Library/roles_user.lbi" -->
+To complete this operation successfully, a user must be logged in.<!-- #EndLibraryItem -->and must have monitor permission for the app; an <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a><strong>,</strong> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> for an API that the app has a contract with.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -50,11 +51,11 @@ no-catalog: true
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/versions/{AppVersionID}/metrics[?][&amp;ReportType={ReportType}]
-[ContractID={ContractID}][&amp;APIVersionID={APIVersionID}][&amp;Environment={Environment}]
-[&amp;StartDate={StartDate}][&amp;EndDate={EndDate}][&amp;TimeZone={TimeZone}]
-[&amp;TimeInterval={TimeInterval}][&amp;Duration={Duration}][&amp;ShowSummary={ShowSummary}]
-[&amp;ShowSLAs={ShowSLAs}][&amp;ShowIntervalData={ShowIntervalData}]</pre>
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/versions/{AppVersionID}/metrics[?][ReportType={ReportType}]
+&amp;[ContractID={ContractID}]&amp;[APIVersionID={APIVersionID}]&amp;[Environment={Environment}]
+&amp;[StartDate={StartDate}]&amp;[EndDate={EndDate}]&amp;[TimeZone={TimeZone}]
+&amp;[TimeInterval={TimeInterval}]&amp;[Duration={Duration}]&amp;[ShowSummary={ShowSummary}]
+&amp;[ShowSLAs={ShowSLAs}]&amp;[ShowIntervalData={ShowIntervalData}]</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -79,7 +80,7 @@ Accept: */*</pre>
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -89,8 +90,8 @@ Accept: */*</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_json.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -137,7 +138,7 @@ Accept: */*</pre>
       <td>Query</td>
       <td>string</td>
       <td>Required</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" --> The unique ID for the specified API version.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->The unique ID for a specific API version.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>Environment</td>
@@ -179,7 +180,7 @@ Accept: */*</pre>
       <td>Query</td>
       <td>string[&nbsp;]</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/Library/parm_Duration.lbi" -->The <a href="../Ref_apireference.htm#datatypes_duration">duration</a> for the metric information. If not specified, defaults to two hours (2h). The StartDate, EndDate, and Duration fields work together to define the information to be returned.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/parm_Duration.lbi" -->The <a href="../Ref_API_Reference.htm#datatypes_duration">duration</a> for the metric information. If not specified, defaults to two hours (2h). The StartDate, EndDate, and Duration fields work together to define the information to be returned.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>ShowSummary</td>
@@ -200,7 +201,7 @@ Accept: */*</pre>
       <td>Query</td>
       <td>boolean</td>
       <td>Optional</td>
-      <td>Indicates whether the metric information that's returned should be broken up by time interval. For example, if the TimeInterval value is five minutes (5m) and the Duration value is one hour (1h), and ShowIntervalData is set to true, the results would include 12 sets of information, one for each five-minute interval. Time interval data can be used to create a bar chart.</td>
+      <td><!-- #BeginLibraryItem "/Library/parm_ShowIntervalData.lbi" -->Indicates whether the metric information that's returned should be broken up by time interval. For example, if the TimeInterval value is five minutes (5m) and the Duration value is one hour (1h), and ShowIntervalData is set to true, the results would include 12 sets of information, one for each five-minute interval. Time interval data can be used to create a bar chart.<!-- #EndLibraryItem --></td>
     </tr>
     </tbody>
 </table>
@@ -210,7 +211,7 @@ Accept: */*</pre>
 
 <!-- InstanceBeginEditable name="Response Description" -->
 <h3 id="response">Response</h3>
-<p id="id_successstatement">If successful, this method returns HTTP status code 200, with the metric information in JSON format.</p>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with the metric information in JSON format.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -360,7 +361,7 @@ Expires: Wed, 19 Mar 2014 13:43:25 GMT</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -370,8 +371,8 @@ Expires: Wed, 19 Mar 2014 13:43:25 GMT</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_json.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -413,13 +414,13 @@ Expires: Wed, 19 Mar 2014 13:43:25 GMT</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#http500">500</a></td>
+      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -428,14 +429,14 @@ Expires: Wed, 19 Mar 2014 13:43:25 GMT</pre>
   <tr>
     <td width="300"><ul>
   <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

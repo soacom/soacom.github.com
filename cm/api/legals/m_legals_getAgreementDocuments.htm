@@ -58,10 +58,10 @@ Returns a summary of information about legal agreement documents on the platform
 <p id="id_samplerequest">The examples below show requests for legal agreement documents of type signup (for developers signing up to use the platform).</p>
 <p><strong>Request URL #1</strong></p>
 <p>Returns all legal agreements of the specified agreement type.</p>
-<pre><span class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem --></span>legals?AgreementType=com.soa.acmecorp.legals.signup</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->legals?AgreementType=com.soa.acmecorp.legals.signup</pre>
 <p><strong>Request URL #2</strong></p>
 <p>Returns the legal document with the specified LegalDocumentID. Note the first parameter is still required.</p>
-<pre><span class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem --></span>legals?AgreementType=com.soa.acmecorp.legals.signup&amp;ResourceID=signupagrmtv1.acmecorp</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->legals?AgreementType=com.soa.acmecorp.legals.signup&amp;ResourceID=signupagrmtv1.acmecorp</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
@@ -72,7 +72,7 @@ Returns a summary of information about legal agreement documents on the platform
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -82,8 +82,8 @@ Returns a summary of information about legal agreement documents on the platform
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_accept_txtxml_or_json.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_txtxml_or_appjson.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -109,14 +109,16 @@ Returns a summary of information about legal agreement documents on the platform
       <td>Query</td>
       <td>string</td>
       <td>Required</td>
-      <td>The type of legal agreement to be returned in the response. For valid values, refer to <a href="../Ref_Values.htm#values_legalagreementtype">Legal Agreement Types</a>.</td>
+      <td><p>The type of legal agreement to be returned in the response. For valid values, refer to <a href="../Ref_Values.htm#values_legalagreementtype">Legal Agreement Types</a>.</p>
+        <p>Required unless ResourceID parameter is present.</p></td>
     </tr>
     <tr>
       <td><a href="../Ref_IDsOnThePlatform.htm#id_resourceid">ResourceID</a></td>
       <td>Query</td>
       <td>string</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_ResourceID.lbi" --> The unique ID for a specific resource.<!-- #EndLibraryItem --> In this case it is the <a href="../Ref_IDsOnThePlatform.htm#id_legaldocumentid">LegalDocumentID</a> for a specific legal agreement document.</td>
+      <td><p><!-- #BeginLibraryItem "/Library/o_ID_ResourceID.lbi" -->The unique ID for a specific resource; for example, the <a href="../Ref_IDsOnThePlatform.htm#id_scopeid">ScopeID</a> or the <a href="../Ref_IDsOnThePlatform.htm#id_apiversionid">APIVersionID</a>.<!-- #EndLibraryItem -->In this case it is the <a href="../Ref_IDsOnThePlatform.htm#id_legaldocumentid">LegalDocumentID</a> for a specific legal agreement document.</p>
+        <p>Required if AgreementType parameter is not present.</p></td>
     </tr>
     </tbody>
 </table>
@@ -126,7 +128,7 @@ Returns a summary of information about legal agreement documents on the platform
 
 <!-- InstanceBeginEditable name="Response Description" -->
 <h3 id="response">Response</h3>
-<p id="id_successstatement">If successful, this method returns HTTP status code 200, with information about the agreement documents in the form of an RSS feed.</p>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with information about the agreement documents in the form of an RSS feed.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -203,7 +205,7 @@ xmlns:ns10="http://soa.com/xsd/api/1.0" xmlns:ns11="http://soa.com/xsd/board/1.0
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -213,8 +215,8 @@ xmlns:ns10="http://soa.com/xsd/api/1.0" xmlns:ns11="http://soa.com/xsd/board/1.0
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_accept_txtxml_or_json.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_txtxml_or_appjson.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -286,13 +288,18 @@ The response body is in the form of an RSS channel, and includes the items liste
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#http500">500</a></td>
+      <td><a href="../Ref_API_Reference.htm#http400">400</a></td>
+      <td>Bad request: Returned if the client sends invalid parameters or body content.
+      For example, you might get this response if you don't include a parameter; either the <strong>AgreementType</strong> or <strong>ResourceID</strong> parameter must be present.</td>
+    </tr>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -301,14 +308,14 @@ The response body is in the form of an RSS channel, and includes the items liste
   <tr>
     <td width="300"><ul>
   <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

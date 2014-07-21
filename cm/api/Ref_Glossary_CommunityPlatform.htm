@@ -6,9 +6,9 @@ product: cm
 category: ref
 nav-title: Glossary 
 no-nav: api
-sub-nav: false
-sub-nav-class: communityplatform
-no-catalog: false
+sub-nav: true
+sub-nav-class: ref
+no-catalog: true
 ---
 
 <h2><a name="top"></a>Glossary of Terms</h2>
@@ -31,7 +31,7 @@ no-catalog: false
 
 
 <dt><a name="gl_api"></a>API</dt>
-<dd>A key resource in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->. An API provides a business with a way of using the Internet to extend business capabilities to connect with new customers in new ways. In this context an API is a Web service exposed outside the enterprise, typically using RESTful design principles, and often with JSON content.</dd>
+<dd>A key resource in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->. An API provides a business with a way of using the Internet to extend business capabilities to connect with new customers in new ways. In this context an API is a Web service exposed outside the enterprise, typically using RESTful design principles, and often with JSON content.</dd>
 
 
 
@@ -41,22 +41,22 @@ no-catalog: false
 
 
 <dt><a name="gl_apiadmin"></a>API Administrator</dt>
-<dd>One of the <a href="#gl_role">roles</a> defined in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> is that of the API Admin. Each API must have at least one Admin, and can have more. The API Admin approves or rejects connection requests, moderates the API's <a href="#gl_board">Board</a>, views and manages alerts and trouble tickets, and manages documents, policies, and other information associated with the API. The API Admin can also view performance and usage data for the entire API, and can invite others to be Admins for the same API. For more information, see <a href="Ref_ManagingGroupsOnThePlatform.htm#groups_apiadmin">Managing Groups on the Platform</a>.</dd>
+<dd>One of the <a href="#gl_role">roles</a> defined in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;is that of the API Admin. Each API must have at least one Admin, and can have more. The API Admin approves or rejects connection requests, moderates the API's <a href="#gl_board">Board</a>, views and manages alerts and trouble tickets, and manages documents, policies, and other information associated with the API. The API Admin can also view performance and usage data for the entire API, and can invite others to be Admins for the same API. For more information, see <a href="Ref_ManagingGroupsOnThePlatform.htm#groups_apiadmin">Managing Groups on the Platform</a>.</dd>
 
 
 
 <dt><a name="gl_app"></a>app</dt>
-<dd>An app (application) is a piece of software that delivers specific capabilities to its users. In the context of the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, an app is a piece of software that consumes one or more APIs.</dd>
+<dd>An app (application) is a piece of software that delivers specific capabilities to its users. In the context of the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, an app is a piece of software that consumes one or more APIs.</dd>
 
 
 
 <dt><a name="gl_appteammember"></a>app team member</dt>
-<dd>One of the <a href="#gl_role">roles</a> defined in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> is that of the app team member. Each app most have at least one team member and can have more. An app team member initiates contract requests, such as API access requests, moderates the app's <a href="#gl_board">Board</a>, and views and manages trouble tickets relating to the app. The app team member can also view performance and usage data for the app's API usage, and can invite others to be team members for the same app. All app team members have the same rights. For more information, see <a href="Ref_ManagingGroupsOnThePlatform.htm#groups_appteam">Managing Groups on the Platform</a>.</dd>
+<dd>One of the <a href="#gl_role">roles</a> defined in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;is that of the app team member. Each app most have at least one team member and can have more. An app team member initiates contract requests, such as API access requests, moderates the app's <a href="#gl_board">Board</a>, and views and manages trouble tickets relating to the app. The app team member can also view performance and usage data for the app's API usage, and can invite others to be team members for the same app. All app team members have the same rights. For more information, see <a href="Ref_ManagingGroupsOnThePlatform.htm#groups_appteam">Managing Groups on the Platform</a>.</dd>
 
 
 
 <dt><a name="gl_appid"></a>AppID</dt>
-<dd>When a user registers an app in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, the app is assigned an AppID. The AppID is the unique identifier for the app within the platform. All API calls include the AppID.</dd>
+<dd>When a user registers an app in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;platform, the app is assigned an AppID. The AppID is the unique identifier for the app within the platform. All API calls include the AppID.</dd>
 
 
 
@@ -65,6 +65,10 @@ no-catalog: false
 <dd>If administrators are writing purge functionality for board items, it's important to make sure that only Board items with the archivable flag set to <strong>true</strong> are purged.</dd>
 <dd>You might see this value in an RSS feed response to some operations relating to the Board for a resource, or to a user's home feed; for example, <span class="apidoc_code"><a href="apis/m_apis_getBoard.htm">GET&nbsp;/api/apis/{APIID}/board</a></span>.</dd>
 
+
+
+<dt><a name="gl_oauth_authorizationendpoint"></a>Authorization endpoint (OAuth)</dt>
+<dd>Users connect to the authorization endpoint; apps connect to the <a href="#gl_oauth_tokenendpoint">token endpoint</a>.</dd>
 
 
 
@@ -79,33 +83,39 @@ no-catalog: false
 
 
 <dt><a name="gl_board"></a>Board</dt>
-<dd>In the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, every resource, such as an app or API, has a Board that displays all feed entries for the resource. Users with approved connections to the resource can post items to the resource's Board according to privileges. For example, a member of a specific app team can post items to the Board for that app. Users with approved connections also see relevant Board items in their personal home Feed.</dd>
+<dd>In the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, every resource, such as an app or API, has a Board that displays all feed entries for the resource. Users with approved connections to the resource can post items to the resource's Board according to privileges. For example, a member of a specific app team can post items to the Board for that app. Users with approved connections also see relevant Board items in their personal home Feed.</dd>
 
 
 
 <dt><a name="gl_boarditem"></a>Board item</dt>
 <dd>An individual entry on a resource's <a href="#gl_board">Board</a>. A Board item can be an <a href="#gl_alert">Alert</a>, <a href="#gl_apiaccessrequest">API Access Request (Contract Request)</a>, <a href="#gl_discussion">Discussion</a>, <a href="#gl_membershiprequest">Group Membership Invitation</a>, or <a href="#gl_ticket">Ticket</a>. It can also be an item on a <a href="#gl_customboardid">custom board</a>.</dd>
-<dd>A <a href="#gl_review">review</a> is also a type of Board item; however, a review isn't included as part of the object's Board. Instead, reviews are included in the user interface as part of the details page for the object (app, API, or group). In terms of using the API, all operations that work for Board items work for reviews also.</dd>
+<dd>A <a href="#gl_review">review</a> is also a type of Board item; however, in the platform user interface a review isn't included as part of the object's Board. Instead, reviews are included in the user interface as part of the details page for the object (app, API, or group). In terms of using the API, all operations that work for Board items work for reviews also.</dd>
 
 
 
 <dt><a name="gl_business"></a>business</dt>
-<dd>In the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, a business is an entity that owns and publishes one or more APIs.</dd>
+<dd>In the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, a business is an entity that owns and publishes one or more APIs.</dd>
 
 
 
 <dt><a name="gl_businessadmin"></a>Business Administrator</dt>
-<dd>One of the roles defined in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> is that of the <a href="Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Administrator</a>. A business can own one or more APIs and apps, and must have at least one Administrator. The Business Administrator automatically has administrator rights over all the APIs and apps owned by the business as well as all the users who are part of the business. For more information, see <a href="Ref_ManagingGroupsOnThePlatform.htm#groups_bizadmin">Managing Groups on the Platform</a>.</dd>
+<dd>One of the roles defined in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;is that of the <a href="Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Administrator</a>. A business can own one or more APIs and apps, and must have at least one Administrator. The Business Administrator automatically has administrator rights over all the APIs and apps owned by the business as well as all the users who are part of the business. For more information, see <a href="Ref_ManagingGroupsOnThePlatform.htm#groups_bizadmin">Managing Groups on the Platform</a>.</dd>
 
 
 
 <dt><a name="gl_cache"></a>cache</dt>
-<dd>When an HTTP message is sent and a response received, the client has the capability of caching the response. The response must therefore define whether the response content should be cached or not, via the Cache-Control response header. In the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, responses should never be cached, so the value is <strong>no-cache</strong>.</dd>
+<dd>When an HTTP message is sent and a response received, the client has the capability of caching the response. The response must therefore define whether the response content should be cached or not, via the Cache-Control response header. In the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, responses should never be cached, so the value is <strong>no-cache</strong>.</dd>
 
 
 
 <dt><a name="gl_captcha"></a>captcha</dt>
 <dd>A visual challenge/response test used to maintain login security and help protect against security breaches. The test is designed to ensure that there is in fact a human logging in, not an automated process trying to break the password security.</dd>
+
+
+
+<dt><a name="gl_cname"></a>CNAME</dt>
+<dd>Abbreviation for Canonical Name. A CNAME identifies a unique domain name registered in the Domain Name System (DNS); for example, www.acmecorp.com. The domain name is mapped to an IP address.</dd>
+<dd>When adding an API, the API definition includes CNAME, which is the hostname part of the URL which will be visible to app developers for the API. Typically you would register a CNAME (such as api.acmecorp.com) in your DNS for your API and then map it to the proxy hostname provided to you during signup (typically acmecorp.broker.soa.com).</dd>
 
 
 
@@ -115,7 +125,7 @@ no-catalog: false
 
 
 <dt><a name="gl_connection"></a>connection</dt>
-<dd>A relationship between resources in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&#8212;such as the API access relationship between an app and an API that it's using.</dd>
+<dd>A relationship between resources in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;&#8212;such as the API access relationship between an app and an API that it's using.</dd>
 
 
 
@@ -125,7 +135,7 @@ no-catalog: false
 
 
 <dt><a name="gl_content"></a>content</dt>
-<dd>In the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, the term <em>content</em> refers to unstructured content uploaded by the user and displayed in the user interface, such as API documentation. The content is indexed by the Search feature. Only APIs and the platform itself have content; there is no content associated with other resources such as apps and groups.</dd>
+<dd>In the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, the term <em>content</em> refers to unstructured content uploaded by the user and displayed in the user interface, such as API documentation. The content is indexed by the Search feature. Only APIs and the platform itself have content; there is no content associated with other resources such as apps and groups.</dd>
 
 
 
@@ -141,12 +151,12 @@ no-catalog: false
 
 
 <dt><a name="gl_coordinateduniversaltime"></a>Coordinated Universal Time (UTC)</dt>
-<dd>Coordinated Universal Time (UTC), also called &quot;Zulu time,&quot; is the primary time standard in general use. It essentially equates to Greenwich Mean Time (GMT), but is more scientifically precise. In the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API, time values are represented in the standard UTC date/time format <strong>YYYY-MM-DDTHH:MM:SSZ</strong>. Example: <strong>2013-12-31T15:45:00-04:00</strong>.</dd>
+<dd>Coordinated Universal Time (UTC), also called &quot;Zulu time,&quot; is the primary time standard in general use. It essentially equates to Greenwich Mean Time (GMT), but is more scientifically precise. In the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API, time values are represented in the standard UTC date/time format <strong>YYYY-MM-DDTHH:MM:SSZ</strong>. Example: <strong>2013-12-31T15:45:00-04:00</strong>.</dd>
 
 
 
 <dt><a name="gl_csv"></a>CSV</dt>
-<dd>Comma-separated value format, a format commonly used for exporting tabular data. For example, in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, the <span class="apidoc_code"><a href="apps/m_apps_exportMetrics.htm">GET&nbsp;/api/apps/versions/{AppVersionID}/metrics/export</a></span><a href="apps/m_apps_exportMetrics.htm"></a> operation exports the metric information in CSV format.</dd>
+<dd>Comma-separated value format, a format commonly used for exporting tabular data. For example, in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, the <span class="apidoc_code"><a href="apps/m_apps_exportMetrics.htm">GET&nbsp;/api/apps/versions/{AppVersionID}/metrics/export</a></span><a href="apps/m_apps_exportMetrics.htm"></a> operation exports the metric information in CSV format.</dd>
 
 
 
@@ -170,24 +180,45 @@ no-catalog: false
 
 
 
+<dt><a name="gl_policy_denialofservice"></a>denial of service policy</dt>
+<dd><!-- #BeginLibraryItem "/Library/policy_denialofservice.lbi" -->A policy that defines conditions for protecting against, and/or dealing with, a Denial of Service attack.<!-- #EndLibraryItem --></dd>
+
+
+
+<dt><a name="gl_policy_servicelevel"></a>service-level policy</dt>
+<dd><!-- #BeginLibraryItem "/Library/policy_servicelevel.lbi" -->A specific type of Quality of Service (QoS) policy that defines conditions for measuring and reporting performance for a specific contract.<!-- #EndLibraryItem --></dd>
+
+
+
+<dt><a name="gl_policy_operational"></a>operational policy</dt>
+<dd><!-- #BeginLibraryItem "/Library/policy_operational.lbi" -->A policy that defines requirements for addressing the operational implications of services that are shared across enterprise departments. These policies address the operational model for services, capacity monitoring and planning, the handling of policy exceptions and violations, and service execution including the definition and enforcement of runtime policies such as security, access, logging procedures, and service reliability.<!-- #EndLibraryItem --></dd>
+
+
+
+<dt><a name="gl_policy_compliance"></a>compliance policy</dt>
+<dd><!-- #BeginLibraryItem "/Library/policy_compliance.lbi" -->A policy that allows an organization to create standards that control the quality of the data in the repository. These policies can be used to analyze the service metamodel, WSDL documents, Schema, and transactional data to determine whether they meet corporate standards.<!-- #EndLibraryItem --></dd>
+
+
+
 <dt><a name="gl_deploymentzone"></a>deployment zone</dt>
-<dd>If an API is hosted on the platform and using the proxy capability, the API owner can specify the deployment zones, such as a geographical area or a specific data center, that the endpoint will be proxied in. The <span class="apidoc_code"><a href="deploymentzones/m_deploymentzones_getDeploymentZones.htm">GET&nbsp;/api/deploymentzones</a></span> operation returns a list of valid deployment zones.</dd>
+<dd>If an API is hosted on the platform and using the proxy capability, the API owner can specify one or more deployment zones, such as a geographical area or a specific data center, that the endpoint will be proxied in. The <span class="apidoc_code"><a href="deploymentzones/m_deploymentzones_getDeploymentZones.htm">GET&nbsp;/api/deploymentzones</a></span> operation returns a list of valid deployment zones.</dd>
+<dd>For more information, refer to <a href="Ref_DeploymentZonesOnThePlatform.htm">Deployment Zones on the Platform</a>.</dd>
 
 
 
 <dt><a name="gl_discussion"></a>discussion</dt>
-<dd>In the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, an authorized user can create a discussion topic about a resource (app or API) on the resource's Board. A discussion is typically, but not necessarily, created by someone other than the owner or administrator of the resource. Discussion entries are not threaded; users comment on the original item rather than on the comments/replies to the original item. Users can, however, <a href="#gl_mark">mark</a> or <a href="#gl_unmark">unmark</a> the discussion itself and/or one or more discussion comments.</dd>
+<dd>In the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, an authorized user can create a discussion topic about a resource (app or API) on the resource's Board. A discussion is typically, but not necessarily, created by someone other than the owner or administrator of the resource. Discussion entries are not threaded; users comment on the original item rather than on the comments/replies to the original item. Users can, however, <a href="#gl_mark">mark</a> or <a href="#gl_unmark">unmark</a> the discussion itself and/or one or more discussion comments.</dd>
 <dd>Each discussion has a title and one or more comments. The visibility of a discussion is controlled by the visibility of the resource it's associated with; for example, a discussion about a Limited (Private) API can only be seen by administrators and Private API Group members associated with that API.</dd>
 
 
 
 <dt><a name="gl_discussiontype"></a>discussion type</dt>
-<dd>In an earlier version of the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, discussions were categorized in separate discussion types, such as Comment or Question. Discussion types are no longer in use. In certain cases, a DiscussionType parameter might still be returned in a response message; if so, it can be ignored.</dd>
+<dd>In an earlier version of the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, discussions were categorized in separate discussion types, such as Comment or Question. Discussion types are no longer in use. In certain cases, a DiscussionType parameter might still be returned in a response message; if so, it can be ignored.</dd>
 
 
 
 <dt><a name="gl_duration"></a>duration</dt>
-<dd>The duration of a request or response message is expressed with the Duration data type in the format <strong>PnYnMnDTnHnMnS</strong>. For example, a message response time of <strong>P0Y0M0DT0H0M0.022S</strong> indicates 22 milliseconds. For an expanded definition of Duration, refer to <a href="Ref_apireference.htm#datatypes_duration">Data Types</a>.</dd>
+<dd>The duration of a request or response message is expressed with the Duration data type in the format <strong>PnYnMnDTnHnMnS</strong>. For example, a message response time of <strong>P0Y0M0DT0H0M0.022S</strong> indicates 22 milliseconds. For an expanded definition of Duration, refer to <a href="Ref_API_Reference.htm#datatypes_duration">Data Types</a>.</dd>
 
 
 
@@ -207,7 +238,7 @@ no-catalog: false
 
 
 <dt><a name="gl_federation"></a>federation</dt>
-<dd>Two or more <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> <a href="#gl_tenant">tenants</a> who have unified to create a community in which APIs can be shared by users of both tenants.</dd>
+<dd>Two or more&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;<a href="#gl_tenant">tenants</a> who have unified to create a community in which APIs can be shared by users of both tenants.</dd>
 <dd>The systems that participate in a federation (federation members, tenants) share information without requiring duplication of that information in each member and without relinquishing control of the information. Developers who sign up as users of one federation member can access information from a second federation member directly, without the need for signup or authentication by the second member. A federation setup requires the establishment of a trust relationship between federation members.</dd>
 
 
@@ -228,7 +259,7 @@ no-catalog: false
 
 
 <dt><a name="gl_group"></a>group</dt>
-<dd>1) The term "group" is used in many instances to refer to any of the following types of groups in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->: app teams, Private API groups, API Administrator groups, Site Administrator groups, or independent groups.</dd>
+<dd>1) The term "group" is used in many instances to refer to any of the following types of groups in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;: app teams, Private API groups, API Administrator groups, Site Administrator groups, or independent groups.</dd>
 <dd>2) &quot;Group&quot; is sometimes used specifically to mean a <a href="#gl_privateapigroup">Private API Group</a>.</dd>
 
 
@@ -239,7 +270,7 @@ no-catalog: false
 
 
 <dt><a name="gl_guid"></a>GUID</dt>
-<dd>Globally unique identifier for a resource (same as <a href="#gl_fdn">FDN</a>). For more information about unique IDs used by the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, see <a href="Ref_IDsOnThePlatform.htm">IDs on the Platform</a>.</dd>
+<dd>Globally unique identifier for a resource (same as <a href="#gl_fdn">FDN</a>). For more information about unique IDs used by the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, see <a href="Ref_IDsOnThePlatform.htm">IDs on the Platform</a>.</dd>
 
 
 
@@ -254,7 +285,7 @@ no-catalog: false
 
 
 <dt><a name="gl_homepage"></a>home page</dt>
-<dd>A user who signs up to the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> has a customized <a href="#gl_dashboard">Dashboard</a> which is that user's home page&#8212;the first page the user sees when logging in. A user who hasn't signed up doesn't have a home page.</dd>
+<dd>A user who signs up to the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;has a customized <a href="#gl_dashboard">Dashboard</a> which is that user's home page&#8212;the first page the user sees when logging in. A user who hasn't signed up doesn't have a home page.</dd>
 
 
 
@@ -279,13 +310,18 @@ no-catalog: false
 
 
 <dt><a name="gl_laas"></a>LaaS</dt>
-<dd>Lifecycle as a Service (LaaS) is a set of products from SOA Software that exposes Lifecycle Manager asset configuration as a service/API. LaaS provides a way to integrate Lifecycle Manager functionality into <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->. Since Lifecycle Manager is more configurable, this facilitates the introduction of a more complex workflow, which can be used for purposes such as API governance.
-LaaS is a Lifecycle Manager offering in the cloud. You can use this service in many ways to extend the capabilities and reach of both Lifecycle Manager and <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->. For more information, see <a href="http://www.soa.com" target="_blank">www.soa.com</a>.</dd>
+<dd>Lifecycle as a Service (LaaS) is a set of products from SOA Software that exposes Lifecycle Manager asset configuration as a service/API. LaaS provides a way to integrate Lifecycle Manager functionality into&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->. Since Lifecycle Manager is more configurable, this facilitates the introduction of a more complex workflow, which can be used for purposes such as API governance.
+LaaS is a Lifecycle Manager offering in the cloud. You can use this service in many ways to extend the capabilities and reach of both Lifecycle Manager and&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->. For more information, see <a href="http://www.soa.com" target="_blank">www.soa.com</a>.</dd>
 
 
 
 <dt><a name="gl_label_ticket"></a>label (for a ticket)</dt>
 <dd>A label assigned to a ticket to indicate the tickets's priority rating. For valid values, see <a href="Ref_Values.htm#values_ticketlabel">Ticket Label Values</a>.</dd>
+
+
+
+<dt><a name="gl_ldap"></a>LDAP</dt>
+<dd>Acronym for Lightweight Directory Access Protocol, an open, industry-standard protocol used by the platform to support single sign-on.</dd>
 
 
 
@@ -299,24 +335,30 @@ LaaS is a Lifecycle Manager offering in the cloud. You can use this service in m
 
 
 
+<dt><a name="gl_license"></a>license</dt>
+<dd>A license is a tailored API access package designed by the Business Admin/API Admin and offered to the app developer. A license includes one or more <a href="#gl_licenseterm">license terms</a>, each of which can include multiple <a href="#gl_scope">scopes</a>, giving access to specifically designated operations, and multiple <a href="#gl_qospolicy">quality of service (QoS) policies</a>, and also one or more legal agreements applicable to the license.</dd>
+
+
+
 <dt><a name="gl_licenseterm"></a>license term</dt>
-<dd>A license term is a rule that associates a set of <a href="#gl_qos_policy">QoS</a> policies with a set of scopes within a license. For example, let's say a user wants a license that supports Unlimited access to READ, but no more than 10 requests per day for ADD/MODIFY/DELETE combined. In this example, two terms would be part of the license. One term has three scopes, ADD/MODIFY/DELETE with a QoS policy of 10 requests per day, and the second term has one scope, READ with a QoS policy of Unlimited. This license could be assigned to the application.</dd>
+<dd>A license term is a rule that associates a set of <a href="#gl_qospolicy">QoS</a> policies with a set of <a href="#gl_scope">scopes</a> within a license. For example, let's say a user wants a license that supports Unlimited access to READ, but no more than 10 requests per day for ADD/MODIFY/DELETE combined. In this example, two terms would be part of the license. One term has three scopes, ADD/MODIFY/DELETE with a QoS policy of 10 requests per day, and the second term has one scope, READ with a QoS policy of Unlimited. This license could be assigned to the application.</dd>
 
 
 
 <dt><a name="gl_app_limited"></a>limited-visibility app</dt>
 <dd><!-- #BeginLibraryItem "/Library/define_visibility.lbi" -->
-There are two visibility settings for an app: <strong>public</strong> and <strong>limited</strong>. Public means that anyone can see information about the app. Limited visibility means that the app is private; only app team members can see information about the app.<!-- #EndLibraryItem --> For more information, see <a href="Ref_apireference.htm#ref_publicandprivateapps">Public and Limited (Private) Apps</a>.</dd>
+There are two visibility settings for an app: <strong>public</strong> and <strong>limited</strong>. Public means that anyone can see information about the app. Limited visibility means that the app is private; only app team members can see information about the app.<!-- #EndLibraryItem --> For more information, see <a href="Ref_API_Reference.htm#ref_publicandprivateapps">Public and Limited (Private) Apps</a>.</dd>
 
 
 
 <dt><a name="gl_logindomain"></a>login domain</dt>
-<dd>A domain that is the user's current or possible login domain. For more information, see <a href="Ref_ManagingDomainsOnThePlatform.htm">Managing Domains on the Platform</a>.</dd>
+<dd>A domain that platform users can use to log in to the platform; for example, Google and Facebook are login domains. Login domains are defined by the Site Admin as part of initial setup. Once it is set up, a login domain name cannot be changed.</dd>
+<dd>For more information on domains in general, see <a href="Ref_ManagingDomainsOnThePlatform.htm">Managing Domains on the Platform</a>.</dd>
 
 
 
 <dt><a name="gl_mark"></a>mark</dt>
-<dd>Users can give positive feedback to items such as discussion topics and associated comments, reviews, and other resources such as tickets, using the <strong>Mark</strong> function. Choosing Mark provides positive feedback, in the same way as &quot;Like&quot; in Facebook&reg;. The Mark value toggles on and off, so a user can mark or <a href="#gl_unmark">unmark</a> a discussion comment. In the user interface, the <strong>mark</strong> icon is a thumbs-up, and the <strong>unmark</strong> icon is a closed fist.</dd>
+<dd>Users can give positive feedback to items such as discussion topics and associated comments, reviews, and other resources such as tickets, using the <strong>Mark</strong> function. Choosing Mark provides positive feedback, in the same way as &quot;Like&quot; in Facebook&reg;. The Mark value toggles on and off, so a user can mark or <a href="#gl_unmark">unmark</a> a comment. In the user interface, the <strong>mark</strong> icon is a thumbs-up, and the <strong>unmark</strong> icon is a closed fist.</dd>
 
 
 
@@ -326,7 +368,7 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 <dt><a name="gl_membershiprequest"></a>membership request (invitation)</dt>
-<dd>An invitation to another individual, whether a registered user or not, to join a group or team on the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, such as an app team. API Administrators can invite others to be API Administrators; app team members can invite others to the app team. A Site Administrator, Private API Administrator, or Independent Group member can also issue a membership request in the same way.</dd>
+<dd>An invitation to another individual, whether a registered user or not, to join a&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;group or team such as an app team. API Administrators can invite others to be API Administrators; app team members can invite others to the app team. A Site Administrator, Private API Administrator, or Independent Group member can also issue a membership request in the same way.</dd>
 
 
 
@@ -342,7 +384,7 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 <dt><a name="gl_opensearch"></a>OpenSearch</dt>
-<dd>OpenSearch is a widely used set of technologies that sets standards for the publishing of search results. For more information, see <a href="Ref_RSSChannelsOnThePlatform.htm#pagingofreturnedrssitems">Paging of Returned RSS Items</a>.</dd>
+<dd>OpenSearch is a widely used set of technologies that sets standards for the publishing of search results. For more information, see <a href="Ref_RSSChannelsOnThePlatform.htm#rss_pagingofreturnedrssitems">Paging of Returned RSS Items</a>.</dd>
 
 
 
@@ -362,7 +404,7 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 <dt><a name="gl_proxyapi"></a>proxy API</dt>
-<dd>When you set up your API on the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> and choose to use the Proxy feature, all traffic to your API endpoints is channeled via the platform. This offers significant benefits, including the ability to apply policies and monitor traffic at the proxy.</dd>
+<dd>When you set up your API on the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;and choose to use the Proxy feature, all traffic to your API endpoints is channeled via the platform. This offers significant benefits, including the ability to apply policies and monitor traffic at the proxy.</dd>
 
 
 
@@ -373,8 +415,8 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 <dt><a name="gl_pki"></a>public key integration (PKI)</dt>
-<dd>When a user registers an app in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, the Shared Secret security option is the default. App owners who want to use Public Key Infrastructure (PKI) for secure message signing must specify Public Key Integration as the security option in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> user interface, on the App Details page.</dd>
-<dd>To implement PKI, the app owner must get a public/private key pair, upload the public key to <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, and use the private key for signing the API requests. The <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API verifies each incoming request using the public key.</dd>
+<dd>When a user registers an app in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, the Shared Secret security option is the default. App owners who want to use Public Key Infrastructure (PKI) for secure message signing must specify Public Key Integration as the security option in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;user interface, on the App Details page.</dd>
+<dd>To implement PKI, the app owner must get a public/private key pair, upload the public key to the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, and use the private key for signing the API requests. The&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API verifies each incoming request using the public key.</dd>
 
 
 
@@ -383,7 +425,13 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 
-<dt><a name="gl_qos_policy"></a>QoS policy</dt>
+<dt><a name="gl_qname"></a>QName</dt>
+<dd>A unique identifier used for certain elements and attributes (Qualified Name). The APIs service uses QNames to identify elements such as API bindings and interfaces.</dd>
+<dd>QNames are used to create a mapping between a URI and a namespace prefix.</dd>
+
+
+
+<dt><a name="gl_qospolicy"></a>QoS policy</dt>
 <dd>Quality of Service policy. A QoS policy defines the level of service being offered to an app that is accessing an API; for example, the number of transactions per minute that are allowed for the app. In the platform, QoS policies are tied to <a href="#gl_licenseterm">license terms</a>.</dd>
 
 
@@ -394,7 +442,7 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 <dt><a name="gl_resource"></a>resource</dt>
-<dd>In the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, a Resource is an item, such as an App or API, which has its own Board and set of activities. There are six resource types: <a href="#gl_api">API</a>, <a href="#gl_app">app</a>, <a href="#gl_business">business</a>, <a href="#gl_contract">contract</a>, <a href="#gl_group">group</a>, and <a href="#gl_user">user</a>. In some instances, an app or API <a href="#gl_version">version</a> is treated as a separate resource, since there might be multiple versions for a single app or API.</dd>
+<dd>In the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, a Resource is an item, such as an App or API, which has its own Board and set of activities. There are six resource types: <a href="#gl_api">API</a>, <a href="#gl_app">app</a>, <a href="#gl_business">business</a>, <a href="#gl_contract">contract</a>, <a href="#gl_group">group</a>, and <a href="#gl_user">user</a>. In some instances, an app or API <a href="#gl_version">version</a> is treated as a separate resource, since there might be multiple versions for a single app or API.</dd>
 
 
 
@@ -413,14 +461,14 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 <dt><a name="gl_rss"></a>RSS</dt>
 <dd>RSS is a widely used technology that allows users to subscribe to website content they're interested in. Once users subscribe to RSS feeds, updated content is automatically delivered to them in the form of an <a href="#gl_rsschannel">RSS channel</a>, without the users having to check the individual websites for updates.</dd>
-<dd>In the context of the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, many GET&nbsp;operations return the results in the format of an RSS channel. For more information, see <a href="Ref_RSSChannelsOnThePlatform.htm">RSS Channels on the Platform</a>.</dd>
+<dd>In the context of the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, many GET&nbsp;operations return the results in the format of an RSS channel. For more information, see <a href="Ref_RSSChannelsOnThePlatform.htm">RSS Channels on the Platform</a>.</dd>
 
 
 
 <dt><a name="gl_rsschannel"></a>RSS channel</dt>
 <dd>The format in which information is conveyed using the RSS technology is called an RSS feed, web feed, RSS channel, or RSS document. It includes full or summarized text plus metadata (information about the text).</dd>
-<dd>Many of the operations in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API use RSS in the response. In general, GET&nbsp;methods that return any type of list return the information as an RSS channel, usually in either JSON or XML format as specified in the request message.</dd>
-<dd>For more information on how the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> uses RSS channels, see <a href="Ref_RSSChannelsOnThePlatform.htm">RSS Channels on the Platform</a>.</dd>
+<dd>Many of the operations in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API use RSS in the response. In general, GET&nbsp;methods that return any type of list return the information as an RSS channel, usually in either JSON or XML format as specified in the request message.</dd>
+<dd>For more information on how the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;uses RSS channels, see <a href="Ref_RSSChannelsOnThePlatform.htm">RSS Channels on the Platform</a>.</dd>
 
 
 
@@ -432,6 +480,12 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 <dt><a name="gl_scope"></a>scope</dt>
 <dd>A scope value for an API version defines a subset of resources to which permission can be independently granted. In addition, the permission granted can be controlled by visibility (permission to view) or access (permission to send messages, to either the sandbox or production endpoint).</dd>
 <dd>In earlier versions of the platform, access could only be granted per resource; either full API access, or no access. Defining scopes for an API allows the API administrator to control the granularity of API access granted to an app. When scopes are defined, app owners can request access to specific resources they want to access, and API owners can grant access to specific resources they want to share. <!--A scope can also be defined and assigned to different APIs, so if you want a subset of two different APIs you can use the same scope for both, although you must still grant permission for each API version.--></dd>
+
+
+
+<dt><a name="gl_scopemapping"></a>scope mapping</dt>
+<dd>If an API is using the Licenses feature, scope mapping is the key to defining which portions of your API will be available for which licenses. The scopes and licenses themselves are defined by the Business Admin, but at the API level the API Admin determines which operations are assigned to which scopes. This in turn determines which licenses will be available to app developers requesting access to an API.</dd>
+<dd>In the Enterprise API Platform API, scope mapping is specified using the <span class="apidoc_code"><a href="apis/m_apis_saveOperationResources.htm">PUT&nbsp;/api/apis/versions/{APIVersionID}/resources</a></span> operation.</dd>
 
 
 
@@ -452,13 +506,19 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 <dt><a name="gl_sharedsecret"></a>shared secret</dt>
-<dd>When you register your app, the AppID and Shared Secret are automatically generated. The Shared Secret is a binary hashed value, generated within the secure environment of the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> and known only to you and to the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->. In the Security Credentials section of your app homepage you'll see that the Shared Secret option is the default security mechanism.</dd>
+<dd>When you register your app, the AppID and Shared Secret are automatically generated. The Shared Secret is a binary hashed value, generated within the secure environment of the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;and known only to you and to the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->. In the Security Credentials section of your app homepage you'll see that the Shared Secret option is the default security mechanism.</dd>
 <dd>The Shared Secret approach follows the WS-Security digest authentication mechanism.</dd>
 
 
 
 <dt><a name="gl_siteadmin"></a>site administrator</dt>
 <dd>An individual who has responsibility for keeping the site running smoothly. Site administrators have greater access rights than normal users. There can be more than one site administrator. For more information, see <a href="Ref_ManagingGroupsOnThePlatform.htm#groups_siteadmin">Managing Groups on the Platform</a>.</dd>
+
+
+
+<dt><a name="gl_sso"></a>SSO</dt>
+<dd>Acronym for single sign-on. SSO login allows a user to sign on to one software system using access credentials granted, and validated, by another system.</dd>
+<dd>In the platform, an example of SSO login is the ability to sign on using Facebook or Google credentials. Note that whether an instance of the platform allows SSO login, and which providers are supported, is configurable, as determined by the Site Admin.</dd>
 
 
 
@@ -497,7 +557,12 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 <dt><a name="gl_targetapi"></a>target API</dt>
-<dd>If an API is using the platform as a proxy, the TargetAPI is used to define the destination ("next-hop") endpoint for the API.</dd>
+<dd>When defining an API on the platform, if an API is using the platform as a proxy, the TargetAPI is used to define the destination ("next-hop") endpoint for the API.</dd>
+
+
+
+<dt><a name="gl_targeturl"></a>target URL</dt>
+<dd>The URL for the <a href="#gl_targetapi">target API</a>. The  target URL is the endpoint for the implementation; the destination (&quot;next-hop&quot;) endpoint for the API.</dd>
 
 
 
@@ -516,8 +581,13 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 
+<dt><a name="gl_oauth_tokenendpoint"></a>token endpoint (OAuth)</dt>
+<dd>Users connect to the <a href="#gl_oauth_authorizationendpoint">authorization endpoint</a>; apps connect to the token endpoint.</dd>
+
+
+
 <dt><a name="gl_transaction"></a>transaction</dt>
-<dd>In the context of the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API, a transaction is one instance of an app making a call to an API.</dd>
+<dd>In the context of the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API, a transaction is one instance of an app making a call to an API.</dd>
 
 
 
@@ -526,14 +596,19 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 
+<dt><a name="gl_uddikey"></a>uddi key</dt>
+<dd>Each entity in a <a href="#gl_uddi">UDDI</a> registry is assigned a key, which uniquely identifies that entity within the registry. Various parts of an API registered in the platform have unique UDDI keys assigned in Policy Manager; for example, the BindingKey and InterfaceKey.</dd>
+
+
+
 <dt><a name="gl_unmark"></a>unmark</dt>
-<dd>To unmark a discussion, ticket, or other resource means to remove a <a href="#gl_mark">mark</a> previously placed on the resource. In the user interface, the <strong>mark</strong> icon is a thumbs-up, and the <strong>unmark</strong> icon is a closed fist.</dd>
+<dd>To unmark a discussion, ticket, comment, or other resource means to remove a <a href="#gl_mark">mark</a> previously placed on the resource. In the user interface, the <strong>mark</strong> icon is a thumbs-up, and the <strong>unmark</strong> icon is a closed fist.</dd>
 
 
 
 <dt><a name="gl_user"></a>user</dt>
-<dd>A person with a registered login ID to the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->. All users must complete the registration process so that the system can gather required information about them before granting access. Each user can choose to define a new username/password combination that will be managed within the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, or can leverage <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->'s integration with external security providers such as Facebook&reg; for authentication. By completing the signup process, each individual is assigned the role of User; users can then assume other roles, such as API Administrator or App team member.</dd>
-<dd><strong>Note</strong>: To use the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API, users must sign up with the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> rather than using a third-party authentication provider.</dd>
+<dd>A person with a registered login ID to the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->. All users must complete the registration process so that the system can gather required information about them before granting access. Each user can choose to define a new username/password combination that will be managed within the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, or can leverage the integration of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;with external security providers such as Facebook&reg; for authentication. By completing the signup process, each individual is assigned the role of User; users can then assume other roles, such as API Administrator or App team member.</dd>
+<dd><strong>Note</strong>: To use the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API, users must sign up with the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;rather than using a third-party authentication provider.</dd>
 
 
 
@@ -553,12 +628,12 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 <dt><a name="gl_visibility"></a>visibility</dt>
-<dd>A setting that controls the types of users who can see an object, such as an app, API, or group, and its associated items such as discussions and tickets. See below: <a href="#gl_visibility_api">visibility (API)</a> and <a href="#gl_visibility_app">visibility (app)</a>. For more information about visibility values, refer to <a href="Ref_Values.htm#values_visibilitysettings">Visibility Settings</a>.</dd>
+<dd>A setting that controls the types of users who can see an object, such as an app, API, group, license, or scope, and any associated items such as discussions and tickets. See below: <a href="#gl_visibility_api">visibility (API)</a> and <a href="#gl_visibility_app">visibility (app)</a>. For more information about visibility values, refer to <a href="Ref_Values.htm#values_visibilitysettings">Visibility Settings</a>.</dd>
 
 
 
 <dt><a name="gl_visibility_api"></a>visibility (API)</dt>
-<dd>A setting that controls the types of users who can see an API and its associated items such as discussions and tickets. Possible values are <strong>Public</strong> or <strong>Limited</strong>. A discussion about a Limited (Private) API can only be seen by administrators and Private API Group members associated with that API. Members must be either invited to a Private API Group associated with the API or invited to be an Administrator for the API, and must then accept the invitation, before they even see the API in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->.</dd>
+<dd>A setting that controls the types of users who can see an API and its associated items such as discussions and tickets. Possible values are <strong>Public</strong> or <strong>Limited</strong>. A discussion about a Limited (Private) API can only be seen by administrators and Private API Group members associated with that API. Members must be either invited to a Private API Group associated with the API or invited to be an Administrator for the API, and must then accept the invitation, before they even see the API in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->.</dd>
 
 
 
@@ -572,8 +647,13 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 
+<dt><a name="gl_workflowdefinitionkey"></a>workflow definition key</dt>
+<dd>A unique ID is assigned to each custom workflow when it's uploaded to the platform. Example: <strong>2597f44e-8f1c-4cc4-8019-69781dd1a0d8</strong>. The workflow definition key indicates the custom workflow that's specified as the default for settings governing a certain type of resource, such as apps, APIs, or groups.</dd>
+
+
+
 <dt><a name="gl_authenticate"></a>WWW-Authenticate response header</dt>
-<dd >A standard HTTP response header used as part of the authentication process used in <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API calls. When the server receives the request message, it challenges the client for valid authentication via the WWW-Authenticate response header. The client returns the authentication information in an <a href="#gl_authorization">Authorization header</a>. The server validates the client information and then acts on the request message.</dd>
+<dd >A standard HTTP response header used as part of the authentication process used in&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API calls. When the server receives the request message, it challenges the client for valid authentication via the WWW-Authenticate response header. The client returns the authentication information in an <a href="#gl_authorization">Authorization header</a>. The server validates the client information and then acts on the request message.</dd>
 
 
 
@@ -586,10 +666,10 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 <h3 id="relatedtopics">Related Topics</h3>
 <ul>
-  <li><a href="index.htm"><!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->API: Overview</a></li>
-  <li><a href="authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="Ref_apireference.htm"><!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->API Reference Material</a></li>
-  <li><a href="docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="index.htm"><!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API: Overview</a></li>
+  <li><a href="Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="Ref_API_Reference.htm"><!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API Reference Material</a></li>
+  <li><a href="Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 <hr />

@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Export Usage Logs | APIs Service | Enterprise API Platform API
-description:  Exports the transaction log for the specified API version to a <a href="../glossary_communityplatform.htm#gl_csv">CSV</a> file.
+description:  Exports the transaction log for the specified API version to a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_csv">CSV</a> file.
 product: cm
 category: ref
 nav-title: Export Usage Logs 
@@ -17,8 +17,8 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_exportUsageLogs_api.lbi" -->
-Exports the transaction log for the specified API version to a <a href="../glossary_communityplatform.htm#gl_csv">CSV</a> file.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/Library/roles_user.lbi" --> To complete this operation successfully, a user must be logged in<!-- #EndLibraryItem --> and must have monitor permission for the API; an <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a> or an app developer who has a contract with the API.</p>
+Exports the transaction log for the specified API version to a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_csv">CSV</a> file.<!-- #EndLibraryItem --></p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must be a user with Monitor permission for the API; an <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a> or an app developer who has a contract with the API.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -47,8 +47,10 @@ Exports the transaction log for the specified API version to a <a href="../gloss
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h3 id="endpoint">URL</h3>
-<!-- InstanceBeginEditable name="URL" --><pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/{APIVersionID}/txlogs/export[?Environment=Environment][&amp;StartDate=StartDate]
-[&amp;EndDate=EndDate][&amp;TimeZone=TimeZone][&amp;Duration=Duration]</pre><!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="URL" -->
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/{APIVersionID}/txlogs/export[?][ContractID={ContractID}]&amp;[AppVersionID={AppVersionID}]
+[Environment={Environment}]&amp;[StartDate={StartDate}]&amp;[EndDate={EndDate}]&amp;[TimeZone={TimeZone}]&amp;[Duration={Duration}]</pre>
+<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -67,7 +69,7 @@ Exports the transaction log for the specified API version to a <a href="../gloss
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -77,8 +79,8 @@ Exports the transaction log for the specified API version to a <a href="../gloss
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_contenttype_any.lbi" -->Any format (*/*)<!-- #EndLibraryItem --></td>
+      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_contenttype_any.lbi" --><strong>Any format (*/*)</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -104,8 +106,21 @@ Exports the transaction log for the specified API version to a <a href="../gloss
       <td>Path</td>
       <td>string</td>
       <td>Required</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->
-The unique ID for the specified API version.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->The unique ID for a specific API version.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td><a href="../Ref_IDsOnThePlatform.htm#id_contractid">ContractID</a></td>
+      <td>Query</td>
+      <td>string</td>
+      <td>Required</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_ContractID.lbi" --> The unique ID for a specific contract between an app version and an API version.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td><a href="../Ref_IDsOnThePlatform.htm#id_appversionid">AppVersionID</a></td>
+      <td>Query</td>
+      <td>string</td>
+      <td>Required</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_AppVersionID.lbi" --> The unique ID for the specified app version.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>Environment</td>
@@ -141,7 +156,7 @@ The beginning point for the date range of metric information requested. If Start
       <td>Query</td>
       <td>string</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/Library/parm_Duration.lbi" -->The <a href="../Ref_apireference.htm#datatypes_duration">duration</a> for the metric information. If not specified, defaults to two hours (2h). The StartDate, EndDate, and Duration fields work together to define the information to be returned.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/parm_Duration.lbi" -->The <a href="../Ref_API_Reference.htm#datatypes_duration">duration</a> for the metric information. If not specified, defaults to two hours (2h). The StartDate, EndDate, and Duration fields work together to define the information to be returned.<!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -151,7 +166,7 @@ The beginning point for the date range of metric information requested. If Start
 
 <!-- InstanceBeginEditable name="Response Description" -->
 <h3 id="response">Response</h3>
-<p id="id_successstatement">If successful, this method returns HTTP status code 200, with the usage logs in an exported <a href="../glossary_communityplatform.htm#gl_csv">CSV</a> file.</p>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with the usage logs in an exported <a href="../Ref_Glossary_CommunityPlatform.htm#gl_csv">CSV</a> file.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -161,7 +176,7 @@ The beginning point for the date range of metric information requested. If Start
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
 <pre>Status Code: 200 OK
-filename=apilogs.csv
+Content-Disposition: attachment;filename="apilogs.csv"
 Content-Type: text/csv
 Date: Thu, 17 Apr 2014 21:37:39 GMT</pre>
 <p><strong>Sample response body</strong></p>
@@ -172,7 +187,7 @@ Date: Thu, 17 Apr 2014 21:37:39 GMT</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -182,8 +197,12 @@ Date: Thu, 17 Apr 2014 21:37:39 GMT</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_contenttype_any.lbi" -->Any format (*/*)<!-- #EndLibraryItem --></td>
+      <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_contenttype_any.lbi" --><strong>Any format (*/*)</strong><!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#contentdisposition_response">Content-Disposition</a></td>
+      <td><strong>attachment;filename="apilogs.zip"</strong></td>
     </tr>
   </tbody>
 </table>
@@ -208,13 +227,13 @@ Date: Thu, 17 Apr 2014 21:37:39 GMT</pre>
       <td><p>A .csv file containing the exported data. It has the following columns:</p>
         <ul class="apidoctable_ul">
           <li>Request Date Time</li>
-          <li> API</li>
-          <li> Method</li>
-          <li> URL</li>
-          <li> Client Host</li>
-          <li> Response Time (in milliseconds )</li>
-          <li> Result</li>
-          <li> Fault Message</li>
+          <li>API</li>
+          <li>Method</li>
+          <li>URL</li>
+          <li>Client Host</li>
+          <li>Response Time (in milliseconds )</li>
+          <li>Result</li>
+          <li>Fault Message</li>
         </ul></td>
     </tr>
   </tbody>
@@ -233,19 +252,19 @@ Date: Thu, 17 Apr 2014 21:37:39 GMT</pre>
       <th width="80%">Value</th>
     </tr>
     <tr>
-      <td><a href="../Ref_apireference.htm#http401">401</a></td>
+      <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
       <td>Unauthorized. For example, you would get this response if you hadn't completed login before running the operation.</td>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#http500">500</a></td>
+      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -254,14 +273,14 @@ Date: Thu, 17 Apr 2014 21:37:39 GMT</pre>
   <tr>
     <td width="300"><ul>
   <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

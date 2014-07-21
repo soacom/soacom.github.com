@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Sign Up User | Users Service | Enterprise API Platform API
-description:  Initiates the signup process by sending the user's signup information to the database; also sends an email to the user. Once the user has provided the required signup information (Firstname, lastname, username, email address, and password) the signup is complete.
+description:  Initiates the signup process by sending the user's signup information to the database; also sends an email to the user. Once the user has provided the required signup information (Firstname, lastname, username, email address, and password) the signup is complete
 product: cm
 category: ref
 nav-title: Sign Up User 
@@ -11,10 +11,12 @@ sub-nav-class: users
 no-catalog: true
 ---
 
+<!-- InstanceBeginEditable name="Heading" -->
 <h2><a name="top"></a>POST&nbsp;/api/users/signupUser[/{InvitationCode}]</h2>
-<p><!-- #BeginLibraryItem "/Library/desc_signupUser.lbi" -->
-Initiates the signup process by sending the user's signup information to the database; also sends an email to the user.<!-- #EndLibraryItem --> Once the user has provided the required signup information (Firstname, lastname, username, email address, and password) the signup is complete.</p>
+<!-- InstanceEndEditable -->
 
+<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
+<p><!-- #BeginLibraryItem "/Library/desc_signupUser.lbi" --> Initiates the signup process by sending the user's signup information to the database; also sends an email to the user.<!-- #EndLibraryItem --> Once the user has provided the required signup information (Firstname, lastname, username, email address, and password) the signup is complete</p>
 <p><strong>Before</strong>: Either of the following two scenarios can occur before this operation is run:</p>
 <ol>
   <li>The user signs up on the platform: user provides name and email address, chooses and confirms password.</li>
@@ -29,7 +31,8 @@ Initiates the signup process by sending the user's signup information to the dat
   <li>Click the signup code in the notification email, or send it as a parameter to the <span class="apidoc_code">POST&nbsp;/api/users/signupUser/{InvitationCode}</span> operation as explained below.</li>
   <li>Log in using the <span class="apidoc_code"><a href="../login/m_login_login.htm">POST&nbsp;/api/login</a></span> operation.</li>
 </ol>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: None required</p><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: None required</p>
+<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
   <tr>
@@ -51,19 +54,23 @@ Initiates the signup process by sending the user's signup information to the dat
 </td>
   </tr>
 </table><!-- #EndLibraryItem --><h3 id="httpmethod">HTTP Method</h3>
+<!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">POST</p>
+<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-
 
 <h3 id="endpoint">URL</h3>
+<!-- InstanceBeginEditable name="URL" -->
 <pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/signupUser[/{InvitationCode}]</pre>
+<!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
+<!-- InstanceBeginEditable name="Sample Request" -->
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows the user's signup information sent in the request body.</p>
 <p><strong>Request URL</strong></p>
-<pre><span class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem --></span>users/signupUser/qEntsGgwk452385-UBl9q5MLRMuDoYE6p7KPAANZrOtL3o_JLXQ_Nw</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/signupUser/qEntsGgwk452385-UBl9q5MLRMuDoYE6p7KPAANZrOtL3o_JLXQ_Nw</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>POST&nbsp;/api/users/signupUser/qEntsGgwk452385-UBl9q5MLRMuDoYE6p7KPAANZrOtL3o_JLXQ_Nw HTTP/1.1
 Accept: text/plain, */*; q=0.01
@@ -71,15 +78,17 @@ Content-Type: application/json; charset=UTF-8</pre>
 <p><strong>Sample request body</strong></p>
 <pre>{
   "FirstName":"Jane",
-  "LastName":"Mead",
-  "Email":"jane.mead@example.com",
+  "LastName":"Saoirse",
+  "Email":"jane.saoirse@acmecorp.com",
   "Password":"Margaret23"
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../Ref_apireference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../Ref_API_Reference.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -89,18 +98,20 @@ Content-Type: application/json; charset=UTF-8</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#acceptheader">Accept</a></td>
-      <td>application/json</td>
-  </tr>
+      <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+    </tr>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_request">Content-Type</a></td>
-      <td>application/json</td>
-  </tr>
-  </tbody>
+      <td><a href="../Ref_API_Reference.htm#contenttype_request">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+    </tr>
+    </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Request Parameters" -->
 <h3 id="requestparameters">Request Parameters</h3>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
@@ -119,25 +130,29 @@ Content-Type: application/json; charset=UTF-8</pre>
       <td><a href="../obj/o_users_User.htm">User</a></td>
       <td>Required</td>
       <td><!-- #BeginLibraryItem "/Library/o_users_User.lbi" -->
-Contains information about an<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->user.<!-- #EndLibraryItem --></td>
-  </tr>
+Contains information about an&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;user.<!-- #EndLibraryItem --></td>
+    </tr>
     <tr>
       <td>InvitationCode</td>
       <td>Path</td>
       <td>string</td>
       <td>Required</td>
       <td>The invitation code sent to the user.</td>
-  </tr>
-</tbody>
+    </tr>
+    </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Response Description" -->
 <h3 id="response">Response</h3>
-<p id="id_successstatement">If successful, this method returns HTTP status code 200, with the user information including user ID. With completion of this operation, the user's <a href="../Ref_Values.htm#values_usersignupstate">state</a> changes from <strong>pending_validation</strong> to <strong>registered</strong>.</p>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with the user information including user ID. With completion of this operation, the user's <a href="../Ref_Values.htm#values_usersignupstate">state</a> changes from <strong>pending_validation</strong> to <strong>registered</strong>.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Sample Response" -->
 <h3 id="sampleresponse">Sample Response</h3>
 <p id="id_sampleresponse">The sample response below shows the user information returned in the form of a JSON object.</p>
 
@@ -147,73 +162,77 @@ Date: Fri, 07 Jun 2013 21:32:20 GMT
 Content-Type: application/json
 Set-Cookie: AtmoAuthToken_open=TokenID%3Dbc6f82c8-cfb9-11e2-9437-cdd24b34e538%2Cclaimed_id%3Durn%3Open%3Auser%3Aacmecorp%3Auser
 10026%2CissueTime%3D1370640742244%2CexpirationTime%3D1370642541186%2CGroups%3D%5B%22registeredusers%252Eopen%22%5D%2CAt
-tributesIncluded%3Dtrue%2CUserFDN%3Duser10026%252Eopen%2CUserName%3DJaneMead%2Csig%3DgtutJWV457xtJLymmleZJUz3aOsSooVAsx
+tributesIncluded%3Dtrue%2CUserFDN%3Duser10026%252Eopen%2CUserName%3DJaneSaoirse%2Csig%3DgtutJWV457xtJLymmleZJUz3aOsSooVAsx
 _U4TfjXllVNmdR5L8ob3Sz1boZfDdaBHPKwu0XgVU_86oUac-vmafKGnsItKfi9pAmdl2vx8tW0nxSXHNg1RqCqQZ4_W4jIJrBN1fWqxnxPG2LH9AXgIPww22
 JCuZAmPNMAE8NagE;path=/;expires="Fri, 07 Jun 2013 21:57:22 GMT";HttpOnly;Version=1</pre>
 
 <p><strong>Sample response body</strong></p>
 <pre>{
   "state" : "registered",
-  "userName" : "JaneMead",
+  "userName" : "JaneSaoirse",
   "userID" : "user10026.acmecorp",
-  "profileName" : "JaneMead",
+  "profileName" : "JaneSaoirse",
   "authIdentifier" : "",
-  "lastName" : "Mead",
+  "lastName" : "Saoirse",
   "firstName" : "Jane",
   "expired" : false,
-  "emailAddress" : "jane.mead@example.com",
+  "emailAddress" : "jane.saoirse@acmecorp.com",
   "pendingNotifications" : 1
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../Ref_apireference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../Ref_API_Reference.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
-<thead>
-  <tr bgcolor="#DDDDDD">
-    <th width="20%">Header</th>
-    <th width="80%">Description</th>
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Header</th>
+      <th width="80%">Description</th>
     </tr>
-</thead>
-<tbody>
+  </thead>
+  <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#contenttype_request">Content-Type</a></td>
-      <td>application/json</td>
+      <td><a href="../Ref_API_Reference.htm#contenttype_request">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../Ref_apireference.htm#setcookie_response">Set-Cookie</a></td>
+      <td><a href="../Ref_API_Reference.htm#setcookie_response">Set-Cookie</a></td>
       <td><!-- #BeginLibraryItem "/Library/hdrval_setcookie.lbi" --> The set-cookie response header sets, updates, or expires the platform cookie to reflect changes made by the operation.<!-- #EndLibraryItem --></td>
     </tr>
-</tbody>
+    </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
+<!-- InstanceBeginEditable name="Response Body" -->
 <h3 id="responsebody">Response Body</h3>
-<p>If the operation is successful the response includes the following:</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
-<thead>
-  <tr bgcolor="#DDDDDD">
+  <thead>
+    <tr bgcolor="#DDDDDD">
       <th width="20%">Name</th>
       <th width="15%">Type</th>
       <th width="65%">Description</th>
     </tr>
-</thead>
-<tbody>
+  </thead>
+  <tbody>
     <tr>
       <td>Response</td>
       <td><a href="../obj/o_users_SignupResponse.htm">SignupResponse</a></td>
-      <td><!-- #BeginLibraryItem "/Library/o_users_SignupResponse.lbi" -->
-Contains basic signup information about the user, including the unique user ID assigned by the platform.<!-- #EndLibraryItem --></td>
-  </tr>
-</tbody>
+      <td><!-- #BeginLibraryItem "/Library/o_users_SignupResponse.lbi" --> Contains basic signup information about the user, including the unique user ID assigned by the platform.<!-- #EndLibraryItem --></td>
+    </tr>
+  </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
 
 
 <h3 id="errorcodes">Error Codes/Messages</h3>
-<p>If the call is unsuccessful one of the following error codes/messages is returned.</p>
+<p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
+<!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -223,12 +242,13 @@ Contains basic signup information about the user, including the unique user ID a
   </thead>
   <tbody>
     <tr>
-      <td><a href="../Ref_apireference.htm#http500">500</a></td>
-      <td>An error occurred processing the call. For example, the user is already registered.</td>
-  </tr>
+      <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
+      <td>An error occurred processing the call. </td>
+    </tr>
   </tbody>
 </table>
-<p><a href="../Ref_apireference.htm#ref_errormessages">Full list of Enterprise API Platform API error messages.</a></p>
+<!-- InstanceEndEditable -->
+<p><a href="../Ref_API_Reference.htm#ref_errormessages">Full list of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -237,14 +257,14 @@ Contains basic signup information about the user, including the unique user ID a
   <tr>
     <td width="300"><ul>
   <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="../glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="../docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="../authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="../troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

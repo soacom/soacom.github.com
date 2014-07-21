@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: IDs on the Platform | Reference Material | Enterprise API Platform API
-description: The Enterprise API Platform uses a number of unique identifiers to identify different resources and other objects commonly referenced on the platform, such as apps, APIs, tickets, discussions, users, reviews, notifications, and many others.
+description: The&nbsp;Enterprise API Platform&nbsp;uses a number of unique identifiers to identify different resources and other objects commonly referenced on the platform, such as apps, APIs, tickets, discussions, users, reviews, notifications, and many others.
 product: cm
 category: ref
 nav-title: IDs on the Platform 
@@ -12,13 +12,13 @@ no-catalog: true
 ---
 
 <h2><a name="top"></a>IDs on the Platform</h2>
-<p>The <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> uses a number of unique identifiers to identify different resources and other objects commonly referenced on the platform, such as apps, APIs, tickets, discussions, users, reviews, notifications, and many others.</p>
+<p>The&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;uses a number of unique identifiers to identify different resources and other objects commonly referenced on the platform, such as apps, APIs, tickets, discussions, users, reviews, notifications, and many others.</p>
 <p>These IDs are essentially simple strings. However, they generally have a two-part construction, such as:</p>
 <pre>&lt;uniqueid for object/tenant&gt;.&lt;tenant name&gt;</pre>
-<p>For example, a unique UserID for a user on <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> might be <strong>user10011.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem --></strong>. In this example:</p>
+<p>For example, a unique UserID for a user on&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;might be <strong>user10011.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem --></strong>. In this example:</p>
 <ul>
   <li><strong>user</strong> indicates that this is a user ID.</li>
-  <li><strong>10011</strong> is unique to <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, so the unique user record can be located in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> database.</li>
+  <li><strong>10011</strong> is unique to&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, so the unique user record can be located in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;database.</li>
   <li><strong><!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem --></strong> indicates the tenant name. Including the tenant name after the period increases the usefulness of the object, because even if two tenants both have a user10011, each ID is unique across the entirety of the platform in a federated scenario where there might be many tenants.</li>
 </ul>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -65,15 +65,13 @@ The unique ID for the specified alert.<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td><a id="id_apiid"></a>APIID</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_APIID.lbi" -->
-The unique ID for the specified API.<!-- #EndLibraryItem --></td>
-      <td>api10041.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_APIID.lbi" -->The unique ID for a specific API.<!-- #EndLibraryItem --></td>
+      <td>8bebe599-3b97-45bc-a6a7-73542af275a7.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td><a id="id_apiversionid"></a>APIVersionID</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->
-The unique ID for the specified API version.<!-- #EndLibraryItem --></td>
-      <td>apiversion13558.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->The unique ID for a specific API version.<!-- #EndLibraryItem --></td>
+      <td>48692e9f-f452-4a17-b793-5368b1b116c3.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td><a id="id_appid"></a>AppID</td>
@@ -90,7 +88,7 @@ The unique ID for the specified app.<!-- #EndLibraryItem --></td>
     <tr>
       <td><a id="id_appversionid"></a>AppVersionID</td>
       <td><p><!-- #BeginLibraryItem "/Library/o_ID_AppVersionID.lbi" -->
-        The unique ID for the specified app version.<!-- #EndLibraryItem --> The App Version ID is made up of two elements, separated by a dot: an <a href="glossary_communityplatform.htm#gl_rdn">RDN</a>, which is a 24-character hex value randomly generated when the version is created, and the <a href="#id_fedmemberid">FedmemberID</a> (tenant name).</p>
+        The unique ID for the specified app version.<!-- #EndLibraryItem --> The App Version ID is made up of two elements, separated by a dot: an <a href="Ref_Glossary_CommunityPlatform.htm#gl_rdn">RDN</a>, which is a 24-character hex value randomly generated when the version is created, and the <a href="#id_fedmemberid">FedmemberID</a> (tenant name).</p>
         <p><strong>Note</strong>: RuntimeID AppVersionID are the same value. When this appears in a form parameter, the API uses AppVersionID; when it's part of a request or response object, the API uses RuntimeID.</p></td>
       <td>72zNE5InKlf2z00y8fWSp3AU.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem --></td>
   </tr>
@@ -155,13 +153,13 @@ The latest or only version ID for the app.<!-- #EndLibraryItem --></td>
     <tr>
       <td><a id="id_discussionid"></a>DiscussionID</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_DiscussionID.lbi" -->
-The unique ID for a specific <a href="glossary_communityplatform.htm#gl_discussion">discussion</a>.<!-- #EndLibraryItem --></td>
+The unique ID for a specific <a href="Ref_Glossary_CommunityPlatform.htm#gl_discussion">discussion</a>.<!-- #EndLibraryItem --></td>
       <td>discussion25796.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem --></td>
   </tr>
   <tr>
     <td><a id="id_discussionsubjectid"></a>DiscussionSubjectID</td>
     <td><!-- #BeginLibraryItem "/Library/o_ID_DiscussionSubjectID.lbi" -->
-The unique ID for the specific resource that a <a href="glossary_communityplatform.htm#gl_discussion">discussion</a> relates to; for example, the AppVersionID, APIVersionID, GroupID, or a custom BoardID.<!-- #EndLibraryItem --></td>
+The unique ID for the specific resource that a <a href="Ref_Glossary_CommunityPlatform.htm#gl_discussion">discussion</a> relates to; for example, the AppVersionID, APIVersionID, GroupID, or a custom BoardID.<!-- #EndLibraryItem --></td>
     <td>apiversion20693.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem -->, 4iXro2Uxs2h4LviCshR9pK9w.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem --></td>
   </tr>
   <tr>
@@ -190,7 +188,7 @@ The unique ID for a &quot;following&quot; relationship between a user and a spec
       <td><a id="id_groupid"></a>GroupID</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_GroupID.lbi" -->
 The unique ID for a specific group.<!-- #EndLibraryItem --></td>
-      <td>group19793.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem --></td>
+      <td>apiadmin-73691c5e-598a-4251-aac2-2a5b28385207.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td><a id="id_groupmembershipid"></a>GroupMembershipID</td>
@@ -201,7 +199,7 @@ The unique ID for a specific user's membership in a specific group.<!-- #EndLibr
     <tr>
       <td><a id="id_itemid"></a>ItemID</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_ItemID.lbi" -->
-The unique ID for a specific <a href="glossary_communityplatform.htm#gl_boarditem">Board item</a>.<!-- #EndLibraryItem --></td>
+The unique ID for a specific <a href="Ref_Glossary_CommunityPlatform.htm#gl_boarditem">Board item</a>.<!-- #EndLibraryItem --></td>
       <td>&nbsp;</td>
   </tr>
     <tr>
@@ -228,13 +226,13 @@ The unique ID for a specific <a href="glossary_communityplatform.htm#gl_boardite
     </tr>
     <tr>
       <td><a id="id_licenseid"></a>LicenseID</td>
-      <td>The unique ID for an API license</a>.</td>
-      <td>&nbsp;</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_LicenseID.lbi" -->The unique ID for a specific <a href="Ref_Glossary_CommunityPlatform.htm#gl_license">license</a>.<!-- #EndLibraryItem --></td>
+      <td>759aa82d-aeb7-4fa0-8dd1-e62d7f38e858.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem --></td>
     </tr>
 
     <tr>
       <td><a id="id_logindomainid"></a>LoginDomainID</td>
-      <td>The unique ID for a user's <a href="glossary_communityplatform.htm#gl_logindomain">login domain</a>.</td>
+      <td>The unique ID for a user's <a href="Ref_Glossary_CommunityPlatform.htm#gl_logindomain">login domain</a>.</td>
       <td>siteusers.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
@@ -266,7 +264,7 @@ The unique Board Item ID for a specific group membership request.<!-- #EndLibrar
     <tr>
       <td><a id="id_pictureid"></a>PictureID</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_PictureID.lbi" -->
-The unique ID for a picture on the platform, such as the avatar for an app, API, or user. The picture ID is assigned by the Dropbox when the picture is first uploaded, using the Dropbox service, and stored in a temporary Dropbox location as part of adding or updating the resource. It is then sent to the server where it is permanently stored.<!-- #EndLibraryItem --></td>
+The unique ID for a picture on the platform, such as the avatar for an app, API, or user. The PictureID is assigned by the Dropbox when the picture is first uploaded, using the Dropbox service, and stored in a temporary Dropbox location as part of adding or updating the resource. It is then sent to the server where it is permanently stored.<!-- #EndLibraryItem --></td>
       <td>1285</td>
   </tr>
     <tr>
@@ -283,9 +281,14 @@ The ID of the third party providing validation for the user, such as Facebook&re
   </tr>
     <tr>
       <td><a id="id_resourceid"></a>ResourceID</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_ResourceID.lbi" -->
-The unique ID for a specific resource.<!-- #EndLibraryItem --> For example, the <span class="apidoc_code"><a href="users/m_users_getUserRoles.htm">GET&nbsp;/api/users/{UserID}/roles</a></span> operation references a <a href="#id_userid">UserID</a> as a resource ID.</td>
-      <td>user13967.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem --></td>
+      <td><p><!-- #BeginLibraryItem "/Library/o_ID_ResourceID.lbi" -->The unique ID for a specific resource; for example, the <a href="Ref_IDsOnThePlatform.htm#id_scopeid">ScopeID</a> or the <a href="Ref_IDsOnThePlatform.htm#id_apiversionid">APIVersionID</a>.<!-- #EndLibraryItem --></p>
+        <p>Usage examples:</p>
+        <ul class="apidoctable_ul">
+          <li>The <span class="apidoc_code"><a href="users/m_users_getUserRoles.htm">GET&nbsp;/api/users/{UserID}/roles</a></span> operation references a <a href="#id_userid">UserID</a> as a resource ID</li>
+          <li>The <span class="apidoc_code"><a href="apis/m_apis_getOperationResources.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/resources</a></span> response message references a <a href="#id_scopeid">ScopeID</a> as a resourceID.</li>
+        </ul>        </td>
+      <td><p>user13967.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem --></p>
+        <p>5e0a3c2a-8afe-478d-a1dc-67772939d191.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem --></p></td>
   </tr>
     <tr>
       <td><a id="id_reviewid"></a>ReviewID</td>
@@ -314,7 +317,7 @@ The unique UserID of the user performing a specific action.<!-- #EndLibraryItem 
       <td><a id="id_runtimeid"></a>RuntimeID</td>
       <td><p>Same as <a href="#id_appversionid">AppVersionID</a>.</p>
 <p><strong>Note</strong>: RuntimeID and AppVersionID are the same value. When this appears in a form parameter, the API uses AppVersionID; when it's part of a request or response object, the API uses RuntimeID.</p></td>
-      <td><!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem -->.9ezRSOnifci8EYNndZu79U6w</td>
+      <td>9ezRSOnifci8EYNndZu79U6w.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td><a id="id_scopeid"></a>ScopeID</td>
@@ -332,6 +335,11 @@ The unique UserID of the user performing a specific action.<!-- #EndLibraryItem 
       <td>&nbsp;</td>
   </tr>
     <tr>
+      <td><a id="id_tenantid"></a>TenantID</td>
+      <td>In a federation scenario, the TenantID identifies a specific tenant in the federation.</td>
+      <td>&nbsp;</td>
+  </tr>
+    <tr>
       <td><a id="id_ticketid"></a>TicketID</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_TicketID.lbi" -->
 The unique ID for a specific ticket.<!-- #EndLibraryItem --></td>
@@ -340,7 +348,7 @@ The unique ID for a specific ticket.<!-- #EndLibraryItem --></td>
     <tr>
       <td><a id="id_transactionid"></a>TransactionID</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_TransactionID.lbi" -->
-The unique ID for a specific <a href="glossary_communityplatform.htm#gl_transaction">transaction</a>.<!-- #EndLibraryItem --></td>
+The unique ID for a specific <a href="Ref_Glossary_CommunityPlatform.htm#gl_transaction">transaction</a>.<!-- #EndLibraryItem --></td>
       <td>f209d402-b406-11e2-a29e-c564ec007eb4</td>
   </tr>
     <tr>
@@ -351,13 +359,13 @@ The unique ID for a specific user.<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td><a id="id_viewerid"></a>ViewerID</td>
-      <td>The ID of a user viewing a group.  For example, the <span class="apidoc_code"><a href="apis/m_apis_uninvitePrivateViewer.htm">DELETE&nbsp;/api/apis/versions/{APIVersionID}/viewers/{ViewerID}</a></span> operation has the ViewerID as an input parameter.</td>
-      <td>user23531.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem --></td>
+      <td>The <a href="#id_groupid">GroupID</a> of a group viewing an API.  For example, the <span class="apidoc_code"><a href="apis/m_apis_uninvitePrivateViewer.htm">DELETE&nbsp;/api/apis/versions/{APIVersionID}/viewers/{ViewerID}</a></span> operation has the ViewerID as an input parameter.</td>
+      <td>apiadmin-73691c5e-598a-4251-aac2-2a5b28385207.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a id="id_visibletoid"></a>VisibleToID</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_VisibleToID.lbi" -->
-A unique ID identifying the <a href="glossary_communityplatform.htm#gl_visibility">visibility</a> of a Board item.<!-- #EndLibraryItem --></td>
+A unique ID identifying the <a href="Ref_Glossary_CommunityPlatform.htm#gl_visibility">visibility</a> of a Board item.<!-- #EndLibraryItem --></td>
       <td>&nbsp;</td>
   </tr>
 </tbody>
@@ -370,14 +378,14 @@ A unique ID identifying the <a href="glossary_communityplatform.htm#gl_visibilit
   <tr>
     <td width="300"><ul>
   <li><a href="index.htm">Enterprise API Platform API: Overview</a></li>
-  <li><a href="glossary_communityplatform.htm">Glossary of Terms</a></li>
-  <li><a href="docconventions.htm">Documentation Conventions</a></li>
+  <li><a href="Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
 </td>
     <td width="400"><ul>
-  <li><a href="authenticationandsecurity.htm">Authentication and Security</a></li>
-  <li><a href="troubleshootingandsupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="Ref_apireference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>
