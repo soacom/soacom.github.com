@@ -264,6 +264,7 @@
     $(document).ready(function() {
         leftnav();
         $(".soa-ui-dc-container-main-left").find("ul").first().show();
+        $(".soa-ui-dc-container-main").removeClass("soa-ui-dc-before-load");
     });
 </script>
 <!-- End left nav script -->

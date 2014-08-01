@@ -33,6 +33,9 @@ document {
   clear: both;
   visibility: hidden;
 }
+.soa-ui-dc-before-load {
+  min-height: 1024px;
+}
 .soa-ui-dc-button {
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
