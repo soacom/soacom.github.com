@@ -226,19 +226,19 @@ document {
 }
 .soa-ui-dc-topnav-wrapper {
   position: absolute;
-  width: 640px;
+  width: 700px;
   top: 0;
   margin-left: 140px;
 }
 .soa-ui-dc-topnav-container {
-  left: 196px;
+  left: 156px;
   position: absolute;
   top: 13px;
 }
 .soa-ui-dc-topnav-item {
   float: left;
   margin: 0;
-  padding: 0 0 0 55px;
+  padding: 0 0 0 25px;
 }
 .soa-ui-dc-topnav-item:first-child {
   padding: 0;
@@ -296,6 +296,13 @@ a.soa-ui-dc-topnav-item-link:hover,
 .soa-ui-dc-topnav-item-active .soa-ui-dc-topnav-item-link.soa-ui-dc-topnav-item-link-lifecyclemanager {
   background-position: 0 -571px;
 }
+.soa-ui-dc-topnav-item-link.soa-ui-dc-topnav-item-link-soaplatform {
+  background-position: 0 -985px;
+}
+.soa-ui-dc-topnav-item-link.soa-ui-dc-topnav-item-link-soaplatform:hover,
+.soa-ui-dc-topnav-item-active .soa-ui-dc-topnav-item-link.soa-ui-dc-topnav-item-link-soaplatform {
+  background-position: 0 -930px;
+}
 .soa-ui-dc-subnav {
   list-style: none;
   margin: 0;
@@ -304,10 +311,10 @@ a.soa-ui-dc-topnav-item-link:hover,
 .soa-ui-dc-subnav-item {
   float: left;
   margin: 0;
-  padding: 0 0 0 65px;
+  padding: 0 25px 0 82px;
 }
 .soa-ui-dc-subnav-item:first-child {
-  padding: 0;
+  padding: 0 0 0 25px;
 }
 a.soa-ui-dc-subnav-item-link {
   color: #a3a5a1;
@@ -319,7 +326,7 @@ a.soa-ui-dc-subnav-item-link.soa-ui-dc-subnav-item-link-active {
   color: #2683b4;
 }
 .soa-ui-dc-subnav-container {
-  left: 215px;
+  left: 157px;
   position: absolute;
   border-top: 1px solid grey;
   padding-top: 4px;
@@ -379,6 +386,9 @@ a.soa-ui-dc-subnav-item-link.soa-ui-dc-subnav-item-link-active {
 .soa-ui-dc-content-header.soa-ui-dc-icon-firstword {
   display: block;
 }
+.soa-ui-dc-content-header.soa-ui-dc-icon.soa-ui-dc-content-header-soaplatform {
+  background-position: 0 -790px;
+}
 .soa-ui-dc-content-header.soa-ui-dc-icon.soa-ui-dc-content-header-communitymanager {
   background-position: 0 -44px;
 }
@@ -413,11 +423,11 @@ a.soa-ui-dc-subnav-item-link.soa-ui-dc-subnav-item-link-active {
   float: left;
   list-style: none;
   margin: 0;
-  padding: 0 0 0 56px;
-  width: 219px;
+  padding: 0 20px 0 20px;
+  width: 197px;
 }
 .soa-ui-dc-content-nav-item:first-child {
-  padding: 0;
+  padding: 0 0 0 10px;
 }
 .soa-ui-dc-content-nav-item-link {
   display: block;
@@ -444,6 +454,9 @@ a.soa-ui-dc-content-nav-item-link:hover,
 .soa-ui-dc-content-nav-item-link.soa-ui-dc-icon {
   background: url(images/DC-Sprites_product-icons.png) no-repeat;
   padding-left: 53px;
+}
+.soa-ui-dc-content-nav-item-link.soa-ui-dc-content-nav-item-link-soaplatform {
+  background-position: 0 -860px;
 }
 .soa-ui-dc-content-nav-item-link.soa-ui-dc-content-nav-item-link-communitymanager {
   background-position: 0 -254px;
@@ -472,6 +485,21 @@ a.soa-ui-dc-content-nav-item-link:hover,
   margin: 0;
   padding: 16px 0 0;
 }
+.soa-ui-dc-content-catalog-subheading {
+  border-top: 1px solid #c0bfbf;
+  background-color: #ebeced;
+  height: 50px;
+  list-style: none;
+  margin: 0;
+  padding: 16px 0 0;
+}
+.soa-ui-dc-content-catalog-subheading h3 {
+  font-size: 14px;
+  font-weight: bold;
+  font-family: helvetica;
+  color: #7d7e7f;
+  padding: 0 0 0 47px;
+}
 .soa-ui-dc-content-catalog-items {
   list-style: none;
   margin: 0;
@@ -481,11 +509,12 @@ a.soa-ui-dc-content-nav-item-link:hover,
   float: left;
   list-style: none;
   margin: 0;
-  padding: 0 0 0 35px;
-  width: 240px;
+  padding: 0 0 0 55px;
+  width: 275px;
 }
 .soa-ui-dc-detail-column:first-child {
   padding: 0;
+  width: 220px;
 }
 .soa-ui-dc-detail-column-header {
   background: #eeeff0;

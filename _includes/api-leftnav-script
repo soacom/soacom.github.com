@@ -2,7 +2,7 @@
 <script>
     function leftnav()
     {
-        var pages = unsorted_pages_prod_cat.filter(function(a) {
+        var pages = unsorted_pages_prod_cat.pages.filter(function(a) {
             return (a.nn == 'api' && a.sn == 'false');
         }).sort(function CustomSort(a, b) {
             if ( ! a["w"] ) { a["w"] = 1000 ;}
@@ -16,7 +16,7 @@
                 return (a.nt.localeCompare(b.nt));
             }
         });
-        var snpages = unsorted_pages_prod_cat.filter(function(a) {
+        var snpages = unsorted_pages_prod_cat.pages.filter(function(a) {
             return (a.nn == 'api' && a.sn == 'true');
         }).sort(function CustomSort(a, b) {
             if ( ! a["w"] ) { a["w"] = 1000 ;}

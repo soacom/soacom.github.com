@@ -158,5 +158,12 @@
 						$('#soa-control-dc-search-results').hide();
 						$('#soa-control-dc-overlay').removeClass('soa-ui-dc-overlay-visible');
 					});
+					$(".soa-ui-dc-container-main-left-nav-item-link").click(function(e){
+						if ( ! $(this).closest(".soa-ui-dc-container-main-left-nav-inner").length ) {
+							$(".soa-ui-dc-container-main-left-nav-item").removeClass('soa-ui-dc-container-main-left-nav-item-selected');
+							$(this).parent().addClass('soa-ui-dc-container-main-left-nav-item-selected');
+							// $(this).addClass('soa-ui-dc-container-main-left-nav-item-selected');
+						}
+					});
 				});
 			</script>
