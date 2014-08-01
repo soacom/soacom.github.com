@@ -7,6 +7,9 @@
 			<div class="soa-ui-dc-topnav-container">
 				<!-- top nav starts here -->
 				<ul class="soa-ui-dc-topnav soa-ui-dc-clearthis">
+					<li class="soa-ui-dc-topnav-item {% if page.product == 'sp' %}soa-ui-dc-topnav-item-active{% endif %}">
+						<a href="{{ site.baseurl }}/sp/index.html" class="soa-ui-dc-topnav-item-link soa-ui-dc-icon soa-ui-dc-topnav-item-link-soaplatform"><span class="soa-ui-dc-topnav-item-link-firstword">DEPLOYMENT</span> PLATFORM</a><!-- replace href -->
+					</li>					
 					<li class="soa-ui-dc-topnav-item {% if page.product == 'cm' %}soa-ui-dc-topnav-item-active{% endif %}">
 						<a href="{{ site.baseurl }}/cm/index.html" class="soa-ui-dc-topnav-item-link soa-ui-dc-icon soa-ui-dc-topnav-item-link-communitymanager"><span class="soa-ui-dc-topnav-item-link-firstword">COMMUNITY</span> MANAGER</a><!-- replace href -->
 					</li>
