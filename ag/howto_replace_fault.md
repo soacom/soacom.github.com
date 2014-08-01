@@ -4,7 +4,7 @@ title: How to Replace Fault Messages
 description: A how to guide for providing custom fault content for any fault response
 product: ag
 category: learn
-sub-nav-class: Mediation
+subcategory: Howto
 weight: 4
 type: page
 nav-title: Replace Fault Messages

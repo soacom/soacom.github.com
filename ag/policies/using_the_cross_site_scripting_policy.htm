@@ -4,7 +4,6 @@ title: Using the Cross Site Scripting Detection Policy in Policy Manager 7.x
 description: Learn how configure a tag white list to protect your web service from being exploited by cross site scripting.
 product: ag
 category: learn
-sub-nav-class: Security
 weight:	5
 subcategory: Policies
 type: page
@@ -33,7 +32,7 @@ nav-title: Using the Cross Site Scripting Policy
 
 
   </ol>
-  <div class = "divider1"></div>
+  <div class = "divider1"></div><p></p>
 
 <a name="introduction">
 <h3>Introduction</h3></a>
@@ -86,7 +85,7 @@ nav-title: Using the Cross Site Scripting Policy
 <p>If you use the default policy without defining a white list, all tags will be disallowed.  If you define a white list all tags in the white list will be accepted, and all other tags (i.e., black list) will be forbidden when Network Director  passes the request message to the downstream service and an HTTP 404 Forbidden error will be raised.</p>
 <h5>Step 3: Configure White List / Custom Tags</h5>
 <p>The next step is to define your tag white list. These represent tags that comprise the HTML in your request message body and that you have designated as ones that could be  potentially attacked. White list tags are allowed when Network Director passes the request message to the downstream service.  The following options are available:</p>
-
+<h5></h5>
 <ul class="usingOrderedList">
   <li>Use  <strong>Add Default HTML Tags</strong>  to add a default set of tags (i.e.,  adds the white list to your policy) and customize using the <strong>Remove Selected Row</strong> option.</li>
   <li>Use  <strong>Add Tag</strong>  to add a custom tag and attributes (if applicable).</li>
