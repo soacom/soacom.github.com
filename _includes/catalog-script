@@ -158,12 +158,12 @@
                     if (classsnpages[j].ty == 'pdf') {
                         Obja.attr("target", "_blank");
                     }
-                    Obja.html(classsnpages[j].t.replace("&amp;nbsp;", " "));
+                    Obja.html(classsnpages[j].t.replace(/\&amp;nbsp;/gi, " "));
                     ObjDetDivH4.append(Obja);
                     ObjDetDivH4.addClass("soa-ui-dc-section-header");
 
                     ObjP.addClass("soa-ui-dc-section-paragraph");
-                    ObjP.html(classsnpages[j].d);
+                    ObjP.html(classsnpages[j].d.replace(/\&amp;nbsp;/gi, " "));
 
                     ObjSecDiv.append(ObjDetDivH4);
                     ObjSecDiv.append(ObjP);
@@ -225,12 +225,12 @@
                 if (pages[i].ty == 'pdf') {
                     Obja.attr("target", "_blank");
                 }
-                Obja.html(pages[i].t.replace("&amp;nbsp;", " "));
+                Obja.html(pages[i].t.replace(/\&amp;nbsp;/gi, " "));
                 ObjDetDivH4.append(Obja);
                 ObjDetDivH4.addClass("soa-ui-dc-section-header");
 
                 ObjP.addClass("soa-ui-dc-section-paragraph");
-                ObjP.html(pages[i].d);
+                ObjP.html(pages[i].d.replace(/\&amp;nbsp;/gi, " "));
 
                 ObjSecDiv.append(ObjDetDivH4);
                 ObjSecDiv.append(ObjP);
