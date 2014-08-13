@@ -80,13 +80,49 @@ no-catalog: true
 
 
 <a name="what_are_the_visibility_rules_for_api_documentation"></a><h3>What are the visibility rules for API documentation?</h3>
-<p>The following visibility rules apply for API documentation:</p>
-<ul>
-  <li><strong> APIs that are designated as Public and do not use licenses</strong>: Documentation is visible to all users (including <a href="basics_glossary.htm#gl_anonymoususer">anonymous users</a>).</li>
-  <li><strong>APIs that are designated as Public and use licenses</strong>: Documentation must be tagged for the appropriate licenses. If appropriately tagged, documentation associated with public scopes is visible to all users. Documentation associated with private scopes is only visible to users who have visibility to the private scopes.</li>
-  <li><strong>APIs that are designated as Private but do not use licenses</strong>: Documents are visible only to API Admins, Business Admins, and users who are members of a group that has visibility into the API (Private API Group or invited independent group).</li>
-  <li><strong>APIs that are designated as Private and use licenses</strong>: API documentation mapped to a private license or scope is available only to users who have visibility into the applicable license or a license that includes the applicable scope. Visibility is based on group membership. Note that the API documentation must be tagged according to the tagging rules as explained in <a href="#how_do_i_control_visibility_of_api_documentation_files">How do I control visibility of API documentation files?</a> below. If an API uses licenses, whether the API is public or private, documentation tagging <strong>must</strong> be used.</li>
-</ul>
+<p>The visibility rules for API documentation are shown in the table below.</p>
+<table cellspacing="0px" class="doctable" style="width: 90%;">
+  <thead>
+  <tr>
+    <th width="20%">API Visibility</th>
+    <th width="20%">Use Licenses?</th>
+    <th width="60%">Documentation Visibility</th>
+  </tr>
+</thead>
+<tbody>
+    <tr class="t2row">
+      <td>Public</td>
+      <td>No</td>
+      <td>Documentation is visible to all users, including <a href="basics_glossary.htm#gl_anonymoususer">anonymous users</a>.</td>
+    </tr>
+    <tr class="t1row">
+      <td>Public</td>
+      <td>Yes</td>
+      <td>Documentation must be tagged for the appropriate licenses. If appropriately tagged, documentation associated with public scopes is visible to all users, including <a href="basics_glossary.htm#gl_anonymoususer">anonymous users</a>. Documentation associated with private scopes is only visible to users who have visibility to the private scopes.</td>
+    </tr>
+    <tr class="t2row">
+      <td>Registered Users</td>
+      <td>No</td>
+      <td>Documentation is visible to all users who are logged in.</td>
+    </tr>
+    <tr class="t1row">
+      <td>Registered Users</td>
+      <td>Yes</td>
+      <td>Documentation must be tagged for the appropriate licenses. If appropriately tagged, documentation associated with public scopes is visible to all users who are logged in. Documentation associated with private scopes is only visible to users who have visibility to the private scopes.</td>
+    </tr>
+    <tr class="t2row">
+      <td>Private</td>
+      <td>No</td>
+      <td>Documents are visible only to API Admins, Business Admins, and users who are members of a group that has visibility into the API (Private API Group or invited independent group).</td>
+    </tr>
+    <tr class="t1row">
+      <td>Private</td>
+      <td>Yes</td>
+      <td>API documentation mapped to a private license or scope is available only to users who have visibility into the applicable license or a license that includes the applicable scope. Visibility is based on group membership. Note that the API documentation must be tagged according to the tagging rules as explained in <a href="#how_do_i_control_visibility_of_api_documentation_files">How do I control visibility of API documentation files?</a> below. If an API uses licenses, whatever the <a href="basics_glossary.htm#gl_visibility">visibility</a> setting is for the API, documentation tagging <strong>must</strong> be used.</td>
+    </tr>
+</tbody>
+</table>
+
 <p><a href="#top">Back to top</a></p>
 
 
@@ -253,6 +289,18 @@ no-catalog: true
   &lt;/roles&gt;
 &lt;/metadata&gt;</pre>
 
+<p><strong>Multiple roles</strong>: The example below defines a rule that all .htm files in the documents folder for this API are only visible to users with either of two roles:</p>
+<pre>&lt;metadata&gt;
+  &lt;APIVersionID xmlns=&quot;http://soa.com/xsd/api/1.0&quot;&gt;apiversion12345.acmecorp&lt;/APIVersionID&gt;
+  &lt;target&gt;documents/*\.htm&lt;/target&gt;
+  &lt;roles&gt;
+    &lt;role name="SiteAdmin"&gt;
+    &lt;/role&gt;
+    &lt;role name="ApiAdmin"&gt;
+    &lt;/role&gt;
+  &lt;/roles&gt;
+&lt;/metadata&gt;</pre>
+<p></p>
 <p>Or, you might want to filter so that a rule applies to all Microsoft Word .docx files in the /documents folder:</p>
 <pre>
 &lt;target&gt;.*\.docx&lt;/target&gt;
@@ -471,3 +519,5 @@ no-catalog: true
   <li>Click <strong>Upload</strong>.</li>
 </ol>
 <p><a href="#top">Back to top</a></p>
+
+

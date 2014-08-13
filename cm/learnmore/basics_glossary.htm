@@ -16,6 +16,11 @@ nav-title: Glossary of Terms
 
 
 <dl>
+<dt>access token</dt>
+<dd>See <a href="#gl_oauth_accesstoken">OAuth access token</a>.</dd>
+
+
+
 <dt><a name="gl_alert"></a>alert</dt>
 <dd>A type of <a href="#gl_dashboardentry">Dashboard item</a> designed to inform app or API administrators about an issue such as an SLA (Service Level Agreement) violation.</dd>
 
@@ -27,7 +32,7 @@ nav-title: Glossary of Terms
 
 
 <dt><a name="gl_api"></a>API</dt>
-<dd>A key resource in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->. An API provides a business with a way of using the Internet to extend business capabilities to connect with new customers in new ways. In this context an API is a Web service exposed outside the enterprise, typically using RESTful design principles, and often with JSON content. </dd>
+<dd>A key resource in the Community Platform. An API provides a business with a way of using the Internet to extend business capabilities to connect with new customers in new ways. In this context an API is a Web service exposed outside the enterprise, typically using RESTful design principles, and often with JSON content. </dd>
 
 
 
@@ -37,7 +42,7 @@ nav-title: Glossary of Terms
 
 
 <dt><a name="gl_apiadmin"></a>API Administrator</dt>
-<dd>One of the <a href="#gl_role">roles</a> defined in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> is that of the API Admin. Each API must have at least one Admin, and can have more. The API Admin approves or rejects connection requests, moderates the API's <a href="#gl_board">Board</a>, views and manages alerts and trouble tickets, and manages documents, policies, and other information associated with the API. The API Admin can also view performance and usage data for the entire API, and can invite others to be Admins for the same API.</dd>
+<dd>One of the <a href="#gl_role">roles</a> defined in the Community Platform is that of the API Admin. Each API must have at least one Admin, and can have more. The API Admin approves or rejects connection requests, moderates the API's <a href="#gl_board">Board</a>, views and manages alerts and trouble tickets, and manages documents, policies, and other information associated with the API. The API Admin can also view performance and usage data for the entire API, and can invite others to be Admins for the same API.</dd>
 
 
 
@@ -54,7 +59,7 @@ nav-title: Glossary of Terms
 
 
 <dt><a name="gl_app"></a>app</dt>
-<dd>An app (application) is a piece of software that delivers specific capabilities to its users. In the context of the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->, an app is a piece of software that consumes one or more APIs.</dd>
+<dd>An app (application) is a piece of software that delivers specific capabilities to its users. In the context of the Community Platform, an app is a piece of software that consumes one or more APIs.</dd>
 
 
 
@@ -70,12 +75,26 @@ nav-title: Glossary of Terms
 
 
 <dt><a name="gl_appteammember"></a>app team member</dt>
-<dd>One of the <a href="#gl_role">roles</a> defined in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> is that of the app team member. Each app most have at least one team member and can have more. An app team member initiates contract requests, such as API access requests, moderates the app's <a href="#gl_board">Board</a>, and views and manages trouble tickets relating to the app. The app team member can also view performance and usage data for the app's API usage, and can invite others to be team members for the same app. All app team members have the same rights.</dd>
+<dd>One of the <a href="#gl_role">roles</a> defined in the Community Platform is that of the app team member. Each app most have at least one team member and can have more. An app team member initiates contract requests, such as API access requests, moderates the app's <a href="#gl_board">Board</a>, and views and manages trouble tickets relating to the app. The app team member can also view performance and usage data for the app's API usage, and can invite others to be team members for the same app. All app team members have the same rights.</dd>
+
+
+<dt><a name="gl_authorizationendpoint"></a>authorization endpoint</dt>
+<dd>See <a href="#gl_oauth_authorizationendpoint">OAuth authorization endpoint</a>.</dd>
+
+
+
+<dt>authorization server URL</dt>
+<dd>See <a href="#gl_oauth_authorizationserverurl">OAuth authorization server URL</a>.</dd>
+
+
+
+<dt><a name="gl_oauth_bearertoken"></a>bearer token</dt>
+<dd>Used in OAuth, the bearer token is a security token with the property that any party in possession of the token (the bearer) can use it. Using a bearer token does not require proof of possession of cryptographic key material (proof-of-possession).</dd>
 
 
 
 <dt><a name="gl_board"></a>Board</dt>
-<dd>In the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->, every resource, such as an app or API, has a Board that displays all feed entries for the resource. Users with approved connections to the resource can post items to the resource's Board according to privileges. For example, a member of a specific app team can post items to the Board for that app. Users with approved connections also see relevant Board items in their personal home Feed.</dd>
+<dd>In the Community Platform, every resource, such as an app or API, has a Board that displays all feed entries for the resource. Users with approved connections to the resource can post items to the resource's Board according to privileges. For example, a member of a specific app team can post items to the Board for that app. Users with approved connections also see relevant Board items in their personal home Feed.</dd>
 
 
 
@@ -90,7 +109,17 @@ nav-title: Glossary of Terms
 
 
 <dt><a name="gl_businessadmin"></a>Business Administrator</dt>
-<dd>One of the roles defined in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> is that of the Business Administrator. A business can own one or more APIs and apps, and must have at least one Administrator. The Business Administrator automatically has administrator rights over all the APIs and apps owned by the business as well as all the users who are part of the business. For more information, see <a href="business_administration_overview.htm#what_roles_can_a_business_administrator_perform">What roles can a Business Administrator perform?</a></dd>
+<dd>One of the roles defined in the Community Platform is that of the Business Administrator. A business can own one or more APIs and apps, and must have at least one Administrator. The Business Administrator automatically has administrator rights over all the APIs and apps owned by the business as well as all the users who are part of the business. For more information, see <a href="business_admin_overview.htm#what_roles_can_a_business_administrator_perform">What roles can a Business Administrator perform?</a></dd>
+
+
+
+<dt><a name="gl_casiteminder"></a>CA SiteMinder</dt>
+<dd>CA SiteMinder&reg; is a popular commercial access management product. The platform supports use of CA SiteMinder for login or for OAuth support.</dd>
+
+
+
+<dt>callback URL</dt>
+<dd>Redirect URL. See <a href="#gl_oauth_callbackurl">OAuth callback URL</a>.</dd>
 
 
 
@@ -100,13 +129,23 @@ nav-title: Glossary of Terms
 
 
 
+<dt><a name="gl_connectprovider"></a>Connect provider</dt>
+<dd>In <a href="#gl_openidconnect">OpenID Connect</a>, the <a href="#gl_identityprovider">identity provider</a> is called the Connect provider.</dd>
+
+
+
 <dt><a name="gl_connection"></a>connection</dt>
-<dd>A relationship between resources in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->&#8212;such as the API access relationship between an app and an API that it's using.</dd>
+<dd>A relationship between resources in the Community Platform&#8212;such as the API access relationship between an app and an API that it's using.</dd>
 
 
 
 <dt><a name="gl_connectionrequest"></a>connection request</dt>
 <dd>A workflow process that governs the relationship between two resources for the life of the connection. It is a request to establish a <a href="#gl_connection">connection</a> between resources; for example, an <a href="#gl_apiaccessrequest">API access request</a> or a <a href="#gl_followrequest">follow request</a>.</dd>
+
+
+
+<dt><a name="gl_connectordomain"></a>connector domain</dt>
+<dd>In the context of the platform, a connector domain is an independent domain that provides authentication services; for example, Google&reg;, Facebook&reg;. Users can log in by authenticating with the connector domain rather than signing up as platform users.</dd>
 
 
 
@@ -131,12 +170,18 @@ nav-title: Glossary of Terms
 
 
 
+<dt><a name="gl_devconsole"></a>Dev Console</dt>
+<dd>The Developer Console (Dev Console) is a web-based REST client provided as part of the Community Manager user interface so that developers can test different APIs in the context of their app. It is available for any app added to the platform, on the <em>Apps &gt; Dev Console</em> page.</dd>
+
+
+
 <dt><a name="gl_developer"></a>developer</dt>
 <dd>A developer of an app that will consume an API.</dd>
 
 
+
 <dt><a name="gl_discussion"></a>discussion</dt>
-<dd>In the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->, an authorized user can create a discussion topic about a resource (app or API) on the resource's Board. A discussion is typically, but not necessarily, created by someone other than the owner or administrator of the resource. Discussion entries are not threaded; users comment on the original item rather than on the comments/replies to the original item. Users can, however, <a href="#gl_mark">mark</a> or <a href="#gl_unmark">unmark</a> the discussion itself and/or one or more discussion comments.</dd>
+<dd>In the Community Platform, an authorized user can create a discussion topic about a resource (app or API) on the resource's Board. A discussion is typically, but not necessarily, created by someone other than the owner or administrator of the resource. Discussion entries are not threaded; users comment on the original item rather than on the comments/replies to the original item. Users can, however, <a href="#gl_mark">mark</a> or <a href="#gl_unmark">unmark</a> the discussion itself and/or one or more discussion comments.</dd>
 <dd>Each discussion has a title and one or more comments. The visibility of a discussion is controlled by the visibility of the resource it's associated with; for example, a discussion about a Limited (Private) API can only be seen by administrators and Private API Group members associated with that API.</dd>
 
 
@@ -158,7 +203,7 @@ nav-title: Glossary of Terms
 
 
 <dt><a name="gl_group"></a>group</dt>
-<dd>1) The term "group" is used in many instances to refer to any of the following types of groups in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->: app teams, Private API groups, API Administrator groups, Site Administrator groups, or independent groups.</dd>
+<dd>1) The term "group" is used in many instances to refer to any of the following types of groups in the Community Platform: app teams, Private API groups, API Administrator groups, Site Administrator groups, or independent groups.</dd>
 <dd>2) &quot;Group&quot; is sometimes used specifically to mean a <a href="#gl_privateapigroup">Private API Group</a>.</dd>
 
 
@@ -175,7 +220,17 @@ nav-title: Glossary of Terms
 
 
 <dt><a name="gl_independentgroup"></a>independent group</dt>
-<dd>A group that exists independently of any single app or API. Any authorized user can create an independent group, and becomes the first administrator. The administrator can then invite other members and can remove members and change a member's role. There are three roles; admin, leader, and member. All members can see resources the group is linked to. Admins have full rights over the group..</dd>
+<dd>A group that exists independently of any single app or API. Any authorized user can create an independent group, and becomes the first administrator. The administrator can then invite other members and can remove members and change a member's role. There are three roles; admin, leader, and member. All members can see resources the group is linked to. Admins have full rights over the group.</dd>
+
+
+
+<dt><a name="gl_identityprovider"></a>identity provider</dt>
+<dd>An identity provider (sometimes abbreviated as IdP) is an entity responsible for verifying identity and issuing identity information, usually in the form of a token. A common example is a website that allows users to log in using a Facebook or Google identiy; in this scenario, Facebook and Google are identity providers. In OpenID Connect, the identity provider is called the <a href="#gl_connectprovider">Connect provider</a>.</dd>
+
+
+
+<dt><a name="gl_invitationstatus"></a>invitation status</dt>
+<dd>A value that shows a group member's relationship with the group. When a new member is invited to a group, the member has an initial status of <strong>Pending</strong>. Depending on the user's response, the status can change to <strong>Accepted</strong> or <strong>Rejected</strong>. Other possible status values are: <strong>Cancelled</strong>, <strong>Removed</strong>, or <strong>Deleted</strong>.</dd>
 
 
 
@@ -205,13 +260,18 @@ nav-title: Glossary of Terms
 
 
 
+<dt><a name="gl_oauth_mactoken"></a>MAC token</dt>
+<dd>Acronym for Message Authentication Code. Used in OAuth 2.0, the MAC token is a security code that is typed in by the user of a computer to access an account or a portal. The code is attached to the message or request sent by the user. The MAC token attached to the message must be recognized by the receiving system in order to grant the user access. MAC tokens are commonly used in electronic funds transfer (EFT) transactions to maintain information integrity.</dd>
+
+
+
 <dt><a name="gl_member"></a>member</dt>
 <dd>In the context of a <a href="#gl_privateapigroup">Private API Group</a>, a group member has access to all information relating to the Private API and the group, including tickets and discussions. Members cannot invite additional members or change the status of other members. A member can be promoted to <a href="#gl_leader">leader</a> status by the API Admin or by another leader.</dd>
 
 
 
 <dt><a name="gl_membershiprequest"></a>membership request (invitation)</dt>
-<dd>An invitation to another individual, whether a registered user or not, to join a <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> group or team such as an app team. API Administrators can invite others to be API Administrators; app team members can invite others to the app team. A Site Administrator, Private API Administrator, or Independent Group member can also issue a membership request in the same way.</dd>
+<dd>An invitation to another individual, whether a registered user or not, to join a Community Platform group or team such as an app team. API Administrators can invite others to be API Administrators; app team members can invite others to the app team. A Site Administrator, Private API Administrator, or Independent Group member can also issue a membership request in the same way.</dd>
 
 
 
@@ -227,13 +287,114 @@ nav-title: Glossary of Terms
 
 
 
+<dt><a name="gl_oauth"></a>OAuth</dt>
+<dd>OAuth is an open standard security protocol for authorization that allows you to share private resources stored on one site with another site without having to share credentials. One advantage of OAuth is that it supports both authentication and authorization in such a way that an application does not need to give access to the user's credentials. For example, in the platform you can sign in using your Facebook credentials, or on the API Details page you can share an API to Facebook, Twitter, and LinkedIn. These elements of the platform are configured as private resources.</dd>
+
+
+
+<dt><a name="gl_oauth_accesstoken"></a>OAuth access token</dt>
+<dd>In OAuth, an access token is essentially a pass, a credential that gives authorization to access the requested and approved resource or resources for as long as the access token remains valid. In some cases, access tokens can be renewed by means of a <a href="#gl_oauth_refreshtoken">refresh token</a>; in some cases they cannot. For more information, refer to <a href="http://tools.ietf.org/html/rfc6749" target="_blank">the OAuth 2.0 specification</a> (external site).</dd>
+<dd>For more information on access tokens, see <a href="api_admin_oauth_support.htm#what_is_an_access_token">What is an Access Token?</a></dd>
+
+
+
+<dt><a name="gl_oauth_authorizationcode"></a>OAuth authorization code</dt>
+<dd>With the OAuth <a href="#gl_oauth_grant_authorizationcode">2.0 Authorization Code grant type</a>, the resource owner (consumer; for example, the app user) is redirected to the authorization server and gives authorization for the app to access the resource. The authorization server then redirects the consumer back to the client app with an authorization code. The client app presents this authorization code, along with the app's authentication credentials, back to the authorization server, requesting an <a href="#gl_oauth_accesstoken">access token</a> (and optionally a <a href="#gl_oauth_refreshtoken">refresh token</a>). The client then uses the access token to call the service on behalf of the resource owner. A refresh token can be used to extend the lifetime of this session.</dd>
+
+
+
+<dt><a name="gl_oauth_authorizationendpoint"></a>OAuth authorization endpoint</dt>
+<dd>The endpoint for the OAuth Authorization Server. This is the endpoint on the authorization server where the resource owner provides credentials, such as username and password, in and grants authorization to the client app to access the resources or a specified subset of the resources.</dd>
+<dd>When setting up an OAuth domain, Site Admins must specify this value. Additionally, if an API is using a third-party OAuth provider rather than an OAuth domain set up on the platform, the API Admin must specify this value in OAuth setup wizard. For more information, see <a href="api_admin_oauth_support.htm#what_are_the_oauth_20_endpoints_and_how_do_they_work">What are the OAuth 2.0 Endpoints and how do they work?</a> and <a href="http://tools.ietf.org/html/rfc6749" target="_blank">the OAuth 2.0 specification</a> (external site).</dd>
+
+
+
+<dt><a name="gl_oauth_authorizationserver"></a>OAuth authorization server</dt>
+<dd>In an OAuth implementation, the authorization server collects the resource owner's credentials, gets the resource owner's permission for the app to access the resources, and passes back the authorization token to the app so that the app can then access the resources.</dd>
+
+
+
+<dt><a name="gl_oauth_authorizationserverurl"></a>OAuth authorization server URL</dt>
+<dd>As part of setting up the OAuth domain, the Site Admin must specify the Authorization Server URL. This is the URL that the browser for the resource owner (app user) will be accessing for the OAuth grant. It is the URL at which the OAuth Provider accesses the requests, for both Authorization Endpoint and Token Endpoint.</dd>
+<dd>As part of setting up an OAuth domain in the platform, the Site Admin must specify the authorization server URL. The URL must be accessible to all the apps and end users that might use APIs that are referencing the OAuth domain. The Authorization Endpoint and Token Endpoint for OAuth 10.a and OAuth 2.0 will use different paths according to the specific OAuth version. Firewalls and DNS servers must be set up for this URL so that end users and apps can access the URL. </dd>
+
+
+
+<dt><a name="gl_oauth_callbackurl"></a>OAuth callback URL</dt>
+<dd>Redirect URL. The URL to which the API sends the response message with the token.</dd>
+
+
+<dt><a name="gl_oauth_granttypes"></a>OAuth grant types</dt>
+<dd>OAuth 2.0 supports four different grant types; each has a different process flow. Grant types are designated as <a href="#gl_oauth_grant_2legged">2-legged</a> or <a href="#gl_oauth_grant_3legged">3-legged</a> depending on the number of parties involved. The 2-legged grant types are <a href="#gl_oauth_grant_clientcredentials">Client Credentials</a> and <a href="#gl_oauth_grant_passwordcredentials">Resource Owner Password Credentials</a>; the three-legged grant types are <a href="#gl_oauth_grant_authorizationcode">Authorization Code</a> and <a href="#gl_oauth_grant_implicit">Implicit</a>.</dd>
+<dd> For more information on OAuth grant types (for API admins) see <a href="api_admin_oauth_support.htm#what_grant_types_does_oauth_support">What grant types does OAuth support?</a> and <a href="api_admin_oauth_support.htm#how_does_oauth_2legged_and_3legged_authorization_work">How does OAuth 2-Legged and 3-Legged Authorization work?</a></dd>
+
+
+<dt><a name="gl_oauth_grant_2legged"></a>OAuth grant types: 2-legged</dt>
+<dd>The number of legs used to describe an OAuth request refers to the number of parties involved; 2-legged or 3-legged. When the client is also the resource owner, it is a 2-legged flow. OAuth 2.0 includes the following 2-legged grant types; <a href="#gl_oauth_grant_clientcredentials">Client Credentials</a> and <a href="#gl_oauth_grant_passwordcredentials">Resource Owner Password Credentials</a>.</dd>
+
+
+
+<dt><a name="gl_oauth_grant_3legged"></a>OAuth grant types: 3-legged</dt>
+<dd>The number of legs used to describe an OAuth request refers to the number of parties involved. The most common process flow includes three parties; a client, a server, and a resource owner. This is a 3-legged flow. OAuth 2.0 includes the following 3-legged grant types; <a href="#gl_oauth_grant_authorizationcode">Authorization Code</a> and <a href="#gl_oauth_grant_implicit">Implicit</a>.</dd>
+
+
+
+<dt><a name="gl_oauth_grant_authorizationcode"></a>OAuth grant types: Authorization Code</dt>
+<dd>A <a href="#gl_oauth_grant_3legged">3-legged</a> OAuth 2.0 grant type: An authorization code is returned to the client through a browser redirect after the resource owner gives consent to the OAuth Authorization Server. The client then exchanges the authorization code for an access token. Resource owner credentials are never exposed to the client app.</dd>
+
+
+
+<dt><a name="gl_oauth_grant_clientcredentials"></a>OAuth grant types: Client Credentials</dt>
+<dd>A <a href="#gl_oauth_grant_2legged">2-legged</a> OAuth 2.0 grant type: The client presents its own credentials to the OAuth Authorization Server in order to obtain an access token. This access token is either associated with the client's own resources, rather than a specific resource owner, or is associated with a resource owner for whom the client is otherwise authorized to act.</dd>
+
+
+
+<dt><a name="gl_oauth_grant_implicit"></a>OAuth grant types: Implicit</dt>
+<dd>A <a href="#gl_oauth_grant_3legged">3-legged</a> OAuth 2.0 grant type: An access token is returned to the client through a browser redirect in response to the resource owner authorization request. This grant type is suitable for clients that do not support keeping  client credentials confidential (for use in authenticating with the  OAuth Authentication Server) such as client applications implemented in a  browser using a scripting language like JavaScript.</dd>
+
+
+
+<dt><a name="gl_oauth_grant_passwordcredentials"></a>OAuth grant types: Resource Owner Password Credentials</dt>
+<dd>A <a href="#gl_oauth_grant_2legged">2-legged</a> OAuth 2.0 grant type: The client collects the resource owner's password and exchanges it at the OAuth authorization server for an access token, and often also a refresh token. This grant type is suitable in cases where the resource owner has a trust relationship with the client, such as its computer operation system or a highly privileged application, since the client must discard the password after using it to obtain the access token.</dd>
+
+
+
+<dt><a name="gl_oauth_refreshtoken"></a>OAuth refresh token</dt>
+<dd>In OAuth 2.0, certain grant types support use of refresh tokens to facilitate longer access periods. This is useful in scenarios that extend over time, such as as a regular monthly payment amount.</dd>
+<dd>In OAuth 1.0a, once an <a href="#gl_oauth_accesstoken">access token</a> is generated it is valid until revoked by the user. OAuth 2.0 introduces expiration of access tokens and adds a second type of token, a refresh token, that can be used in conjunction with the access token to allow users to give long-term permissions but yet maintain security. This process helps ensure that if a specific access token is compromised, a new one can be generated from the refresh token, which can be stored in the database on the server.</dd>
+<dd>The access token grants immediate access but only for a limited time. The access token comes with two additional values: expires_in, which indicates the life of the access token, and refresh_token which can be used to get a new access token when the current token expires. Additional user approval is not needed, but the expiration and renewal add security to the process. When (or before) the access token expires, the refresh token can be used to generate a new access token.</dd>
+<dd>For more information, see <a href="api_admin_oauth_support.htm#what_is_a_refresh_token">What is a Refresh Token?</a></dd>
+
+
+
+<dt><a name="gl_oauth_resourceserver"></a>OAuth resource server</dt>
+<dd>The server where the resources are stored. The resource server accepts requests and responds to approved requests using <a href="#gl_oauth_accesstoken">access tokens</a>.</dd>
+
+
+
+<dt><a name="gl_oauth_tokenendpoint"></a>OAuth token endpoint</dt>
+<dd>In OAuth 2.0, the token endpoint is the endpoint on the <a href="#gl_oauth_authorizationserver">authorization server</a> where the client app sends the authorization code, client ID, and client secret and receives in exchange an access token which allows the app to access the approved resources. For more information, see <a href="api_admin_oauth_support.htm#what_are_the_oauth_20_endpoints_and_how_do_they_work">What are the OAuth 2.0 Endpoints and how do they work?</a> and <a href="http://tools.ietf.org/html/rfc6749" target="_blank">the OAuth 2.0 specification</a> (external site).</dd>
+
+
+
 <dt><a name="gl_openid"></a>OpenID</dt>
-<dd>OpenID is an open decentralized standard for authenticating users. It can be used for access control and allows users to log on to different services with the same digital identity where these services trust the authentication body. OpenID simplifies the authentication process because there is only one username and password to remember. For more information, see <a href="api_admin_openid_support.htm#what_is_openid">What is OpenID?</a></dd>
+<dd>OpenID is an open standard for authenticating users. It can be used for access control and allows users to log on to different services with the same digital identity where these services trust the authentication body. OpenID simplifies the authentication process because there is only one username and password to remember. For more information, see <a href="api_admin_openid_support.htm#what_is_openid">What is OpenID?</a></dd>
+
+
+
+<dt><a name="gl_openidconnect"></a>OpenID Connect</dt>
+<dd>An identity layer on top of the OAuth 2.0 protocol which allows the client to verify the identity of an end-user based on authentication by an authorization server. OpenID Connect was released in February 2014 and is gaining popularity. For example, Google is moving from OpenID to OpenID Connect for products such as the Google+ API, used by the platform's Google login domain. For more information, see <a href="http://openid.net/connect/" target="_blank">Welcome to OpenID Connect</a> (external site).</dd>
 
 
 
 <dt><a name="gl_packagefile"></a>package file</dt>
 <dd>The ZIP file that is created as a result of using the <a href="#gl_export">export</a> function. The package file can be <a href="#gl_import">imported</a> into another instance of the platform by a Site Admin or API Admin.</dd>
+
+
+
+<dt><a name="gl_pingfederate"></a>PingFederate</dt>
+<dd>A federated identity management system based on the SAML protocol. PingFederate&reg; supports SSO, SLO, and other federated identity standards. It can also be used as an OAuth 2.0 provider.</dd>
+<dd>The platform supports PingFederate provider as a domain type (set up by the Site Admin).</dd>
 
 
 
@@ -254,13 +415,24 @@ nav-title: Glossary of Terms
 
 
 <dt><a name="gl_proxyapi"></a>proxy API</dt>
-<dd>When you set up your API on the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> and choose to use the Proxy feature, all traffic to your API endpoints is channeled via the platform. This offers significant benefits, including the ability to apply policies and monitor traffic at the proxy.</dd>
+<dd>When you set up your API on the Community Platform and choose to use the Proxy feature, all traffic to your API endpoints is channeled via the platform. This offers significant benefits, including the ability to apply policies and monitor traffic at the proxy.</dd>
 
 
 
 <dt><a name="gl_production_environment_url"></a>production environment URL</dt>
 <dd>A unique gateway URL (service endpoint) that provides access to the production endpoint of an API. The production endpoint URL becomes available when you request production access, and go live after production access has been approved.</dd>
-<dd>Navigation<strong>:</strong> <em>My Apps &gt; Apps </em></dd>
+<dd>Navigation: <em>My Apps &gt; Apps </em></dd>
+
+
+
+<dt><a name="gl_profile"></a>profile</dt>
+<dd>In the context of the Community Manager user interface, the user profile page allows you to edit your user details (firstname, lastname, username, and avatar) and settings (email, password, and notifications settings).</dd>
+<dd>Navigation: <em>Profile</em> (to the right of <em>Logout</em> in the top navigation)</dd>
+
+
+
+<dt><a name="gl_proxyapi"></a>proxy API</dt>
+<dd>When you set up your API on the Community Platform and choose to use the Proxy feature, all traffic to your API endpoints is channeled via the platform. This offers significant benefits, including the ability to apply policies and monitor traffic at the proxy.</dd>
 
 
 
@@ -275,8 +447,33 @@ nav-title: Glossary of Terms
 
 
 
+<dt><a name="gl_redirectionendpoint"></a>redirection endpoint</dt>
+<dd>In general, a redirection endpoint or URL is a URL that an application provides to another app, when directing the user to the second app to perform some function and then return the user once the function is complete. For example:
+<ul>
+  <li><strong>Login</strong>: If the user is logging in with Google, the platform directs the user to Google and provides a redirect URL. When Google has authenticated the user, Google redirects the user back to the platform using the redirect URL.</li>
+  <li><strong>OAuth</strong>: if an app is requesting access to one or more of the user's Facebook resources, such as the Calendar, the app directs the user to a Facebook authorization page, and provides a redirect URL. Facebook authenticates the user, collects the user's permission for the app to access the resources, and then uses the redirect URL to return the user to the app.</li>
+</ul>
+</dd>
+
+
+
+<dt>refresh token</dt>
+<dd>See <a href="#gl_oauth_refreshtoken">OAuth refresh token</a>.</dd>
+
+
+
+<dt><a name="gl_relyingparty"></a>relying party</dt>
+<dd>In <a href="#gl_openidconnect">OpenID Connect</a>, the service provider is called the relying party. The relying party trusts the <a href="#gl_connectprovider">Connect provider</a> to authenticate the user.</dd>
+
+
+
 <dt><a name="gl_resource"></a>resource</dt>
-<dd>In the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->, a Resource is an item, such as an App or API, which has its own Board and set of activities.</dd>
+<dd>In the Community Platform, a Resource is an item, such as an App or API, which has its own Board and set of activities.</dd>
+
+
+
+<dt>Resource server</dt>
+<dd>See <a href="#gl_oauth_resourceserver">OAuth resource server</a>.</dd>
 
 
 
@@ -298,10 +495,14 @@ nav-title: Glossary of Terms
 
 
 
-<dt><a name="gl_search"></a>Search</dt>
-<dd>The <em>Search</em> function provides a full-text search capability that allows members and visitors to find information about APIs, and also <em>Board</em> posts, tickets, and alerts.</dd>
-<dd>Navigation: <em>Search</em> text box</dd>
+<dt><a name="gl_scopemapping"></a>scope mapping</dt>
+<dd>If your API is using the Licenses feature, scope mapping is the key to defining which portions of your API will be available for which licenses. The scopes and licenses themselves are defined by the Business Admin, but at the API level you determine which operations are assigned to which scopes. This in turn determines which licenses will be available to app developers requesting access to your API.</dd>
 
+
+
+<dt><a name="gl_search"></a>search</dt>
+<dd>The platform includes search functionality on certain specific pages and on platform-wide content. For example, a user can search on the apps list or APIs list for a specific app or API; the Site Admin can search for a specific user in the Users List. Search is available on many other areas of the user interface. Some examples: <em>Board</em> posts, tickets, and alerts; help documentation (question mark at top right; then, Browse Docs).</dd>
+<dd>Search results are limited to those resources the user performing the search has permission to see. For example, a user who does not have access to a specific private API will not see it on the list.</dd>
 
 
 <dt><a name="gl_securitydomain"></a>security domain</dt>
@@ -328,7 +529,7 @@ nav-title: Glossary of Terms
 
 
 <dt><a name="gl_siteadmin"></a>site administrator</dt>
-<dd>An individual who has responsibility for keeping the site running smoothly. The Site Admin has access to additional parts of the user interface for configuration and monitoring purposes. There can be more than one site administrator. For more information, see <a href="site_administration_overview.htm#what_functions_are_available_to_the_site_administrator">What functions are available to the Site Administrator in the platform?</a></dd>
+<dd>An individual who has responsibility for keeping the site running smoothly. The Site Admin has access to additional parts of the user interface for configuration and monitoring purposes. There can be more than one site administrator. For more information, see <a href="site_admin_overview.htm#what_functions_are_available_to_the_site_administrator">What functions are available to the Site Administrator in the platform?</a></dd>
 
 
 
@@ -345,6 +546,11 @@ nav-title: Glossary of Terms
 
 <dt><a name="gl_targetapi"></a>target API</dt>
 <dd>If an API is using the platform as a proxy, the TargetAPI is used to define the destination ("next-hop") endpoint for the API.</dd>
+
+
+
+<dt><a name="gl_targethost"></a>target host</dt>
+<dd>When defining a domain in the platform, it is possible to define a virtual host address for each login domain. This is the target host. Example: &lt;role&gt;/&lt;company&gt;.com.</dd>
 
 
 
@@ -375,30 +581,31 @@ nav-title: Glossary of Terms
 
 
 
+<dt><a name="gl_vip"></a>VIP</dt>
+<dd>Acronym for a virtual IP address.</dd>
+
+
+
 <dt><a name="gl_visibility"></a>visibility</dt>
-<dd>A setting that controls the types of users who can see an object, such as an app, API, or group, and its associated items such as discussions and tickets. See below: <a href="#gl_visibility_api">visibility (API)</a> and <a href="#gl_visibility_app">visibility (app)</a>.</dd>
+<dd>A setting that controls the types of users who can see a resource, such as an app, API, group, license, or scope, and any associated items such as discussions and tickets. </dd>
+<dd>There are three possible values. The first two are applicable to all resources that have visibility settings; the third is applicable only to apps, APIs, and groups.</dd>
+</dl>
+<ol>
+  <li><strong>Public</strong>: anyone can see the resource, even anonymous users.</li>
+  <li><strong>Private</strong>: the resource is restricted to those who have been specifically invited to have visibility of the resource, usually by joining a private group that has visibility of the resource.</li>
+  <li><strong>Registered Users</strong>: the resource is visible to all users who have logged in, but is not visible to anonymous users.</li>
+</ol>
+<dl>
 
-
-
-<dt><a name="gl_visibility_api"></a>visibility (API)</dt>
-<dd>A setting that controls the types of users who can see an API and its associated items such as discussions and tickets. Possible values are <strong>Public</strong> or <strong>Limited</strong>. A discussion about a Limited (Private) API can only be seen by administrators and Private API Group members associated with that API. Members must be either invited to a Private API Group associated with the API or invited to be an Administrator for the API, and must then accept the invitation, before they even see the API in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->.</dd>
-
-
-
-<dt><a name="gl_visibility_app"></a>visibility (app)</dt>
-<dd>A setting that controls the types of users who can see an app and its associated items such as discussions and tickets. Possible values are Public, meaning that anyone can see information about the app, or Limited, meaning that only app team members can see it.</dd>
-
-
-
-<dt><a name="gl_visibilityscope"></a>visibility scope</dt>
-<dd>In the context of the Licenses feature, an individual user's visibility scope includes the set of licenses to which the user has been  invited (due to the user's group membership). The user sees those licenses and can apply for API access with one or more of them. Operations that have been assigned to a scope that are included in a license a specific user has not been invited to are not visible to that user in the API documentation, and the user does not see the license and cannot request API access with that license.</dd>
 
 
 
 <dt><a name="gl_workflowaction"></a>workflow action</dt>
-<dd>Certain types of activities on the platform must be done in a specific sequence. These are often managed by workflows. Each workflow action changes the state of the resource. Some examples of workflow actions are: requesting or approving an API contract, sending a group membership invitation, or changing the status of a ticket.</dd>
-
-
-
+  <dd>Certain types of activities on the platform must be done in a specific sequence. These are often managed by workflows. Each workflow action changes the state of the resource. Some examples of workflow actions are: requesting or approving an API contract, sending a group membership invitation, or changing the status of a ticket.</dd>
+  
+  
+  
 </dl>
 <p><a href="#top">Back to top</a></p>
+
+
