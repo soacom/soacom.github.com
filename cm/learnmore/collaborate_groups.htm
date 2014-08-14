@@ -91,7 +91,7 @@ no-catalog: true
 <a name="what_types_of_groups_does_the_platform_support"></a><h3>What types of groups does the platform support?</h3>
 <p>The platform supports the following group types:</p>
 <ul>
-  <li><strong>Independent Group</strong>&#8212;This group type allows you to create and manage special interest groups. You can set the visibility of the group as Public or Private. Use the <strong>Add a New Group</strong> function via the <em>Plus</em> menu to create an independent group, or set the <strong>Do you want this group to be independently managed?</strong> option on the <strong>Add a New Group function</strong> in a Private API. For Private APIs the group will display via the My Groups Quick Filter and on the <em>APIs &gt; Groups</em> page.</li>
+  <li><strong>Independent Group</strong>&#8212;This group type allows you to create and manage special interest groups. You can set the <a href="basics_glossary.htm#gl_visibility">visibility</a> of the group as Public, <strong>Registered Users</strong>, Private. Use the <strong>Add a New Group</strong> function via the <em>Plus</em> menu to create an independent group, or set the <strong>Do you want this group to be independently managed?</strong> option on the <strong>Add a New Group function</strong> in a Private API. For Private APIs the group will display via the My Groups Quick Filter and on the <em>APIs &gt; Groups</em> page.</li>
   <li><strong>Private API Group</strong>&#8212;This group type allows you to create and manage groups for APIs that are configured with private visibility. Use the <strong>Add a New Group</strong> function in the <em>My APIs &gt; API Name &gt; Groups</em> section to create a group for a Private API. See <a href="api_admin_api_publishing.htm#what_is_a_private_api">What is a Private API?</a> for more information. If you would like to create an independent group, set the <strong>Do you want this group to be independently managed?</strong> option to yes. This will set the Private API Group to Public and it will be accessible via the <em>My Groups</em> Quick Filter and on the <em>APIs &gt; Groups</em> page.</li>
 </ul>
 <p><a href="#top">Back to top</a></p>
@@ -112,7 +112,7 @@ no-catalog: true
 <ul>
   <li>The invitee receives a request in their <em>Dashboard</em>. Here the invitee can <strong>Accept</strong> or <strong>Decline</strong> the invitation.</li>
   <li>API Administrators can assign or unassign a member a  &quot;Leader&quot; role and Leaders can assign or unassign a member they have personally invited a &quot;Leader&quot; role.</li>
-  <li>On the <em>Members</em> page, API Administrators or Leaders can view invitations  in a summary listing that includes the invitation status (Email Sent, Pending, Accepted, Declined).</li>
+  <li>On the <em>Members</em> page, API Administrators or Leaders can view a summary of information for group members including username, email address, and  <a href="basics_glossary.htm#gl_invitationstatus">invitation status</a><strong>.</strong></li>
   <li>API Administrators or Leaders can reissue an invitation using the <strong>Resend</strong> function.</li>
   <li>API Administrators can remove a member and Leaders can remove a member they have personally invited.</li>
 </ul>
@@ -168,7 +168,7 @@ no-catalog: true
 </tr>
         <tr class="t1row">
         <td>Visibility</td>
-        <td>A radio button that allows you to configure whether you would like your Group to be public or private.</td>
+        <td>A radio button that allows you to set the <a href="basics_glossary.htm#gl_visibility">visibility</a> value for your group.</td>
 </tr>
 </tbody>
 </table>
@@ -312,12 +312,12 @@ A read-only summary listing of group members is visible on the <em>APIs &gt; Vis
 
 
 <a name="how_do_i_accept_an_invitation_to_a_group"></a><h3>How do I accept an invitation to a group?</h3>
-<p>You can approve an  Independent or Private API invitation by approving the notification in your personal <em>Dashboard</em>.</p>
+<p>You can accept an invitation to join an  independent group or a Private API Group by approving the notification in your personal <em>Dashboard</em>.</p>
 <h5>To accept an invitation to a group:</h5>
 <ol>
-  <li>Navigate to the <em>Dashboard</em>.</li>
-  <li>View the group invitation notification.</li>
-  <li>To accept the invitation, click <strong>Accept</strong>.</li>
+  <li>Log in to the platform (you can click the link in the invitation email) and go to your <em>Dashboard</em> page.</li>
+  <li>Find the group invitation notification.</li>
+  <li>Click <strong>Accept</strong>. Enter a comment if you want to, and then click <strong>Confirm</strong>.</li>
 </ol>
 <p><a href="#top">Back to top</a></p>
 
@@ -329,16 +329,16 @@ A read-only summary listing of group members is visible on the <em>APIs &gt; Vis
 <p>You can decline a group invitation by selecting the <strong>Decline</strong> option in the  notification in your personal <em>Dashboard</em>.</p>
 <h5>To decline an invitation to a group:</h5>
 <ol>
-  <li>Navigate to the <em>Dashboard</em>.</li>
+  <li>Log in to the platform (you can click the link in the invitation email) and go to your <em>Dashboard</em> page.</li>
   <li>View the group access notification.</li>
-  <li>To decline the invitation, click <strong>Decline</strong>.</li>
+  <li>Click <strong>Decline</strong>. Enter a comment if you want to, and then click <strong>Confirm</strong>.</li>
 </ol>
 <p><a href="#top">Back to top</a></p>
 
 
 
 
-<a name="After_i_become_a_group_member_can_i_invite_developers_to_the_group"></a><h3>After I become a group member can I invite developers to the group?</h3>
+<a name="after_i_become_a_group_member_can_i_invite_developers_to_the_group"></a><h3>After I become a group member can I invite developers to the group?</h3>
 <p> If you have been assigned a Leader role by the Group Administrator, you can use the <strong>Invite</strong> function to send invitations to developers. If you are not currently assigned a Leader role, you can request a role change by submitting a trouble ticket to the Group Administrator via the <em>My Groups &gt; Board</em> or <em>API Board</em>.</p>
 <p><a href="#top">Back to top</a></p>
 
@@ -378,7 +378,7 @@ A read-only summary listing of group members is visible on the <em>APIs &gt; Vis
       </tr>
       <tr class="t1row">
         <td>Visibility</td>
-        <td>A radio button that allows you to configure whether you would like your Group to be public or private.</td>
+        <td>A radio button that allows you to set the <a href="basics_glossary.htm#gl_visibility">visibility</a> value for your group.</td>
 </tr>
 </tbody>
 </table>
@@ -492,3 +492,4 @@ A read-only summary listing of group members is visible on the <em>APIs &gt; Vis
 
 
 <div class = "divider1"></div>
+

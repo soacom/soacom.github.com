@@ -5,7 +5,7 @@ description: Follow an example scenario for API setup.
 product: cm
 category: learn
 subcategory: API Admin
-weight: 21
+weight: 22
 type: page
 nav-title: Tutorial (API Provider)
 no-catalog: true
@@ -169,7 +169,10 @@ Note:
     </ul>
   </li>
   </ol>
-  <p><strong>H. Configure Advanced Options</strong></p> <ol>
+  <p><strong>H. Configure Advanced Options</strong></p>
+
+
+  <ol>
   <li>On the <em>Advanced Options </em>line click <strong>Show</strong> to expand the section.</li>
   <li>The <em>Advanced Options</em> section allows you to select a protocol for the Proxy API, select policies, and select a Default Profile (REST option only), and displays the settings configured in the <em>Target</em> section.</li>
   <li>If you would like the Proxy configuration to be different than you initially specified in the <em>Target</em> section, you can update the existing settings. For example, you might have two APIs that have the same <em>Target</em> information, but different <em>Proxy</em> information. Alternatively, you might have a SOAP API implementation but want to offer developers a REST API implementation; in this case the <em>Target</em> would be SOAP, and the <em>Proxy</em> would be REST. <br />
@@ -196,7 +199,7 @@ Note:
 <strong><em>Select Policies:</em></strong><br />
 <ol>
   <li>In the <em>Policies</em> section, select the policies that you would like the system to enforce on the proxy.
-    <p>Note: <em>You MUST select one security policy (e.g., Simple Header Security) and you should select a monitoring policy if you want to see charts and logs. If no policies display, consult your API Provider or Site Administrator. </em>See <a href="api_admin_api_publishing.htm#what_security_and_monitoring_policies_are_supported">What security and monitoring policies are supported?</a></p>
+    <p>Note: <em>You MUST select one security policy (for example, Simple Header Security) and you should select a monitoring policy if you want to see charts and logs. If no policies display, consult your API Provider or Site Administrator. </em>See <a href="api_admin_api_publishing.htm#what_security_and_monitoring_policies_are_supported">What security and monitoring policies are supported?</a></p>
   <p>Also note that if you select a monitoring policy<em>, </em>app data is not supported in <em>My APIs &gt; Monitoring</em> if Anonymous API Access is enabled. See <a href="api_admin_api_publishing.htm#what_is_anonymous_api_access">What is Anonymous API Access?</a> for more information.</p>
 <p>If your API will be supporting OAuth, its best practice to use the <strong>Edit</strong> function on the <em>API Details</em> page to select the OAuthSecurity policy after you have configured the API to support OAuth (i.e., adding an OAuth Provider in the <em>Site Admin &gt; Domains</em> section), and configuring the API using the <strong>OAuth Details</strong> function on the <em>API Details</em> page.</p>
 </li>
@@ -239,7 +242,7 @@ Note:
   <li>Chose the legal agreement you want to activate. In the <em>Status</em> column, click <strong>Activate</strong>. The <em>Edit</em> pop-up displays.</li>
   <li>Specify a Name and Description for your legal agreement. Click <strong>Save</strong> to commit your changes. After you initially assign a Name and Description to a legal agreement, you can update it using the <strong>Edit</strong> function.</li>
   <li>Your legal agreement is activated and the <strong>Deactivate</strong> button displays. The legal agreement will now be available in the <strong>API Access Wizard</strong>.</li>
-  <li>To test the legal agreement and verify that it displays correctly in the <strong>API Access Wizard</strong>, create an app and access an API to view the legal agreement. See <a href="create_app_creation.htm#how_do_i_create_a_new_app">How do I create a new app?</a> and <a href="access_apis_api_access.htm#how_do_i_get_api_access_for_my_app">How do I get API access for my app?</a></li>
+  <li>To test the legal agreement and verify that it displays correctly in the <strong>API Access Wizard</strong>, create an app and access an API to view the legal agreement. See <a href="app_create_app_creation.htm#how_do_i_create_a_new_app">How do I create a new app?</a> and <a href="app_access_apis_api_access.htm#how_do_i_get_api_access_for_my_app">How do I get API access for my app?</a></li>
 </ol>
 
 
@@ -292,5 +295,7 @@ Note:
 
 
 <h3>Step 9: Test Your API</h3>
-<p>You can test your API by creating an app, requesting API access to your API, and configuring the app to consume your API. See <a href="create_app_tutorial.htm#how_do_i_create_a_new_app_and_configure_it_to_consume_apis">How do I create a new app and configure it to consume APIs?</a> for complete instructions.</p>
+<p>You can test your API by creating an app, requesting API access to your API, and configuring the app to consume your API. See <a href="app_create_app_tutorial.htm#how_do_i_create_a_new_app_and_configure_it_to_consume_apis">How do I create a new app and configure it to consume APIs?</a> for complete instructions.</p>
 <p><a href="#top">Back to top</a></p>
+
+

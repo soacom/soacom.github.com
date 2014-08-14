@@ -5,7 +5,7 @@ description: Learn about how to set up and manage app security.
 product: cm
 category: learn
 subcategory: App Security
-weight: 22
+weight: 23
 type: page
 nav-title: App Security
 ---
@@ -51,7 +51,7 @@ nav-title: App Security
   <li>The Shared Secret approaches are easier to implement since you don't have to generate public and private keys.</li>
   <li>The HMAC Signature with Shared Secret and PKI approaches are a little more secure than Hash/Digest with Shared Secret, although all three approaches are very secure.</li>
   <li> The PKI approach is more complex to implement than Shared Secret approaches since it requires external key generation.</li>
-  <li>HMAC Signature with Shared Secret is compatible with the OAuth 1.0 standard. However, this standard is now deprecated (see <a href="http://oauth.net/core/1.0/" target="_blank">OAuth Core 1.0 specification</a>).</li>
+  <li>HMAC Signature with Shared Secret is compatible with the OAuth 1.0 standard. However, this standard is now deprecated (see <a href="http://oauth.net/core/1.0/" target="_blank">OAuth Core 1.0 specification</a>)(external site).</li>
   <li>HMAC Signature with Shared Secret offers a library support and examples based on the programming language. </li>
   <li>With all options, F5 to ND hop in DMZ would not cause any problems as the signature is still valid and encrypted. </li>
 </ul>
@@ -631,7 +631,7 @@ long nonce = rand.nextLong();</pre>
 
 <a name="generating_keypair_openssl"></a><h4>Generating PKI Key Pair with Certificate Using OpenSSL</h4>
 <p>You can use the OpenSSL open source product to produce a public/private key pair. For more information on OpenSSL, refer to <a href="http://www.openssl.org" target="_blank">www.openssl.org</a>.</p>
-<p>If you are developing the application using the Microsoft Windows OS you can get an adaptation of OpenSSL for the Windows platform from the following location: <a href="http://code.google.com/p/openssl-for-windows/downloads/list" target="_blank">http://code.google.com/p/openssl-for-windows/downloads/list</a>.</p>
+<p>If you are developing the application using the Microsoft Windows OS you can get an adaptation of OpenSSL for the Windows platform from the following location: <a href="http://code.google.com/p/openssl-for-windows/downloads/list" target="_blank">http://code.google.com/p/openssl-for-windows/downloads/list</a> (external site).</p>
 <h4><a name="issuecert"></a>To create a public/private key pair with OpenSSL</h4>
 <ol>
   <li>From the URL given above, download the applicable <strong>openssl</strong> archive file for your operating system.</li>
@@ -866,3 +866,5 @@ long nonce = rand.nextLong();</pre>
 </table>
 <p><a href="#top">Back to top</a></p>
 <hr />
+
+
