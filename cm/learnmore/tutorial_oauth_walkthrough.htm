@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Tutorial (OAuth Setup)
+title: Tutorial (OAuth Setup) | Community Manager Help
 description: A tutorial for OAuth setup.
 product: cm
 category: gs
@@ -82,13 +82,9 @@ This task is performed using the <em>App &gt; Dev Console</em>. You select the A
 
 <h3>Step 1: Configure Resource Owner Domain</h3>
 <p><em>Performed by: Site Administrator / API Provider</em></p>
-<p>The first step in the OAuth Provider configuration process is to identity the target user base that will require authorization when logging into an application. For example, if your users typicall use Google as a method of performing an external login, then they will require an OpenID identity store. If your users typically use SiteMinder as a method of performing an external login, they will require an LDAP identity store, etc.</p>
+<p>The first step in the OAuth Provider configuration process is to identity the target user base that will require authorization when logging into an application. For example, if your users typically use Google as a method of performing an external login, the Site Admin will need to set up a Google Connector domain. If your users typically use SiteMinder as a method of performing an external login, they will require an LDAP identity store.</p>
 <p><strong>CA SiteMinder or LDAP</strong></p>
 <p>Skip this step if you are you are using a Policy Manager CA SiteMinder or LDAP Identity System that you have integrated and configured to support Single Sign-On as the Identity System will already display on the &quot;Resource Owner Authentication Domain&quot; drop-down menu in the <em>Admin &gt; Add Domain &gt; OAuth Provider Wizard</em>.</p>
-<p> To configure an OpenID Resource Owner Domain:</p>
-<ol>
-  <li>Perform <a href="site_admin_domains.htm#how_do_i_configure_access_permissions_for_openid">How do I configure access permissions for OpenID?</a> and continue with Step 3.</li>
-</ol>
 <h5>To configure an LDAP Resource Owner Domain:</h5>
 <ol>
   <li>The LDAP Resource Owner Domain is preinstalled and is available for selection when you configure the OAuth Provider domain. Continue to Step 2.</li>
@@ -132,5 +128,6 @@ This task is performed using the <em>App &gt; Dev Console</em>. You select the A
   <li>Perform <a href="app_test.htm#how_do_i_test_authorization_of_my_app_with_oauth_using_the_dev_console">How do I test authorization of my app with OAuth using the Dev Console?</a></li>
 </ol>
 <p><a href="#top">Back to top</a></p>
+
 
 

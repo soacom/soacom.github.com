@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Manage User Accounts
+title: User Accounts | Site Administration | Community Manager Help
 description: Administer platform user accounts.
 product: cm
 category: learn
@@ -29,6 +29,7 @@ no-catalog: true
   <li><a href="#what_user_account_status_displays_for_administrator_invitations">What user account status displays for Administrator invitations?</a></li>
   <li><a href="#how_do_i_search_for_a_user_account">How do I search for a user account?</a></li>
   <li><a href="#how_do_i_exclude_roles">How do I exclude specific roles from platform access?</a></li>
+  <li><a href="#how_do_i_protect_from_vulnerability_in_signup_and_forgot_password_scenarios">How can I protect from vulnerability in Signup and Forgot Password scenarios?</a></li>
 </ol>
 <div class = "divider1"></div>
 
@@ -238,5 +239,77 @@ no-catalog: true
   <li>Policy Manager roles: Log in to the Policy Manager console and then choose Workbench. On the left, select your organization, and then on the right, click the Security tab to view information about valid roles.</li>
 </ul>
 <p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_protect_from_vulnerability_in_signup_and_forgot_password_scenarios"></a><h3>How can I protect from vulnerability in Signup and Forgot Password scenarios?</h3>
+<p>If you're concerned with security, there is an extra step you can take to protect from a vulnerability in the Signup and Forgot Password scenarios that could allow a malicious user to enumerate user accounts.</p>
+<p>There is a configuration setting that you can modify to restrict user enumeration in these scenarios:</p>
+<ul>
+  <li>Password reset</li>
+  <li>New account setup</li>
+</ul>
+<p>The database field is ALLOW_USER_ENUM, in the BUSINESS_SECURITY_SETTINGS table. If enabled (set to <strong>com.soa.feature.enabled</strong>, or no value specified) the default behavior is in effect. If this value is set to <strong>com.soa.feature.disabled</strong>, the enhanced security behavior is activated.</p>
+<p>The table below shows the default platform behavior and the enhanced security behavior for these two activities.</p>
+<table width="43%" cellspacing="0px" class="doctable" style="width: 90%;">
+  <thead>
+    <tr>
+      <th width="30%">Activity</th>
+      <th width="40%">Default Behavior</th>
+      <th width="40%">Enhanced Security Behavior</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="t2row">
+      <td>Password Reset request, account does not exist: local user</td>
+      <td>User sees message that the email address/password reset combination is invalid.</td>
+      <td><ul class="apidoctable_ul">
+        <li>User sees message that an email has been sent to the email address.</li>
+        <li>Notification is sent to the email address given, offering signup.</li>
+      </ul>        </td>
+    </tr>
+    <tr class="t1row">
+      <td>Password Reset request: non-local (third-party) User</td>
+      <td>User sees message that the email address is registered with third-party identity provider and therefore the password cannot be modified within the platform.</td>
+      <td><ul class="apidoctable_ul">
+        <li>User sees message that an email has been sent to the email address.</li>
+        <li>Notification is sent to the email address given, saying that the account is third-party and the password can only be reset with the third-party provider.</li>
+      </ul></td>
+    </tr>
+    <tr class="t2row">
+      <td>Password Reset request: valid existing user account</td>
+      <td>User sees message that the email was sent.</td>
+      <td>User sees message that the email was sent.</td>
+    </tr>
+    <tr class="t1row">
+      <td>Password Reset request: Invalid email address/password reset code combination</td>
+      <td>User sees message: Email address does not match record.</td>
+      <td>User sees message: Invalid email address/password reset code combination.</td>
+    </tr>
+    <tr class="t2row">
+      <td>Create Account, account already exists with the specified email address: Local User</td>
+      <td>User sees message that the email address is already in use.</td>
+      <td><ul class="apidoctable_ul">
+        <li>User sees message stating check your email for next steps.</li>
+        <li>Notification is sent to the email address given, stating that an attempt was made to create an account and the account already exists. Includes reset password help.</li>
+      </ul>        </td>
+    </tr>
+    <tr class="t1row">
+      <td>Create Account, account already exists with the specified email address: Third-Party User</td>
+      <td>User sees message that the email address is already in use.</td>
+      <td><ul class="apidoctable_ul">
+        <li>User sees message stating check your email for next steps.</li>
+        <li>Notification is sent to the email address given, stating that an attempt was made to create an account but the account already exists as a third-party account.</li>
+      </ul></td>
+    </tr>
+    <tr class="t2row">
+      <td>Create Account, account with the provided email address does not exist</td>
+      <td>Signup process proceeds as expected.</td>
+      <td>Signup process proceeds as expected.</td>
+    </tr>
+  </tbody>
+</table>
+<p><a href="#top">Back to top</a></p>
+
 
 
