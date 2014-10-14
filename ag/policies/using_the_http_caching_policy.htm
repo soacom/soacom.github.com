@@ -66,6 +66,8 @@ nav-title: Using the HTTP Caching Policy
 <p>The policy includes the following configuration options:</p>
 <ul class="usingOrderedList">
   <li><strong>Time To Live</strong> - Allows you to specify the maxium time in seconds a response will be cached. If not specified, the maximum time will dictated by the SOA container settings. </li>
+  <li><strong>Staleness Period Seconds</strong> - If a value is entered, any cached entry will live in the cache for the number of seconds in Time To Live, plus number of seconds in Staleness Period.&nbsp; The &quot;stale&quot; portion of the entry will only be used if Cache-Control directives on the request allow for a stale entry to be used, by the use of max-stale directive.
+  The default is 0.&nbsp; </li>
   <li><strong>Act as HTTP Proxy</strong> - Uncheck to enable either the HTTP Proxy Mode (checked) or HTTP Mediation / Server Mode.</li>
   <li><strong>Shared Cache</strong> - Uncheck to enable  ability to use a private cache. You must also select a Subject Category (below). </li>
   <li><strong>Subject Category</strong> - Allows you to select a subject category if Shared Cache is unchecked. The subject category is used to find the cache's principal name that is set when the cache is created, and use it as part of the cache key.  </li>
@@ -87,9 +89,9 @@ nav-title: Using the HTTP Caching Policy
 <p>In Policy Manager, you can create a HTTPS Caching Policy instance using <strong>Add Policy</strong> in the <em>Policies &gt; Operational Policies</em> section. </p>
 <h5>Step 2: Modify Policy</h5>
 <p>When you <strong>Modify</strong> the HTTP Caching   policy on the <em>Policy Details</em> page the initial policy will look like this:</p>
-<p><img src="images/modify_http_caching_policy.jpg" width="477" height="511" /></p>
+<p><img src="images/modify_http_caching_policy.jpg" width="456" height="478" /></p>
 <p>Configure the policy options based on your requirements and <strong>Apply</strong>. </p>
-<p><img src="images/http_cache_policy_summary.jpg" width="454" height="132" /></p>
+<p><img src="images/http_cache_policy_summary.jpg" width="498" height="145" /></p>
 <h5>Step 3: Attach Policy</h5>
 <p>After you have saved your policy you can  attach it to a web service,  operation, or binding that you would like to enhance the message processing of.</p>
 <h5>Step 4: Test Policy and View Monitoring Data</h5>
