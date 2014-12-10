@@ -16,8 +16,6 @@ nav-title: Glossary of Terms
 
 
 <dl>
-
-
 <dt><a name="gl_accesstoken"></a>access token</dt>
 <dd>See <a href="#gl_oauth_accesstoken">OAuth access token</a>.</dd>
 
@@ -34,12 +32,12 @@ nav-title: Glossary of Terms
 
 
 <dt><a name="gl_api"></a>API</dt>
-<dd>A key resource in the <!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->. An API provides a business with a way of using the Internet to extend business capabilities to connect with new customers in new ways. In this context an API is a Web service exposed outside the enterprise, typically using RESTful design principles, and often with JSON content. </dd>
+<dd>A key resource in the <!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->. An API provides a business with a way of using the Internet to extend business capabilities to connect with new customers in new ways. In this context an API is a Web service exposed outside the enterprise, typically using RESTful design principles, and often with JSON content.</dd>
 
 
 
 <dt><a name="gl_apiaccessrequest"></a>API access request</dt>
-<dd>A specific type of <a href="#gl_connectionrequest">Connection Request</a>. An API access request governs the relationship between an app and an API for the life of the connection. When an app team member requests a connection to an API on behalf of the app, the API administrator is notified of the pending request and can respond accordingly. The administrator can approve or deny the request.</dd>
+<dd>A specific type of <a href="#gl_connectionrequest">Connection Request</a>; a request, initiated by an app team member, to establish a <a href="#gl_contract">contract</a> between the app and an API. An API access request governs the relationship between an app and an API for the life of the connection. When an app team member requests a connection to an API on behalf of the app, the API administrator is notified of the pending request and can approve or deny the request.</dd>
 
 
 
@@ -77,7 +75,22 @@ nav-title: Glossary of Terms
 
 
 <dt><a name="gl_appteammember"></a>app team member</dt>
-<dd>One of the <a href="#gl_role">roles</a> defined in the <!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> is that of the app team member. Each app most have at least one team member and can have more. An app team member initiates contract requests, such as API access requests, moderates the app's <a href="#gl_board">Board</a>, and views and manages trouble tickets relating to the app. The app team member can also view performance and usage data for the app's API usage, and can invite others to be team members for the same app. All app team members have the same rights.</dd>
+<dd>One of the <a href="#gl_role">roles</a> defined in the <!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> is that of the app team member. Each app most have at least one team member and can have more. An app team member initiates <a href="#gl_contract">contract</a> requests, such as API access requests, moderates the app's <a href="#gl_board">Board</a>, and views and manages trouble tickets relating to the app. The app team member can also view performance and usage data for the app's API usage, and can invite others to be team members for the same app. All app team members have the same rights.</dd>
+
+
+<dt>Assertion</dt>
+<dd>See <a href="#gl_saml_assertion">SAML assertion</a>.</dd>
+
+
+
+<dt><a name="gl_saml_acs"></a>Assertion Consumer Service (ACS) endpoint</dt>
+<dd>In <a href="#gl_saml">SAML</a>, the endpoint where the service provider will receive SAML assertions from the identity provider.</dd>
+
+
+
+<dt><a name="gl_saml_ars"></a>Artifact Resolution Service (ARS)</dt>
+<dd>In <a href="#gl_saml">SAML</a>, a service that you must set up if you want to use the HTTP Artifact binding (supported for single sign-on SAML response messages). You can then use the service to retrieve the full message using the artifact. See <a href="#gl_saml_http_artifact">HTTP Artifact</a>.</dd>
+
 
 
 <dt><a name="gl_authorizationendpoint"></a>authorization endpoint</dt>
@@ -87,6 +100,17 @@ nav-title: Glossary of Terms
 
 <dt>authorization server URL</dt>
 <dd>See <a href="#gl_oauth_authorizationserverurl">OAuth authorization server URL</a>.</dd>
+
+
+
+<dt><a name="gl_autoconnect"></a>auto-connect feature</dt>
+<dd>The platform's auto-connect feature allows an API Admin to set up the API so that when a new app is created on the platform, a <a href="#gl_contract">contract</a> with the API is created automatically. The API Admin specifies the details of the access granted with the auto-connect feature, such as whether access is to the sandbox or production environment, or whether access is limited to specific operations or a specific transaction volume (via the <a href="basics_glossary.htm#gl_license">Licenses</a> feature, implemented with <a href="basics_glossary.htm#gl_scopemapping">scope mapping</a>).</dd>
+
+
+
+<dt><a name="gl_saml_base_url"></a>Base URL</dt>
+<dd>In setting up the <a href="#gl_saml">SAML</a> identity provider in Policy Manager, the platform provides a specific URL to be used for instances where the Identity Provider, when encountering an error, returns the error response to the default Service Provider endpoint rather than just showing the error on the authentication page. PingFederate is an example of an Identity Provider that returns an error response in this way.</dd>
+<dd>To construct the endpoint to be used for error responses, the platform needs to know the &lt;protocol_scheme&gt;://&lt;host&gt;:&lt;port&gt; of the container where the SAML Web SSO domain is initialized. This is the base URL.</dd>
 
 
 
@@ -131,6 +155,11 @@ nav-title: Glossary of Terms
 
 
 
+<dt><a name="gl_challengequestion"></a>challenge question</dt>
+<dd>A question that the Business Admin chooses as part of a security feature. When signing up to the platform, the user must provide the answer to one or more security questions, if the platform is set up to require them. The user's answers are stored in the database, and the user must answer one or more security questions on demand to perform certain functions such as resetting a password or changing the user profile.</dd>
+
+
+
 <dt><a name="gl_connectprovider"></a>Connect provider</dt>
 <dd>In <a href="#gl_openidconnect">OpenID Connect</a>, the <a href="#gl_identityprovider">identity provider</a> is called the Connect provider.</dd>
 
@@ -153,6 +182,17 @@ nav-title: Glossary of Terms
 
 <dt><a name="gl_container"></a>container</dt>
 <dd>An SOA Software container instance performs a specific web service management function in an API Gateway deployment. Instances have a unique Instance Name, Description, and Listener configuration relative to the deployment requirements.</dd>
+
+
+
+<dt><a name="gl_contract"></a>contract</dt>
+<dd>A specific type of <a href="#gl_connection">connection</a> that defines a consumption relationship between an app and an API. When an app admin (app team member) wants the app to be able to consume an API, he/she initiates a request for API access. The API access relationship is a contract, and is subject to an approval workflow. The contract is requested by the app team member and is approved or rejected by the API admin; it can then be cancelled or suspended by the API admin or cancelled by an app team member.</dd>
+<dd> The contract governs access rights and QoS (Quality of Service) policies for all transactions between the app and the API. It also provides a convenient way of collecting and presenting metrics and usage data.</dd>
+
+
+
+<dt><a name="gl_contractrequest"></a>contract request</dt>
+<dd>A request for a <a href="#gl_contract">contract</a>.</dd>
 
 
 
@@ -199,8 +239,36 @@ nav-title: Glossary of Terms
 
 
 
+<dt><a name="gl_monitoring_duration"></a>duration (on monitoring charts)</dt>
+<dd>In the app and API monitoring charts, the duration and interval controls work together to allow you to narrow down the dataset you're interested in.</dd>
+<dd>The duration allows you to select the time period to be shown on the chart; for example, one week, one day, one hour.</dd>
+<dd>The interval defines the subdivision of time shown on one increment of the chart; for example, 1 week, 5 sec.</dd>
+<dd>Options adjust based on the selected Duration. For example, if Duration is 5 minutes, Interval is 5 sec. If Duration is 1 year, Interval is 1 week.</dd>
+
+
+
+<dt><a name="gl_ecdsa"></a>ECDSA</dt>
+<dd>Acronym for Elliptic Curve Digital Signature Algorithm. ECDSA is a variation of the Digital Signature Algorithm (DSA).</dd>
+
+
+
+<dt><a name="gl_saml_entity_id"></a>Entity ID</dt>
+<dd>In <a href="#gl_saml">SAML</a>, a unique identifier for an entity. A SAML entity can be a Service Provider or an Identity Provider.</dd>
+<dd>As a service provider, you define the Entity ID. When setting up your account with the Identity Provider you must specify the Entity ID, which must be unique within the IdP so that the IdP can identify your Service Provider.</dd>
+<dd>The Entity ID is used as the value of the &lt;Issuer&gt; element inside the SAML protocol message. In an authentication request, the
+&lt;Issuer&gt; element contains the Entity ID of the Service Provider; in the SAML response, it has the Entity ID of the Identity Provider.</dd>
+<dd>From the perspective of the Service Provider, the Entity ID is analogous to the client_id in OAuth.</dd>
+
+
+
+<dt><a name="gl_enum"></a>enumeration (of users)</dt>
+<dd>The term user enumeration, user enum, or simply enum refers to a security vulnerability that allows an unauthorized user to compile a list of valid user accounts that are authorized to log in to an application. For example, if an unauthorized user can try to sign up with an existing email address, and the application returns a message that an account already exists for that email address, the application is giving away information.</dd>
+<dd>The platform includes enhanced security settings that can be activated to help prevent enumeration of users.</dd>
+
+
+
 <dt><a name="gl_environment"></a>environment</dt>
-<dd>An API contract can apply either to the Sandbox environment, which is a testing area, or the production environment.</dd>
+<dd>An API <a href="#gl_contract">contract</a> can apply either to the Sandbox environment, which is a testing area, or the production environment.</dd>
 
 
 
@@ -221,13 +289,45 @@ nav-title: Glossary of Terms
 
 
 
+<dt><a name="gl_idpdomain"></a>IdP domain</dt>
+<dd>Abbreviation for <a href="#gl_identityprovider">identity provider</a> domain.</dd>
+
+
+
 <dt><a name="gl_hmac"></a>HMAC</dt>
-<dd>The HMAC hashing algorithm uses a symmetric key to create a hash for message security. HMAC can be used with cryptographic hash algorithms such as MD5 or SHA-1. </dd>
+<dd>The HMAC hashing algorithm uses a symmetric key to create a hash for message security. HMAC can be used with cryptographic hash algorithms such as MD5 or SHA-1.</dd>
+
+
+
+<dt><a name="gl_saml_http_artifact"></a>HTTP Artifact</dt>
+<dd>One of the binding options supported by the <a href="#gl_saml">SAML</a> protocol. HTTP Artifact is useful in scenarios where the SAML requester and responder are using an HTTP user-agent and do not want to transmit the entire message, either for technical or security reasons. Instead, a SAML Artifact is sent, which is a unique ID for the full information. The IdP can then use the Artifact to retrieve the full information. The artifact issuer must maintain state while the artifact is pending.</dd>
+<dd>HTTP Artifact sends the artifact as a query parameter.</dd>
+<dd>Community Manager currently supports this binding option for SAML responses, but not for SAML requests.</dd>
+
+
+
+<dt><a name="gl_saml_http_post"></a>HTTP POST</dt>
+<dd>One of the binding options supported by the <a href="#gl_saml">SAML</a> protocol.</dd>
+<dd>HTTP POST sends the message content as a POST parameter, in the payload.</dd>
+<dd>Community Manager currently supports this binding option for SAML, for both requests and responses.</dd>
+
+
+
+<dt><a name="gl_saml_http_redirect"></a>HTTP Redirect</dt>
+<dd>One of the binding options supported by the <a href="#gl_saml">SAML</a> protocol.</dd>
+<dd>When HTTP Redirect is used, the service provider redirects the user to the identity provider where the login happens, and the identity provider redirects the user back to the service provider. HTTP Redirect requires intervention by the User-Agent (the browser).</dd>
+<dd>Community Manager currently supports this binding option for SAML requests.</dd>
 
 
 
 <dt><a name="gl_identityprovider"></a>identity provider</dt>
-<dd>An identity provider (sometimes abbreviated as IdP) is an entity responsible for verifying identity and issuing identity information, usually in the form of a token. A common example is a website that allows users to log in using a Facebook or Google identiy; in this scenario, Facebook and Google are identity providers. In <a href="#gl_openidconnect">OpenID Connect</a>, the <a href="#gl_identityprovider">identity provider</a> is called the Connect provider.</dd>
+<dd>An identity provider (sometimes abbreviated as IdP) is an entity responsible for verifying identity and issuing identity information, usually in the form of a token. A common example is a website that allows users to log in using a Facebook or Google identiy; in this scenario, Facebook and Google are identity providers. In <a href="#gl_openidconnect">OpenID Connect</a>, the identity provider is called the Connect provider.</dd>
+<dd>In terms of <a href="#gl_saml">SAML</a>, the identity provider verifies the identity of the user in response to a request by the Service Provider, and then responds with a SAML assertion.</dd>
+
+
+
+<dt>IdP</dt>
+<dd>In <a href="#gl_saml">SAML</a>, abbreviation for <a href="#gl_identityprovider">Identity Provider</a>.</dd>
 
 
 
@@ -242,6 +342,14 @@ nav-title: Glossary of Terms
 
 
 
+<dt><a name="gl_monitoring_interval"></a>interval (on monitoring charts)</dt>
+<dd>In the app and API monitoring charts, the duration and interval controls work together to allow you to narrow down the dataset you're interested in.</dd>
+<dd>The duration allows you to select the time period to be shown on the chart; for example, one week, one day, one hour.</dd>
+<dd>The interval defines the subdivision of time shown on one increment of the chart; for example, 1 week, 5 sec.</dd>
+<dd>Options adjust based on the selected Duration. For example, if Duration is 5 minutes, Interval is 5 sec. If Duration is 1 year, Interval is 1 week.</dd>
+
+
+
 <dt><a name="gl_invitationstatus"></a>invitation status</dt>
 <dd>A value that shows a group member's relationship with the group. When a new member is invited to a group, the member has an initial status of <strong>Pending</strong>. Depending on the user's response, the status can change to <strong>Accepted</strong> or <strong>Rejected</strong>. Other possible status values are: <strong>Cancelled</strong>, <strong>Removed</strong>, or <strong>Deleted</strong>.</dd>
 
@@ -252,13 +360,39 @@ nav-title: Glossary of Terms
 
 
 
+<dt><a name="gl_jsonwebkey"></a>JSON Web Key</dt>
+<dd>A JSON Web Key (JWK) is a <a href="#gl_json">JSON</a> data structure that represents a cryptographic key (for example, an <a href="#gl_rsa">RSA</a> key).</dd>
+
+
+
+<dt><a name="gl_jsonwebkeyset"></a>JSON Web Key Set</dt>
+<dd>A <a href="#gl_json">JSON</a> data structure that represents a set of <a href="#gl_jsonwebkey">Jason Web Keys</a>.</dd>
+
+
+
+<dt><a name="gl_jsonwebkey"></a>JWK</dt>
+<dd>See <a href="#gl_json">JSON Web Key</a>.</dd>
+
+
+
+<dt><a name="gl_jwt_token"></a>JWT token (OpenID Connect)</dt>
+<dd>Acronym for <a href="#gl_json">JSON</a> Web Token. In the context of OpenID Connect, a JWT token is a a compact, URL-safe means of representing claims to be sent from one party to another over the web. The claims in a JWT are encoded as a JSON object that is used either as the payload of a JSON Web Signature (JWS) structure or as the plain text of a JSON Web Encryption (JWE) structure. This enables the claims to be digitally signed and/or encrypted.</dd>
+
+
+
 <dt><a name="gl_leader"></a>leader</dt>
 <dd>In the context of a <a href="#gl_privateapigroup">Private API Group</a>, a leader is a senior group member. A leader can invite additional members to the group and can change another member's status, from <a href="#gl_member">member</a> to leader or vice versa.</dd>
 
 
 
+<dt><a name="gl_legalagreement_api"></a>legal agreement (API)</dt>
+<dd>The platform allows the API Admin or Business Admin to upload one or more legal agreements associated with an API. When a legal agreement is active for an API, an app developer must accept the legal agreement in order to request a <a href="#gl_contract">contract</a> with the API.</dd>
+<dd>The platform supports the following file formats for legal agreements associated with an API:  HTML (htm or html extension) or text (txt extension).</dd>
+
+
+
 <dt><a name="gl_license"></a>license</dt>
-<dd>A License is a tailored API access package designed by the Business Admin/API Admin and offered to the app developer. A license includes one or more <a href="#gl_licenseterm">license terms</a>, each of which can include multiple <a href="#gl_scope">scopes</a>, giving access to specifically designated operations, and multiple <a href="#gl_qospolicy">quality of service (QoS) policies</a>, and also one or more legal agreements applicable to the license.</dd>
+<dd>A License is a tailored API access package designed by the Business Admin/API Admin and offered to the app developer. A license includes one or more <a href="#gl_licenseterm">license terms</a>, each of which can include multiple <a href="#gl_scope">scopes</a>, giving access to specifically designated operations, and multiple <a href="#gl_qospolicy">quality of service (QoS) policies</a>, and also one or more <a href="#gl_legalagreement_api">legal agreements</a> applicable to the license.</dd>
 <dd>For more information on the License feature, see <a href="ov_licenses.htm">Licenses: Feature Overview</a>.</dd>
 
 
@@ -269,7 +403,7 @@ nav-title: Glossary of Terms
 
 
 <dt><a name="gl_mark"></a>mark</dt>
-<dd>Users can give positive feedback to items such as discussion topics and associated comments, reviews, and other resources such as tickets, using the <strong>Mark</strong> function. Choosing Mark provides positive feedback, in the same way as &quot;Like&quot; in Facebook&reg;. The Mark value toggles on and off, so a user can mark or <a href="#gl_unmark">unmark</a> a discussion comment. In the user interface, the <strong>mark</strong> icon is a thumbs-up, and the <strong>unmark</strong> icon is a closed fist. </dd>
+<dd>Users can give positive feedback to items such as discussion topics and associated comments, reviews, and other resources such as tickets, using the <strong>Mark</strong> function. Choosing Mark provides positive feedback, in the same way as &quot;Like&quot; in Facebook&reg;. The Mark value toggles on and off, so a user can mark or <a href="#gl_unmark">unmark</a> a discussion comment. In the user interface, the <strong>mark</strong> icon is a thumbs-up, and the <strong>unmark</strong> icon is a closed fist.</dd>
 
 
 
@@ -285,6 +419,11 @@ nav-title: Glossary of Terms
 
 <dt><a name="gl_membershiprequest"></a>membership request (invitation)</dt>
 <dd>An invitation to another individual, whether a registered user or not, to join a <!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> group or team such as an app team. API Administrators can invite others to be API Administrators; app team members can invite others to the app team. A Site Administrator, Private API Administrator, or Independent Group member can also issue a membership request in the same way.</dd>
+
+
+
+<dt><a name="gl_mgf1"></a>MGF1</dt>
+<dd>A mask generation algorithm, based on a hash function, defined by <a href="https://www.ietf.org/rfc/rfc2437.txt" target="_blank">RCF 2437 (10.2.1)</a>, the RSA Cryptography Specification Version 2.0.</dd>
 
 
 
@@ -329,7 +468,7 @@ nav-title: Glossary of Terms
 
 <dt><a name="gl_oauth_authorizationserverurl"></a>OAuth authorization server URL</dt>
 <dd>As part of setting up the OAuth domain, the Site Admin must specify the Authorization Server URL. This is the URL that the browser for the resource owner (app user) will be accessing for the OAuth grant. It is the URL at which the OAuth Provider accesses the requests, for both Authorization Endpoint and Token Endpoint.</dd>
-<dd>As part of setting up an OAuth domain in the platform, the Site Admin must specify the authorization server URL. The URL must be accessible to all the apps and end users that might use APIs that are referencing the OAuth domain. The Authorization Endpoint and Token Endpoint for OAuth 10.a and OAuth 2.0 will use different paths according to the specific OAuth version. Firewalls and DNS servers must be set up for this URL so that end users and apps can access the URL. </dd>
+<dd>As part of setting up an OAuth domain in the platform, the Site Admin must specify the authorization server URL. The URL must be accessible to all the apps and end users that might use APIs that are referencing the OAuth domain. The Authorization Endpoint and Token Endpoint for OAuth 10.a and OAuth 2.0 will use different paths according to the specific OAuth version. Firewalls and DNS servers must be set up for this URL so that end users and apps can access the URL.</dd>
 
 
 
@@ -392,16 +531,17 @@ nav-title: Glossary of Terms
 
 <dt><a name="gl_openid"></a>OpenID</dt>
 <dd>OpenID is an open standard for authenticating users. It can be used for access control and allows users to log on to different services with the same digital identity where these services trust the authentication body. OpenID simplifies the authentication process because there is only one username and password to remember. For more information, see <a href="site_admin_openid_support.htm#what_is_openid">What is OpenID?</a></dd>
+<dd>Since Google has now deprecated  OpenID support and OpenID Connect is being adopted by the industry, it is better to switch to <a href="#gl_openidconnect">OpenID Connect</a>.</dd>
 
 
 
 <dt><a name="gl_openidconnect"></a>OpenID Connect</dt>
-<dd>An identity layer on top of the OAuth 2.0 protocol which allows the client to verify the identity of an end-user based on authentication by an authorization server. OpenID Connect was released in February 2014 and is gaining popularity. For example, Google is moving from OpenID to OpenID Connect for products such as the Google+ API, used by the platform's Google login domain. For more information, see <a href="http://openid.net/connect/" target="_blank">Welcome to OpenID Connect</a> (external site).</dd>
+<dd>An identity layer on top of the OAuth 2.0 protocol that allows the client to verify the identity of an end-user based on authentication by an authorization server. OpenID Connect was released in February 2014 and is gaining popularity. For example, Google is moving from OpenID to OpenID Connect for products such as the Google+ API, used by the platform's Google login domain. For more information, see <a href="http://openid.net/connect/" target="_blank">Welcome to OpenID Connect</a> (external site).</dd>
 
 
 
-<dt><a name="gl_openidrelyingparty"></a>OpenID relying party</dt>
-<dd>In <a href="#gl_openidconnect">OpenID Connect</a>, the service provider is called the relying party. The relying party trusts the <a href="#gl_connectprovider">Connect provider</a> to authenticate the user. In the context of the <!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->, the platform is the service provider and the Site Admin sets up the Connect provider in Domains setup.</dd>
+<dt>OpenID relying party</dt>
+<dd>See <a href="#gl_relyingparty">relying party</a>.</dd>
 
 
 
@@ -438,7 +578,7 @@ nav-title: Glossary of Terms
 
 
 <dt><a name="gl_proxyapi"></a>proxy API</dt>
-<dd>When you set up your API on the <!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> and choose to use the Proxy feature, all traffic to your API endpoints is channeled via the platform. This offers significant benefits, including the ability to apply policies and monitor traffic at the proxy.</dd>
+<dd>When an API Admin or Business Admin sets up an API on the <!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> and chooses to use the Proxy feature, all traffic to the API endpoints is channeled via the platform. This offers significant benefits, including the ability to apply policies and monitor traffic at the proxy.</dd>
 
 
 
@@ -485,8 +625,18 @@ nav-title: Glossary of Terms
 
 
 
-<dt><a name="gl_openidrelyingparty"></a>relying party</dt>
-<dd>See <a href="#gl_openidrelyingparty">OpenID relying party</a>.</dd>
+<dt><a name="gl_relyingparty"></a>relying party</dt>
+<dd>In <a href="#gl_openid">OpenID</a> and <a href="#gl_openidconnect">OpenID Connect</a>, the service provider is called the relying party. The relying party trusts the <a href="#gl_connectprovider">Connect provider</a> to authenticate the user. In the context of the <!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->, the platform is the service provider and the Site Admin sets up the Connect provider in Domains setup.</dd>
+
+
+
+<dt>reset code</dt>
+<dd>See <a href="#gl_passwordresetcode">password reset code</a>.</dd>
+
+
+
+<dt><a name="gl_apiaccess_restricted"></a>restricted API access</dt>
+<dd>Restricted access for an app means that the app's access to the API is restricted to a subset of the API, as defined by scope mapping, or to a specified, agreed-upon quota as defined by a QoS policy. Compare: <a href="#gl_apiaccess_unrestricted">unrestricted API access</a>.</dd>
 
 
 
@@ -507,9 +657,29 @@ nav-title: Glossary of Terms
 
 
 
+<dt><a name="gl_rsa"></a>RSA</dt>
+<dd>A popular and secure  public key cryptography algorithm.</dd>
+
+
+
 <dt><a name="gl_saml"></a>SAML</dt>
-<dd>Abbreviation for Security Assertion Markup Language. SAML is an open standard protocol, based on XML, used for authentication and authorization.</dd>
-<dd>One usage, in the context of the platform, is by OpenID Connect where it is used to provide single sign-on. The plaform acts as the <a href="#gl_openidrelyingparty">relying party</a>.</dd>
+<dd>Acronym for Security Assertion Markup Language. SAML is an identity federation standard that enables single sign-on. It is an XML-based standard for exchanging authentication and authorization data between a <a href="#gl_saml_service_provider">service provider</a> (providing a service to the user) and an <a href="#gl_identityprovider">identity provider</a> (providing user identity verification for the service provider).</dd>
+<dd>One usage, in the context of the platform, is by OpenID Connect where it is used to provide single sign-on. The plaform acts as the <a href="#gl_relyingparty">relying party</a>.</dd>
+
+
+<dt><a name="gl_saml_artifact"></a>SAML Artifact</dt>
+<dd>A unique ID used by the service provider and identity provider to reference a specific user session or transaction. The SP can use the Artifact to query the IdP for information about the user.</dd>
+
+
+
+<dt><a name="gl_saml_assertion"></a>SAML assertion</dt>
+<dd>A <a href="#gl_saml">SAML</a> assertion is an XML document returned by the Identity Provider to the Service Provider after authentication of the user. The assertion has a very specific structure, as defined by the SAML standard. A SAML assertion has a &lt;Subject&gt; element which contains information about the user. It might have conditions and attributes associated with the information being conveyed. It is digitally signed and asserts that the user has been authenticated.</dd>
+<dd>Note: the above definition applies to an authentication assertion, which applies in the context of the platform’s support of SAML. There are other types of SAML assertions.</dd>
+
+
+
+<dt><a name="gl_saml_web_sso"></a>SAML Web SSO</dt>
+<dd>Single sign-on over the Web using the <a href="#gl_saml">SAML</a> protocol.</dd>
 
 
 
@@ -534,10 +704,25 @@ nav-title: Glossary of Terms
 <dd>Search results are limited to those resources the user performing the search has permission to see. For example, a user who does not have access to a specific private API will not see it on the list.</dd>
 
 
+<dt>security challenge question</dt>
+<dd>See <a href="#gl_challengequestion">challenge question</a>.</dd>
+
+
 
 <dt><a name="gl_securitydomain"></a>security domain</dt>
 <dd>An application or collection of applications that all share, and trust, common security. The same security mechanism is used for all within the security domain, for authentication, authorization, and/or session management. A user who is authorized on one part of the security domain is considered authorized for other parts.</dd>
 <dd>In a tenant/partner scenario, all tenants share the same security domain and are considered to be trusted. So, for example, app owners on one tenant have access to API information on another tenant seamlessly and without any additional security authorization.</dd>
+
+
+
+<dt><a name="gl_saml_service_provider"></a>Service Provider</dt>
+<dd>In terms of <a href="#gl_saml">SAML</a>, the Service Provider (SP) offers a service to the user and allows the user to sign in by using SAML. When the user attempts to sign in, the SP sends a SAML authentication request to the Identity Provider (IdP). The IdP validates the request, authenticates the user, and creates a SAML assertion that represents the user’s identity and, in some cases, sends additional information about the user in the form of associated attributes. The SAML assertion is digitally signed and encrypted and then sent back to the service provider that initiated the request.</dd>
+<dd>Identity federation software at the SP receives the assertion, verified the authenticity, decrypts, and shares the information with the application.</dd>
+
+
+
+<dt><a name="gl_sha"></a>SHA</dt>
+<dd>Acronym for Secure Hash Algorithm; a family of cryptographic hash functions including SHA-0, <a href="#gl_sha1">SHA-1</a>, SHA-2 (see <a href="#gl_sha256">SHA-256</a>), and SHA-3.</dd>
 
 
 
@@ -568,8 +753,26 @@ nav-title: Glossary of Terms
 
 
 
+<dt><a name="gl_theme_simpledev"></a>Simple Developer theme</dt>
+<dd>Simple Developer <a href="#gl_theme">theme</a>, also called Simple Dev, is an additional customizable code base, with a separate URL, that you can choose as an additional installation option. During installation, when you install Default Theme (the standard user interface which includes all admin capabilities), you can choose to also install Simple Dev. This new theme includes a streamlined user interface, providing a simplified user experience for app developers.</dd>
+<dd>The API admin, Site Admin, and Business Admin capabilities available in the Default Theme are excluded from the Simple Developer theme for the sake of simplicity. One installation can have both themes, with multiple customizations of each, sharing the same database. Each theme has a different URL.</dd>
+<dd>Simple Developer theme offers an easily customizable look and feel, and is easily extensible.</dd>
+
+
+
 <dt><a name="gl_ssl"></a>SSL</dt>
 <dd>A cryptographic protocol used to add security to messages by encryption. SSL uses X.509 certificates and asymmetric security.  The session key is used to encrypt the messages. SSL offers encryption and identification.</dd>
+
+
+
+<dt><a name="gl_sso"></a>SSO</dt>
+<dd>Abbreviation for single sign-on, a feature allowing a user to sign in once for more than one system rather than signing in separately to each system.</dd>
+<dd>If an app offers single sign-on, this means that the app, acting as a Service Provider (providing services to an end user) uses an Identity Provider, an entity that provides authentication and possibly authorization services, to verify the identity of an end user logging on to the app. The user signs in to the Service Provider, and the Service Provider either implicitly or explicitly requests authentication from the Identity Provider. Once authentication is received, the Service Provider delivers the requested service to the end user.</dd>
+
+
+
+<dt>SP</dt>
+<dd>In <a href="#gl_saml">SAML</a>, abbreviation for <a href="#gl_saml_service_provider">Service Provider</a>.</dd>
 
 
 
@@ -595,6 +798,11 @@ nav-title: Glossary of Terms
 
 
 
+<dt><a name="gl_theme"></a>theme</dt>
+<dd>One instance of the portal. More than one theme can be defined during the installation process and can then be customized for different purposes or audiences. Each theme has a separate URL. For more information, see <a href="site_admin_config.htm#what_is_a_platform_theme">What is a platform theme?</a> (Site Admins only).</dd>
+
+
+
 <dt><a name="gl_ticket"></a>ticket</dt>
 <dd>A type of feed entry, representing a trouble ticket created to raise an issue with a resource (app or API) or a connection. Tickets are typically created by a consumer of an API. Any member of the community can comment on a ticket, but it can only be marked as Resolved by the original creator or by an administrator of the target resource. For example, if Joe writes a ticket about an issue with the SkyBlue API, only Joe or the SkyBlue API Admin can mark the ticket as Resolved.</dd>
 
@@ -607,7 +815,12 @@ nav-title: Glossary of Terms
 
 
 <dt><a name="gl_unmark"></a>unmark</dt>
-<dd>To unmark a discussion, ticket, or other resource means to remove a <a href="#gl_mark">mark</a> previously placed on the resource. In the user interface, the <strong>mark</strong> icon is a thumbs-up, and the <strong>unmark</strong> icon is a closed fist. </dd>
+<dd>To unmark a discussion, ticket, or other resource means to remove a <a href="#gl_mark">mark</a> previously placed on the resource. In the user interface, the <strong>mark</strong> icon is a thumbs-up, and the <strong>unmark</strong> icon is a closed fist.</dd>
+
+
+
+<dt><a name="gl_apiaccess_unrestricted"></a>unrestricted API access</dt>
+<dd>Unrestricted API access for an app means that the <a href="#gl_contract">contract</a> is not limited to a specific license. The app has full access to all operations of the API. Compare: <a href="#gl_apiaccess_restricted">restricted API access</a>.</dd>
 
 
 
@@ -622,7 +835,7 @@ nav-title: Glossary of Terms
 
 
 <dt><a name="gl_visibility"></a>visibility</dt>
-<dd>A setting that controls the types of users who can see a resource, such as an app, API, group, license, or scope, and any associated items such as discussions and tickets. </dd>
+<dd>A setting that controls the types of users who can see a resource, such as an app, API, group, license, or scope, and any associated items such as discussions and tickets.</dd>
 <dd>There are three possible values. The first two are applicable to all resources that have visibility settings; the third is applicable only to apps, APIs, and groups.</dd>
 </dl>
 <ol>
@@ -636,7 +849,7 @@ nav-title: Glossary of Terms
 
 
 <dt><a name="gl_workflowaction"></a>workflow action</dt>
-  <dd>Certain types of activities on the platform must be done in a specific sequence. These are often managed by workflows. Each workflow action changes the state of the resource. Some examples of workflow actions are: requesting or approving an API contract, sending a group membership invitation, or changing the status of a ticket.</dd>
+  <dd>Certain types of activities on the platform must be done in a specific sequence. These are often managed by workflows. Each workflow action changes the state of the resource. Some examples of workflow actions are: requesting or approving an API <a href="#gl_contract">contract</a>, sending a group membership invitation, or changing the status of a ticket.</dd>
 
 
 

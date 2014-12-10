@@ -38,6 +38,7 @@ no-catalog: true
   <li><a href="#how_do_i_make_my_style_and_sprite_file_changes_visible_on_my_platform_deployment_after_i_regenerate_styles">How do I make my style and sprite file changes visible on my platform deployment after I regenerate styles?</a></li>
   <li><a href="#how_do_i_configure_a_custom_footer">How do I configure a custom footer?</a></li>
   <li><a href="#how_do_i_configure_a_custom_logo">How do I configure a custom logo?</a></li>
+  <li><a href="#what_is_a_platform_theme">What is a platform theme?</a></li>
 </ol>
 
 
@@ -52,6 +53,7 @@ no-catalog: true
   <li><a href="#what_login_page_integration_modes_are_supported">What login page integration modes are supported?</a></li>
   <li><a href="#how_do_i_disable_a_platform_login">How do I disable a platform login?</a></li>
   <li><a href="#how_do_i_configure_a_session_timeout_value">How do I configure a session timeout value?</a></li>
+  <li><a href="#how_do_i_disable_the_opotion_for_users_to_change_email_address">How do I disable the option for users to change the email address on the account?</a></li>
 </ol>
 
 
@@ -79,9 +81,11 @@ no-catalog: true
   <li><a href="#how_do_i_configure_settings_for_connections">How do I configure settings for app/API connections?</a></li>
   <li><a href="#how_do_i_configure_settings_for_groups">How do I configure settings for groups?</a></li>
   <li><a href="#how_do_i_configure_settings_for_tickets">How do I configure settings for tickets?</a></li>
+  <li><a href="#how_do_i_configure_separate_notification_addresses_by_theme">How do I configure separate notification addresses for different platform themes?</a></li>
   <li><a href="#what_is_the_csrf_prevention_feature">What is the CSRF prevention feature?</a></li>
   <li><a href="#how_do_i_implement_csrf_prevention_feature">How do I implement the CSRF prevention feature?</a></li>
   <li><a href="#csrf_prevention_custom_client">I want CSRF prevention, but we already have a custom client. What do I do?</a></li>
+  <li><a href="#how_do_i_configure_security_challenge_questions">How do I configure security challenge questions?</a></li>
 </ol>
 
 
@@ -105,6 +109,7 @@ no-catalog: true
 <ol>
   <li>Log in as the Site Admin.</li>
   <li>Navigate to <em>Administration &gt; Config &gt; Custom Styles</em>.</li>
+  <li>If you want to work with the template for the Simple Developer Theme (Simple Dev) rather than the current user interface (Default Theme), choose it from the drop-down list at the top. Styles for all themes are managed in the same place. For more information, see <a href="#what_is_a_platform_theme">What is a platform theme?</a> and <a href="basics_glossary.htm#gl_theme_simpledev">Simple Developer theme</a>. </li>
   <li>Click <strong>Download Template</strong> to download the default platform template, <strong>custom_template.less</strong>. For full instructions, see <a href="#how_do_i_download_the_custom_template_less_template">How do I download the custom_template.less template?</a></li>
   <li>Rename the downloaded file from <strong>custom_template.less</strong> to <strong>custom.less</strong> and modify it as needed.</li>
   <li>Upload the revised file to the platform. For instructions, see <a href="#how_do_i_upload_my_customless_file_after_i_have_updated_it">How do I upload my custom.less file after I have updated it?</a></li>
@@ -115,7 +120,8 @@ no-catalog: true
 <ol>
   <li>Log in as the Site Admin.</li>
   <li>Navigate to <em>Administration &gt; Config &gt; Custom Styles</em>.</li>
-  <li>Click <strong>Download</strong> to download your customized style sheet, <strong>custom.less</strong>.</li>
+  <li>If you want to work with the template for the Simple Developer Theme (Simple Dev) rather than the current user interface (Default Theme), choose it from the drop-down list at the top. Styles for all themes are managed in the same place. For more information, see <a href="#what_is_a_platform_theme">What is a platform theme?</a> and <a href="basics_glossary.htm#gl_theme_simpledev">Simple Developer theme</a>. </li>
+  <li>Click <strong>Download</strong> to download the customized style sheet, <strong>custom.less</strong>.</li>
   <li>Choose a save location to save the file.</li>
   <li>Modify the styles as needed.</li>
   <li>Upload the revised file to the platform. For instructions, see <a href="#how_do_i_upload_my_customless_file_after_i_have_updated_it">How do I upload my custom.less file after I have updated it?</a></li>
@@ -160,6 +166,7 @@ no-catalog: true
 <ol>
   <li>Log in as Site Admin.</li>
   <li>Navigate to <em>Administration &gt; Config &gt; Custom Styles</em>.</li>
+  <li>If you want to work with the template for the Simple Developer Theme (Simple Dev) rather than the current user interface (Default Theme), choose it from the drop-down list at the top. Styles for all themes are managed in the same place. For more information, see <a href="#what_is_a_platform_theme">What is a platform theme?</a> and <a href="basics_glossary.htm#gl_theme_simpledev">Simple Developer theme</a>. </li>
   <li>In the <strong>Styles Customization</strong> section, click <strong>Download Template</strong>. A download dialog box displays.</li>
   <li>Select the <strong>Save File</strong> option and click <strong>OK</strong>.</li>
 </ol>
@@ -172,6 +179,7 @@ no-catalog: true
 <h5>To upload the modified custom.less file:</h5>
 <ol>
   <li>Go to <em>Administration &gt; Config &gt; Custom Styles</em>.</li>
+  <li>If you want to work with the template for the Simple Developer Theme (Simple Dev) rather than the current user interface (Default Theme), choose it from the drop-down list at the top. Styles for all themes are managed in the same place. For more information, see <a href="#what_is_a_platform_theme">What is a platform theme?</a> and <a href="basics_glossary.htm#gl_theme_simpledev">Simple Developer theme</a>. </li>
   <li>In the <strong>Styles Customization</strong> section, click <strong>Upload</strong>. A <em>File to Upload</em> dialog box displays.</li>
   <li>Click <strong>Browse</strong> to navigate to the location of your custom.less file and upload it. When you upload the file, the platform style sheets are automatically regenerated. When regeneration is complete a confirmation message is displayed.The custom.less file is stored in the \resources\less directory.</li>
 </ol>
@@ -194,6 +202,7 @@ no-catalog: true
 <h5>To rebuild site style sheets:</h5>
 <ol>
   <li>Navigate to <em>Administration &gt; Config &gt; Custom Styles</em>.</li>
+  <li>If you want to work with the template for the Simple Developer Theme (Simple Dev) rather than the current user interface (Default Theme), choose it from the drop-down list at the top. Styles for all themes are managed in the same place. For more information, see <a href="#what_is_a_platform_theme">What is a platform theme?</a> and <a href="basics_glossary.htm#gl_theme_simpledev">Simple Developer theme</a>. </li>
   <li>In the <strong>Styles Customization</strong> section, click <strong>Rebuild Styles</strong>. The rebuild process takes approximately one minute. After style sheets have been rebuilt, the &quot;Platform style sheets have been successfully regenerated using custom.less&quot; confirmation message displays.</li>
   <li>After the style sheets are regenerated, clear the browser cache and refresh the screen to view the changes.</li>
 </ol>
@@ -281,6 +290,7 @@ no-catalog: true
 
 <ol>
   <li>Go to <em>Admin &gt; Config &gt; Custom Styles</em>.</li>
+  <li>If you want to work with the template for the Simple Developer Theme (Simple Dev) rather than the current user interface (Default Theme), choose it from the drop-down list at the top. Styles for all themes are managed in the same place. For more information, see <a href="#what_is_a_platform_theme">What is a platform theme?</a> and <a href="basics_glossary.htm#gl_theme_simpledev">Simple Developer theme</a>. </li>
   <li>Click <strong>Download</strong> to download a new custom_template.less file and rename it to custom.less.</li>
   <li>Load the custom .less file into an HTML editor and change the filename for this entry: @logo-img: url(&quot;images/&lt;image_name&gt;.png&quot;); to the new logo filename.</li>
   <li>In the <em>Custom Styles</em> section, click <strong>Upload</strong> to upload the updated custom.less file. <em>Note that the upload process automatically executes the <strong>Rebuild Styles</strong> function, which rebuilds the style sheets<strong>.</strong></em></li>
@@ -289,7 +299,9 @@ no-catalog: true
 
 <h5><a name="to_upload_your_logo_file"></a>To upload your logo file:</h5>
 <ol>
-  <li>Go to <em>Admin &gt; Config &gt; Custom Styles</em> and click <strong>Rebuild Styles</strong> to ensure that all the proper style folders are generated. <em>Note: If you specified a custom logo name in custom.less and already uploaded the style sheet the rebuild step is not required. </em></li>
+  <li>Go to <em>Admin &gt; Config &gt; Custom Styles</em>.</li>
+  <li>If you want to work with the template for the Simple Developer Theme (Simple Dev) rather than the current user interface (Default Theme), choose it from the drop-down list at the top. Styles for all themes are managed in the same place. For more information, see <a href="#what_is_a_platform_theme">What is a platform theme?</a> and <a href="basics_glossary.htm#gl_theme_simpledev">Simple Developer theme</a>. </li>
+  <li>Click <strong>Rebuild Styles</strong> to ensure that all the proper style folders are generated. <em>Note: If you specified a custom logo name in custom.less and already uploaded the style sheet the rebuild step is not required. </em></li>
   <li>Go to <em>Resources &gt; Resources &gt; File Manager</em> and navigate to the theme/default/style folder:<br />
   <br />
   <img src="images/file_manager_style_folder.jpg" width="426" height="299" alt="" /></li>
@@ -297,8 +309,52 @@ no-catalog: true
   <br />
   <br /></li>
   <li>Click into the /images folder and upload your logo file. <em>Note that the logo must comply with the stated logo requirements. </em></li>
-  <li>If for some reason the new logo does not display, try refreshing your browser cache and/or go to <em>Admin &gt; Config &gt; Custom Styles</em> and click <strong>Rebuild Styles</strong>.</li>
+  <li>If for some reason the new logo does not display, try refreshing your browser cache and/or go to <em>Admin &gt; Config &gt; Custom Styles</em>, choose the theme if needed, and click <strong>Rebuild Styles</strong>.</li>
 </ol>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="what_is_a_platform_theme"></a><h3>What is a platform theme?</h3>
+<p>One theme is one instance of the portal. During installation, the Site Admin has the option to configure more than one theme for the implementation. This is configured as part of running the jython scripts which are part of installation. Each theme has a separate URL.</p>
+<p>When running the jython platform installation script, two parameters, <strong>theme</strong> and <strong>themeimpl</strong>, work together to establish the codebase that's installed.</p>
+<p>If values are provided for both <strong>theme</strong> and <strong>themeImpl</strong> parameters: <strong>themeImpl</strong> is a unique code name for a specific theme which cannot be changed. It indicates the code base used for the implementation. Valid values: default or simpledev.</p>
+<p>This introduces the possibility of cloning a specific theme with two or more user-defined sets of customizations. One set of customizations is independent of another. Definitions of the two parameters are given below.</p>
+<h4><strong>theme</strong></h4>
+<p>The <strong>theme</strong> parameter plays a different role as determined by whether the themeImpl parameter is also present:</p>
+<ul>
+  <li>If values are provided for both theme and themeImpl parameters: <strong>theme</strong> is a user-defined value. The customer can define multiple <strong>theme</strong> values, and each can later be customized via a unique custom.less file for each theme.</li>
+  <li>If the themeImpl parameter is not provided (backwards compatibility scenario): <strong>theme</strong> takes the definition of the themeImpl parameter (see themeImpl below). Valid values: default or simpledev.</li>
+</ul>
+<h4><strong>themeImpl</strong></h4>
+<p>If values are provided for both <strong>theme</strong> and <strong>themeImpl</strong> parameters: <strong>themeImpl</strong> is a unique code name for a specific theme which cannot be changed. It indicates the code base used for the implementation. Valid values: default or simpledev.</p>
+<p>The new parameter takes the definitions previously applicable to the <strong>theme</strong> parameter. There are two valid values:</p>
+<ul>
+  <li><strong>default</strong> (used in most cases)</li>
+  <li><strong>simpledev</strong></li>
+</ul>
+<p>The <strong>theme</strong> parameter now takes a customer-defined value, naming a theme that the customer can then customize via the <strong>custom.less</strong> file. The customer can define multiple values for the <strong>theme</strong> parameter; each name must be unique for the tenant.<br />
+  For backwards compatibility, if the <strong>themeImpl</strong> parameter is not present in the installation jython script, the value provided for the <strong>theme</strong> parameter in the installation script must be one of the valid core values of <strong>default</strong> or <strong>simpledev</strong>.</p>
+<p>By using these two parameters together, customers can define multiple access points into the platform, each of which can have its own set of customizations applied. Some sample scenarios:</p>
+<ul>
+  <li><strong>Multiple customizations of look and feel</strong>: Tenant ACMEPayments Corp has 10 partners; each partner has a different API on the platform, and each has an API admin who accesses the platform and exports metric information for the API.
+    <p>When installing version 7.2, the site admin defines the <strong>themeImpl</strong> parameter as <strong>default</strong> and creates 10 themes, each named for one of the 10 partners, and each with a different URL that includes the tenant name and partner name.</p>
+<p>After installation, the site admin customizes each version by uploading a <strong>custom.less</strong> file for each partner with the partner&rsquo;s company colors and logo.</p>
+<p>When each API admin logs in via the URL for his company, he sees the colors and logo for his company.</p>
+</li>
+  <li><strong>Two theme implementations, additional theme customizations</strong>: Tenant ACMEPaymentDev Inc. has two audiences, a developer audience and an API Admin audience.
+<p>In previous versions, this scenario was supported in only one customer case by supporting two completely different themes (one of which was a completely customer-specific customization). Although this solution allowed us to support two themes, it was not extensible.</p>
+<p>Now, the same solution can be accomplished for any customer by supporting two themes, default and simpledev. But each theme could also be cloned, defining values for the theme property of default and simpledev and then also providing values for the theme property, allowing additional customization to be supported.</p>
+<p>When creating the tenant, we just create a single theme. Additional theme values, and themeImpl values, are created using additional database scripts as shown later.</p>
+<p>Two theme example: when installing version 7.2, the site admin defines the <strong>themeImpl</strong> parameter as <strong>default</strong> and then again as <strong>simpledev</strong>, and creates two themes:</p>
+<ul>
+  <li><strong>developer</strong> uses the <strong>simpledev</strong> theme</li>
+  <li><strong>apiadmin</strong> uses the <strong>default</strong> theme</li>
+</ul>
+<p>He does not bother with a <strong>custom.less</strong> file since having a different look and feel is not significant at the moment, but this can easily be added later at any point.</p>
+<p>Developers see the simpler user interface presented by the <strong>simpledev</strong> theme, while API Admins have access to the API management functionality offered only in the <strong>default</strong> theme.</p>
+</li>
+</ul>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -349,7 +405,7 @@ no-catalog: true
 <p><strong>Note</strong>: In versions prior to the 7.1.0 release, certain security domains that allow login with email address and password were automatically enabled once the security domain was created in Administration / Domains. The default has now been changed so that the default platform login screen does not fall back to security domains supporting email/password-based login. Instead, you must explicitly enable the login domain after adding it. If you have already configured the platform prior to upgrading to the version 7.1.0 release, your default option and configuration will be unchanged after upgrading. However, if you install any version 7.1.0 or later, and then configure, you'll need to add the login domains and then enable them, in two separate steps.</p>
 <h5><a name="to_enable_and_customize_a_platform_login_domain"></a>To enable and customize a platform login domain:</h5>
 <ol>
-  <li>Log in as the Site Admin and click the <em>Site Administration</em> quick filter (wrench icon).</li>
+  <li>Log in as the Site Admin and click the <em>Administration</em> quick filter (wrench icon).</li>
   <li>Create the domain, following the instructions for the specific type of login domain you want: see <a href="site_admin_domains.htm">Domains</a>.</li>
   <li>Click <strong>Administration</strong> &gt; <strong>Config</strong> &gt; <strong>Logins</strong>.</li>
   <li>Check the <strong>Enable</strong> checkbox.</li>
@@ -416,6 +472,18 @@ no-catalog: true
 </ul>
 <p>Update the values, and then run the following query on your database:</p>
 <pre>update LOGIN_RULES set LOGIN_SESSION_TIMEOUT=<strong>&lt;no-of-minutes&gt;</strong> where TENANTID = (select TENANTID from TENANTS where FEDMEMBERID='<strong>&lt;tenant-id&gt;</strong>');</pre>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_disable_the_opotion_for_users_to_change_email_address"></a><h3>How do I disable the option for users to change the email address on the account?</h3>
+<p>For security reasons, you might want to disable the ability for users to change the email address associated with local accounts set up on the platform.</p>
+<p>Currently, you cannot change this setting via the user interface, but you can do it in the database, as follows:</p>
+<ul>
+  <li><strong>Table</strong>: BUSINESS_SECURITY_SETTINGS</li>
+  <li><strong>Column name</strong>: USER_MODIFY_EMAIL</li>
+</ul>
+<p>The default value for this column is: <strong>com.soa.feature.enabled</strong>. To disable the ability for users to change email address, set this value to: <strong>com.soa.feature.disabled</strong>.</p>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -506,7 +574,7 @@ no-catalog: true
 
 
 <a name="how_do_i_upload_content_to_the_platform"></a><h3>How do I upload content to the platform?</h3>
-<p>Content that can be uploaded to the platform includes API documentation, Online Help, Landing Page, Signup, and Support. Content will typically consist of HTML files, images that are referenced in the content, any custom styles sheets that support the content, and reference material (i.e., PDF's, diagrams, etc.) that are linked in the content.</p>
+<p>Content that can be uploaded to the platform includes API documentation, Online Help, Landing Page, Signup, and Support. Content will typically consist of HTML files, images that are referenced in the content, any custom styles sheets that support the content, and reference material, such as PDF files or diagrams, that are linked in the content.</p>
 <ul>
   <li><strong>API Documentation Content </strong>- The /content/api directory includes a folder for each API that is added to the platform. When you initially add your API using the<strong> Add a New API</strong> function this folder is automatically generated and an id name is automatically assigned as the folder name; for example, <strong>api100.cm</strong>. API content is uploaded to this folder.</li>
   <li><strong>Online Help Content</strong>&#8212;The /content/home/learnmore directory includes html and supporting graphic files that comprise the platform <em>Online Help</em>.</li>
@@ -575,7 +643,7 @@ no-catalog: true
   <li>Private API Settings</li>
 </ul>
 <h5>General API Settings:</h5>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 98%;">
 <thead>
   <tr>
     <th width="40%">This setting...</th>
@@ -600,7 +668,7 @@ no-catalog: true
 
 
 <h5>Public API Settings:</h5>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 98%;">
 <thead>
   <tr>
     <th width="40%">This setting...</th>
@@ -645,7 +713,7 @@ no-catalog: true
 
 
 <h5>Private API Settings:</h5>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 98%;">
 <thead>
   <tr>
     <th width="40%">This setting...</th>
@@ -717,7 +785,7 @@ no-catalog: true
 
 
 <h5>General App Settings:</h5>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 98%;">
   <thead>
   <tr>
     <th width="40%">This setting...</th>
@@ -747,7 +815,7 @@ no-catalog: true
 
 
 <h5>Public App Settings:</h5>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 98%;">
 <thead>
   <tr>
     <th width="40%">This setting...</th>
@@ -772,7 +840,7 @@ no-catalog: true
 
 
 <h5>Private App Settings:</h5>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 98%;">
 <thead>
   <tr>
     <th width="40%">This setting...</th>
@@ -809,7 +877,7 @@ no-catalog: true
 <p>You can configure connection settings to determine which features will be available for app/API connections on the platform. If a feature is disabled in the connection settings page it will not be present in the user interface.</p>
 <p>Unless otherwise noted, settings are either enabled or disabled.</p>
 <h5>General App/API Connection Settings</h5>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 98%;">
 <thead>
   <tr>
     <th width="40%">This setting...</th>
@@ -850,7 +918,7 @@ no-catalog: true
 
 
 <h5>General Group Settings</h5>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 98%;">
 <thead>
   <tr>
     <th width="40%">This setting...</th>
@@ -869,7 +937,7 @@ no-catalog: true
 </tbody>
 </table>
 <h5>Public Group Settings:</h5>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 98%;">
   <thead>
     <tr>
     <th width="40%">This setting...</th>
@@ -897,7 +965,7 @@ no-catalog: true
   </tbody>
 </table>
 <h5>Private Group Settings:</h5>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 98%;">
   <thead>
     <tr>
     <th width="40%">This setting...</th>
@@ -938,7 +1006,7 @@ no-catalog: true
 <p>You can configure ticket settings to determine which features will be available for tickets on the platform. If a feature is disabled in the ticket settings page it will not be present in the user interface.</p>
 <p>Unless otherwise noted, settings are either enabled or disabled.</p>
 <h5>General Ticket Settings</h5>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 98%;">
 <thead>
   <tr>
     <th width="40%">This setting...</th>
@@ -967,6 +1035,45 @@ no-catalog: true
 
 
 
+<a name="how_do_i_configure_separate_notification_addresses_by_theme"></a><h3>How do I configure separate notification addresses for different platform themes?</h3>
+<p>The platform sends out email notifications to keep platform users informed about specific events&#8212;for example, password reset or changes to a team that the user is a member of. Some of these notifications include the platform URL; for example, the Welcome email includes the platform homepage URL for logging in. </p>
+<p>If you have more than one theme configured for your platform installation, each theme has a separate URL. If a developer using your theme B forgets his password, the notification with the reset password link must include the URL for Theme B, not for Theme A. Therefore, you will need to take some extra steps so that, where applicable, the notifications triggered by activity on a specific theme use the correct URL for that theme.</p>
+<p>Since the theme which by default we call Simple Dev has a simpler user interface and is focused on a developer audience, and the theme which we call Default Theme includes additional functionality, such as API and business management and Site Admin functions, notifications for roles more applicable to Default Theme are always sent out from the Default Theme URL. These roles include:</p>
+<ul>
+  <li>Site Admin</li>
+  <li>Business Admin</li>
+  <li>API Admin</li>
+</ul>
+<p>Notifications for the following roles use a theme-specific URL:</p>
+<ul>
+  <li>Anonymous user (not signed in as a platform user; for example, in a &quot;forgot password&quot; scenario)</li>
+  <li>Developer</li>
+  <li>App team member</li>
+</ul>
+<p> For a full list of roles and the types of notifications that are sent to each role, see <a href="site_admin_users.htm#what_are_the_user_roles_for_notifications">What are the user roles for notifications sent out from the platform?</a></p>
+<p>When there are multiple themes configured for the tenant, you will need to run a script to load the TENANT_THEME_ROLES table and map the theme &gt; roles roles list. This table tells us which theme is used for which notifications.</p>
+<p>In the NOTIFICATION_ROLES table, each notification template is mapped to the role that it is meant for. Before a notification is sent out, the tenant.console.address variable is replace with the theme-specific URL for the role that the specific notification template is mapped to.</p>
+<p>In a few cases, it is possible that multiple themes might be possible for the same notification. For example, a user of any theme might request a password reset. In this case, the platform uses the URL for the theme that caused the notification to be generated. The Forgot Password notification will include the address of the console for the theme in which the user initiated the Forgot Password request. In an upgrade scenario, or if the database modification to the the TENANT_THEME_ROLES table, as below, has not been done, no themes will be mapped to any roles. In that case, we use the default theme assigned to the tenant.</p>
+<p>The theme-specific feature cannot be configured in the user interface. Instead, you must run a database script. A template is shown below; this uses variable placeholders for theme name, role name, and tenant name.</p>
+
+<pre>insert into TENANT_THEME_ROLES select TENANTID, '&lt;theme&gt;', '&lt;rolename&gt;' from TENANTS where FEDMEMBERID='&lt;tenant-name&gt;';</pre>
+<p>If there is only one tenant, you can omit the tenant name, like this:</p>
+<pre>insert into TENANT_THEME_ROLES select TENANTID, '&lt;theme&gt;', '&lt;rolename&gt;' from TENANTS;
+</pre>
+<p>An example is shown below, using the theme names <strong>default</strong> and <strong>simpledev</strong>. In the below, substitute a value for the &lt;tenant-name&gt; variable or, if there is only one tenant, remove the <strong>where</strong> statement. If you are using different theme names, substitute the applicable values.</p>
+<pre>insert into TENANT_THEME_ROLES select TENANTID, 'default', 'Anonymous User' from TENANTS where FEDMEMBERID='&lt;tenant-name&gt;';
+insert into TENANT_THEME_ROLES select TENANTID, 'default', 'ApiAdmin' from TENANTS where FEDMEMBERID='&lt;tenant-name&gt;';
+insert into TENANT_THEME_ROLES select TENANTID, 'default', 'BusinessAdmin' from TENANTS where FEDMEMBERID='&lt;tenant-name&gt;';
+insert into TENANT_THEME_ROLES select TENANTID, 'default', 'SiteAdmin' from TENANTS where FEDMEMBERID='&lt;tenant-name&gt;';
+insert into TENANT_THEME_ROLES select TENANTID, 'simpledev', 'User' from TENANTS where FEDMEMBERID='&lt;tenant-name&gt;';
+insert into TENANT_THEME_ROLES select TENANTID, 'simpledev', 'Anonymous User' from TENANTS where FEDMEMBERID='&lt;tenant-name&gt;';
+insert into TENANT_THEME_ROLES select TENANTID, 'simpledev', 'AppAdmin' from TENANTS where FEDMEMBERID='&lt;tenant-name&gt;';
+insert into TENANT_THEME_ROLES select TENANTID, 'simpledev', 'Developer' from TENANTS where FEDMEMBERID='&lt;tenant-name&gt;';
+</pre>
+<p><a href="#top">Back to top</a></p>
+
+
+
 <a name="what_is_the_csrf_prevention_feature"></a><h3>What is the CSRF prevention feature?</h3>
 <p>The CSRF prevention feature adds a layer of protection against malicious <a href="basics_glossary.htm#gl_csrf_attack">CSRF</a> attacks, by means of a custom header.</p>
 <p>A CSRF attack leverages the fact that the authorized user has already authenticated, and that the cookie is stored in the user's browser. The CSRF prevention feature requires an additional value to be sent as an extra header. If the extra header is not present, the request is rejected as unauthorized.</p>
@@ -976,8 +1083,14 @@ no-catalog: true
   <li>All POST operations</li>
   <li>All PUT operations</li>
   <li>All DELETE operations  </li>
+  <li>All GET operations <strong>except</strong> those in the following services/activities:
+<ul>
+      <li>Content upload and management</li>
+      <li>Resource upload and management (such as avatars)</li>
+      <li>Login</li>
+    </ul>
+  </li>
   </ul>
-<p>GET operations are not affected at this time.</p>
 <p>The <strong>Csrf-Token_fedmemberid</strong> cookie has the same timeout value as the <strong>AtmoAuthToken</strong> authorization cookie (as specified by the Site Admin, or 25 minutes by default).</p>
 <p>For information on how to implement the CSRF prevention header, see <a href="#how_do_i_implement_csrf_prevention_feature">How do I implement the CSRF prevention feature?</a> below.</p>
 <p><a href="#top">Back to top</a></p>
@@ -999,6 +1112,19 @@ no-catalog: true
 <p>To support this feature in scenarios where there is an existing client that doesn't use the custom headers, there is a configuration setting you can use to specify that your client is a trusted sender and the custom header is not required. When the sending client is listed in this configuration setting, the messages are processed without the custom header.</p>
 <p>In the configuration settings, under com.soa.atmosphere, choose atmosphere.config.csrfHttpWriteSkipUserAgents. This setting supports Network Director and federated Community Manager scenarios invoking Community Manager APIs without having to send the CSRF token. </p>
 <p>For more information about accessing and modifying this setting, see <a href="site_admin_admin_console_settings.htm#cm_settings_navigation">How do I get to the Community Manager Configuration Settings in the SOA Software Administration Console?</a></p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_configure_security_challenge_questions"></a>
+<h3>How do I configure security challenge questions?</h3>
+<p>The platform includes a feature whereby you can configure security challenge questions to be offered to user signing up.</p>
+<p>By default, a user signing up is asked to answer three questions. The user's answers are stored securely in the database and the questions/answers are used as additional security for certain sensitive operations, such as when the user requests a password reset.</p>
+<p>The user can modify answers to existing questions, or choose one or more different questions from the list provided and then answer the new questions, as part of managing the user profile.</p>
+<p>In some cases, the user's answer might not be displayed, depending on the site's security settings.</p>
+<p>The Site Admin can choose from certain questions that are set up by default, to be offered to users, or can compose different questions.</p>
+<p>This feature adds another layer of security for the user's account.</p>
+<p>Site Admin management of this feature is not currently available via the user interface. It must be done by a database script. For more information, contact Technical Support.</p>
 <p><a href="#top">Back to top</a></p>
 
 

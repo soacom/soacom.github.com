@@ -31,10 +31,14 @@ no-catalog: true
 
 <a name="what_are_connections"></a><h3>What are Connections?</h3>
 <p>A Connection is a relationship or subscription between <em>Resources</em> (API, App, Group, Contract, User) in the system. When a Connection to a Resource is established, the Connection will appear in the appropriate collection point in for both Resources.</p>
-<p>Connections are established by sending a <em>Connection Request</em>. Each Connection Request follows a specific workflow process and a series of management tools are provided to control the lifecycle of the Connection. When a user creates a Connection to a Resource, the Resource administrators are notified of the pending request, and will see the Connection in the Connections Collection for the Resource. Users will also see the Connection in their personal Connections Collection.</p>
+<p>Connections are established in two ways:</p>
+<ol>
+  <li>When you create your app, connections to one or more APIs might be created automatically. If automatic connections are created, you can manage them in the same way as connections you create yourself (see #2 below).</li>
+  <li>By sending a <em>Connection Request</em>. Each Connection Request follows a specific workflow process and a series of management tools are provided to control the lifecycle of the Connection. When a user creates a Connection to a Resource, the Resource administrators are notified of the pending request, and will see the Connection in the Connections Collection for the Resource. Users will also see the Connection in their personal Connections Collection.</li>
+</ol>
 <p>For example, if API Access is requested for one or more Apps, an entry for the API and App will appear on the <em>API Details &gt; Apps</em> and <em>App Details &gt; APIs</em> pages. Because these activities relate to specific Users (who are also considered Resources), feed entries associated with the activities are added to the <em>Board</em> and <em>Dashboard</em> of both the API and App owner.</p>
 <p>There are several types of connections:</p>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 98%;">
   <thead>
   <tr>
     <th width="30%">Connection Type</th>
@@ -78,7 +82,7 @@ no-catalog: true
 
 
 <a name="how_do_i_see_the_status_of_my_apps_connections_to_apis"></a><h3>How do I see the status of my app's connections to APIs?</h3>
-<p>You can review the status of your app's connections with APIs, including pending and active API access requests, in the <em>My Apps &gt; App &gt; APIs</em> page. This page provides a high level summary of the current state for current API access contracts or pending API access requests.</p>
+<p>You can review the status of your app's connections with APIs, including pending and active API access requests, in the <em>My Apps &gt; App &gt; APIs</em> page. This page provides a high-level summary of the status of all current API access contracts and pending API access requests.</p>
 <p>Each listing includes:</p>
 <ul>
   <li>Apps&#8212;The App Name. This link clicks through to the <em>App Details</em> page.</li>
@@ -86,7 +90,7 @@ no-catalog: true
   <li>Sandbox / Production&#8212;Represent the two environments that an API Access Request can be submitted for. Each column displays the current status of the API Access Request and available API management functions (for example, Cancel, Suspend, Resume, Request Access, Switch to Production). The valid actions for a specific contract are determined by the current state of the contract; for example, only a contract that is currently in a state of Suspended can be resumed, only a contract in a state of Activated can be cancelled. For more information on API access states and valid actions, see <a href="business_admin_workflows.htm#what_is_the_default_workflow_for_api_contracts">What is the default workflow for API contracts?</a></li>
 </ul>
 <p>The following table shows <em>App Status</em> and <em>App Management Tasks</em> for apps that have requested access to the current API using the <strong>API Access</strong> function:</p>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 98%;">
   <thead>
   <tr>
     <th width="30%">App Status</th>
@@ -117,7 +121,7 @@ no-catalog: true
   </tbody>
 </table>
 <p>&nbsp;</p>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 98%;">
   <thead>
   <tr>
     <th width="30%">App Management Task</th>
@@ -148,7 +152,7 @@ no-catalog: true
 </tbody>
   </table>
 <p>&nbsp;</p>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 98%;">
   <thead>
   <tr>
     <th width="30%">API Access Request Task</th>
@@ -188,11 +192,11 @@ no-catalog: true
 
 
 <a name="how_do_i_update_approved_api_access_requests"></a><h3>How do I update approved API Access Requests?</h3>
-<p>Existing API Access Requests cannot be modified. The following rules apply:</p>
+<p>You cannot modify an existing, approved or activated API access contract. Only the API Admin or Business Admin can modify a contract.</p>
+<p>You can suspend or cancel an existing contract. Follow the applicable step below:</p>
 <ul>
-  <li>If you would like to cancel an API access request, click <strong>Cancel</strong> in either the Sandbox or Production column of the APIs table. Go to <em>My Apps</em>, choose the app, and then in the left pane click <em>APIs</em>.</li>
-  <li>If you would like to add a new API, use the <strong>Add a New API</strong> function via the <em>Plus Menu</em>.</li>
-  <li>If you would like to temporarily suspend API access, click <strong>Cancel</strong> in either the Sandbox or Production column of the APIs table. Go to <em>My Apps</em>, choose the app, and then in the left pane click <em>APIs</em>.</li>
+  <li>To cancel an API access request, click <strong>Cancel</strong> in either the Sandbox or Production column of the APIs table. Go to <em>My Apps</em>, choose the app, and then in the left pane click <em>APIs</em>.</li>
+  <li>To temporarily suspend API access, click <strong>Cancel</strong> in either the Sandbox or Production column of the APIs table. Go to <em>My Apps</em>, choose the app, and then in the left pane click <em>APIs</em>.</li>
 </ul>
 <p><a href="#top">Back to top</a></p>
 

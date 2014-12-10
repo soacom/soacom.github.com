@@ -30,7 +30,7 @@ no-catalog: true
   <li><a href="#how_do_i_search_for_a_user_account">How do I search for a user account?</a></li>
   <li><a href="#how_do_i_exclude_roles">How do I exclude specific roles from platform access?</a></li>
   <li><a href="#how_do_i_protect_from_vulnerability_in_signup_and_forgot_password_scenarios">How can I protect from vulnerability in Signup and Forgot Password scenarios?</a></li>
-</ol>
+  <li><a href="#what_are_the_user_roles_for_notifications">What are the user roles for notifications sent out from the platform?</a></li></ol>
 <div class = "divider1"></div>
 
 
@@ -61,7 +61,7 @@ no-catalog: true
   <li>Delete: see <a href="#how_do_i_delete_a_user_account">How do I delete a user account?</a></li>
 </ul>
 <p>Valid actions for a specific user account are determined by the account's current status, as shown in the table below.</p>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 98%;">
   <thead>
     <tr>
       <th width="40%">If an account has this status...</th>
@@ -96,7 +96,7 @@ no-catalog: true
   <li><a href="basics_glossary.htm#gl_search">Search</a> is available on the users list.</li>
 </ul>
 <p>The following table provides a description of each page element.</p>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 98%;">
 <thead>
   <tr>
     <th width="20%">Field</th>
@@ -250,8 +250,10 @@ no-catalog: true
   <li>New account setup</li>
 </ul>
 <p>The database field is ALLOW_USER_ENUM, in the BUSINESS_SECURITY_SETTINGS table. If enabled (set to <strong>com.soa.feature.enabled</strong>, or no value specified) the default behavior is in effect. If this value is set to <strong>com.soa.feature.disabled</strong>, the enhanced security behavior is activated.</p>
+<!--<pre>Update BUSINESS_SECURITY_SETTINGS set ALLOW_USER_ENUM='com.soa.feature.enabled';</pre>
+<p>The query becomes complicated if multiple tenants are configured. On-premise installations have only one tenant configured, and they will want to apply the setting to the whole deployment anyway, so a "where" clause is not necessary.</p>-->
 <p>The table below shows the default platform behavior and the enhanced security behavior for these two activities.</p>
-<table width="43%" cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 90%;">
   <thead>
     <tr>
       <th width="30%">Activity</th>
@@ -306,6 +308,61 @@ no-catalog: true
       <td>Create Account, account with the provided email address does not exist</td>
       <td>Signup process proceeds as expected.</td>
       <td>Signup process proceeds as expected.</td>
+    </tr>
+  </tbody>
+</table>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="what_are_the_user_roles_for_notifications"></a><h3>What are the user roles for notifications sent out from the platform?</h3>
+<p>By default, the platform sends out email notifications to keep users informed about events of significance to a specific user; for example, membership changes to groups the user is a member of, or changes to an app or API the user is connected to.</p>
+<p>Users can customize their preferences for email notifications: see <a href="basics_account_management.htm#how_do_i_enable_or_disable_email_notifications">How do I enable or disable email notifications?</a></p>
+<p>In a scenario where the platform implementation includes more than one theme, the Site Admin can run a database script to customize the platform URL used for notifications to specific user roles: see <a href="site_admin_config.htm#how_do_i_configure_separate_notification_addresses_by_theme">How do I configure separate notification addresses for different platform themes?</a></p>
+<p>The table below shows the default roles to which notifications are sent. This is not a full list of notifications, but shows general notification types.</p>
+<table width="43%" cellspacing="0px" class="doctable" style="width: 90%;">
+  <thead>
+    <tr>
+      <th width="19%">This role...</th>
+      <th width="81%">Receives these types of notifications...</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr class="t2row">
+      <td>Anonymous User</td>
+      <td>Signup invitation</td>
+      </tr>
+    <tr class="t1row">
+      <td>API Admin</td>
+      <td>Anything relating to the API, including team membership changes, tickets, posts, reviews, and contract requests or other API access changes.</td>
+      </tr>
+    <tr class="t2row">
+      <td>App Admin</td>
+      <td>Anything relating to the app, including team membership changes, tickets, posts, reviews, and contract requests or other API access changes.</td>
+    </tr>
+    <tr class="t1row">
+      <td>Business Admin</td>
+      <td>Anything relating to the Business Admin team.</td>
+    </tr>
+    <tr class="t2row">
+      <td>Developer</td>
+      <td>Team invitations, API access requests and cancellation.</td>
+    </tr>
+    <tr class="t1row">
+      <td>Invited User</td>
+      <td>An invitation to the team, or removal notification, for that specific user.</td>
+    </tr>
+    <tr class="t2row">
+      <td>Member</td>
+      <td>Anything relating to an independent group on the platform.</td>
+    </tr>
+    <tr class="t1row">
+      <td>Site Admin</td>
+      <td>Anything relating to the Site Admin team.</td>
+    </tr>
+    <tr class="t2row">
+      <td>User</td>
+      <td>Anything relating to a specific logged-in user, such as posts, reviews, tickets, and notifications relating to the user's account such as password reset.</td>
     </tr>
   </tbody>
 </table>

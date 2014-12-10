@@ -77,7 +77,7 @@ no-catalog: true
   <li>Navigate to <em>My Apps &gt; App Details</em> for the app you would like to create a version for.</li>
   <li>Select <strong>+ Version</strong>. The <em>Edit App Info</em> page displays. The following information displays:<br />
     <br />
-    <table cellspacing="0px" class="doctable" style="width: 90%;">
+    <table cellspacing="0px" class="doctable" style="width: 98%;">
       <thead>
       <tr>
         <th width="20%">Name</th>
@@ -185,11 +185,11 @@ no-catalog: true
   <li>Click <strong>Export</strong>.</li>
   <li>In the Export overlay, choose export versions (current version or all versions) and choose export options. If you want to export all information about the app, check all boxes. You can choose to export the following additional data associated with the app:
     <ul>
-  <li>PKI information</li>
-<!--  <li>API contracts</li>
-  <li>Licenses</li>
-  <li>App team members</li>-->
-</ul>
+  <li>Export App PKI</li>
+  <li>Export API Contracts</li>
+  <li>Export App Team Members<!--ATMO-11669--><br />
+    <strong>Note</strong>: the relationship of the user as an app team member is exported, but the user is not exported. The user must exist in the target environment. If the user does not exist when the information is imported, the app is created without that team member. From there, either a) the user can sign up and be invited to be an app team member, b) the user can sign up and the app data can be reimported, c) another individual can be designated as an app team member.  </li>
+    </ul>
   </li>
   <li>Click <strong>Export</strong>.</li>
   <li>Choose to save or open the export file. By default, the export package file is named <strong>application-export.zip</strong> and is saved to your default downloads folder.</li>
@@ -200,13 +200,14 @@ no-catalog: true
 
 <a name="what_are_the_contents_of_the_app_export_file"></a>
 <h3>What are the contents of the app export file?</h3>
-<p>The app export file includes all the core information about the business, as well as any of the optional additional information you specified.</p>
+<p>The app export file includes all the core information about the app, as well as any of the optional additional information you specified.</p>
 <p>The file has a very specific structure. It will generally include the following files at root level:  </p>
 <ul>
    <li><strong>objectgraph.xml</strong>: An XML file that shows the relationships between resources.</li>
    <li><strong>objectdata.xml</strong>: An XML-based  summary of all the data in the export file.</li>
    <li><strong>exportproperties.properties</strong>: a properties file showing which options were included in the export file.</li>
 </ul>
+<p>If PKI information was chosen to be exported, it is stored in a separate pki subfolder.</p>
 <p><a href="#top">Back to top</a></p>
 
 

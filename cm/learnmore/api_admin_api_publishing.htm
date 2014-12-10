@@ -42,12 +42,13 @@ no-catalog: true
   <li><a href="#what_are_the_supported_methods_and_content_types_for_requests">What are the supported HTTP methods and content types for requests?</a></li>
   <li><a href="#what_is_a_default_profile_for_a_rest_api">What is a Default Profile for a REST API?</a></li>
   <li><a href="#how_do_i_define_a_custom_content_type_for_a_rest_api">How do I define a custom content-type for a REST API?</a></li>
+  <li><a href="#what_is_autoconnect">What is auto-connect?</a></li>
+  <li><a href="#how_do_i_set_up_autoconnect_for_my_api">How do I set up auto-connect for my API?</a></li>
 </ol>
 
 
 <h3 style="color: gray;"><a href="#h_api_management">API Management</a></h3>
 <ol class="table_of_contents">
-  <li><a href="#how_do_i_see_the_status_of_my_apis_contracts_with_apps">How do I see the status of my API's contracts with apps?</a></li>
   <li><a href="#how_do_i_add_an_api_version">How do I add an API version?</a></li>
   <li><a href="#how_do_i_edit_an_api">How do I edit an API?</a></li>
   <li><a href="#how_do_i_export_an_api">How do I export an API?</a></li>
@@ -138,7 +139,7 @@ no-catalog: true
   <li><strong>Monitoring</strong>&#8212;Collects transaction details including recorded messages for every transaction.</li>
   <li><strong>OAuth</strong>&#8212;Provides support for applications performing authentication and authorization using OAuth.</li>
 </ul>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 98%;">
   <thead>
   <tr>
     <th width="20%">Policy Name</th>
@@ -221,6 +222,12 @@ no-catalog: true
   <li><strong>API with Existing Service</strong>: use this option when the service is already defined in the API Gateway console, or if you want to create the service using the flexible service definition model offered by the API Gateway. For more information, see <a href="#how_do_i_add_an_api_from_a_policy_manager_service">How do I add an API from an existing API Gateway service (API with Existing Service)?</a> below.</li>
 </ul>
 <p><strong>Note</strong>: If the above options are not available to you and you feel they should be, contact your Site Admin for assistance.</p>
+<p>Once the basic API setup is done, there are several other important steps you might need to complete, depending on the nature of your API:</p>
+<ul>
+  <li>Setting up OAuth details for the API, if applicable. See See <a href="api_admin_oauth_support.htm#how_do_i_configure_my_api_with_an_oauth_provider">How do I configure my API with an OAuth Provider?</a></li>
+  <li>Scope mapping, if your API is using licenses. <a href="#what_is_scope_mapping_and_how_do_i_set_it_up">What is scope mapping and how do I set it up?</a></li>
+  <li>Setting up auto-connect. See <a href="#how_do_i_set_up_autoconnect_for_my_api">How do I set up Auto-Connect for my API?</a> Note: If your API uses licenses, be sure to set up scope mapping before setting up auto-connect.</li>
+</ul>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -305,7 +312,7 @@ no-catalog: true
     <br />
     For the typical REST service, the most common methods, URIs, and serialization types would be:<br />
     <br />
-    <table cellspacing="0px" class="doctable" style="width: 90%;">
+    <table cellspacing="0px" class="doctable" style="width: 98%;">
       <thead>
         <tr>
           <th width="20%">Operation</th>
@@ -418,7 +425,7 @@ no-catalog: true
 <li>In the <em>Policies</em> section, select the policies that you would like the system to enforce on the proxy.
   Note: <em>You MUST select one security policy (for example, Category: Simple Header Security) and you should select a monitoring policy if you want to see charts and logs. If no policies display, consult your API Provider or Site Administrator. </em>See <a href="#what_security_and_monitoring_policies_are_supported">What security and monitoring policies are supported?</a></li>
  <li>Also note that if you select a monitoring policy<em>, </em>app data is not supported in <em>My APIs &gt; Monitoring</em> if Anonymous API Access is enabled. See <a href="#what_is_anonymous_api_access">What is Anonymous API Access?</a> for more information.</li>
- <li>If your API will be supporting OAuth, its best practice to use the <strong>Edit</strong> function on the <em>API Details</em> page to select the OAuthSecurity policy after you have configured the API to support OAuth (i.e., adding an OAuth Provider in the <em>Site Admin &gt; Domains</em> section), and configuring the API using the <strong>OAuth Details</strong> function on the <em>API Details</em> page.</li>
+ <li>If your API will be supporting OAuth, it's best to use the <strong>Edit</strong> function on the <em>API Details</em> page to select the OAuthSecurity policy after you have configured the API to support OAuth (i.e., adding an OAuth Provider in the <em>Site Admin &gt; Domains</em> section), and configuring the API using the <strong>OAuth Details</strong> function on the <em>API Details</em> page.</li>
  <li>After making your changes click <strong>Save</strong>. Your API is now registered.</li>
  <li>If you will be configuring your API with OAuth, review the information in the <em>OAuth Support </em>section to determine next steps.</li>
 </ol>
@@ -565,8 +572,8 @@ http://&lt;API_URL&gt;/&lt;API_path&gt;?postalCode=90020&amp;o=xml&amp;key=AoCDR
 
 
 <a name="what_is_a_proxy_api"></a><h3>What is a proxy API?</h3>
-<p>The <strong>Add a New API</strong> function includes a proxy API option that allows you to configure an endpoint in a particular environment (for example, internal or external network) that is accessible by your target applications.</p>
-<p>A proxy API endpoint exists in the Cloud and is similar to a virtual service. As a security measure, users will be able to access a proxy that will run in the Cloud, and will not be accessing the API implementation directly.</p>
+<p>When you set up your API on the platform, using the platform as a proxy, your API is the Target API and the platform is the <a href="basics_glossary.htm#gl_proxyapi">Proxy API</a>. This allows you to configure an endpoint in a particular environment (for example, internal or external network) that is accessible by your target applications.</p>
+<p>A proxy API endpoint exists in the Cloud and is similar to a virtual service. As a security measure, users access the proxy that runs in the Cloud, rather than accessing the API implementation directly. Traffic is channeled via the proxy to your target API.</p>
 <p>Based on the development cycle of your API, you can chose to expose selected functionality in your API by defining a Proxy API for each endpoint and selecting which functionality (for example, operations) you would like to expose. This approach allows you to manage the API lifecycle and expose functionality based on your requirements (for example, development phase, testing, production, etc.).</p>
 <p><strong>Advantages:</strong></p>
 <p><em>Internal / External Networks</em>&#8212;If you would like to access to your real API on an internal network, but would like to expose specific functionality on an external network, you can add the API Target URL using the <strong>Add a New API </strong>function, and then virtualize the API by specifying a Proxy API Target URL for specific functionality you would like to make available on an external network.</p>
@@ -610,7 +617,7 @@ http://&lt;API_URL&gt;/&lt;API_path&gt;?postalCode=90020&amp;o=xml&amp;key=AoCDR
 
 <a name="what_is_an_api_type_profile"></a><h3>What is an API Type Profile?</h3>
 <p>An &quot;API Type Profile&quot; is used for proxy APIs to identify the type of content an API will accept from the consumer (IN), and will be returned by the API to the consumer (OUT). IN and OUT identifiers are combined with content types (i.e., ANY, JSON, FORM, and XML) and are packaged on the API Type Profile drop-down menu in profile sets. The following content types are supported:</p>
-  <table cellspacing="0px" class="doctable" style="width: 90%;">
+  <table cellspacing="0px" class="doctable" style="width: 98%;">
     <thead>
     <tr>
     <th width="20%">Content Type</th>
@@ -642,7 +649,7 @@ http://&lt;API_URL&gt;/&lt;API_path&gt;?postalCode=90020&amp;o=xml&amp;key=AoCDR
 
 <a name="what_are_the_supported_methods_and_content_types_for_requests"></a><h3>What are the supported HTTP method types and content types for requests?</h3>
 <p>If you chose to proxy your API, you can optionally configure the operations with Methods, URLs, and Content Types. After the API settings are saved, the specified information is synchronized with the Target URLs. The following options are supported:</p>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 98%;">
   <thead>
   <tr>
     <th width="20%">Option Name</th>
@@ -706,117 +713,31 @@ http://&lt;API_URL&gt;/&lt;API_path&gt;?postalCode=90020&amp;o=xml&amp;key=AoCDR
 
 
 
-<h3><a name="h_api_management">API Management</h3>
-
-
-
-<a name="how_do_i_see_the_status_of_my_apis_contracts_with_apps"></a><h3>How do I see the status of my API's contracts with apps?</h3>
-<p>You can review the status of your API's connections, including pending and active API access requests, in the <em>My APIs &gt; API &gt; Apps</em> page. This page provides a high level summary of workflow status for apps with current API access contracts or pending API access requests for the current API.</p>
-<p>Each listing includes:</p>
-<ul>
-  <li>Apps&#8212;The App Name. This link clicks through to the <em>App Details</em> page.</li>
-  <li>Legals&#8212;A column that indicates whether the Legal Agreements have been accepted (Check = Accepted, No Check = No Accepted).</li>
-  <li>Sandbox / Production&#8212;Represent the two environments that an API Access Request can be submitted for. Each column displays the current status of the API Access Request and available API management functions (for example, Cancel, Suspend, Resume, Request Access, Switch to Production). The valid actions for a specific contract are determined by the current state of the contract; for example, only a contract that is currently in a state of Suspended can be resumed, and only a contract in a state of Activated can be cancelled. For more information on API access states and valid actions, see <a href="business_admin_workflows.htm#what_is_the_default_workflow_for_api_contracts">What is the default workflow for API contracts?</a></li>
-</ul>
-<p>The following tables provide explanations for information you might see on this page.</p>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
-  <thead>
-  <tr>
-    <th width="30%">Contract Status</th>
-    <th width="70%">Description</th>
-  </tr>
-  </thead>
-  <tbody>
-    <tr class="t2row">
-      <td>Access Requested</td>
-      <td>An App has requested access to an API but the request has not been approved and activated in the Sandbox or Production environment.</td>
-    </tr>
-  <tr class="t1row">
-    <td>Active</td>
-    <td>API Access has been approved and activated.</td>
-  </tr>
-  <tr class="t2row">
-    <td>Inactive</td>
-    <td>API access has not yet been requested.</td>
-  </tr>
-  <tr class="t1row">
-    <td>Rejected</td>
-    <td>The API Access Request has been rejected.</td>
-  </tr>
-  <tr class="t2row">
-    <td>Suspended</td>
-    <td>API Access that was previously active has been suspended.</td>
-  </tr>
-  </tbody>
-</table>
-<p>&nbsp;</p>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
-  <thead>
-  <tr>
-    <th width="30%">App Management Task</th>
-    <th width="70%">Description</th>
-</tr>
-</thead>
-<tbody>
-    <tr class="t2row">
-      <td>Cancel</td>
-      <td>Cancels an API Access Request. Listing is removed from the <em>API Connections</em> page. Requestor must submit another request to initiate the process again.</td>
-    </tr>
-  <tr class="t1row">
-    <td>Suspend</td>
-    <td>Suspends the API Access Request. This action can only be performed when the request status is Active.</td>
-  </tr>
-  <tr class="t2row">
-    <td>Resume</td>
-    <td>Resumes the API Access Request and changes the request status to <em>Active</em> after it has been suspended.</td>
-  </tr>
-  <tr class="t1row">
-    <td>Switch to Sandbox</td>
-    <td>Switches the app to the Sandbox Environment and uses the Sandbox Endpoint.</td>
-  </tr>
-  <tr class="t2row">
-    <td>Switch to Production</td>
-    <td>Switches the app to the Production Environment and uses the Production Endpoint.</td>
-  </tr>
-</tbody>
-  </table>
-<p>&nbsp;</p>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
-  <thead>
-  <tr>
-    <th width="30%">API Access Request Task</th>
-    <th width="70%">Description</th>
-  </tr>
-  </thead>
-  <tbody>
-    <tr class="t2row">
-      <td>Approve</td>
-      <td>Approves the API Action Request. <br />
-      <em>Note that the request still requires activation after it has been approved.</em></td>
-    </tr>
-  <tr class="t1row">
-    <td>Reject</td>
-    <td>Rejects the API Action Request.</td>
-  </tr>
-  <tr class="t2row">
-    <td>Cancel</td>
-    <td>Cancels the API Action Request. Requestor must submit another request to initiate the process again.</td>
-  </tr>
-  <tr class="t1row">
-    <td>Activate</td>
-    <td>Activates the API Access Request.</td>
-  </tr>
-  <tr class="t2row">
-    <td>Suspend</td>
-    <td>Suspends the API Access Request and is performed after the request has been activated.</td>
-  </tr>
-    <tr class="t1row">
-    <td>Resume</td>
-    <td>Resumes the API Access Request and puts it into an activated state after it has been suspended.</td>
-  </tr>
-</tbody>
-  </table>
+<a name="what_is_autoconnect"></a><h3>What is auto-connect?</h3>
+<p>The platform's auto-connect feature allows an API Admin to set up the API so that when a new app is created on the platform, a contract with the API is created automatically. The API Admin specifies the details of the access granted with the auto-connect feature, such as whether access is to the sandbox or production environment, or whether access is limited to specific operations or a specific transaction volume (via the <a href="basics_glossary.htm#gl_license">Licenses</a> feature, implemented with <a href="basics_glossary.htm#gl_scopemapping">scope mapping</a>).</p>
+<p>You can change the auto-connect details for your API at a later time; however, be aware that if contracts have already been created, those will continue unless you specifically end them.</p>
+<p>If your API uses licenses, it's important to set up scope mapping for your API before setting up the auto-connect feature, since the auto-connect settings reference the scope mapping settings.</p>
+<p>For instructions on setting up auto-connect for your API, see <a href="#how_do_i_set_up_autoconnect_for_my_api">How do I set up Auto-Connect for my API?</a> below.</p>
 <p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_set_up_autoconnect_for_my_api"></a><h3>How do I set up auto-connect for my API?</h3>
+<p>If you want to grant new apps automatic access to your API, you'll want to set up the auto-connect feature.</p>
+<p class="apidoc_note"><strong>Note</strong>: If your API is using licenses, set up scope mapping first. Then, follow the instructions below.</p>
+<h5>To set up auto-connect for an API:</h5>
+<ol>
+  <li>Go to the <strong>Details</strong> page for the API.</li>
+  <li>Click the <strong>Auto-Connect</strong> button.</li>
+  <li>In the <strong>Set Up Auto-Connect Settings</strong> page, check one or more boxes to indicate environment for auto-connect contracts: Production, Sandbox, or both.</li>
+  <li>Conditional: if your API uses the Licenses feature, a list of scopes is displayed for any environment you selected. Check one or more scopes that you want to allow for an auto-connect contract, for each environment selected.</li>
+  <li>Click <strong>Finish</strong>.</li>
+</ol>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<h3><a name="h_api_management">API Management</h3>
 
 
 
@@ -862,15 +783,16 @@ http://&lt;API_URL&gt;/&lt;API_path&gt;?postalCode=90020&amp;o=xml&amp;key=AoCDR
   <li>Log in as the API Admin.</li>
   <li>Select <em>My APIs &gt; API Name</em>. The <em>API Details</em> page displays.</li>
   <li>Click <strong>Export</strong>.</li>
-  <li>In the Export overlay, choose the versions you want to export and the options. If you want to export all information about the API, check all boxes. You can export the following data associated with the API:
-  <ul>
-    <li>Operational Policies</li>
-    <li>QoS Policies</li>
-    <li>API PKI</li>
-    <li>API Administrators</li>
-    <li>Scopes</li>
-    <li>API Contracts</li>
-    <li>Resources/Documentation</li>
+  <li>In the Export overlay, choose the versions you want to export (Current or All) and the options. If you want to export all information about the API, check all boxes. You can export the following data associated with the API:
+    <ul>
+    <li>Export Operational Policies</li>
+    <li>Export QoS Policies</li>
+    <li>Export API PKI</li>
+    <li>Export API Administrators<!--ATMO-11669--><br />
+      <strong>Note</strong>: the relationship of the user as an API admin is exported, but the user is not exported. The user must exist in the target environment. If the user does not exist when the information is imported, the API is created without that admin. From there, either a) the user can sign up and be invited to be an admin, b) the user can sign up and the API data can be reimported, c) another individual can be designated as an API admin.</li>
+    <li>Export API Contracts</li>
+    <li>Export Scopes</li>
+    <li>Export Resources/Documentation</li>
   </ul>
   </li>
   <li>Click <strong>Export</strong>.</li>

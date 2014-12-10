@@ -21,7 +21,6 @@ no-catalog: true
 <ol class="table_of_contents">
   <li><a href="#what_is_oauth">What is OAuth?</a></li>
   <li><a href="#what_oauth_versions_are_supported">What OAuth versions are supported?</a></li>
-  <li><a href="#how_do_i_set_up_my_deployment_to_support_oauth">How do I set up my deployment to support OAuth?</a></li>
   <li><a href="#how_do_i_configure_my_api_with_an_oauth_provider">How do I configure my API with an OAuth Provider?</a></li>
   <li><a href="#whats_the_difference_between_an_oauth_provider_and_a_3rd_party_provider">What's the difference between an OAuth Provider and a Third-Party Provider?</a></li>
   <li><a href="#what_grant_types_does_oauth_support">What grant types does OAuth support?</a></li>
@@ -36,8 +35,10 @@ no-catalog: true
   <li><a href="#what_are_the_oauth_10a_endpoints">What are the OAuth 1.0a Endpoints?</a></li>
   <li><a href="#what_is_an_authorization_server_client_authentication_policy">What is an Authorization Server Client Authentication Policy?</a></li>
   <li><a href="#how_does_scope_mapping_work">How does Scope Mapping work?</a></li>
+  <li><a href="#how_does_proxy_api_send_oauth_headers">How does the proxy API send OAuth-related information to my API?</a></li>
 </ol>
 <div class = "divider1"></div>
+
 
 
 <a name="what_is_oauth"></a><h3>What is OAuth?</h3>
@@ -65,13 +66,7 @@ no-catalog: true
 
 
 <a name="what_oauth_versions_are_supported"></a><h3>What OAuth versions are supported?</h3>
-<p>The platform supports both the 1.0a and 2.0 versions of OAuth.</p>
-<p><a href="#top">Back to top</a></p>
-
-
-
-<a name="how_do_i_set_up_my_deployment_to_support_oauth"></a><h3>How do I set up my deployment to support OAuth?</h3>
-<p>If you are a Site or API Administrator you can set up OAuth Provider definitions in the <em>Site Administration &gt; Domains</em> section. You create a domain for each OAuth Provider scenario and these configurations are then available for selection using the <strong>API OAuth</strong> function in the APIs that are part of your platform deployment.</p>
+<p>The platform supports the 1.0a and 2.0 versions of OAuth.</p>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -133,7 +128,7 @@ no-catalog: true
 <ul>
   <li><em>OAuth Provider</em>&#8212;If you select a pre-defined OAuth Provider the configuration will be applied to the Proxy API only<em>.</em> Pre-defined providers are filtered to contain OAuth versions, grants, policies, and resource mapping information that relate to specific OAuth use cases. Tokens issued by this OAuth Provider could be validated by all agents from SOA Software.<br />
     <strong>Note</strong>: OAuth providers are set up by the Site Admin in Administration / Domains / OAuth Provider. If the OAuth provider you need is not on the drop-down list, contact your Site Admin.</li>
-  <li><em>3rd Party Provider</em>&#8212;Choose this option if the physical endpoint will be authorizing the OAuth requests. The app still needs to send the OAuth token as part of the request, but the platform passes the token through to the physical endpoint. This allows us to support the API in the Dev Console so that apps can test against it. Provide all the information needed  based on OAuth version and security configuration a specific API supports.</li>
+  <li><em>3rd Party Provider</em>&#8212;Choose this option if the physical endpoint will be authorizing the OAuth requests. The app still needs to send the OAuth token as part of the request, but the platform passes the token through to the physical endpoint. This allows us to support the API in the Dev Console so that apps can test against it. Provide all the information needed based on OAuth version and security configuration a specific API supports.</li>
 </ul>
 <p>Reference: <em>API &gt; API Details &gt; OAuth Details &gt; OAuth Provider</em></p>
 <p><a href="#top">Back to top</a></p>
@@ -146,7 +141,7 @@ no-catalog: true
 <p>OAuth defines the following grant types that reflect different authorization mechanisms:</p>
 <p><strong>2-Legged </strong></p>
 <p>The following grant types are used in the 2-Legged OAuth scenario.</p>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 98%;">
   <thead>
   <tr>
     <th width="20%">Grant Type</th>
@@ -166,7 +161,7 @@ no-catalog: true
 </table>
 <p><strong>3-Legged</strong></p>
 <p>The following grant types are used in the 3-Legged OAuth scenario.</p>
-<table cellspacing="0px" class="doctable" style="width: 90%;">
+<table cellspacing="0px" class="doctable" style="width: 98%;">
   <thead>
   <tr>
     <th width="20%">Grant Type</th>
@@ -380,6 +375,82 @@ no-catalog: true
     <img src="images/api oauth_email_resource.jpg" width="600" height="143" alt="" /></li>
   <li>After the scopes are properly configured, when a charge is made to the application, the grant scope will be invoked and the API will issue an email with information about the charge.</li>
 </ul>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_does_proxy_api_send_oauth_headers"></a><h3>How does the proxy API send OAuth-related information to my API?</h3>
+<!--<p>{{ATMO-10197}}</p>-->
+<p>When you set up your API on the platform, using the platform as a proxy, your API is the Target API and the platform is the Proxy API.</p>
+<p>When an app sends a request to the proxy API, if the API is using the platform as a proxy API and is using the OAuth policy, custom headers are added in the outbound request from the proxy API, which is the target API's inbound message. 
+  
+  These outbound request headers include key information such as:</p>
+<ul>
+  <li>Resource owner identity</li>
+  <li>Grant properties</li>
+  <li>Possibly, other information about the grant</li>
+</ul>
+<p>It's important for API developers to know about these properties so that they can implement the API to work with any authorization restrictions (grant properties) set up by the resource owner for the application under the grant. </p>
+<p>For example, the API developer could use the headers to validate that the proxy has authenticated the user, and to get the UserID of the consumer (end user) making the call.</p>
+<p>An example of what these custom headers might look like, in the inbound message to the target API, is shown below.</p>
+<pre>OAuth_ClientID: acmepayments-7zQLGrDd2163LSKqOOkJ2QAf
+OAuth_Scope: Wall
+OAuth_Properties: Prop1=Prop1Value
+OAuth_TokenType: MAC
+OAuth_version: 2.0
+OAuth_ResourceOwnerDomain: MyOpenIDProvider
+OAuth_ResourceOwnerUID: https://www.google.com/accounts/o8/id?id=AItOawkXDyU8_9K2CEYmXxhZshHC080Eq7FIHXY
+OAuth_Signature_Method: HMACSHA256
+</pre>
+<p>For details about the headers, what they mean, and valid values, see the table below.</p>
+<table cellspacing="0px" class="doctable" style="width: 98%;">
+  <thead>
+    <tr>
+      <th width="20%">Header</th>
+      <th width="80%">Description/Values</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="t2row">
+      <td>OAuth_ClientID</td>
+      <td>The OAuth client ID for the client sending the request.</td>
+    </tr>
+    <tr class="t1row">
+      <td>OAuth_Scope</td>
+      <td>One or more specific scopes assigned to the grant; these are scopes that the resource owner is granting access to. Scopes are defined by the resource server and approved by the resource owner. Separate multiple scopes by commas. Example: Wall,Calendar</td>
+    </tr>
+    <tr class="t2row">
+      <td>OAuth_Properties</td>
+      <td>Name/value pairs for OAuth grant properties that the end-user has selected. Multiple grant properties are separated by commas.</td>
+    </tr>
+    <tr class="t1row">
+      <td>OAuth_TokenType</td>
+      <td>The OAuth token type: MAC or Bearer.</td>
+    </tr>
+    <tr class="t2row">
+      <td>OAuth_version</td>
+      <td>The OAuth version being used: 1.0a or 2.0.</td>
+    </tr>
+    <tr class="t1row">
+      <td>OAuth_ResourceOwnerDomain</td>
+      <td>The domain that the OAuth resource owner belongs to. This domain is selected as the Resource Owner (End User) domain when configuring OAuth Provider in the platform.</td>
+    </tr>
+    <tr class="t2row">
+      <td>OAuth_ResourceOwnerUID</td>
+      <td>The resource owner's unique ID, given by the resource owner domain.</td>
+    </tr>
+    <tr class="t1row">
+      <td>OAuth_Signature_Method</td>
+      <td><p>The signature method used in the request message to signing the oauth token, indicating the strength of the security used in the request message. This applies only for OAuth 1.0a tokens and OAuth 2.0 MAC token. Example: HMACSHA256. We support the following OAuth signature methods:</p>
+        <ul class="apidoctable_ul">
+          <li>HmacSHA1/hmac-sha1/hmac-sha-1</li>
+          <li>HMACSHA256/hmac-sha-256/sha-256</li>
+          <li>SHA1withRSA/RSA-SHA1</li>
+          <li>SHA256withRSA/RSA-SHA256</li>
+        </ul></td>
+    </tr>
+  </tbody>
+</table>
 <p><a href="#top">Back to top</a></p>
 
 

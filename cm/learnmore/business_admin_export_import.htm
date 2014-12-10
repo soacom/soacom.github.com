@@ -42,6 +42,9 @@ no-catalog: true
     <ul>
       <li>Private Key + Certificate</li>
       <li>Resources / Documentation</li>
+      <li>API Contracts</li>
+      <li>Export API Administrators<!--ATMO-11669--><br />
+        <strong>Note</strong>: the relationship of the user as an API admin is exported, but the user is not exported. The user must exist in the target environment. If the user does not exist when the information is imported, the API is created without that admin. From there, either a) the user can sign up and be invited to be an admin, b) the user can sign up and the API data can be reimported, c) another individual can be designated as an API admin.</li>
     </ul>
   </li>
   <li>Policy:
@@ -56,6 +59,8 @@ no-catalog: true
   <li>Apps:
     <ul>
       <li>Certificate / Shared Secret</li>
+      <li>Export App Team Members<!--ATMO-11669--><br />
+        <strong>Note</strong>: the relationship of the user as an app team member is exported, but the user is not exported. The user must exist in the target environment. If the user does not exist when the information is imported, the app is created without that team member. From there, either a) the user can sign up and be invited to be an app team member, b) the user can sign up and the app data can be reimported, c) another individual can be designated as an app team member. </li>
     </ul>
   </li>
   <li>Site Configuration:
