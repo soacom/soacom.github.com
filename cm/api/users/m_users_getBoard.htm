@@ -19,7 +19,7 @@ no-catalog: true
 <p><!-- #BeginLibraryItem "/Library/desc_getBoard_users.lbi" -->
 Returns a list of Board items for the specified user.<!-- #EndLibraryItem --></p>
 
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_authorizeduser">Authorized User</a> only.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_authorizeduser">Authorized User</a> only.</p>
 
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -59,11 +59,12 @@ Returns a list of Board items for the specified user.<!-- #EndLibraryItem --></p
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest1"><strong>Request URL</strong> #1</p>
 <p>Returns only group member requests.</p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user13967.acmecorp/board?ItemType=GroupMemberReq</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user13967.acmepayments/board?ItemType=GroupMemberReq</pre>
 <p><strong>Request URL</strong> #2</p>
 <p id="id_samplerequest2">Returns only the Board item that matches the specified ItemID.</p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user13967.acmecorp/board?ItemID=group_member_req11039.acmecorp</pre><p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user13967.acmepayments/board?ItemID=group_member_req11039.acmepayments</pre><p><strong>Sample request headers</strong></p>
+<pre>Accept: application/json
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_&lt;tenant&gt;: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -83,7 +84,7 @@ Returns a list of Board items for the specified user.<!-- #EndLibraryItem --></p
   <tbody>
     <tr>
       <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
-      <td>text/xml or application/json</td>
+      <td><strong>text/xml</strong>, <!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -170,7 +171,7 @@ The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_b
       <td>boolean</td>
       <td>Optional</td>
       <td><!-- #BeginLibraryItem "/Library/o_apps_IncludeComments.lbi" -->
-Indicates whether comments should be included in the board information. Default: <strong>true</strong>. If set to <strong>false</strong>, comments are excluded.<!-- #EndLibraryItem --></td>
+Indicates whether comments should be included in the information returned. Default: <strong>true</strong>. If set to <strong>false</strong>, comments are excluded.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>NumberOfComments</td>
@@ -224,7 +225,7 @@ An optional parameter allowing users to sort results by a specific value; for ex
 <!-- InstanceBeginEditable name="Sample Response" -->
 <h3 id="sampleresponse">Sample Response</h3>
 <p id="id_sampleresponse">The sample response below shows Board items that match the parameters specified in Request URL #2. Only  the Board item that matches the specified ItemID is returned.</p>
-<p><strong>Sample response headers: JSON</strong></p>
+<p><strong>Sample response headers: application/json</strong></p>
 <pre>Status Code: 200 OK
 Content-Type: application/json
 Date: Tue, 21 May 2013 00:28:30 GMT</pre>
@@ -245,21 +246,21 @@ Date: Tue, 21 May 2013 00:28:30 GMT</pre>
         "domain" : "uddi:soa.com:archivable"
       } ],
       "guid" : {
-        "value" : "group_member_req11039.acmecorp"
+        "value" : "group_member_req11039.acmepayments"
       },
       "pubDate" : "2012-05-25T04:07:56.000Z",
       "AuthoringUser" : {
-        "ID" : "user10998.acmecorp",
+        "ID" : "user10998.acmepayments",
         "Name" : "melgm",
         "Image" : {
-          "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user10998.acmecorp/avatar",
+          "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user10998.acmepayments/avatar",
           "Title" : "melgm",
-          "Link" : "#/users/user10998.acmecorp/details"
+          "Link" : "#/users/user10998.acmepayments/details"
         }
       },
       "Image" : {
-        "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user10998.acmecorp/avatar",
-        "Link" : "#/user/user10998.acmecorp/details"
+        "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user10998.acmepayments/avatar",
+        "Link" : "#/user/user10998.acmepayments/details"
       },
       "CreatedDate" : "2012-05-25T04:07:56.000Z",
       "Marks" : {
@@ -269,20 +270,20 @@ Date: Tue, 21 May 2013 00:28:30 GMT</pre>
       "CommentsPreview" : {
         "Count" : 1,
         "Comment" : [ {
-          "CommentID" : "comment11040.acmecorp",
-          "CommentSubjectID" : "group_member_req11039.acmecorp",
+          "CommentID" : "comment11040.acmepayments",
+          "CommentSubjectID" : "group_member_req11039.acmepayments",
           "Content" : "melgm cancelled the membership request",
           "Created" : "2012-05-25T04:07:56Z",
           "Marks" : 0,
           "IsMarked" : false,
-          "UserID" : "user10998.acmecorp",
+          "UserID" : "user10998.acmepayments",
           "UserName" : "melgm",
-          "AvatarURL" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user10998.acmecorp/avatar"
+          "AvatarURL" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user10998.acmepayments/avatar"
         } ]
       },
       "EntityReference" : {
         "Title" : "melgm",
-        "Guid" : "user10998.acmecorp",
+        "Guid" : "user10998.acmepayments",
         "Category" : [ {
           "value" : "user",
           "domain" : "uddi:soa.com:resourcetype"
@@ -298,7 +299,7 @@ Date: Tue, 21 May 2013 00:28:30 GMT</pre>
 Content-Type: text/xml
 Date: Tue, 21 May 2013 01:05:38 GMT</pre>
 <p><a id="rss_userboard_xml"></a><strong>Sample response body: XML</strong></p>
-<pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+<pre>&lt;?xml version="1.0" encoding=&quot;UTF-8&quot;?&gt;
 &lt;rss xmlns:ns2="http://soa.com/xsd/business/1.0" xmlns:ns3="http://soa.com/xsd/user/1.0" 
 xmlns:ns4="http://soa.com/xsd/rss/1.0" xmlns:ns5="http://soa.com/xsd/comment/1.0" 
 xmlns:ns6="http://a9.com/-/spec/opensearch/1.1/" xmlns:ns7="http://soa.com/xsd/resource/1.0" 
@@ -313,7 +314,7 @@ xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
       &lt;description&gt;Membership is cancelled&lt;/description&gt;
       &lt;category domain="uddi:soa.com:resourcetype"&gt;GROUP_MEMBER_REQ&lt;/category&gt;
       &lt;category domain="uddi:soa.com:archivable"&gt;true&lt;/category&gt;
-      &lt;guid&gt;group_member_req11039.acmecorp&lt;/guid&gt;
+      &lt;guid&gt;group_member_req11039.acmepayments&lt;/guid&gt;
       &lt;pubDate&gt;2012-05-25T04:07:56.000Z&lt;/pubDate&gt;
       &lt;ns4:CreatedDate&gt;2012-05-25T04:07:56.000Z&lt;/ns4:CreatedDate&gt;
       &lt;ns4:Marks&gt;
@@ -323,34 +324,34 @@ xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
       &lt;ns5:CommentsPreview&gt;
         &lt;ns5:Count&gt;1&lt;/ns5:Count&gt;
         &lt;ns5:Comment&gt;
-          &lt;ns5:CommentID&gt;comment11040.acmecorp&lt;/ns5:CommentID&gt;
-          &lt;ns5:CommentSubjectID&gt;group_member_req11039.acmecorp&lt;/ns5:CommentSubjectID&gt;
+          &lt;ns5:CommentID&gt;comment11040.acmepayments&lt;/ns5:CommentID&gt;
+          &lt;ns5:CommentSubjectID&gt;group_member_req11039.acmepayments&lt;/ns5:CommentSubjectID&gt;
           &lt;ns5:Content&gt;melgm cancelled the membership request&lt;/ns5:Content&gt;
           &lt;ns5:Created&gt;2012-05-25T04:07:56Z&lt;/ns5:Created&gt;
           &lt;ns5:Marks&gt;0&lt;/ns5:Marks&gt;
           &lt;ns5:IsMarked&gt;false&lt;/ns5:IsMarked&gt;
-          &lt;ns3:UserID&gt;user10998.acmecorp&lt;/ns3:UserID&gt;
+          &lt;ns3:UserID&gt;user10998.acmepayments&lt;/ns3:UserID&gt;
           &lt;ns3:UserName&gt;melgm&lt;/ns3:UserName&gt;
-          &lt;ns3:AvatarURL&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user10998.acmecorp/avatar&lt;/ns3:AvatarURL&gt;
+          &lt;ns3:AvatarURL&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user10998.acmepayments/avatar&lt;/ns3:AvatarURL&gt;
         &lt;/ns5:Comment&gt;
       &lt;/ns5:CommentsPreview&gt;
       &lt;ns4:AuthoringUser&gt;
-        &lt;ID&gt;user10998.acmecorp&lt;/ID&gt;
+        &lt;ID&gt;user10998.acmepayments&lt;/ID&gt;
         &lt;Name&gt;melgm&lt;/Name&gt;
         &lt;ns4:Image&gt;
-          &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user10998.acmecorp/avatar&lt;/Url&gt;
+          &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user10998.acmepayments/avatar&lt;/Url&gt;
           &lt;Title&gt;melgm&lt;/Title&gt;
-          &lt;Link&gt;#/users/user10998.acmecorp/details&lt;/Link&gt;
+          &lt;Link&gt;#/users/user10998.acmepayments/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;
       &lt;/ns4:AuthoringUser&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;melgm&lt;/Title&gt;
-        &lt;Guid&gt;user10998.acmecorp&lt;/Guid&gt;
+        &lt;Guid&gt;user10998.acmepayments&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;user&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user10998.acmecorp/avatar&lt;/Url&gt;
-        &lt;Link&gt;#/user/user10998.acmecorp/details&lt;/Link&gt;
+        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user10998.acmepayments/avatar&lt;/Url&gt;
+        &lt;Link&gt;#/user/user10998.acmepayments/details&lt;/Link&gt;
       &lt;/ns4:Image&gt;
     &lt;/item&gt;
   &lt;/channel&gt;
@@ -373,7 +374,7 @@ xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
   <tbody>
     <tr>
       <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
-      <td>text/xml or application/json</td>
+      <td><strong>text/xml</strong>, <!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -438,7 +439,8 @@ xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
     </tr>
     <tr>
       <td>CommentsPreview</td>
-      <td>Information about comments on the Board item, including a numeric count and information about the specific comments, if applicable.</td>
+      <td><!-- #BeginLibraryItem "/Library/o_comments_CommentsPreview.lbi" -->
+Information about comments on a Board item such as a ticket or discussion, including a numeric count and the two most recent comments.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a href="../Ref_RSSChannelsOnThePlatform.htm#rss_entityreferences">EntityReference</a></td>
@@ -466,7 +468,8 @@ xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
     </tr>
     <tr>
       <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
-      <td>Unauthorized. For example, you would get this response if you hadn't completed login before running the operation, or if you had the wrong UserID.</td>
+      <td><p><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" --> Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></p>
+        <p>You would also get this response if you hadn't completed login before running the operation, or if you had the wrong UserID.</p></td>
     </tr>
   </thead>
   <tbody>

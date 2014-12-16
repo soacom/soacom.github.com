@@ -21,7 +21,7 @@ no-catalog: true
 <p>If you don't have the <a href="../Ref_IDsOnThePlatform.htm#id_legaldocumentid">LegalDocumentID</a>, you could run the <span class="apidoc_code"><a href="m_apis_getLegals.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/legals</a></span> operation which includes this information in the response.</p>
 <p class="apidoc_note"><strong>Note</strong>: Once a legal agreement is active it's best to keep it unless you're sure you don't need the information on user acceptance of the agreement, or already have the data. Once a legal agreement is active, and apps are using your API, it's safer to leave the agreement in place even if it's currently inactive and/or has been superseded by later versions. If you think users have already accepted the agreement but you need to go ahead with deleting it, call SOA Software Technical Support for a script to retrieve the user acceptance information from the database.</p>
 <p>For more information about managing legal agreements for your API, see <a href="../Ref_ManagingLegalAgreementsOnThePlatform.htm">Managing Legal Agreements on the Platform</a>.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a></p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -58,11 +58,12 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a specific legal document being deleted.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/23b8637d-b75e-4bc6-86ca-16161fbfe047.acmecorp/legals/703a5c5b-c5d0-41fe-b3c8-4f1ee6da49da.acmecorp</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/23b8637d-b75e-4bc6-86ca-16161fbfe047.acmepayments/legals/703a5c5b-c5d0-41fe-b3c8-4f1ee6da49da.acmepayments</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>DELETE&nbsp;/content/api/apis/versions/23b8637d-b75e-4bc6-86ca-16161fbfe047.acmecorp/legals/703a5c5b-c5d0-41fe-b3c8-4f1ee6da49da.acmecorp HTTP/1.1
+<pre>DELETE&nbsp;/content/api/apis/versions/23b8637d-b75e-4bc6-86ca-16161fbfe047.acmepayments/legals/703a5c5b-c5d0-41fe-b3c8-4f1ee6da49da.acmepayments HTTP/1.1
 Host: &lt;hostname&gt;
-Accept: */*</pre>
+Accept: */*
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_&lt;tenant&gt;: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>None.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -141,7 +142,7 @@ Accept: */*</pre>
 <pre>HTTP/1.1 200 OK
 Date: Mon, 28 Apr 2014 15:41:03 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>703a5c5b-c5d0-41fe-b3c8-4f1ee6da49da.acmecorp</pre>
+<pre>703a5c5b-c5d0-41fe-b3c8-4f1ee6da49da.acmepayments</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -197,6 +198,11 @@ Date: Mon, 28 Apr 2014 15:41:03 GMT</pre>
     <tr bgcolor="#DDDDDD">
       <th width="20%">Item</th>
       <th width="80%">Value</th>
+    </tr>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->
+Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
     </tr>
   </thead>
   <tbody>

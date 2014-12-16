@@ -65,45 +65,51 @@ no-catalog: true
     <td valign="top"><strong>APIs</strong></td>
   </tr>
   <tr>
-    <td><a href="Ref_DeploymentZonesOnThePlatform.htm">Deployment Zones on the Platform</a></td>
+    <td><a href="Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a></td>
     <td valign="top"><a href="Ref_FileUploadWithAjax.htm">File Upload with Ajax</a></td>
     <td valign="top"><a href="Ref_API_DefaultProfile.htm">The API Default Profile</a></td>
   </tr>
   <tr>
-    <td><a href="Ref_DownloadableFilesInResponseMessages.htm">Downloadable Files in Response Messages</a></td>
+    <td><a href="Ref_DeploymentZonesOnThePlatform.htm">Deployment Zones on the Platform</a></td>
     <td valign="top"><a href="Ref_ManagingAvatarsOnThePlatform.htm">Managing Avatars  on the Platform</a></td>
     <td valign="top"><a href="Ref_ManagingAPIAdministrators.htm">Managing API Administrators</a></td>
   </tr>
   <tr>
-    <td><a href="Ref_IDsOnThePlatform.htm">IDs on the Platform</a></td>
+    <td><a href="Ref_DownloadableFilesInResponseMessages.htm">Downloadable Files in Response Messages</a></td>
     <td valign="top"><a href="Ref_RSSChannelsOnThePlatform.htm">RSS Channels in the Platform</a></td>
     <td valign="top"><strong>Apps</strong></td>
   </tr>
   <tr>
-    <td><a href="Ref_MetricsOnThePlatform.htm">Metrics on the Platform</a></td>
+    <td><a href="Ref_IDsOnThePlatform.htm">IDs on the Platform</a></td>
     <td valign="top"><a href="Ref_UsingSearchOnThePlatform.htm">Using Search on the Platform</a></td>
     <td valign="top"><a href="Ref_ManagingAppVersions.htm">Managing App Versions</a></td>
   </tr>
   <tr>
-    <td><a href="Ref_PasswordResetProcess.htm">The Password Reset Process</a></td>
+    <td><a href="Ref_MetricsOnThePlatform.htm">Metrics on the Platform</a></td>
     <td valign="top"><a href="Ref_ManagingAPIDocumentationContent.htm">Managing API Documentation Content</a></td>
     <td valign="top"><a href="Ref_Ex_AddingAnApp.htm">Example: Adding an App</a></td>
   </tr>
   <tr>
-    <td><a href="Ref_WorkingWithTimeZonesAndTimeIntervals.htm">Working with Time Zones and Time Intervals</a></td>
+    <td><a href="Ref_PasswordResetProcess.htm">The Password Reset Process</a></td>
     <td valign="top"><a href="Ref_ManagingDomainsOnThePlatform.htm">Managing Domains  on the Platform</a></td>
     <td valign="top"><a href="Ref_Ex_AddingAnAppVersion.htm">Example: Adding an App Version</a><a href="Ref_ManagingAPIAdministrators.htm"></a></td>
   </tr>
   <tr>
-    <td><a href="Ref_AuthorizationRolesOnThePlatform.htm">Authorization Roles on the Platform</a></td>
+    <td><a href="Ref_WorkingWithTimeZonesAndTimeIntervals.htm">Working with Time Zones and Time Intervals</a></td>
     <td valign="top"><a href="Ref_ManagingGroupsOnThePlatform.htm">Managing Groups  on the Platform</a></td>
     <td valign="top"><a href="Ref_ManagingAPIAdministrators.htm">Managing API Administrators</a></td>
+  </tr>
+  <tr>
+    <td><a href="Ref_AuthorizationRolesOnThePlatform.htm">Authorization Roles on the Platform</a></td>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">&nbsp;</td>
   </tr>
   <tr>
     <td><a href="Ref_ExecutingWorkflowActions.htm">Executing Workflow Actions</a></td>
     <td valign="top">&nbsp;</td>
     <td valign="top">&nbsp;</td>
   </tr>
+</tbody>
 </table>
 <a name="howto_list"></a><p>The following &quot;How-to&quot; getting started topics are also available:</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
@@ -137,6 +143,13 @@ no-catalog: true
   <tr>
     <td valign="top"><a href="Ref_Ex_AddingAnAPILegalAgreement.htm">Example: Adding an API Legal Agreement</a></td>
   </tr>
+  <tr>
+    <td valign="top"><strong>Users</strong></td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="Ref_Ex_ResettingAPassword.htm">Example: Resetting a Password</a></td>
+  </tr>
+</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -149,14 +162,16 @@ no-catalog: true
 <p>The basic URL, which is the same for all&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;services and methods, can be broken down as follows:</p>
 <ul>
   <li>Scheme (https)</li>
-  <li>Host (&lt;hostname&gt;)</li>
+  <li>Host (api.atmos.phere)</li>
   <li>Version (1)</li>
   <li>Specific service/operation</li>
 </ul>
 <p>There might also be one or more URL parameters, or an additional part to the URL. For example, the following includes two URL parameters and an extended URL path: </p>
 <pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/{AppID}/members/{UserID}</pre>
 <p>Here is an example of the above: </p>
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app10017.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem -->/members/user10021.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmecorp<!-- #EndLibraryItem --></pre>
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app10017.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->
+acmepayments<!-- #EndLibraryItem -->/members/user10021.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->
+acmepayments<!-- #EndLibraryItem --></pre>
 <p>In some cases there might be additional query parameters. These are appended after a question mark at the end of the URL. For example, the following operation, GET&nbsp;search, includes a query parameter for the search expression: </p>
 <pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->search?{q}={SearchExpression}</pre>
 <p>Here is an example of the above: </p>
@@ -168,6 +183,7 @@ no-catalog: true
 <p>Many methods  offer a choice of JSON or XML formats for the data in the response message. Other methods send or accept other media types such as plain text or image files.</p>
 <p>The Content-Type header specifies which of the accepted media types your app is sending, and the Accept header specifies which of the accepted media type choices you want for the response format.</p>
 <p>Depending on your app and implementation, JSON or XML might be preferable. For example, if your app is browser-based, you might prefer JSON because it can easily be converted to JavaScript.</p>
+<p>In some cases, operations might also allow, or might only allow, version-specific headers; for example,  <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem -->. In these cases, the request or response messages contain standard JSON or XML. The version-specific headers allow users to take advantage of version-specific feature enhancements associated with the API development.</p>
 <p>Valid media types for each operation are listed in the documentation for the operation.</p>
 <p><a href="Ref_API_Reference.htm#ref_mediatypes">List of valid media types in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -241,13 +257,13 @@ An extension header used for client identification and tracking. In the&nbsp;<!-
       <td><a id="host_request"></a>Host</td>
       <td>Request Only</td>
       <td><!-- #BeginLibraryItem "/Library/hdrreq_host.lbi" -->
-The hostname and port number of the machine sending the message. Example: <strong>api.acmecorp.com.</strong><!-- #EndLibraryItem --></td>
+The hostname and port number of the machine sending the message. Example: <strong>api.acmepayments.com.</strong><!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td>Referer</td>
       <td>Request Only</td>
       <td><!-- #BeginLibraryItem "/Library/hdrreq_referer.lbi" -->
-The URL from which the request originated. Example: <strong>https://api.acmecorp.com</strong>.<!-- #EndLibraryItem --></td>
+The URL from which the request originated. Example: <strong>https://api.acmepayments.com</strong>.<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td>User-Agent</td>
@@ -350,7 +366,7 @@ If encoding was used to transfer the message safely, this value indicates the en
 
 
 <h3><a name="ref_cookies"></a>Cookies in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;</h3>
-<p>API calls from the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;use the custom cookie shown below. It is quite long&#8212;over 400 characters.</p>
+<p>API calls from the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;use the custom cookies shown below. The AtmoAuthToken cookie is quite long&#8212;over 400 characters.</p>
 <p class="apidoc_note"><strong>Note</strong>: The only requirement from the developer using the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API is that the app supports cookies. The&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;takes care of the rest. If your development environment supports automatically capturing and sending the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;cookie you don't need to do anything. If it doesn't, you'll have to make sure the cookie that the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;returns upon login is sent with every request and that the token is renewed when information stored in the token changes, such as when a user adds an app.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
 <thead>
@@ -361,18 +377,25 @@ If encoding was used to transfer the message safely, this value indicates the en
 </thead>
 <tbody>
     <tr>
-      <td>AtmoAuthToken_&lt;<strong>tenant</strong>&gt;</td>
+      <td>AtmoAuthToken_&lt;fedmemberid&gt;</td>
       <td><p>A tenant-specific cookie. <!--In a federation scenario, one cookie is set for each federation member, so there would generally be at least two.-->This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;authorization token. This cookie indicates the level of access allowed. It is valid only for 30 minutes and must be renewed at that time. It also includes other information, such as the APIs, apps, and groups the user is a member of. When any of this information changes, the token must be renewed.</p>
         <p><strong>Note</strong>: When your app invokes the <span class="apidoc_code"><a href="login/m_login_login.htm">POST&nbsp;/api/login</a></span> method, the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;sets the cookie; you don't need to do anything. Your app must support cookies, so that the cookies that are set by the API responses can be sent back as part of the subsequent requests.</p></td>
     </tr>
+    <tr>
+      <td>Csrf-Token_&lt;fedmemberid&gt;</td>
+      <td>An additional cookie used when the CSRF prevention feature is in effect. The value is then used in the <a href="Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> custom header in request messages. For more information, see <a href="Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>.</td>
+    </tr>
 </tbody>
 </table>
-<p>Below is an example of an actual cookie request header sent by the <span class="apidoc_code"><a href="legals/m_legals_getAgreementDocument.htm">GET&nbsp;/api/legals/{LegalDocumentID}</a></span> operation. Line breaks have been added for display reasons.</p>
-<pre>Cookie:  AtmoAuthToken_acmecorp=TokenID%3D94299147-d006-11e3-a97a-e4f95250745e%2Cclaimed_id%3Durn%3Aacmecorp%3Auser
+<p>Below is an example of an actual AtmoAuthToken cookie request header sent by the <span class="apidoc_code"><a href="legals/m_legals_getAgreementDocument.htm">GET&nbsp;/api/legals/{LegalDocumentID}</a></span> operation. Line breaks have been added for display reasons.</p>
+<pre>Cookie:  AtmoAuthToken_acmepayments=TokenID%3D94299147-d006-11e3-a97a-e4f95250745e%2Cclaimed_id%3Durn%3Aacmepayments%3Auser
 %3Ademo%3Auser29005%2CissueTime%3D1398821242584%2CexpirationTime%3D1398823042538%2CAttributesIncluded%3Dfalse
 %2CUserFDN%3Duser29005%252Edemo%2CUserName%3Ddemo-MaryMead%2Csig%3DHXlox2IqdCf1bI060ZoGQESQjhQJz5x_uilEZGifnL
 4gUr_cFaepQoebfmJJCmrUVqoF0yFkHnuhAMxnVzHUnnbIbfvwqOyZ2gClm4n8IyHza2m_PxfMAOpM8UWQ0jfwReP7mbU1E2OyH69uRCgg5Ss
 Lw9RQLzyxojBGslxXDvo</pre>
+<p>Below is an example of an actual CSRF token request header sent by the <span class="apidoc_code"><a href="contracts/m_contracts_updateContract.htm">PUT&nbsp;/api/contracts/{ContractID}</a></span> (update contract) operation. Line breaks have been added for display reasons.</p>
+<pre>
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_&lt;tenant&gt;: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -573,7 +596,8 @@ Lw9RQLzyxojBGslxXDvo</pre>
   <tr>
     <td><a name="http401"></a>401</td>
     <td>Unauthorized</td>
-    <td>Authentication (login) is required for this operation. For example, perhaps a required cookie was not included.</td>
+    <td><p>Authentication (login) is required for this operation. For example, perhaps a required cookie was not included.</p>
+      <p>You would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> header in the request, or if it was invalid or expired.</p></td>
   </tr>
   <tr>
     <td><a name="http403"></a>403</td>
@@ -632,10 +656,10 @@ Lw9RQLzyxojBGslxXDvo</pre>
 <h3><a name="ref_derivingstatevalue"></a>Determining the State Value of an App</h3>
 <p>To determine the state value of an app, check it against the following rules:</p>
 <ol>
-<li>If AppVersion has zero contracts, it is in <strong>Setup</strong> state.</li>
-<li>If AppVersion is in Sandbox state and one or more API contracts for the production environment are not yet fully approved, it is in <strong>Sandbox</strong> state.</li>
-<li>If AppVersion has made contract requests for the production environment for all APIs that it has contracts with in the sandbox environment, and if all production contracts are in approved state,  AppVersion is in <strong>Approved</strong> state. </li>
-<li>If AppVersion is in the Production environment, AppVersion is in <strong>Live</strong> state.</li>
+<li>If the AppVersion has zero contracts, it is in <strong>Setup</strong> state.</li>
+<li>If the AppVersion is in Sandbox state and one or more API contracts for the production environment are not yet fully approved, it is in <strong>Sandbox</strong> state.</li>
+<li>If the AppVersion has made contract requests for the production environment for all APIs that it has contracts with in the sandbox environment, and if all production contracts are in approved state,  the AppVersion is in <strong>Approved</strong> state. </li>
+<li>If the AppVersion is in the Production environment, the AppVersion is in <strong>Live</strong> state.</li>
 </ol>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 

@@ -17,7 +17,8 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getRequestState.lbi" -->Returns the <a href="../Ref_Values.htm#values_groupmembershipstates">state</a> value for the specified group membership request.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Anyone can run this operation; login is not required.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><!-- #BeginLibraryItem "/Library/roles_none.lbi" -->
+Anyone can use this operation; login is not required. <!-- #EndLibraryItem --></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -56,9 +57,10 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for the status of the specified group membership request.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->groups/requests/group_member_req24560.acmecorp</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->groups/requests/group_member_req24560.acmepayments</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: text/plain</pre>
+<pre>Accept: text/plain
+</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>

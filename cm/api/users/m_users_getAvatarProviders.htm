@@ -18,7 +18,7 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getAvatarProviders.lbi" -->Returns information about avatar providers for the specified user.<!-- #EndLibraryItem --></p>
 
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_authorizeduser">Authorized User</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_authorizeduser">Authorized User</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
 
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -58,9 +58,10 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for avatar providers for the specified user.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmecorp/avatarproviders</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmepayments/avatarproviders</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json</pre>
+<pre>Accept: application/json
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_&lt;tenant&gt;: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -80,7 +81,7 @@ no-catalog: true
   <tbody>
     <tr>
       <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -125,11 +126,11 @@ The unique ID for a specific user.<!-- #EndLibraryItem --></td>
 <!-- InstanceBeginEditable name="Sample Response" -->
 <h3 id="sampleresponse">Sample Response</h3>
 <p id="id_sampleresponse">The sample response below shows the avatar providers.</p>
-<p><strong>Sample response headers: JSON</strong></p>
+<p><strong>Sample response headers: application/json</strong></p>
 <pre>Status Code: 200 OK
 Content-Type: application/json
 Date: Tue, 21 May 2013 15:50:17 GMT</pre>
-<p><strong>Sample response body: JSON</strong></p>
+<p><strong>Sample response body: application/json</strong></p>
 <pre>{
   "AvatarProvider" : [ {
     "Type" : "com.soa.imageprovider.type.gravatar",
@@ -156,7 +157,7 @@ Date: Tue, 21 May 2013 15:50:17 GMT</pre>
   <tbody>
     <tr>
       <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -200,7 +201,8 @@ Contains information about one or more avatar providers.<!-- #EndLibraryItem -->
   <tbody>
     <tr>
       <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
-      <td>Unauthorized. For example, you would get this response if you hadn't completed login before running the operation, or if you had the wrong UserID.</td>
+      <td><p><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" --> Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></p>
+        <p>You would also get this response if you hadn't completed login before running the operation, or if you had the wrong UserID.</p></td>
     </tr>
     <tr>
       <td><a href="../Ref_API_Reference.htm#http500">500</a></td>

@@ -17,7 +17,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_saveAPIOAuthDetails.lbi" -->Adds or modifies the OAuth details for the specified API version.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must have permission to modify the API; an <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Must have permission to modify the API; an <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -56,15 +56,16 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below saves OAuth settings for the production endpoint.</p>
 <p><strong>Sample request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/b8bbed55-141c-4091-adac-b990a289012e.acmecorp/oauthdetails</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/b8bbed55-141c-4091-adac-b990a289012e.acmepayments/oauthdetails</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT /api/apis/versions/b8bbed55-141c-4091-adac-b990a289012e.acmecorp/oauthdetails HTTP/1.1
+<pre>PUT /api/apis/versions/b8bbed55-141c-4091-adac-b990a289012e.acmepayments/oauthdetails HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: application/json, text/javascript, */*; q=0.01
-Content-Type: application/json; charset=UTF-8</pre>
+Content-Type: application/json; charset=UTF-8
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_&lt;tenant&gt;: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <pre>{
-  "APIVersionID":"b8bbed55-141c-4091-adac-b990a289012e.acmecorp",
+  "APIVersionID":"b8bbed55-141c-4091-adac-b990a289012e.acmepayments",
   "ProxyAPI":{
     "ProductionEndpoint":{
       "OAuthProvider":"com.soa.oauth.provider.third-party",
@@ -239,6 +240,11 @@ Date: Â Tue, 01 Jul 2014 13:13:44 GMT</pre>
     <tr bgcolor="#DDDDDD">
       <th width="20%">Item</th>
       <th width="80%">Value</th>
+    </tr>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->
+Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
     </tr>
   </thead>
   <tbody>

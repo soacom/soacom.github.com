@@ -153,8 +153,9 @@ Returns a list of Board items for the specified app.<!-- #EndLibraryItem --></td
   <tr>
     <td>get contracts</td>
     <td><a href="apps/m_apps_getContracts.htm">GET&nbsp;/api/apps/versions/{AppVersionID}/contracts</a></td>
-    <td><!-- #BeginLibraryItem "/Library/desc_getContracts.lbi" -->
-Retrieves information about API contracts for the specified app version.<!-- #EndLibraryItem --></td>
+    <td><p><!-- #BeginLibraryItem "/Library/desc_getContracts.lbi" -->
+      Returns information about API contracts for the specified app version, as an RSS feed.<!-- #EndLibraryItem --></p>
+      <p><strong>Note</strong>: <a href="apps/m_apps_listContracts.htm">GET&nbsp;/api/apps/versions/{AppVersionID}/contracts</a> (list contracts, with custom Accept header) returns the same information as a JSON object. We recommend using that operation rather than this one.</p></td>
   </tr>
   <tr>
     <td>get default avatar</td>
@@ -240,6 +241,12 @@ Returns a list of Board items for the specified app version.<!-- #EndLibraryItem
     <td>get versions</td>
     <td><a href="apps/m_apps_getVersions.htm">GET&nbsp;/api/apps/{AppID}/versions</a></td>
     <td><!-- #BeginLibraryItem "/Library/desc_getVersions.lbi" -->Returns a list of versions for the specified app.<!-- #EndLibraryItem --></td>
+  </tr>
+  <tr>
+    <td>list contracts</td>
+    <td><a href="apps/m_apps_listContracts.htm">GET&nbsp;/api/apps/versions/{AppVersionID}/contracts</a></td>
+    <td><!-- #BeginLibraryItem "/Library/desc_listContracts.lbi" -->
+      Returns information about API contracts for the specified app version, in the form of a JSON object.<!-- #EndLibraryItem --></td>
   </tr>
   <tr>
     <td>list versions</td>

@@ -18,7 +18,7 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getFollowing.lbi" -->Returns the unique ID (FollowingID) for the relationship between the specified user and the specified resource.<!-- #EndLibraryItem --></p>
 <p>The FollowingID is used in the Following service by the <span class="apidoc_code">unfollow</span> operation.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_authorizeduser">Authorized User</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_authorizeduser">Authorized User</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
 
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -58,9 +58,10 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for a specific FollowingID.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user10002.acmecorp/following/api14806.acmecorp</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user10002.acmepayments/following/api14806.acmepayments</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: text/plain</pre>
+<pre>Accept: text/plain
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_&lt;tenant&gt;: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -137,7 +138,7 @@ The unique ID for a specific user.<!-- #EndLibraryItem --></td>
 Content-Type: text/plain
 Date: Thu, 16 May 2013 20:31:14 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>follow15927.acmecorp</pre>
+<pre>follow15927.acmepayments</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -193,6 +194,10 @@ Date: Thu, 16 May 2013 20:31:14 GMT</pre>
     <tr bgcolor="#DDDDDD">
       <th width="20%">Item</th>
       <th width="80%">Value</th>
+    </tr>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" --> Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
     </tr>
   </thead>
   <tbody>

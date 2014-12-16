@@ -17,7 +17,8 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_addAPI.lbi" --> Adds a new API to the platform, and also adds the first API version.<!-- #EndLibraryItem -->This operation sends the new API info in JSON or XML format. The platform assigns the APIID and returns the full API info in the response.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:&nbsp;<!-- #BeginLibraryItem "/Library/roles_user.lbi" -->To complete this operation successfully, a user must be logged in.<!-- #EndLibraryItem -->&nbsp;The user who adds the API automatically becomes the first API Administrator.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: &nbsp;<!-- #BeginLibraryItem "/Library/roles_user.lbi" -->To complete this operation successfully, a user must be logged in.<!-- #EndLibraryItem -->&nbsp;The user who adds the API automatically becomes the first API Administrator.</p>
+<p id="id_notes_workflow"><strong>Workflow</strong>: There is no default workflow for new APIs. However, a custom workflow might be in place. There is only one initial action valid for Community Manager workflows relating to APIs, the  @Create initial action. For more information on workflow, see <a href="../Ref_ExecutingWorkflowActions.htm">Executing Workflow Actions</a>.</p>
 <p><!-- #BeginLibraryItem "/Library/_authtokenrenewal.lbi" --> <strong>Authorization token renewal</strong>: This operation changes information that is reflected in the authorization token; therefore, when invoking this operation, you  must also renew the token.<!-- #EndLibraryItem --></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -62,7 +63,8 @@ no-catalog: true
 <pre>POST&nbsp;/api/apis HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: application/json, text/javascript, */*; q=0.01
-Content-Type: application/json; charset=UTF-8</pre>
+Content-Type: application/json; charset=UTF-8
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_&lt;tenant&gt;: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body: JSON</strong></p>
 <pre>{
   "Name":"ACMEPayments",
@@ -76,15 +78,15 @@ Content-Type: application/json; charset=UTF-8</pre>
     "Endpoints":{
       "Endpoint":[
         {
-          "Uri":"http://acmepayments.acmecorp.soa.com/payment",
+          "Uri":"http://acmepayments.com/payment",
           "Category":"Production",
-          "CName":"acmepayments.acmecorp.soa.local",
+          "CName":"acmepayments.local",
           "DeploymentZoneRule":"1b16623b-1609-4664-9900-06f8441bdefault-http"
         },
         {
-          "Uri":"http://acmepayments.acmecorp.soa.com/s/payment",
+          "Uri":"http://acmepayments.com/s/payment",
           "Category":"Sandbox",
-          "CName":"acmepayments.acmecorp.soa.local",
+          "CName":"acmepayments.local",
           "DeploymentZoneRule":"1b16623b-1609-4664-9900-06f8441bdefault-http"
         }
       ]
@@ -116,15 +118,15 @@ Content-Type: application/json; charset=UTF-8</pre>
       ]
     },
     "Type":"shttp",
-    "ProductionEndpoint":"http://acmepayments.acmecorp.soa.com/payment",
-    "SandboxEndpoint":"http://acmepayments.acmecorp.soa.com/s/payment",
+    "ProductionEndpoint":"http://acmepayments.com/payment",
+    "SandboxEndpoint":"http://acmepayments.com/s/payment",
     "Tag":[
       "payments"
     ],
     "Policies":{
       "Policy":[
         {
-          "PolicyKey":"10001-ACMECorpApplicationSecurityPolicy",
+          "PolicyKey":"10001-AtmosphereApplicationSecurityPolicy",
           "PolicyType":"Operational Policy"
         },
         {
@@ -195,7 +197,7 @@ Content-Type: application/json; charset=UTF-8</pre>
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <p><strong>Sample request body: XML</strong></p>
-<pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+<pre>&lt;?xml version="1.0" encoding=&quot;UTF-8&quot;?&gt;
 &lt;API xmlns="http://soa.com/xsd/api/1.0" xmlns:ns2="http://soa.com/xsd/resource/1.0"&gt;
   &lt;Name&gt;ACME Payments API De Luxe&lt;/Name&gt;
   &lt;Description&gt;Payments API for ACME customers.&lt;/Description&gt;
@@ -208,7 +210,7 @@ Content-Type: application/json; charset=UTF-8</pre>
     &lt;Tag&gt;payments&lt;/Tag&gt;
     &lt;Tag&gt;ACME&lt;/Tag&gt;
     &lt;Tag&gt;efficient&lt;/Tag&gt;
-    &lt;SandboxEndpoint&gt;http://www.acmecorp.soa.com/&lt;/SandboxEndpoint&gt;
+    &lt;SandboxEndpoint&gt;http://www.acmepayments.soa.com/&lt;/SandboxEndpoint&gt;
     &lt;Operations&gt;
       &lt;Operation&gt;
         &lt;Name&gt;addPayment&lt;/Name&gt;
@@ -234,14 +236,14 @@ Content-Type: application/json; charset=UTF-8</pre>
     &lt;Endpoints&gt;
       &lt;Endpoint&gt;
         &lt;Category&gt;Sandbox&lt;/Category&gt;
-        &lt;Uri&gt;http://www.acmecorp.soa.com/&lt;/Uri&gt;
-        &lt;CName&gt;www.acmecorp.soa.com&lt;/CName&gt;
+        &lt;Uri&gt;http://www.acmepayments.soa.com/&lt;/Uri&gt;
+        &lt;CName&gt;www.acmepayments.soa.com&lt;/CName&gt;
         &lt;DeploymentZoneRule&gt;dzone-rule-2&lt;/DeploymentZoneRule&gt;
       &lt;/Endpoint&gt;
     &lt;/Endpoints&gt;
     &lt;Policies&gt;
       &lt;Policy&gt;
-        &lt;PolicyKey&gt;10001-ACMECorpApplicationSecurityPolicy&lt;/PolicyKey&gt;
+        &lt;PolicyKey&gt;10001-AtmosphereApplicationSecurityPolicy&lt;/PolicyKey&gt;
         &lt;PolicyType&gt;Operational Policy&lt;/PolicyType&gt;
       &lt;/Policy&gt;
       &lt;Policy&gt;
@@ -369,23 +371,23 @@ Date: Tue, 15 Jan 2013 16:02:42 GMT
 Content-Type: application/json
 Atmo-Renew-Token: renew</pre>
 
-<p><strong>Sample response body: JSON</strong></p>
+<p><strong>Sample response body: application/json</strong></p>
 <pre>{
-  "APIID" : "api10020.acmecorp",
+  "APIID" : "api10020.acmepayments",
   "Name" : "ACMEPayments",
   "Description" : "Payments API for ACME payment type.",
   "Visibility" : "Public",
   "Tag" : [ ],
   "APIVersion" : {
-    "APIVersionID" : "apiversion10022.acmecorp",
-    "APIID" : "api10020.acmecorp",
+    "APIVersionID" : "apiversion10022.acmepayments",
+    "APIID" : "api10020.acmepayments",
     "Name" : "1.0",
     "Type" : "shttp",
     "DefaultProfile" : "XML or JSON in/XML or JSON out",
     "Description" : "First release.",
     "Tag" : [ "payments" ],
-    "ProductionEndpoint" : "http://acmepayments.acmecorp.soa.com/payment",
-    "SandboxEndpoint" : "http://acmepayments.acmecorp.soa.com/s/payment",
+    "ProductionEndpoint" : "http://acmepayments.com/payment",
+    "SandboxEndpoint" : "http://acmepayments.com/s/payment",
     "Operations" : {
       "Operation" : [ {
         "Name" : "Default_Operation",
@@ -407,22 +409,22 @@ Atmo-Renew-Token: renew</pre>
     },
     "Endpoints" : {
       "Endpoint" : [ {
-        "CName" : "acmepayments.acmecorp.soa.local",
+        "CName" : "acmepayments.local",
         "Category" : "Production",
-        "Uri" : "http://acmepayments.acmecorp.soa.com/payment",
+        "Uri" : "http://acmepayments.com/payment",
         "DeploymentZoneRule" : "1b16623b-1609-4664-9900-06f8441bdefault-http",
         "ConnectionProperties" : [ ]
       }, {
-        "CName" : "acmepayments.acmecorp.soa.local",
+        "CName" : "acmepayments.local",
         "Category" : "Sandbox",
-        "Uri" : "http://acmepayments.acmecorp.soa.com/s/payment",
+        "Uri" : "http://acmepayments.com/s/payment",
         "DeploymentZoneRule" : "1b16623b-1609-4664-9900-06f8441bdefault-http",
         "ConnectionProperties" : [ ]
       } ]
     },
     "Policies" : {
       "Policy" : [ {
-        "PolicyKey" : "10001-ACMECorpApplicationSecurityPolicy",
+        "PolicyKey" : "10001-AtmosphereApplicationSecurityPolicy",
         "PolicyType" : "Operational Policy"
       }, {
         "PolicyKey" : "10001-BasicAuditing",
@@ -479,15 +481,15 @@ Atmo-Renew-Token: renew</pre>
   "PictureID" : 1001
 }</pre>
 <p><strong>Sample response body: XML</strong></p>
-<pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+<pre>&lt;?xml version="1.0" encoding=&quot;UTF-8&quot;?&gt;
 &lt;API xmlns="http://soa.com/xsd/api/1.0" xmlns:ns2="http://soa.com/xsd/resource/1.0"&gt;
-  &lt;APIID&gt;api10028.acmecorp&lt;/APIID&gt;
+  &lt;APIID&gt;api10028.acmepayments&lt;/APIID&gt;
   &lt;Name&gt;ACME Payments API De Luxe&lt;/Name&gt;
   &lt;Description&gt;Payments API for ACME customers.&lt;/Description&gt;
   &lt;Visibility&gt;Limited&lt;/Visibility&gt;
   &lt;APIVersion&gt;
-    &lt;APIVersionID&gt;apiversion10030.acmecorp&lt;/APIVersionID&gt;
-    &lt;APIID&gt;api10028.acmecorp&lt;/APIID&gt;
+    &lt;APIVersionID&gt;apiversion10030.acmepayments&lt;/APIVersionID&gt;
+    &lt;APIID&gt;api10028.acmepayments&lt;/APIID&gt;
     &lt;Name&gt;999&lt;/Name&gt;
     &lt;Description&gt;Initial release.&lt;/Description&gt;
     &lt;Type&gt;shttp&lt;/Type&gt;
@@ -495,7 +497,7 @@ Atmo-Renew-Token: renew</pre>
     &lt;Tag&gt;payments&lt;/Tag&gt;
     &lt;Tag&gt;ACME&lt;/Tag&gt;
     &lt;Tag&gt;efficient&lt;/Tag&gt;
-    &lt;SandboxEndpoint&gt;http://999.acmecorp.soa.local:9902/&lt;/SandboxEndpoint&gt;
+    &lt;SandboxEndpoint&gt;http://999.acmepayments.soa.local:9902/&lt;/SandboxEndpoint&gt;
     &lt;Operations&gt;
       &lt;Operation&gt;
         &lt;Name&gt;addPayment&lt;/Name&gt;
@@ -521,14 +523,14 @@ Atmo-Renew-Token: renew</pre>
     &lt;Endpoints&gt;
       &lt;Endpoint&gt;
         &lt;Category&gt;Sandbox&lt;/Category&gt;
-        &lt;Uri&gt;http://999.acmecorp.soa.local:9902/&lt;/Uri&gt;
-        &lt;CName&gt;999.acmecorp.soa.local&lt;/CName&gt;
+        &lt;Uri&gt;http://999.acmepayments.soa.local:9902/&lt;/Uri&gt;
+        &lt;CName&gt;999.acmepayments.soa.local&lt;/CName&gt;
         &lt;DeploymentZoneRule&gt;dzone-rule-2&lt;/DeploymentZoneRule&gt;
       &lt;/Endpoint&gt;
     &lt;/Endpoints&gt;
     &lt;Policies&gt;
       &lt;Policy&gt;
-        &lt;PolicyKey&gt;10001-ACMECorpApplicationSecurityPolicy&lt;/PolicyKey&gt;
+        &lt;PolicyKey&gt;10001-AtmosphereApplicationSecurityPolicy&lt;/PolicyKey&gt;
         &lt;PolicyType&gt;Operational Policy&lt;/PolicyType&gt;
       &lt;/Policy&gt;
       &lt;Policy&gt;
@@ -648,6 +650,11 @@ Atmo-Renew-Token: renew</pre>
       <td><a href="../Ref_API_Reference.htm#http400">400</a></td>
       <td>Bad request: Returned if the client sends invalid parameters or body content.
         For example, you might get this response if you send malformed XML in your request.</td>
+    </tr>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->
+Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a href="../Ref_API_Reference.htm#http405">405</a></td>

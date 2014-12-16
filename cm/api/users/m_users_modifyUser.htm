@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Modify User | Users Service | Enterprise API Platform API
-description: Modifies a user in the system. 
+description:  Modifies information about a platform user. 
 product: cm
 category: ref
 nav-title: Modify User 
@@ -16,9 +16,10 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_modifyUser.lbi" -->Modifies a user in the system. <!-- #EndLibraryItem --></p>
-
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_authorizeduser">Authorized User</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
+<p><!-- #BeginLibraryItem "/Library/desc_modifyUser.lbi" -->
+Modifies information about a platform user. <!-- #EndLibraryItem --></p>
+<p class="apidoc_note"><strong>Note</strong>: If the platform business security settings are set so that a user cannot modify his/her email address, the authorized user cannot update the email address in the user interface or by running this operation. In that scenario, only the Site Admin can modify the user's email address. Business security settings are controlled using the <span class="apidoc_code"><a href="../businesses/m_businesses_saveSecuritySettings.htm">PUT&nbsp;/api/businesses/{BusinessID}/securitysettings</a></span> operation.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_authorizeduser">Authorized User</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
 
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -58,27 +59,29 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request to update the information for the specified user.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmecorp</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepayments</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT&nbsp;/api/users/user12262.acmecorp HTTP/1.1
+<pre>PUT&nbsp;/api/users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepayments HTTP/1.1
 Host: &lt;hostname&gt;
-Accept: application/json, text/javascript, */*; q=0.01</pre>
+Accept: application/json, text/javascript, */*; q=0.01
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_&lt;tenant&gt;: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <pre>{
-  "UserID":"user12262.acmecorp",
-  "UserName":"JaneSaoirse",
-  "FirstName":"Jane",
-  "LastName":"Saoirse",
-  "AuthIdentifier":"urn:acme:user:open:user12262",
-  "Visibility":"0",
-  "Email":"jane.saoirse@acmecorp.com",
-  "Title":"",
-  "Industry":"",
-  "Favorites":"",
-  "AvatarProvider":"com.soa.imageprovider.type.default",
-  "HasPicture":false,
-  "LastLoginDate":"2013-05-15T18:08:11Z",
-  "ProfileName":"JaneSaoirse"
+  "UserID" : "522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepayments",
+  "UserName" : "JaneSaoirse",
+  "FirstName" : "Jane",
+  "LastName" : "Saoirse",
+  "AuthIdentifier" : "urn:acmepayments:user:acmepayments:522320b9-cb6b-495d-ae07-e4b3bfdb3f6a",
+  "Visibility" : "0",
+  "Email" : "jane.saoirse@acmepayments.com",
+  "Title" : "",
+  "Industry" : "",
+  "Favorites" : "",
+  "AvatarProvider" : "com.soa.imageprovider.type.default",
+  "HasPicture" : false,
+  "AvatarURL" : "&lt;hostname&gt;/api/users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepayments/avatar",
+  "LastLoginDate" : "2014-10-16T17:24:27Z",
+  "ProfileName" : "JaneSaoirse"
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -101,7 +104,7 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
     </tr>
     <tr>
       <td><a href="../Ref_API_Reference.htm#contenttype_request">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -135,8 +138,9 @@ The unique ID for a specific user.<!-- #EndLibraryItem --></td>
       <td>Body</td>
       <td><a href="../obj/o_users_User.htm">User</a></td>
       <td>Required</td>
-      <td><!-- #BeginLibraryItem "/Library/o_users_User.lbi" -->
-Contains information about an&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;user.<!-- #EndLibraryItem -->The sent object includes the information that's being modified.</td>
+      <td><p><!-- #BeginLibraryItem "/Library/o_users_User.lbi" -->
+        Contains information about an&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;user.<!-- #EndLibraryItem --></p>
+        <p>The sent object includes the information that's being modified.</p></td>
     </tr>
   </tbody>
 </table>
@@ -157,9 +161,9 @@ Contains information about an&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformNam
 <p><strong>Sample response headers</strong></p>
 <pre>HTTP/1.1 200 OK
 Content-Type: text/plain
-Date: Wed, 15 May 2013 18:10:05 GMT</pre>
+Date: Thu, 16 Oct 2014 12:32:50 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>user12262.acmecorp</pre>
+<pre>522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepayments</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <!-- InstanceEndEditable -->
@@ -217,8 +221,17 @@ Date: Wed, 15 May 2013 18:10:05 GMT</pre>
       <th width="20%">Item</th>
       <th width="80%">Value</th>
     </tr>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->
+Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
+    </tr>
   </thead>
   <tbody>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#http405">405</a></td>
+      <td><!-- #BeginLibraryItem "/Library/http_405.lbi" --> Method Not Allowed. For example, you might get this if you specified an invalid Accept header or omitted a required Content-Type header.<!-- #EndLibraryItem --></td>
+    </tr>
     <tr>
       <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>

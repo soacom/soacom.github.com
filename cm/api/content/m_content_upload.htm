@@ -21,7 +21,7 @@ Uploads a single file of existing content to the platform, or uploads a ZIP file
 
 <p class="apidoc_note"><strong>Note</strong>: When creating or uploading content files, you can use the <span class="apidoc_code"><a href="m_content_upload.htm">POST&nbsp;/content/upload</a></span> operation to upload a single file, or multiple files in a ZIP, using the <strong>multipart/form-data</strong> content type. You can use the <span class="apidoc_code"><a href="m_content_add.htm">POST&nbsp;/content/{path}</a></span> operation to create a new folder with a default JSON table of contents file in it, as in the example below, or to create a new file. If you are creating a new file, it cannot be empty; you must include the file contents in the payload, and must use the <strong>application/x-www-form-urlencoded</strong> content type.</p>
 
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or other authorized user.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or other authorized user.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -60,9 +60,9 @@ Uploads a single file of existing content to the platform, or uploads a ZIP file
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request to upload a ZIP file of content for the specified API.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://api.acmecorp.com/content/api/api19427.acmecorp/documents?unpack=true&amp;wrapInHTML=true</pre>
+<pre>https://api.acmepayments.com/content/api/api19427.acmepayments/documents?unpack=true&amp;wrapInHTML=true</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST /content/api/api19427.acmecorp/documents?unpack=true&amp;wrapInHTML=true HTTP/1.1
+<pre>POST /content/api/api19427.acmepayments/documents?unpack=true&amp;wrapInHTML=true HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</pre>
 <p><strong>Sample request body</strong></p>

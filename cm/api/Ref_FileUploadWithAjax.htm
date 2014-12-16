@@ -1,10 +1,10 @@
 ---
 layout: apipage
-title: The "Wrap In HTML" Parameter | Reference Material | Enterprise API Platform API
+title: File Upload with Ajax | Reference Material | Enterprise API Platform API
 description: This reference topic outlines how the platform addresses same-origin policy restrictions to accomplish file upload with <a href="Ref_Glossary_CommunityPlatform.htm#gl_ajax">Ajax</a>. It also illustrates use of the &quot;Wrap In HTML&quot; parameter in request messages and why you might see &quot;lorem ipsum&quot; text in the response HTML.
 product: cm
 category: ref
-nav-title: The "Wrap In HTML" Parameter 
+nav-title: File Upload with Ajax 
 no-nav: api
 sub-nav: true
 sub-nav-class: ref
@@ -13,6 +13,7 @@ no-catalog: true
 
 <h2><a name="top"></a>File Upload with Ajax</h2>
 <p>This reference topic outlines how the platform addresses same-origin policy restrictions to accomplish file upload with <a href="Ref_Glossary_CommunityPlatform.htm#gl_ajax">Ajax</a>. It also illustrates use of the &quot;Wrap In HTML&quot; parameter in request messages and why you might see &quot;lorem ipsum&quot; text in the response HTML.</p>
+<p class="apidoc_note"><strong>Note</strong>: In any scenario where files are being uploaded, anti-virus protection is recommended. Anti-virus protection for the platform can be added by the System Admin in Policy Manager by setting up an </p>
 <p>It includes these sections:</p>
 <ul>
   <li><a href="#sameoriginpolicyrestrictions">Same-Origin Policy Restrictions</a></li>
@@ -36,7 +37,7 @@ no-catalog: true
 <h3><a name="wrapinhtmlparameter"></a>The &quot;Wrap In HTML&quot; Parameter</h3>
 <p>In order to work with the Same Origin security policy when uploading files, in file upload operations the platform passes  a <span class="apidoc_code">wrapInHTML</span> request query parameter. In the response, which is read programmatically, the API returns a script tag, with the security domain set, to an HTML iframe. The response is wrapped in HTML so that the iframe can read it. The HTML response is also padded to ensure it is readable to all browsers (see <a href="#browserlimitationworkaround">Browser Limitation Workaround</a> below). </p>
 <p>The sample request for the <span class="apidoc_code"><a href="apps/m_apps_addKeyInfo.htm">POST&nbsp;/api/apps/versions/{RuntimeID}/keyinfo</a></span> operation is an example of this, as shown below:</p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/versions/4iXro2Uxs2h4LviCshR9pK9w.acmecorp/keyinfo?<strong>wrapInHTML=true</strong></pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/versions/4iXro2Uxs2h4LviCshR9pK9w.acmepayments/keyinfo?<strong>wrapInHTML=true</strong></pre>
 
 <p>Below is an example of code you can use to create the iframe:</p>
 <pre>&lt;iframe id="ifFileManager" style="width:100%;height:100%;" 
@@ -55,7 +56,7 @@ frameborder="0" src="/resources/global/upload.html?dynamic=true"&gt;&lt;/iframe&
 ornare eget luctus vel, porta id elit. Maecenas molestie, libero sit amet blandit faucibus, orci nisi aliquet nisi, 
 id mollis mauris ipsum a enim. Morbi lacus velit, placerat sit amet luctus eget, pulvinar a massa. Lorem ipsum dolor sit amet, 
 consectetur adipiscing elit. Morbi eleifend tincidunt pellentesque. Cras eu sapien massa, vitae rutrum sapien. Aenean id 
-condimentum sem. Suspendisse tempor luctus ipsum, vel metus."&gt;&lt;script type="text/javascript"&gt;document.domain='api.acmecorp.com';
+condimentum sem. Suspendisse tempor luctus ipsum, vel metus."&gt;&lt;script type="text/javascript"&gt;document.domain='api.acmepayments.com';
 &lt;/script&gt;&lt;/head&gt;&lt;body&gt;PersonService.wsdl,xsd0.xsd,xsd1.xsd,xsd10.xsd,xsd11.xsd,xsd12.xsd,xsd13.xsd,xsd14.xsd,xsd15.xsd,xsd2.xsd,
 xsd3.xsd,xsd4.xsd,xsd5.xsd,xsd6.xsd,xsd7.xsd,xsd8.xsd,xsd9.xsd&lt;/body&gt;&lt;/html&gt;</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>

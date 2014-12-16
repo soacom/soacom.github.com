@@ -19,7 +19,7 @@ no-catalog: true
 <p><!-- #BeginLibraryItem "/Library/desc_login_.lbi" -->
 Allows a registered user to log in, returning an authentication cookie that is used to make authenticated calls via the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->. The cookie is valid for 25 minutes. To renew it, use the <span class="apidoc_code"><a href="m_login_renewToken.htm">POST&nbsp;/api/login/renewToken</a></span> method.<!-- #EndLibraryItem --></p>
 <p class="apidoc_note"><strong>Note</strong>: If the response includes the pendingAgreements parameter, the user must accept any pending legal agreements, using the <a href="../legals/m_legals_acceptAgreement.htm">POST&nbsp;/api/legals/agreements</a> operation, before the login process is complete. </p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: To complete this operation successfully, a user must be registered on the platform.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>To complete this operation successfully, a user must be registered on the platform.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -136,34 +136,40 @@ Content-Type: application/json; charset=UTF-8</pre>
 <p id="id_sampleresponse">The sample response below shows the user logging in. There are no pending notifications.</p>
 <h5>Sample response headers</h5>
 <pre>HTTP/1.1 200 OK
-Date: Wed, 19 Sep 2012 17:58:38 GMT
-Content-Type: application/json</pre>
+Content-Type: application/json
+Expires: Fri, 17-Oct-2014 16:17:17</pre>
 <h5>Sample response body #1</h5>
-<p id="id_samplerequest2">The example below shows a LoginRequest object returned when a user signs in. There are no pending notifications for this user, and a fresh authorization token is returned. The authToken value includes line breaks for display purposes.</p>
+<p id="id_samplerequest2">The example below shows a LoginRequest object returned when a user signs in. There are no pending notifications for this user, and a fresh authorization token is returned. The authToken and csrfToken values include line breaks for display purposes.</p>
 <pre>{
-  &quot;userName&quot; : &quot;JaneSaoirse&quot;,
-  &quot;authToken&quot; : &quot;TokenID=a3e681cf-0283-11e2-bc9a-fee8d69763d6,claimed_id=urn:acme:user:acme:user10035,issueTime=
-1348077518865,expirationTime=1348079318830,Groups=[\&quot;group10038.acmecorp\&quot;],Followings=[\&quot;app10037.acmecorp\&quot;],
-AttributesIncluded=true,UserFDN=user10035.acmecorp,Apps=[\&quot;app10037.acmecorp\&quot;],UserName=JaneSaoirse,sig=N5oiEMsEUwSpmSkPM
-j4tLwr38o9fAQp1cXo6X4qM9ZPdf6n8mOhH2bFC8Yt2Q0CJVNTK7j4EEypIfPbfGSkBssCbQMgk2GgNzQQkpjXj1lTasPcg_fbHMbD6XgCAH41acYR9UCTywIVv
-mZuvHEsZE0gtgOav2oyvXlCO9EKdo4o&quot;,
-  &quot;userFDN&quot; : &quot;user10035.acmecorp&quot;,
-  &quot;pendingNotifications&quot; : 0
+  "userName" : "JaneMead",
+  "avatarURL" : "http://&lt;hostname&gt;/api/users/e437a7ea-108f-498e-9065-afd3776b2a08.acmepayments/avatar",
+  "csrfToken" : "TokenID%3D91edcc0b-5615-11e4-afdf-dcd0d86970d7%2CexpirationTime%3D1413562937125%2CUserFDN%3De437a7ea-
+108f-498e-9065-afd3776b2a08%252Eacmepayments%2Csig%3DRYicJkbNgpoXR9zP7IbU3mWIpP_BYSR90iiYTurEy1leVFElsd-eb1BJELIEaE3Fs
+_A9N2hRFBd55CilhF1bJYJMNIfboJHxiRarart56K09E8ty0GlDCu_xG_3qHM5lCclPCCL-OaLj-rT0kuPpXVl5G8_A5y3lhTjbPtJDeNI",
+  "loginDomainID" : "siteusers.acmepayments",
+  "authToken" : "TokenID%3D91edcc0b-5615-11e4-afdf-dcd0d86970d7%2Cclaimed_id%3Durn%3Aacmepayments%3Auser%3Aacmepayments
+%3Ae437a7ea-108f-498e-9065-afd3776b2a08%2CissueTime%3D1413561137106%2CexpirationTime%3D1413562937054%2CAttributes
+Included%3Dfalse%2CUserFDN%3De437a7ea-108f-498e-9065-afd3776b2a08%25acmepaymentsre%2CUserName%3DJaneMead%2Csig%3DLyoF
+GHZSsmCL9fTsvR1eNSvuedVl0bfdojmPYVVAifFVubFt0xOEUkMwsQ65eMhdYysULES9D-Ni0dTiHMJxV5Vc7Rcl_vDn9CveCWvXrySdqdYeC4OXqg7QN
+xjEiMYRA3dZGQ2QZbO2oMwuApFRSxHN_0tbCVGmWQxOiBpGZ04",
+  "userFDN" : "e437a7ea-108f-498e-9065-afd3776b2a08.acmepayments",
+  "status" : "success",
+  "pendingNotifications" : 0
 }</pre>
 <h5>Sample response body #2</h5>
 <p id="id_samplerequest_2">The example below shows a scenario where the user must accept a pending legal agreement. Until the legal agreement is accepted, the login process isn't complete. This example also includes avatarURL since the user has specified a custom avatar.</p>
 <p>If there is a pending legal agreement, you must invoke the <span class="apidoc_code"><a href="../legals/m_legals_acceptAgreement.htm">POST&nbsp;/api/legals/agreements</a></span> operation, part of the Legals service, so that the user can accept the legal agreement and complete the login process.</p>
 <pre>{
   &quot;userName&quot;: &quot;JaneSaoirse&quot;,
-  &quot;authToken&quot;: &quot;TokenID%3D03c789e1-7f61-11e2-9935-a554e25a5b7c%2Cclaimed_id%3Durn%3Aacme%3Auser%3Aacmecorp%3A
+  &quot;authToken&quot;: &quot;TokenID%3D03c789e1-7f61-11e2-9935-a554e25a5b7c%2Cclaimed_id%3Durn%3Aacme%3Auser%3Aacmepayments%3A
 user10002%2CissueTime%3D1361806545094%2CexpirationTime%3D1361808342650%2CAttributesIncluded%3Dfalse%2CUserFDN%3D
 user10002%252Eopen%2CHasPendingAgreements%3Dtrue%2CUserName%3DJaneSaoirse%2Csig%3DoWKUdvg32YdqILd_2QCto9RVqBLn8UmT
 KAnXu1UgPOHA0t31dIKw4TafxLNMmC-GFekkPhvNti4vUimqP-5e5gnf1H0bkLcXKQLT1131R6Cx9MX3ue9z6z-jmD6QesLRkWXwzRkBrb-wLerHn
 Blx_Tnr9p3g-SrPA7pPirmpADA&quot;,
-  &quot;userFDN&quot;: &quot;user10002.acmecorp&quot;,
-  &quot;avatarURL&quot;: &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user10002.acmecorp/avatar&quot;,
-  &quot;pendingNotifications&quot;: 0,
-  &quot;pendingAgreements&quot;: [&quot;signupagrmtv2.acmecorp&quot;]
+  &quot;userFDN&quot;: &quot;user10002.acmepayments&quot;,
+  &quot;avatarURL&quot; : &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepayments/avatar&quot;
+&quot;pendingNotifications&quot;: 0,
+  &quot;pendingAgreements&quot;: [&quot;signupagrmtv2.acmepayments&quot;]
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->

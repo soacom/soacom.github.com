@@ -17,7 +17,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_executeWorkflowAction_groups.lbi" -->Executes an action that is available for a given membership request. The two possible actions are to approve or disapprove the request.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: This operation doesn't require any specific role; in theory, anyone can invoke the operation. However, the workflow action itself has requirements regarding who can execute it. The user invoking the operation must be authorized to execute the specific workflow action, or the operation will fail. For example, an app administrator can request an API contract for his/her own app, but not for another app. For more information, see <a href="../Ref_ExecutingWorkflowActions.htm">Executing Workflow Actions</a>.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>This operation doesn't require any specific role; in theory, anyone can invoke the operation. However, the workflow action itself has requirements regarding who can execute it. The user invoking the operation must be authorized to execute the specific workflow action, or the operation will fail. For example, an app administrator can request an API contract for his/her own app, but not for another app. For more information, see <a href="../Ref_ExecutingWorkflowActions.htm">Executing Workflow Actions</a>.</p>
 <p><!-- #BeginLibraryItem "/Library/_authtokenrenewal.lbi" --> <strong>Authorization token renewal</strong>: This operation changes information that is reflected in the authorization token; therefore, when invoking this operation, you  must also renew the token.<!-- #EndLibraryItem --></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -57,12 +57,13 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows an invited user declining an invitation to join a group, and entering a comment in response to the invitation.</p>
 <p><strong>Request URL</strong></p>
-<pre><span class="apidoc_div_codeendpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->groups/requests/group_member_req24576.acmecorp/actions</span></pre>
+<pre><span class="apidoc_div_codeendpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->groups/requests/group_member_req24576.acmepayments/actions</span></pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST /api/groups/requests/group_member_req24576.acmecorp/actions HTTP/1.1
+<pre>POST /api/groups/requests/group_member_req24576.acmepayments/actions HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: */*
-Content-Type: application/json; charset=UTF-8</pre>
+Content-Type: application/json; charset=UTF-8
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_&lt;tenant&gt;: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <pre>{
   "ActionName":"group.membership.action.decline",
@@ -147,7 +148,7 @@ Content-Type: text/plain
 Date: Fri, 14 Jun 2013 18:40:25 GMT
 Atmo-Renew-Token: renew</pre>
 <p><strong>Sample response body</strong></p>
-<pre>group_member_req24576.acmecorp</pre>
+<pre>group_member_req24576.acmepayments</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -207,6 +208,11 @@ Atmo-Renew-Token: renew</pre>
     <tr bgcolor="#DDDDDD">
       <th width="20%">Item</th>
       <th width="80%">Value</th>
+    </tr>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->
+Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
     </tr>
   </thead>
   <tbody>

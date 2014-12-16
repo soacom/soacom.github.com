@@ -26,7 +26,8 @@ Returns the default (current) avatar for the specified resource.<!-- #EndLibrary
   <li>Users service</li>
 </ul>
 <p>For additional usage information, see Usage Note: Difference Between getAvatar and getDefaultAvatar.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:&nbsp;<!-- #BeginLibraryItem "/Library/roles_none.lbi" -->Anyone can use this operation; login is not required.<!-- #EndLibraryItem -->&nbsp;However, if the API is private the user must be logged in and authorized in order to return the appropriate results.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/Library/roles_none.lbi" -->
+Anyone can use this operation; login is not required. <!-- #EndLibraryItem -->However, if the API is private the user must be logged in and authorized in order to return the appropriate results.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -73,7 +74,7 @@ Returns the default (current) avatar for the specified resource.<!-- #EndLibrary
 <h4 id="samplerequest_1">Sample request: APIs service</h4>
 <p>The example below shows a request for the avatar for the specified API.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api19427.acmecorp/avatar</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api19427.acmepayments/avatar</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>
 Accept: image/png</pre>
@@ -85,9 +86,9 @@ Accept: image/png</pre>
 <h4 id="samplerequest_2">Sample request: Apps service</h4>
 <p>The example below shows a request for the avatar for the specified app.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app16964.acmecorp/avatar</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app16964.acmepayments/avatar</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&nbsp;/api/users/user10027.acmecorp/avatar?cache=false&amp;time=1369162683708 HTTP/1.1
+<pre>GET&nbsp;/api/users/user10027.acmepayments/avatar?cache=false&amp;time=1369162683708 HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: image/png,image/*;q=0.8,*/*;q=0.5</pre>
 <p><strong>Sample request body</strong></p>
@@ -98,7 +99,7 @@ Accept: image/png,image/*;q=0.8,*/*;q=0.5</pre>
 <h4 id="samplerequest_4">Sample request: Groups service</h4>
 <p>The example below shows a request for the avatar for the specified group.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->groups/group24386.acmecorp/avatar</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->groups/group24386.acmepayments/avatar</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: image/png</pre>
 <p><strong>Sample request body</strong></p>
@@ -109,10 +110,10 @@ Accept: image/png,image/*;q=0.8,*/*;q=0.5</pre>
 <h4 id="samplerequest_3">Sample request: Users service</h4>
 <p>The example below shows a request for the avatar for the specified user.<strong></strong> The optional size parameter is included.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmecorp/avatar?size=75</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmepayments/avatar?size=75</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>
-GET&nbsp;/api/users/user13967.acmecorp/avatar?size=75 HTTP/1.1
+GET&nbsp;/api/users/user13967.acmepayments/avatar?size=75 HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: image/png,image/*;q=0.8,*/*;q=0.5</pre>
 <p><strong>Sample request body</strong></p>

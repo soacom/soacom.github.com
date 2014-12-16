@@ -18,7 +18,7 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_unmarkTicket.lbi" -->
 Removes the user's <a href="../Ref_Glossary_CommunityPlatform.htm#gl_mark">mark</a> from a ticket that the user has previously marked.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: The user must be logged in, must be an authorized user for the resource the ticket relates to, and must be the same user who created the mark that is being removed.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>The user must be logged in, must be an authorized user for the resource the ticket relates to, and must be the same user who created the mark that is being removed.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -57,12 +57,13 @@ Removes the user's <a href="../Ref_Glossary_CommunityPlatform.htm#gl_mark">mark<
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request to remove a mark from the specified ticket.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->discussions/ticket25687.acmecorp/marks/user12262.acmecorp</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->discussions/ticket25687.acmepayments/marks/user12262.acmepayments</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>DELETE /api/discussions/ticket25687.acmecorp/marks/user12262.acmecorp HTTP/1.1
+<pre>DELETE /api/discussions/ticket25687.acmepayments/marks/user12262.acmepayments HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: */*
-Content-Type: application/x-www-form-urlencoded; charset=UTF-8</pre>
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_&lt;tenant&gt;: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.
 </p>
@@ -200,6 +201,11 @@ Date: Thu, 18 Jul 2013 20:21:58 GMT</pre>
     <tr bgcolor="#DDDDDD">
       <th width="20%">Item</th>
       <th width="80%">Value</th>
+    </tr>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->
+Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
     </tr>
   </thead>
   <tbody>

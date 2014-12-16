@@ -17,7 +17,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_addKeyInfo.lbi" -->Adds an app's public key or certificate (for runtime security).<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Administrator</a></p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Administrator</a></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -56,11 +56,12 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a call to this operation.</p>
 <p><strong>Sample request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/versions/4iXro2Uxs2h4LviCshR9pK9w.acmecorp/keyinfo?wrapInHTML=true</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/versions/4iXro2Uxs2h4LviCshR9pK9w.acmepayments/keyinfo?wrapInHTML=true</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST&nbsp;/api/apps/versions/4iXro2Uxs2h4LviCshR9pK9w.acmecorp/keyinfo?wrapInHTML=true HTTP/1.1
+<pre>POST&nbsp;/api/apps/versions/4iXro2Uxs2h4LviCshR9pK9w.acmepayments/keyinfo?wrapInHTML=true HTTP/1.1
 Host: &lt;hostname&gt;
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</pre>
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_&lt;tenant&gt;: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>The request body is the CSR certificate which is uploaded.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -150,7 +151,7 @@ blandit faucibus, orci nisi aliquet nisi, id mollis mauris ipsum a enim. Morbi l
 placerat sit amet luctus eget, pulvinar a massa. Lorem ipsum dolor sit amet, consectetur adipiscing 
 elit. Morbi eleifend tincidunt pellentesque. Cras eu sapien massa, vitae rutrum sapien. Aenean id 
 condimentum sem. Suspendisse tempor luctus ipsum, vel metus.&quot;&gt;&lt;/head&gt;
-&lt;body status=&quot;200&quot; statusText=&quot;success&quot;&gt;4iXro2Uxs2h4LviCshR9pK9w.acmecorp&lt;/body&gt;&lt;/html&gt;</pre>
+&lt;body status=&quot;200&quot; statusText=&quot;success&quot;&gt;4iXro2Uxs2h4LviCshR9pK9w.acmepayments&lt;/body&gt;&lt;/html&gt;</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -206,6 +207,11 @@ condimentum sem. Suspendisse tempor luctus ipsum, vel metus.&quot;&gt;&lt;/head&
     <tr bgcolor="#DDDDDD">
       <th width="20%">Item</th>
       <th width="80%">Value</th>
+    </tr>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->
+Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
     </tr>
   </thead>
   <tbody>

@@ -18,7 +18,8 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getAPISettings.lbi" -->
 Returns a list of settings for the specified API.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:&nbsp;<!-- #BeginLibraryItem "/Library/roles_none.lbi" -->Anyone can use this operation; login is not required.<!-- #EndLibraryItem --></p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: &nbsp;<!-- #BeginLibraryItem "/Library/roles_none.lbi" -->
+Anyone can use this operation; login is not required. <!-- #EndLibraryItem --></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -56,9 +57,10 @@ Returns a list of settings for the specified API.<!-- #EndLibraryItem --></p>
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for the settings of the specified API.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api18969.acmecorp/settings</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api18969.acmepayments/settings</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json</pre>
+<pre>Accept: application/json
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_&lt;tenant&gt;: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -126,7 +128,7 @@ Returns a list of settings for the specified API.<!-- #EndLibraryItem --></p>
 <pre>Status Code: 200 OK
 Content-Type: application/json
 Date: Wed, 01 May 2013 20:31:40 GMT</pre>
-<p><strong>Sample response body: JSON</strong></p>
+<p><strong>Sample response body: application/json</strong></p>
 <pre>{
   "PublicAPISupport" : "com.soa.feature.enabled",
   "PublicAPISandboxEndpointSupport" : "com.soa.feature.enabled",
@@ -148,7 +150,7 @@ Date: Wed, 01 May 2013 20:31:40 GMT</pre>
   "PrivateAPIReviewsSupport" : "com.soa.feature.enabled"
 }</pre>
 <p><strong>Sample response body: XML</strong></p>
-<pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+<pre>&lt;?xml version="1.0" encoding=&quot;UTF-8&quot;?&gt;
 &lt;APISettings xmlns="http://soa.com/xsd/api/1.0"&gt;
   &lt;PublicAPISupport&gt;com.soa.feature.enabled&lt;/PublicAPISupport&gt;
   &lt;PublicAPISandboxEndpointSupport&gt;com.soa.feature.enabled&lt;/PublicAPISandboxEndpointSupport&gt;
@@ -225,6 +227,10 @@ Date: Wed, 01 May 2013 20:31:40 GMT</pre>
     <tr bgcolor="#DDDDDD">
       <th width="20%">Item</th>
       <th width="80%">Value</th>
+    </tr>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" --> Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
     </tr>
   </thead>
   <tbody>

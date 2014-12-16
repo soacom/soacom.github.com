@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Create New Agreement | APIs Service | Enterprise API Platform API
-description: Adds information about a new legal agreement for the specified API version.&nbsp;Once this operation is complete, the legal agreement has a status of Published in the user interface, and can be activated.
+description: Adds information about a new legal agreement for the specified API version. Once this operation is complete, the legal agreement has a status of Published in the user interface, and can be activated.
 product: cm
 category: ref
 nav-title: Create New Agreement 
@@ -15,10 +15,11 @@ no-catalog: true
 <h2><a name="top" id="top"></a>POST&nbsp;/api/apis/versions/{APIVersionID}/legals</h2><!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_createNewAgreement_api.lbi" -->Adds information about a new legal agreement for the specified API version.<!-- #EndLibraryItem -->&nbsp;Once this operation is complete, the legal agreement has a status of Published in the user interface, and can be activated.</p>
+<p><!-- #BeginLibraryItem "/Library/desc_createNewAgreement_api.lbi" -->Adds information about a new legal agreement for the specified API version.<!-- #EndLibraryItem --> Once this operation is complete, the legal agreement has a status of Published in the user interface, and can be activated.</p>
+<p>API legal agreements can be HTML or text files.</p>
 <p>For more information about managing legal agreements for your API, see <a href="../Ref_ManagingLegalAgreementsOnThePlatform.htm">Managing Legal Agreements on the Platform</a>.</p>
 <p><strong>Prerequisite</strong>: Before running this operation, you must upload the legal agreement using the <span class="apidoc_code"><a href="../content/m_content_add.htm">POST&nbsp;/content/{path}</a></span> or <span class="apidoc_code"><a href="../content/m_content_upload.htm">POST&nbsp;/content/upload</a></span> operation in the <a href="../index_content.htm">Content service</a>.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must have permission to modify the API; an <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Must have permission to modify the API; an <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -55,19 +56,20 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a new legal agreement being added.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion500.acmecorp/legals</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion500.acmepayments/legals</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST&nbsp;/api/apis/versions/apiversion500.acmecorp/legals HTTP/1.1
+<pre>POST&nbsp;/api/apis/versions/apiversion500.acmepayments/legals HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: */*
-Content-Type: application/json; charset=UTF-8</pre>
+Content-Type: application/json; charset=UTF-8
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_&lt;tenant&gt;: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <pre>{
-  "ContentPath":"api/api200.acmecorp/legal/myapi_new_legalagreement.html",
-  "PrintContentPath":"api/api200.acmecorp/legal/myapi_new_legalagreement.html",
+  "ContentPath":"api/api200.acmepayments/legal/myapi_new_legalagreement.html",
+  "PrintContentPath":"api/api200.acmepayments/legal/myapi_new_legalagreement.html",
   "Name":"Legal Agreement 2.0",
   "Description":"Updated Version of Legal Agreement for version 2.0",
-  "AgreementType":"com.soa.acmecorp.legals.eula"
+  "AgreementType":"com.soa.acmepayments.legals.eula"
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -147,7 +149,7 @@ Information about a legal agreement document.<!-- #EndLibraryItem -->Required pr
 Date: Fri, 27 Jun 2014 14:59:21 GMT
 Content-Type: text/plain</pre>
 <p><strong>Sample response body</strong></p>
-<pre>aedc4a5a-c38d-4e06-8127-1a4e051b5ca0.acmecorp</pre>
+<pre>aedc4a5a-c38d-4e06-8127-1a4e051b5ca0.acmepayments</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -203,6 +205,11 @@ Content-Type: text/plain</pre>
     <tr bgcolor="#DDDDDD">
       <th width="20%">Item</th>
       <th width="80%">Value</th>
+    </tr>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->
+Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
     </tr>
   </thead>
   <tbody>

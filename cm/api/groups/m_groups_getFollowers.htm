@@ -17,7 +17,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getFollowers.lbi" -->Returns a list of the users who are following the specified group.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: For a public API, anyone can access this operation. For a Private API, only API Administrators, Private API Group members and leaders, Site Administrators, and Business Administrators can see the information. The operation will run successfully, but the results are limited by the privacy settings of the resources.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>For a public API, anyone can access this operation. For a Private API, only API Administrators, Private API Group members and leaders, Site Administrators, and Business Administrators can see the information. The operation will run successfully, but the results are limited by the privacy settings of the resources.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -56,9 +56,10 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for the followers of the specified group.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->groups/group19212.acmecorp/followers</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->groups/group19212.acmepayments/followers</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json</pre>
+<pre>Accept: application/json
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_&lt;tenant&gt;: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -139,19 +140,19 @@ no-catalog: true
         "domain" : "uddi:soa.com:relationshiptype"
       } ],
       "guid" : {
-        "value" : "follow19213.acmecorp"
+        "value" : "follow19213.acmepayments"
       },
       "Action" : {
         "value" : "action.follow.stop",
         "label" : "Stop Following"
       },
       "Image" : {
-        "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmecorp/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png"
+        "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmepayments/avatars/63352786-b8f0-4717-a35e-cebb480c5a56.png"
       },
       "EntityReferences" : {
         "EntityReference" : [ {
           "Title" : "Jane Saoirse",
-          "Guid" : "user12262.acmecorp",
+          "Guid" : "user12262.acmepayments",
           "Category" : [ {
             "value" : "user",
             "domain" : "uddi:soa.com:resourcetype"
@@ -168,15 +169,15 @@ no-catalog: true
         "domain" : "uddi:soa.com:relationshiptype"
       } ],
       "guid" : {
-        "value" : "follow24556.acmecorp"
+        "value" : "follow24556.acmepayments"
       },
       "Image" : {
-        "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user13967.acmecorp/avatars/12d0fdd6-4707-4262-8c88-28ab3b5036c3.png"
+        "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user13967.acmepayments/avatars/12d0fdd6-4707-4262-8c88-28ab3b5036c3.png"
       },
       "EntityReferences" : {
         "EntityReference" : [ {
           "Title" : "Jonathan Swift",
-          "Guid" : "user13967.acmecorp",
+          "Guid" : "user13967.acmepayments",
           "Category" : [ {
             "value" : "user",
             "domain" : "uddi:soa.com:resourcetype"
@@ -193,15 +194,15 @@ no-catalog: true
         "domain" : "uddi:soa.com:relationshiptype"
       } ],
       "guid" : {
-        "value" : "follow24555.acmecorp"
+        "value" : "follow24555.acmepayments"
       },
       "Image" : {
-        "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user23531.acmecorp/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png"
+        "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user23531.acmepayments/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png"
       },
       "EntityReferences" : {
         "EntityReference" : [ {
           "Title" : "Jennifer Meadows",
-          "Guid" : "user23531.acmecorp",
+          "Guid" : "user23531.acmepayments",
           "Category" : [ {
             "value" : "user",
             "domain" : "uddi:soa.com:resourcetype"

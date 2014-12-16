@@ -17,7 +17,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getFollowers_apps.lbi" --> Returns information about the users who are following the specified app.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a><strong>, </strong>or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a><strong>, </strong>or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -56,10 +56,11 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for the followers of a specific app.</p>
 <p><strong>Sample request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app16964.acmecorp/followers</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app16964.acmepayments/followers</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>
-Accept: application/json</pre>
+Accept: application/json
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_&lt;tenant&gt;: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -105,7 +106,8 @@ Accept: application/json</pre>
       <td>Path</td>
       <td>string</td>
       <td>Required</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_AppID.lbi" --> The unique ID for the specified app.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_AppID.lbi" -->
+The unique ID for a specific app.<!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -142,15 +144,15 @@ Date: Wed, 15 May 2013 19:31:50 GMT</pre>
         &quot;domain&quot; : &quot;uddi:soa.com:relationshiptype&quot;
       } ],
       &quot;guid&quot; : {
-        &quot;value&quot; : &quot;follow16966.acmecorp&quot;
+        &quot;value&quot; : &quot;follow16966.acmepayments&quot;
       },
       &quot;Image&quot; : {
-        &quot;Url&quot; : &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmecorp/avatar&quot;
+        &quot;Url&quot; : &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmepayments/avatar&quot;
       },
       &quot;EntityReferences&quot; : {
         &quot;EntityReference&quot; : [ {
           &quot;Title&quot; : &quot;Jane Saoirse&quot;,
-          &quot;Guid&quot; : &quot;user12262.acmecorp&quot;,
+          &quot;Guid&quot; : &quot;user12262.acmepayments&quot;,
           &quot;Category&quot; : [ {
             &quot;value&quot; : &quot;user&quot;,
             &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;
@@ -167,19 +169,19 @@ Date: Wed, 15 May 2013 19:31:50 GMT</pre>
         &quot;domain&quot; : &quot;uddi:soa.com:relationshiptype&quot;
       } ],
       &quot;guid&quot; : {
-        &quot;value&quot; : &quot;follow18235.acmecorp&quot;
+        &quot;value&quot; : &quot;follow18235.acmepayments&quot;
       },
       &quot;Action&quot; : {
         &quot;value&quot; : &quot;action.follow.stop&quot;,
         &quot;label&quot; : &quot;Stop Following&quot;
       },
       &quot;Image&quot; : {
-        &quot;Url&quot; : &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user13967.acmecorp/avatar&quot;
+        &quot;Url&quot; : &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user13967.acmepayments/avatar&quot;
       },
       &quot;EntityReferences&quot; : {
         &quot;EntityReference&quot; : [ {
           &quot;Title&quot; : &quot;Jonathan Swift&quot;,
-          &quot;Guid&quot; : &quot;user13967.acmecorp&quot;,
+          &quot;Guid&quot; : &quot;user13967.acmepayments&quot;,
           &quot;Category&quot; : [ {
             &quot;value&quot; : &quot;user&quot;,
             &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;
@@ -196,15 +198,15 @@ Date: Wed, 15 May 2013 19:31:50 GMT</pre>
         &quot;domain&quot; : &quot;uddi:soa.com:relationshiptype&quot;
       } ],
       &quot;guid&quot; : {
-        &quot;value&quot; : &quot;follow18237.acmecorp&quot;
+        &quot;value&quot; : &quot;follow18237.acmepayments&quot;
       },
       &quot;Image&quot; : {
-        &quot;Url&quot; : &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user13998.acmecorp/avatar&quot;
+        &quot;Url&quot; : &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user13998.acmepayments/avatar&quot;
       },
       &quot;EntityReferences&quot; : {
         &quot;EntityReference&quot; : [ {
           &quot;Title&quot; : &quot;Philip Pirrip&quot;,
-          &quot;Guid&quot; : &quot;user13998.acmecorp&quot;,
+          &quot;Guid&quot; : &quot;user13998.acmepayments&quot;,
           &quot;Category&quot; : [ {
             &quot;value&quot; : &quot;user&quot;,
             &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;
@@ -291,6 +293,10 @@ Date: Wed, 15 May 2013 19:31:50 GMT</pre>
     <tr bgcolor="#DDDDDD">
       <th width="20%">Item</th>
       <th width="80%">Value</th>
+    </tr>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" --> Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
     </tr>
   </thead>
   <tbody>

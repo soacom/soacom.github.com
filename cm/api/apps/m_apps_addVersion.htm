@@ -18,7 +18,11 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_addVersion.lbi" --> Adds a  version of an app&#8212;either the original version when the app is created, or a new version created later.<!-- #EndLibraryItem --></p>
 <p>When a new app is created, this method should be invoked immediately following successful completion of the <span class="apidoc_code"><a href="m_apps_addApp.htm">POST&nbsp;apps</a></span> method.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Administrator</a>. When a user invokes this method to create an app, successful completion of the operation gives the user a role as team member. When the current operation, <span class="apidoc_code">POST&nbsp;/api/apps/{AppID}/versions</span>, is invoked, which should immediately follow successful completion of <span class="apidoc_code"><a href="m_apps_addApp.htm">POST&nbsp;apps</a></span>, the user already has the required team membership as assigned by the <span class="apidoc_code"><a href="m_apps_addApp.htm">POST&nbsp;apps</a></span> operation.</p>
+<p class="apidoc_note"><strong>Note</strong>: When you add a new app or a new app version, if the platform includes APIs that are set to automatically create contracts, a contract is automatically created with your new app/app version.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Administrator</a>. When a user invokes this method to create an app, successful completion of the operation gives the user a role as team member. When the current operation, <span class="apidoc_code">POST&nbsp;/api/apps/{AppID}/versions</span>, is invoked, which should immediately follow successful completion of <span class="apidoc_code"><a href="m_apps_addApp.htm">POST&nbsp;apps</a></span>, the user already has the required team membership as assigned by the <span class="apidoc_code"><a href="m_apps_addApp.htm">POST&nbsp;apps</a></span> operation.</p>
+
+<p id="id_notes_workflow"><strong>Workflow</strong>: There is no default workflow for new app versions. However, a custom workflow might be in place. There is only one initial action valid for Community Manager workflows relating to app versions, the  @Create initial action. For more information on workflow, see <a href="../Ref_ExecutingWorkflowActions.htm">Executing Workflow Actions</a>.</p>
+
 <p><!-- #BeginLibraryItem "/Library/_authtokenrenewal.lbi" --> <strong>Authorization token renewal</strong>: This operation changes information that is reflected in the authorization token; therefore, when invoking this operation, you  must also renew the token.<!-- #EndLibraryItem --></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -58,12 +62,13 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below sends information about the initial version of a crossword puzzle app.</p>
 <p><strong>Sample request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app10037.acmecorp/versions</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app10037.acmepayments/versions</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST&nbsp;/api/apps/app10037.acmecorp/versions HTTP/1.1
+<pre>POST&nbsp;/api/apps/app10037.acmepayments/versions HTTP/1.1
 Host: <!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!-- #EndLibraryItem -->
 Accept: */*
-Content-Type: application/json; charset=UTF-8</pre>
+Content-Type: application/json; charset=UTF-8
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_&lt;tenant&gt;: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <pre>
 {
@@ -75,7 +80,7 @@ Content-Type: application/json; charset=UTF-8</pre>
     &quot;game&quot;,
     &quot;Android&quot;
   ],
-  &quot;AppID&quot;:&quot;app10037.acmecorp&quot;,
+  &quot;AppID&quot;:&quot;app10037.acmepayments&quot;,
   &quot;InitialEnvironment&quot;:&quot;Sandbox&quot;,
   &quot;Visibility&quot;:&quot;Public&quot;,
   &quot;WebsiteAddress&quot;:&quot;&quot;
@@ -127,7 +132,8 @@ Content-Type: application/json; charset=UTF-8</pre>
       <td>Path</td>
       <td>string</td>
       <td>Required</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_AppID.lbi" --> The unique ID for the specified app.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_AppID.lbi" -->
+The unique ID for a specific app.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>ApplicationVersion</td>
@@ -158,7 +164,7 @@ Date: Wed, 19 Sep 2012 16:03:19 GMT
 Content-Type: text/plain
 Atmo-Renew-Token: renew</pre>
 <p><strong>Sample response body</strong></p>
-<pre>72zNE5InKlf2z00y8fWSp3AU.acmecorp</pre>
+<pre>72zNE5InKlf2z00y8fWSp3AU.acmepayments</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -202,7 +208,8 @@ Atmo-Renew-Token: renew</pre>
     <tr>
       <td><a href="../Ref_IDsOnThePlatform.htm#id_appversionid">AppVersionID</a></td>
       <td>string</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_AppVersionID.lbi" --> The unique ID for the specified app version.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_AppVersionID.lbi" -->
+The unique ID for a specific app version.<!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -218,6 +225,11 @@ Atmo-Renew-Token: renew</pre>
     <tr bgcolor="#DDDDDD">
       <th width="20%">Item</th>
       <th width="80%">Value</th>
+    </tr>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->
+Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
     </tr>
   </thead>
   <tbody>

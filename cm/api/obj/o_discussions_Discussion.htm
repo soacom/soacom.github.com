@@ -1,6 +1,6 @@
 ---
 layout: apipage
-title: Discussion Object | Discussion Service | Enterprise API Platform API
+title: Discussion Object | Discussions Service | Enterprise API Platform API
 description:  Includes information about a discussion.
 product: cm
 category: ref
@@ -17,9 +17,10 @@ no-catalog: true
 <ul>
   <li><span class="apidoc_code"><a href="../discussions/m_discussions_startDiscussion.htm">POST&nbsp;/api/discussions</a></span></li>
   <li><span class="apidoc_code"><a href="../discussions/m_discussions_getDiscussion.htm">GET&nbsp;/api/discussions/{DiscussionID}</a></span></li>
+  <li>Any operations that use the <a href="o_discussions_Discussions.htm">Discussions</a> object</li>
 </ul>
 
-<p>The parameters included in the discussion object are listed below.</p>
+<p>The parameters included in the <strong>Discussion</strong> object are listed below.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -104,8 +105,7 @@ The date/time stamp when the resource was first created. Used only in response m
       <td>Tag</td>
       <td>string[&nbsp;]</td>
       <td>Optional</td>
-      <td>One or more user-defined tags assigned to the discussion.
-        </p></td>
+      <td>One or more user-defined tags assigned to the discussion.</td>
     </tr>
     <tr>
       <td>Visibility</td>
@@ -120,7 +120,40 @@ The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_visibility">visibility</a>
       <td>Optional</td>
       <td>The publication date for the discussion, formatted in <a href="../Ref_Glossary_CommunityPlatform.htm#gl_coordinateduniversaltime">Coordinated Universal Time (UTC)</a>.</td>
   </tr>
-</tbody>
+    <tr>
+      <td>CommentsPreview</td>
+      <td><a href="o_comment_CommentsPreview.htm">CommentsPreview</a></td>
+      <td>Optional</td>
+      <td>A preview of the comments added to the discussion (the last two comments plus total count).</td>
+    </tr>
+    <tr>
+      <td>Action</td>
+      <td><a href="o_dn_model_Action.htm">Action</a>[&nbsp;]</td>
+      <td>Optional</td>
+      <td><p><!-- #BeginLibraryItem "/Library/o_dn_model_Action.lbi" -->An extensibility element for a workflow action event that possibly could be taken on a specific resource. Used to call a JavaScript action.<!-- #EndLibraryItem --></p>
+        <p>A list of actions available on the discussion.</p></td>
+    </tr>
+    <tr>
+      <td>AuthoringUser</td>
+      <td><a href="o_dn_model_AuthoringUser.htm">AuthoringUser</a></td>
+      <td>Optional</td>
+      <td><p><!-- #BeginLibraryItem "/Library/o_dn_model_AuthoringUser.lbi" -->Contains information about the author of a resource.<!-- #EndLibraryItem --></p>
+        <p>The author who started the discussion.</p></td>
+    </tr>
+    <tr>
+      <td>TargetResources</td>
+      <td><a href="o_dn_model_TargetResources.htm">TargetResources</a></td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/o_dn_model_TargetResources.lbi" -->
+        Contains information about one or more resources that are associated with the current resource.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>Image</td>
+      <td><a href="o_dn_model_Image.htm">Image</a></td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/o_dn_model_Image.lbi" --> Contains information about an avatar associated with a resource.<!-- #EndLibraryItem --></td>
+    </tr>
+  </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 

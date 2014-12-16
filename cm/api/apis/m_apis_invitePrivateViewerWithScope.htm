@@ -23,7 +23,7 @@ no-catalog: true
   <li>Then, modify the scope for the group, using the: <a href="m_apis_savePrivateViewerScope.htm">PUT&nbsp;/api/apis/versions/{APIVersionID}/viewers/{ViewerID}</a> operation.</li>
   </ol>
 <p>You can accomplish both the above steps in one using this operation.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must have permission to modify the API; an <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Must have permission to modify the API; an <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
 <p><!-- #BeginLibraryItem "/Library/_authtokenrenewal.lbi" --> <strong>Authorization token renewal</strong>: This operation changes information that is reflected in the authorization token; therefore, when invoking this operation, you  must also renew the token.<!-- #EndLibraryItem --></p>
 <p id="indexmetadata"><strong>Metadata indexing</strong>: <!-- #BeginLibraryItem "/Library/_MetadataIndexing.lbi" -->When this operation is run successfully, the platform metadata is automatically reindexed. Since the API documentation might include a metadata.xml file that directs visibility, the index must be updated when the API documentation resources are updated, to ensure the correct API documentation visibility settings are implemented.<!-- #EndLibraryItem --></p>
 
@@ -65,17 +65,18 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below invites a specific group to have visibility of an API version, limited to a single specified scope.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp/viewers</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepayments/viewers</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json</pre>
+<pre>Accept: application/json
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_&lt;tenant&gt;: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <pre>{
-  "ResourceID":"9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp",
-  "ViewerID":"53d6c4cc-4e3a-42e2-a7d6-d12707f613d4.acmecorp",
+  "ResourceID":"9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepayments",
+  "ViewerID":"53d6c4cc-4e3a-42e2-a7d6-d12707f613d4.acmepayments",
   "ViewerType":"group",
   "RestrictedScope":"true",
   "LicenseID":[
-    "759aa82d-aeb7-4fa0-8dd1-e62d7f38e858.acmecorp"
+    "759aa82d-aeb7-4fa0-8dd1-e62d7f38e858.acmepayments"
   ]
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -150,20 +151,20 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Sample Response" -->
 <h3 id="sampleresponse">Sample Response</h3>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation. The specified group has been granted visibility of the API version, limited to one specified scope.</p>
-<p><strong>Sample response headers: JSON</strong></p>
+<p><strong>Sample response headers: application/json</strong></p>
 <pre>Status Code: 200 OK
 Atmo-Renew-Token: renew
 Content-Type: application/json
 Expires: Mon, 23 Jun 2014 10:43:27 GMT</pre>
-<p><strong>Sample response body: JSON</strong></p>
+<p><strong>Sample response body: application/json</strong></p>
 <pre>{
-  "ResourceID" : "9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp",
+  "ResourceID" : "9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepayments",
   "ResourceType" : "apiversion",
-  "ViewerID" : "53d6c4cc-4e3a-42e2-a7d6-d12707f613d4.acmecorp",
+  "ViewerID" : "53d6c4cc-4e3a-42e2-a7d6-d12707f613d4.acmepayments",
   "ViewerType" : "group",
   "RestrictedScope" : true,
   "License" : [ {
-    "LicenseID" : "759aa82d-aeb7-4fa0-8dd1-e62d7f38e858.acmecorp",
+    "LicenseID" : "759aa82d-aeb7-4fa0-8dd1-e62d7f38e858.acmepayments",
     "Name" : "Bronze",
     "Description" : "Read-only access at no charge. Both environments, public, approval required.",
     "Visibility" : "Public",
@@ -172,26 +173,26 @@ Expires: Mon, 23 Jun 2014 10:43:27 GMT</pre>
     "LicenseParts" : {
       "LicensePart" : [ {
         "Name" : "060718d2-03f0-4bc5-bc3d-67218bed0ad9",
-        "ResourceID" : [ "2f8604c3-8ffe-4f0e-b3ea-2c4e3fbd3138.acmecorp" ]
+        "ResourceID" : [ "2f8604c3-8ffe-4f0e-b3ea-2c4e3fbd3138.acmepayments" ]
       } ]
     },
-    "BusinessID" : "tenantbusiness.acmecorp"
+    "BusinessID" : "tenantbusiness.acmepayments"
   } ]
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <p><strong>Sample response headers: application/xml</strong></p>
 <pre>Accept: application/xml</pre>
 <p><strong>Sample response body: application/xml</strong></p>
-<pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+<pre>&lt;?xml version="1.0" encoding=&quot;UTF-8&quot;?&gt;
 &lt;VisibilityContractDetails xmlns="http://soa.com/xsd/resource/1.0" xmlns:ns2="http://soa.com/xsd/business/1.0" xmlns:ns3="http://soa.com/xsd/legals/1.0" 
 xmlns:ns4="http://soa.com/xsd/dnmodel/1.0" xmlns:ns5="http://soa.com/xsd/user/1.0"&gt;
-  &lt;ResourceID&gt;9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmecorp&lt;/ResourceID&gt;
+  &lt;ResourceID&gt;9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepayments&lt;/ResourceID&gt;
   &lt;ResourceType&gt;apiversion&lt;/ResourceType&gt;
-  &lt;ViewerID&gt;53d6c4cc-4e3a-42e2-a7d6-d12707f613d4.acmecorp&lt;/ViewerID&gt;
+  &lt;ViewerID&gt;53d6c4cc-4e3a-42e2-a7d6-d12707f613d4.acmepayments&lt;/ViewerID&gt;
   &lt;ViewerType&gt;group&lt;/ViewerType&gt;
   &lt;RestrictedScope&gt;true&lt;/RestrictedScope&gt;
   &lt;ns2:License&gt;
-    &lt;ns2:LicenseID&gt;759aa82d-aeb7-4fa0-8dd1-e62d7f38e858.acmecorp&lt;/ns2:LicenseID&gt;
+    &lt;ns2:LicenseID&gt;759aa82d-aeb7-4fa0-8dd1-e62d7f38e858.acmepayments&lt;/ns2:LicenseID&gt;
     &lt;ns2:Name&gt;Bronze&lt;/ns2:Name&gt;
     &lt;ns2:Description&gt;Read-only access at no charge. Both environments, public, approval required.&lt;/ns2:Description&gt;
     &lt;ns2:Visibility&gt;Public&lt;/ns2:Visibility&gt;
@@ -200,10 +201,10 @@ xmlns:ns4="http://soa.com/xsd/dnmodel/1.0" xmlns:ns5="http://soa.com/xsd/user/1.
     &lt;ns2:LicenseParts&gt;
       &lt;ns2:LicensePart&gt;
         &lt;ns2:Name&gt;060718d2-03f0-4bc5-bc3d-67218bed0ad9&lt;/ns2:Name&gt;
-        &lt;ns2:ResourceID&gt;2f8604c3-8ffe-4f0e-b3ea-2c4e3fbd3138.acmecorp&lt;/ns2:ResourceID&gt;
+        &lt;ns2:ResourceID&gt;2f8604c3-8ffe-4f0e-b3ea-2c4e3fbd3138.acmepayments&lt;/ns2:ResourceID&gt;
       &lt;/ns2:LicensePart&gt;
     &lt;/ns2:LicenseParts&gt;
-    &lt;ns2:BusinessID&gt;tenantbusiness.acmecorp&lt;/ns2:BusinessID&gt;
+    &lt;ns2:BusinessID&gt;tenantbusiness.acmepayments&lt;/ns2:BusinessID&gt;
   &lt;/ns2:License&gt;
 &lt;/VisibilityContractDetails&gt;
 </pre>
@@ -266,6 +267,11 @@ xmlns:ns4="http://soa.com/xsd/dnmodel/1.0" xmlns:ns5="http://soa.com/xsd/user/1.
     <tr bgcolor="#DDDDDD">
       <th width="20%">Item</th>
       <th width="80%">Value</th>
+    </tr>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->
+Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
     </tr>
   </thead>
   <tbody>

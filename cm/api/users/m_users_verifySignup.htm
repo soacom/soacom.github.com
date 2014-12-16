@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Verify Signup | Users Service | Enterprise API Platform API
-description: Returns information about the signup code or where in the signup process the user is.
+description:  Returns information about the <a href="../Ref_Glossary_CommunityPlatform.htm#gl_signupcode">signup code</a> or where in the signup process the user is.
 product: cm
 category: ref
 nav-title: Verify Signup 
@@ -16,14 +16,15 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_verifySignup.lbi" -->Returns information about the signup code or where in the signup process the user is.<!-- #EndLibraryItem --></p>
+<p><!-- #BeginLibraryItem "/Library/desc_verifySignup.lbi" --><!-- #BeginLibraryItem "/Library/desc_verifySignup.lbi" -->
+Returns information about the <a href="../Ref_Glossary_CommunityPlatform.htm#gl_signupcode">signup code</a> or where in the signup process the user is.<!-- #EndLibraryItem --><!-- #EndLibraryItem --></p>
 <p>There are two main scenarios for this operation:</p>
 <ul>
   <li>The operation sends a signup code from a signup email. The user is signing in via a signup code sent in a notification email.</li>
-  <li>The operation sends no signup code (signupCode=). In this case, the currently authenticated third-party user (for example, a Google or Facebook user) is authenticated by the third-party user and the user's registration details, as recorded in the specified Google or Facebook account, are returned in a cookie. If there is no signup code, the operation looks for the cookie showing that the user was authenticated by a third-part provider.</li>
+  <li>The operation sends no signup code (signupCode=). In this case, the currently authenticated third-party user (for example, a Google or Facebook user) is authenticated by the third-party user and the user's registration details, as recorded in the specified Google or Facebook account, are returned in a cookie. If there is no signup code, the operation looks for the cookie showing that the user was authenticated by a third-party provider.</li>
 </ul>
 <p class="apidoc_note"><strong>Note</strong>: If the specified signupCode has expired, this API triggers a  new   email to the user (as if the signupUser API was called).</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: None required</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>None required</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -67,7 +68,8 @@ no-catalog: true
 <pre>POST&nbsp;/api/users/verifySignup HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: */*
-Content-Type: application/x-www-form-urlencoded; charset=UTF-8</pre>
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_&lt;tenant&gt;: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>None.</p>
 <h3 id="samplerequest_2">Sample Request #2</h3>
@@ -92,7 +94,7 @@ Content-Type: application/x-www-form-urlencoded; charset=UTF-8</pre>
   <tbody>
     <tr>
       <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a href="../Ref_API_Reference.htm#contenttype_request">Content-Type</a></td>
@@ -148,12 +150,12 @@ Content-Type: application/json</pre>
 
 <p><strong>Sample response body #1: local user</strong></p>
 <pre>{
-  "userID" : "user10015.acmecorp",
+  "userID" : "user10015.acmepayments",
   "authIdentifier" : "http://www.facebook.com/1320222673",
   "lastName" : "Smith",
   "firstName" : "Mary",
   "expired" : false,
-  "emailAddress" : "msmith&amp;acmecorp.com",
+  "emailAddress" : "msmith&amp;acmepayments.com",
   "pendingNotifications" : 0,
   "state" : "pending_validation"
 }</pre>
@@ -165,10 +167,10 @@ Content-Type: application/json</pre>
   "lastName" : "Saoirse",
   "profileName" : "JaneSaoirse",
   "authIdentifier" : "https://www.google.com/accounts/o8/id?id=ABtOawmwsKSET12y0r0CcKJ1YGMvEO5i0QWy-VA",
-  "userID" : "5ce44adc-0e9b-4685-9137-5456696f3c91.acmecorp",
+  "userID" : "5ce44adc-0e9b-4685-9137-5456696f3c91.acmepayments",
   "userName" : "https://www.google.com/accounts/o8/id?id=ABtOawmwsKSET12y0r0CcKJ1YGMvEO5i0QWy-VA",
   "pendingNotifications" : 0,
-  "pendingAgreements" : [ "signupagrmtv1.acmecorp" ],
+  "pendingAgreements" : [ "signupagrmtv1.acmepayments" ],
   "emailAddress" : "janesaoirse@gmail.com",
   "domainName" : "GoogleAutomation",
   "expired" : false
@@ -190,7 +192,7 @@ Content-Type: application/json</pre>
   <tbody>
     <tr>
       <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -228,6 +230,11 @@ Content-Type: application/json</pre>
     <tr bgcolor="#DDDDDD">
       <th width="20%">Item</th>
       <th width="80%">Value</th>
+    </tr>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->
+Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
     </tr>
   </thead>
   <tbody>

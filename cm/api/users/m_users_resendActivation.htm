@@ -17,7 +17,8 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_resendActivation.lbi" -->Resends an activation code to a user who is signing up for the platform.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Anyone can complete this operation successfully. Login is not required since at the point this operation might be invoked the user hasn't yet signed up.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><!-- #BeginLibraryItem "/Library/roles_none.lbi" -->
+Anyone can use this operation; login is not required. <!-- #EndLibraryItem -->At the point this operation might be invoked the user hasn't yet signed up.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -54,7 +55,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Sample Request" -->
 <h3 id="samplerequest">Sample Request</h3>
-<p id="id_samplerequest">The example below shows a request for a resend of the activation code to the specified email address. The POST&nbsp;content must be encoded; in the example below it is sent as <strong>emailAddress=jane.saoirse%acmecorp.com</strong>.</p>
+<p id="id_samplerequest">The example below shows a request for a resend of the activation code to the specified email address. The POST&nbsp;content must be encoded; in the example below it is sent as <strong>emailAddress=jane.saoirse%acmepayments.com</strong>.</p>
 <p><strong>Request URL</strong></p>
 <pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/resendActivation</pre>
 <p><strong>Sample request headers</strong></p>
@@ -63,7 +64,7 @@ Host: &lt;hostname&gt;
 Accept: */*
 Content-Type: application/x-www-form-urlencoded; charset=UTF-8</pre>
 <p><strong>Sample request body</strong></p>
-<pre>emailAddress=jane.saoirse@acmecorp.com</pre>
+<pre>emailAddress=jane.saoirse@acmepayments.com</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -81,7 +82,7 @@ Content-Type: application/x-www-form-urlencoded; charset=UTF-8</pre>
   <tbody>
     <tr>
       <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a href="../Ref_API_Reference.htm#contenttype_request">Content-Type</a></td>
@@ -152,7 +153,7 @@ Wed, 19 Jun 2013 17:17:03 GMT</pre>
   <tbody>
     <tr>
       <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>

@@ -18,7 +18,7 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_deleteImage_all.lbi" -->
 Deletes the avatar associated with the specified resource.<!-- Currently the platform only supports deletion of a user's avatar. For an app or API, once a custom avatar is specified you can only change to a different avatar.--><!-- #EndLibraryItem --> This operation is currently available only to the users service. Once an avatar is in place for an app, API, or independent group, you can remove it only by replacing it with another custom avatar.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_authorizeduser">Authorized User</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_authorizeduser">Authorized User</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -57,7 +57,7 @@ Deletes the avatar associated with the specified resource.<!-- Currently the pla
 <h3 id="samplerequest">Sample Request</h3>
 <p>The example below shows a request to delete the avatar for the specified user.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmecorp/picture</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmepayments/picture</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: text/plain</pre>
 <p><strong>Sample request body</strong></p>
@@ -175,12 +175,14 @@ Date: Thu, 23 May 2013 19:32:32 GMT</pre>
       <th width="20%">Item</th>
       <th width="80%">Value</th>
     </tr>
-  </thead>
-  <tbody>
     <tr>
       <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
-      <td>Unauthorized. For example, you would get this response if you were not an authorized user for the resource.</td>
+      <td><p><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->
+Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></p>
+        <p>You would also get this response if you were not an authorized user for the resource.</p></td>
     </tr>
+  </thead>
+  <tbody>
     <tr>
       <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>

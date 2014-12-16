@@ -18,7 +18,7 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getAppOAuthClientProperties.lbi" --> Returns the OAuth Client properties for the app, if any exist.<!-- #EndLibraryItem --></p>
 <!--FM-->
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a><strong>, </strong> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a><strong>, </strong> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -57,11 +57,12 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for the OAuth client properties for the specified app version.</p>
 <p><strong>Sample request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/versions/4iXro2Uxs2h4LviCshR9pK9w.acmecorp/oauthclient</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/versions/4iXro2Uxs2h4LviCshR9pK9w.acmepayments/oauthclient</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&nbsp;/api/apps/versions/4iXro2Uxs2h4LviCshR9pK9w.acmecorp/oauthclient HTTP/1.1
+<pre>GET&nbsp;/api/apps/versions/4iXro2Uxs2h4LviCshR9pK9w.acmepayments/oauthclient HTTP/1.1
 Host: <!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->&lt;hostname&gt;<!-- #EndLibraryItem -->
-Accept: application/json</pre>
+Accept: application/json
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_&lt;tenant&gt;: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>None.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -199,6 +200,10 @@ Date: Fri, 31 May 2013 23:32:57 GMT</pre>
     <tr>
       <td><a href="../Ref_API_Reference.htm#http204">204</a></td>
       <td>The server successfully processed the request, but is not returning any content; the OAuth properties do not exist.</td>
+    </tr>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" --> Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a href="../Ref_API_Reference.htm#http500">500</a></td>

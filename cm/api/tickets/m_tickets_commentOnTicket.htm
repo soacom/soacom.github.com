@@ -17,7 +17,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_commentOnTicket.lbi" -->Adds a comment to the specified ticket.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: The user must be logged in, and must be an authorized user for the resource the ticket relates to.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>The user must be logged in, and must be an authorized user for the resource the ticket relates to.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -56,16 +56,17 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a comment added to the specified ticket.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->discussions/ticket25687.acmecorp/comments?userId=user13967.acmecorp</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->tickets/ticket25687.acmepayments/comments</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST /api/discussions/ticket25687.acmecorp/comments?userId=user13967.acmecorp HTTP/1.1
+<pre>POST /api/tickets/ticket25687.acmepayments/comments HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: text/plain, */*; q=0.01
-Content-Type: application/json; charset=UTF-8</pre>
+Content-Type: application/json; charset=UTF-8
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_&lt;tenant&gt;: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <pre>{
   "Content":"FYI I've also experienced the same problem. Really glad you are getting it fixed.",
-  "UserID":"user13967.acmecorp"
+  "UserID":"b302bcd5-23cb-4e13-9135-68a7a88e729e.acmepayments"
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -88,7 +89,7 @@ Content-Type: application/json; charset=UTF-8</pre>
     </tr>
     <tr>
       <td><a href="../Ref_API_Reference.htm#contenttype_request">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -142,9 +143,9 @@ Content-Type: application/json; charset=UTF-8</pre>
 <p><strong>Sample response headers</strong></p>
 <pre>HTTP/1.1 200 OK
 Content-Type: text/plain
-Date: Tue, 16 Jul 2013 21:10:00 GMT</pre>
+Date: Fri, 01 Aug 2014 12:42:53 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>comment25705</pre>
+<pre>ce792717-9e6e-4de9-8f39-0e7175581289</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <!-- InstanceEndEditable -->
@@ -201,6 +202,11 @@ Date: Tue, 16 Jul 2013 21:10:00 GMT</pre>
     <tr bgcolor="#DDDDDD">
       <th width="20%">Item</th>
       <th width="80%">Value</th>
+    </tr>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->
+Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
     </tr>
   </thead>
   <tbody>

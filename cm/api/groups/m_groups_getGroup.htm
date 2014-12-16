@@ -17,7 +17,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getGroup.lbi" -->Returns a summary of information about the specified group.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: To complete this operation successfully, a user must be a group member or have other authorization to view the group, such as site admin rights.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>To complete this operation successfully, a user must be a group member or have other authorization to view the group, such as site admin rights.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -56,11 +56,12 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for information about the specified group, including settings.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->groups/group19212.acmecorp?IncludeSettings=true</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->groups/group19212.acmepayments?IncludeSettings=true</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&nbsp;/api/groups/group19212.acmecorp?IncludeSettings=true HTTP/1.1
+<pre>GET&nbsp;/api/groups/group19212.acmepayments?IncludeSettings=true HTTP/1.1
 Host: &lt;hostname&gt;
-Accept: application/json, text/javascript, */*; q=0.01</pre>
+Accept: application/json, text/javascript, */*; q=0.01
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_&lt;tenant&gt;: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -137,13 +138,13 @@ Content-Type: application/json
 Date: Sat, 08 Jun 2013 00:42:41 GMT</pre>
 <p><strong>Sample response body</strong></p>
 <pre>{
-  "GroupID" : "group19212.acmecorp",
+  "GroupID" : "group19212.acmepayments",
   "Name" : "ACME Payments API UG",
   "Description" : "ACME Payments API User Group",
   "Tag" : [ "users" ],
   "Visibility" : "Limited",
   "GroupType" : "com.soa.group.type.independent",
-  "ContextObjectID" : "apiversion19184.acmecorp",
+  "ContextObjectID" : "apiversion19184.acmepayments",
   "Created" : "2013-02-06T16:08:24Z",
   "Updated" : "2013-06-14T15:36:02Z",
   "RatingSummary" : {
@@ -217,6 +218,10 @@ Date: Sat, 08 Jun 2013 00:42:41 GMT</pre>
     <tr bgcolor="#DDDDDD">
       <th width="20%">Item</th>
       <th width="80%">Value</th>
+    </tr>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" --> Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a href="../Ref_API_Reference.htm#http405">405</a></td>

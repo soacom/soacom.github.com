@@ -17,7 +17,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_readWsdlZip.lbi" -->Accepts a ZIP file containing a WSDL and responds with an list of operations.<!-- #EndLibraryItem --> It could return a list of files in the ZIP file for the user to select. A resend is then required with the filename. A successful send returns a list of operations, starting with the ID of the WSDL.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: To complete this operation successfully, a user must be logged in and must be either an authorized user for the resource or a site admin.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>To complete this operation successfully, a user must be logged in and must be either an authorized user for the resource or a site admin.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -56,11 +56,12 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below includes the WSDL file in the request body.</p>
 <p><strong>Request URL</strong></p>
-<pre><span class="apidoc_div_codeendpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem --></span>dropbox/wsdls?wrapInHTML=true&amp;document.domain=api.acmecorp.com</pre>
+<pre><span class="apidoc_div_codeendpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem --></span>dropbox/wsdls?wrapInHTML=true&amp;document.domain=api.acmepayments.com</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST&nbsp;/api/dropbox/wsdls?wrapInHTML=true&amp;document.domain=api.acmecorp.com HTTP/1.1
+<pre>POST&nbsp;/api/dropbox/wsdls?wrapInHTML=true&amp;document.domain=api.acmepayments.com HTTP/1.1
 Host: &lt;hostname&gt;
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</pre>
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_&lt;tenant&gt;: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>(large file).</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -140,7 +141,7 @@ Content-Type: text/html</pre>
 ornare eget luctus vel, porta id elit. Maecenas molestie, libero sit amet blandit faucibus, orci nisi aliquet nisi, 
 id mollis mauris ipsum a enim. Morbi lacus velit, placerat sit amet luctus eget, pulvinar a massa. Lorem ipsum dolor sit amet, 
 consectetur adipiscing elit. Morbi eleifend tincidunt pellentesque. Cras eu sapien massa, vitae rutrum sapien. Aenean id 
-condimentum sem. Suspendisse tempor luctus ipsum, vel metus.&quot;&gt;&lt;script type=&quot;text/javascript&quot;&gt;document.domain='api.acmecorp.com';
+condimentum sem. Suspendisse tempor luctus ipsum, vel metus.&quot;&gt;&lt;script type=&quot;text/javascript&quot;&gt;document.domain='api.acmepayments.com';
 &lt;/script&gt;&lt;/head&gt;&lt;body&gt;PersonService.wsdl,xsd0.xsd,xsd1.xsd,xsd10.xsd,xsd11.xsd,xsd12.xsd,xsd13.xsd,xsd14.xsd,xsd15.xsd,xsd2.xsd,
 xsd3.xsd,xsd4.xsd,xsd5.xsd,xsd6.xsd,xsd7.xsd,xsd8.xsd,xsd9.xsd&lt;/body&gt;&lt;/html&gt;</pre>
 <p class="apidoc_note"><strong>Note</strong>: for information about the HTML wrapper shown in the sample response above, see <a href="../Ref_FileUploadWithAjax.htm">File Upload with Ajax</a>.</p>
@@ -184,6 +185,11 @@ xsd3.xsd,xsd4.xsd,xsd5.xsd,xsd6.xsd,xsd7.xsd,xsd8.xsd,xsd9.xsd&lt;/body&gt;&lt;/
     <tr bgcolor="#DDDDDD">
       <th width="20%">Item</th>
       <th width="80%">Value</th>
+    </tr>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->
+Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
     </tr>
   </thead>
   <tbody>

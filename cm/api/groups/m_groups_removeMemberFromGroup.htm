@@ -18,7 +18,7 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_removeMemberFromGroup_groups.lbi" -->
 Removes the specified user from the specified group.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_leader">group leader</a>, <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_admin">Admin</a>, or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a></p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_leader">group leader</a>, <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_admin">Admin</a>, or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a></p>
 <p><!-- #BeginLibraryItem "/Library/_authtokenrenewal.lbi" --> <strong>Authorization token renewal</strong>: This operation changes information that is reflected in the authorization token; therefore, when invoking this operation, you  must also renew the token.<!-- #EndLibraryItem --></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -58,9 +58,10 @@ Removes the specified user from the specified group.<!-- #EndLibraryItem --></p>
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request to remove the specified user from the specified group.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->groups/group19212.acmecorp/members/user24563.acmecorp</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->groups/group19212.acmepayments/members/user24563.acmepayments</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: text/plain</pre>
+<pre>Accept: text/plain
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_&lt;tenant&gt;: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -135,11 +136,11 @@ Removes the specified user from the specified group.<!-- #EndLibraryItem --></p>
 <!-- InstanceBeginEditable name="Sample Response" -->
 <h3 id="sampleresponse">Sample Response</h3>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
-<p><strong>Sample response headers: JSON</strong></p>
+<p><strong>Sample response headers: application/json</strong></p>
 <pre>Status Code: 200 OK
 Date: Fri, 14 Jun 2013 15:36:05 GMT
 Set-Cookie: AtmoAuthToken_open=TokenID%3D202a1677-d508-11e2-87ba-b1ff53277c59%2Cclaimed_id%3Durn%3Aacme%3Auser
-%3Aacmecorp%3Auser12 262%2CissueTime%3D1371224165094%2CexpirationTime%3D1371225965062%2CAttributesIncluded%3Dfalse%2CUserFDN
+%3Aacmepayments%3Auser12 262%2CissueTime%3D1371224165094%2CexpirationTime%3D1371225965062%2CAttributesIncluded%3Dfalse%2CUserFDN
 3Duser12262%252E open%2CUserName%3Dopen-JaneSaoirse%2Csig%3DJra7YlLJabVC0cnGKZMu4wmHMEvuslMEWYU6xn1VDkNHONj3WR3_fj4Zv-CNCf
 aFVhyYHwUTSLRX_R-sL35jTN0fiKuj2ATznDOMwGFrg1qa0_9YvkPH1-K5DKHdafzyNpfvnJtwTMwqddfRKRolgy81obwtZIpYC7xytIH8N2c;path=/;
 expires=Fri, 14-Jun-2013 16:01:05 GMT;HttpOnly</pre>
@@ -185,6 +186,11 @@ expires=Fri, 14-Jun-2013 16:01:05 GMT;HttpOnly</pre>
     <tr bgcolor="#DDDDDD">
       <th width="20%">Item</th>
       <th width="80%">Value</th>
+    </tr>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->
+Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
     </tr>
   </thead>
   <tbody>

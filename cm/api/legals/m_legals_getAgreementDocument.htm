@@ -18,7 +18,8 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getAgreementDocument.lbi" -->
 Returns a summary of information about a specified legal agreement document on the platform.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Anyone can use this operation; login is not required.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><!-- #BeginLibraryItem "/Library/roles_none.lbi" -->
+Anyone can use this operation; login is not required. <!-- #EndLibraryItem --></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -57,9 +58,10 @@ Returns a summary of information about a specified legal agreement document on t
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for information about the specified legal document.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->legals/signupagrmtv1.acmecorp</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->legals/signupagrmtv1.acmepayments</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json</pre>
+<pre>Accept: application/json
+</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -129,10 +131,10 @@ Status Code: 200 OK
 Content-Type: application/json</pre>
 <p><strong>Sample response body</strong></p>
 <pre>{
-  "DocumentID" : "signupagrmtv1.acmecorp",
+  "DocumentID" : "signupagrmtv1.acmepayments",
   "Name" : "ACMECorp Signup Agreement v1",
   "Description" : "ACMECorp Developer Agreement",
-  "AgreementType" : "com.soa.acmecorp.legals.signup",
+  "AgreementType" : "com.soa.acmepayments.legals.signup",
   "ContentPath" : "/home/landing/developeragreement_open.html?version=1",
   "Active" : true,
   "PrintContentPath" : "/home/landing/developeragreement_open.pdf?version=1",

@@ -19,7 +19,7 @@ no-catalog: true
 Modifies the <a href="../Ref_Values.htm#values_legaldocumentstate">State</a> of a legal document associated with a specified API version.<!-- #EndLibraryItem --></p>
 <p>The initial state of a legal document is <strong>Draft</strong>. Once an API Administrator has activated the document, it can be switched between two states, <strong>active</strong> and <strong>inactive</strong>, as needed.</p>
 <p>For more information about managing legal agreements for your API, see <a href="../Ref_ManagingLegalAgreementsOnThePlatform.htm">Managing Legal Agreements on the Platform</a>.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must have permission to modify the API; an <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Must have permission to modify the API; an <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -56,12 +56,13 @@ Modifies the <a href="../Ref_Values.htm#values_legaldocumentstate">State</a> of 
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a document being inactivated.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion500.acmecorp/legals/api200eula2.acmecorp/state</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion500.acmepayments/legals/api200eula2.acmepayments/state</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT&nbsp;/api/apis/versions/apiversion500.acmecorp/legals/api200eula2.acmecorp/state HTTP/1.1
+<pre>PUT&nbsp;/api/apis/versions/apiversion500.acmepayments/legals/api200eula2.acmepayments/state HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: */*
-Content-Type: application/json; charset=UTF-8</pre>
+Content-Type: application/json; charset=UTF-8
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_&lt;tenant&gt;: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <pre>{
   "DocumentState":"com.soa.status.inactive"
@@ -154,7 +155,7 @@ Content-Type: application/json; charset=UTF-8</pre>
 Date: Mon, 04 Feb 2013 21:23:39 GMT
 Content-Type: text/plain</pre>
 <p><strong>Sample response body</strong></p>
-<pre>api200eula2.acmecorp</pre>
+<pre>api200eula2.acmepayments</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -209,6 +210,11 @@ Content-Type: text/plain</pre>
     <tr bgcolor="#DDDDDD">
       <th width="20%">Item</th>
       <th width="80%">Value</th>
+    </tr>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->
+Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
     </tr>
   </thead>
   <tbody>

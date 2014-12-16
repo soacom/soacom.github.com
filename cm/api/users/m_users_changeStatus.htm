@@ -20,7 +20,7 @@ no-catalog: true
 Changes the <a href="../Ref_Values.htm#values_userstatus">status</a> of the specified user (for example, enabled, disabled). <!-- #EndLibraryItem --></p>
 <p class="apidoc_note"><strong>Note</strong>: This operation is only for changing the status of a registered site member. If you need to activate a user's account after the user has signed up and before activation, use the <span class="apidoc_code"><a href="m_users_changeSignupState.htm">PUT&nbsp;/api/users/{UserID}/registration/state</a></span> operation.</p>
 
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a> only.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a> only.</p>
 
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -60,10 +60,11 @@ Changes the <a href="../Ref_Values.htm#values_userstatus">status</a> of the spec
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a status change, disabling access for the specified user with a comment.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user23531.acmecorp/status</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user23531.acmepayments/status</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Content-Type: application/json
-Accept: application/json</pre>
+Accept: application/json
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_&lt;tenant&gt;: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <pre>{
   "UserStatus" : "com.soa.user.status.disabled",
@@ -86,11 +87,11 @@ Accept: application/json</pre>
   <tbody>
     <tr>
       <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
-      <td>application/xml or application/json</td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a href="../Ref_API_Reference.htm#contenttype_request">Content-Type</a></td>
-      <td>application/json or application/xml</td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></td>
     </tr>
     </tbody>
 </table>
@@ -142,19 +143,19 @@ The unique ID for a specific user.<!-- #EndLibraryItem --></td>
 <!-- InstanceBeginEditable name="Sample Response" -->
 <h3 id="sampleresponse">Sample Response</h3>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
-<p><strong>Sample response headers: JSON</strong></p>
+<p><strong>Sample response headers: application/json</strong></p>
 <pre>Status Code: 200 OK
 Content-Type: application/json
 Date: Thu, 30 May 2013 22:55:26 GMT</pre>
-<p><strong>Sample response body: JSON</strong></p>
+<p><strong>Sample response body: application/json</strong></p>
 <pre>{
-  "UserID" : "user11111.acmecorp",
+  "UserID" : "user11111.acmepayments",
   "UserName" : "open-JaneSaoirse",
   "FirstName" : "Jane",
   "LastName" : "Saoirse",
   "AuthIdentifier" : "",
   "Visibility" : "0",
-  "Email" : "jmead@acmecorp.com",
+  "Email" : "jmead@acmepayments.com",
   "Title" : "",
   "Industry" : "",
   "Favorites" : "",
@@ -169,15 +170,15 @@ Date: Thu, 30 May 2013 22:55:26 GMT</pre>
 </pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <p><strong>Sample response body: XML</strong></p>
-<pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+<pre>&lt;?xml version="1.0" encoding=&quot;UTF-8&quot;?&gt;
 &lt;User xmlns="http://soa.com/xsd/user/1.0" xmlns:ns2="http://soa.com/xsd/business/1.0"&gt;
-  &lt;UserID&gt;user23531.acmecorp&lt;/UserID&gt;
+  &lt;UserID&gt;user23531.acmepayments&lt;/UserID&gt;
   &lt;UserName&gt;open-JaneSaoirse&lt;/UserName&gt;
   &lt;FirstName&gt;Jane&lt;/FirstName&gt;
   &lt;LastName&gt;Saoirse&lt;/LastName&gt;
   &lt;AuthIdentifier&gt;&lt;/AuthIdentifier&gt;
   &lt;Visibility&gt;0&lt;/Visibility&gt;
-  &lt;Email&gt;jmead@acmecorp.com&lt;/Email&gt;
+  &lt;Email&gt;jmead@acmepayments.com&lt;/Email&gt;
   &lt;Title&gt;&lt;/Title&gt;
   &lt;Industry&gt;&lt;/Industry&gt;
   &lt;Favorites&gt;&lt;/Favorites&gt;
@@ -207,7 +208,7 @@ Date: Thu, 30 May 2013 22:55:26 GMT</pre>
   <tbody>
     <tr>
       <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
-      <td>application/xml or application/json</td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -247,12 +248,13 @@ Contains information about an&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformNam
       <th width="20%">Item</th>
       <th width="80%">Value</th>
     </tr>
-  </thead>
-  <tbody>
     <tr>
       <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
-      <td>Unauthorized. For example, you would get this response if you tried to run this operation but were not a site admin.</td>
+      <td><p><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" --> Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></p>
+        <p>You would also get this response if you hadn't completed login before running the operation, or if you were not a Site Admin.</p></td>
     </tr>
+  </thead>
+  <tbody>
     <tr>
       <td><a href="../Ref_API_Reference.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>

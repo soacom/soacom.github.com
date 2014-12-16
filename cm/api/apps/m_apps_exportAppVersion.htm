@@ -17,7 +17,8 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_exportAppVersion.lbi" -->Exports the information associated with a specific app version.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must be a user authorized to modify the specific app; an app team member.</p>
+
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Must be a user authorized to modify the specific app; an app team member.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -47,7 +48,8 @@ no-catalog: true
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/versions/{AppVersionID}/package</pre>
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/versions/{AppVersionID}/package?exportVersion=current&amp;migration.app.pki.export=true&amp;migration.export.include.api.connections=true
+&amp;migration.export.include.app.team=true&amp;wrapInHTML=true&amp;document.domain=&lt;hostname&gt;&amp;download=true</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -55,13 +57,17 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Sample Request" -->
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request to export the specified app version information to a download file.</p>
-<p><strong>Request URL</strong></p>
-<pre>http://acmecorp/api/apps/versions/6CYql2jSyfK9vaGZrvNkb7Am.acmecorp/package?
-exportVersion=current&amp;wrapInHTML=true&amp;document.domain=acmecorp.com</pre>
+<p><strong>Request URL #1</strong></p>
+<pre>http://acmepayments/api/apps/versions/6CYql2jSyfK9vaGZrvNkb7Am.acmepayments/package?
+exportVersion=current&amp;wrapInHTML=true&amp;document.domain=acmepayments</pre>
+<p><strong>Request URL #2 (all parameters)</strong></p>
+<pre>http://acmepayments/api/apps/versions/6CYql2jSyfK9vaGZrvNkb7Am.acmepayments/package?<span class="soaapidoc_endpoint">exportVersion=current&amp;migration.app.pki.export=true
+&amp;migration.export.include.api.connections=true&amp;migration.export.include.app.team=true&amp;wrapInHTML=true&amp;document.domain=&lt;hostname&gt;&amp;download=true</span></pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET /api/apps/versions/6CYql2jSyfK9vaGZrvNkb7Am.acmecorp/package?exportVersion=current
-&amp;wrapInHTML=true&amp;document.domain=acmecorp.com HTTP/1.1
-Host: &lt;hostname&gt;</pre>
+<pre>GET /api/apps/versions/6CYql2jSyfK9vaGZrvNkb7Am.acmepayments/package?exportVersion=current
+&amp;wrapInHTML=true&amp;document.domain=acmepayments HTTP/1.1
+Host: &lt;hostname&gt;
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_&lt;tenant&gt;: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -107,8 +113,57 @@ Host: &lt;hostname&gt;</pre>
       <td>Path</td>
       <td>string</td>
       <td>Required</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_AppVersionID.lbi" --> The unique ID for the specified app version.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_AppVersionID.lbi" -->
+The unique ID for a specific app version.<!-- #EndLibraryItem --></td>
       </tr>
+    <tr>
+      <td>download</td>
+      <td>Query</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td>If set to <strong>true</strong> (the default), the content is downloaded. If set to <strong>false</strong>, the user is prompted for content disposition.</td>
+    </tr>
+    <tr>
+      <td>migration.pki.export</td>
+      <td>Query</td>
+      <td>boolean</td>
+      <td>Optional</td>
+      <td><p>If specified with value <strong>true</strong>, include in export file:</p>
+        <ul class="apidoctable_ul">
+          <li>API Private Key + Certificate (if existing; must be imported via the Policy Manager Console)</li>
+        </ul></td>
+    </tr>
+    <tr>
+      <td>migration.app.pki.export</td>
+      <td>Query</td>
+      <td>boolean</td>
+      <td>Optional</td>
+      <td><p>If specified with value <strong>true</strong>, include in export file:</p>
+        <ul class="apidoctable_ul">
+          <li>App Private Key + Certificate</li>
+        </ul></td>
+    </tr>
+    <tr>
+      <td>migration.export.include.api.connections</td>
+      <td>Query</td>
+      <td>boolean</td>
+      <td>Optional</td>
+      <td><p>If specified with value <strong>true</strong>, include in export file:</p>
+        <ul class="apidoctable_ul">
+          <li>Contracts</li>
+        </ul></td>
+    </tr>
+    <tr>
+      <td>migration.export.include.app.team</td>
+      <td>Query</td>
+      <td>boolean</td>
+      <td>Optional</td>
+      <td><p>If specified with value <strong>true</strong>, include in export file:</p>
+        <ul class="apidoctable_ul">
+          <li>App team members.<br />
+            <strong>Note</strong>: The user's relationship to the app is exported, not the actual user resource; in order for the relationship to be preserved in the target environment, the user must exist in the target environment. If not: a) create and invite the user, b) create the user and re-import the data, or c) invite a different user.</li>
+        </ul></td>
+    </tr>
   </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -128,7 +183,7 @@ Host: &lt;hostname&gt;</pre>
 <p><strong>Sample response headers</strong></p>
 <pre>HTTP/1.1 200 OK
 Content-Type: application/octet-stream
-Expires: Thu, 13 Mar 2014 14:20:57 GMT
+Expires: Thu, 25 Sep 2014 16:38:20 GMT
 Content-Disposition: attachment;filename="appversion-export.zip"
 Content-Encoding: gzip</pre>
 <p><strong>Sample response body</strong></p>
@@ -182,6 +237,10 @@ Content-Encoding: gzip</pre>
     <tr bgcolor="#DDDDDD">
       <th width="20%">Item</th>
       <th width="80%">Value</th>
+    </tr>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" --> Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
     </tr>
   </thead>
   <tbody>

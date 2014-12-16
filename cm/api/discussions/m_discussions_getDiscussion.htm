@@ -17,7 +17,8 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getDiscussion.lbi" -->Returns the specified discussion.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: This operation applies to all users.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><!-- #BeginLibraryItem "/Library/roles_none.lbi" -->
+Anyone can use this operation; login is not required. <!-- #EndLibraryItem --></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -56,9 +57,10 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for the specified discussion.</p>
 <p><strong>Request URL</strong></p>
-<pre><strong><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->discussions/discussion25786.acmecorp</strong></pre>
+<pre><strong><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->discussions/discussion25786.acmepayments</strong></pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json</pre>
+<pre>Accept: application/json
+</pre>
 <p><strong>Sample request body</strong></p>
 <p>None.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -78,7 +80,7 @@ no-catalog: true
   <tbody>
     <tr>
       <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -129,12 +131,12 @@ Content-Type: application/json
 Date: Mon, 22 Jul 2013 21:16:41 GMT</pre>
 <p><strong>Sample response body</strong></p>
 <pre>{
-  "DiscussionID" : "discussion25786.acmecorp",
-  "DiscussionSubjectID" : "4iXro2Uxs2h4LviCshR9pK9w.acmecorp",
+  "DiscussionID" : "discussion25786.acmepayments",
+  "DiscussionSubjectID" : "4iXro2Uxs2h4LviCshR9pK9w.acmepayments",
   "DiscussionType" : "com.soa.discussion.type.comment",
   "Topic" : "Feature suggestions for next version",
   "Content" : "Open for suggestions for features and enhancements for the next release!",
-  "UserID" : "user12262.acmecorp",
+  "UserID" : "user12262.acmepayments",
   "UserName" : "JaneSaoirse",
   "Created" : "2013-07-22T20:33:12Z",
   "Comments" : 1,
@@ -160,7 +162,7 @@ Date: Mon, 22 Jul 2013 21:16:41 GMT</pre>
   <tbody>
     <tr>
       <td><a href="../Ref_API_Reference.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>

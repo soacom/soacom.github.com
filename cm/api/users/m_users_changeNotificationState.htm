@@ -19,7 +19,7 @@ no-catalog: true
 <p><!-- #BeginLibraryItem "/Library/desc_changeNotificationState.lbi" -->
 Changes the <a href="../Ref_Values.htm#values_notificationstate">state</a> of a user's notification (for example, archived, read).<!-- #EndLibraryItem --></p>
 
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_authorizeduser">Authorized User</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_authorizeduser">Authorized User</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
 
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -59,12 +59,13 @@ Changes the <a href="../Ref_Values.htm#values_notificationstate">state</a> of a 
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request to archive a notification. In the user interface, this is generally done after the user has viewed the notification.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user10002.acmecorp/notifications/notification30170.acmecorp/state</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user10002.acmepayments/notifications/notification30170.acmepayments/state</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT&nbsp;/api/users/user10002.acmecorp/notifications/notification30170.acmecorp/state HTTP/1.1
+<pre>PUT&nbsp;/api/users/user10002.acmepayments/notifications/notification30170.acmepayments/state HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: text/html, */*; q=0.01
-Content-Type: text/plain; charset=UTF-8</pre>
+Content-Type: text/plain; charset=UTF-8
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_&lt;tenant&gt;: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <pre>archived</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -153,7 +154,7 @@ The unique ID for a specific instance of a notification on a specific user's Das
 Content-Type: text/plain
 Date: Fri, 17 May 2013 15:38:29 GMT</pre>
 <p><strong>Sample response body</strong></p>
-<pre>notification30170.acmecorp</pre>
+<pre>notification30170.acmepayments</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -209,6 +210,11 @@ Date: Fri, 17 May 2013 15:38:29 GMT</pre>
     <tr bgcolor="#DDDDDD">
       <th width="20%">Item</th>
       <th width="80%">Value</th>
+    </tr>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->
+Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
     </tr>
   </thead>
   <tbody>

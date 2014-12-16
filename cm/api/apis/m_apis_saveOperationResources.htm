@@ -18,7 +18,7 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_saveOperationResources.lbi" -->
 Adds or updates information about operation-specific scope mapping for an API version.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must have permission to modify the API; an <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>. </p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Must have permission to modify the API; an <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>. </p>
 <p id="indexmetadata"><strong>Metadata indexing</strong>: <!-- #BeginLibraryItem "/Library/_MetadataIndexing.lbi" -->When this operation is run successfully, the platform metadata is automatically reindexed. Since the API documentation might include a metadata.xml file that directs visibility, the index must be updated when the API documentation resources are updated, to ensure the correct API documentation visibility settings are implemented.<!-- #EndLibraryItem --></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -58,44 +58,45 @@ Adds or updates information about operation-specific scope mapping for an API ve
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below sends the values for the operation-specific scope mapping for the specified API version.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->api/apis/versions/650346bb-4f4d-41ff-b38a-ca727b91181f.acmecorp/resources</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/650346bb-4f4d-41ff-b38a-ca727b91181f.acmepayments/resources</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT /api/apis/versions/650346bb-4f4d-41ff-b38a-ca727b91181f.acmecorp/resources HTTP/1.1
+<pre>PUT /api/apis/versions/650346bb-4f4d-41ff-b38a-ca727b91181f.acmepayments/resources HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: application/json, text/javascript, */*; q=0.01
-Content-Type: application/json; charset=UTF-8</pre>
+Content-Type: application/json; charset=UTF-8
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_&lt;tenant&gt;: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body (operation-specific scope mapping in use)</strong></p>
 <pre>{
   "OperationResource":[
     {
       "OperationName":"listPayments",
       "ResourceID":[
-        "289f692f-66d5-43bb-b7ed-51e0bfd0aef9.acmecorp"
+        "289f692f-66d5-43bb-b7ed-51e0bfd0aef9.acmepayments"
       ]
     },
     {
       "OperationName":"getPayment",
       "ResourceID":[
-        "db006ad1-2101-45c0-9cbe-c40fa1a0d2ca.acmecorp",
-        "148e2bcf-4d9b-463d-9da7-b12112722049.acmecorp"
+        "db006ad1-2101-45c0-9cbe-c40fa1a0d2ca.acmepayments",
+        "148e2bcf-4d9b-463d-9da7-b12112722049.acmepayments"
       ]
     },
     {
       "OperationName":"addPayment",
       "ResourceID":[
-        "db006ad1-2101-45c0-9cbe-c40fa1a0d2ca.acmecorp"
+        "db006ad1-2101-45c0-9cbe-c40fa1a0d2ca.acmepayments"
       ]
     },
     {
       "OperationName":"modifyPayment",
       "ResourceID":[
-        "db006ad1-2101-45c0-9cbe-c40fa1a0d2ca.acmecorp"
+        "db006ad1-2101-45c0-9cbe-c40fa1a0d2ca.acmepayments"
       ]
     },
     {
       "OperationName":"deletePayment",
       "ResourceID":[
-        "db006ad1-2101-45c0-9cbe-c40fa1a0d2ca.acmecorp"
+        "db006ad1-2101-45c0-9cbe-c40fa1a0d2ca.acmepayments"
       ]
     }
   ]
@@ -189,7 +190,7 @@ Expires: Thu, 19 Jun 2014 15:46:22 GMT</pre>
   "OperationResourceDetails" : [ {
     "OperationName" : "addPayment",
     "Resource" : [ {
-      "ResourceID" : "db006ad1-2101-45c0-9cbe-c40fa1a0d2ca.acmecorp",
+      "ResourceID" : "db006ad1-2101-45c0-9cbe-c40fa1a0d2ca.acmepayments",
       "Name" : "FullScope",
       "ShortDescription" : "Full access to all operations.",
       "LongDescription" : "Full access to all operations.",
@@ -199,12 +200,12 @@ Expires: Thu, 19 Jun 2014 15:46:22 GMT</pre>
       "ResourcePath" : "",
       "OAuthGrantDefaultResource" : true,
       "OAuthGrantUserAuthorizationRequired" : true,
-      "BusinessID" : "tenantbusiness.acmecorp"
+      "BusinessID" : "tenantbusiness.acmepayments"
     } ]
   }, {
     "OperationName" : "deletePayment",
     "Resource" : [ {
-      "ResourceID" : "db006ad1-2101-45c0-9cbe-c40fa1a0d2ca.acmecorp",
+      "ResourceID" : "db006ad1-2101-45c0-9cbe-c40fa1a0d2ca.acmepayments",
       "Name" : "FullScope",
       "ShortDescription" : "Full access to all operations.",
       "LongDescription" : "Full access to all operations.",
@@ -214,12 +215,12 @@ Expires: Thu, 19 Jun 2014 15:46:22 GMT</pre>
       "ResourcePath" : "",
       "OAuthGrantDefaultResource" : true,
       "OAuthGrantUserAuthorizationRequired" : true,
-      "BusinessID" : "tenantbusiness.acmecorp"
+      "BusinessID" : "tenantbusiness.acmepayments"
     } ]
   }, {
     "OperationName" : "getPayment",
     "Resource" : [ {
-      "ResourceID" : "148e2bcf-4d9b-463d-9da7-b12112722049.acmecorp",
+      "ResourceID" : "148e2bcf-4d9b-463d-9da7-b12112722049.acmepayments",
       "Name" : "ReadOnlyScope",
       "ShortDescription" : "Read-only operations.",
       "LongDescription" : "Read-only operations. Public visibility",
@@ -229,9 +230,9 @@ Expires: Thu, 19 Jun 2014 15:46:22 GMT</pre>
       "ResourcePath" : "",
       "OAuthGrantDefaultResource" : true,
       "OAuthGrantUserAuthorizationRequired" : true,
-      "BusinessID" : "tenantbusiness.acmecorp"
+      "BusinessID" : "tenantbusiness.acmepayments"
     }, {
-      "ResourceID" : "db006ad1-2101-45c0-9cbe-c40fa1a0d2ca.acmecorp",
+      "ResourceID" : "db006ad1-2101-45c0-9cbe-c40fa1a0d2ca.acmepayments",
       "Name" : "FullScope",
       "ShortDescription" : "Full access to all operations.",
       "LongDescription" : "Full access to all operations.",
@@ -241,12 +242,12 @@ Expires: Thu, 19 Jun 2014 15:46:22 GMT</pre>
       "ResourcePath" : "",
       "OAuthGrantDefaultResource" : true,
       "OAuthGrantUserAuthorizationRequired" : true,
-      "BusinessID" : "tenantbusiness.acmecorp"
+      "BusinessID" : "tenantbusiness.acmepayments"
     } ]
   }, {
     "OperationName" : "listPayments",
     "Resource" : [ {
-      "ResourceID" : "289f692f-66d5-43bb-b7ed-51e0bfd0aef9.acmecorp",
+      "ResourceID" : "289f692f-66d5-43bb-b7ed-51e0bfd0aef9.acmepayments",
       "Name" : "BetaScope",
       "ShortDescription" : "Access to beta operations.",
       "LongDescription" : "Access to beta operations for testing (private)",
@@ -256,12 +257,12 @@ Expires: Thu, 19 Jun 2014 15:46:22 GMT</pre>
       "ResourcePath" : "",
       "OAuthGrantDefaultResource" : true,
       "OAuthGrantUserAuthorizationRequired" : true,
-      "BusinessID" : "tenantbusiness.acmecorp"
+      "BusinessID" : "tenantbusiness.acmepayments"
     } ]
   }, {
     "OperationName" : "modifyPayment",
     "Resource" : [ {
-      "ResourceID" : "db006ad1-2101-45c0-9cbe-c40fa1a0d2ca.acmecorp",
+      "ResourceID" : "db006ad1-2101-45c0-9cbe-c40fa1a0d2ca.acmepayments",
       "Name" : "FullScope",
       "ShortDescription" : "Full access to all operations.",
       "LongDescription" : "Full access to all operations.",
@@ -271,7 +272,7 @@ Expires: Thu, 19 Jun 2014 15:46:22 GMT</pre>
       "ResourcePath" : "",
       "OAuthGrantDefaultResource" : true,
       "OAuthGrantUserAuthorizationRequired" : true,
-      "BusinessID" : "tenantbusiness.acmecorp"
+      "BusinessID" : "tenantbusiness.acmepayments"
     } ]
   } ]
 }</pre>
@@ -334,6 +335,11 @@ Contains details about operation-specific scope mapping for an API version, if o
     <tr bgcolor="#DDDDDD">
       <th width="20%">Item</th>
       <th width="80%">Value</th>
+    </tr>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->
+Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
     </tr>
   </thead>
   <tbody>

@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Delete Content | Content Service | Enterprise API Platform API
-description:  Deletes platform content associated with an API (a specific file).
+description:  Deletes platform content associated with an API (a specific file).%|%<p>This topic includes the following sections-
 product: cm
 category: ref
 nav-title: Delete Content 
@@ -12,14 +12,12 @@ no-catalog: true
 ---
 
 <!-- InstanceBeginEditable name="Heading" -->
-<h2><a name="top" id="top"></a>DELETE&nbsp;/content/delete</h2>
+<h2><a name="top" id="top"></a>DELETE&nbsp;/content/{path}</h2>
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_content_delete.lbi" -->
-Deletes platform content associated with an API (a specific file).<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a>.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+Deletes platform content associated with an API (a specific file).<!-- #EndLibraryItem --><!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
   <tr>
@@ -57,9 +55,9 @@ Deletes platform content associated with an API (a specific file).<!-- #EndLibra
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request to delete the index file from the API documentation for the specified API version.</p>
 <p><strong>Request URL</strong></p>
-<pre>https://api.acmecorp.com/content/api/api19427.acmecorp/documents/index.htm</pre>
+<pre>https://api.acmepayments.com/content/api/api19427.acmepayments/documents/index.htm</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>DELETE /content/api/api19427.acmecorp/documents/index.htm HTTP/1.1
+<pre>DELETE /content/api/api19427.acmepayments/documents/index.htm HTTP/1.1
 Host: &lt;hostname&gt;
 Accept: */*</pre>
 <p><strong>Sample request body</strong></p>
@@ -111,7 +109,7 @@ Accept: */*</pre>
       <td>path</td>
       <td>&nbsp;</td>
       <td>Required</td>
-      <td>The complete path to the content resource being deleted. The first page of the path is the host and then the /content/part of the URL; for example, <strong>https://api.acmecorp.com/content</strong>. The rest of the URL is the path to the resource, from <strong>/api</strong> onwards; for example, <strong>/api/api19427.acmecorp/documents/index.htm</strong>.</td>
+      <td>The complete path to the content resource being deleted. The first page of the path is the host and then the /content/part of the URL; for example, <strong>https://api.acmepayments.com/content</strong>. The rest of the URL is the path to the resource, from <strong>/api</strong> onwards; for example, <strong>/api/api19427.acmepayments/documents/index.htm</strong>.</td>
     </tr>
   </tbody>
 </table>

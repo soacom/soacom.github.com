@@ -17,7 +17,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getLoginDomains.lbi" -->Returns information about the <a href="../Ref_Glossary_CommunityPlatform.htm#gl_logindomain">login domains</a> that are valid for the platform.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Anyone can run this operation. Login is not required.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><!-- #BeginLibraryItem "/Library/roles_none.lbi" --> Anyone can use this operation; login is not required. <!-- #EndLibraryItem --></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -145,7 +145,7 @@ Content-Type: application/json
 </pre>
 <p><strong>Sample response body</strong></p>
 <pre>[ {
-  "LoginDomainID" : "siteusers.acmecorp",
+  "LoginDomainID" : "siteusers.acmepayments",
   "FedmemberId" : "open",
   "Title" : "open-users",
   "Sequence" : -1,
@@ -153,18 +153,18 @@ Content-Type: application/json
   "LogoAssigned" : false,
   "Enabled" : true
 }, {
-  "LoginDomainID" : "logindomain22041.acmecorp",
+  "LoginDomainID" : "logindomain22041.acmepayments",
   "DomainName" : "Google",
   "FedmemberId" : "open",
   "DisplayMode" : "POPUP",
   "Title" : "Google",
   "Sequence" : 1,
   "VirtualHost" : [ ".*" ],
-  "IdSystemType" : "com.soa.securitydomain.acmecorpid.relyingparty",
+  "IdSystemType" : "com.soa.securitydomain.acmepaymentsid.relyingparty",
   "LogoAssigned" : true,
   "Enabled" : false
 }, {
-  "LoginDomainID" : "logindomain22042.acmecorp",
+  "LoginDomainID" : "logindomain22042.acmepayments",
   "DomainName" : "open-fb-login",
   "FedmemberId" : "open",
   "DisplayMode" : "POPUP",
@@ -175,14 +175,14 @@ Content-Type: application/json
   "LogoAssigned" : true,
   "Enabled" : true
 }, {
-  "LoginDomainID" : "logindomain22714.acmecorp",
+  "LoginDomainID" : "logindomain22714.acmepayments",
   "DomainName" : "open-google-login",
   "FedmemberId" : "open",
   "DisplayMode" : "POPUP",
   "Title" : "open-google-login",
   "Sequence" : 3,
   "VirtualHost" : [ ".*" ],
-  "IdSystemType" : "com.soa.securitydomain.acmecorpid.relyingparty",
+  "IdSystemType" : "com.soa.securitydomain.acmepaymentsid.relyingparty",
   "LogoAssigned" : true,
   "Enabled" : true
 } ]</pre>

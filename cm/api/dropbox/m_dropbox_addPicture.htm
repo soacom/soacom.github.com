@@ -18,7 +18,7 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_addPicture.lbi" --> Adds an image for a resource such as a user profile.<!-- #EndLibraryItem --> Provides a temporary storage location for  an avatar image the user uploads as part of creating or updating a resource such as a user profile, an API, or an app.</p>
 <p>For more information on managing images associated with resources on the platform, refer to <a href="../Ref_ManagingAvatarsOnThePlatform.htm">Managing Avatars on the Platform</a>.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: To complete this operation successfully, a user must be logged in and must be either an authorized user for the resource or a site admin.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>To complete this operation successfully, a user must be logged in and must be either an authorized user for the resource or a site admin.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -62,7 +62,8 @@ no-catalog: true
 <p><strong>Sample request headers</strong></p>
 <pre>POST&nbsp;/api/dropbox/pictures HTTP/1.1
 Host: &lt;hostname&gt;
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</pre>
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_&lt;tenant&gt;: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>The request body is the image which the user uploaded.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -200,6 +201,11 @@ The unique ID for a picture on the platform, such as the avatar for an app, API,
     <tr bgcolor="#DDDDDD">
       <th width="20%">Item</th>
       <th width="80%">Value</th>
+    </tr>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->
+Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
     </tr>
   </thead>
   <tbody>

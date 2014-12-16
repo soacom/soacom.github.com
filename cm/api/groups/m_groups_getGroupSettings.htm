@@ -17,7 +17,8 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getGroupSettings.lbi" -->Retrieves information about the settings for the specified group; for example, whether ratings are supported for the group.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: None. Anyone can perform this operation. Login is not required.<!-- (tested)--></p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><!-- #BeginLibraryItem "/Library/roles_none.lbi" -->
+Anyone can use this operation; login is not required. <!-- #EndLibraryItem --></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -56,7 +57,7 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for the settings for the specified group.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->groups/group19212.acmecorp/settings</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->groups/group19212.acmepayments/settings</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Status Code: 200 OK
 Content-Type: application/json
@@ -124,11 +125,11 @@ Date: Thu, 13 Jun 2013 21:10:18 GMT</pre>
 <!-- InstanceBeginEditable name="Sample Response" -->
 <h3 id="sampleresponse">Sample Response</h3>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
-<p><strong>Sample response headers: JSON</strong></p>
+<p><strong>Sample response headers: application/json</strong></p>
 <pre>Status Code: 200 OK
 Content-Type: application/json
 Date: Thu, 13 Jun 2013 21:10:18 GMT</pre>
-<p><strong>Sample response body: JSON</strong></p>
+<p><strong>Sample response body: application/json</strong></p>
 <pre>{
   "GroupBoardSupport" : "com.soa.feature.enabled",
   "GroupRatingsSupport" : "com.soa.feature.enabled",
@@ -138,7 +139,7 @@ Date: Thu, 13 Jun 2013 21:10:18 GMT</pre>
 <p><strong>Sample response headers: XML</strong></p>
 <pre>Content-Type: application/xml</pre>
 <p><strong>Sample response body: XML</strong></p>
-<pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+<pre>&lt;?xml version="1.0" encoding=&quot;UTF-8&quot;?&gt;
 &lt;GroupSettings xmlns="http://soa.com/xsd/group/1.0"&gt;
   &lt;GroupBoardSupport&gt;com.soa.feature.enabled&lt;/GroupBoardSupport&gt;
   &lt;GroupRatingsSupport&gt;com.soa.feature.enabled&lt;/GroupRatingsSupport&gt;

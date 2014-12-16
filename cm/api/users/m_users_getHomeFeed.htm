@@ -18,7 +18,7 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getHomeFeed.lbi" -->Returns the user's feed from the user's home system.<!-- #EndLibraryItem --></p>
 
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_authorizeduser">Authorized User</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_authorizeduser">Authorized User</a> or <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
 
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -60,16 +60,17 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p><strong>Request URL #1</strong></p>
 <p>The example below requests the first 10 items for the specified user.</p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmecorp/feeds/homefeed?start=0&amp;count=10&amp;RetrievingUserID=user12262.acmecorp
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmepayments/feeds/homefeed?start=0&amp;count=10&amp;RetrievingUserID=user12262.acmepayments
 </pre>
 <p><strong>Request URL #2</strong></p>
 <p>The example below requests the third and fourth items, with comments excluded.</p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmecorp/feeds/homefeed?start=2&amp;count=2&amp;RetrievingUserID=user12262.acmecorp&amp;IncludeComments=false
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmepayments/feeds/homefeed?start=2&amp;count=2&amp;RetrievingUserID=user12262.acmepayments&amp;IncludeComments=false
 </pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&nbsp;/api/users/user12262.acmecorp/feeds/homefeed?start=0&amp;count=10&amp;RetrievingUserID=user13998.acmecorp&amp;SortBy=DescendingDate HTTP/1.1
+<pre>GET&nbsp;/api/users/user12262.acmepayments/feeds/homefeed?start=0&amp;count=10&amp;RetrievingUserID=user13998.acmepayments&amp;SortBy=DescendingDate HTTP/1.1
 Host: &lt;hostname&gt;
-Accept: application/json, text/javascript, */*; q=0.01</pre>
+Accept: application/json, text/javascript, */*; q=0.01
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_&lt;tenant&gt;: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -89,7 +90,7 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
   <tbody>
     <tr>
       <td><a href="../Ref_API_Reference.htm#acceptheader">Accept</a></td>
-      <td>text/xml or application/json</td>
+      <td><strong>text/xml</strong>, <!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -170,7 +171,7 @@ One or more user-defined tags for the API version, separated by commas.<!-- #End
       <td>boolean</td>
       <td>Optional</td>
       <td><!-- #BeginLibraryItem "/Library/o_apps_IncludeComments.lbi" -->
-Indicates whether comments should be included in the board information. Default: <strong>true</strong>. If set to <strong>false</strong>, comments are excluded.<!-- #EndLibraryItem --></td>
+Indicates whether comments should be included in the information returned. Default: <strong>true</strong>. If set to <strong>false</strong>, comments are excluded.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>NumberOfComments</td>
@@ -218,7 +219,7 @@ An optional parameter allowing users to sort results by a specific value; for ex
 <!-- InstanceBeginEditable name="Sample Response" -->
 <h3 id="sampleresponse">Sample Response</h3>
 <p id="id_sampleresponse">The sample response below shows the results from request query #2 above&#8212;the third and fourth home feed items without comments.</p>
-<p><strong>Sample response headers: JSON</strong></p>
+<p><strong>Sample response headers: application/json</strong></p>
 <pre>HTTP/1.1 200 OK
 Content-Type: application/json
 Date: Thu, 30 May 2013 20:11:25 GMT</pre>
@@ -239,21 +240,21 @@ Date: Thu, 30 May 2013 20:11:25 GMT</pre>
         "domain" : "uddi:soa.com:archivable"
       } ],
       "guid" : {
-        "value" : "group_member_req17574.acmecorp"
+        "value" : "group_member_req17574.acmepayments"
       },
       "pubDate" : "2013-05-30T00:10:01.000Z",
       "AuthoringUser" : {
-        "ID" : "user12262.acmecorp",
+        "ID" : "user12262.acmepayments",
         "Name" : "JaneSaoirse",
         "Image" : {
-          "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
+          "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmepayments/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
           "Title" : "JaneSaoirse",
-          "Link" : "#/users/user12262.acmecorp/details"
+          "Link" : "#/users/user12262.acmepayments/details"
         }
       },
       "Image" : {
-        "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
-        "Link" : "#/user/user12262.acmecorp/details"
+        "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmepayments/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
+        "Link" : "#/user/user12262.acmepayments/details"
       },
       "CreatedDate" : "2012-11-26T15:20:30.000Z",
       "Marks" : {
@@ -265,14 +266,14 @@ Date: Thu, 30 May 2013 20:11:25 GMT</pre>
       },
       "EntityReference" : [ {
         "Title" : "JonathanSwift",
-        "Guid" : "user13967.acmecorp",
+        "Guid" : "user13967.acmepayments",
         "Category" : [ {
           "value" : "user",
           "domain" : "uddi:soa.com:resourcetype"
         } ]
       }, {
         "Title" : "PaaStime",
-        "Guid" : "app16964.acmecorp",
+        "Guid" : "app16964.acmepayments",
         "Category" : [ {
           "value" : "app",
           "domain" : "uddi:soa.com:resourcetype"
@@ -296,21 +297,21 @@ on behalf of the  PaaStime (2.0) application",
         "domain" : "uddi:soa.com:environment"
       } ],
       "guid" : {
-        "value" : "contract_request23623.acmecorp"
+        "value" : "contract_request23623.acmepayments"
       },
       "pubDate" : "2013-05-23T22:14:30.000Z",
       "AuthoringUser" : {
-        "ID" : "user12262.acmecorp",
+        "ID" : "user12262.acmepayments",
         "Name" : "JaneSaoirse",
         "Image" : {
-          "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
+          "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmepayments/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
           "Title" : "JaneSaoirse",
-          "Link" : "#/users/user12262.acmecorp/details"
+          "Link" : "#/users/user12262.acmepayments/details"
         }
       },
       "Image" : {
-        "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app16964.acmecorp/avatars/f250a96e-2f81-4e3e-88fc-61431fd80e5c.png",
-        "Link" : "#/app/app16964.acmecorp"
+        "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app16964.acmepayments/avatars/f250a96e-2f81-4e3e-88fc-61431fd80e5c.png",
+        "Link" : "#/app/app16964.acmepayments"
       },
       "CreatedDate" : "2013-05-23T22:14:30.000Z",
       "Actions" : {
@@ -331,7 +332,7 @@ on behalf of the  PaaStime (2.0) application",
       },
       "EntityReferences" : {
         "EntityReference" : [ {
-          "Guid" : "contract23622.acmecorp",
+          "Guid" : "contract23622.acmepayments",
           "Category" : [ {
             "value" : "contract",
             "domain" : "uddi:soa.com:resourcetype"
@@ -340,42 +341,42 @@ on behalf of the  PaaStime (2.0) application",
       },
       "EntityReference" : [ {
         "Title" : "PaaStime",
-        "Guid" : "app16964.acmecorp",
+        "Guid" : "app16964.acmepayments",
         "Category" : [ {
           "value" : "app",
           "domain" : "uddi:soa.com:resourcetype"
         } ]
       }, {
         "Title" : "PaaStime",
-        "Guid" : "app16964.acmecorp",
+        "Guid" : "app16964.acmepayments",
         "Category" : [ {
           "value" : "app",
           "domain" : "uddi:soa.com:resourcetype"
         } ]
       }, {
         "Title" : "2.0",
-        "Guid" : "4iXro2Uxs2h4LviCshR9pK9w.acmecorp",
+        "Guid" : "4iXro2Uxs2h4LviCshR9pK9w.acmepayments",
         "Category" : [ {
           "value" : "app-version",
           "domain" : "uddi:soa.com:resourcetype"
         } ]
       }, {
         "Title" : "ACME Payments DeLuxe",
-        "Guid" : "api19427.acmecorp",
+        "Guid" : "api19427.acmepayments",
         "Category" : [ {
           "value" : "api",
           "domain" : "uddi:soa.com:resourcetype"
         } ]
       }, {
         "Title" : "ACME Payments DeLuxe",
-        "Guid" : "api19427.acmecorp",
+        "Guid" : "api19427.acmepayments",
         "Category" : [ {
           "value" : "api",
           "domain" : "uddi:soa.com:resourcetype"
         } ]
       }, {
         "Title" : "Version 2.0",
-        "Guid" : "apiversion19429.acmecorp",
+        "Guid" : "apiversion19429.acmepayments",
         "Category" : [ {
           "value" : "apiversion",
           "domain" : "uddi:soa.com:resourcetype"
@@ -389,7 +390,7 @@ on behalf of the  PaaStime (2.0) application",
 <p><strong>Sample response headers: XML</strong></p>
 <pre>Accept: text/xml</pre>
 <p><a id="rss_userfeed_xml"></a><strong>Sample response body: XML</strong></p>
-<pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+<pre>&lt;?xml version="1.0" encoding=&quot;UTF-8&quot;?&gt;
 &lt;rss xmlns:ns2="http://soa.com/xsd/business/1.0" xmlns:ns3="http://soa.com/xsd/user/1.0" xmlns:ns4="http://soa.com/xsd/rss/1.0" 
 xmlns:ns5="http://soa.com/xsd/comment/1.0" xmlns:ns6="http://a9.com/-/spec/opensearch/1.1/" xmlns:ns7="http://soa.com/xsd/resource/1.0" 
 xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
@@ -402,7 +403,7 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
       &lt;description&gt;ACMECorp member JonathanSwift, I would like to invite you to join the development team for my application.&lt;/description&gt;
       &lt;category domain="uddi:soa.com:resourcetype"&gt;GROUP_MEMBER_REQ&lt;/category&gt;
       &lt;category domain="uddi:soa.com:archivable"&gt;true&lt;/category&gt;
-      &lt;guid&gt;group_member_req17574.acmecorp&lt;/guid&gt;
+      &lt;guid&gt;group_member_req17574.acmepayments&lt;/guid&gt;
       &lt;pubDate&gt;2013-05-30T00:10:01.000Z&lt;/pubDate&gt;
       &lt;ns4:CreatedDate&gt;2012-11-26T15:20:30.000Z&lt;/ns4:CreatedDate&gt;
       &lt;ns4:Marks&gt;
@@ -413,27 +414,27 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
         &lt;ns5:Count&gt;3&lt;/ns5:Count&gt;
       &lt;/ns5:CommentsPreview&gt;
       &lt;ns4:AuthoringUser&gt;
-        &lt;ID&gt;user12262.acmecorp&lt;/ID&gt;
+        &lt;ID&gt;user12262.acmepayments&lt;/ID&gt;
         &lt;Name&gt;JaneSaoirse&lt;/Name&gt;
         &lt;ns4:Image&gt;
-          &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
+          &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmepayments/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
           &lt;Title&gt;JaneSaoirse&lt;/Title&gt;
-          &lt;Link&gt;#/users/user12262.acmecorp/details&lt;/Link&gt;
+          &lt;Link&gt;#/users/user12262.acmepayments/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;
       &lt;/ns4:AuthoringUser&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;JonathanSwift&lt;/Title&gt;
-        &lt;Guid&gt;user13967.acmecorp&lt;/Guid&gt;
+        &lt;Guid&gt;user13967.acmepayments&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;user&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;PaaStime&lt;/Title&gt;
-        &lt;Guid&gt;app16964.acmecorp&lt;/Guid&gt;
+        &lt;Guid&gt;app16964.acmepayments&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
-        &lt;Link&gt;#/user/user12262.acmecorp/details&lt;/Link&gt;
+        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmepayments/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
+        &lt;Link&gt;#/user/user12262.acmepayments/details&lt;/Link&gt;
       &lt;/ns4:Image&gt;
     &lt;/item&gt;
     &lt;item&gt;
@@ -444,7 +445,7 @@ on behalf of the  PaaStime (2.0) application&lt;/description&gt;
       &lt;category domain="uddi:soa.com:archivable"&gt;false&lt;/category&gt;
       &lt;category domain="uddi:soa.com:wfstate"&gt;apicontract.status.activated&lt;/category&gt;
       &lt;category domain="uddi:soa.com:environment"&gt;Sandbox&lt;/category&gt;
-      &lt;guid&gt;contract_request23623.acmecorp&lt;/guid&gt;
+      &lt;guid&gt;contract_request23623.acmepayments&lt;/guid&gt;
       &lt;pubDate&gt;2013-05-23T22:14:30.000Z&lt;/pubDate&gt;
       &lt;ns4:CreatedDate&gt;2013-05-23T22:14:30.000Z&lt;/ns4:CreatedDate&gt;
       &lt;ns4:Marks&gt;
@@ -455,51 +456,51 @@ on behalf of the  PaaStime (2.0) application&lt;/description&gt;
         &lt;ns5:Count&gt;1&lt;/ns5:Count&gt;
       &lt;/ns5:CommentsPreview&gt;
       &lt;ns4:AuthoringUser&gt;
-        &lt;ID&gt;user12262.acmecorp&lt;/ID&gt;
+        &lt;ID&gt;user12262.acmepayments&lt;/ID&gt;
         &lt;Name&gt;JaneSaoirse&lt;/Name&gt;
         &lt;ns4:Image&gt;
-          &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmecorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
+          &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->users/user12262.acmepayments/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
           &lt;Title&gt;JaneSaoirse&lt;/Title&gt;
-          &lt;Link&gt;#/users/user12262.acmecorp/details&lt;/Link&gt;
+          &lt;Link&gt;#/users/user12262.acmepayments/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;
       &lt;/ns4:AuthoringUser&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;PaaStime&lt;/Title&gt;
-        &lt;Guid&gt;app16964.acmecorp&lt;/Guid&gt;
+        &lt;Guid&gt;app16964.acmepayments&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;PaaStime&lt;/Title&gt;
-        &lt;Guid&gt;app16964.acmecorp&lt;/Guid&gt;
+        &lt;Guid&gt;app16964.acmepayments&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;2.0&lt;/Title&gt;
-        &lt;Guid&gt;4iXro2Uxs2h4LviCshR9pK9w.acmecorp&lt;/Guid&gt;
+        &lt;Guid&gt;4iXro2Uxs2h4LviCshR9pK9w.acmepayments&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app-version&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;ACME Payments DeLuxe&lt;/Title&gt;
-        &lt;Guid&gt;api19427.acmecorp&lt;/Guid&gt;
+        &lt;Guid&gt;api19427.acmepayments&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;api&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;ACME Payments DeLuxe&lt;/Title&gt;
-        &lt;Guid&gt;api19427.acmecorp&lt;/Guid&gt;
+        &lt;Guid&gt;api19427.acmepayments&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;api&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;Version 2.0&lt;/Title&gt;
-        &lt;Guid&gt;apiversion19429.acmecorp&lt;/Guid&gt;
+        &lt;Guid&gt;apiversion19429.acmepayments&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;apiversion&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app16964.acmecorp/avatars/f250a96e-2f81-4e3e-88fc-61431fd80e5c.png&lt;/Url&gt;
-        &lt;Link&gt;#/app/app16964.acmecorp&lt;/Link&gt;
+        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app16964.acmepayments/avatars/f250a96e-2f81-4e3e-88fc-61431fd80e5c.png&lt;/Url&gt;
+        &lt;Link&gt;#/app/app16964.acmepayments&lt;/Link&gt;
       &lt;/ns4:Image&gt;
       &lt;ns4:EntityReferences&gt;
         &lt;ns4:EntityReference&gt;
-          &lt;Guid&gt;contract23622.acmecorp&lt;/Guid&gt;
+          &lt;Guid&gt;contract23622.acmepayments&lt;/Guid&gt;
           &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;contract&lt;/ns4:Category&gt;
         &lt;/ns4:EntityReference&gt;
       &lt;/ns4:EntityReferences&gt;
@@ -595,6 +596,10 @@ on behalf of the  PaaStime (2.0) application&lt;/description&gt;
     <tr bgcolor="#DDDDDD">
       <th width="20%">Item</th>
       <th width="80%">Value</th>
+    </tr>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" --> Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
     </tr>
   </thead>
   <tbody>

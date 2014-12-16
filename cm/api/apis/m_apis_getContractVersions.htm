@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Get Contract Versions | APIs Service | Enterprise API Platform API
-description: Returns a list of contract versions for the specified API.
+description:  Returns information about contracts for the specified API version.
 product: cm
 category: ref
 nav-title: Get Contract Versions 
@@ -15,8 +15,9 @@ no-catalog: true
 <h2><a name="top" id="top"></a>GET&nbsp;/api/apis/versions/{APIVersionID}/contracts</h2><!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_getContractVersions.lbi" -->Returns a list of contract versions for the specified API.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a></p>
+<p><!-- #BeginLibraryItem "/Library/desc_getContractVersions.lbi" -->
+Returns information about contracts for the specified API version.<!-- #EndLibraryItem --></p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -53,10 +54,11 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for the contract version for the specified API version.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion20693.acmecorp/contracts</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/versions/apiversion20693.acmepayments/contracts</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Status Code: 200 OK
-Content-Type: application/json</pre>
+Content-Type: application/json
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_&lt;tenant&gt;: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -120,7 +122,7 @@ Content-Type: application/json</pre>
 <!-- InstanceBeginEditable name="Sample Response" -->
 <h3 id="sampleresponse">Sample Response</h3>
 <p>The sample response below returns the contracts for the specified API version. There are two contracts.</p>
-<p><strong>Sample response headers: JSON</strong></p>
+<p><strong>Sample response headers: application/json</strong></p>
 <pre>Status Code: 200 OK
 Content-Type: application/json
 Date: Fri, 14 Jun 2013 21:26:09 GMT</pre>
@@ -129,7 +131,7 @@ Date: Fri, 14 Jun 2013 21:26:09 GMT</pre>
   "channel" : {
     "title" : "Api Contracts",
     "item" : [ {
-      "title" : "contract24060.acmecorp",
+      "title" : "contract24060.acmepayments",
       "category" : [ {
         "value" : "Sandbox",
         "domain" : "uddi:soa.com:environment"
@@ -138,7 +140,7 @@ Date: Fri, 14 Jun 2013 21:26:09 GMT</pre>
         "domain" : "uddi:soa.com:wfstate"
       } ],
       "guid" : {
-        "value" : "contract24060.acmecorp"
+        "value" : "contract24060.acmepayments"
       },
       "Endpoints" : {
         "Endpoint" : [ {
@@ -150,13 +152,13 @@ Date: Fri, 14 Jun 2013 21:26:09 GMT</pre>
         } ]
       },
       "Image" : [ {
-        "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api18969.acmecorp/avatars/d5afcdc5-a426-4c85-8595-8f6f3a6a2008.png",
+        "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api18969.acmepayments/avatars/d5afcdc5-a426-4c85-8595-8f6f3a6a2008.png",
         "Title" : "api",
-        "Link" : "#/api/api18969.acmecorp/versions/apiversion20693.acmecorp/details"
+        "Link" : "#/api/api18969.acmepayments/versions/apiversion20693.acmepayments/details"
       }, {
-        "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app24056.acmecorp/avatar",
+        "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app24056.acmepayments/avatar",
         "Title" : "app",
-        "Link" : "#/app/app24056.acmecorp/versions/gbGPCs7Uvz4VV8D0Zuvzdq6C.acmecorp/details"
+        "Link" : "#/app/app24056.acmepayments/versions/gbGPCs7Uvz4VV8D0Zuvzdq6C.acmepayments/details"
       } ],
       "Actions" : {
         "Action" : [ {
@@ -170,7 +172,7 @@ Date: Fri, 14 Jun 2013 21:26:09 GMT</pre>
       "EntityReferences" : {
         "EntityReference" : [ {
           "Title" : "3.0",
-          "Guid" : "apiversion20693.acmecorp",
+          "Guid" : "apiversion20693.acmepayments",
           "Category" : [ {
             "value" : "apiversion",
             "domain" : "uddi:soa.com:resourcetype"
@@ -180,27 +182,27 @@ Date: Fri, 14 Jun 2013 21:26:09 GMT</pre>
           } ]
         }, {
           "Title" : "ACMEPayments",
-          "Guid" : "api18969.acmecorp",
+          "Guid" : "api18969.acmepayments",
           "Category" : [ {
             "value" : "api",
             "domain" : "uddi:soa.com:resourcetype"
           } ]
         }, {
           "Title" : "1.0",
-          "Guid" : "gbGPCs7Uvz4VV8D0Zuvzdq6C.acmecorp",
+          "Guid" : "gbGPCs7Uvz4VV8D0Zuvzdq6C.acmepayments",
           "Category" : [ {
             "value" : "app-version",
             "domain" : "uddi:soa.com:resourcetype"
           } ]
         }, {
           "Title" : "Learning Puzzles",
-          "Guid" : "app24056.acmecorp",
+          "Guid" : "app24056.acmepayments",
           "Category" : [ {
             "value" : "app",
             "domain" : "uddi:soa.com:resourcetype"
           } ]
         }, {
-          "Guid" : "contract_request24061.acmecorp",
+          "Guid" : "contract_request24061.acmepayments",
           "Category" : [ {
             "value" : "board-item",
             "domain" : "uddi:soa.com:resourcetype"
@@ -208,7 +210,7 @@ Date: Fri, 14 Jun 2013 21:26:09 GMT</pre>
         } ]
       }
     }, {
-      "title" : "contract24253.acmecorp",
+      "title" : "contract24253.acmepayments",
       "category" : [ {
         "value" : "Production",
         "domain" : "uddi:soa.com:environment"
@@ -217,7 +219,7 @@ Date: Fri, 14 Jun 2013 21:26:09 GMT</pre>
         "domain" : "uddi:soa.com:wfstate"
       } ],
       "guid" : {
-        "value" : "contract24253.acmecorp"
+        "value" : "contract24253.acmepayments"
       },
       "Endpoints" : {
         "Endpoint" : [ {
@@ -229,13 +231,13 @@ Date: Fri, 14 Jun 2013 21:26:09 GMT</pre>
         } ]
       },
       "Image" : [ {
-        "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api18969.acmecorp/avatars/d5afcdc5-a426-4c85-8595-8f6f3a6a2008.png",
+        "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api18969.acmepayments/avatars/d5afcdc5-a426-4c85-8595-8f6f3a6a2008.png",
         "Title" : "api",
-        "Link" : "#/api/api18969.acmecorp/versions/apiversion20693.acmecorp/details"
+        "Link" : "#/api/api18969.acmepayments/versions/apiversion20693.acmepayments/details"
       }, {
-        "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app24056.acmecorp/avatar",
+        "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app24056.acmepayments/avatar",
         "Title" : "app",
-        "Link" : "#/app/app24056.acmecorp/versions/gbGPCs7Uvz4VV8D0Zuvzdq6C.acmecorp/details"
+        "Link" : "#/app/app24056.acmepayments/versions/gbGPCs7Uvz4VV8D0Zuvzdq6C.acmepayments/details"
       } ],
       "Actions" : {
         "Action" : [ {
@@ -249,7 +251,7 @@ Date: Fri, 14 Jun 2013 21:26:09 GMT</pre>
       "EntityReferences" : {
         "EntityReference" : [ {
           "Title" : "3.0",
-          "Guid" : "apiversion20693.acmecorp",
+          "Guid" : "apiversion20693.acmepayments",
           "Category" : [ {
             "value" : "apiversion",
             "domain" : "uddi:soa.com:resourcetype"
@@ -259,27 +261,27 @@ Date: Fri, 14 Jun 2013 21:26:09 GMT</pre>
           } ]
         }, {
           "Title" : "ACMEPayments",
-          "Guid" : "api18969.acmecorp",
+          "Guid" : "api18969.acmepayments",
           "Category" : [ {
             "value" : "api",
             "domain" : "uddi:soa.com:resourcetype"
           } ]
         }, {
           "Title" : "1.0",
-          "Guid" : "gbGPCs7Uvz4VV8D0Zuvzdq6C.acmecorp",
+          "Guid" : "gbGPCs7Uvz4VV8D0Zuvzdq6C.acmepayments",
           "Category" : [ {
             "value" : "app-version",
             "domain" : "uddi:soa.com:resourcetype"
           } ]
         }, {
           "Title" : "Learning Puzzles",
-          "Guid" : "app24056.acmecorp",
+          "Guid" : "app24056.acmepayments",
           "Category" : [ {
             "value" : "app",
             "domain" : "uddi:soa.com:resourcetype"
           } ]
         }, {
-          "Guid" : "contract_request24254.acmecorp",
+          "Guid" : "contract_request24254.acmepayments",
           "Category" : [ {
             "value" : "board-item",
             "domain" : "uddi:soa.com:resourcetype"
@@ -296,51 +298,51 @@ Date: Fri, 14 Jun 2013 21:26:09 GMT</pre>
 Content-Type: text/xml
 Date: Fri, 10 May 2013 22:12:25 GMT</pre>
 <p><a id="rss_apicontracts_xml"></a><strong>Sample response body: XML</strong></p>
-<pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+<pre>&lt;?xml version="1.0" encoding=&quot;UTF-8&quot;?&gt;
 &lt;rss xmlns:ns2="http://soa.com/xsd/business/1.0" xmlns:ns3="http://soa.com/xsd/user/1.0" xmlns:ns4="http://soa.com/xsd/rss/1.0" xmlns:ns5="http://soa.com/xsd/comment/1.0" xmlns:ns6="http://a9.com/-/spec/opensearch/1.1/" xmlns:ns7="http://soa.com/xsd/resource/1.0" xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
   &lt;channel&gt;
     &lt;title&gt;Api Contracts&lt;/title&gt;
     &lt;item&gt;
-      &lt;title&gt;contract24060.acmecorp&lt;/title&gt;
+      &lt;title&gt;contract24060.acmepayments&lt;/title&gt;
       &lt;category domain="uddi:soa.com:environment"&gt;Sandbox&lt;/category&gt;
       &lt;category domain="uddi:soa.com:wfstate"&gt;apicontract.status.activated&lt;/category&gt;
-      &lt;guid&gt;contract24060.acmecorp&lt;/guid&gt;
+      &lt;guid&gt;contract24060.acmepayments&lt;/guid&gt;
       &lt;ns4:EntityReferences&gt;
         &lt;ns4:EntityReference&gt;
           &lt;Title&gt;3.0&lt;/Title&gt;
-          &lt;Guid&gt;apiversion20693.acmecorp&lt;/Guid&gt;
+          &lt;Guid&gt;apiversion20693.acmepayments&lt;/Guid&gt;
           &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;apiversion&lt;/ns4:Category&gt;
           &lt;ns4:Category domain="uddi:soa.com:visibility"&gt;Limited&lt;/ns4:Category&gt;
         &lt;/ns4:EntityReference&gt;
         &lt;ns4:EntityReference&gt;
           &lt;Title&gt;ACMEPayments&lt;/Title&gt;
-          &lt;Guid&gt;api18969.acmecorp&lt;/Guid&gt;
+          &lt;Guid&gt;api18969.acmepayments&lt;/Guid&gt;
           &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;api&lt;/ns4:Category&gt;
         &lt;/ns4:EntityReference&gt;
         &lt;ns4:EntityReference&gt;
           &lt;Title&gt;1.0&lt;/Title&gt;
-          &lt;Guid&gt;gbGPCs7Uvz4VV8D0Zuvzdq6C.acmecorp&lt;/Guid&gt;
+          &lt;Guid&gt;gbGPCs7Uvz4VV8D0Zuvzdq6C.acmepayments&lt;/Guid&gt;
           &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app-version&lt;/ns4:Category&gt;
         &lt;/ns4:EntityReference&gt;
         &lt;ns4:EntityReference&gt;
           &lt;Title&gt;Learning Puzzles&lt;/Title&gt;
-          &lt;Guid&gt;app24056.acmecorp&lt;/Guid&gt;
+          &lt;Guid&gt;app24056.acmepayments&lt;/Guid&gt;
           &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app&lt;/ns4:Category&gt;
         &lt;/ns4:EntityReference&gt;
         &lt;ns4:EntityReference&gt;
-          &lt;Guid&gt;contract_request24061.acmecorp&lt;/Guid&gt;
+          &lt;Guid&gt;contract_request24061.acmepayments&lt;/Guid&gt;
           &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;board-item&lt;/ns4:Category&gt;
         &lt;/ns4:EntityReference&gt;
       &lt;/ns4:EntityReferences&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api18969.acmecorp/avatars/d5afcdc5-a426-4c85-8595-8f6f3a6a2008.png&lt;/Url&gt;
+        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api18969.acmepayments/avatars/d5afcdc5-a426-4c85-8595-8f6f3a6a2008.png&lt;/Url&gt;
         &lt;Title&gt;api&lt;/Title&gt;
-        &lt;Link&gt;#/api/api18969.acmecorp/versions/apiversion20693.acmecorp/details&lt;/Link&gt;
+        &lt;Link&gt;#/api/api18969.acmepayments/versions/apiversion20693.acmepayments/details&lt;/Link&gt;
       &lt;/ns4:Image&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app24056.acmecorp/avatar&lt;/Url&gt;
+        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app24056.acmepayments/avatar&lt;/Url&gt;
         &lt;Title&gt;app&lt;/Title&gt;
-        &lt;Link&gt;#/app/app24056.acmecorp/versions/gbGPCs7Uvz4VV8D0Zuvzdq6C.acmecorp/details&lt;/Link&gt;
+        &lt;Link&gt;#/app/app24056.acmepayments/versions/gbGPCs7Uvz4VV8D0Zuvzdq6C.acmepayments/details&lt;/Link&gt;
       &lt;/ns4:Image&gt;
       &lt;ns9:Endpoints&gt;
         &lt;ns9:Endpoint&gt;
@@ -358,46 +360,46 @@ Date: Fri, 10 May 2013 22:12:25 GMT</pre>
       &lt;/ns4:Actions&gt;
     &lt;/item&gt;
     &lt;item&gt;
-      &lt;title&gt;contract24253.acmecorp&lt;/title&gt;
+      &lt;title&gt;contract24253.acmepayments&lt;/title&gt;
       &lt;category domain="uddi:soa.com:environment"&gt;Production&lt;/category&gt;
       &lt;category domain="uddi:soa.com:wfstate"&gt;apicontract.status.activated&lt;/category&gt;
-      &lt;guid&gt;contract24253.acmecorp&lt;/guid&gt;
+      &lt;guid&gt;contract24253.acmepayments&lt;/guid&gt;
       &lt;ns4:EntityReferences&gt;
         &lt;ns4:EntityReference&gt;
           &lt;Title&gt;3.0&lt;/Title&gt;
-          &lt;Guid&gt;apiversion20693.acmecorp&lt;/Guid&gt;
+          &lt;Guid&gt;apiversion20693.acmepayments&lt;/Guid&gt;
           &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;apiversion&lt;/ns4:Category&gt;
           &lt;ns4:Category domain="uddi:soa.com:visibility"&gt;Limited&lt;/ns4:Category&gt;
         &lt;/ns4:EntityReference&gt;
         &lt;ns4:EntityReference&gt;
           &lt;Title&gt;ACMEPayments&lt;/Title&gt;
-          &lt;Guid&gt;api18969.acmecorp&lt;/Guid&gt;
+          &lt;Guid&gt;api18969.acmepayments&lt;/Guid&gt;
           &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;api&lt;/ns4:Category&gt;
         &lt;/ns4:EntityReference&gt;
         &lt;ns4:EntityReference&gt;
           &lt;Title&gt;1.0&lt;/Title&gt;
-          &lt;Guid&gt;gbGPCs7Uvz4VV8D0Zuvzdq6C.acmecorp&lt;/Guid&gt;
+          &lt;Guid&gt;gbGPCs7Uvz4VV8D0Zuvzdq6C.acmepayments&lt;/Guid&gt;
           &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app-version&lt;/ns4:Category&gt;
         &lt;/ns4:EntityReference&gt;
         &lt;ns4:EntityReference&gt;
           &lt;Title&gt;Learning Puzzles&lt;/Title&gt;
-          &lt;Guid&gt;app24056.acmecorp&lt;/Guid&gt;
+          &lt;Guid&gt;app24056.acmepayments&lt;/Guid&gt;
           &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app&lt;/ns4:Category&gt;
         &lt;/ns4:EntityReference&gt;
         &lt;ns4:EntityReference&gt;
-          &lt;Guid&gt;contract_request24254.acmecorp&lt;/Guid&gt;
+          &lt;Guid&gt;contract_request24254.acmepayments&lt;/Guid&gt;
           &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;board-item&lt;/ns4:Category&gt;
         &lt;/ns4:EntityReference&gt;
       &lt;/ns4:EntityReferences&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api18969.acmecorp/avatars/d5afcdc5-a426-4c85-8595-8f6f3a6a2008.png&lt;/Url&gt;
+        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apis/api18969.acmepayments/avatars/d5afcdc5-a426-4c85-8595-8f6f3a6a2008.png&lt;/Url&gt;
         &lt;Title&gt;api&lt;/Title&gt;
-        &lt;Link&gt;#/api/api18969.acmecorp/versions/apiversion20693.acmecorp/details&lt;/Link&gt;
+        &lt;Link&gt;#/api/api18969.acmepayments/versions/apiversion20693.acmepayments/details&lt;/Link&gt;
       &lt;/ns4:Image&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app24056.acmecorp/avatar&lt;/Url&gt;
+        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->apps/app24056.acmepayments/avatar&lt;/Url&gt;
         &lt;Title&gt;app&lt;/Title&gt;
-        &lt;Link&gt;#/app/app24056.acmecorp/versions/gbGPCs7Uvz4VV8D0Zuvzdq6C.acmecorp/details&lt;/Link&gt;
+        &lt;Link&gt;#/app/app24056.acmepayments/versions/gbGPCs7Uvz4VV8D0Zuvzdq6C.acmepayments/details&lt;/Link&gt;
       &lt;/ns4:Image&gt;
       &lt;ns9:Endpoints&gt;
         &lt;ns9:Endpoint&gt;
@@ -455,7 +457,7 @@ Date: Fri, 10 May 2013 22:12:25 GMT</pre>
   <tbody>
     <tr>
       <td>title</td>
-      <td>The title of the contract. It is the unique <a href="../Ref_IDsOnThePlatform.htm#id_contractid">ContractID</a>; for example, <strong>contract24060.acmecorp</strong>.</td>
+      <td>The title of the contract. It is the unique <a href="../Ref_IDsOnThePlatform.htm#id_contractid">ContractID</a>; for example, <strong>contract24060.acmepayments</strong>.</td>
     </tr>
     <tr>
       <td>category[&nbsp;]</td>
@@ -469,7 +471,7 @@ Date: Fri, 10 May 2013 22:12:25 GMT</pre>
     </tr>
     <tr>
       <td><a href="../Ref_RSSChannelsOnThePlatform.htm#rss_guid">GUID</a></td>
-      <td>GUID for the contract. It is the unique <a href="../Ref_IDsOnThePlatform.htm#id_contractid">ContractID</a>; for example, <strong>contract24060.acmecorp</strong>.</td>
+      <td>GUID for the contract. It is the unique <a href="../Ref_IDsOnThePlatform.htm#id_contractid">ContractID</a>; for example, <strong>contract24060.acmepayments</strong>.</td>
     </tr>
     <tr>
       <td>Endpoints</td>
@@ -518,6 +520,10 @@ Date: Fri, 10 May 2013 22:12:25 GMT</pre>
     <tr bgcolor="#DDDDDD">
       <th width="20%">Item</th>
       <th width="80%">Value</th>
+    </tr>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" --> Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a href="../Ref_API_Reference.htm#http404">404</a></td>

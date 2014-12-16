@@ -17,7 +17,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_modifyGroup.lbi" -->Changes one or more values relating to the specified group.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Only an authorized user can modify a group.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Only an authorized user can modify a group.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -56,17 +56,18 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request to modify the specified group.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->groups/group24147.acmecorp</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->groups/group24147.acmepayments</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json
-Content-type: application/json</pre>
+Content-type: application/json
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_&lt;tenant&gt;: &lt;TokenID&gt;<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body: JSON</strong></p>
-<pre>{<br />  &quot;GroupID&quot; : &quot;group24147.acmecorp&quot;,<br />  &quot;Name&quot; : &quot;LEAD Tier Two&quot;,<br />  &quot;Description&quot; : &quot;League of Extraordinary Application Developers&quot;,<br />  &quot;Tag&quot; : [ &quot;brilliant&quot;, &quot;advanced&quot;, &quot;innovative&quot;, &quot;league&quot; ],<br />  &quot;Visibility&quot; : &quot;Limited&quot;,<br />  &quot;PictureID&quot; : 1520,<br />  &quot;GroupType&quot; : &quot;com.soa.group.type.independent&quot;<br />}
+<pre>{<br />  &quot;GroupID&quot; : &quot;group24147.acmepayments&quot;,<br />  &quot;Name&quot; : &quot;LEAD Tier Two&quot;,<br />  &quot;Description&quot; : &quot;League of Extraordinary Application Developers&quot;,<br />  &quot;Tag&quot; : [ &quot;brilliant&quot;, &quot;advanced&quot;, &quot;innovative&quot;, &quot;league&quot; ],<br />  &quot;Visibility&quot; : &quot;Limited&quot;,<br />  &quot;PictureID&quot; : 1520,<br />  &quot;GroupType&quot; : &quot;com.soa.group.type.independent&quot;<br />}
 </pre>
 <p><strong>Sample request body: XML</strong></p>
-<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;Group xmlns=&quot;http://soa.com/xsd/group/1.0&quot; xmlns:ns2=&quot;http://soa.com/xsd/resource/1.0&quot;&gt;
-  &lt;GroupID&gt;group24147.acmecorp&lt;/GroupID&gt;
+  &lt;GroupID&gt;group24147.acmepayments&lt;/GroupID&gt;
   &lt;Name&gt;LEAD Tier Two&lt;/Name&gt;
   &lt;Description&gt;League of Extraordinary Application Developers&lt;/Description&gt;
   &lt;Tag&gt;brilliant&lt;/Tag&gt;
@@ -153,9 +154,9 @@ Content-type: application/json</pre>
 <pre>Status Code: 200 OK
 Content-Type: application/json
 Date: Tue, 11 Jun 2013 21:21:58 GMT</pre>
-<p><strong>Sample response body: JSON</strong></p>
+<p><strong>Sample response body: application/json</strong></p>
 <pre>{
-  "GroupID" : "group24147.acmecorp",
+  "GroupID" : "group24147.acmepayments",
   "Name" : "LEAD Tier Two",
   "Description" : "League of Extraordinary Application Developers",
   "Tag" : [ "brilliant", "advanced", "innovative", "league" ],
@@ -164,9 +165,9 @@ Date: Tue, 11 Jun 2013 21:21:58 GMT</pre>
   "GroupType" : "com.soa.group.type.independent"
 }</pre>
 <p><strong>Sample response body: XML</strong></p>
-<pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+<pre>&lt;?xml version="1.0" encoding=&quot;UTF-8&quot;?&gt;
 &lt;Group xmlns="http://soa.com/xsd/group/1.0" xmlns:ns2="http://soa.com/xsd/resource/1.0"&gt;
-  &lt;GroupID&gt;group24147.acmecorp&lt;/GroupID&gt;
+  &lt;GroupID&gt;group24147.acmepayments&lt;/GroupID&gt;
   &lt;Name&gt;LEAD Tier Two&lt;/Name&gt;
   &lt;Description&gt;League of Extraordinary Application Developers&lt;/Description&gt;
   &lt;Tag&gt;brilliant&lt;/Tag&gt;
@@ -234,6 +235,11 @@ Date: Tue, 11 Jun 2013 21:21:58 GMT</pre>
     <tr bgcolor="#DDDDDD">
       <th width="20%">Item</th>
       <th width="80%">Value</th>
+    </tr>
+    <tr>
+      <td><a href="../Ref_API_Reference.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->
+Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_fedmemberID</a> header in the request, or if it was invalid or expired.<!-- #EndLibraryItem --></td>
     </tr>
   </thead>
   <tbody>
