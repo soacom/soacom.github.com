@@ -59,10 +59,10 @@ Anyone can use this operation; login is not required. <!-- #EndLibraryItem --></
 <p id="id_samplerequest">The examples below show requests for legal agreement documents of type signup (for developers signing up to use the platform).</p>
 <p><strong>Request URL #1</strong></p>
 <p>Returns all legal agreements of the specified agreement type.</p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->legals?AgreementType=com.soa.acmepayments.legals.signup</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->legals?AgreementType=com.soa.atmosphere.legals.signup</pre>
 <p><strong>Request URL #2</strong></p>
 <p>Returns the legal document with the specified LegalDocumentID. Note the first parameter is still required.</p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->legals?AgreementType=com.soa.acmepayments.legals.signup&amp;ResourceID=signupagrmtv1.acmepayments</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://&lt;hostname&gt;/api/<!-- #EndLibraryItem -->legals?AgreementType=com.soa.atmosphere.legals.signup&amp;ResourceID=signupagrmtv1.acmepayments</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json
 </pre>
@@ -154,7 +154,7 @@ Date: Fri, 02 May 2014 19:20:00 GMT</pre>
         "value" : "agreement",
         "domain" : "uddi:soa.com:resourcetype"
       }, {
-        "value" : "com.soa.acmepayments.legals.signup",
+        "value" : "com.soa.atmosphere.legals.signup",
         "domain" : "uddi:soa.com:documenttype"
       }, {
         "value" : "com.soa.status.active",
@@ -191,7 +191,7 @@ xmlns:ns10="http://soa.com/xsd/api/1.0" xmlns:ns11="http://soa.com/xsd/board/1.0
       &lt;link&gt;/home/landing/developeragreement_open.html?version=1&lt;/link&gt;
       &lt;description&gt;Acmecorp Developer Agreement&lt;/description&gt;
       &lt;category domain="uddi:soa.com:resourcetype"&gt;agreement&lt;/category&gt;
-      &lt;category domain="uddi:soa.com:documenttype"&gt;com.soa.acmepayments.legals.signup&lt;/category&gt;
+      &lt;category domain="uddi:soa.com:documenttype"&gt;com.soa.atmosphere.legals.signup&lt;/category&gt;
       &lt;category domain="uddi:soa.com:state"&gt;com.soa.status.active&lt;/category&gt;
       &lt;category domain="uddi:soa.com:filename"&gt;developeragreement_open.html&lt;/category&gt;
       &lt;category domain="uddi:soa.com:version"&gt;1&lt;/category&gt;
