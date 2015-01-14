@@ -32,7 +32,7 @@ nav-title: Glossary of Terms
 
 
 <dt><a name="gl_api"></a>API</dt>
-<dd>A key resource in the <!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->. An API provides a business with a way of using the Internet to extend business capabilities to connect with new customers in new ways. In this context an API is a Web service exposed outside the enterprise, typically using RESTful design principles, and often with JSON content.</dd>
+<dd>A key resource in the Community Platform. An API provides a business with a way of using the Internet to extend business capabilities to connect with new customers in new ways. In this context an API is a Web service exposed outside the enterprise, typically using RESTful design principles, and often with JSON content.</dd>
 
 
 
@@ -42,7 +42,7 @@ nav-title: Glossary of Terms
 
 
 <dt><a name="gl_apiadmin"></a>API Administrator</dt>
-<dd>One of the <a href="#gl_role">roles</a> defined in the <!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> is that of the API Admin. Each API must have at least one Admin, and can have more. The API Admin approves or rejects connection requests, moderates the API's <a href="#gl_board">Board</a>, views and manages alerts and trouble tickets, and manages documents, policies, and other information associated with the API. The API Admin can also view performance and usage data for the entire API, and can invite others to be Admins for the same API.</dd>
+<dd>One of the <a href="#gl_role">roles</a> defined in the Community Platform is that of the API Admin. Each API must have at least one Admin, and can have more. The API Admin approves or rejects connection requests, moderates the API's <a href="#gl_board">Board</a>, views and manages alerts and trouble tickets, and manages documents, policies, and other information associated with the API. The API Admin can also view performance and usage data for the entire API, and can invite others to be Admins for the same API.</dd>
 
 
 
@@ -59,7 +59,7 @@ nav-title: Glossary of Terms
 
 
 <dt><a name="gl_app"></a>app</dt>
-<dd>An app (application) is a piece of software that delivers specific capabilities to its users. In the context of the <!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->, an app is a piece of software that consumes one or more APIs.</dd>
+<dd>An app (application) is a piece of software that delivers specific capabilities to its users. In the context of the Community Platform, an app is a piece of software that consumes one or more APIs.</dd>
 
 
 
@@ -75,7 +75,7 @@ nav-title: Glossary of Terms
 
 
 <dt><a name="gl_appteammember"></a>app team member</dt>
-<dd>One of the <a href="#gl_role">roles</a> defined in the <!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> is that of the app team member. Each app most have at least one team member and can have more. An app team member initiates <a href="#gl_contract">contract</a> requests, such as API access requests, moderates the app's <a href="#gl_board">Board</a>, and views and manages trouble tickets relating to the app. The app team member can also view performance and usage data for the app's API usage, and can invite others to be team members for the same app. All app team members have the same rights.</dd>
+<dd>One of the <a href="#gl_role">roles</a> defined in the Community Platform is that of the app team member. Each app most have at least one team member and can have more. An app team member initiates <a href="#gl_contract">contract</a> requests, such as API access requests, moderates the app's <a href="#gl_board">Board</a>, and views and manages trouble tickets relating to the app. The app team member can also view performance and usage data for the app's API usage, and can invite others to be team members for the same app. All app team members have the same rights.</dd>
 
 
 <dt>Assertion</dt>
@@ -120,7 +120,7 @@ nav-title: Glossary of Terms
 
 
 <dt><a name="gl_board"></a>Board</dt>
-<dd>In the <!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->, every resource, such as an app or API, has a Board that displays all feed entries for the resource. Users with approved connections to the resource can post items to the resource's Board according to privileges. For example, a member of a specific app team can post items to the Board for that app. Users with approved connections also see relevant Board items in their personal home Feed.</dd>
+<dd>In the Community Platform, every resource, such as an app or API, has a Board that displays all feed entries for the resource. Users with approved connections to the resource can post items to the resource's Board according to privileges. For example, a member of a specific app team can post items to the Board for that app. Users with approved connections also see relevant Board items in their personal home Feed.</dd>
 
 
 
@@ -135,7 +135,7 @@ nav-title: Glossary of Terms
 
 
 <dt><a name="gl_businessadmin"></a>Business Administrator</dt>
-<dd>One of the roles defined in the <!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> is that of the Business Administrator. A business can own one or more APIs and apps, and must have at least one Administrator. The Business Administrator automatically has administrator rights over all the APIs and apps owned by the business as well as all the users who are part of the business. For more information, see <a href="business_admin_overview.htm#what_roles_can_a_business_administrator_perform">What roles can a Business Administrator perform?</a></dd>
+<dd>One of the roles defined in the Community Platform is that of the Business Administrator. A business can own one or more APIs and apps, and must have at least one Administrator. The Business Administrator automatically has administrator rights over all the APIs and apps owned by the business as well as all the users who are part of the business. For more information, see <a href="business_admin_overview.htm#what_roles_can_a_business_administrator_perform">What roles can a Business Administrator perform?</a></dd>
 
 
 
@@ -146,6 +146,13 @@ nav-title: Glossary of Terms
 
 <dt>callback URL</dt>
 <dd>Redirect URL. See <a href="#gl_oauth_callbackurl">OAuth callback URL</a>.</dd>
+
+
+
+<dt><a name="gl_cer_file"></a>CER file</dt>
+<dd>A message generated by a certificate authority in response to a request for a digital identity certificate.</dd>
+<dd>When uploading app credentials, the app developer can upload either a CER file or a CSR file.</dd>
+<dd>See also: <a href="#gl_csr_file">CSR file</a>.</dd>
 
 
 
@@ -160,13 +167,18 @@ nav-title: Glossary of Terms
 
 
 
+<dt><a name="gl_code_user"></a>code (user)</dt>
+<dd>Any one of the four types of codes sent to users for different events: <a href="#gl_code_user_signup">signup code</a>, <a href="#gl_code_user_registration">registration code</a>, <a href="#gl_code_passwordreset">reset code</a>, or <a href="#gl_code_user_invitation">invitation code</a>.</dd>
+
+
+
 <dt><a name="gl_connectprovider"></a>Connect provider</dt>
 <dd>In <a href="#gl_openidconnect">OpenID Connect</a>, the <a href="#gl_identityprovider">identity provider</a> is called the Connect provider.</dd>
 
 
 
 <dt><a name="gl_connection"></a>connection</dt>
-<dd>A relationship between resources in the <!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->&#8212;such as the API access relationship between an app and an API that it's using.</dd>
+<dd>A relationship between resources in the Community Platform&#8212;such as the API access relationship between an app and an API that it's using.</dd>
 
 
 
@@ -196,14 +208,28 @@ nav-title: Glossary of Terms
 
 
 
+<dt><a name="gl_csr_file"></a>CSR file</dt>
+<dd>Acronym for Certificate Signing Request; a message sent to a certificate authority to request a digital identity certificate.</dd>
+<dd>When uploading app credentials, the app developer can upload either a CER file or a CSR file.</dd>
+<dd>Because the platform supports CSR import, the app developer does not need to get a signed certificate from a CA. Instead, the developer can generate a CSR from the key pair that he/she created, and can import that directly.</dd>
+<dd>When a CSR is imported, the platform uses its internal Certificate Authority to create the CER from the request. Therefore, in order to support CER, the platform's own certificate authority must be configured.</dd>
+<dd>See also: <a href="#gl_cer_file">CER file</a>.</dd>
+
+
+
 <dt><a name="gl_csrf_attack"></a>CSRF attack</dt>
-<dd>In a cross-site request forgery (CSRF) attack, a malicious user exploits the fact that an authorized user has already authenticated with another site and has the site's cookie in their browser. Malicious code from one browser tab can leverage the authentication already granted in another tab to execute actions unknown to the authorized user.</dd>
+<dd>In a cross-site request forgery (CSRF) attack, a malicious user exploits the fact that an authorized user has already authenticated with another site and has the site's cookie in their browser cache. Malicious code from one browser tab can leverage the authentication already granted in another tab to execute actions unknown to the authorized user.</dd>
 <dd>The platform includes a feature to help prevent CSRF attacks. For more information, see <a href="site_admin_config.htm#what_is_the_csrf_prevention_feature">What is the CSRF prevention feature?</a> (Site Admin help).</dd>
 
 
 
+<dt><a name="gl_csrf_token"></a>CSRF token</dt>
+<dd>A platform token that is used only if the CSRF prevention feature is in effect. The CSRF token is sent when the user logs in, and can be used in making subsequent API calls to protect against CSRF attacks. For more information, see <a href="site_admin_config.htm#what_is_the_csrf_prevention_feature">What is the CSRF prevention feature?</a> (Site Admin help).</dd>
+
+
+
 <dt><a name="gl_csrf_tokencookie"></a>Csrf-Token cookie</dt>
-<dd>A platform cookie that is used only if the CSRF prevention feature is in effect. The value of the Csrf-token cookie is sent as a custom header value in request messages to protect against CSRF attacks.  For more information, see <a href="site_admin_config.htm#what_is_the_csrf_prevention_feature">What is the CSRF prevention feature?</a> (Site Admin help).</dd>
+<dd>A platform cookie that is used only if the CSRF prevention feature is in effect. The value of the Csrf-token cookie is sent as a custom header value in request messages to protect against CSRF attacks. For more information, see <a href="site_admin_config.htm#what_is_the_csrf_prevention_feature">What is the CSRF prevention feature?</a> (Site Admin help).</dd>
 
 
 
@@ -234,7 +260,7 @@ nav-title: Glossary of Terms
 
 
 <dt><a name="gl_discussion"></a>discussion</dt>
-<dd>In the <!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->, an authorized user can create a discussion topic about a resource (app or API) on the resource's Board. A discussion is typically, but not necessarily, created by someone other than the owner or administrator of the resource. Discussion entries are not threaded; users comment on the original item rather than on the comments/replies to the original item. Users can, however, <a href="#gl_mark">mark</a> or <a href="#gl_unmark">unmark</a> the discussion itself and/or one or more discussion comments.</dd>
+<dd>In the Community Platform, an authorized user can create a discussion topic about a resource (app or API) on the resource's Board. A discussion is typically, but not necessarily, created by someone other than the owner or administrator of the resource. Discussion entries are not threaded; users comment on the original item rather than on the comments/replies to the original item. Users can, however, <a href="#gl_mark">mark</a> or <a href="#gl_unmark">unmark</a> the discussion itself and/or one or more discussion comments.</dd>
 <dd>Each discussion has a title and one or more comments. The visibility of a discussion is controlled by the visibility of the resource it's associated with; for example, a discussion about a Limited (Private) API can only be seen by administrators and Private API Group members associated with that API.</dd>
 
 
@@ -284,7 +310,7 @@ nav-title: Glossary of Terms
 
 
 <dt><a name="gl_group"></a>group</dt>
-<dd>1) The term "group" is used in many instances to refer to any of the following types of groups in the <!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->: app teams, Private API groups, API Administrator groups, Site Administrator groups, or independent groups.</dd>
+<dd>1) The term "group" is used in many instances to refer to any of the following types of groups in the Community Platform: app teams, Private API groups, API Administrator groups, Site Administrator groups, or independent groups.</dd>
 <dd>2) &quot;Group&quot; is sometimes used specifically to mean a <a href="#gl_privateapigroup">Private API Group</a>.</dd>
 
 
@@ -347,6 +373,12 @@ nav-title: Glossary of Terms
 <dd>The duration allows you to select the time period to be shown on the chart; for example, one week, one day, one hour.</dd>
 <dd>The interval defines the subdivision of time shown on one increment of the chart; for example, 1 week, 5 sec.</dd>
 <dd>Options adjust based on the selected Duration. For example, if Duration is 5 minutes, Interval is 5 sec. If Duration is 1 year, Interval is 1 week.</dd>
+
+
+
+<dt><a name="gl_code_user_invitation"></a>invitation code</dt>
+<dd>A unique code generated and sent to a specific user in an email if a platform member invites the user to a platform group, such as an app team, API Admin group, or independent group.</dd>
+<dd>This is one of the several types of codes use to manage user signup and login. For information on the others, see <a href="#gl_code_user">code (user)</a>.</dd>
 
 
 
@@ -418,7 +450,7 @@ nav-title: Glossary of Terms
 
 
 <dt><a name="gl_membershiprequest"></a>membership request (invitation)</dt>
-<dd>An invitation to another individual, whether a registered user or not, to join a <!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> group or team such as an app team. API Administrators can invite others to be API Administrators; app team members can invite others to the app team. A Site Administrator, Private API Administrator, or Independent Group member can also issue a membership request in the same way.</dd>
+<dd>An invitation to another individual, whether a registered user or not, to join a Community Platform group or team such as an app team. API Administrators can invite others to be API Administrators; app team members can invite others to the app team. A Site Administrator, Private API Administrator, or Independent Group member can also issue a membership request in the same way.</dd>
 
 
 
@@ -550,8 +582,8 @@ nav-title: Glossary of Terms
 
 
 
-<dt><a name="gl_passwordresetcode"></a>password reset code</dt>
-<dd>A unique code generated and sent to a specific user as a result of a password reset request. The code is only valid for the account that requested it, and expires after two days.</dd>
+<dt>password reset code</dt>
+<dd>See <a href="#gl_passwordresetcode">reset code</a>.</dd>
 
 
 
@@ -578,7 +610,7 @@ nav-title: Glossary of Terms
 
 
 <dt><a name="gl_proxyapi"></a>proxy API</dt>
-<dd>When an API Admin or Business Admin sets up an API on the <!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem --> and chooses to use the Proxy feature, all traffic to the API endpoints is channeled via the platform. This offers significant benefits, including the ability to apply policies and monitor traffic at the proxy.</dd>
+<dd>When an API Admin or Business Admin sets up an API on the Community Platform and chooses to use the Proxy feature, all traffic to the API endpoints is channeled via the platform. This offers significant benefits, including the ability to apply policies and monitor traffic at the proxy.</dd>
 
 
 
@@ -625,14 +657,20 @@ nav-title: Glossary of Terms
 
 
 
+<dt><a name="gl_code_user_registration"></a>registration code</dt>
+<dd>A unique code generated and sent to a specific user in an email if the Site Admin adds the user (currently supported only via the API). The code is only valid for the account it is generated for, and expires after a pre-set period.</dd>
+<dd>This is one of the several types of codes use to manage user signup and login. For information on the others, see <a href="#gl_code_user">code (user)</a>.</dd>
+
+
+
 <dt><a name="gl_relyingparty"></a>relying party</dt>
-<dd>In <a href="#gl_openid">OpenID</a> and <a href="#gl_openidconnect">OpenID Connect</a>, the service provider is called the relying party. The relying party trusts the <a href="#gl_connectprovider">Connect provider</a> to authenticate the user. In the context of the <!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->, the platform is the service provider and the Site Admin sets up the Connect provider in Domains setup.</dd>
+<dd>In <a href="#gl_openid">OpenID</a> and <a href="#gl_openidconnect">OpenID Connect</a>, the service provider is called the relying party. The relying party trusts the <a href="#gl_connectprovider">Connect provider</a> to authenticate the user. In the context of the Community Platform, the platform is the service provider and the Site Admin sets up the Connect provider in Domains setup.</dd>
 
 
 
-<dt>reset code</dt>
-<dd>See <a href="#gl_passwordresetcode">password reset code</a>.</dd>
-
+<dt><a name="gl_code_passwordreset"></a>reset code</dt>
+<dd>A unique code generated and sent to a specific user as a result of a password reset request. The code is only valid for the account that requested it, and expires after two days.</dd>
+<dd>This is one of the several types of codes use to manage user signup and login. For information on the others, see <a href="#gl_code_user">code (user)</a>.</dd>
 
 
 <dt><a name="gl_apiaccess_restricted"></a>restricted API access</dt>
@@ -641,7 +679,7 @@ nav-title: Glossary of Terms
 
 
 <dt><a name="gl_resource"></a>resource</dt>
-<dd>In the <!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Community Platform<!-- #EndLibraryItem -->, a Resource is an item, such as an App or API, which has its own Board and set of activities.</dd>
+<dd>In the Community Platform, a Resource is an item, such as an App or API, which has its own Board and set of activities.</dd>
 
 
 
@@ -743,8 +781,9 @@ nav-title: Glossary of Terms
 
 
 
-<dt><a name="gl_signupcode"></a>signup code</dt>
+<dt><a name="gl_code_user_signup"></a>signup code</dt>
 <dd>A unique code generated and sent to a specific user in an email when the user is signing up for the platform. The code is only valid for the account that requested it, and expires after seven days.</dd>
+<dd>This is one of the several types of codes use to manage user signup and login. For information on the others, see <a href="#gl_code_user">code (user)</a>.</dd>
 
 
 

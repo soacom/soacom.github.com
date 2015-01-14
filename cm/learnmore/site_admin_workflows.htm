@@ -24,8 +24,11 @@ no-catalog: true
   <li><a href="#how_do_i_specify_a_custom_workflow_for_api_contracts">How do I specify a custom workflow for API contracts?</a></li>
   <li><a href="#how_do_i_specify_a_custom_workflow_for_groups">How do I specify a custom workflow for groups?</a></li>
   <li><a href="#how_do_i_specify_a_custom_workflow_for_tickets">How do I specify a custom workflow for tickets?</a></li>
-  <li><a href="#how_do_i_specify_a_custom_workflow_for_oauth_grants">How do I specify a custom workflow for OAuth grants?</a></li>
+  <li><a href="#how_do_i_specify_a_custom_workflow_for_users">How do I specify a custom workflow for platform users?</a></li>
+   <li><a href="#what_is_the_default_workflow_for_platform_users">What is the default workflow for platform users?</a></li>
+ <li><a href="#how_do_i_specify_a_custom_workflow_for_oauth_grants">How do I specify a custom workflow for OAuth grants?</a></li>
   <li><a href="#workflow_not_available">I uploaded a custom workflow, but it isn't showing as available. What do I do?</a></li>
+  <li><a href="#how_do_i_set_up_an_app_deletion_approval_workflow">How do I set up an app deletion approval workflow?</a></li></ol>
 </ol>
 
 
@@ -35,23 +38,24 @@ no-catalog: true
 
 
 <a name="which_workflows_can_i_customize"></a><h3>Which workflows can I customize?</h3>
-<p>You can customize the following workflows:</p>
+<p>A Business Admin or Site Admin can upload certain custom workflows, in Administration/Workflows; the Site Admin can change the default workflow for certain resources in the applicable Administration/Config page. For directions, see <a href="#how_do_i_set_up_and_manage_custom_workflows">How do I set up and manage custom workflows?</a> below.</p>
+<p>You can upload the following types of custom workflows:</p>
 <ul>
-  <li>API (Business Admin uploads in Administrator / Workflows; Site Admin specifies as default in Config / APIs) </li>
-  <li>App (Business Admin uploads in Administrator / Workflows; Site Admin specifies as default in Config / Apps)</li>
-  <li>API access request (Business Admin uploads in Administrator / Workflows; Site Admin specifies as default in Config / Connections) </li>
-  <li>Group membership request (Business Admin uploads in Administrator / Workflows; Site Admin specifies as default in Config / Groups) </li>
-  <li>Ticket (Business Admin uploads in Administrator / Workflows; Site Admin specifies as default in Config / Tickets) </li>
-<!--  <li>OAuth Grants (must be changed in database; <a href="basics_support.htm#how_do_i_contact_technical_support">contact Technical Support</a>)</li>-->
+  <li>API (set default in Config / APIs)</li>
+  <li>App (set default in Config / Apps)</li>
+  <li>API access request (API contract) (set default in Config / Connections) </li>
+  <li>Group membership request  (set default in Config / Groups)</li>
+  <li>Ticket (set default in Config / Tickets)</li>
+  <li>User (set default in Config / Users)</li>
+  <li>OAuth Grant</li>
 </ul>
-<p class="apidoc_note"><strong>Note</strong>: OAuth grants cannot be customized at this time.</p>
 <p><a href="#top">Back to top</a></p>
 
 
 
 <a name="how_do_i_set_up_and_manage_custom_workflows"></a><h3>How do I set up and manage custom workflows?</h3>
 <p>The first step in implementing a custom workflow is for the Business Admin to develop the custom workflow and upload it to the platform.</p>
-<p>Once the Business Admin has uploaded a custom workflow, the Site Admin can specify that workflow as the default for the resource type. From that point onwards, the new workflow applies to any new resources of that type. Existing resources are not affected.</p>
+<p>Once the Business Admin or Site Admin has uploaded a custom workflow, the Site Admin can specify that workflow as the default for the resource type. From that point onwards, the new workflow applies to any new resources of that type. Existing resources are not affected.</p>
 <p> Follow the instructions for the applicable object type:</p>
 <ul>
   <li><a href="#how_do_i_specify_a_custom_workflow_for_apps">How do I specify a custom workflow for apps?</a></li>
@@ -59,14 +63,14 @@ no-catalog: true
   <li><a href="#how_do_i_specify_a_custom_workflow_for_api_contracts">How do I specify a custom workflow for API contracts?</a></li>
   <li><a href="#how_do_i_specify_a_custom_workflow_for_groups">How do I specify a custom workflow for groups?</a></li>
   <li><a href="#how_do_i_specify_a_custom_workflow_for_tickets">How do I specify a custom workflow for tickets?</a></li>
-<!--  <li><a href="#how_do_i_specify_a_custom_workflow_for_oauth_grants">How do I specify a custom workflow for OAuth grants?</a></li>-->
+  <li><a href="#how_do_i_specify_a_custom_workflow_for_users">How do I specify a custom workflow for platform users?</a></li>
 </ul>
 <p class="apidoc_note"><strong>Note</strong>: when you specify a new custom workflow for a resource, it affects all future resources. Existing resources are not affected. In some cases, it's possible to modify the workflow used for an individual resource. For example, the API Admin or Business Admin can modify the workflow that a specific API uses, in the API Details page.</p>
 
 <h5>To view a custom workflow:</h5>
 <ol>
   <li>Log in as Site Admin or Business Admin.</li>
-  <li>Go to <em>Admin &gt; Workflows</em>.</li>
+  <li>Go to <em>Administration &gt; Workflows</em>.</li>
   <li>Find the workflow on the list and click <strong>View</strong>. The workflow XML file is displayed in a separate window.</li>
 </ol>
 <p><a href="#top">Back to top</a></p>
@@ -75,13 +79,13 @@ no-catalog: true
 
 <a name="how_do_i_specify_a_custom_workflow_for_apis"></a><h3>How do I specify a custom workflow for APIs?</h3>
 <p>The Site Admin can specify a custom workflow and set that as the default workflow for all future APIs on the platform. When the default workflow is changed, the new workflow applies to all new APIs, but existing APIs are not affected.</p>
-<p>Before specifying the custom workflow as the platform default, the Business Admin must first create the custom workflow externally and upload it. For instructions, see <a href="business_admin_workflows.htm#to_upload_a_custom_workflow">To upload a custom workflow</a>.</p>
+<p>Before the Site Admin can specify the custom workflow as the platform default, the Business Admin or Site Admin must first create the custom workflow externally and upload it. For instructions, see <a href="business_admin_workflows.htm#to_upload_a_custom_workflow">To upload a custom workflow</a>.</p>
 <h5>To specify a custom workflow for APIs:</h5>
 <ol>
   <li>Log in as Site Admin.</li>
-  <li>Go to <em>Admin &gt; Config &gt; APIs</em>.</li>
+  <li>Go to <em>Administration &gt; Config &gt; APIs</em>.</li>
   <li>Under API Workflow Definition, click the drop-down list to choose the custom workflow. 
-  <span class="apidoc_note"><strong>Note</strong>: If the workflow isn't available for selection, it hasn't yet been uploaded by the Business Admin. For instructions, see <a href="business_admin_workflows.htm#to_upload_a_custom_workflow">To upload a custom workflow</a>.</span>
+  <span class="apidoc_note"><strong>Note</strong>: If the workflow isn't available for selection, it hasn't yet been uploaded. For instructions, see <a href="business_admin_workflows.htm#to_upload_a_custom_workflow">To upload a custom workflow</a>.</span>
 </li>
   <li>Click <strong>Save</strong>.</li>
 </ol>
@@ -92,13 +96,13 @@ no-catalog: true
 
 <a name="how_do_i_specify_a_custom_workflow_for_apps"></a><h3>How do I specify a custom workflow for apps?</h3>
 <p>The Site Admin can specify a custom workflow and set that as the default workflow for all future apps on the platform. When the default workflow is changed, the new workflow applies to all new apps, but existing apps are not affected.</p>
-<p>Before specifying the custom workflow as the platform default, the Business Admin must first create the custom workflow externally and upload it. For instructions, see <a href="business_admin_workflows.htm#to_upload_a_custom_workflow">To upload a custom workflow</a>.</p>
+<p>Before the Site Admin can specify the custom workflow as the platform default, the Business Admin or Site Admin must first create the custom workflow externally and upload it. For instructions, see <a href="business_admin_workflows.htm#to_upload_a_custom_workflow">To upload a custom workflow</a>.</p>
 <h5>To specify a custom workflow for apps:</h5>
 <ol>
   <li>Log in as Site Admin.</li>
-  <li>Go to <em>Admin &gt; Config &gt; Apps</em>.</li>
+  <li>Go to <em>Administration &gt; Config &gt; Apps</em>.</li>
   <li>Under App Workflow Definition, click the drop-down list to choose the custom workflow. 
-  <span class="apidoc_note"><strong>Note</strong>: If the workflow isn't available for selection, it hasn't yet been uploaded by the Business Admin. For more information, see <a href="business_admin_workflows.htm#to_upload_a_custom_workflow">To upload a custom workflow</a>.</span>
+  <span class="apidoc_note"><strong>Note</strong>: If the workflow isn't available for selection, it hasn't yet been uploaded. For more information, see <a href="business_admin_workflows.htm#to_upload_a_custom_workflow">To upload a custom workflow</a>.</span>
 </li>
   <li>Click <strong>Save</strong>.</li>
 </ol>
@@ -109,13 +113,13 @@ no-catalog: true
 
 <a name="how_do_i_specify_a_custom_workflow_for_api_contracts"></a><h3>How do I specify a custom workflow for API contracts?</h3>
 <p>The Site Admin can specify a custom workflow and set that as the default workflow for all future API contracts on the platform. When the default workflow is changed, the new workflow applies to all new contracts, but existing contracts are not affected.</p>
-<p>Before specifying the custom workflow as the platform default, the Business Admin must first create the custom workflow externally and upload it. For instructions, see <a href="business_admin_workflows.htm#to_upload_a_custom_workflow">To upload a custom workflow</a>.</p>
+<p>Before the Site Admin can specify the custom workflow as the platform default, the Business Admin or Site Admin must first create the custom workflow externally and upload it. For instructions, see <a href="business_admin_workflows.htm#to_upload_a_custom_workflow">To upload a custom workflow</a>.</p>
 <h5>To specify a custom workflow for API contracts:</h5>
 <ol>
   <li>Log in as Site Admin.</li>
-  <li>Go to <em>Admin &gt; Config &gt; Connections</em>.</li>
+  <li>Go to <em>Administration &gt; Config &gt; Connections</em>.</li>
   <li>Under General App/API Connection Settings, choose Sandbox or Production and click the drop-down list to choose the custom workflow. 
-  <span class="apidoc_note"><strong>Note</strong>: If the workflow isn't available for selection, it hasn't yet been uploaded by the Business Admin. For more information, see <a href="business_admin_workflows.htm#to_upload_a_custom_workflow">To upload a custom workflow</a>.</span>
+  <span class="apidoc_note"><strong>Note</strong>: If the workflow isn't available for selection, it hasn't yet been uploaded. For more information, see <a href="business_admin_workflows.htm#to_upload_a_custom_workflow">To upload a custom workflow</a>.</span>
 </li>
   <li>Click <strong>Save</strong>.</li>
 </ol>
@@ -126,13 +130,13 @@ no-catalog: true
 
 <a name="how_do_i_specify_a_custom_workflow_for_groups"></a><h3>How do I specify a custom workflow for groups?</h3>
 <p>The Site Admin can specify a custom workflow and set that as the default workflow for all future groups on the platform. When the default workflow is changed, the new workflow applies to all new groups, but existing groups are not affected.</p>
-<p>Before specifying the custom workflow as the platform default, the Business Admin must first create the custom workflow externally and upload it. For instructions, see <a href="business_admin_workflows.htm#to_upload_a_custom_workflow">To upload a custom workflow</a>.</p>
+<p>Before the Site Admin can specify the custom workflow as the platform default, the Business Admin or Site Admin must first create the custom workflow externally and upload it. For instructions, see <a href="business_admin_workflows.htm#to_upload_a_custom_workflow">To upload a custom workflow</a>.</p>
 <h5>To specify a custom workflow for groups:</h5>
 <ol>
   <li>Log in as Site Admin.</li>
-  <li>Go to <em>Admin &gt; Config &gt; Groups</em>.</li>
+  <li>Go to <em>Administration &gt; Config &gt; Groups</em>.</li>
   <li>Under Group Membership Workflow, click the drop-down list to choose the custom workflow. 
-  <span class="apidoc_note"><strong>Note</strong>: If the workflow isn't available for selection, it hasn't yet been uploaded by the Business Admin. For more information, see <a href="business_admin_workflows.htm#to_upload_a_custom_workflow">To upload a custom workflow</a>.</span>
+  <span class="apidoc_note"><strong>Note</strong>: If the workflow isn't available for selection, it hasn't yet been uploaded. For more information, see <a href="business_admin_workflows.htm#to_upload_a_custom_workflow">To upload a custom workflow</a>.</span>
 </li>
   <li>Click <strong>Save</strong>.</li>
 </ol>
@@ -143,17 +147,55 @@ no-catalog: true
 
 <a name="how_do_i_specify_a_custom_workflow_for_tickets"></a><h3>How do I specify a custom workflow for tickets?</h3>
 <p>The Site Admin can specify a custom workflow and set that as the default workflow for all future tickets on the platform. When the default workflow is changed, the new workflow applies to all new tickets, but existing tickets are not affected.</p>
-<p>Before specifying the custom workflow as the platform default, the Business Admin must first create the custom workflow externally and upload it. For instructions, see <a href="business_admin_workflows.htm#to_upload_a_custom_workflow">To upload a custom workflow</a>.</p>
+<p>Before the Site Admin can specify the custom workflow as the platform default, the Business Admin or Site Admin must first create the custom workflow externally and upload it. For instructions, see <a href="business_admin_workflows.htm#to_upload_a_custom_workflow">To upload a custom workflow</a>.</p>
 <h5>To specify a custom workflow for tickets:</h5>
 <ol>
   <li>Log in as Site Admin.</li>
-  <li>Go to <em>Admin &gt; Config &gt; Tickets</em>.</li>
-  <li>Under App Workflow Definition, click the drop-down list to choose the custom workflow. 
-  <span class="apidoc_note"><strong>Note</strong>: If the workflow isn't available for selection, it hasn't yet been uploaded by the Business Admin. For more information, see <a href="business_admin_workflows.htm#to_upload_a_custom_workflow">To upload a custom workflow</a>.</span>
+  <li>Go to <em>Administration &gt; Config &gt; Tickets</em>.</li>
+  <li>Under Ticket Workflow Definition, click the drop-down list to choose the custom workflow. 
+  <span class="apidoc_note"><strong>Note</strong>: If the workflow isn't available for selection, it hasn't yet been uploaded. For more information, see <a href="business_admin_workflows.htm#to_upload_a_custom_workflow">To upload a custom workflow</a>.</span>
 </li>
   <li>Click <strong>Save</strong>.</li>
 </ol>
 <p>For more information on ticket settings, refer to <a href="site_admin_config.htm#to_configure_ticket_settings">To configure ticket settings</a>.</p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_specify_a_custom_workflow_for_users"></a><h3>How do I specify a custom workflow for platform users?</h3>
+<p>You can use the default out-of-the-box user workflow in combination with user settings and business security settings relating to users, to control user experience on the platform and if needed to restrict what users can do. If you need more flexibility, you can design your own custom workflow.</p>
+<p>The Site Admin can specify a custom workflow and set that as the default workflow for all future users on the platform. When the default workflow is changed, the new workflow applies to all new users. In addition, for A Community Manager upgrade scenario, running the Upgrade CM Models task adds existing users to the new workflow.</p>
+<p>Before the Site Admin can specify the custom workflow as the platform default, the Business Admin or Site Admin must first create the custom workflow externally and upload it. For instructions, see <a href="business_admin_workflows.htm#to_upload_a_custom_workflow">To upload a custom workflow</a>. For information about custom workflows, see <a href="http://docs.soa.com/cm/assets/CM_WP_Workflow.pdf" target="_blank"> Community Manager: Custom Workflows</a> on docs.soa.com.</p>
+<h5>To specify a custom workflow for platform users:</h5>
+<ol>
+  <li>Log in as Site Admin.</li>
+  <li>Go to <em>Administration &gt; Config &gt; Users</em>.</li>
+  <li>Under User Workflow Definition, click the drop-down list to choose the custom workflow. <span class="apidoc_note"><strong>Note</strong>: If the workflow isn't available for selection, it hasn't yet been uploaded. For more information, see <a href="business_admin_workflows.htm#to_upload_a_custom_workflow">To upload a custom workflow</a>.</span> </li>
+  <li>Click <strong>Save</strong>.</li>
+</ol>
+<p>For more information on user settings, refer to <a href="site_admin_config.htm#how_do_i_configure_settings_for_users">How do I configure settings for users?</a></p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="what_is_the_default_workflow_for_platform_users"></a><h3>What is the default workflow for platform users?</h3>
+<p>There is currently a default workflow that applies to all local platform users. Users who log in using a third-party identity provider are not managed by the default workflow.</p>
+<p>The default workflow for platform users has a slightly different process depending on the type of user:</p>
+<ul>
+  <li>Self-signup user</li>
+  <li>User invited by a Site Admin</li>
+</ul>
+<p>In all cases, the user profile can be modified as needed by the Site Admin.</p>
+<p>If the platform settings allow users to modify their profiles, the user can also modify his/her own profile. This is evaluated in the workflow by means of the @ModifyProfile reserved action. If @ModifyProfile is present in the workflow and is applicable to the logged-in user, the user can modify his/her own profile.</p>
+<p>The default user workflow checks the platform setting that governs whether users can modify their own profiles (Business Security settings, set up by the Site Admin; see <a href="site_admin_config.htm#how_do_i_configure_settings_for_security_business">How do I configure settings for business security?</a> in the Site Admin help).</p>
+<p>The default workflow guides users through the login process, checking whether any or all of the following possible login conditions are currently required:</p>
+<ol>
+  <li>Must the password be changed? A user invited by a Site Admin logs in with a temporary password and must choose a new password as a first step.</li>
+  <li>Is there a platform legal agreement in place that was not yet accepted by the user? If yes, the user must accept the legal agreement before proceeding with login.</li>
+  <li>Must the user provide answers to security challenge questions? This could be the case on first login. There are also other circumstances that might trigger this; for example, the requirement to answer security challenge questions is added, or the number of answers each user must provide is increased.</li>
+</ol>
+<p>If one of these is required, the login process required that the user complete that one step. Login is then evaluated again. When all required conditions are met, the user is logged in. If it is the user's first login, the user is then marked as permanent in the database; this ensures that the user is not purged. Temporary user records, such as invitation codes that were issued and not responded to, are periodically purged from the database.</p>
+<p>If you want to, you can create a custom workflow for users and set your custom workflow as the default. See <a href="#how_do_i_specify_a_custom_workflow_for_users">How do I specify a custom workflow for platform users?</a> above.</p>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -171,6 +213,14 @@ no-catalog: true
 <p>If you see your workflow on the list, the most likely reason it's not available for selection is that an incorrect resource was specified when uploading the workflow. It's important to specify the correct resource, because only workflows designated for a specific resource&#8212;for example, tickets&#8212;are available on the Config page for that resource.</p>
 <p>To check the resource type, find your workflow on the list and then click <strong>Edit</strong>. In the Edit Workflow page, change the Object Type specified for the workflow, if needed, and then click <strong>Save</strong>.</p>
 <p><a href="#top">Back to <strong>top</strong></a></p>
+
+
+
+<a name="how_do_i_set_up_an_app_deletion_approval_workflow"></a><h3>How do I set up an app deletion approval workflow?</h3>
+<p>By default, apps do not follow a workflow. However, if needed, you can assign a custom workflow.</p>
+<p>The platform includes a default out-of-the-box custom workflow that allows you to specify app deletion approval. If this workflow is implemented, when an app team member deletes an app, the app is deactivated, and a deletion request is sent to the Business Admin for approval. No changes can be made to the app during this time. If the Business Admin approves the deletion request, the app is deleted; if the Business Admin denies the request, the app is restored to an active state.</p>
+<p>Name for this out-of-the box app  workflow: <strong>appversion-workflow-template1</strong>.</p>
+<p><a href="#top">Back to top</a></p>
 
 
 

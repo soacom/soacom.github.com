@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Documentation Maintenance | API Administration | Community Manager Help
+title: API Documentation Maintenance | API Administration | Community Manager Help
 description: Add / maintain API documentation and restrict visibility of documentation files.
 product: cm
 category: learn
@@ -11,7 +11,7 @@ nav-title:
 no-nav: true
 no-catalog: true
 ---
-<h2 id="top">Documentation Maintenance</h2>
+<h2 id="top">API Documentation Maintenance</h2>
 <p> Add / maintain API documentation and restrict visibility of documentation files.</p>
 <p><strong>Note</strong>: For more information about API documentation tagging, see <a href="ov_doctagging.htm">Documentation Tagging</a></p>
 <div class = "divider1"></div>
@@ -25,16 +25,28 @@ no-catalog: true
   <li><a href="#how_do_i_add_api_documentation">How do I add API documentation?</a></li>
   <li><a href="#can_i_link_to_api_documentation_on_a_different_site">Can I link to API documentation on a different site?</a></li>
   <li><a href="#what_are_the_content_guidelines_for_api_documentation">What are the content guidelines for API documentation?</a></li>
-  <li><a href="#what_are_the_visibility_rules_for_api_documentation">What are the visibility rules for API documentation?</a></li>
-  <li><a href="#how_do_i_control_visibility_of_api_documentation_files">How do I control visibility of API documentation files?</a></li>
   <li><a href="#how_do_i_upload_my_api_documentation_files">How do I upload my API documentation files?</a></li>
 </ol>
+
+
+
+<h5 style="color: gray;"><a href="#h_doc_tagging">Doc Tagging:</a></h5>
+
+
+
+<ol class="table_of_contents">
+  <li><a href="#what_are_the_visibility_rules_for_api_documentation">What are the visibility rules for API documentation?</a></li>
+  <li><a href="#how_do_i_control_visibility_of_api_documentation_files">How do I control visibility of API documentation files?</a></li>
+</ol>
+
+
+
 <div class = "divider1"></div>
 
 
 
 <a name="what_is_the_api_documentation_maintenace_process"></a><h3>What is the API documentation maintenance process?</h3>
-<p>All API documentation must be developed and maintained outside of the platform in your own HTML editor. Once your HTML content is ready you can upload it to the site.</p>
+<p>All API documentation must be developed and maintained outside the platform in your own HTML editor. Once your HTML content is ready you can upload it to the site.</p>
 <p>If you add a new API version, you can update the existing documentation or create an entirely different set of documents. By default, all documentation files reside in the same folder. Here are a couple of approaches you could take to maintain files from different versions within the same folder structure:</p>
 <ul>
   <li>Use unique names for new files. For example, if you have two versions, with some files shared between versions and some files different for each version, you could name the unique files <strong>operationname_v1.htm</strong>, <strong>operationname_v2.htm</strong>, and so on. You could have one main index page that links to files for each version, or you could have a separate index page for each version.</li>
@@ -76,6 +88,31 @@ no-catalog: true
 <a name="what_are_the_content_guidelines_for_api_documentation"></a><h3>What are the content guidelines for API documentation?</h3>
 <p>The platform provides a detailed set of content development guidelines for API documentation, including publishing, editing, styles, content organization, file upload, testing, and updating. For details, see <a href="api_admin_content_guidelines.htm">Content Development Guidelines</a>.</p>
 <p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_upload_my_api_documentation_files"></a><h3>How do I upload my API documentation files?</h3>
+<p>You can upload HTML files and associated images, PDF files, or other content to the <em>API &gt; Documents</em> section of the platform using the <strong>File Manager</strong>.</p>
+<p>There are two upload options:</p>
+<ul>
+  <li>Upload files individually.</li>
+  <li>Upload multiple files at once using a ZIP archive file.
+  <p>If you use a ZIP file, make sure the files within the ZIP don't include extra folders that you don't want in the path. When you upload, the file is unzipped automatically using the paths, if any, specified within the ZIP file. At minimum, the file that is the entry point to your documentation should be in the /documents folder.</p></li>
+</ul>
+<h5>To upload your files via the <em>File Explorer</em>:</h5>
+<ol>
+  <li>Navigate to <em>API &gt; API Name &gt; Documents</em>.</li>
+  <li>Click the <em>File Explorer</em> icon in the upper-left corner of the documentation panel. The File Explorer appears.
+  <p><img src="images/upload metadata xml.jpg" width="358" height="243" alt="Upload metadata file to /documents folder" /></p></li>
+  <li>Click <strong>Upload a File</strong> or <strong>Upload a Zip Archive</strong>.</li>
+  <li>In the <strong>File Upload</strong> box, navigate to the location of the individual file or ZIP file you want to upload. Choose the file, and then click <strong>Open</strong>.</li>
+  <li>Click <strong>Upload</strong>.</li>
+</ol>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<h3><a name="h_doc_tagging"></a>Doc Tagging:</h3>
 
 
 
@@ -154,7 +191,7 @@ no-catalog: true
   <li><a href="#setup_doc_toc">Setting up the documentation Table of Contents</a></li>
   <li><a href="#using_doc_tags">Content-based tagging: using documentation tags</a></li>
   <li><a href="#using_multiple_tags">Using multiple tags</a></li>
-  <li><a href="#how_do_i_upload_my_api_documentation_files">Uploading your documentation files</a></li></ul>
+  <li><a href="#how_do_i_upload_my_api_documentation_files">Uploading your API documentation files</a></li></ul>
 <a name="using_metadata_xml"></a>
 <h4>File-based tagging: using the metadata.xml file</h4>
 <p>You can control the visibility of API documentation and downloadable files in the <em>API &gt; Documents</em> folder by creating a <strong>metadata.xml </strong>file that includes one or more regular expressions that specify which files can be seen, via tagging, for one or more of the following:</p>
@@ -492,33 +529,12 @@ no-catalog: true
   <li>Verify that links to tagged sections are also tagged.</li>
   <li>Verify that the scope and operation names you specified in the visibility tags are valid. Scopes are mapped to operations on the <em>Scope Mapping &gt; Edit API Scope</em> page. If scope names are missing or incorrect, consult with your Business Administrator.</li>
   <li>Verify that the license names you specified in the visibility tags are available to your app developer audience via the <em>API Access Wizard</em>. To do this you can create a new app and submit an API Access Request by selecting <strong>Access</strong> at the top right of the <em>API &gt; Details</em> page.</li>
-  <li>Upload your files. See <a href="#how_do_i_upload_my_api_documentation_files">How do I upload my documentation files?</a></li>
+  <li>Upload your files. See <a href="#how_do_i_upload_my_api_documentation_files">How do I upload my API documentation files?</a></li>
   <li>Create several test user accounts and request API access using various scenarios that will illustrate visibility and restricted visibility of API documentation in the <em>API &gt; Documents</em> section.</li>
   <li>If you make changes to licenses, scopes, or operations, update the API documentation HTML files accordingly.</li>
 </ul>
 <p><a href="#top">Back to top</a></p>
 <div class = "divider1"></div>
-
-
-
-<a name="how_do_i_upload_my_api_documentation_files"></a><h3>How do I upload my documentation files?</h3>
-<p>You can upload HTML files and associated images, PDF files, or other content to the <em>API &gt; Documents</em> section of the platform using the <strong>File Manager</strong>.</p>
-<p>There are two upload options:</p>
-<ul>
-  <li>Upload files individually.</li>
-  <li>Upload multiple files at once using a ZIP archive file.
-  <p>If you use a ZIP file, make sure the files within the ZIP don't include extra folders that you don't want in the path. When you upload, the file is unzipped automatically using the paths, if any, specified within the ZIP file. At minimum, the file that is the entry point to your documentation should be in the /documents folder.</p></li>
-</ul>
-<h5>To upload your files via the <em>File Explorer</em>:</h5>
-<ol>
-  <li>Navigate to <em>API &gt; API Name &gt; Documents</em>.</li>
-  <li>Click the <em>File Explorer</em> icon in the upper-left corner of the documentation panel. The File Explorer appears.
-  <p><img src="images/upload metadata xml.jpg" width="358" height="243" alt="Upload metadata file to /documents folder" /></p></li>
-  <li>Click <strong>Upload a File</strong> or <strong>Upload a Zip Archive</strong>.</li>
-  <li>In the <strong>File Upload</strong> box, navigate to the location of the individual file or ZIP file you want to upload. Choose the file, and then click <strong>Open</strong>.</li>
-  <li>Click <strong>Upload</strong>.</li>
-</ol>
-<p><a href="#top">Back to top</a></p>
 
 
 

@@ -23,6 +23,7 @@ no-catalog: true
   <li><a href="#what_actions_can_i_perform_on_user_accounts">What actions can I perform on user accounts?</a></li>
   <li><a href="#what_are_the_components_of_the_list_of_users_page">What are the components of the List of Users page?</a></li>
   <li><a href="#how_do_i_activate_a_user_account">How do I activate a user account?</a></li>
+  <li><a href="#how_do_i_edit_a_user_account">How do I edit a user account?</a></li>
   <li><a href="#how_do_i_disable_a_user_account">How do I disable a user account?</a></li>
   <li><a href="#how_do_i_enable_a_user_account">How do I enable a user account that's been disabled?</a></li>
   <li><a href="#how_do_i_delete_a_user_account">How do I delete a user account?</a></li>
@@ -37,7 +38,7 @@ no-catalog: true
 
 <a name="who_can_manage_user_accounts"></a><h3>Who can manage user accounts?</h3>
 <p>Only Site Administrators can access the <em>Administration &gt; Users</em> page and manage user accounts.</p>
-<p>Only a Site Administrator for Policy Manager can configure the user roles setting, which denies access to users with certain roles.</p>
+<p>Only a Site Administrator for Policy Manager can configure the user roles setting, which denies access to users with certain roles. For more information,  see <a href="#what_actions_can_i_perform_on_user_accounts">What actions can I perform on user accounts?</a></p>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -56,6 +57,8 @@ no-catalog: true
 <p>The Site Admin can perform the following actions on user accounts:</p>
 <ul>
   <li>Activate: see <a href="#how_do_i_activate_a_user_account">How do I activate a user account?</a></li>
+  <li>Edit: see <a href="#how_do_i_edit_a_user_account">How do I edit a user account?</a></li>
+
   <li>Disable: see <a href="#how_do_i_disable_a_user_account">How do I disable a user account?</a></li>
   <li>Enable: see <a href="#how_do_i_enable_a_user_account">How do I enable a user account that's been disabled?</a></li>
   <li>Delete: see <a href="#how_do_i_delete_a_user_account">How do I delete a user account?</a></li>
@@ -106,7 +109,7 @@ no-catalog: true
 <tbody>
   <tr class="t2row">
     <td>Name / Email</td>
-    <td>Displays the username and email address associated with a user account.</td>
+    <td>Displays the username and email address associated with a user account. The username is clickable, providing a link to view or edit the user's profile information.</td>
   </tr>
   <tr class="t1row">
     <td>Status</td>
@@ -155,6 +158,28 @@ no-catalog: true
   <li>On the <em>List of Users</em> page, find the user account you would like to activate.</li>
   <li>On the <em>Action</em> drop-down at the right, click <strong>Activate</strong>.</li>
   <li>At the notification message, click <strong>OK</strong>. The account status is immediately updated. Note that although the status change is immediate, there is a short delay before the information on the list is updated.</li>
+</ol>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_edit_a_user_account"></a><h3>How do I edit a user account?</h3>
+<p>You can edit any of the values that are part of the profile for a specific platform user.</p>
+<h5>To edit a user account:</h5>
+<ol>
+  <li>Log in as the Site Admin.</li>
+  <li>Navigate to <em>Administration &gt; Users</em>.</li>
+  <li>On the <em>List of Users</em> page, find the user account you would like to edit.</li>
+  <li>Click the link on the username to access the user's profile.</li>
+  <li>Click the left menu item as needed to access different parts of the user profile. You can edit:
+    <ul>
+      <li>Details (firstname, lastname, profile name, email address, avatar)</li>
+      <li>Password</li>
+      <li>Security (security questions and answers, if required)</li>
+      <li>Settings</li>
+    </ul>
+  </li>
+  <li>Save changes.</li>
 </ol>
 <p><a href="#top">Back to top</a></p>
 
@@ -250,8 +275,7 @@ no-catalog: true
   <li>New account setup</li>
 </ul>
 <p>The database field is ALLOW_USER_ENUM, in the BUSINESS_SECURITY_SETTINGS table. If enabled (set to <strong>com.soa.feature.enabled</strong>, or no value specified) the default behavior is in effect. If this value is set to <strong>com.soa.feature.disabled</strong>, the enhanced security behavior is activated.</p>
-<!--<pre>Update BUSINESS_SECURITY_SETTINGS set ALLOW_USER_ENUM='com.soa.feature.enabled';</pre>
-<p>The query becomes complicated if multiple tenants are configured. On-premise installations have only one tenant configured, and they will want to apply the setting to the whole deployment anyway, so a "where" clause is not necessary.</p>-->
+<p>You can modify this field in the user interface in the business security configuration settings: see <a href="site_admin_config.htm#how_do_i_configure_settings_for_security_business">How do I configure settings for business security?</a></p>
 <p>The table below shows the default platform behavior and the enhanced security behavior for these two activities.</p>
 <table cellspacing="0px" class="doctable" style="width: 90%;">
   <thead>

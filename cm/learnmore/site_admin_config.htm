@@ -13,7 +13,7 @@ no-catalog: true
 ---
 <h2 id="top">Config</h2>
 
-<p>Configure basic settings for apps, APIs, and groups, set up custom color schemes, define a platform login, and upload documentation files and style sheets.</p>
+<p>Configure basic settings for apps, APIs, connections, groups, tickets, users, and business security; set up custom color schemes, define a platform login, and upload documentation files and style sheets.</p>
 <p>Note: this section contains information about the configuration settings defined within Community Manager, which apply to the entire developer portal.</p>
 <p>For information about the configuration settings defined in the SOA Software Administration Console, which apply only tot he specific container, refer to <a href="site_admin_admin_console_settings.htm">Admin Console Settings</a>.</p>
 <div class = "divider1"></div>
@@ -63,12 +63,14 @@ no-catalog: true
 <ol class="table_of_contents">
   <li><a href="#what_is_a_resource">What is a Resource?</a></li>
   <li><a href="#what_is_the_difference_between_resources_and_content">What's the difference between Resources and Content?</a></li>
-  <li><a href="#what_is_the_folder_structure_for_content">What is the folder structure for my content?</a></li>
-  <li><a href="#how_do_i_upload_style_sheets_to_the_platform">How do I upload style sheets to the platform?</a></li>
+  <li><a href="#what_is_the_folder_structure_for_content_default">What is the folder structure for content in Default Theme?</a></li>
+  <li><a href="#what_is_the_folder_structure_for_content_sd">What is the folder structure for content in Simple Developer Theme?</a></li>
+  <li><a href="#how_do_i_upload_content_sd">How do I upload content for Simple Developer theme?</a></li>  <li><a href="#how_do_i_upload_style_sheets_to_the_platform">How do I upload style sheets to the platform?</a></li>
   <li><a href="#how_do_i_upload_sprite_files_to_the_platform">How do I upload Sprite files to the platform?</a></li>
   <li><a href="#how_do_i_upload_content_to_the_platform">How do I upload content to the platform?</a></li>
   <li><a href="#how_do_i_modify_the_landing_page_for_the_platform">How do I modify the landing page for the platform?</a></li>
   <li><a href="#how_do_i_upload_the_api_and_online_help_content_style_sheet_to_the_platform">How do I upload the API and Online Help content style sheet to the platform?</a></li>
+  <li><a href="#how_do_i_develop_content_for_sd_theme">How do I develop content for Simple Developer theme?</a></li>
 </ol>
 
 
@@ -76,16 +78,22 @@ no-catalog: true
 
 
 <ol class="table_of_contents">
+  <li><a href="#where_do_i_configure_settings">Where do I configure settings for the platform?</a></li>
   <li><a href="#how_do_i_configure_settings_for_apis">How do I configure settings for APIs?</a></li>
   <li><a href="#how_do_i_configure_settings_for_apps">How do I configure settings for apps?</a></li>
   <li><a href="#how_do_i_configure_settings_for_connections">How do I configure settings for app/API connections?</a></li>
   <li><a href="#how_do_i_configure_settings_for_groups">How do I configure settings for groups?</a></li>
   <li><a href="#how_do_i_configure_settings_for_tickets">How do I configure settings for tickets?</a></li>
+  <li><a href="#how_do_i_configure_settings_for_users">How do I configure settings for users?</a></li>
+  <li><a href="#how_do_i_configure_settings_for_security_business">How do I configure settings for business security?</a></li>
   <li><a href="#how_do_i_configure_separate_notification_addresses_by_theme">How do I configure separate notification addresses for different platform themes?</a></li>
   <li><a href="#what_is_the_csrf_prevention_feature">What is the CSRF prevention feature?</a></li>
   <li><a href="#how_do_i_implement_csrf_prevention_feature">How do I implement the CSRF prevention feature?</a></li>
   <li><a href="#csrf_prevention_custom_client">I want CSRF prevention, but we already have a custom client. What do I do?</a></li>
   <li><a href="#how_do_i_configure_security_challenge_questions">How do I configure security challenge questions?</a></li>
+  <li><a href="#how_do_i_monitor_app_security_changes">I need to monitor app security changes. What do I do?</a></li>
+  <li><a href="#how_do_i_add_a_platform_signup_legal_agreement">How do I add a platform signup legal agreement?</a></li>
+  <li><a href="#how_do_i_change_the_platform_signup_legal_agreement">How do I change the platform signup legal agreement?</a></li>
 </ol>
 
 
@@ -109,7 +117,7 @@ no-catalog: true
 <ol>
   <li>Log in as the Site Admin.</li>
   <li>Navigate to <em>Administration &gt; Config &gt; Custom Styles</em>.</li>
-  <li>If you want to work with the template for the Simple Developer Theme (Simple Dev) rather than the current user interface (Default Theme), choose it from the drop-down list at the top. Styles for all themes are managed in the same place. For more information, see <a href="#what_is_a_platform_theme">What is a platform theme?</a> and <a href="basics_glossary.htm#gl_theme_simpledev">Simple Developer theme</a>. </li>
+  <li>If you want to work with the template for the <a href="basics_glossary.htm#gl_theme_simpledev">Simple Developer theme</a> (Simple Dev) rather than the current user interface (Default Theme), choose it from the drop-down list at the top. Styles for all themes are managed in the same place. For more information, see <a href="#what_is_a_platform_theme">What is a platform theme?</a></li>
   <li>Click <strong>Download Template</strong> to download the default platform template, <strong>custom_template.less</strong>. For full instructions, see <a href="#how_do_i_download_the_custom_template_less_template">How do I download the custom_template.less template?</a></li>
   <li>Rename the downloaded file from <strong>custom_template.less</strong> to <strong>custom.less</strong> and modify it as needed.</li>
   <li>Upload the revised file to the platform. For instructions, see <a href="#how_do_i_upload_my_customless_file_after_i_have_updated_it">How do I upload my custom.less file after I have updated it?</a></li>
@@ -289,7 +297,7 @@ no-catalog: true
 <h5><a name="to_customize_your_logo_filename"></a>To specify your logo filename in the template:</h5>
 
 <ol>
-  <li>Go to <em>Admin &gt; Config &gt; Custom Styles</em>.</li>
+  <li>Go to <em>Administration &gt; Config &gt; Custom Styles</em>.</li>
   <li>If you want to work with the template for the Simple Developer Theme (Simple Dev) rather than the current user interface (Default Theme), choose it from the drop-down list at the top. Styles for all themes are managed in the same place. For more information, see <a href="#what_is_a_platform_theme">What is a platform theme?</a> and <a href="basics_glossary.htm#gl_theme_simpledev">Simple Developer theme</a>. </li>
   <li>Click <strong>Download</strong> to download a new custom_template.less file and rename it to custom.less.</li>
   <li>Load the custom .less file into an HTML editor and change the filename for this entry: @logo-img: url(&quot;images/&lt;image_name&gt;.png&quot;); to the new logo filename.</li>
@@ -299,7 +307,7 @@ no-catalog: true
 
 <h5><a name="to_upload_your_logo_file"></a>To upload your logo file:</h5>
 <ol>
-  <li>Go to <em>Admin &gt; Config &gt; Custom Styles</em>.</li>
+  <li>Go to <em>Administration &gt; Config &gt; Custom Styles</em>.</li>
   <li>If you want to work with the template for the Simple Developer Theme (Simple Dev) rather than the current user interface (Default Theme), choose it from the drop-down list at the top. Styles for all themes are managed in the same place. For more information, see <a href="#what_is_a_platform_theme">What is a platform theme?</a> and <a href="basics_glossary.htm#gl_theme_simpledev">Simple Developer theme</a>. </li>
   <li>Click <strong>Rebuild Styles</strong> to ensure that all the proper style folders are generated. <em>Note: If you specified a custom logo name in custom.less and already uploaded the style sheet the rebuild step is not required. </em></li>
   <li>Go to <em>Resources &gt; Resources &gt; File Manager</em> and navigate to the theme/default/style folder:<br />
@@ -309,7 +317,7 @@ no-catalog: true
   <br />
   <br /></li>
   <li>Click into the /images folder and upload your logo file. <em>Note that the logo must comply with the stated logo requirements. </em></li>
-  <li>If for some reason the new logo does not display, try refreshing your browser cache and/or go to <em>Admin &gt; Config &gt; Custom Styles</em>, choose the theme if needed, and click <strong>Rebuild Styles</strong>.</li>
+  <li>If for some reason the new logo does not display, try refreshing your browser cache and/or go to <em>Administration &gt; Config &gt; Custom Styles</em>, choose the theme if needed, and click <strong>Rebuild Styles</strong>.</li>
 </ol>
 <p><a href="#top">Back to top</a></p>
 
@@ -417,7 +425,7 @@ no-catalog: true
     <li>Google login button usage: <a href="https://developers.google.com/+/branding-guidelines#sign-in-button" target="_blank">Google+ Sign-In button branding guidelines</a></li>
   </ul>
   </li>
-  <li>In the Mode column, click the applicable button to indicate whether you want the login to be a popup or to display in the main window. For more information, see <a href="site_admin_config.htm#what_login_page_integration_modes_are_supported">What login page integration modes are supported?</a> below.</li>
+  <li>In the Mode column, click the applicable button to indicate whether you want the login to be a popup or to display in the main window. For more information, see <a href="#what_login_page_integration_modes_are_supported">What login page integration modes are supported?</a> below.</li>
   <li>Click <strong>Save</strong>.</li>
 </ol>
 
@@ -455,7 +463,7 @@ no-catalog: true
 <a name="how_do_i_disable_a_platform_login"></a><h3>How do I disable a platform login?</h3>
 <h5>To disable a platform login:</h5>
 <ol>
-  <li>Navigate to <em>Site Administration</em> &gt; <em>Config &gt; Logins</em>. The <em>Configure</em> screen displays a listing of domains that have been added to the platform.</li>
+  <li>Navigate to <em>Administration</em> &gt; <em>Config &gt; Logins</em>. The <em>Configure</em> screen displays a listing of domains that have been added to the platform.</li>
   <li>To disable the domain, clear the <strong>Enable</strong> checkbox.</li>
   <li>Click <strong>Save</strong>.</li>
 </ol>
@@ -519,13 +527,12 @@ no-catalog: true
     <p> Files uploaded to this location are indexed periodically, automatically, so that content is available for your site users when they use the Search feature to look for content.</p>
   </li>
 </ul>
-<p>  For more information on the file and folder structure for your implementation, as it relates to files you might want to upload or customize, see <a href="#what_is_the_folder_structure_for_content">What is the folder structure for my resources?</a> below. </p>
+<p>  For more information on the file and folder structure for your implementation, as it relates to files you might want to upload or customize, see <a href="#what_is_the_folder_structure_for_content_default">What is the folder structure for content in Default Theme?</a> and <a href="#what_is_the_folder_structure_for_content_sd">What is the folder structure for content in Simple Developer Theme?</a> below. </p>
 <p><a href="#top">Back to top</a></p>
 
 
 
-<a name="what_is_the_folder_structure_for_content"></a>
-<h3>What is the folder structure for my content?</h3>
+<a name="what_is_the_folder_structure_for_content_default"></a><h3>What is the folder structure for content in Default Theme?</h3>
 <p>If you're uploading content to the platform, via <em>Administration &gt; Config &gt; Resources</em> &gt; <em>Content</em>, you'll need to make sure you place files in the correct folders.</p>
 <p>Clicking the <strong>Content</strong> button takes you to File Manager where you can create folders, navigate up and down the folder structure, and upload single files or ZIP files. When you're uploading files, it's important to make sure you're in the right folder. You cannot move files.</p>
 <p>The Content button takes you to the top level of the folder structure, the <strong>/content</strong> folder. From there, the folder structure is as follows:</p>
@@ -540,6 +547,49 @@ no-catalog: true
     </ul>
   </li>
   </ul>
+<p>For example, let's say you want to customize the Support page. The URL for the page is: &lt;hostname&gt;/#/home/support. You would go to <em>Administration &gt; Config &gt; Resources</em> &gt; <em>Content</em>, to access the Content folder. In the File Explorer, click to navigate down to the home folder, then click to navigate down to the support folder. In this folder you will see index.htm which is the default page. To upload a replacement file, click <strong>Upload a File</strong> and navigate to the location of the new file.</p>
+<p>If needed, you can save out the existing HTML; choose to view the file in the browser, click View Source, and then copy the HTML. Or you can export the fileset, which will include referenced assets.</p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+
+<a name="what_is_the_folder_structure_for_content_sd"></a><h3>What is the folder structure for content in Simple Developer Theme?</h3>
+<p>The Simple Developer theme shares the same file and folder structure as Default Theme (see <a href="#what_is_the_folder_structure_for_content_default">What is the folder structure for content in Default Theme?</a> above), but uses different folders for content.</p>
+<p>Simple Developer theme, by default, includes the following three content files/folders:</p>
+<ul>
+  <li>Documentation page: documentation/index.htm. In the user interface, this is accessed via the Documentation link at the center of the top menu bar.</li>
+  <li>Help page: documentation/index.htm. In the user interface, this is accessed via the Help link, right of top menu bar.</li>
+  <li>Welcome page: documentation/index.htm. In the user interface, this is accessed by clicking on the logo at the top left.</li>
+  </ul>
+<p>In the file system, these are represented by a structure of three subfolders in the main /content/ folder:</p>
+<ul>
+  <li>content/documentation/index.htm</li>
+  <li>content/help/index.htm</li>
+  <li>content/welcome/index.htm</li>
+</ul>
+<p>For more detailed information about content development and management for the Simple Developer theme, see <a href="site_admin_content_guidelines_sd.htm">Content Development Guidelines for Simple Developer Theme</a>.</p>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_upload_content_sd"></a><h3>How do I upload content for Simple Developer theme?</h3>
+<p>The Simple Developer theme shares the same file and folder structure as Default Theme, but uses different folders for content. If you want to replace existing content, you must mirror the existing folder structure, as given in <a href="#what_is_the_folder_structure_for_content_sd">What is the folder structure for content in Simple Developer Theme?</a> above.</p>
+<p>When you navigate to the <strong>content</strong> folder in File Explorer, you won't see these subfolders and files. However, to update the content, you must use identical folder and file names. Create the folder, click into the folder, and then upload the revised file, as explained below.</p>
+<h5>To update a Simple Developer default page</h5>
+<ol>
+  <li>Log in to the platform (Default Theme) as a Site Administrator.</li>
+  <li>Navigate to <em>Administration</em> &gt; <em>Config &gt; Resources</em>.</li>
+  <li>In the <em>Content</em> section, click <strong>File Manager</strong> to access the Content folder.</li>
+  <li>Click <strong>New Directory</strong>, and create a folder with the exact name of the folder in which you want to update the content: for example, <strong>help</strong>.</li>
+  <li>Click the new folder to go into it in File Explorer.</li>
+  <li>Click Upload a File.</li>
+  <li>Navigate to the location of the updated file and upload it. You can also upload a zip archive if you want to add multiple files or assets.</li>
+  <li>Click <strong>Upload</strong>. The file is uploaded.</li>
+  <li>Test by viewing in Simple Developer theme.
+  <p><strong>Note</strong>: to see the update immediately, you will need to clear cache and refresh the page. Cache is updated automatically every hour, so there is a delay before developers see the new page.</p></li>
+</ol>
+<p>For more detailed information about content development and management for the Simple Developer theme, see <a href="site_admin_content_guidelines_sd.htm">Content Development Guidelines for Simple Developer Theme</a>.</p>
 <p><a href="#top">Back to top</a></p>
 
 
@@ -560,7 +610,7 @@ no-catalog: true
 <p>If you've updated one or more Sprite files, you can create an /images folder in the /resources/theme/default/style directory and upload them. Sprite files must be uploaded AFTER you have uploaded your custom.less file and have rebuilt the site styles (either automatically as part of the custom.less upload process or manually by executing the <strong>Rebuild</strong> function).</p>
 <h5>To upload Sprite files to the platform:</h5>
 <ol>
-  <li>Navigate to <em>Site Administration</em> &gt; <em>Config &gt; Resources</em>.</li>
+  <li>Navigate to <em>Administration</em> &gt; <em>Config &gt; Resources</em>.</li>
   <li>In the <em>Resources</em> section click <strong>File Manager</strong>. Navigate to the /resources/theme/default/style directory. You will see the following default styles which were autogenerated as part of the custom.less upload process.<br />
     <br />
     <img src="images/content image file.jpg" width="514" height="303" alt="" /></li>
@@ -587,7 +637,7 @@ no-catalog: true
 
 <h5>To upload a file:</h5>
 <ol>
-  <li>Navigate to <em>Site Administration</em> &gt; <em>Config &gt; Resources</em>.</li>
+  <li>Navigate to <em>Administration</em> &gt; <em>Config &gt; Resources</em>.</li>
   <li>In the <em>Content</em> section, click <strong>File Manager</strong>.</li>
   <li>Select the directory for the content area you would like to update.
     <p><img src="images/resources_content.jpg" width="501" height="300" alt="" /></p></li>
@@ -602,7 +652,7 @@ no-catalog: true
 <p>To modify the landing page, you must download it, modify it offline, and then upload it to the same location.</p>
 <h5>To modify the landing page:</h5>
 <ol>
-  <li>Navigate to <em>Site Administration</em> &gt; <em>Config &gt; Resources</em>.</li>
+  <li>Navigate to <em>Administration</em> &gt; <em>Config &gt; Resources</em>.</li>
   <li>In the <em>Content</em> section, click <strong>File Manager.</strong></li>
   <li>Click into the content/home/landing directory.</li>
   <li>Locate the index.htm file and download it.</li>
@@ -618,7 +668,7 @@ no-catalog: true
 <p><em>Note: This style sheet is not affected by the custom.less style sheet regeneration process and will not be changed or overwritten when a new custom.less file is uploaded. </em></p>
 <h5>To upload a document.css style sheet to the platform:</h5>
 <ol>
-  <li>Navigate to <em>Site Administration</em> &gt; <em>Config &gt; Resources</em>.</li>
+  <li>Navigate to <em>Administration</em> &gt; <em>Config &gt; Resources</em>.</li>
   <li>In the <em>Content</em> section, click <strong>File Manager</strong>. Navigate to /content/style. You will see a directory similar to the following:
 <p><img src="images/document style sheet.jpg" width="498" height="234" alt="" /></p></li>
   <li>Click <strong>Upload</strong>. The <em>File Upload</em> dialog box displays. Select the document.css file and click <strong>Open</strong>.</li>
@@ -629,8 +679,32 @@ no-catalog: true
 
 
 
+<a name="how_do_i_develop_content_for_sd_theme"></a>
+<h3>How do I develop content for the Simple Developer theme?</h3>
+<p>Content development for the Simple Developer theme is managed in the same way as content development for Default Theme. The files share the same main folder structure as Default Theme, but there are unique subfolders for Simple Developer content.</p>
+<p>In addition, you can develop and upload custom pages for Simple Dev.</p>
+<p>For detailed information on working with Simple Developer content pages, including working with styles, linking, supported file formats, managing assets, and other information, refer to <a href="site_admin_content_guidelines_sd.htm">Content Development Guidelines for Simple Developer Theme</a>.</p>
+<p>For information about uploading the files, see <a href="#how_do_i_upload_content_sd">How do I upload content for Simple Developer theme?</a></p>
+<p><a href="#top">Back to top</a></p>
+
+
+
 <h3><a name="h_configuration"></a>Configuration:</h3>
 
+
+
+<a name="where_do_i_configure_settings"></a><h3>Where do I configure settings for the platform?</h3>
+<p>You can configure many basic settings that control various aspects of the platform and how it operates. You can control settings for the following resources:</p>
+<ul>
+  <li>APIs: see <a href="#how_do_i_configure_settings_for_apis">How do I configure settings for APIs?</a></li>
+  <li>Apps: see <a href="#how_do_i_configure_settings_for_apps">How do I configure settings for apps?</a></li>
+  <li>App/API connections: see <a href="#how_do_i_configure_settings_for_connections">How do I configure settings for app/API connections?</a></li>
+  <li>Groups: see <a href="#how_do_i_configure_settings_for_groups">How do I configure settings for groups?</a></li>
+  <li>Tickets: see <a href="#how_do_i_configure_settings_for_tickets">How do I configure settings for tickets?</a></li>
+  <li>Users: see <a href="#how_do_i_configure_settings_for_users">How do I configure settings for users?</a></li>
+  <li>Business security: see <a href="#how_do_i_configure_settings_for_security_business">How do I configure settings for business security?</a></li>
+</ul>
+<p><a href="#top">Back to top</a></p>
 
 
 <a name="how_do_i_configure_settings_for_apis"></a><h3>How do I configure settings for APIs?</h3>
@@ -1035,6 +1109,112 @@ no-catalog: true
 
 
 
+<a name="how_do_i_configure_settings_for_users"></a><h3>How do I configure settings for users?</h3>
+<p>You can configure user settings to determine which features will be available for users on the platform. If a feature is disabled in the user settings page it will not be present in the user interface.</p>
+<p>Unless otherwise noted, settings are either enabled or disabled.</p>
+<h5>User Settings</h5>
+<table cellspacing="0px" class="doctable" style="width: 98%;">
+<thead>
+  <tr>
+    <th width="40%">This setting...</th>
+    <th width="60%">Controls this feature...</th>
+  </tr>
+</thead>
+<tbody>
+  <tr class="t2row">
+    <td>User Workflow Definition</td>
+    <td>The workflow definition (default or custom) that will apply to all new users on the platform. Existing users are also added to the workflow when they log in if the Upgrade CM Models action is invoked as part of upgrade.</td>
+  </tr>
+  <tr class="t1row">
+    <td>News Update Notification</td>
+    <td>If enabled, news update notifications can be sent to all users, as long as the users have not opted out by clearing the <strong>Email me news updates</strong> checkbox on the user profile page. For more information, see <a href="basics_account_management.htm#how_do_i_enable_or_disable_email_notifications">How do I enable or disable email notifications?</a>.</td>
+  </tr>
+  <tr class="t2row">
+    <td>Validity Period For New User Invitation</td>
+    <td>The period, in days, for which an invitation extended from a Site Admin to a new user is valid. After this point the invitation expires. If a validity period is set, the maximum is 30 days. If this field is left at 0, new user invitations from the Site Admin do not expire.</td>
+  </tr>
+  <tr class="t1row">
+    <td>Enforce Challenge Questions on Login</td>
+    <td>If enabled, users must provider answers to security challenge questions when logging in to the platform for the first time.</td>
+  </tr>
+  <tr class="t2row">
+    <td>User Self-Signup</td>
+    <td><p>Determines whether the platform signup page is generally available for users to sign themselves up.</p>
+      <!--<p>Table/Field: BUSINESS_USER_SETTINGS/SELFSIGNUP</p>-->
+      <p>Default: Enabled.</p></td>
+  </tr>
+  <tr class="t1row">
+    <td>Invite Unregistered Users</td>
+    <td><p>Determines whether unregistered users can be invited to sign up to the platform or to join platform groups.</p>
+      <p>By default, all users can be invited; unregistered users are invited to sign up and then invite the group membership invitation. If this option is disabled, an unregistered user cannot be invited to sign up to the platform or to join a platform group.</p>
+      <!--<p>Table/Field: BUSINESS_USER_SETTINGS/INVITEUNREGUSERS</p>-->
+      <p>Default: Enabled.</p></td>
+  </tr>
+</tbody>
+</table>
+
+<h5><a name="to_configure_user_settings"></a>To configure user settings:</h5>
+<ol>
+  <li>Go to <em>Administration &gt; Config &gt; Users</em>.</li>
+  <li>Change the settings as needed. For explanations of your choices, refer to the table above.</li>
+  <li>When done, click <strong>Save</strong>.</li>
+</ol>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_configure_settings_for_security_business"></a>
+<h3>How do I configure settings for business security?</h3>
+<p>You can configure settings to control the level of security associated with platform elements, and to control certain elements relating to security that affect platform users. </p>
+<p>You can use the default out-of-the-box user workflow in combination with user settings and business security settings relating to users, to control user experience on the platform and if needed to restrict what users can do. If you need more flexibility, you can design your own custom workflow.</p>
+<h5>Business Security Settings</h5>
+<table cellspacing="0px" class="doctable" style="width: 98%;">
+<thead>
+  <tr>
+    <th width="40%">This setting...</th>
+    <th width="60%">Controls this feature...</th>
+  </tr>
+</thead>
+<tbody>
+  <tr class="t2row">
+    <td>CSRF Support for Read Requests</td>
+    <td><p>If enabled, a <a href="basics_glossary.htm#gl_csrf_token">CSRF token</a> must be sent with the request for all Read requests that require login. The CSRF token is sent on login; including it in requests helps prevent malicious CSRF attacks.</p>
+      <p>Default: Disabled.</p></td>
+  </tr>
+  <tr class="t1row">
+    <td>Encrypt Challenge Answers</td>
+    <td>If enabled, the user's answers to security challenge questions are encrypted in the database.</td>
+  </tr>
+  <tr class="t2row">
+    <td>CSRF Support for Write Requests</td>
+    <td>If enabled, a CSRF token must be sent with all Write requests. The CSRF token is sent on login; including it in requests helps prevent malicious CSRF attacks.</td>
+  </tr>
+  <tr class="t1row">
+    <td>Challenge Count</td>
+    <td><p>Determines how many security challenge questions a single user must answer. Cannot exceed the total number of questions defined.</p>
+      <p><strong>Note</strong>: If you want to require security challenge questions but no challenge count is available, you must first set up the questions. See <a href="#how_do_i_configure_security_challenge_questions">How do I configure security challenge questions?</a></p></td>
+  </tr>
+  <tr class="t2row">
+    <td>Allow User Enum</td>
+    <td>If disabled, additional security is in effect for new account setup and password reset scenarios, to help prevent user enumeration. For more information, refer to <a href="site_admin_users.htm#how_do_i_protect_from_vulnerability_in_signup_and_forgot_password_scenarios">How can I protect from vulnerability in Signup and Forgot Password scenarios?</a></td>
+  </tr>
+  <tr class="t1row">
+    <td>Allow User to Modify Profile</td>
+    <td>If enabled, a user can modify the profile information, including the email address if it is associated with a local account.</td>
+  </tr>
+</tbody>
+</table>
+
+<h5><a name="to_configure_security_settings"></a>To configure business security settings:</h5>
+<ol>
+  <li>Go to <em>Administration &gt; Config &gt; Security</em>.</li>
+  <li>Change the settings as needed. For explanations of your choices, refer to the table above.</li>
+  <li>When done, click <strong>Save</strong>.</li>
+</ol>
+<p><a href="#top">Back to top</a></p>
+
+
+
 <a name="how_do_i_configure_separate_notification_addresses_by_theme"></a><h3>How do I configure separate notification addresses for different platform themes?</h3>
 <p>The platform sends out email notifications to keep platform users informed about specific events&#8212;for example, password reset or changes to a team that the user is a member of. Some of these notifications include the platform URL; for example, the Welcome email includes the platform homepage URL for logging in. </p>
 <p>If you have more than one theme configured for your platform installation, each theme has a separate URL. If a developer using your theme B forgets his password, the notification with the reset password link must include the URL for Theme B, not for Theme A. Therefore, you will need to take some extra steps so that, where applicable, the notifications triggered by activity on a specific theme use the correct URL for that theme.</p>
@@ -1051,9 +1231,9 @@ no-catalog: true
   <li>App team member</li>
 </ul>
 <p> For a full list of roles and the types of notifications that are sent to each role, see <a href="site_admin_users.htm#what_are_the_user_roles_for_notifications">What are the user roles for notifications sent out from the platform?</a></p>
-<p>When there are multiple themes configured for the tenant, you will need to run a script to load the TENANT_THEME_ROLES table and map the theme &gt; roles roles list. This table tells us which theme is used for which notifications.</p>
+<p>When there are multiple themes configured for the tenant, you will need to run a script to load the TENANT_THEME_ROLES table and map the theme &gt; roles roles list. This table tells the platform which theme is used for which notifications.</p>
 <p>In the NOTIFICATION_ROLES table, each notification template is mapped to the role that it is meant for. Before a notification is sent out, the tenant.console.address variable is replace with the theme-specific URL for the role that the specific notification template is mapped to.</p>
-<p>In a few cases, it is possible that multiple themes might be possible for the same notification. For example, a user of any theme might request a password reset. In this case, the platform uses the URL for the theme that caused the notification to be generated. The Forgot Password notification will include the address of the console for the theme in which the user initiated the Forgot Password request. In an upgrade scenario, or if the database modification to the the TENANT_THEME_ROLES table, as below, has not been done, no themes will be mapped to any roles. In that case, we use the default theme assigned to the tenant.</p>
+<p>In a few cases, multiple themes might be possible for the same notification. For example, a user of any theme might request a password reset. In this case, the platform uses the URL for the theme that caused the notification to be generated. The Forgot Password notification will include the address of the console for the theme in which the user initiated the Forgot Password request. In an upgrade scenario, or if the database modification to the the TENANT_THEME_ROLES table, as below, has not been done, no themes will be mapped to any roles. In that case, we use the default theme assigned to the tenant.</p>
 <p>The theme-specific feature cannot be configured in the user interface. Instead, you must run a database script. A template is shown below; this uses variable placeholders for theme name, role name, and tenant name.</p>
 
 <pre>insert into TENANT_THEME_ROLES select TENANTID, '&lt;theme&gt;', '&lt;rolename&gt;' from TENANTS where FEDMEMBERID='&lt;tenant-name&gt;';</pre>
@@ -1116,15 +1296,68 @@ insert into TENANT_THEME_ROLES select TENANTID, 'simpledev', 'Developer' from TE
 
 
 
-<a name="how_do_i_configure_security_challenge_questions"></a>
-<h3>How do I configure security challenge questions?</h3>
+<a name="how_do_i_configure_security_challenge_questions"></a><h3>How do I configure security challenge questions?</h3>
 <p>The platform includes a feature whereby you can configure security challenge questions to be offered to user signing up.</p>
 <p>By default, a user signing up is asked to answer three questions. The user's answers are stored securely in the database and the questions/answers are used as additional security for certain sensitive operations, such as when the user requests a password reset.</p>
-<p>The user can modify answers to existing questions, or choose one or more different questions from the list provided and then answer the new questions, as part of managing the user profile.</p>
+<p>Later, as part of managing the user profile, the user can modify answers to existing questions, or can choose one or more different questions from the list provided and then answer the new questions.</p>
 <p>In some cases, the user's answer might not be displayed, depending on the site's security settings.</p>
 <p>The Site Admin can choose from certain questions that are set up by default, to be offered to users, or can compose different questions.</p>
 <p>This feature adds another layer of security for the user's account.</p>
-<p>Site Admin management of this feature is not currently available via the user interface. It must be done by a database script. For more information, contact Technical Support.</p>
+<p>Site Admin management of this feature is not currently available via the user interface. You can do this in two ways:</p>
+<ul>
+  <li>By a database script. For more information, <a href="basics_support.htm#how_do_i_contact_technical_support">contact Technical Support</a>.</li>
+  <li>Using the API: via the Save Challenges operation in the Businesses service. For more information, refer to <a href="http://docs.soa.com/cm/api/businesses/m_businesses_saveChallenges.htm" target="_blank">the API documentation for the <span class="apidoc_code">PUT&nbsp;/api/businesses/{BusinessID}/challenges</span> operation at docs.soa.com</a>.</li>
+</ul>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_monitor_app_security_changes"></a><h3>I need to monitor app security changes. What do I do?</h3>
+<p>By default, whenever an app developer makes a significant change to app credentials, the user is required to enter a comment regarding the action being done. A notification is posted to the app's Board regarding the action, the user performing the action, and the user's comment. This acts as an audit trail which you can also access via the database.</p>
+<p>Comments are collected, and Board items generated, for the following events relating to app security:</p>
+<ul>
+  <li>App Shared Secret is regenerated.</li>
+  <li>Credentials are uploaded.</li>
+  <li>Credentials are modified.</li>
+  <li>Credentials are removed.</li>
+</ul>
+<p><a href="#top">Back to top</a></p>
+
+
+<a name="how_do_i_add_a_platform_signup_legal_agreement"></a>
+<h3>How do I add a platform signup legal agreement?</h3>
+<p>You might want to have a platform legal agreement in place, that all platform users will accept. If a legal agreement is in place, the platform requires users to accept the agreement as a precondition before completing the login process.</p>
+<p>If there is an existing legal agreement in place, you must disable it before adding a new one. You can only have one. See <a href="#how_do_i_change_the_platform_signup_legal_agreement">How do I change the platform signup legal agreement?</a> below.</p>
+<p class="apidoc_note"><strong>Note</strong>: The platform supports use of only one legal agreement. Make sure all the legal requirements are combined into one document.</p>
+<p>The user interface currently does not support managing of the legal agreement, but you can do this via the API or by running a database script.</p>
+<h5>To add the legal agreement using the API</h5>
+<p>To add a legal agreement there are two steps:</p>
+<ol>
+  <li>First, upload the legal agreement file. You can do this in the user interface. See below.</li>
+  <li>Then, make the new agreement the default for the platform using the API. In the Legals service, run the Create New Agreement operation (see <span class="apidoc_code"><a href="http://docs.soa.com/cm/api/legals/m_legals_createNewAgreement.htm" target="_blank">POST&nbsp;/api/legals</a></span> on docs.soa.com).</li>
+</ol>
+<h5>To upload a new legal agreement via the Community Manager user interface</h5>
+<ol>
+  <li>Navigate to <em>Administration</em> &gt; <em>Config &gt; Resources</em>.</li>
+  <li>In the <em>Content</em> section, click <strong>File Manager</strong>.</li>
+  <li>Click down to the Home folder, then to the Landing folder. If a folder doesn't exist, create it, using the exact names given here.</li>
+  <li>Click <strong>Upload a File</strong>, navigate to the location of the new developer agreement, and upload it.</li>
+</ol>
+<p><a href="#top">Back to top</a></p>
+
+
+
+<a name="how_do_i_change_the_platform_signup_legal_agreement"></a>
+<h3>How do I change the platform signup legal agreement?</h3>
+<p>If you have a legal agreement in place, and want to change it, you must first deactivate the existing agreement. Then, you can upload a new agreement following the instructions above.</p>
+<h5>To deactivate an existing legal agreement</h5>
+<p class="apidoc_note"><strong>Note</strong>: The queries below remove any existing legal agreements, so if you uploaded more than one by mistake, this script will fix it.</p>
+<p>For a multi-tenant install, use the script below. Replace the {<strong>tenantid</strong>} placeholder with the Tenant ID for your installation.. Note that line breaks have been added for display purposes. Your script should not have line breaks.</p>
+<pre>update AGREEMENT_DOCUMENTS set ACTIVE='N' where TYPE='com.soa.atmosphere.legals.signup' 
+and DOCUMENT_ID in (select NAMEID from DISTINGUISHED_NAMES where FEDMEMBERID='{tenantid}' and OBJECTTYPE='agreement');</pre>
+<p>For a single-tenant install, use the query below exactly as it is. You do not need to substitute any values. Note that line breaks have been added for display purposes. Your script should not have line breaks.</p>
+<pre>update AGREEMENT_DOCUMENTS set ACTIVE='N' where TYPE='com.soa.atmosphere.legals.signup' 
+and DOCUMENT_ID in (select NAMEID from DISTINGUISHED_NAMES where OBJECTTYPE='agreement');</pre>
 <p><a href="#top">Back to top</a></p>
 
 
