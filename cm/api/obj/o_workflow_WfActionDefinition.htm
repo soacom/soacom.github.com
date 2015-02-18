@@ -1,26 +1,20 @@
 ---
 layout: apipage
-title: ValidatePasswordResetResponse Object | Password Management Service | Enterprise API Platform API
-description:  Includes username and email address for a user, required for password reset validation.
+title: WfActionDefinition Object | Workflow (Shared) | Enterprise API Platform API
+description: Contains information about a specific workflow action.
 product: cm
 category: ref
-nav-title: ValidatePasswordResetResponse Object 
+nav-title: WfActionDefinition Object 
 no-nav: api
 sub-nav: true
 sub-nav-class: obj
 no-catalog: true
 ---
 
-<h2><a name="top"></a>ValidatePasswordResetResponse Object</h2>
-<p><!-- #BeginLibraryItem "/Library/o_passwordmgmt_ValidatePasswordResetResponse.lbi" -->
-Includes username and email address for a user, required for password reset validation.<!-- #EndLibraryItem --></p>
+  <h2><a name="top"></a>WfActionDefinition Object</h2>
+<p><!-- #BeginLibraryItem "/Library/o_workflow_WfActionDefinition.lbi" -->Contains information about a specific workflow action.<!-- #EndLibraryItem --></p>
 
-<p class="usedby">This object is used by the following operations:</p>
-<ul>
-  <li><span class="apidoc_code"><a href="../passwordmanagement/m_passwordmanagement_validatePasswordResetCode.htm">POST&nbsp;passwordmanagement/validatePasswordResetCode</a></span></li>
-</ul>
-
-<p>The properties included in the <strong>ValidatePasswordResetResponse</strong> object are listed below.</p>
+<p>The properties included in the <strong>WfActionDefinition</strong> object are listed below.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -28,18 +22,23 @@ Includes username and email address for a user, required for password reset vali
       <th width="15%">Type</th>
       <th width="70%">Description</th>
     </tr>
+    <tr>
+      <td>ActionName</td>
+      <td>string</td>
+      <td>The name of the workflow action.</td>
+    </tr>
+    <tr>
+      <td>StateName</td>
+      <td>string</td>
+      <td>The name of the workflow state.</td>
+    </tr>
+    <tr>
+      <td>StepID</td>
+      <td>integer</td>
+      <td>The numeric ID for the workflow action.</td>
+    </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>userName</td>
-      <td>string</td>
-      <td>The username for the user. Required.</td>
-  </tr>
-    <tr>
-      <td>emailAddress</td>
-      <td>string</td>
-      <td>The email address for the user. Required.</td>
-  </tr>
     </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
