@@ -37,8 +37,9 @@ no-catalog: true
     <tr>
       <td><a id="acceptheader"></a>Accept</td>
       <td>Request Only</td>
-      <td><!-- #BeginLibraryItem "/Library/hdrreq_accept.lbi" -->
-Lists one or more data formats that are valid in the response. For example,<strong> application/json or text/xml</strong>. The Accept header can include other formats as long as the required format is included. It's a good idea to list only the required format, or at least include it as the first on the list.<!-- #EndLibraryItem --></td>
+      <td><p><!-- #BeginLibraryItem "/Library/hdrreq_accept.lbi" -->
+        Lists one or more data formats that are valid in the response. For example,<strong> application/json or text/xml</strong>. The Accept header can include other formats as long as the required format is included. It's a good idea to list only the required format, or at least include it as the first on the list.<!-- #EndLibraryItem --></p>
+        <p>For information on valid values, see <a href="Ref_MediaTypes.htm">Media Types</a>.</p></td>
   </tr>
     <tr>
       <td>Accept-Encoding</td>
@@ -72,7 +73,8 @@ Used in both request and response to specify whether the message can be cached b
       <td>Both</td>
       <td><!-- #BeginLibraryItem "/Library/hdrreq_content-type.lbi" -->
 <p>Specifies the media type of a request or response message body.</p>
-<p>For request messages, content-type is used for POST&nbsp;and PUT&nbsp;but not for GET&nbsp;or DELETE. Most&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;operations that use this header use <strong>application/json</strong> in the request message. Methods involving file upload use <strong>multipart/form-data</strong>. Methods with POST&nbsp;parameters might use <strong>application/x-www-form-urlencoded</strong>; for example, the <span class="apidoc_code"><a href="login/m_login_renewToken.htm">POST&nbsp;/api/login/renewToken</a></span> operation.</p><!-- #EndLibraryItem --></td>
+<p>For request messages, content-type is used for POST&nbsp;and PUT&nbsp;but not for GET&nbsp;or DELETE. Most&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;operations that use this header use <strong>application/json</strong> in the request message. Methods involving file upload use <strong>multipart/form-data</strong>. Methods with POST&nbsp;parameters might use <strong>application/x-www-form-urlencoded</strong>; for example, the <span class="apidoc_code"><a href="login/m_login_renewToken.htm">POST&nbsp;/api/login/renewToken</a></span> operation.</p><!-- #EndLibraryItem -->
+<p>For information on valid values, see <a href="Ref_MediaTypes.htm">Media Types</a>.</p></td>
   </tr>
     <tr>
       <td>Cookie</td>
@@ -168,7 +170,7 @@ Indicates the type of compression encoding the server used for the response mess
     <tr>
       <td><a id="location_response"></a>Location</td>
       <td>Response only</td>
-      <td>Used with HTTP 307 Temporary Redirect, to provide the URL location for the redirect.</td>
+      <td>Used with HTTP 307 Temporary Redirect, to provide the URL location for the redirect. For example, the <span class="apidoc_code"><a href="login/m-login_ssoLogin.htm">GET&nbsp;/api/login/ssoLogin</a></span> operation uses this response header.</td>
     </tr>
     <tr>
       <td>Date</td>
